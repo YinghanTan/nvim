@@ -1,3 +1,6 @@
+
+
+
 " --- Standard Settings ---
 syntax on
 filetype plugin on
@@ -95,7 +98,7 @@ nnoremap gV `[v`]   " highlight last inserted text
 " --- Theme ---
 set laststatus=2                        " Always show the status line
 " Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 highlight NonText guifg=#4a4a59 "Invisible character colors 
 highlight SpecialKey guifg=#4a4a59 "Invisible character colors 
 " set wrap " Enable text wrapping to next line 

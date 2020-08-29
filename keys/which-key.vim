@@ -5,6 +5,8 @@ call which_key#register('<Space>', "g:which_key_map")
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
+
+
 " Create map to add keys to
 let g:which_key_map =  {}
 " Define a separator
@@ -50,10 +52,26 @@ let g:which_key_map.a = {
       \ 'm' : [':MarkdownPreview'              , 'markdown preview'],
       \ 'M' : [':MarkdownPreviewStop'          , 'markdown preview stop'],
       \ 's' : [':let @/ = ""'                  , 'remove search highlight'],
-      \ 'j' : ['<Plug>(ale_next_wrap)'         , 'ale next wrap'],
-      \ 'k' : ['<Plug>(ale_previous_wrap)'     , 'ale previous wrap'],
-      \ 'f' : [':ALEFix<cr>'                   , 'ale fix'],
       \ }
+      " \ 'j' : ['<Plug>(ale_next_wrap)'         , 'ale next wrap'],
+      " \ 'k' : ['<Plug>(ale_previous_wrap)'     , 'ale previous wrap'],
+      " \ 'f' : ['<Plug>(ale_fix)'                       , 'ale fix'],
+
+
+" b is for buffer
+let g:which_key_map.b = {
+      \ 'name' : '+buffer' ,
+      \ '1' : ['b1'        , 'buffer 1'],
+      \ '2' : ['b2'        , 'buffer 2'],
+      \ 'd' : [':Bdelete'  , 'delete-buffer'],
+      \ 'f' : ['bfirst'    , 'first-buffer'],
+      \ 'h' : ['Startify'  , 'home-buffer'],
+      \ 'l' : ['blast'     , 'last-buffer'],
+      \ 'n' : ['bnext'     , 'next-buffer'],
+      \ 'p' : ['bprevious' , 'previous-buffer'],
+      \ '?' : ['Buffers'   , 'fzf-buffer'],
+      \ }
+
 
 " n is for NerdTree
 let g:which_key_map.n = {
@@ -63,12 +81,14 @@ let g:which_key_map.n = {
       \ 'f' : [':NERDTreeFind'                 , 'NerdTree Find'],
       \ }
 
+
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
       \ 'name' : '+ultisnips or undo' ,
-      \ 'e' : [':UltiSnipsEdit<cr>'            , 'Ultisnips Edit'],
+      \ 'e' : [':UltiSnipsEdit'            , 'Ultisnips Edit'],
       \ 't' : [':UndotreeToggle'               , 'UndoTree'],
       \ }
+
 
 " s is for search
 let g:which_key_map.s = {
@@ -144,7 +164,9 @@ let g:which_key_map.G = {
       \ 'P' : [':Gist -p'                          , 'post private gist '],
       \ }
 
-" t is for terminal
+
+nnoremap <leader>tb :Tabularize /
+" t is for terminal or tabularize
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' : [':FloatermNew --wintype=popup --height=6'        , 'terminal'],
@@ -158,7 +180,32 @@ let g:which_key_map.t = {
       \ 't' : [':FloatermToggle'                                , 'toggle'],
       \ 'y' : [':FloatermNew htop'                              , 'htop'],
       \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
+      \ '=' : [':Tabularize /=<CR>'                              , 'Tab='],
+      \ ':' : [':Tabularize /:<CR>'                              , 'Tab:'],
+      \ ',' : [':Tabularize /,<CR>'                              , 'Tab,'],
       \ }
+
+
+
+
+" T is for tab
+let g:which_key_map.T = {
+      \ 'name' : '+tabline' ,
+      \ 'b' : [':XTabListBuffers'         , 'list buffers'],
+      \ 'd' : [':XTabCloseBuffer'         , 'close buffer'],
+      \ 'D' : [':XTabDeleteTab'           , 'close tab'],
+      \ 'h' : [':XTabHideBuffer'          , 'hide buffer'],
+      \ 'i' : [':XTabInfo'                , 'info'],
+      \ 'l' : [':XTabLock'                , 'lock tab'],
+      \ 'm' : [':XTabMode'                , 'toggle mode'],
+      \ 'n' : [':tabNext'                 , 'next tab'],
+      \ 'N' : [':XTabMoveBufferNext'      , 'buffer->'],
+      \ 't' : [':tabnew'                  , 'new tab'],
+      \ 'p' : [':tabprevious'             , 'prev tab'],
+      \ 'P' : [':XTabMoveBufferPrev'      , '<-buffer'],
+      \ 'x' : [':XTabPinBuffer'           , 'pin buffer'],
+      \ }
+
 
 " w is for wiki
 let g:which_key_map.w = {
@@ -174,16 +221,19 @@ let g:which_key_map.v = {
       \ 'r' : [':e $MYVIMRC'                          , 'Edit vimrc'],
       \ }
 
-" u is for undotree
-let g:which_key_map.u = {
-      \ 'name' : '+undotree' ,
-      \ 't' : [':UndotreeToggle<CR>'               , 'UndotreeToggle'],
+let g:which_key_map.S = {
+      \ 'name' : '+Session' ,
+      \ 'c' : [':SClose'          , 'Close Session']  ,
+      \ 'd' : [':SDelete'         , 'Delete Session'] ,
+      \ 'l' : [':SLoad'           , 'Load Session']     ,
+      \ 's' : [':Startify'        , 'Start Page']     ,
+      \ 'S' : [':SSave'           , 'Save Session']   ,
       \ }
 
 
 " " save session
-nnoremap <leader>ms :mksession ~/.vim/sessions/
-nnoremap <leader>ss :source ~/.vim/sessions/
+" nnoremap <leader>ms :mksession ~/.vim/sessions/
+" nnoremap <leader>ss :source ~/.vim/sessions/
 
 " --- Leader Shortcuts ---
 let mapleader="\\"       " leader is comma
@@ -208,7 +258,7 @@ nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " --- Edit Files ---
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>js :%!python -m json.tool<cr>
+map <leader>js :%!python3 -m json.tool<cr>
 map <leader>md :MarkdownPreview GitHub<CR>
 map <leader>cd :cd %:p:h<cr>:pwd<cr>            " Switch CWD to the directory of the open buffer
 " map <leader>pp :setlocal paste!<cr>             " Toggle paste mode on and off
@@ -287,29 +337,16 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
-" --- --- --- 
+" --- --- ---
 
-" --- UltiSnip Plugin ---
-let g:UltiSnipsExpandTrigger="<leader><tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-j>"
-let g:UltiSnipsJumpBackwardTrigger="<C-k>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories = ['~/.vim/ultisnips', 'ultisnips', '~/.vim/plugged/vim-snippets/UltiSnips']
-" nmap <leader>ue :UltiSnipsEdit<cr>
-" --- --- --- ---
 
 " --- nvim-toggle-terminal ---
 tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 " --- --- ---
 
 
-" " --- Ale ---
-" nmap <silent> <leader>aj <Plug>(ale_next_wrap)
-" nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
-" nmap <silent> <leader>af :ALEFix<cr>
-" " --- --- ---
 
-" --- Vim Wiki & Instant Markdown Plugin --- 
+" --- Vim Wiki & Instant Markdown Plugin ---
 let g:vimwiki_listsyms = ' x'
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let wiki_1 = {}
@@ -320,6 +357,4 @@ let g:vimwiki_list = [wiki_1]
 let g:vimwiki_folding = 'expr'
 " map <leader>wt :VimwikiTable<cr>
 nnoremap yot :syn on<cr>    " turn on syntax highlighting
-"  --- --- --- 
-
-
+"  --- --- ---

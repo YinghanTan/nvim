@@ -17,7 +17,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'easymotion/vim-easymotion'
     Plug 'itchyny/lightline.vim'
-    Plug 'maximbaz/lightline-ale'
+    " Plug 'maximbaz/lightline-ale'
     " Plug 'vim-airline/vim-airline'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
@@ -40,14 +40,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tomtom/tlib_vim'
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 
-    Plug 'dense-analysis/ale'
+    " Plug 'dense-analysis/ale', { 'on': 'ALEToggle' }
+    " Plug 'dense-analysis/ale'
     Plug 'editorconfig/editorconfig-vim'
 
     Plug 'scrooloose/nerdtree'
     Plug 'ctrlpvim/ctrlp.vim'
 
     Plug 'vim-utils/vim-man'
-    " Plug 'leafgarland/typescript-vim'
+    Plug 'leafgarland/typescript-vim'
     Plug 'mbbill/undotree'
     " Plug 'tpope/vim-sleuth'
     Plug 'pakutoma/toggle-terminal'
@@ -68,11 +69,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'caenrique/nvim-toggle-terminal'
     Plug 'norcalli/nvim-colorizer.lua'
     Plug 'liuchengxu/vim-which-key'
+    Plug 'godlygeek/tabular'
+    Plug 'mhinz/vim-startify'
 
 call plug#end()
-
-
-
-
-
-
