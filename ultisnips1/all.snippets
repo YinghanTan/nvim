@@ -1,0 +1,76 @@
+snippet t "Simple tag" b
+<${1:tag}>
+	${2:${VISUAL}}
+</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet ti "Inline tag" i
+<${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet cb "CheckBox" b
+[ ] $1
+endsnippet
+
+snippet title "title" b
+---
+title: $1
+date: ${2:`date +%Y/*m/*d`}
+author: ${3:Tan Yinghan}
+tags: $4
+---
+
+# $1
+$0
+endsnippet
+
+snippet date "YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d")`
+endsnippet
+
+snippet date@ "WWW YYYY-MM-DD" w
+`!v strftime("%Y-%m-%d %a")`
+endsnippet
+
+snippet diso "ISO format datetime" w
+`!v strftime("%Y-%m-%d %H:%M:%S%z")`
+endsnippet
+
+snippet time "hh:mm" w
+`!v strftime("%H:%M")`
+endsnippet
+
+snippet dtime "YYYY-MM-DD hh:mm" w
+`!v strftime("%Y-%m-%d %H:%M")`
+endsnippet
+
+snippet [ "ToDo Checkbox" b
+[ ] $0 
+endsnippet
+
+
+# snippet [ "Indented Brackets" w
+# [
+# 	$1
+# ]$0
+# endsnippet
+#
+# snippet ( "Indented Brackets" w
+# (
+# 	$1
+# )$0
+# endsnippet
+#
+# snippet { "Indented Brackets" w
+# {
+# 	$1
+# }$0
+# endsnippet
+
+
+snippet lorem "lorem text" w
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+endsnippet

@@ -1,0 +1,21 @@
+# global !p
+# from snippet_helpers import *
+# endglobal
+
+snippet context "Description" b
+context "$1" do
+	${0:${VISUAL:# assertions}}
+end
+endsnippet
+
+snippet up1 "Unique Point" i
+std::unique_ptr<${1:${VISUAL:klass}}>
+endsnippet
+
+
+
+snippet #! "Shebang line" b
+#!/usr/bin/env python3
+endsnippet
+
+

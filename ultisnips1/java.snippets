@@ -1,0 +1,43 @@
+snippet vn "Valid Number between 0-100" b
+if (${VISUAL} < 0 || ${VISUAL} > 100)
+    errors.add("AdvanceRatio is not a valid number between 0 to 100");
+endsnippet
+
+snippet jsve "jsonValidationErrs for Required fields" b
+if(StringUtils.isEmpty(vo.get${VISUAL}()))
+    jsonValidationErrs.add("${VISUAL} is required");
+endsnippet
+
+snippet ise "is Empty" w
+StringUtils.isEmpty(${0:${VISUAL}})
+endsnippet
+
+snippet isd "is Date" w
+isDateValid(${0:${VISUAL}})
+endsnippet
+
+snippet ifea "if Error Add" w
+if (${1:${VISUAL}})
+	errors.add("${2:Field is not a valid Field}");
+endsnippet
+
+
+snippet ifja "if JsonValidationError Add" i
+if (${1:${VISUAL}})
+	errors.add("${2:Field is required"}");
+endsnippet
+
+snippet y&n "Values in Y or N" b
+if (!"Y".equalsIgnoreCase(${VISUAL}) && !"N".equalsIgnoreCase(${VISUAL}))
+	errors.add("PlaceholderField provided is not valid. Should be Y or N only.");
+endsnippet
+
+snippet nrisd "Not Required and is Date" b
+if (!StringUtils.isEmpty(${VISUAL}) && !isDateValid(${VISUAL}))
+			errors.add("PlaceholderField is not a valid date");
+endsnippet
+
+snippet vil "Values in List" b
+if (!formHandler.${1:getTradeCodeTreeMap()}.containsKey(${VISUAL}))
+	errors.add("Placeholder field provided is not in valid list. "+formHandler.$1.keySet());
+endsnippet

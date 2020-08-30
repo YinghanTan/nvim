@@ -1,0 +1,96 @@
+
+snippet afterEach "After Each" b
+afterEach(${1:async} ($2) => {
+	$3
+});$0
+endsnippet
+
+snippet beforeEach "Before Each" b
+beforeEach(${1:async} ($2) => {
+	$3
+});$0
+endsnippet
+
+snippet afterAll "After all" b
+afterAll(${1:async} ($2) => {
+	$3
+});$0
+endsnippet
+
+snippet beforeAll "Before All" b
+beforeAll(${1:async} ($2) => {
+	$3
+});$0
+endsnippet
+
+snippet sendKeys "send Keys" i
+sendKeys('$1');$0
+endsnippet
+
+
+snippet browserget "browser.get" w
+browser.get('$1')${0:;}
+endsnippet
+
+snippet fit "fit" b
+fit('${1:test description}', ${2:async} ($3)=> {
+	$4
+});$0
+endsnippet
+
+snippet fdescribe "fdescribe" b
+fdescribe('${1:description of test group}', ($2)=> {
+	$3
+});$0
+endsnippet
+
+snippet it "it" b
+it('${1:test description}', ${2:async} ($3)=> {
+	$4
+});$0
+endsnippet
+
+snippet describe "Describe" b
+describe('${1:description of test group}', ($2)=> {
+	$3
+});$0
+endsnippet
+
+snippet expecttoequal "Expect to Equal" b
+expect($1).toEqual($2)${0:;}
+endsnippet
+
+snippet elementallby "Element.all by" i
+element.all(by.${1:css}('$2'))${0:;}
+endsnippet
+
+snippet elementallbycss "Element.all by.css" i
+element.all(by.css('$1'))${0:;}
+endsnippet
+
+snippet elementbymodel "Model Element" i
+element(by.model('$1'))${0:;}
+endsnippet
+
+snippet elementbycss "Css Element" i
+element(by.css('$1'))${0:;}
+endsnippet
+
+snippet html:5 "html:5 boilerplate"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$1</title>
+</head>
+<body>
+	$2
+</body>
+</html>$0
+endsnippet
+
+snippet script "script" b
+<script${1: charset="${2:utf-8}"}>
+	$3
+</script>$0
+endsnippet
