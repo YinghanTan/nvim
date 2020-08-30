@@ -1,5 +1,4 @@
 {
-
     // suggestions
     // "suggest.echodocSupport": true,
     // TODO add more labels and give them cool glyphs
@@ -14,6 +13,7 @@
     "diagnostic.warningSign": " ",
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": " ",
+    "diagnostic.checkCurrentLine": true,
     // "diagnostic.displayByAle": true,
     // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
 
@@ -23,20 +23,26 @@
 
     // autoformat
     "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        // "css",
+        "css",
         // "markdown",
         // "graphql",
-        // "html",
-        // "yaml",
-        // "json",
-        // "python"
+        "javascript",
+        "*.js",
+        "html",
+        "yaml",
+        "json",
+        "python"
     ],
     "coc.preferences.hoverTarget": "float",
 
     // Javascript config
-    "eslint.filtypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
-    "prettier.tabWidth": "4",
+    "eslint.filetypes": [
+        "javascript",
+        "typescript",
+        "typescriptreact",
+        "javascriptreact"
+    ],
+    "prettier.tabWidth": 4,
 
     // python config
     "python.linting.enabled": false,
@@ -48,25 +54,22 @@
     // "python.sortImports.path": "~/.miniconda/envs/neovim/bin/isort",
     // "python.jediPath": "~/.miniconda/envs/neovim/lib/python3.8/site-packages",
 
-
     // snippets
     "snippets.ultisnips.directories": ["~/.config/nvim/ultisnips"],
-    //"snippets.userSnippetsDirectory": "~/.config/nvim/snips",
 
     // emmet
     "emmet.includeLanguages": {
         "vue-html": "html",
         "javascript": "javascriptreact"
-    },
+    }
 
     // explorer
-    "explorer.width": 30,
+    // "explorer.width": 30,
     // "explorer.icon.enableNerdfont": true,
-    "explorer.previewAction.onHover": false,
+    // "explorer.previewAction.onHover": false,
     // "explorer.icon.enableVimDevicons": false,
-    "explorer.keyMappings": {
-        "<cr>": ["expandable?", "expand", "open"],
-        "v": "open:vsplit"
-    },
-
+    // "explorer.keyMappings": {
+    //     "<cr>": ["expandable?", "expand", "open"],
+    //     "v": "open:vsplit"
+    // }
 }

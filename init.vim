@@ -1,3 +1,5 @@
+set runtimepath^=~/.config/nvim/autoload/coc.nvim/
+
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/themes/onedark.vim
@@ -17,14 +19,13 @@ hi link EasyMotionShade Comment
 set textwidth=0
 set wrapmargin=0
 
-
 "--- Emmet Plugin ---
-let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/.snippets_custom.json')), "\n"))
-let g:user_emmet_install_global = 0
-autocmd FileType html,css,md EmmetInstall
-if has("autocmd")
-    autocmd FileType html,css,md EmmetInstall
-endif
+" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/.snippets_custom.json')), "\n"))
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,md EmmetInstall
+" if has("autocmd")
+"     autocmd FileType html,css,md EmmetInstall
+" endif
 " --- --- --- ---
 
 set diffopt=vertical

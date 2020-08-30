@@ -33,7 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'airblade/vim-rooter'
     Plug 'mattn/webapi-vim'
-    Plug 'mattn/emmet-vim'
+    " Plug 'mattn/emmet-vim'
     Plug 'honza/vim-snippets'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tcomment_vim'
