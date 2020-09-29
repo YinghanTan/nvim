@@ -1,6 +1,3 @@
-
-
-
 " --- Standard Settings ---
 syntax on
 filetype plugin on
@@ -18,11 +15,9 @@ set noerrorbells                " No error sounds
 set t_vb=                       " turn off visual bell
 set novisualbell                " turn off visual bell
 set tm=500
-
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set hidden                      " Hide files in the background instead of closing them"
-" set scrolloff=8
 set showmode
 set showcmd
 set cursorline                  " highlight current line
@@ -34,6 +29,7 @@ set showmatch                   " highlight matching brackets [{()}]
 set ruler                       " show current row and column
 set encoding=utf-8
 set history=1000                " increate the undo limit
+" set scrolloff=8
 
 autocmd BufNewFile,BufRead,FileType,OptionSet * set formatoptions-=cro
 autocmd BufNewFile,BufRead,FileType,OptionSet * setlocal formatoptions-=cro
@@ -57,7 +53,6 @@ set nowrap                      " text do not get wrappped around at the end of 
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
-
 " for js/coffee/jade files, 4 spaces
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype javascript set foldmethod=syntax "syntax highlighting items specify folds
@@ -71,9 +66,9 @@ autocmd Filetype javascript set foldlevelstart=99 "start file with all folds ope
 " --- Folding ---
 set foldenable          " enable folding
 set foldmethod=syntax   "syntax highlighting items specify folds
-" set foldmethod=indent   "syntax highlighting items specify folds
 set foldcolumn=1        "defines 1 col at window left, to indicate folding
 set foldlevelstart=99   "start file with all folds opened
+" set foldmethod=indent   "syntax highlighting items specify folds
 " set fillchars=fold:-    " remove ---- in folds
 " --- --- ---
 
@@ -106,13 +101,14 @@ set nolist
 set listchars=tab:▸\ ,precedes:←,extends:→,eol:¬ ",trail:.
 " --- --- ---
 
-" Ignore compiled files
+" --- Ignore compiled files ---
 set wildignore=*.o,*~,*.pyc
 if has("win16") || has("win32")
     set wildignore+=.git\*,.hg\*,.svn\*
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
+" --- --- ---
 
 
 " --- Resize ---
@@ -121,7 +117,6 @@ nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 " --- --- ---
-
 
 " --- Refresh VIMRC on Save ---
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vim alternatively you can run :source $MYVIMRC
@@ -139,16 +134,31 @@ set splitbelow              " Horizontal splits will automatically be below
 set splitright              " Vertical splits will automatically be to the right
 set t_Co=256                " Support 256 colors
 set conceallevel=0          " So that I can see `` in markdown files
-" set smarttab                " Makes tabbing smarter will realize you have 2 vs 4
-" set laststatus=0            " Always display the status line
 set background=dark         " tell vim what the background color looks like
-" set showtabline=2           " Always show tabs
-" set noshowmode              " We don't need to see things like -- INSERT -- anymore
 set nobackup                " This is recommended by coc
 set nowritebackup           " This is recommended by coc
 set updatetime=300          " Faster completion
 set timeoutlen=500          " By default timeoutlen is 1000 ms
-" set formatoptions-=cro      " Stop newline continuation of comments
 set clipboard=unnamedplus   " Copy paste between vim and everything else
 set autochdir               " Your working directory will always be the same as your file directory
+set diffopt=vertical
+set textwidth=0
+set wrapmargin=0
+set noshowmode              " We don't need to see things like -- INSERT -- anymore
+" set smarttab                " Makes tabbing smarter will realize you have 2 vs 4
+" set laststatus=0            " Always display the status line
+" set showtabline=2           " Always show tabs
+" set formatoptions-=cro      " Stop newline continuation of comments
 " --- --- ---
+
+
+
+"--- Emmet Plugin ---
+" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/.snippets_custom.json')), "\n"))
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css,md EmmetInstall
+" if has("autocmd")
+"     autocmd FileType html,css,md EmmetInstall
+" endif
+" --- --- --- ---
+
