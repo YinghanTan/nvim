@@ -17,12 +17,13 @@ source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/far.vim
+source $HOME/.config/nvim/plug-config/tabularize.vim
+source $HOME/.config/nvim/plug-config/fugitive.vim
+" source $HOME/.config/nvim/plug-config/visualStar.vim
 " source $HOME/.config/nvim/plug-config/ctrlp.vim
 
 
-
-
-source $HOME/.config/nvim/keys/which-key.vim    " TODO:
+source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/keys/mappings.vim
 lua require'plug-colorizer'
 

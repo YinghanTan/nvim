@@ -46,14 +46,16 @@ endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)       " Goto Definition
-nmap <silent> gy <Plug>(coc-type-definition)  " Goto tYpe definition
-nmap <silent> gi <Plug>(coc-implementation)   " Goto Implementation
-nmap <silent> gr <Plug>(coc-references)       " Goto References
+" " GoTo code navigation.
+" nmap <silent> gd <Plug>(coc-definition)       " Goto Definition
+" nmap <silent> gy <Plug>(coc-type-definition)  " Goto tYpe definition
+" nmap <silent> gi <Plug>(coc-implementation)   " Goto Implementation
+" nmap <silent> gr <Plug>(coc-references)       " Goto References
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
+" nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>

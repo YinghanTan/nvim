@@ -74,5 +74,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'metakirby5/codi.vim'
     Plug 'ChristianChiarulli/far.vim'
+    Plug 'nelstrom/vim-visual-star-search'
 
 call plug#end()
