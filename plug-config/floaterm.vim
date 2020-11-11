@@ -24,5 +24,5 @@ tnoremap   <silent>   <leader>tt  <C-\><C-n>:FloatermToggle<CR>
 " tnoremap   <silent>   <leader>`  <C-\><C-n>:FloatermToggle<CR>
 
 " --- nvim-toggle-terminal ---
-tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
+" tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 " --- --- ---

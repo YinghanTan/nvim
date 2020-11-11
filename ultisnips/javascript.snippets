@@ -1,3 +1,15 @@
+snippet '':af "Object arrow function string"
+'${1:${2:#thing}:${3:click}}': `!p snip.rv = space_before_function_paren(snip)`(element) => {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
+snippet :af "Object arrow function"
+${1:method_name}: `!p snip.rv = space_before_function_paren(snip)`(${3:attribute}) => {
+	${VISUAL}$0
+}${10:,}
+endsnippet
+
 
 snippet afterEach "After Each" b
 afterEach(${1:async} ($2) => {

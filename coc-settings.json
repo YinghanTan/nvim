@@ -29,7 +29,7 @@
         // "javascript",
         // "*.js",
         "html",
-        "yaml",
+        // "yaml",
         "json",
         "python"
     ],
@@ -55,7 +55,9 @@
     // "python.jediPath": "~/.miniconda/envs/neovim/lib/python3.8/site-packages",
 
     // snippets
-    "snippets.ultisnips.directories": ["~/.config/nvim/ultisnips"],
+    // "snippets.ultisnips.directories": ["~/.config/nvim/ultisnips"],
+    "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnips",
+    "snippets.editSnippetsCommand": "vsplit",
 
     // emmet
     "emmet.includeLanguages": {

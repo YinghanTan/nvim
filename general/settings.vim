@@ -39,29 +39,6 @@ set splitright                  " Set new window split right
 set shortmess+=I                " Don't five intro message when starting vim
 " --- --- ---
 
-" --- Indent ---
-" for html/rb files, 2 spaces
-filetype plugin indent on
-set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
-set shiftwidth=4                " displacement of each shift is 4 spaces
-" set smarttab                    " Be smart when using tabs
-set expandtab                   " tabs are spaces
-set smartindent                 " automatically add indent 
-set autoindent                  " apply indentation of current line to next line
-set nowrap                      " text do not get wrappped around at the end of the line
-" autocmd Filetype html setlocal ts=2 sw=2 expandtab
-" autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
-" for js/coffee/jade files, 4 spaces
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
-autocmd Filetype javascript set foldmethod=syntax "syntax highlighting items specify folds
-autocmd Filetype javascript set foldcolumn=1 "defines 1 col at window left, to indicate folding
-autocmd Filetype javascript let javaScript_fold=1 "activate folding by JS syntax
-autocmd Filetype javascript set foldlevelstart=99 "start file with all folds opened
-" autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
-" autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
-" --- --- ---
 
 " --- Folding ---
 set foldenable          " enable folding
@@ -162,3 +139,32 @@ set noshowmode              " We don't need to see things like -- INSERT -- anym
 " endif
 " --- --- --- ---
 
+" --- Indentation ---
+" for html/rb files, 2 spaces
+filetype plugin indent on
+set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
+set shiftwidth=4                " displacement of each shift is 4 spaces
+" set smarttab                    " Be smart when using tabs
+set expandtab                   " tabs are spaces
+set smartindent                 " automatically add indent 
+set autoindent                  " apply indentation of current line to next line
+set nowrap                      " text do not get wrappped around at the end of the line
+" autocmd Filetype html setlocal ts=2 sw=2 expandtab
+" autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+
+
+" add yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+
+
+" for js/coffee/jade files, 4 spaces
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype javascript set foldmethod=syntax "syntax highlighting items specify folds
+autocmd Filetype javascript set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype javascript let javaScript_fold=1 "activate folding by JS syntax
+autocmd Filetype javascript set foldlevelstart=99 "start file with all folds opened
+" autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
+" autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
+" --- --- ---

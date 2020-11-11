@@ -155,6 +155,7 @@ let g:which_key_map.l = {
       \ }
       " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
 
+
 " n is for NerdTree
 let g:which_key_map.n = {
       \ 'name' : '+nerdtree' ,
@@ -199,10 +200,10 @@ let g:which_key_map.S = {
       \ 'd' : [':SDelete!'  , 'Delete Session'] ,
       \ 'l' : [':SLoad'     , 'Load Session']   ,
       \ 'h' : [':Startify'  , 'Start Page']     ,
-      \ 's' : [':SSave!'    , 'Save Session']   ,
+      \ 'S' : [':SSave!'    , 'Save Session']   ,
       \ }
 " Spell checking, Pressing \SS will toggle and untoggle spell checking
-map <leader>SS :setlocal spell!<cr>
+map <leader>Ss :setlocal spell!<cr>
 
 " t is for terminal & tab
 let g:which_key_map.t = {
@@ -231,10 +232,12 @@ let g:which_key_map.t = {
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
-      \ 'name' : '+ultisnips or undo' ,
-      \ 'e' : [':UltiSnipsEdit'       , 'Ultisnips Edit'] ,
-      \ 't' : [':UndotreeToggle'      , 'UndoTree']       ,
+      \ 'name' : '+ultisnips or undo'                      ,
+      \ 't' : [':UndotreeToggle'                           , 'UndoTree']           ,
       \ }
+      " \ 'e' : [':CocCommand snippets.editSnippets<cr>'     , 'Ultisnips Edit']     ,
+      " \ 'f' : [':CocCommand snippets.openSnippetFiles<cr>' , 'Ultisnips Files']    ,
+      " \ 's' : [':CocList snippets<cr>'                     , 'Ultisnips Snippets'] ,
 
 " v is for vim
 let g:which_key_map.v = {
