@@ -128,17 +128,6 @@ set noshowmode              " We don't need to see things like -- INSERT -- anym
 " set formatoptions-=cro      " Stop newline continuation of comments
 " --- --- ---
 
-
-
-"--- Emmet Plugin ---
-" let g:user_emmet_settings = webapi#json#decode(join(readfile(expand('~/.vim/.snippets_custom.json')), "\n"))
-" let g:user_emmet_install_global = 0
-" autocmd FileType html,css,md EmmetInstall
-" if has("autocmd")
-"     autocmd FileType html,css,md EmmetInstall
-" endif
-" --- --- --- ---
-
 " --- Indentation ---
 " for html/rb files, 2 spaces
 filetype plugin indent on

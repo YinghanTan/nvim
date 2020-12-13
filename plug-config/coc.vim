@@ -35,6 +35,10 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
+
+
+
+
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
@@ -47,15 +51,38 @@ endif
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 
-" " GoTo code navigation.
-" nmap <silent> gd <Plug>(coc-definition)       " Goto Definition
-" nmap <silent> gy <Plug>(coc-type-definition)  " Goto tYpe definition
-" nmap <silent> gi <Plug>(coc-implementation)   " Goto Implementation
-" nmap <silent> gr <Plug>(coc-references)       " Goto References
-" nmap <silent> [g <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
-" nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
+" GoTo code navigation.
+" Goto Definition
+nmap <silent> gd <Plug>(coc-definition)
+" Goto tYpe definition
+nmap <silent> gy <Plug>(coc-type-definition)
+" Goto Implementation
+nmap <silent> gi <Plug>(coc-implementation)
+" Goto References
+nmap <silent> gr <Plug>(coc-references)
+
+
+" nmap gd <Plug>(coc-definition)
+" nmap gr <Plug>(coc-references)
+" nmap gy <Plug>(coc-type-definition)
+" nmap gi <Plug>(coc-implementation)
+
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
+
+
+nnoremap <leader>cr :CocRestart
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+
+" Coc Search & refactor
+nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
+let g:which_key_map['?'] = 'search word'
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" nmap rr <Plug>(coc-rename)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -71,8 +98,9 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" " Symbol renaming.
-" nmap <leader>rn <Plug>(coc-rename)
+
+
+
 
 " " Formatting selected code.
 " xmap <leader>f  <Plug>(coc-format-selected)
@@ -111,6 +139,8 @@ omap ac <Plug>(coc-classobj-a)
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
+
+
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')

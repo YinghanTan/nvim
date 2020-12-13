@@ -34,17 +34,6 @@ lua require'plug-colorizer'
 
 
 
-" if !exists('g:vscode')
-"   source $HOME/.config/nvim/plug-config/polyglot.vim
-" endif
-" if exists('g:vscode')
-"
-"     " VS Code extension
-"     source $HOME/.config/nvim/vscode/settings.vim
-"     source $HOME/.config/nvim/plug-config/easyMotion.vim
-"     source $HOME/.config/nvim/plug-config/highlightYank.vim
-"
-" else
 
 
 

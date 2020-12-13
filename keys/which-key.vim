@@ -164,6 +164,14 @@ let g:which_key_map.n = {
       \ 'f' : [':NERDTreeFind'                 , 'NerdTree Find'],
       \ }
 
+
+let g:which_key_map.o = {
+      \ 'name' : 'Obsess',
+      \ 's' : [':Obsess<CR>',   ':Obsess'],
+      \ 'S' : [':Obsess!<CR>',  ':Obsess!'],
+      \ }
+
+
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
@@ -260,19 +268,19 @@ let g:which_key_map.w = {
 
 " --- COC ---
 " GoTo code navigation.
-nmap gd <Plug>(coc-definition)
-nmap gr <Plug>(coc-references)
-nmap gy <Plug>(coc-type-definition)
-nmap gi <Plug>(coc-implementation)
-nmap rr <Plug>(coc-rename)
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" nmap gd <Plug>(coc-definition)
+" nmap gr <Plug>(coc-references)
+" nmap gy <Plug>(coc-type-definition)
+" nmap gi <Plug>(coc-implementation)
+" nmap rr <Plug>(coc-rename)
+" nmap <silent> [g <Plug>(coc-diagnostic-prev)
+" nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " nmap g[ <Plug>(coc-diagnostic-prev)
 " nmap g] <Plug>(coc-diagnostic-next)
-nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
-nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
-nnoremap <leader>cr :CocRestart
-nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+" nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
+" nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
+" nnoremap <leader>cr :CocRestart
+" nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 " --- --- ---
 
 " Coc Search & refactor

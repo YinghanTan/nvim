@@ -12,7 +12,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround' " Surround
     Plug 'tpope/vim-eunuch' " Files
     Plug 'airblade/vim-rooter' " Have the file system follow you around
-    " Plug 'tpope/vim-sleuth' " auto set indent settings
+    Plug 'tpope/vim-sleuth' " auto set indent settings
     Plug 'sheerun/vim-polyglot' " Better Syntax Support
     Plug 'ryanoasis/vim-devicons' "Cool icons
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
@@ -45,7 +45,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'easymotion/vim-easymotion' " Navigation
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise
-    " Plug 'dapplebeforedawn/vim-typing-practice' " Vim Practise
+    Plug 'wellle/targets.vim' " for editing paired text objects
 
 
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}

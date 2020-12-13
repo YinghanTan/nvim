@@ -1,3 +1,9 @@
+snippet reduce
+${1:obj}.reduce(function (${2:acc}, ${3:element}) {
+	${0:// callback}
+}${10:, ${11:0}});
+endsnippet
+
 snippet '':af "Object arrow function string"
 '${1:${2:#thing}:${3:click}}': `!p snip.rv = space_before_function_paren(snip)`(element) => {
 	${VISUAL}$0
