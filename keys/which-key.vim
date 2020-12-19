@@ -232,11 +232,11 @@ let g:which_key_map.t = {
       \ 'T' :       [ ':tabnew'                                        ,  'new tab'],
       \ }
 
-" " T is for tab
-" let g:which_key_map.T = {
-"       \ 'name' : '+tab' ,
-"       \ 't' :       [ ':tabnew'                  ,  'new tab'],
-"       \ }
+" T is for tab
+let g:which_key_map.T = {
+      \ 'name' : '+tab' ,
+      \ 'T' :       [ ':tabnew | terminal'                  ,  'new tab'],
+      \ }
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {

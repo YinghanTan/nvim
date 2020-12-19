@@ -24,12 +24,12 @@
     // autoformat
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
-        // "markdown",
+        "markdown",
         // "graphql",
-        // "javascript",
-        // "*.js",
+        "javascript",
+        "*.js",
         "html",
-        // "yaml",
+        "yaml",
         "json",
         "python"
     ],
@@ -43,6 +43,9 @@
         "javascriptreact"
     ],
     "prettier.tabWidth": 4,
+    "prettier.eslintIntegration": true,
+    "prettier.requireConfig": true,
+    // "prettier.onlyUseLocalVersion": true,
 
     // python config
     "python.linting.enabled": false,
