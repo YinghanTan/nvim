@@ -28,6 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-startify' " Start Screen
     Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     Plug 'honza/vim-snippets' " Snippets
+    Plug 'epilande/vim-react-snippets'
     " Plug 'mattn/emmet-vim' " Snippets
     Plug 'metakirby5/codi.vim' " interactive Code
     Plug 'mbbill/undotree' " Undo Time Travel

@@ -160,4 +160,23 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile " Then you can use :P
 " vmap <leader>f  <Plug>(coc-format-selected)
 " nmap <leader>f  <Plug>(coc-format-selected)
 
-
+let g:coc_global_extensions = [
+    \ 'coc-yank',
+    \ 'coc-ultisnips',
+    \ 'coc-snippets',
+    \ 'coc-prettier',
+    \ 'coc-marketplace',
+    \ 'coc-leetcode',
+    \ 'coc-eslint',
+    \ 'coc-emmet',
+    \ 'coc-yaml',
+    \ 'coc-vimlsp',
+    \ 'coc-tsserver',
+    \ 'coc-sh',
+    \ 'coc-python',
+    \ 'coc-jira-cplt',
+    \ 'coc-html',
+    \ 'coc-css',
+    \ 'coc-json',
+    \ 'coc-git'
+    \ ]
