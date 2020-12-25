@@ -89,5 +89,13 @@ autocmd VimEnter *
 "     Plug 'machakann/vim-highlightedyank'
 " else
 
-
+"
+" Brief help
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginUpdate
+" :PlugUpgrade
+"
 
