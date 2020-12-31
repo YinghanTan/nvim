@@ -30,8 +30,11 @@ source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 lua require'plug-colorizer'
 
-
-
+" Brief help
+" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugUpdate
+" :PlugUpgrade
 
 
 

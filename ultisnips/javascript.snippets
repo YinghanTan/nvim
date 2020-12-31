@@ -1,3 +1,23 @@
+snippet ren
+render() {
+	return ${1:(
+		${2:<div>
+			$0
+		</div>}
+	);}
+}
+endsnippet
+
+
+snippet rcon "React class constructor" b
+constructor(props) {
+	super(props)
+
+	this.state = {${1:}}$0
+}
+endsnippet
+
+
 snippet reduce
 ${1:obj}.reduce(function (${2:acc}, ${3:element}) {
 	${0:// callback}

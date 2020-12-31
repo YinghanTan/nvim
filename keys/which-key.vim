@@ -29,17 +29,29 @@ let g:which_key_map['/'] = [ ':let @/ = ""'    , 'Clear highlight' ]
 " let g:which_key_map['p'] = [ ':Files'          , 'search files' ]
 
 " Group mappings
-" a is for actions or ale
+
+
+" a is for actions
 let g:which_key_map.a = {
-      \ 'name' : '+actions',
-      \ 'c' : [':ColorizerToggle'             , 'colorizer'],
-      \ 'm' : ['<Plug>MarkdownPreviewToggle'  , 'markdown preview'],
+      \ 'name' : '+actions' ,
+      \ 'c' : [':ColorizerToggle'        , 'colorizer'],
+      \ 'e' : [':CocCommand explorer'    , 'explorer'],
+      \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
+      \ 'l' : [':Bracey'                 , 'start live server'],
+      \ 'L' : [':BraceyStop'             , 'stop live server'],
+      \ 'm' : ['<Plug>MarkdownPreviewToggle'  , 'markdown preview toggle'],
       \ 'M' : ['<Plug>MarkdownPreviewStop'    , 'markdown preview stop'],
+      \ 'n' : [':set nonumber!'          , 'line-numbers'],
+      \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
+      \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
+      \ 't' : [':FloatermToggle'         , 'terminal'],
+      \ 'v' : [':Codi'                   , 'virtual repl on'],
+      \ 'V' : [':Codi!'                  , 'virtual repl off'],
       \ }
-      " \ 'e' : [':CocCommand explorer'         , 'explorer'],
-      " \ 'j' : ['<Plug>(ale_next_wrap)'         , 'ale next wrap'],
-      " \ 'k' : ['<Plug>(ale_previous_wrap)'     , 'ale previous wrap'],
-      " \ 'f' : ['<Plug>(ale_fix)'                       , 'ale fix'],
+      " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
+
+
+
 
 " modify paste in visual mode to paste repeatedly
 xnoremap <leader>p "_dP

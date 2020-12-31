@@ -28,7 +28,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-startify' " Start Screen
     Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     Plug 'honza/vim-snippets' " Snippets
-    Plug 'epilande/vim-react-snippets'
+    Plug 'mlaursen/vim-react-snippets'
     " Plug 'mattn/emmet-vim' " Snippets
     Plug 'metakirby5/codi.vim' " interactive Code
     Plug 'mbbill/undotree' " Undo Time Travel
@@ -66,13 +66,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'editorconfig/editorconfig-vim'
     Plug 'vim-utils/vim-man'
     Plug 'leafgarland/typescript-vim'
+    Plug 'dbeniamine/cheat.sh-vim'
 
     " Themes
     Plug 'mhinz/vim-signify'
     Plug 'joshdick/onedark.vim'
 
     Plug 'tpope/vim-obsession' " Save Sessions on tmux
-    " Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
+    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
+
+    Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " live server
+
 call plug#end()
 
 
@@ -89,13 +93,4 @@ autocmd VimEnter *
 "     Plug 'machakann/vim-highlightedyank'
 " else
 
-"
-" Brief help
-" :PlugList       - lists configured plugins
-" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PlugSearch foo - searches for foo; append `!` to refresh local cache
-" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :PluginUpdate
-" :PlugUpgrade
-"
 

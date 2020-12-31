@@ -29,6 +29,7 @@ set showmatch                   " highlight matching brackets [{()}]
 set ruler                       " show current row and column
 set encoding=utf-8
 set history=1000                " increate the undo limit
+set t_Co=256
 " set scrolloff=8
 
 autocmd BufNewFile,BufRead,FileType,OptionSet * set formatoptions-=cro
