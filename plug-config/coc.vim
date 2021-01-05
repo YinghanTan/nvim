@@ -178,5 +178,7 @@ let g:coc_global_extensions = [
     \ 'coc-html',
     \ 'coc-css',
     \ 'coc-json',
-    \ 'coc-git'
+    \ 'coc-git',
+    \ 'coc-svg',
+    \ 'coc-xml',
     \ ]

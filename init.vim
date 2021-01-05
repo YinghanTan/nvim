@@ -13,7 +13,7 @@ source $HOME/.config/nvim/themes/airline.vim
 " Plugin Configuration
 source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
-source $HOME/.config/nvim/plug-config/start-screen.vim
+" source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/codi.vim
 source $HOME/.config/nvim/plug-config/easyMotion.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
@@ -28,13 +28,16 @@ source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
+source $HOME/.config/nvim/plug-config/bracey.vim
+source $HOME/.config/nvim/plug-config/leetcode.vim
 lua require'plug-colorizer'
 
 " Brief help
+" :PlugStatus     - Check Status of plugins
 " :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugUpdate     - To update your plugins
 " :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :PlugUpdate
-" :PlugUpgrade
+" :PlugUpgrade    - Upgrade vim-plug itself
 
 
 
