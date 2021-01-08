@@ -139,7 +139,7 @@ set expandtab                   " tabs are spaces
 set smartindent                 " automatically add indent 
 set autoindent                  " apply indentation of current line to next line
 set nowrap                      " text do not get wrappped around at the end of the line
-" autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 
