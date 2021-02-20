@@ -166,6 +166,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 
 " Javascript Settings
+au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set shiftround    " round indent to multiple of 'shiftwidth'
