@@ -1,4 +1,9 @@
-call which_key#register('<Space>', "g:which_key_map")    " Register which key map
+" Leader Key Maps
+
+" Timeout
+let g:which_key_timeout = 100
+let g:which_key_display_names = {'<CR>': '↵', '<TAB>': '⇆'}
+
 
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
@@ -6,9 +11,14 @@ vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
 let g:which_key_map =  {}    " Create map to add keys to
 let g:which_key_sep = '→'    " Define a separator
-let g:which_key_use_floating_win = 0     " Not a fan of floating windows for this
-" set timeoutlen=100
 
+" Coc Search & refactor
+nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
+let g:which_key_map['?'] = 'search word'
+
+" Not a fan of floating windows for this
+let g:which_key_use_floating_win = 0
+let g:which_key_max_size = 0
 
 " Change the colors if you want
 highlight default link WhichKey          Operator
@@ -23,72 +33,103 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 
 " Single mappings
-" let g:which_key_map['.'] = [ ':e $MYVIMRC'     , 'open init' ]
-let g:which_key_map[';'] = [ ':Commands'       , 'commands' ]
 let g:which_key_map['/'] = [ ':let @/ = ""'    , 'Clear highlight' ]
-" let g:which_key_map['p'] = [ ':Files'          , 'search files' ]
+let g:which_key_map['.'] = [ ':e $MYVIMRC'                                     , 'open init' ]
+let g:which_key_map[';'] = [ ':Commands'                                       , 'commands' ]
+let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
+let g:which_key_map['o'] = [ ':RnvimrToggle'                                   , 'open' ]
+let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix' ]
+" let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
+" let g:which_key_map['p'] = [ ':Files'                                          , 'search files' ]
+" let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
+" let g:which_key_map['/'] = [ ':call Comment()'                                 , 'comment' ]
+" let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
+" let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
+" let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
+" let g:which_key_map['='] = [ '<C-W>='                                          , 'balance windows' ]
+" let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
+" let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
+
 
 " Group mappings
-
 
 " a is for actions
 let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'e' : [':CocCommand explorer'    , 'explorer'],
-      \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
       \ 'l' : [':Bracey'                 , 'start live server'],
       \ 'L' : [':BraceyStop'             , 'stop live server'],
       \ 'm' : ['<Plug>MarkdownPreviewToggle'  , 'markdown preview toggle'],
-      \ 'M' : ['<Plug>MarkdownPreviewStop'    , 'markdown preview stop'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
-      \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 't' : [':FloatermToggle'         , 'terminal'],
       \ 'v' : [':Codi'                   , 'virtual repl on'],
       \ 'V' : [':Codi!'                  , 'virtual repl off'],
+      \ 'z' : [':MaximizerToggle'        , 'zoom'],
       \ }
+      " \ 't' : [':FloatermToggle'         , 'terminal'],
       " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
+      " \ 'M' : ['<Plug>MarkdownPreviewStop'    , 'markdown preview stop'],
+      " \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
+      " \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
 
-
-
-
-" modify paste in visual mode to paste repeatedly
-xnoremap <leader>p "_dP
 
 " b is for buffer
 let g:which_key_map.b = {
       \ 'name' : '+buffer' ,
-      \ '1' : ['b1'        , 'buffer 1'],
-      \ '2' : ['b2'        , 'buffer 2'],
-      \ 'd' : [':Bdelete'  , 'delete-buffer'],
       \ 'f' : ['bfirst'    , 'first-buffer'],
       \ 'l' : ['blast'     , 'last-buffer'],
       \ 'n' : ['bnext'     , 'next-buffer'],
       \ 'p' : ['bprevious' , 'previous-buffer'],
       \ 'b' : ['Buffers'   , 'fzf-buffer'],
       \ }
-      " \ 'h' : ['Startify'  , 'home-buffer'],
 
+" d is for debug
+let g:which_key_map.d = {
+      \ 'name' : '+debug' ,
+      \ 'b' : ['<Plug>VimspectorToggleBreakpoint'              , 'breakpoint'],
+      \ 'B' : ['<Plug>VimspectorToggleConditionalBreakpoint'   , 'conditional breakpoint'],
+      \ 'c' : ['<Plug>VimspectorRunToCursor'                   , 'run to cursor'],
+      \ 'd' : ['<Plug>VimspectorContinue'                      , 'continue'],
+      \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint'         , 'function breakpoint'],
+      \ 'm' : [':MaximizerToggle'                              , 'maximize window'],
+      \ 'o' : ['<Plug>VimspectorStepOver'                      , 'step over'],
+      \ 'O' : ['<Plug>VimspectorStepOut'                       , 'step out'],
+      \ 'i' : ['<Plug>VimspectorStepInto'                      , 'step into'],
+      \ 'p' : ['<Plug>VimspectorPause'                         , 'pause'],
+      \ 'r' : ['<Plug>VimspectorRestart'                       , 'restart'],
+      \ 'R' : ['VimspectorReset'                               , 'Reset'],
+      \ 'S' : ['<Plug>VimspectorStop'                          , 'stop'],
+      \ 'z' : [':MaximizerToggle'                              , 'zoom'],
+      \ }
+      " \ 'v' : [':call Vimspector#Launch()<cr>'                 , 'vimspector'],
+nmap <leader>dv :call vimspector#Launch()<CR>
+nmap <leader>de :VimspectorEval
+nmap <leader>dw :VimspectorWatch
+nmap <leader>ds :VimspectorShowOutput
 
-
+" f is for find and replace
 let g:which_key_map.f = {
       \ 'name' : '+find & replace' ,
-      \ 'b' : [':Farr --source=vimgrep'    , 'buffer'],
+      \ 'f' : [':Farr --source=vimgrep'    , 'file'],
       \ 'p' : [':Farr --source=rgnvim'     , 'project'],
       \ }
+
 
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git' ,
+      \ 'f' : [':diffget //2<CR>'                  , 'diffget left hunk'],
+      \ 'j' : [':diffget //3<CR>'                  , 'diffget right hunk'],
       \ 'a' : [':Git add .'                        , 'add all'],
-      \ 'A' : [':Git add %'                        , 'add current'],
+      \ 'A' : [':CocCommand fzf-preview.GitStatus' , 'actions'],
       \ 'b' : [':Git blame'                        , 'blame'],
       \ 'B' : [':GBrowse'                          , 'browse'],
       \ 'c' : [':Git commit'                       , 'commit'],
       \ 'd' : [':Gdiff'                            , 'diff'],
       \ 'D' : [':Gdiffsplit'                       , 'diff split'],
       \ 'g' : [':GGrep'                            , 'git grep'],
+      \ 'G' : [':Gstatus'                          , 'status'],
       \ 'h' : [':GitGutterLineHighlightsToggle'    , 'highlight hunks'],
       \ 'H' : ['<Plug>(GitGutterPreviewHunk)'      , 'preview hunk'],
       \ 'i' : [':Gist -b'                          , 'post gist'],
@@ -97,16 +138,18 @@ let g:which_key_map.g = {
       \ 'p' : [':Git push'                         , 'push'],
       \ 'P' : [':Gpull'                            , 'pull'],
       \ 'r' : [':GRemove'                          , 'remove'],
-      \ 'S' : ['<Plug>(GitGutterStageHunk)'        , 'stage hunk'],
-      \ 's' : [':G'                                , 'status'],
+      \ 's' : ['<Plug>(GitGutterStageHunk)'        , 'stage hunk'],
+      \ 'S' : [':CocCommand fzf-preview.GitStatus' , 'status'],
       \ 't' : [':GitGutterSignsToggle'             , 'toggle signs'],
       \ 'u' : ['<Plug>(GitGutterUndoHunk)'         , 'undo hunk'],
       \ 'v' : [':GV'                               , 'view commits'],
       \ 'V' : [':GV!'                              , 'view buffer commits'],
       \ 'w' : [':Gwrite'                           , 'Gwrite'],
-      \ 'j' : [':diffget //3<CR>'                  , 'diffget right hunk'],
-      \ 'f' : [':diffget //2<CR>'                  , 'diffget left hunk'],
       \ }
+      " \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
+      " \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
+      " \ 'A' : [':Git add %'                        , 'add current'],
+      " \ 's' : [':G'                                , 'status'],
 
 " G is for Gist
 let g:which_key_map.G = {
@@ -122,11 +165,18 @@ let g:which_key_map.G = {
       \ 'P' : [':Gist -p'                          , 'post private gist '],
       \ }
 
+" k is for cheat.sh
+" TODO
+
+
 " i is for indent
 let g:which_key_map.i = {
       \ 'name' : 'indent' ,
       \ 'g' : [':IndentGuidesToggle<CR>'               , 'Indent Guide'],
       \ }
+
+
+
 
 " l is for language server protocol
 let g:which_key_map.l = {
@@ -160,6 +210,7 @@ let g:which_key_map.l = {
       \ 's' : [':CocList -I symbols'                 , 'references'],
       \ 'S' : [':CocList snippets'                   , 'snippets'],
       \ 't' : ['<Plug>(coc-type-definition)'         , 'type definition'],
+      \ 'y' : ['<Plug>(coc-type-definition)'         , 'type definition'],
       \ 'u' : [':CocListResume'                      , 'resume list'],
       \ 'U' : [':CocUpdate'                          , 'update CoC'],
       \ 'z' : [':CocDisable'                         , 'disable CoC'],
@@ -176,54 +227,63 @@ let g:which_key_map.n = {
       \ 'f' : [':NERDTreeFind'                 , 'NerdTree Find'],
       \ }
 
-
 let g:which_key_map.o = {
       \ 'name' : 'Obsess',
       \ 's' : [':Obsess<CR>',   ':Obsess'],
       \ 'S' : [':Obsess!<CR>',  ':Obsess!'],
       \ }
 
-
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
-      \ 'f' : [':Files'                       , 'files'],
-      \ 'r' : [':Rg'                          , 'text Rg'],
+      \ '/' : [':History/'                    , 'history'],
+      \ ';' : [':FzfPreviewCommandPalette'              , 'commands'],
       \ 'a' : [':Ag'                          , 'text Ag'],
-      \ 'B' : [':BLines'                      , 'current buffer'],
-      \ 'l' : [':Lines'                       , 'lines'] ,
-      \ 'h' : [':History'                     , 'file history'],
-      \ 'H' : [':History:'                    , 'command history'],
+      \ 'b' : [':CocCommand fzf-preview.Buffers'               , 'open buffers'],
+      \ 'B' : [':CocCommand fzf-preview.BufferLines'                , 'current buffer'],
       \ 'c' : [':Commits'                     , 'commits'],
       \ 'C' : [':BCommits'                    , 'buffer commits'],
-      \ 'z' : [':FZF'                         , 'FZF'],
-      \ 'g' : [':GFiles'                      , 'git files'],
+      \ 'd' : [':CocCommand fzf-preview.DirectoryFiles'              , 'directories'],
+      \ 'f' : ['Files'                 , 'files'],
+      \ 'F' : [':CocCommand fzf-preview.ProjectFiles'                 , 'project files'],
+      \ 'g' : [':CocCommand fzf-preview.GitFiles'                , 'git files'],
       \ 'G' : [':GFiles?'                     , 'modified git files'],
-      \ 's' : [':CocList snippets'            , 'snippets'],
-      \ '/' : [':History/'                    , 'history'],
-      \ ';' : [':Commands'                    , 'commands'],
-      \ 'b' : [':Buffers'                     , 'open buffers'],
-      \ 'm' : [':Marks'                       , 'marks'] ,
-      \ 'M' : [':Maps'                        , 'normal maps'] ,
+      \ 'h' : [':History'                     , 'file history'],
+      \ 'H' : [':History:'                    , 'command history'],
+      \ 'l' : [':Lines'                       , 'lines'] ,
+      \ 'm' : [':CocCommand fzf-preview.Marks', 'list marks'],
+      \ 'M' : [':Maps'                  , 'normal maps'] ,
       \ 'p' : [':Helptags'                    , 'help tags'] ,
       \ 'P' : [':Tags'                        , 'project tags'],
+      \ 'q' : [':CocCommand fzf-preview.QuickFix'                  , 'quickfix list'],
+      \ 'r' : [':Rg'                          , 'text Rg'],
       \ 'S' : [':Colors'                      , 'color schemes'],
       \ 'T' : [':BTags'                       , 'buffer tags'],
       \ 'w' : [':Windows'                     , 'search windows'],
       \ 'y' : [':Filetypes'                   , 'file types'],
+      \ 'z' : [':FZF'                         , 'FZF'],
+      \ 's' : [':CocList snippets'            , 'Snippets Search'],
       \ }
+      " \ 'b' : [':Buffers'                     , 'open buffers'],
+      " \ 'B' : [':BLines'                      , 'current buffer'],
+      " \ 'f' : [':Files'                       , 'files'],
+      " \ 'g' : [':GFiles'                      , 'git files'],
+      " \ 'm' : [':Marks'                       , 'marks'] ,
+      " \ 'M' : [':Maps'                        , 'normal maps'] ,
 
-" S is for Startify
-let g:which_key_map.S = {
-      \ 'name' : '+Session' ,
-      \ 'c' : [':SClose'    , 'Close Session']  ,
-      \ 'd' : [':SDelete!'  , 'Delete Session'] ,
-      \ 'l' : [':SLoad'     , 'Load Session']   ,
-      \ 'h' : [':Startify'  , 'Start Page']     ,
-      \ 'S' : [':SSave!'    , 'Save Session']   ,
-      \ }
-" Spell checking, Pressing \SS will toggle and untoggle spell checking
-map <leader>Ss :setlocal spell!<cr>
+
+
+
+
+" let g:which_key_map.S = {
+"       \ 'name' : '+Session' ,
+"       \ 'c' : [':SClose'          , 'Close Session']  ,
+"       \ 'd' : [':SDelete'         , 'Delete Session'] ,
+"       \ 'l' : [':SLoad'           , 'Load Session']     ,
+"       \ 's' : [':Startify'        , 'Start Page']     ,
+"       \ 'S' : [':SSave'           , 'Save Session']   ,
+"       \ }
+
 
 " t is for terminal & tab
 let g:which_key_map.t = {
@@ -237,33 +297,36 @@ let g:which_key_map.t = {
       \ 'p' :       [ ':FloatermNew python3'                           , 'python'],
       \ 'r' :       [ ':FloatermNew ranger'                            , 'ranger'],
       \ 't' :       [ ':FloatermToggle'                                , 'toggle'],
+      \ 'T' :       [ ':tabnew | terminal'                             , 'new tab'],
       \ 'h' :       [ ':FloatermNew htop'                              , 'htop'],
       \ 's' :       [ ':FloatermNew ncdu'                              , 'ncdu'],
-      \ '<Left>' :  [ ':tabm -1'                                       ,  '<= Tab'],
-      \ '<Right>' : [ ':tabm +1'                                       ,  '=> Tab'],
-      \ 'T' :       [ ':tabnew'                                        ,  'new tab'],
       \ }
 
 " T is for tab
 let g:which_key_map.T = {
       \ 'name' : '+tab' ,
-      \ 'T' :       [ ':tabnew | terminal'                  ,  'new tab'],
+      \ '<Left>' :  [ ':tabm -1'                                       ,  '<= Tab'],
+      \ '<Right>' : [ ':tabm +1'                                       ,  '=> Tab'],
+      \ 'n' :       [ ':tabnew'                                        ,  'new tab'],
+      \ 'T' :       [ ':tabnew | terminal'                             , 'new tab'],
       \ }
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
       \ 'name' : '+ultisnips or undo'                      ,
+      \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'],
+      \ 'f' : [':CocCommand snippets.openSnippetFiles' , 'Ultisnips Files'],
+      \ 's' : [':CocList snippets'                     , 'Ultisnips Snippets'],
       \ 't' : [':UndotreeToggle'                           , 'UndoTree']           ,
       \ }
-      " \ 'e' : [':CocCommand snippets.editSnippets<cr>'     , 'Ultisnips Edit']     ,
-      " \ 'f' : [':CocCommand snippets.openSnippetFiles<cr>' , 'Ultisnips Files']    ,
-      " \ 's' : [':CocList snippets<cr>'                     , 'Ultisnips Snippets'] ,
+" convert visual selected code to snippet
+xmap <leader>uc  <Plug>(coc-convert-snippet)
+
 
 " v is for vim
 let g:which_key_map.v = {
       \ 'name' : '+vim' ,
       \ 'r' : [':e $MYVIMRC'                          , 'Edit vimrc'],
-      \ 'b' : [':VimBeGood'                          , 'Edit vimrc'],
       \ }
 
 " w is for wiki
@@ -271,60 +334,21 @@ let g:which_key_map.w = {
       \ 'name' : '+wiki' ,
       \ 'w' : ['<Plug>VimwikiIndex'                          , 'Wiki'],
       \ 'i' : ['<plug>VimwikiDiaryIndex'                     , 'dIary'],
-      \ 'T' : [':VimwikiTable<cr>'                           , 'vimwikiTable'],
+      \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
+      \ 't' : [':VimwikiTable'                           , 'vimwikiTable'],
       \ }
-
-" --- Leader Shortcuts ---
-" let mapleader="\\"       " leader is comma
-" --- --- ---
-
-" --- COC ---
-" GoTo code navigation.
-" nmap gd <Plug>(coc-definition)
-" nmap gr <Plug>(coc-references)
-" nmap gy <Plug>(coc-type-definition)
-" nmap gi <Plug>(coc-implementation)
-" nmap rr <Plug>(coc-rename)
-" nmap <silent> [g <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]g <Plug>(coc-diagnostic-next)
-" nmap g[ <Plug>(coc-diagnostic-prev)
-" nmap g] <Plug>(coc-diagnostic-next)
-" nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
-" nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
-" nnoremap <leader>cr :CocRestart
-" nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-" --- --- ---
-
-" Coc Search & refactor
-nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
-let g:which_key_map['?'] = 'search word'
 
 
 " --- Edit Files ---
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-map <leader>js :%!python3 -m json.tool<cr>
-map <leader>cd :cd %:p:h<cr>:pwd<cr>            " Switch CWD to the current directory
-" map <leader>pp :setlocal paste!<cr>             " Toggle paste mode on and off
-" set pastetoggle=<leader>pt       " paste mode: avoid auto indent, treat chars
+map <leader>aJ :%!python3 -m json.tool<cr>
+map <leader>aC :cd %:p:h<cr>:pwd<cr>            " Switch CWD to the current directory
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-" Spell checking, Pressing \ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
 " --- --- ---
 
-
-" " --- AutoPairs Plugin ---
-" let g:AutoPairsShortcutToggle= '<leader>ap'
-" let g:AutoPairsShortcutFastWrap= '<leader>aw'
-" let g:AutoPairsShortcutJump= '<leader>an'
-" let g:AutoPairsShortcutBackInsert= '<leader>ab'
-" " --- --- ---
-
-
-" Visually select the text that was last edited/pasted
-nmap gV `[v`]
-
-
+" Register which key map
+call which_key#register('<Space>', "g:which_key_map") 
 
 
 

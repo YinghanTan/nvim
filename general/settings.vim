@@ -1,4 +1,19 @@
+
+" " python with virtualenv support
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   project_base_dir = os.environ['VIRTUAL_ENV']
+"   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"   execfile(activate_this, dict(__file__=activate_this))
+" EOF
+
+
+
+
 " --- Standard Settings ---
+
 syntax on
 filetype plugin on
 set noswapfile                  " do not create a swap file"
@@ -140,21 +155,58 @@ set smartindent                 " automatically add indent
 set autoindent                  " apply indentation of current line to next line
 set nowrap                      " text do not get wrappped around at the end of the line
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
 
-" add yaml stuffs
+" Yaml Formatting
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 
-" for js/coffee/jade files, 4 spaces
-autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
+" Javascript Settings
+let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype javascript set shiftround    " round indent to multiple of 'shiftwidth'
+" autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype javascript set foldmethod=syntax "syntax highlighting items specify folds
 autocmd Filetype javascript set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype javascript let javaScript_fold=1 "activate folding by JS syntax
 autocmd Filetype javascript set foldlevelstart=99 "start file with all folds opened
+
+" for js/coffee:w/jade files, 4 spaces
 " autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
 " autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
 " --- --- ---
+
+" Python Settings
+let g:python_host_prog='/usr/bin/python'
+let g:python3_host_prog='/usr/bin/python3'
+autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns
+autocmd Filetype python set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype python set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+autocmd Filetype python set textwidth=79  " lines longer than 79 columns will be broken
+autocmd Filetype python set expandtab     " insert spaces when hitting TABs
+autocmd Filetype python set autoindent    " align the new line indent with the previous line
+autocmd Filetype python set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype python set fileformat=unix    " round indent to multiple of 'shiftwidth'
+autocmd Filetype python set foldmethod=indent " fold base on indentation
+autocmd Filetype python set foldlevelstart=99 "start file with all folds opened
+autocmd Filetype python set foldcolumn=1 "defines 1 col at window left, to indicate folding
+" Flagging Unnecessary Whitespace
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" Typescript settings
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
+autocmd Filetype typescript set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype typescript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype typescript set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
+autocmd Filetype typescript set textwidth=79  " lines longer than 79 columns will be broken
+autocmd Filetype typescript set expandtab     " insert spaces when hitting TABs
+autocmd Filetype typescript set autoindent    " align the new line indent with the previous line
+autocmd Filetype typescript set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype typescript set foldmethod=syntax "syntax highlighting items specify folds
+autocmd Filetype typescript set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype typescript set foldlevelstart=99 "start file with all folds opened

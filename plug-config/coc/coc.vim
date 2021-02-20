@@ -35,10 +35,6 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-
-
-
-
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
@@ -52,37 +48,21 @@ endif
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 
 " GoTo code navigation.
-" Goto Definition
 nmap <silent> gd <Plug>(coc-definition)
-" Goto tYpe definition
 nmap <silent> gy <Plug>(coc-type-definition)
-" Goto Implementation
 nmap <silent> gi <Plug>(coc-implementation)
-" Goto References
 nmap <silent> gr <Plug>(coc-references)
-
-
-" nmap gd <Plug>(coc-definition)
-" nmap gr <Plug>(coc-references)
-" nmap gy <Plug>(coc-type-definition)
-" nmap gi <Plug>(coc-implementation)
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> [G <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
 
-
 nnoremap <leader>cr :CocRestart
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
-" Coc Search & refactor
-nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
-let g:which_key_map['?'] = 'search word'
-
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-" nmap rr <Plug>(coc-rename)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -124,6 +104,8 @@ augroup end
 " " Apply AutoFix to problem on the current line.
 " nmap <leader>qf  <Plug>(coc-fix-current)
 
+
+" Introduce function text object
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
 xmap if <Plug>(coc-funcobj-i)
@@ -135,12 +117,18 @@ omap ic <Plug>(coc-classobj-i)
 xmap ac <Plug>(coc-classobj-a)
 omap ac <Plug>(coc-classobj-a)
 
+
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of LS, ex: coc-tsserver
 nmap <silent> <C-s> <Plug>(coc-range-select)
 xmap <silent> <C-s> <Plug>(coc-range-select)
 
-
+" NeoVim-only mapping for visual mode scroll
+" Useful on signatureHelp after jump placeholder of snippet expansion
+if has('nvim')
+  vnoremap <nowait><expr> <C-f> coc#float#has_scroll() ? coc#float#nvim_scroll(1, 1) : "\<C-f>"
+  vnoremap <nowait><expr> <C-b> coc#float#has_scroll() ? coc#float#nvim_scroll(0, 1) : "\<C-b>"
+endif
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
@@ -160,25 +148,9 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile " Then you can use :P
 " vmap <leader>f  <Plug>(coc-format-selected)
 " nmap <leader>f  <Plug>(coc-format-selected)
 
-let g:coc_global_extensions = [
-    \ 'coc-yank',
-    \ 'coc-ultisnips',
-    \ 'coc-snippets',
-    \ 'coc-prettier',
-    \ 'coc-marketplace',
-    \ 'coc-leetcode',
-    \ 'coc-eslint',
-    \ 'coc-emmet',
-    \ 'coc-yaml',
-    \ 'coc-vimlsp',
-    \ 'coc-tsserver',
-    \ 'coc-sh',
-    \ 'coc-python',
-    \ 'coc-jira-cplt',
-    \ 'coc-html',
-    \ 'coc-css',
-    \ 'coc-json',
-    \ 'coc-git',
-    \ 'coc-svg',
-    \ 'coc-xml',
-    \ ]
+
+" " dart/flutter
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+

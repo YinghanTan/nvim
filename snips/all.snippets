@@ -1,11 +1,15 @@
-snippet t "Simple tag" b
+snippet t "Tag default" b
 <${1:tag}>
 	${2:${VISUAL}}
 </${1/([\w:._-]+).*/$1/}>
 endsnippet
 
-snippet ti "Inline tag" i
+snippet ti "Tag Inline" i
 <${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet tc "Tag Close" i
+<${1:tag} />
 endsnippet
 
 snippet cb "CheckBox" b

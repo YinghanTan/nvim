@@ -1,3 +1,23 @@
+
+
+snippet var "var (name) = expr" w
+var ${1} = ${0};
+endsnippet
+
+snippet fun "function (named)" w
+function ${1:function_name}`!p snip.rv = space_before_function_paren(snip)`(${2:argument}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet ife "if (condition) { ... } else { ... }"
+if`!p snip.rv = keyword_spacing(snip)`(${1:true}) {
+	${2}
+}`!p snip.rv = keyword_spacing(snip)`else`!p snip.rv = keyword_spacing(snip)`{
+	${VISUAL}$0
+}
+endsnippet
+
 snippet ren
 render() {
 	return ${1:(

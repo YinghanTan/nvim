@@ -7,6 +7,12 @@
         "method": "m",
         "function": "ル"
     },
+    "snippets.priority": 1,
+    //"yank.priority": 1,
+    "suggest.languageSourcePriority": 99,
+    "coc.source.file.priority": 2,
+    "coc.source.around.priority": 3,
+    "coc.source.buffer.priority": 4,
 
     // diagnostics
     "diagnostic.errorSign": " ",
@@ -14,59 +20,108 @@
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": " ",
     "diagnostic.checkCurrentLine": true,
-    // "diagnostic.displayByAle": true,
     // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
+
+    // // codelens
+    // "codeLens.enable": true,
+    // "java.referencesCodeLens.enabled": true,
+    // "java.implementationsCodeLens.enabled": true,
+    // "java.completion.enabled": true,
+    // "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
 
     // list
     "list.indicator": ">",
     "list.selectedSignText": " ",
 
     // autoformat
+    "suggest.noselect": false,
     "coc.preferences.formatOnSaveFiletypes": [
         "css",
         "markdown",
-        // "graphql",
         "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
         "*.js",
+        "graphql",
         "html",
         "yaml",
         "json",
-        "python"
+        "python",
+        "java",
+        "dart"
     ],
     "coc.preferences.hoverTarget": "float",
-
+    "coc.preferences.formatOnType": true,
+    "tsserver.formatOnType": true,
+    "tsserver.enableJavascript": false,
     // Javascript config
+    "eslint.autoFixOnSave": true,
     "eslint.filetypes": [
         "javascript",
         "typescript",
         "typescriptreact",
-        "javascriptreact"
+        "javascriptreact",
+        "typescript.tsx"
     ],
-    "prettier.tabWidth": 4,
+    // "prettier.tabWidth": 4,
     "prettier.eslintIntegration": true,
     "prettier.requireConfig": true,
     // "prettier.onlyUseLocalVersion": true,
 
-    // python config
-    "python.linting.enabled": false,
-    "python.linting.pylintEnabled": false,
+    // python config coc-pyright
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.autoSearchPaths": true,
+    "python.analysis.diagnosticMode": "openFilesOnly",
+    "python.analysis.stubPath": "typings",
+    "python.analysis.typeshedPaths": [],
+    "python.analysis.diagnosticSeverityOverrides": {},
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.useLibraryCodeForTypes": true,
+    "python.pythonPath": "python3",
+    "python.venvPath": "",
     "python.formatting.provider": "black",
-    // "python.formatting.blackPath": "~/.local/bin/black",
-    // "python.linting.pylintPath": "~/.miniconda/envs/neovim/bin/pylint",
-    // "python.condaPath": "~/.miniconda/bin/conda",
-    // "python.sortImports.path": "~/.miniconda/envs/neovim/bin/isort",
-    // "python.jediPath": "~/.miniconda/envs/neovim/lib/python3.8/site-packages",
+    // Change this if you are using the packages in the repo instead
+    "python.formatting.blackPath": "~/.local/bin/black",
+    "python.formatting.blackArgs": [],
+    "python.linting.enabled": true,
+    "python.linting.pylintPath": "~/.local/bin/pylint",
+    "python.linting.pylintEnabled": false,
+    // "python.linting.pylintEnabled": true,
+    // "python.jediPath": "~/.local/lib/python3.8/site-packages",
+
+    // coc-jedi config
+    "jedi.executable.command": "~/.local/bin/jedi-language-server",
+    "jedi.diagnostics.enable": false,
+    "jedi.diagnostics.didOpen": false,
+    "jedi.diagnostics.didChange": false,
+    "jedi.diagnostics.didSave": false,
 
     // snippets
-    // "snippets.ultisnips.directories": ["~/.config/nvim/ultisnips"],
-    "snippets.userSnippetsDirectory": "~/.config/nvim/ultisnips",
+    "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
     "snippets.editSnippetsCommand": "vsplit",
+    "snippets.extends": {
+        "javascriptreact": ["javascript"],
+        "typescriptreact": ["typescript", "javascript", "javascript-jasmine-arrow"],
+        "typescript": ["typescript", "javascript", "javascript-jasmine-arrow"]
+    },
 
     // emmet
     "emmet.includeLanguages": {
         "vue-html": "html",
         "javascript": "javascriptreact"
-    }
+    },
+
+    // coc-jira-complete
+    "jira.workspaceUrl": "https://minterest.atlassian.net",
+    "jira.user.email": "yinghan.tan@minterest.sg",
+    "jira.user.apiKey": "X6FnMg0SxKNCAex3EIoTA6AC"
+
+    // // coc-pairs
+    // "pairs.disableLanguages": [],
+    // "pairs.enableCharacters": ["(", "[", "{", "<", "'", "\"", "`"],
+    // "pairs.enableBackspace": true
 
     // explorer
     // "explorer.width": 30,
