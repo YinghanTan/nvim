@@ -1,9 +1,9 @@
 let g:coc_global_extensions = [
     \ 'coc-fzf-preview',
     \ 'coc-actions',
-    \ 'coc-snippets',
     \ 'coc-yank',
     \ 'coc-ultisnips',
+    \ 'coc-snippets',
     \ 'coc-prettier',
     \ 'coc-marketplace',
     \ 'coc-leetcode',

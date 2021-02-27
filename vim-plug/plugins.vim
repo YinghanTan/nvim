@@ -33,6 +33,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Autocomplete
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+    Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'tpope/vim-surround' " Surround

@@ -1,0 +1,29 @@
+# top of custom snippets file
+priority 1
+
+snippet td "TODO comment" b
+// ${1:TODO}: ${2:description} <`!v strftime("%c")` - `!v g:snips_author`>$0
+endsnippet
+
+snippet var "var (name) = expr" w
+var ${1} = ${0};
+endsnippet
+
+snippet html:5 "html:5 boilerplate"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$1</title>
+</head>
+<body>
+	$2
+</body>
+</html>$0
+endsnippet
+
+snippet script "script" b
+<script${1: charset="${2:utf-8}"}>
+	$3
+</script>$0
+endsnippet

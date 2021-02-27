@@ -2,21 +2,21 @@
 " --- Coc Snippets ---
 
 " Disables default Ctrl J newline shortcut in vim
-let g:BASH_Ctrl_j = 'off'
-let g:C_Ctrl_j = 'off'
+" let g:BASH_Ctrl_j = 'off'
+" let g:C_Ctrl_j = 'off'
 
 
 " Use <C-l> for trigger snippet expand.
-imap <leader><tab> <Plug>(coc-snippets-expand)
+" imap <leader><tab> <Plug>(coc-snippets-expand)
 
 " Use <C-j> for select text for visual placeholder of snippet.
-vmap <C-j> <Plug>(coc-snippets-select)
+" vmap <C-j> <Plug>(coc-snippets-select)
 
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
-let g:coc_snippet_next = '<c-j>'
+" let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
-let g:coc_snippet_prev = '<c-k>'
+" let g:coc_snippet_prev = '<c-k>'
 
 
 

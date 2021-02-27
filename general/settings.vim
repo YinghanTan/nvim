@@ -30,7 +30,7 @@ set noerrorbells                " No error sounds
 set t_vb=                       " turn off visual bell
 set novisualbell                " turn off visual bell
 set tm=500
-set colorcolumn=80
+set colorcolumn=+1
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set hidden                      " Hide files in the background instead of closing them"
 set showmode
@@ -167,7 +167,8 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
-let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
+" let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
+" let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set shiftround    " round indent to multiple of 'shiftwidth'
 " autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
@@ -187,7 +188,7 @@ let g:python3_host_prog='/usr/bin/python3'
 autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns
 autocmd Filetype python set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype python set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
-autocmd Filetype python set textwidth=79  " lines longer than 79 columns will be broken
+autocmd Filetype python set textwidth=80  " lines longer than 79 columns will be broken
 autocmd Filetype python set expandtab     " insert spaces when hitting TABs
 autocmd Filetype python set autoindent    " align the new line indent with the previous line
 autocmd Filetype python set shiftround    " round indent to multiple of 'shiftwidth'
@@ -204,10 +205,16 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
 autocmd Filetype typescript set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype typescript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype typescript set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
-autocmd Filetype typescript set textwidth=79  " lines longer than 79 columns will be broken
+autocmd Filetype typescript set textwidth=80  " lines longer than 79 columns will be broken
 autocmd Filetype typescript set expandtab     " insert spaces when hitting TABs
 autocmd Filetype typescript set autoindent    " align the new line indent with the previous line
 autocmd Filetype typescript set shiftround    " round indent to multiple of 'shiftwidth'
 autocmd Filetype typescript set foldmethod=syntax "syntax highlighting items specify folds
 autocmd Filetype typescript set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype typescript set foldlevelstart=99 "start file with all folds opened
+
+
+" Git Settings
+autocmd FileType gitcommit set textwidth=72 " lines longer than 72 columns will be broken
+" In Git commit messages, also colour the 51st column (for titles)
+autocmd FileType gitcommit set colorcolumn+=51

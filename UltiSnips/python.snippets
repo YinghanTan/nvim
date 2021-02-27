@@ -1,3 +1,7 @@
+# top of custom snippets file
+priority 1
+
+
 # global !p
 # from snippet_helpers import *
 # endglobal
@@ -25,3 +29,6 @@ snippet #! "Shebang line" b
 endsnippet
 
 
+snippet td "TODO comment" b
+# ${1:TODO}: ${2:description} <`!v strftime("%c")` - `!v g:snips_author`>$0
+endsnippet

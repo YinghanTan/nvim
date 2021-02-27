@@ -99,7 +99,7 @@
     "jedi.diagnostics.didSave": false,
 
     // snippets
-    "snippets.userSnippetsDirectory": "~/.config/nvim/snips",
+    "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
     "snippets.editSnippetsCommand": "vsplit",
     "snippets.extends": {
         "javascriptreact": ["javascript"],

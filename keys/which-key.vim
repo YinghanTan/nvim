@@ -319,9 +319,10 @@ let g:which_key_map.u = {
       \ 's' : [':CocList snippets'                     , 'Ultisnips Snippets'],
       \ 't' : [':UndotreeToggle'                           , 'UndoTree']           ,
       \ }
+" \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'],
+" \ 'e' : [':UltiSnipsEdit<cr>'                    , 'Ultisnips Edit'],
 " convert visual selected code to snippet
 xmap <leader>uc  <Plug>(coc-convert-snippet)
-
 
 " v is for vim
 let g:which_key_map.v = {

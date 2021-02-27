@@ -1,10 +1,13 @@
 " Fire Neovim
+" nnoremap <C-w>M    :set lines=100 columns=100
+" nnoremap <C-w>m    :set lines=25 columns=100
 
 set guifont=FiraCode\ Nerd\ Font:h10 " for Firenvim only as Neovim does not use guifont only GVim uses guifont
 if !exists('g:started_by_firenvim')
   " set laststatus=0
   " augroup firenvim
   " general options
+
 else
     set laststatus=2
 endif
@@ -31,22 +34,23 @@ endif
 
 
 function! s:IsFirenvimActive(event) abort
-  if !exists('*nvim_get_chan_info')
-    return 0
-  endif
-  let l:ui = nvim_get_chan_info(a:event.chan)
-  return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
-      \ l:ui.client.name =~? 'Firenvim'
+    if !exists('*nvim_get_chan_info')
+        return 0
+    endif
+    let l:ui = nvim_get_chan_info(a:event.chan)
+    return has_key(l:ui, 'client') && has_key(l:ui.client, 'name') &&
+                \ l:ui.client.name =~? 'Firenvim'
 endfunction
 function! OnUIEnter(event) abort
-  if s:IsFirenvimActive(a:event)
-    " Disable the Status bar
-    " set laststatus=0
-    " Increase the font size
-    " set guifont=Hack\ Nerd\ Font:h10
-    " set guifont=FiraCode\ Nerd\ Font:h10
-
-  endif
+    if s:IsFirenvimActive(a:event)
+        " Disable the Status bar
+        " set laststatus=0
+        " Increase the font size
+        " set guifont=Hack\ Nerd\ Font:h10
+        " set guifont=FiraCode\ Nerd\ Font:h10
+        nnoremap <C-w>M    :set lines=100 columns=100<cr>
+        nnoremap <C-w>m    :set lines=25 columns=100<cr>
+    endif
 endfunction
 autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 

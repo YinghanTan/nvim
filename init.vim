@@ -8,6 +8,7 @@ source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim
+source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
