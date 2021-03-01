@@ -1,0 +1,40 @@
+# ----------------------------------------------------------
+# Header - type(scope): Brief description
+# ----------------------------------------------------------
+#    * feat             A new feature - SemVar PATCH
+#    * fix              A bug fix - SemVar MINOR
+#    * BREAKING CHANGE  Breaking API change - SemVar MAJOR
+#    * docs             Change to documentation only
+#    * style            Change to style (whitespace, etc.)
+#    * refactor         Change not related to a bug or feat
+#    * perf             Change that affects performance
+#    * test             Change that adds/modifies tests
+#    * build            Change to build system
+#    * ci               Change to CI pipeline/workflow
+#    * chore            General tooling/config/min refactor
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# Body - More description, if necessary
+# ----------------------------------------------------------
+#    * Motivation behind changes, more detail into how
+#      functionality might be affected, etc.
+# ----------------------------------------------------------
+
+
+# ----------------------------------------------------------
+# Footer - Associated issues, PRs, etc.
+# ----------------------------------------------------------
+#    * Ex: Resolves Issue #207, see PR #15, etc.
+# ----------------------------------------------------------
+
+
+Home Listings Podcasts Videos Tags Code of Conduct FAQ DEV Shop Sponsors About Privacy Policy Terms of use Contact Sign In/Up
+    
+DEV Community – A constructive and inclusive social network for software developers. With you every step of your journey.
+
+Built on Forem — the open source software that powers DEV and other inclusive communities.
+
+Made with love and Ruby on Rails. DEV Community © 2016 - 2021.
+

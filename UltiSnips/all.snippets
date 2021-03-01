@@ -1,15 +1,15 @@
 # top of custom snippets file
 priority 0
 
-snippet simp "Simple" !b
-`!p snip.rv = "Hello"`
-endsnippet
+# snippet simp "Simple" !b
+# `!p snip.rv = "Hello"`
+# endsnippet
 
-snippet uuid "UUID" !b
-`!p import uuid
-if not snip.c:
-	snip.rv = uuid.uuid4().hex`
-endsnippet
+# snippet uuid "UUID" !b
+# `!p import uuid
+# if not snip.c:
+# 	snip.rv = uuid.uuid4().hex`
+# endsnippet
 
 global !p
 def complete(t, opts):
@@ -20,9 +20,9 @@ def complete(t, opts):
 	return "(" + "|".join(opts) + ')'
 endglobal
 
-snippet '^ st' "Status" r
- status $1`!p snip.rv=complete(t[1], ['new','incomplete','invalid'])`
-endsnippet
+# snippet '^ st' "Status" r
+#  status $1`!p snip.rv=complete(t[1], ['new','incomplete','invalid'])`
+# endsnippet
 
 # snippet  "rep (\d+) (\w+)" "Repeat" r
 # `!p snip.rv = int(match.group(1))*match.group(2)`
@@ -84,7 +84,7 @@ snippet ti "Tag Inline" i
 endsnippet
 
 snippet tc "Tag Close" i
-<${1:tag} />
+<${1:${VISUAL}} />$0
 endsnippet
 
 snippet title "title" b
@@ -111,8 +111,6 @@ endsnippet
 snippet time "hh:mm" w
 `!v strftime("%H:%M")`
 endsnippet
-
-
 
 
 snippet lorem "lorem text" w
