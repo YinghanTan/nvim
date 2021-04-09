@@ -1,8 +1,6 @@
 " Fire Neovim
-" nnoremap <C-w>M    :set lines=100 columns=100
-" nnoremap <C-w>m    :set lines=25 columns=100
 
-set guifont=FiraCode\ Nerd\ Font:h10 " for Firenvim only as Neovim does not use guifont only GVim uses guifont
+set guifont=FiraCode\ Nerd\ Font:h17 " for Firenvim only as Neovim does not use guifont only GVim uses guifont
 if !exists('g:started_by_firenvim')
   " set laststatus=0
   " augroup firenvim
@@ -48,8 +46,8 @@ function! OnUIEnter(event) abort
         " Increase the font size
         " set guifont=Hack\ Nerd\ Font:h10
         " set guifont=FiraCode\ Nerd\ Font:h10
-        nnoremap <C-w>M    :set lines=100 columns=100<cr>
-        nnoremap <C-w>m    :set lines=25 columns=100<cr>
+        nnoremap <C-w>M :set lines=100 columns=100<cr>
+        nnoremap <C-w>m :set lines=25 columns=100<cr>
     endif
 endfunction
 autocmd UIEnter * call OnUIEnter(deepcopy(v:event))

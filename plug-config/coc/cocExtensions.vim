@@ -1,5 +1,6 @@
 let g:coc_global_extensions = [
     \ 'coc-fzf-preview',
+    \ 'coc-diagnostic',
     \ 'coc-actions',
     \ 'coc-yank',
     \ 'coc-ultisnips',
@@ -30,3 +31,18 @@ let g:coc_global_extensions = [
     \ ]
     " \ 'coc-python',
     " \ 'coc-pairs',
+
+
+
+
+
+" Brief help
+" :CocUninstall   - Uninstall extensions
+" :CocInstall     - installs extensions
+" :CocUpdate      - To update your extensions
+" :CocEnable      - Enable Coc
+" :CocDisable     - Disable Coc
+
+
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

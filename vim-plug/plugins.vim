@@ -13,7 +13,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
     Plug 'airblade/vim-rooter' " Have the file system follow you around
-    Plug 'tpope/vim-sleuth' " auto set indent settings
+    " Plug 'tpope/vim-sleuth' " auto set indent settings
     Plug 'sheerun/vim-polyglot' " Better Syntax Support
 
     Plug 'michaeljsmith/vim-indent-object' " text Objects
@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'godlygeek/tabular' " Alignment and formatting
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
+    Plug 'thinca/vim-qfreplace'
 
     " New / Testing
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting 
@@ -54,31 +55,39 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'terryma/vim-multiple-cursors'
     Plug 'mg979/vim-visual-multi', {'branch': 'master'} " multi cursors
     Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger
     Plug 'vim-utils/vim-man' "View man pages in vim. Grep for the man pages.
     Plug 'dbeniamine/cheat.sh-vim' "browse cheat sheet from cheat.sh directly from vim.
     Plug 'tpope/vim-obsession' " Save Sessions on tmux
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
     Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " view html, js, css live
+    " Telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     " Languages
     " Python
-    Plug 'tmhedberg/SimpylFold' "properly folding Python code
+    " Plug 'tmhedberg/SimpylFold' "properly folding Python code - slow when file gets large
     " Typescript
     Plug 'leafgarland/typescript-vim' " syntax highlighting for typescript keywords
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
 
     " Git
     Plug 'tpope/vim-fugitive' " Git
-    Plug 'tpope/vim-rhubarb' " Git
-    Plug 'junegunn/gv.vim' " Git
+    Plug 'tpope/vim-rhubarb' " enables Gbrowse for github
+    Plug 'shumphrey/fugitive-gitlab.vim' " enables Gbrwose for gitlab
+    Plug 'junegunn/gv.vim' " Git Commit Browser
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
 
 
 
-    Plug 'pedrohdz/vim-yaml-folds' "simple folding configuration for YAML
+    " Plug 'pedrohdz/vim-yaml-folds' "simple folding configuration for YAML - slow when file gets large
+    Plug 'konfekt/fastfold'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
     Plug 'editorconfig/editorconfig-vim'

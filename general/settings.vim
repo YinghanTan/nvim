@@ -58,10 +58,10 @@ set shortmess+=I                " Don't five intro message when starting vim
 
 " --- Folding ---
 set foldenable          " enable folding
-set foldmethod=syntax   "syntax highlighting items specify folds
+" set foldmethod=syntax   "syntax highlighting items specify folds - slow when file gets large
+set foldmethod=indent   "syntax highlighting items specify folds
 set foldcolumn=1        "defines 1 col at window left, to indicate folding
 set foldlevelstart=99   "start file with all folds opened
-" set foldmethod=indent   "syntax highlighting items specify folds
 " set fillchars=fold:-    " remove ---- in folds
 " --- --- ---
 
@@ -154,7 +154,10 @@ set expandtab                   " tabs are spaces
 set smartindent                 " automatically add indent 
 set autoindent                  " apply indentation of current line to next line
 set nowrap                      " text do not get wrappped around at the end of the line
+au BufNewFile,BufRead *.handlebars setlocal filetype=html
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype html set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype html set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
@@ -172,7 +175,7 @@ au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set shiftround    " round indent to multiple of 'shiftwidth'
 " autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
-autocmd Filetype javascript set foldmethod=syntax "syntax highlighting items specify folds
+autocmd Filetype javascript set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype javascript set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype javascript let javaScript_fold=1 "activate folding by JS syntax
 autocmd Filetype javascript set foldlevelstart=99 "start file with all folds opened
@@ -183,8 +186,8 @@ autocmd Filetype javascript set foldlevelstart=99 "start file with all folds ope
 " --- --- ---
 
 " Python Settings
-let g:python_host_prog='/usr/bin/python'
-let g:python3_host_prog='/usr/bin/python3'
+let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3'
+let g:python_host_prog='/usr/local/bin/python2'
 autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns
 autocmd Filetype python set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype python set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
@@ -209,12 +212,33 @@ autocmd Filetype typescript set textwidth=80  " lines longer than 79 columns wil
 autocmd Filetype typescript set expandtab     " insert spaces when hitting TABs
 autocmd Filetype typescript set autoindent    " align the new line indent with the previous line
 autocmd Filetype typescript set shiftround    " round indent to multiple of 'shiftwidth'
-autocmd Filetype typescript set foldmethod=syntax "syntax highlighting items specify folds
+autocmd Filetype typescript set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype typescript set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype typescript set foldlevelstart=99 "start file with all folds opened
+
+autocmd Filetype typescriptreact set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype typescriptreact set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype typescriptreact set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
+autocmd Filetype typescriptreact set textwidth=80  " lines longer than 79 columns will be broken
+autocmd Filetype typescriptreact set expandtab     " insert spaces when hitting TABs
+autocmd Filetype typescriptreact set autoindent    " align the new line indent with the previous line
+autocmd Filetype typescriptreact set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype typescriptreact set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype typescriptreact set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype typescriptreact set foldlevelstart=99 "start file with all folds opened
 
 
 " Git Settings
 autocmd FileType gitcommit set textwidth=72 " lines longer than 72 columns will be broken
+
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
+
+" Ruby Settings
+let g:ruby_host_prog='/opt/homebrew/opt/ruby/bin/ruby'
+
+
+
+" Disable F1 for Help Menu
+nmap <F1> :echo<CR>
+imap <F1> <C-o>:echo<CR>

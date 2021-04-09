@@ -1,14 +1,11 @@
 {
     // suggestions
-    // "suggest.echodocSupport": true,
-    // TODO add more labels and give them cool glyphs
     "suggest.completionItemKindLabels": {
         "text": "t",
         "method": "m",
         "function": "ル"
     },
     "snippets.priority": 1,
-    //"yank.priority": 1,
     "suggest.languageSourcePriority": 99,
     "coc.source.file.priority": 2,
     "coc.source.around.priority": 3,
@@ -20,14 +17,7 @@
     "diagnostic.infoSign": "",
     "diagnostic.hintSign": " ",
     "diagnostic.checkCurrentLine": true,
-    // "diagnostic.virtualText": true, // this won't work with codelens when error on same line
-
-    // // codelens
-    // "codeLens.enable": true,
-    // "java.referencesCodeLens.enabled": true,
-    // "java.implementationsCodeLens.enabled": true,
-    // "java.completion.enabled": true,
-    // "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
+    "diagnostic.virtualText": true, // this won't work with codelens when error on same line
 
     // list
     "list.indicator": ">",
@@ -43,7 +33,6 @@
         "typescript",
         "typescriptreact",
         "typescript.tsx",
-        "*.js",
         "graphql",
         "html",
         "yaml",
@@ -52,10 +41,11 @@
         "java",
         "dart"
     ],
-    "coc.preferences.hoverTarget": "float",
-    "coc.preferences.formatOnType": true,
-    "tsserver.formatOnType": true,
-    "tsserver.enableJavascript": false,
+    // "coc.preferences.formatOnType": true,
+
+    "tsserver.formatOnType": true, // Run format on type special characters., default: true
+    "tsserver.enableJavascript": true, // use tsserver for javascript files enabled by default
+    "codeLens.enable": false, // to speed things up
     // Javascript config
     "eslint.autoFixOnSave": true,
     "eslint.filetypes": [
@@ -65,9 +55,11 @@
         "javascriptreact",
         "typescript.tsx"
     ],
-    // "prettier.tabWidth": 4,
-    "prettier.eslintIntegration": true,
-    "prettier.requireConfig": true,
+    // "prettier.tabWidth": 4, // useful for some projects
+    // "prettier.eslintIntegration": true,
+    "prettier.requireConfig": false,
+    "prettier.bracketSpacing": true,
+    "prettier.disableSuccessMessage": false,
     // "prettier.onlyUseLocalVersion": true,
 
     // python config coc-pyright
@@ -110,7 +102,8 @@
     // emmet
     "emmet.includeLanguages": {
         "vue-html": "html",
-        "javascript": "javascriptreact"
+        "javascript": "javascriptreact",
+        "handlebars": "html"
     },
 
     // coc-jira-complete
@@ -118,18 +111,4 @@
     "jira.user.email": "yinghan.tan@minterest.sg",
     "jira.user.apiKey": "X6FnMg0SxKNCAex3EIoTA6AC"
 
-    // // coc-pairs
-    // "pairs.disableLanguages": [],
-    // "pairs.enableCharacters": ["(", "[", "{", "<", "'", "\"", "`"],
-    // "pairs.enableBackspace": true
-
-    // explorer
-    // "explorer.width": 30,
-    // "explorer.icon.enableNerdfont": true,
-    // "explorer.previewAction.onHover": false,
-    // "explorer.icon.enableVimDevicons": false,
-    // "explorer.keyMappings": {
-    //     "<cr>": ["expandable?", "expand", "open"],
-    //     "v": "open:vsplit"
-    // }
 }

@@ -31,13 +31,16 @@ source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
-source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/leetcode.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
-source $HOME/.config/nvim/plug-config/simpylfold.vim
-" source $HOME/.config/nvim/plug-config/jupytext.vim
-" source $HOME/.config/nvim/plug-config/iron.vim
+source $HOME/.config/nvim/plug-config/fastFold.vim
+luafile $HOME/.config/nvim/lua/config-telescope.lua
+source $HOME/.config/nvim/plug-config/markdownPreview.vim
+source $HOME/.config/nvim/plug-config/fzfPreview.vim
+source $HOME/.config/nvim/plug-config/markdown.vim
+source $HOME/.config/nvim/plug-config/gist.vim
+source $HOME/.config/nvim/plug-config/signify.vim
 
 lua require'plug-colorizer'
 

@@ -1,7 +1,8 @@
+priority 1
 
-snippet ti "Inline tag" i
-<${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
-endsnippet
+# snippet ti "Inline tag" i
+# <${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
+# endsnippet
 
 
 snippet html:5 "html:5 boilerplate"
@@ -101,11 +102,11 @@ snippet lorem "Lorem Ipsum Generator" i
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 endsnippet
 
-snippet t "A Simple Html Tag" b
-<${1:div}>
-	$2
-</${1/(\w+).*/$1/}>
-endsnippet
+# snippet t "A Simple Html Tag" b
+# <${1:div}>
+# 	$2
+# </${1/(\w+).*/$1/}>
+# endsnippet
 
 snippet todo "This is a To Do reminder" b
 <!-- TODO: `echo $USER` ${1:desc} `!v strftime("%c")` -->
