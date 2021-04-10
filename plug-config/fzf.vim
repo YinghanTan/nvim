@@ -12,7 +12,10 @@ let g:fzf_action = {
   \ 'ctrl-q': function('s:build_quickfix_list'),
   \ 'ctrl-t': 'tab split', 
   \ 'ctrl-x': 'split',     
-  \ 'ctrl-s': 'vsplit' }   
+  \ 'ctrl-s': 'split',     
+  \ 'ctrl-v': 'vsplit',
+  \ 'ctrl-l': {lines -> setreg('*', join(lines, "\n"))}}   
+
 " add to quickfix_list after selecting file
 " open in new tab after selecting file
 " open in new split after selecting file

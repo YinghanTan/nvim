@@ -41,6 +41,7 @@ source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/gist.vim
 source $HOME/.config/nvim/plug-config/signify.vim
+source $HOME/.config/nvim/plug-config/grepper.vim
 
 lua require'plug-colorizer'
 

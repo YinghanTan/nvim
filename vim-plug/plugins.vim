@@ -50,6 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'mhinz/vim-startify' " Start Screen
     Plug 'mbbill/undotree' " Undo Time Travel
     Plug 'ChristianChiarulli/far.vim' " Find and Replace
+    Plug 'mhinz/vim-grepper' " Handle multi-file find and replace.
     Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     " Plug 'terryma/vim-multiple-cursors'

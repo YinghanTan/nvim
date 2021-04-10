@@ -48,15 +48,16 @@ let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         ,
 " a is for actions
 let g:which_key_map.a = {
       \ 'name' : '+actions' ,
-      \ 'c' : [':ColorizerToggle'        , 'colorizer'],
-      \ 'C' : [':cd %:p:h<cr>:pwd<cr>'        , 'set current directory'],
-      \ 'l' : [':Bracey'                 , 'start live server'],
-      \ 'L' : [':BraceyStop'             , 'stop live server'],
-      \ 'm' : ['<Plug>MarkdownPreview'   , 'markdown preview toggle'],
-      \ 'M' : ['<Plug>MarkdownPreviewStop'    , 'markdown preview stop'],
-      \ 'v' : [':Codi'                   , 'virtual repl on'],
-      \ 'V' : [':Codi!'                  , 'virtual repl off'],
-      \ 'g' : [':IndentGuidesToggle<CR>'               , 'indent Guide'],
+      \ 'c' : [':ColorizerToggle'           , 'colorizer'],
+      \ 'C' : [':cd %:p:h<cr>:pwd<cr>'      , 'set current directory'],
+      \ 'l' : [':Bracey'                    , 'start live server'],
+      \ 'L' : [':BraceyStop'                , 'stop live server'],
+      \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle'],
+      \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'],
+      \ 's' : [':source $MYVIMRC'           , 'source init'],
+      \ 'v' : [':Codi'                      , 'virtual repl on'],
+      \ 'V' : [':Codi!'                     , 'virtual repl off'],
+      \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'],
       \ }
       " \ 't' : [':FloatermToggle'         , 'terminal'],
       " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
@@ -189,11 +190,12 @@ let g:which_key_map.o = {
 
 let g:which_key_map.q = {
       \ 'name' : 'QuickFix',
-      \ 'i' : [':CocDiagnostics', 'Diagnostics'],
-      \ 'q' : [':copen',   'QuickFix'],
-      \ 'Q' : [':cclose',   'close QuickFix'],
-      \ 'l' : [':lopen',  'LocalFix'],
-      \ 'L' : [':lclose',  'close LocalFix'],
+      \ 'i' : [':CocDiagnostics'    , 'Diagnostics'],
+      \ 'l' : [':lopen'             , 'LocalFix'],
+      \ 'L' : [':lclose'            , 'close LocalFix'],
+      \ 't' : [':Todo'              , 'Add todo to quickfix'],
+      \ 'q' : [':copen'             , 'QuickFix'],
+      \ 'Q' : [':cclose'            , 'close QuickFix'],
       \ }
       " " Use unimpaired shortcuts instead [q ]q [l ]l
       " \ 'j' : [':cnext',   'Cnext'],
@@ -344,7 +346,7 @@ let g:which_key_map.s = {
 "       \ }
 
 
-" t is for terminal & tab
+" t is for terminal
 let g:which_key_map.t = {
       \ 'name' : '+terminal' ,
       \ ';' :       [ ':FloatermNew --wintype=popup --height=6'        , 'terminal'],
@@ -366,6 +368,7 @@ let g:which_key_map.T = {
       \ '<Left>' :  [ ':tabm -1'                                       ,  '<= Tab'],
       \ '<Right>' : [ ':tabm +1'                                       ,  '=> Tab'],
       \ 'n' :       [ ':tabnew'                                        ,  'new tab'],
+      \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
       \ 'T' :       [ ':tabnew | terminal'                             , 'new tab'],
       \ }
 
