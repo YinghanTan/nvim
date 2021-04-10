@@ -1,11 +1,23 @@
+" Ctrl-A Ctrl-Q to select all and build quickfix list
+function! s:build_quickfix_list(lines)
+    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+    copen
+    cc
+endfunction
+
+
+
 " This is the default extra key bindings
 let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
   \ 'ctrl-t': 'tab split', 
   \ 'ctrl-x': 'split',     
   \ 'ctrl-s': 'vsplit' }   
+" add to quickfix_list after selecting file
 " open in new tab after selecting file
 " open in new split after selecting file
 " Open in vertical split after selecting file
+
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -30,12 +42,23 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 " <Ctrl-r>  -> previous ran commands
 " <alt-c> -> all the directories i can cd to
 
+" This is the default option:
+"   - Preview window on the right with 50% width
+"   - CTRL-/ will toggle preview window.
+" - Note that this array is passed as arguments to fzf#vim#with_preview function.
+" - To learn more about preview window options, see `--preview-window` section of `man fzf`.
+" let g:fzf_preview_window = ['right:50%', 'ctrl-/']
+
+
 
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } } " Border color
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+" let $FZF_DEFAULT_OPTS="--bind \"ctrl-a:select-all,ctrl-n:preview-down,ctrl-p:preview-up\""
+" let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --bind="ctrl-a:select-all,ctrl-d:deselect-all"'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden"
 
+" let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =

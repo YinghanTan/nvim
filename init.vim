@@ -35,7 +35,7 @@ source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/leetcode.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
-luafile $HOME/.config/nvim/lua/config-telescope.lua
+" luafile $HOME/.config/nvim/lua/config-telescope.lua
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
