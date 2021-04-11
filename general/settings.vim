@@ -186,8 +186,8 @@ autocmd Filetype javascript set foldlevelstart=99 "start file with all folds ope
 " --- --- ---
 
 " Python Settings
-" let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3'
-" let g:python_host_prog='/usr/local/bin/python2'
+" let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3' " Mac
+" let g:python_host_prog='/usr/local/bin/python2' " Mac
 autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns
 autocmd Filetype python set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype python set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
