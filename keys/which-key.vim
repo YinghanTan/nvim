@@ -50,18 +50,23 @@ let g:which_key_map.a = {
       \ 'name' : '+actions' ,
       \ 'c' : [':ColorizerToggle'           , 'colorizer'],
       \ 'C' : [':cd %:p:h<cr>:pwd<cr>'      , 'set current directory'],
-      \ 'l' : [':Bracey'                    , 'start live server'],
-      \ 'L' : [':BraceyStop'                , 'stop live server'],
-      \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle'],
-      \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'],
       \ 's' : [':source $MYVIMRC'           , 'source init'],
-      \ 'v' : [':Codi'                      , 'virtual repl on'],
-      \ 'V' : [':Codi!'                     , 'virtual repl off'],
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'],
       \ }
       " \ 't' : [':FloatermToggle'         , 'terminal'],
       " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
 
+" R is for render
+let g:which_key_map.R = {
+      \ 'name' : '+render' ,
+      \ 's' : [':CocCommand swagger.render' , 'swagger'],
+      \ 'l' : [':Bracey'                    , 'start live server'],
+      \ 'L' : [':BraceyStop'                , 'stop live server'],
+      \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle'],
+      \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'],
+      \ 'v' : [':Codi'                      , 'virtual repl on'],
+      \ 'V' : [':Codi!'                     , 'virtual repl off'],
+      \}
 
 " d is for debug
 let g:which_key_map.d = {

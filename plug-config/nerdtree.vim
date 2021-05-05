@@ -3,6 +3,10 @@
 " nnoremap <leader>nb :NERDTreeFromBookmark<Space>
 " nnoremap <silent> <leader>nf :NERDTreeFind<CR>
 " let NERDTreeMapOpenInTab="o"
+
+
+" Auto Refresh nerdtree
+" autocmd BufWritePost * NERDTreeFocus | execute 'normal R' | wincmd p
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 let NERDTreeMinimalUI = 0

@@ -24,17 +24,4 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-extends javascript, javascript-jasmine-arrow
-priority 2
-
-global !p
-from javascript_snippets import (
-	semi, space_before_function_paren, keyword_spacing
-)
-endglobal
-
-snippet fun "function (named)"
-function ${1:function_name}`!p snip.rv = space_before_function_paren(snip)`(${2:argument}) {
-	${VISUAL}$0
-}
-endsnippet
+extends html 
