@@ -26,6 +26,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'godlygeek/tabular' " Alignment and formatting
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
+    " Plug 'tpope/vim-commentary' " Code Commentting
     Plug 'thinca/vim-qfreplace'
 
     " New / Testing

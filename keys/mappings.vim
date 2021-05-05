@@ -35,8 +35,8 @@ xnoremap <Leader>rc :s///gc<Left><Left><Left>
 
 
 " Prevent x from overriding what's in the clipboard.
-noremap x "_x
-noremap X "_x
+" noremap x "_x
+" noremap X "_x
 
 " Ensure tabs don't get converted to spaces in Makefiles.
 autocmd FileType make setlocal noexpandtab

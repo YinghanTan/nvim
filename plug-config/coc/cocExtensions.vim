@@ -1,36 +1,38 @@
 let g:coc_global_extensions = [
+    \ 'coc-actions',
+    \ 'coc-css',
+    \ 'coc-cssmodules',
+    \ 'coc-emmet',
+    \ 'coc-eslint',
     \ 'coc-fzf-preview',
     \ 'coc-diagnostic',
-    \ 'coc-actions',
     \ 'coc-yank',
     \ 'coc-ultisnips',
     \ 'coc-snippets',
     \ 'coc-prettier',
     \ 'coc-marketplace',
     \ 'coc-leetcode',
-    \ 'coc-eslint',
     \ 'coc-jira-complete',
     \ 'coc-git',
     \ 'coc-java-debug',
     \ 'coc-java',
-    \ 'coc-emmet',
     \ 'coc-tslint-plugin',
     \ 'coc-tsserver',
     \ 'coc-yaml',
     \ 'coc-vimlsp',
     \ 'coc-sh',
     \ 'coc-html',
-    \ 'coc-css',
-    \ 'coc-cssmodules',
     \ 'coc-json',
     \ 'coc-svg',
     \ 'coc-xml',
     \ 'coc-pyright',
     \ 'coc-jedi',
     \ 'coc-flutter',
+    \ 'coc-swagger',
     \ ]
     " \ 'coc-python',
     " \ 'coc-pairs',
+    " 'coc-fzf',
 
 
 
@@ -46,3 +48,7 @@ let g:coc_global_extensions = [
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
+
+" Swagger
+" tip: add a (slightly) short command
+command -nargs=0 Swagger :CocCommand swagger.render

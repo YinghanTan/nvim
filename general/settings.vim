@@ -16,6 +16,7 @@
 
 syntax on
 filetype plugin on
+filetype plugin indent on
 set noswapfile                  " do not create a swap file"
 set nobackup                    " no backup because we have undodir"
 set undodir=~/.vim/undodir
@@ -146,6 +147,7 @@ set noshowmode              " We don't need to see things like -- INSERT -- anym
 
 " --- Indentation ---
 " for html/rb files, 2 spaces
+
 filetype plugin indent on
 set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
 set shiftwidth=4                " displacement of each shift is 4 spaces
@@ -154,12 +156,19 @@ set expandtab                   " tabs are spaces
 set smartindent                 " automatically add indent 
 set autoindent                  " apply indentation of current line to next line
 set nowrap                      " text do not get wrappped around at the end of the line
-au BufNewFile,BufRead *.handlebars setlocal filetype=html
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype html set shiftround    " round indent to multiple of 'shiftwidth'
 autocmd Filetype html set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+
+
+au BufNewFile,BufRead *.handlebars setlocal filetype=jst
+au BufNewFile,BufRead *.ejs set filetype=jst
+autocmd Filetype jst setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype jst set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype jst set foldmethod=indent "syntax highlighting items specify folds
+
 
 
 " Yaml Formatting
@@ -173,12 +182,33 @@ au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 " let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
 " let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype javascript set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype javascript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype javascript set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype javascript set expandtab     " insert spaces when hitting TABs
 autocmd Filetype javascript set shiftround    " round indent to multiple of 'shiftwidth'
 " autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype javascript set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype javascript set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype javascript let javaScript_fold=1 "activate folding by JS syntax
 autocmd Filetype javascript set foldlevelstart=99 "start file with all folds opened
+
+" Javascript Settings
+au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
+" let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
+" let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
+autocmd Filetype js setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype js set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype js set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype js set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype js set expandtab     " insert spaces when hitting TABs
+autocmd Filetype js set shiftround    " round indent to multiple of 'shiftwidth'
+" autocmd Filetype js setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype js set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype js set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype js let javaScript_fold=1 "activate folding by JS syntax
+autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
+
 
 " for js/coffee:w/jade files, 4 spaces
 " autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
@@ -205,7 +235,7 @@ autocmd Filetype python set foldcolumn=1 "defines 1 col at window left, to indic
 
 " Typescript settings
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
-au BufNewFile,BufRead *.tsx setlocal filetype=typescriptreact
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd Filetype typescript set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype typescript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype typescript set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
@@ -217,16 +247,16 @@ autocmd Filetype typescript set foldmethod=indent "syntax highlighting items spe
 autocmd Filetype typescript set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype typescript set foldlevelstart=99 "start file with all folds opened
 
-autocmd Filetype typescriptreact set tabstop=2     " a hard TAB displays as 2 columns
-autocmd Filetype typescriptreact set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
-autocmd Filetype typescriptreact set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
-autocmd Filetype typescriptreact set textwidth=80  " lines longer than 79 columns will be broken
-autocmd Filetype typescriptreact set expandtab     " insert spaces when hitting TABs
-autocmd Filetype typescriptreact set autoindent    " align the new line indent with the previous line
-autocmd Filetype typescriptreact set shiftround    " round indent to multiple of 'shiftwidth'
-autocmd Filetype typescriptreact set foldmethod=indent "syntax highlighting items specify folds
-autocmd Filetype typescriptreact set foldcolumn=1 "defines 1 col at window left, to indicate folding
-autocmd Filetype typescriptreact set foldlevelstart=99 "start file with all folds opened
+autocmd Filetype typescript.tsx set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype typescript.tsx set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype typescript.tsx set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
+autocmd Filetype typescript.tsx set textwidth=80  " lines longer than 79 columns will be broken
+autocmd Filetype typescript.tsx set expandtab     " insert spaces when hitting TABs
+autocmd Filetype typescript.tsx set autoindent    " align the new line indent with the previous line
+autocmd Filetype typescript.tsx set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype typescript.tsx set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype typescript.tsx set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype typescript.tsx set foldlevelstart=99 "start file with all folds opened
 
 
 " Git Settings
@@ -238,6 +268,17 @@ autocmd FileType gitcommit set colorcolumn+=51
 " Ruby Settings
 let g:ruby_host_prog='/opt/homebrew/opt/ruby/bin/ruby'
 
+" json
+autocmd Filetype json set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype json set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype json set shiftwidth=2  " operation >> indents 2 columns; << unindents 2 columns
+autocmd Filetype json set textwidth=80  " lines longer than 79 columns will be broken
+autocmd Filetype json set expandtab     " insert spaces when hitting TABs
+autocmd Filetype json set autoindent    " align the new line indent with the previous line
+autocmd Filetype json set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype json set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype json set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype json set foldlevelstart=99 "start file with all folds opened
 
 
 " Disable F1 for Help Menu
