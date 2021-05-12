@@ -19,8 +19,6 @@ filetype plugin on
 filetype plugin indent on
 set noswapfile                  " do not create a swap file"
 set nobackup                    " no backup because we have undodir"
-set undodir=~/.vim/undodir
-set undofile                    " creaets an undofile each time a file is opened with vim
 set incsearch                   " starting search before typing the parameter completes
 set ignorecase                  " Ignore case when searching
 set smartcase                   " search only include case when a case is added
@@ -181,6 +179,7 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 " let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
 " let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
+let g:node_host_prog = '/opt/homebrew/lib/node_modules/neovim/bin/cli.js' " Mac
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype javascript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
@@ -216,7 +215,7 @@ autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
 " --- --- ---
 
 " Python Settings
-" let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3' " Mac
+let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3' " Mac
 " let g:python_host_prog='/usr/local/bin/python2' " Mac
 " let g:python3_host_prog='/home/yinghan/.local/lib/python3.8' " Ubuntu
 autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns

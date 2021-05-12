@@ -53,6 +53,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ChristianChiarulli/far.vim' " Find and Replace
     Plug 'mhinz/vim-grepper' " Handle multi-file find and replace.
     Plug 'scrooloose/nerdtree' " File Explorer SideBar
+    Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     " Plug 'terryma/vim-multiple-cursors'
     Plug 'mg979/vim-visual-multi', {'branch': 'master'} " multi cursors
