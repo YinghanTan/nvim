@@ -13,9 +13,9 @@ let g:coc_global_extensions = [
     \ 'coc-marketplace',
     \ 'coc-leetcode',
     \ 'coc-jira-complete',
-    \ 'coc-git',
     \ 'coc-java-debug',
     \ 'coc-java',
+    \ 'coc-lua',
     \ 'coc-tslint-plugin',
     \ 'coc-tsserver',
     \ 'coc-yaml',
@@ -29,9 +29,11 @@ let g:coc_global_extensions = [
     \ 'coc-jedi',
     \ 'coc-flutter',
     \ 'coc-swagger',
+    \ 'coc-git',
     \ ]
     " \ 'coc-python',
     " \ 'coc-pairs',
+    " \ 'coc-hightlight',
     " 'coc-fzf',
 
 

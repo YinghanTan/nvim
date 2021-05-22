@@ -109,6 +109,7 @@
     // coc-jira-complete
     "jira.workspaceUrl": "https://minterest.atlassian.net",
     "jira.user.email": "yinghan.tan@minterest.sg",
-    "jira.user.apiKey": "X6FnMg0SxKNCAex3EIoTA6AC"
+    "jira.user.apiKey": "X6FnMg0SxKNCAex3EIoTA6AC",
+    "git.enableGutters": true
 
 }

@@ -86,6 +86,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/gv.vim' " Git Commit Browser
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
+    Plug 'rhysd/git-messenger.vim'
+    Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
 
 
 
@@ -96,7 +98,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'editorconfig/editorconfig-vim'
 
     " UIUX
-    Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     Plug 'ryanoasis/vim-devicons' "Cool icons

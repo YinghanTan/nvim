@@ -7,6 +7,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/which-key.vim
+source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
@@ -17,7 +18,6 @@ source $HOME/.config/nvim/themes/airline.vim
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
-" source $HOME/.config/nvim/plug-config/start-screen.vim
 source $HOME/.config/nvim/plug-config/codi.vim
 source $HOME/.config/nvim/plug-config/easyMotion.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
@@ -35,17 +35,20 @@ source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/leetcode.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
-luafile $HOME/.config/nvim/lua/config-telescope.lua
+source $HOME/.config/nvim/plug-config/git-messenger.vim
+
+" luafile $HOME/.config/nvim/lua/config-telescope.lua
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/gist.vim
-source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
+source $HOME/.config/nvim/plug-config/signify.vim
+" source $HOME/.config/nvim/plug-config/start-screen.vim
 
-lua require'plug-colorizer'
 
 " Brief help
 " :PlugStatus     - Check Status of plugins

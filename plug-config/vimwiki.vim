@@ -8,5 +8,5 @@ let wiki_1.ext = '.md'
 let g:vimwiki_list = [wiki_1]
 let g:vimwiki_folding = 'expr'
 " map <leader>wt :VimwikiTable<cr>
+
 nnoremap yot :syn on<cr>    " turn on syntax highlighting
-"  --- --- ---
