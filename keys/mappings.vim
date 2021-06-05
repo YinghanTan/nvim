@@ -9,6 +9,9 @@ nnoremap <silent> <C-w>z :MaximizerToggle<CR>
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
+" Open file under cursor in split
+nmap gF <c-w>f
+
 " Spell checking, Pressing \SS will toggle and untoggle spell checking
 map <leader>Ss :setlocal spell!<cr>
 " Spell checking, Pressing \ss will toggle and untoggle spell checking

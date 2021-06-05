@@ -10,7 +10,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Editing
-    Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
+     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
     Plug 'airblade/vim-rooter' " Have the file system follow you around
     " Plug 'tpope/vim-sleuth' " auto set indent settings
@@ -58,6 +58,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'terryma/vim-multiple-cursors'
     Plug 'mg979/vim-visual-multi', {'branch': 'master'} " multi cursors
     Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise
+    Plug 'ianding1/leetcode.vim' " LeetCode coding practise
     " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger

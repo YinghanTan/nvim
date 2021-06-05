@@ -11,7 +11,6 @@ let g:coc_global_extensions = [
     \ 'coc-snippets',
     \ 'coc-prettier',
     \ 'coc-marketplace',
-    \ 'coc-leetcode',
     \ 'coc-jira-complete',
     \ 'coc-java-debug',
     \ 'coc-java',
@@ -33,7 +32,9 @@ let g:coc_global_extensions = [
     \ ]
     " \ 'coc-python',
     " \ 'coc-pairs',
+    " \ 'coc-list',
     " \ 'coc-hightlight',
+    " \ 'coc-leetcode',
     " 'coc-fzf',
 
 

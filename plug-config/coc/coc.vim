@@ -53,6 +53,7 @@ nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gD :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
@@ -71,10 +72,10 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+" " Symbol renaming.
+" nmap <leader>rn <Plug>(coc-rename)
 
-nnoremap <leader>cr :CocRestart
+" nnoremap <leader>cr :CocRestart
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 

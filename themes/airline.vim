@@ -14,9 +14,9 @@ let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
 let g:airline#extensions#tabline#show_tab_type = 0     " disables the weird ornage arrow on the tabline
 
 
+let g:airline_extensions = ['branch', 'hunks', 'coc']   " Show branches hunks and COC
 " let g:airline#extensions#tabline#buffers_label = ''
 " let g:airline#extensions#tabline#tabs_label = ''
-let g:airline_extensions = ['branch', 'hunks', 'coc']   " Show branches hunks and COC
 let g:airline#extensions#coc#enabled = 1    " Enable COC Integration
 " let g:airline#extensions#tabline#fnamemod = ':t'    " Just show the file name
 

@@ -129,7 +129,7 @@ set conceallevel=0          " So that I can see `` in markdown files
 set background=dark         " tell vim what the background color looks like
 set nobackup                " This is recommended by coc
 set nowritebackup           " This is recommended by coc
-set updatetime=300          " Faster completion
+set updatetime=100          " Faster completion
 set timeoutlen=500          " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus   " Copy paste between vim and everything else
 set autochdir               " Your working directory will always be the same as your file directory
