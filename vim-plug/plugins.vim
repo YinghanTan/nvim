@@ -63,7 +63,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger
     Plug 'vim-utils/vim-man' "View man pages in vim. Grep for the man pages.
-    Plug 'dbeniamine/cheat.sh-vim' "browse cheat sheet from cheat.sh directly from vim.
+    " Plug 'dbeniamine/cheat.sh-vim' "browse cheat sheet from cheat.sh directly from vim.
+    Plug 'RishabhRD/popfix'
+    Plug 'RishabhRD/nvim-cheat.sh'
     Plug 'tpope/vim-obsession' " Save Sessions on tmux
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
     Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " view html, js, css live
@@ -88,7 +90,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
     Plug 'rhysd/git-messenger.vim'
-    Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
+    " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
 
 
 
