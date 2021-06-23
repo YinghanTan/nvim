@@ -31,4 +31,4 @@ set runtimepath+=~/.config/nvim/autoload/plugged/vim-react-snippets   " Vim Ulti
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "user_snippets", "pythonx"]
 
 " Hitting $ now directly translates into being in inline math mode. How cool is that?
-inoremap <silent> $$ $$<C-R>=UltiSnips#Anon(':latex:\`$1\`', '$$')<cr>
+" inoremap <silent> $$ $$<C-R>=UltiSnips#Anon(':latex:\`$1\`', '$$')<cr>

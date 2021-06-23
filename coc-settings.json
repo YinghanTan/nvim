@@ -17,7 +17,7 @@
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": " ",
   "diagnostic.checkCurrentLine": true,
-  "diagnostic.virtualText": true, // this won't work with codelens when error on same line
+  "diagnostic.virtualText": false, // this won't work with codelens when error on same line
 
   // list
   "list.indicator": ">",
@@ -39,7 +39,9 @@
     "json",
     "python",
     "java",
-    "dart"
+    "dart",
+    "bash",
+    "sh"
   ],
   // "coc.preferences.formatOnType": true,
 
@@ -47,14 +49,7 @@
   "tsserver.enableJavascript": true, // use tsserver for javascript files enabled by default
   "codeLens.enable": false, // to speed things up
   // Javascript config
-  "eslint.autoFixOnSave": true,
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact",
-    "typescript.tsx"
-  ],
+  "eslint.autoFixOnSave": true, // pause autofix
   // "prettier.tabWidth": 4, // useful for some projects
   // "prettier.eslintIntegration": true,
   "prettier.requireConfig": false,
@@ -72,10 +67,12 @@
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.useLibraryCodeForTypes": true,
   "python.pythonPath": "python3",
-  "python.venvPath": "",
+  // "python.venvPath": "",
+  "python.venvPath": "${env:HOME}/.pyenv/versions",
   "python.formatting.provider": "black",
   // Change this if you are using the packages in the repo instead
-  "python.formatting.blackPath": "~/.local/bin/black",
+  // "python.formatting.blackPath": "~/.local/bin/black",
+  "python.formatting.blackPath": "~/.pyenv/shims/black",
   "python.formatting.blackArgs": [],
   "python.linting.enabled": true,
   "python.linting.pylintPath": "~/.local/bin/pylint",

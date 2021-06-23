@@ -235,6 +235,7 @@ let g:which_key_map.q = {
       " \ 'n' : [':lnext',   'lnext'],
       " \ 'p' : [':lprev',  'lprev'],
 
+
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search'                                     ,
