@@ -111,5 +111,18 @@
   // coc-leetcode
   // "leetcode.language": "javascript"
   // coc-git
-  "git.enableGutters": true
+  "git.enableGutters": true,
+  // coc-sh
+  "languageserver": {
+      "bash": {
+          "command": "bash-language-server",
+          "args": ["start"],
+          "filetypes": ["sh", "bash"],
+          "ignoredRootPaths": ["~"]
+      }
+  },
+  "diagnostic-languageserver.filetypes": {
+      "sh": "shellcheck"
+  }
+
 }
