@@ -102,6 +102,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " UIUX
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
+    Plug 'nightsense/carbonized' " Theme
     Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     Plug 'ryanoasis/vim-devicons' "Cool icons
     Plug 'szw/vim-maximizer' " Zoom window

@@ -7,6 +7,11 @@ if (has("autocmd") && !has("gui_running"))
   augroup END
 endif
 
+" let g:carbonized_dark_CursorLineNr = 'off'
+" let g:carbonized_light_CursorLineNr = 'off'
+" let g:carbonized_dark_LineNr = 'off'
+" let g:carbonized_light_LineNr = 'off'
+
 hi Comment cterm=italic
 let g:onedark_hide_endofbuffer=1
 let g:onedark_terminal_italics=1
@@ -31,7 +36,8 @@ if !exists('g:loaded_color')
 
   set background=dark
   " Put your favorite colorscheme here
-  colorscheme onedark
+  " colorscheme onedark
+colorscheme carbonized-dark
   " colorscheme gruvbox
 endif
 
