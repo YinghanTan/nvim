@@ -17,7 +17,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 
 
 " let g:airline_extensions = ['branch', 'hunks', 'coc', 'fugitiveline', 'tabline']   " Show branches hunks and COC
-let g:airline_extensions = ['branch', 'hunks', 'coc', 'coc_git', 'fugitiveline', 'tabline']   " Show branches hunks and COC
+let g:airline_extensions = ['branch', 'hunks', 'coc', 'fugitiveline', 'tabline']   " Show branches hunks and COC
 " let g:airline#extensions#hunks#coc_git = 1
 let g:airline#extensions#coc#enabled = 1    " Enable COC Integration
 " let g:airline#extensions#tabline#buffers_label = ''

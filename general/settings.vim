@@ -209,6 +209,7 @@ autocmd Filetype js let javaScript_fold=1 "activate folding by JS syntax
 autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
 
 
+
 " for js/coffee:w/jade files, 4 spaces
 " autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
 " autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
@@ -259,7 +260,7 @@ autocmd Filetype typescript.tsx set foldlevelstart=99 "start file with all folds
 
 
 " Git Settings
-autocmd FileType gitcommit set textwidth=72 " lines longer than 72 columns will be broken
+autocmd FileType gitcommit set textwidth=80 " lines longer than 72 columns will be broken
 
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
@@ -279,6 +280,18 @@ autocmd Filetype json set foldmethod=indent "syntax highlighting items specify f
 autocmd Filetype json set foldcolumn=1 "defines 1 col at window left, to indicate folding
 autocmd Filetype json set foldlevelstart=99 "start file with all folds opened
 
+" Bash Settings
+au BufNewFile,BufRead *.sh setlocal filetype=sh
+autocmd Filetype sh setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype sh set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype sh set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype sh set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype sh set expandtab     " insert spaces when hitting TABs
+autocmd Filetype sh set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype sh set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype sh set foldcolumn=1 "defines 1 col at window left, to indicate folding
+" autocmd Filetype sh let javaScript_fold=1 "activate folding by sh syntax
+autocmd Filetype sh set foldlevelstart=99 "start file with all folds opened
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
