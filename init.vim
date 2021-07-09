@@ -8,9 +8,11 @@ source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/which-key.vim
 
+
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/carbonized.vim
+
 
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
@@ -42,10 +44,9 @@ source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 
-" Status Line
-source $HOME/.config/nvim/themes/airline.vim
 
 " luafile $HOME/.config/nvim/lua/config-telescope.lua
+
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
@@ -56,6 +57,8 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 " source $HOME/.config/nvim/plug-config/start-screen.vim
 
+" Status Line
+source $HOME/.config/nvim/themes/airline.vim
 
 
 " Brief help
