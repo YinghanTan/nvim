@@ -1,0 +1,72 @@
+# top of custom snippets file
+priority 1
+
+
+snippet afb "() => {}"
+(${1}) => {
+	${0:${VISUAL}}
+}
+endsnippet
+
+
+snippet td "TODO comment" b
+// ${1:TODO}: ${2:description} <`!v strftime("%c")` - `!v g:snips_author`>$0
+endsnippet
+
+snippet var "var (name) = expr" w
+var ${1} = ${0};
+endsnippet
+
+snippet html:5 "html:5 boilerplate"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$1</title>
+</head>
+<body>
+	$2
+</body>
+</html>$0
+endsnippet
+
+snippet script "script" b
+<script${1: charset="${2:utf-8}"}>
+	$3
+</script>$0
+endsnippet
+
+
+snippet const "const" b
+const ${1} = ${0};
+endsnippet
+
+snippet constn "const (name) = new (obj)" b
+const ${1} = new ${0};
+endsnippet
+
+snippet let "let" b
+let ${1} = ${0};
+endsnippet
+
+
+# snippet /* "A JSDoc comment" b
+# /**
+#  * ${1:${VISUAL/}}$0
+#  */
+# endsnippet
+
+
+
+# snippet /* "A JSDoc comment" b
+# /**
+# $1`!p snip.rv=' * ' + snip.v.text.replace('\n', '\n * ')`
+#  */
+# endsnippet
+
+# Swagger
+snippet /* "A JSDoc comment" b
+/**
+$1`!p snip.rv=' * ' + '\n * '.join(snip.v.text.strip().split('\n'))`
+ */
+endsnippet

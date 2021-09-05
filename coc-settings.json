@@ -1,0 +1,178 @@
+{
+  // suggestions
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": "ル"
+  },
+  "snippets.priority": 1,
+  "suggest.languageSourcePriority": 99,
+  "coc.source.file.priority": 2,
+  "coc.source.around.priority": 3,
+  "coc.source.buffer.priority": 4,
+
+  // diagnostics
+  "diagnostic.errorSign": " ",
+  "diagnostic.warningSign": " ",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": " ",
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.virtualText": false, // this won't work with codelens when error on same line
+
+  // list
+  "list.indicator": ">",
+  "list.selectedSignText": " ",
+
+  // autoformat
+  "suggest.noselect": false,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "markdown",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "typescript.tsx",
+    "graphql",
+    "html",
+    // "htmldjango",
+    "yaml",
+    "json",
+    "python",
+    "py",
+    "java",
+    "dart",
+    "bash",
+    "sh",
+    "zsh"
+  ],
+  "coc.preferences.formatOnType": true,
+
+  "tsserver.formatOnType": true, // Run format on type special characters., default: true
+  "tsserver.enableJavascript": true, // use tsserver for javascript files enabled by default
+  "codeLens.enable": false, // to speed things up
+  // Javascript config
+  "eslint.autoFixOnSave": true, // pause autofix
+  // "prettier.tabWidth": 4, // useful for some projects
+  // "prettier.eslintIntegration": true,
+  "prettier.requireConfig": false,
+  "prettier.bracketSpacing": true,
+  "prettier.disableSuccessMessage": false,
+  // "prettier.onlyUseLocalVersion": true,
+
+  // python config coc-pyright
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.stubPath": "typings",
+  "python.analysis.typeshedPaths": [],
+  "python.analysis.diagnosticSeverityOverrides": {},
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.pythonPath": "$HOME/.pyenv/versions/3.9.7/bin/python3",
+  // "python.pythonPath": "python",
+  "python.venvPath": "${env:HOME}/.pyenv/versions",
+  // "python.venvPath": "~/venvs/",
+  // formatting
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.pyenv/versions/3.9.7/bin/black",
+  "python.formatting.blackArgs": [],
+  /* "python.formatting.blackPath": "~/venvs/black/bin/black", */
+  // "python.formatting.blackPath": "~/.pyenv/shims/black",
+  // Change this if you are using the packages in the repo instead
+  // "python.formatting.blackPath": "~/.local/bin/black",
+
+  // linting
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": false,
+  /* "python.linting.pylintPath": "~/venvs/pylint/bin/pylint", */
+  "python.linting.pylintPath": "~/.pyenv/versions/3.9.7/bin/pylint",
+  "python.linting.pylintArgs": [
+      "--init-hook",
+      "import pylint_venv; pylint_venv.inithook(force_venv_activation=True)"
+  ],
+  /* "python.linting.pylintPath": "~/.local/bin/pylint", */
+  // "python.linting.pylintEnabled": true,
+  // "python.jediPath": "~/.local/lib/python3.8/site-packages",
+
+  // coc-jedi config
+  // "python.jediPath": "~/venvs/jedi/lib/python3.9/site-packages/",
+  // "python.jediPath": "~/.pyenv/versions/3.9.7/lib/python3.9/site-packages/",
+  // "python.jeditEnabled": false, */
+  // "suggest.timeout": 5000, */
+  // "jedi.executable.command": "~/.local/bin/jedi-language-server",
+  // "jedi.diagnostics.enable": false,
+  // "jedi.diagnostics.didOpen": false,
+  // "jedi.diagnostics.didChange": false,
+  // "jedi.diagnostics.didSave": false,
+
+  // snippets
+  "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
+  "snippets.editSnippetsCommand": "vsplit",
+  "snippets.extends": {
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["typescript", "javascript", "javascript-jasmine-arrow"],
+    "typescript": ["typescript", "javascript", "javascript-jasmine-arrow"]
+  },
+
+  // emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact",
+    "handlebars": "html"
+  },
+
+  // // coc-jira-complete
+  // "jira.workspaceUrl": "https://minterest.atlassian.net",
+  // "jira.user.email": "yinghan.tan@minterest.sg",
+  // "jira.user.apiKey": "X6FnMg0SxKNCAex3EIoTA6AC",
+  // "jira.workspaceUrl": "",
+  // "jira.user.email": "yinghan.yhtan@gmail.com",
+  // "jira.user.apiKey": "DNmfHpQ9e8iCMX43ZFR83088",
+
+  // coc-leetcode
+  // "leetcode.language": "javascript"
+  // coc-git
+  "git.enableGutters": true,
+  // coc-sh
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh", "bash", "zsh"],
+      "ignoredRootPaths": ["~"]
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    // lint `sh` (includes `bash`) files
+    "sh": "shellcheck",
+    "zsh": "shellcheck"
+  },
+  "diagnostic-languageserver.formatFileTypes": {
+    // format `sh` (includes `bash`) files using formatter defined below
+    "sh": "shfmt",
+    "zsh": "shfmt"
+  },
+  "diagnostic-languageserver.formatters": {
+    // define our formatter so that we can reference it from
+    // `diagnostic-languageserver.formatFiletypes`
+    "shfmt": {
+      "command": "shfmt",
+      // all the below args are entirely optional
+      // primarily listed here to call out that flags which take an
+      // argument (such as `-i <num-spaces>` for specifying indentation)
+      // should be split into two strings, the flag and then the value
+      "args": ["-i", "2", "-bn", "-ci", "-sr"]
+    }
+  },
+  "yaml.format.enable": true,
+  // coc-html
+  "html.enable": true,
+  "html.format.enable": true,
+  "html.filetypes": ["html", "handlebars", "djano", "htmldjango"],
+
+  // html django
+  "htmldjango.enable": true,
+  "htmldjango.djhtml.tabWidth": 2
+}

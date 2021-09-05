@@ -1,0 +1,34 @@
+# top of custom snippets file
+priority 1
+
+
+# global !p
+# from snippet_helpers import *
+# endglobal
+
+
+snippet : "Object key key: 'value'"
+${1:"${2:key}"}: ${3:"${4:value}"}${5:, }
+endsnippet
+
+
+snippet context "Description" b
+context "$1" do
+	${0:${VISUAL:# assertions}}
+end
+endsnippet
+
+snippet up1 "Unique Point" i
+std::unique_ptr<${1:${VISUAL:klass}}>
+endsnippet
+
+
+
+snippet #! "Shebang line" b
+#!/usr/bin/env python3
+endsnippet
+
+
+snippet td "TODO comment" b
+# ${1:TODO}: ${2:description} <`!v strftime("%c")` - `!v g:snips_author`>$0
+endsnippet
