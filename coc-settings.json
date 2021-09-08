@@ -69,13 +69,13 @@
   "python.analysis.diagnosticSeverityOverrides": {},
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.useLibraryCodeForTypes": true,
-  "python.pythonPath": "$HOME/.pyenv/versions/3.9.7/bin/python3",
+  "python.pythonPath": "$HOME/.pyenv/versions/3.8.12/bin/python3",
   // "python.pythonPath": "python",
   "python.venvPath": "${env:HOME}/.pyenv/versions",
   // "python.venvPath": "~/venvs/",
   // formatting
   "python.formatting.provider": "black",
-  "python.formatting.blackPath": "~/.pyenv/versions/3.9.7/bin/black",
+  "python.formatting.blackPath": "~/.pyenv/versions/3.8.12/bin/black",
   "python.formatting.blackArgs": [],
   /* "python.formatting.blackPath": "~/venvs/black/bin/black", */
   // "python.formatting.blackPath": "~/.pyenv/shims/black",
@@ -87,10 +87,10 @@
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": false,
   /* "python.linting.pylintPath": "~/venvs/pylint/bin/pylint", */
-  "python.linting.pylintPath": "~/.pyenv/versions/3.9.7/bin/pylint",
+  "python.linting.pylintPath": "~/.pyenv/versions/3.8.12/bin/pylint",
   "python.linting.pylintArgs": [
-      "--init-hook",
-      "import pylint_venv; pylint_venv.inithook(force_venv_activation=True)"
+    "--init-hook",
+    "import pylint_venv; pylint_venv.inithook(force_venv_activation=True)"
   ],
   /* "python.linting.pylintPath": "~/.local/bin/pylint", */
   // "python.linting.pylintEnabled": true,
@@ -98,7 +98,7 @@
 
   // coc-jedi config
   // "python.jediPath": "~/venvs/jedi/lib/python3.9/site-packages/",
-  // "python.jediPath": "~/.pyenv/versions/3.9.7/lib/python3.9/site-packages/",
+  // "python.jediPath": "~/.pyenv/versions/3.8.12/lib/python3.9/site-packages/",
   // "python.jeditEnabled": false, */
   // "suggest.timeout": 5000, */
   // "jedi.executable.command": "~/.local/bin/jedi-language-server",

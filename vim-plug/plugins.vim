@@ -45,7 +45,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
     Plug 'antoinemadec/coc-fzf'
-    " Plug 'jremmen/vim-ripgrep' " awaiting fixed version
+    Plug 'jremmen/vim-ripgrep' " awaiting fixed version
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'metakirby5/codi.vim' " interactive Code
     " Plug 'mhinz/vim-startify' " Start Screen
