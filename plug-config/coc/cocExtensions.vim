@@ -29,6 +29,7 @@ let g:coc_global_extensions = [
     \ 'coc-git',
     \ 'coc-docker',
     \ 'coc-htmldjango',
+    \ 'coc-vimtex',
     \ ]
     " \ 'coc-jira-complete',
     " \ 'coc-jedi',
