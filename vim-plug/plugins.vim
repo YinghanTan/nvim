@@ -10,7 +10,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Editing
-     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
+    Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
     Plug 'airblade/vim-rooter' " Have the file system follow you around
     " Plug 'tpope/vim-sleuth' " auto set indent settings
@@ -70,10 +70,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
     Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " view html, js, css live
     " Telescope
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-telescope/telescope-fzy-native.nvim'
+    " Plug 'nvim-lua/popup.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
+    " Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     " Languages
     " Python
