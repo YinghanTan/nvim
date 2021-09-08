@@ -43,6 +43,7 @@ source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
+source $HOME/.config/nvim/plug-config/vimtex.vim
 
 
 
