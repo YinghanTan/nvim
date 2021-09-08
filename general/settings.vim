@@ -182,7 +182,8 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 " let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
 " let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
-let g:node_host_prog = '/opt/homebrew/lib/node_modules/neovim/bin/cli.js' " Mac
+" let g:node_host_prog = '/opt/homebrew/lib/node_modules/neovim/bin/cli.js' " Mac
+let g:node_host_prog = '/Users/yinghan/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype javascript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
