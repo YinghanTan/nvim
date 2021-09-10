@@ -72,14 +72,13 @@ let g:vimtex_log_ignore = [
 let g:vimtex_context_pdf_viewer=1
 let g:vimtex_context_pdf_viewer= 'okular'
 
-" let g:vimtex_compiler_latexmk = { 
-"         \ 'executable' : 'latexmk',
-"         \ 'options' : [ 
-"         \   '-xelatex',
-" "       \   '-synctex=1',
-" "       \   '-interaction=nonstopmode',
-"         \ ],
-"         \}
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-interaction=batchmode',
+        \ ],
+        \}
 
 
 " SET SERVERNAME
