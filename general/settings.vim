@@ -323,6 +323,24 @@ autocmd Filetype zsh set foldcolumn=1 "defines 1 col at window left, to indicate
 " autocmd Filetype zsh let javaScript_fold=1 "activate folding by sh syntax
 autocmd Filetype zsh set foldlevelstart=99 "start file with all folds opened
 
+" LaTeX
+au BufNewFile,BufRead *.tex,*.sty,*.cls setlocal filetype=tex
+autocmd Filetype tex setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype tex set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype tex set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype tex set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype tex set expandtab     " insert spaces when hitting TABs
+autocmd Filetype tex set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype tex set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype tex set foldcolumn=1 "defines 1 col at window left, to indicate folding
+" autocmd Filetype tex let javaScript_fold=1 "activate folding by sh syntax
+autocmd Filetype tex set foldlevelstart=99 "start file with all folds opened
+setlocal autoindent
+let g:tex_indent_items=0
+let g:tex_indent_and=0
+let g:tex_indent_brace=0
+
+
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>

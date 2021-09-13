@@ -30,6 +30,7 @@ let g:coc_global_extensions = [
     \ 'coc-docker',
     \ 'coc-htmldjango',
     \ 'coc-vimtex',
+    \ 'coc-texlab',
     \ ]
     " \ 'coc-jira-complete',
     " \ 'coc-jedi',
