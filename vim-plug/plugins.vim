@@ -41,6 +41,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround' " Surround
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
 
+
+    " Dart
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'natebosch/dartlang-snippets'
+
     " Tools
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
@@ -111,8 +116,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
 
-    " Coc extensions
-    Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+    " " Coc extensions
+    " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 

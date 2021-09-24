@@ -174,5 +174,11 @@
 
   // html django
   "htmldjango.enable": true,
-  "htmldjango.djhtml.tabWidth": 2
+  "htmldjango.djhtml.tabWidth": 2,
+
+  // Dart Flutter
+
+  "dart.enableSdkFormatter": true,
+  "flutter.lsp.debug": true,
+"flutter.provider.enableSnippet": true
 }

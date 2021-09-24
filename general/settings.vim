@@ -341,6 +341,23 @@ let g:tex_indent_and=0
 let g:tex_indent_brace=0
 
 
+
+" dart Settings
+" au BufNewFile,BufRead *.dart setlocal filetype=dart
+" let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
+" let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
+autocmd Filetype dart setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype dart set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype dart set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype dart set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype dart set expandtab     " insert spaces when hitting TABs
+autocmd Filetype dart set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype dart set foldmethod=indent "syntax highlighting items specify folds
+autocmd Filetype dart set foldcolumn=1 "defines 1 col at window left, to indicate folding
+" autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
+" autocmd Filetype dart set foldlevelstart=99 "start file with all folds opened
+
+
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>

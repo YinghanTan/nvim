@@ -31,6 +31,8 @@ let g:coc_global_extensions = [
     \ 'coc-htmldjango',
     \ 'coc-vimtex',
     \ 'coc-texlab',
+    \ 'coc-flutter',
+    \ 'coc-flutter-tools',
     \ ]
     " \ 'coc-jira-complete',
     " \ 'coc-jedi',
