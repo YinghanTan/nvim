@@ -85,7 +85,11 @@ let g:fzf_preview_fzf_preview_window_option = ''
 " let g:fzf_preview_fzf_preview_window_option = 'up:30%'
 
 " Use vim-devicons
-let g:fzf_preview_use_dev_icons = 0
+let g:fzf_preview_use_dev_icons = 1
+
+" Use fzf history option
+" let g:fzf_preview_history_dir = false
+let g:fzf_preview_history_dir = '~/.fzf'
 
 " devicons character width
 let g:fzf_preview_dev_icon_prefix_string_length = 3
@@ -94,5 +98,5 @@ let g:fzf_preview_dev_icon_prefix_string_length = 3
 " By default icons are disable when number of results is higher that 5000
 let g:fzf_preview_dev_icons_limit = 5000
 
-" The theme used in the bat preview
+" " The theme used in the bat preview
 " $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'

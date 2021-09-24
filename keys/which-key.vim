@@ -404,6 +404,7 @@ let g:which_key_map.T = {
       \ 'T' :       [ ':tabnew | terminal' , 'new tab' ] ,
       \ }
       " \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
+map <leader>Tt :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
