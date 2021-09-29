@@ -35,7 +35,7 @@ set hidden                      " Hide files in the background instead of closin
 set showmode
 set showcmd
 set cursorline                  " highlight current line
-set relativenumber              " show relative row numbers
+" set relativenumber              " show relative row numbers
 set number                      " show line numbers
 set wildmenu                    " visual autocomplete for command menu
 set lazyredraw                  " redraw only when we need to.
