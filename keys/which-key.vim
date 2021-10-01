@@ -384,6 +384,7 @@ let g:which_key_map.t = {
       \ ';' :       [ ':FloatermNew --wintype=popup --height=6' , 'terminal' ] ,
       \ 'f' :       [ ':FloatermNew fzf'                        , 'fzf'      ] ,
       \ 'g' :       [ ':FloatermNew lazygit'                    , 'git'      ] ,
+      \ 'i' :       [ ':FloatermNew ipython'                    , 'ipython'   ] ,
       \ 'd' :       [ ':FloatermNew lazydocker'                 , 'docker'   ] ,
       \ 'n' :       [ ':FloatermNew node'                       , 'node'     ] ,
       \ 'N' :       [ ':FloatermNew nnn'                        , 'nnn'      ] ,
