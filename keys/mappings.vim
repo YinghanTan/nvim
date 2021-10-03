@@ -25,7 +25,7 @@ xnoremap <leader>p "_dP
 " set pastetoggle=<leader>pt       " paste mode: avoid auto indent, treat chars
 
 " Press * to search for the term under the cursor or a visual selection and
-" then press a key below to replace all instances of it in the current file.
+" then press the keys below to replace all instances of it in the current file.
 nnoremap <Leader>r :%s///g<Left><Left>
 nnoremap <Leader>rc :%s///gc<Left><Left><Left>
 

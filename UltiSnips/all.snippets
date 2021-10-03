@@ -69,8 +69,12 @@ endglobal
 
 
 
+# snippet : "Object key key: 'value'"
+# ${1:key}: ${2:"${3:value}"}${4:, }
+# endsnippet
+
 snippet : "Object key key: 'value'"
-${1:key}: ${2:"${3:value}"}${4:, }
+${1:"${2:key}"}:  ${3:"${4:value}"}${5:, }
 endsnippet
 
 snippet t "Tag default" b

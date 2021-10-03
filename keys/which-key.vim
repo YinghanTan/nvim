@@ -34,7 +34,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " Single mappings
 let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
-let g:which_key_map['.'   ] = [ ':e $MYVIMRC'                         , 'open init'          ]
+let g:which_key_map['.'   ] = [ ':tabnew | e $MYVIMRC'                , 'open init'          ]
 let g:which_key_map[';'   ] = [ ':Commands'                           , 'commands'           ]
 " let g:which_key_map['q' ] = [ '<Plug>(coc-fix-current)'           , 'quickfix'             ]
 " let g:which_key_map['u' ] = [ ':UndotreeToggle'                   , 'undo tree'            ]
@@ -82,24 +82,33 @@ let g:which_key_map.c = {
 let g:which_key_map.d = {
       \ 'name' : '+debug'                                    ,
       \ 'b' : ['<Plug>VimspectorToggleBreakpoint'            , 'breakpoint'             ] ,
-      \ 'B' : ['<Plug>VimspectorToggleConditionalBreakpoint' , 'conditional breakpoint' ] ,
-      \ 'c' : ['<Plug>VimspectorRunToCursor'                 , 'run to cursor'          ] ,
-      \ 'd' : ['<Plug>VimspectorContinue'                    , 'continue'               ] ,
+      \ 'B' : [':call vimspector#ClearBreakpoints()'         , 'remove all breakpoints' ] ,
+      \ 'c' : ['<Plug>VimspectorContinue'                    , 'continue'               ] ,
+      \ 'C' : ['<Plug>VimspectorRunToCursor'                 , 'run to cursor'          ] ,
       \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint'       , 'function breakpoint'    ] ,
+      \ 'F' : ['<Plug>VimspectorToggleConditionalBreakpoint' , 'conditional breakpoint' ] ,
+      \ 'i' : ['<Plug>VimspectorBalloonEval'                 , 'inspect'                ] ,
       \ 'm' : [':MaximizerToggle'                            , 'maximize window'        ] ,
-      \ 'o' : ['<Plug>VimspectorStepOver'                    , 'step over'              ] ,
-      \ 'O' : ['<Plug>VimspectorStepOut'                     , 'step out'               ] ,
-      \ 'i' : ['<Plug>VimspectorStepInto'                    , 'step into'              ] ,
+      \ 'n' : ['<Plug>VimspectorStepOver'                    , 'next'                   ] ,
+      \ 's' : ['<Plug>VimspectorStepInto'                    , 'step into'              ] ,
+      \ 'S' : ['<Plug>VimspectorStepOut'                     , 'step out'               ] ,
+      \ 'u' : ['<Plug>VimspectorUpFrame'                     , 'Up frame'               ] ,
+      \ 'd' : ['<Plug>VimspectorDownFrame'                   , 'Down frame'             ] ,
       \ 'p' : ['<Plug>VimspectorPause'                       , 'pause'                  ] ,
+      \ 'P' : ['<Plug>VimspectorStop'                        , 'stoP'                   ] ,
       \ 'r' : ['<Plug>VimspectorRestart'                     , 'restart'                ] ,
       \ 'R' : ['VimspectorReset'                             , 'Reset'                  ] ,
-      \ 'S' : ['<Plug>VimspectorStop'                        , 'stop'                   ] ,
-      \ 'v' : [':call vimspector#Launch()'                        , 'vimspector'                   ] ,
       \ }
-      " \ 'v' : [':call Vimspector#Launch()<cr>'                 , 'vimspector'],
-nmap <leader>de :VimspectorEval
-nmap <leader>dw :VimspectorWatch
-nmap <leader>ds :VimspectorShowOutput
+      " \ 'D' : [':call Vimspector#Launch()<cr>'               , 'debugger'               ] ,
+      " \ 'v' : [':call Vimspector#Launch()<cr>'                 , 'vimspector'                 ] ,
+      " \ 'e' : [':VimspectorEval'                               , 'Evaluate'                   ] ,
+      " \ 'w' : [':VimspectorWatch'                              , 'Watch'                      ] ,
+nnoremap <Leader>dD :call vimspector#Launch()<CR>
+nmap <leader>de :VimspectorEval 
+nmap <leader>dw :VimspectorWatch 
+nmap <leader>do :VimspectorShowOutput 
+ " debug inspect
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 " f is for find and replace
 let g:which_key_map.f = {
@@ -178,7 +187,7 @@ let g:which_key_map.G = {
 " l is for language server protocol
 let g:which_key_map.l = {
       \ 'name' : '+lsp'                                        ,
-      \ '.' : [':CocConfig'                                    , 'config'          ] ,
+      \ '.' : [':tabnew | CocConfig'                           , 'config'          ] ,
       \ ';' : ['<Plug>(coc-refactor)'                          , 'refactor'        ] ,
       \ 'a' : ['<Plug>(coc-codeaction)'                        , 'line action'     ] ,
       \ 'A' : ['<Plug>(coc-codeaction-selected)'               , 'selected action' ] ,
@@ -384,7 +393,8 @@ let g:which_key_map.t = {
       \ ';' :       [ ':FloatermNew --wintype=popup --height=6' , 'terminal' ] ,
       \ 'f' :       [ ':FloatermNew fzf'                        , 'fzf'      ] ,
       \ 'g' :       [ ':FloatermNew lazygit'                    , 'git'      ] ,
-      \ 'i' :       [ ':FloatermNew ipython'                    , 'ipython'   ] ,
+      \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
+      \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
       \ 'd' :       [ ':FloatermNew lazydocker'                 , 'docker'   ] ,
       \ 'n' :       [ ':FloatermNew node'                       , 'node'     ] ,
       \ 'N' :       [ ':FloatermNew nnn'                        , 'nnn'      ] ,
@@ -395,6 +405,7 @@ let g:which_key_map.t = {
       \ 'h' :       [ ':FloatermNew htop'                       , 'htop'     ] ,
       \ 's' :       [ ':FloatermNew ncdu'                       , 'ncdu'     ] ,
       \ }
+      " \ 'i' :       [ ':FloatermNew! ipython'                   , 'ipython'  ] ,
 
 " T is for tab
 let g:which_key_map.T = {

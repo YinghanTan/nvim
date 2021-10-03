@@ -45,6 +45,7 @@ source $HOME/.config/nvim/plug-config/git-messenger.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/dart.vim
+source $HOME/.config/nvim/plug-config/easy-align.vim
 
 
 
