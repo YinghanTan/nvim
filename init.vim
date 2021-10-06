@@ -13,6 +13,7 @@ source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/carbonized.vim
 
 
+
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim

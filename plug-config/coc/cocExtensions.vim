@@ -54,9 +54,9 @@ let g:coc_fzf_opts = []
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Swagger
-" tip: add a (slightly) short command
-command -nargs=0 Swagger :CocCommand swagger.render
+" " Swagger
+" " tip: add a (slightly) short command
+" command -nargs=0 Swagger :CocCommand swagger.render
 
 " yaegassy/coc-htmldjango
 let g:coc_filetype_map = {
