@@ -389,23 +389,25 @@ let g:which_key_map.s = {
 
 " t is for terminal
 let g:which_key_map.t = {
-      \ 'name' : '+terminal'                                    ,
-      \ ';' :       [ ':FloatermNew --wintype=popup --height=6' , 'terminal' ] ,
-      \ 'f' :       [ ':FloatermNew fzf'                        , 'fzf'      ] ,
-      \ 'g' :       [ ':FloatermNew lazygit'                    , 'git'      ] ,
-      \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
-      \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
-      \ 'd' :       [ ':FloatermNew lazydocker'                 , 'docker'   ] ,
-      \ 'n' :       [ ':FloatermNew node'                       , 'node'     ] ,
-      \ 'N' :       [ ':FloatermNew nnn'                        , 'nnn'      ] ,
-      \ 'p' :       [ ':FloatermNew python3'                    , 'python'   ] ,
-      \ 'r' :       [ ':RnvimrToggle'                           , 'ranger'   ] ,
-      \ 'R' :       [ ':FloatermNew ranger'                     , 'ranger'   ] ,
-      \ 't' :       [ ':FloatermToggle'                         , 'toggle'   ] ,
-      \ 'h' :       [ ':FloatermNew htop'                       , 'htop'     ] ,
-      \ 's' :       [ ':FloatermNew ncdu'                       , 'ncdu'     ] ,
+      \ 'name' : '+terminal',
+      \ ';': [ ':FloatermNew --wintype=popup --height=6' , 'terminal'       ] ,
+      \ 'f': [ ':FloatermNew fzf'                        , 'fzf'            ] ,
+      \ 'g': [ ':FloatermNew lazygit'                    , 'git'            ] ,
+      \ 'i': [ ':vsplit | terminal ipython'              , 'ipython vsplit' ] ,
+      \ 'I': [ ':tabnew | terminal ipython'              , 'ipython'        ] ,
+      \ 'd': [ ':FloatermNew lazydocker'                 , 'docker'         ] ,
+      \ 'n': [ ':FloatermNew node'                       , 'node'           ] ,
+      \ 'N': [ ':FloatermNew nnn'                        , 'nnn'            ] ,
+      \ 'p': [ ':FloatermNew python3'                    , 'python'         ] ,
+      \ 'r': [ ':RnvimrToggle'                           , 'ranger'         ] ,
+      \ 'R': [ ':FloatermNew ranger'                     , 'ranger'         ] ,
+      \ 't': [ ':FloatermToggle'                         , 'toggle'         ] ,
+      \ 'h': [ ':FloatermNew htop'                       , 'htop'           ] ,
+      \ 's': [ ':FloatermNew ncdu'                       , 'ncdu'           ] ,
       \ }
       " \ 'i' :       [ ':FloatermNew! ipython'                   , 'ipython'  ] ,
+      " \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
+      " \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
 
 " T is for tab
 let g:which_key_map.T = {

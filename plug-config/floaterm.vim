@@ -26,3 +26,14 @@ tnoremap   <silent>   <leader>tt  <C-\><C-n>:FloatermToggle<CR>
 " --- nvim-toggle-terminal ---
 " tnoremap <expr> <Esc> (&filetype == "fzf") ? "<Esc>" : "<c-\><c-n>"
 " --- --- ---
+
+
+
+function! IpythonOpen()
+	FloatermNew --wintype=normal --position=right --width=0.5
+	normal h
+	normal 
+	FloatermSend (cd %:p:h ; ipython --no-autoindent; clear)
+	" brackets necessary above, runs a minishell
+	call feedkeys("\<Esc>")
+endfunction
