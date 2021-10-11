@@ -98,6 +98,7 @@ let g:which_key_map.d = {
       \ 'P' : ['<Plug>VimspectorStop'                        , 'stoP'                   ] ,
       \ 'r' : ['<Plug>VimspectorRestart'                     , 'restart'                ] ,
       \ 'R' : ['VimspectorReset'                             , 'Reset'                  ] ,
+      \ 'w' : [':call AddToWatch()<CR>'                      , 'watch'                  ] ,
       \ }
       " \ 'D' : [':call Vimspector#Launch()<cr>'               , 'debugger'               ] ,
       " \ 'v' : [':call Vimspector#Launch()<cr>'                 , 'vimspector'                 ] ,

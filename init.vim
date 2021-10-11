@@ -40,7 +40,6 @@ source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/leetcode.vim
-source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
@@ -60,6 +59,7 @@ source $HOME/.config/nvim/plug-config/gist.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
+source $HOME/.config/nvim/plug-config/vimspector.vim
 " source $HOME/.config/nvim/plug-config/start-screen.vim
 
 " Status Line
