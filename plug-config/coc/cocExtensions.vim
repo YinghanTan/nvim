@@ -61,6 +61,7 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " yaegassy/coc-htmldjango
 let g:coc_filetype_map = {
   \ 'jinja.html': 'htmldjango',
+  \ 'htmldjango': 'html',
   \ }
 
 

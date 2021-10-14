@@ -170,7 +170,7 @@
   // coc-html
   "html.enable": true,
   "html.format.enable": true,
-  "html.filetypes": ["html", "handlebars", "djano", "htmldjango"],
+  "html.filetypes": ["html", "handlebars", "django", "htmldjango"],
 
   // html django
   "htmldjango.enable": true,
@@ -180,5 +180,5 @@
 
   "dart.enableSdkFormatter": true,
   "flutter.lsp.debug": true,
-"flutter.provider.enableSnippet": true
+  "flutter.provider.enableSnippet": true
 }
