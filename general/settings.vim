@@ -23,7 +23,7 @@ set incsearch                   " starting search before typing the parameter co
 set ignorecase                  " Ignore case when searching
 set smartcase                   " search only include case when a case is added
 set hlsearch                    " highlight search results
-set lazyredraw                  " Don't redraw while executing macros (good performance config)
+set nolazyredraw                  " Don't redraw while executing macros (good performance config)
 set magic                       " For regular expressions turn magic on
 set noerrorbells                " No error sounds
 set t_vb=                       " turn off visual bell
@@ -38,7 +38,6 @@ set cursorline                  " highlight current line
 " set relativenumber              " show relative row numbers
 set number                      " show line numbers
 set wildmenu                    " visual autocomplete for command menu
-set lazyredraw                  " redraw only when we need to.
 set showmatch                   " highlight matching brackets [{()}]
 set ruler                       " show current row and column
 set encoding=utf-8
