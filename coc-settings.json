@@ -120,7 +120,8 @@
   "emmet.includeLanguages": {
     "vue-html": "html",
     "javascript": "javascriptreact",
-    "handlebars": "html"
+    "handlebars": "html",
+    "htmldjango": "html"
   },
 
   // // coc-jira-complete
