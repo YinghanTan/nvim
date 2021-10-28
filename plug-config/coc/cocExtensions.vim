@@ -1,4 +1,5 @@
 let g:coc_global_extensions = [
+    \ 'coc-restclient',
     \ 'coc-actions',
     \ 'coc-css',
     \ 'coc-cssmodules',
