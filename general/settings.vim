@@ -219,7 +219,7 @@ autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
 " --- --- ---
 
 " Python Settings
-let g:loaded_python_provider = 0
+" let g:loaded_python_provider = 0
 " let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3' " Mac
 " let g:python3_host_prog="usr/bin/python3" " Mac
 " let g:python3_host_prog="/opt/homebrew/opt/python@3.9/bin/python3.9"
