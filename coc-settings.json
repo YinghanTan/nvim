@@ -1,4 +1,7 @@
 {
+  // coc-restclient
+  "rest-client.showHeaders" : false,
+  "rest-client.proxy" : "",
   // suggestions
   "suggest.completionItemKindLabels": {
     "text": "t",
