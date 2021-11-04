@@ -108,8 +108,19 @@ nnoremap <Leader>dD :call vimspector#Launch()<CR>
 nmap <leader>de :VimspectorEval 
 nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
-nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
+ " debug inspect
+" for normal mode - the word under the cursor
+" for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
+
+" nnoremap<leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
+" nnoremap<leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
+" nnoremap<leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+" nnoremap<leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
+" nnoremap<leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
+" nnoremap<leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
+
+
 
 " f is for find and replace
 let g:which_key_map.f = {

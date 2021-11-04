@@ -12,10 +12,11 @@ nmap gV `[v`]
 " Open file under cursor in split
 nmap gF <c-w>f
 
-" Spell checking, Pressing \SS will toggle and untoggle spell checking
-map <leader>Ss :setlocal spell!<cr>
-" Spell checking, Pressing \ss will toggle and untoggle spell checking
-" map <leader>ss :setlocal spell!<cr>
+if !exists('g:lasttab')
+  let g:lasttab = 1
+endif
+nmap g^ :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
 
 
 " modify paste in visual mode to paste repeatedly
