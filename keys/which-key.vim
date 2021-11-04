@@ -108,7 +108,7 @@ nnoremap <Leader>dD :call vimspector#Launch()<CR>
 nmap <leader>de :VimspectorEval 
 nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
- " debug inspect
+nmap <leader>dcbp <Plug>VimspectorToggleConditionalBreakpoint
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
 " f is for find and replace
