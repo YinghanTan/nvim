@@ -126,7 +126,6 @@ let g:which_key_map.d = {
 nmap <leader>do :VimspectorShowOutput 
  " debug inspect
 " for normal mode - the word under the cursor
-nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
