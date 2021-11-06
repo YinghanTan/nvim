@@ -360,3 +360,32 @@ autocmd Filetype dart set foldcolumn=1 "defines 1 col at window left, to indicat
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>
+
+" make Y Behave nice
+nnoremap Y y$
+
+" keep cursor centered 
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+" nnoremap <C-j>
+
+" Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap [ [<c-g>u
+inoremap ( (<c-g>u
+inoremap { {<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Jumplist mutations
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+
+" Moving text
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv

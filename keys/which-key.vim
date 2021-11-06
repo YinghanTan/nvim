@@ -1,3 +1,10 @@
+
+fun! GoToWindow(id)
+    call win_gotoid(a:id)
+    " MaximizerToggle
+endfun
+
+
 " Leader Key Maps
 
 " Timeout
@@ -77,49 +84,51 @@ let g:which_key_map.c = {
 
 
 
-
 " d is for debug
 let g:which_key_map.d = {
       \ 'name' : '+debug'                                    ,
       \ 'b' : ['<Plug>VimspectorToggleBreakpoint'            , 'breakpoint'             ] ,
-      \ 'B' : [':call vimspector#ClearBreakpoints()'         , 'remove all breakpoints' ] ,
+      \ 'B' : {
+        \ 'name': '+breakpoint options',
+        \ 'd' : [':call vimspector#ClearBreakpoints()'     , 'remove all breakpoints'    ]  ,
+        \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint' , 'func breakpoint'             ]  ,
+        \ 'c' : ['<Plug>VimspectorToggleConditionalBreakpoint' , 'conditional breakpoint']  ,
+        \ },
       \ 'c' : ['<Plug>VimspectorContinue'                    , 'continue'               ] ,
       \ 'C' : ['<Plug>VimspectorRunToCursor'                 , 'run to cursor'          ] ,
-      \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint'       , 'function breakpoint'    ] ,
-      \ 'F' : ['<Plug>VimspectorToggleConditionalBreakpoint' , 'conditional breakpoint' ] ,
+      \ 'D' : [':call vimspector#Launch()<CR>'               , 'debug'                  ] ,
+      \ 'e' : [':VimspectorEval'                             , 'evaluate'               ] ,
       \ 'i' : ['<Plug>VimspectorBalloonEval'                 , 'inspect'                ] ,
-      \ 'm' : [':MaximizerToggle'                            , 'maximize window'        ] ,
       \ 'n' : ['<Plug>VimspectorStepOver'                    , 'next'                   ] ,
       \ 's' : ['<Plug>VimspectorStepInto'                    , 'step into'              ] ,
       \ 'S' : ['<Plug>VimspectorStepOut'                     , 'step out'               ] ,
+      \ 'v' : {
+        \ 'name': '+view',
+        \ 'v' : [':call GoToWindow(g:vimspector_session_windows.variables)<CR>'     , 'variables'],
+        \ 'w' : [':call GoToWindow(g:vimspector_session_windows.watches)<CR>' , 'watches'],
+        \ 's' : [':call GoToWindow(g:vimspector_session_windows.stack_trace)<CR>' , 'stack'],
+        \ 't' : [':call GoToWindow(g:vimspector_session_windows.tagpage)<CR>' , 'tag'],
+        \ 'T' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>' , 'terminal'],
+        \ 'o' : [':call GoToWindow(g:vimspector_session_windows.output)<CR>' , 'output'],
+        \ 'c' : [':call GoToWindow(g:vimspector_session_windows.code)<CR>' , 'code'],
+        \ },
       \ 'u' : ['<Plug>VimspectorUpFrame'                     , 'Up frame'               ] ,
       \ 'd' : ['<Plug>VimspectorDownFrame'                   , 'Down frame'             ] ,
       \ 'p' : ['<Plug>VimspectorPause'                       , 'pause'                  ] ,
       \ 'P' : ['<Plug>VimspectorStop'                        , 'stoP'                   ] ,
       \ 'r' : ['<Plug>VimspectorRestart'                     , 'restart'                ] ,
       \ 'R' : ['VimspectorReset'                             , 'Reset'                  ] ,
-      \ 'w' : [':call AddToWatch()<CR>'                      , 'watch'                  ] ,
+      \ 'w' : [':call AddToWatch()<CR>'                      , 'add to watch'           ] ,
+      \ 'z' : [':MaximizerToggle'                            , 'maximize window'        ] ,
       \ }
-      " \ 'D' : [':call Vimspector#Launch()<cr>'               , 'debugger'               ] ,
-      " \ 'v' : [':call Vimspector#Launch()<cr>'                 , 'vimspector'                 ] ,
-      " \ 'e' : [':VimspectorEval'                               , 'Evaluate'                   ] ,
-      " \ 'w' : [':VimspectorWatch'                              , 'Watch'                      ] ,
-nnoremap <Leader>dD :call vimspector#Launch()<CR>
-nmap <leader>de :VimspectorEval 
-nmap <leader>dw :VimspectorWatch 
+
+" nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
  " debug inspect
 " for normal mode - the word under the cursor
 nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
-
-" nnoremap<leader>dt :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
-" nnoremap<leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
-" nnoremap<leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
-" nnoremap<leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
-" nnoremap<leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
-" nnoremap<leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
 
 
 
@@ -167,7 +176,7 @@ let g:which_key_map.g = {
       " \ 'D' : [':Gdiffsplit'                        , 'diff split'          ] ,
 
 
-" :CocCommand fzf-preview.BlamePR
+" :CocCommand fzf-pmeview.BlamePR
       " \ 'S' : [':CocCommand fzf-preview.GitStatus'  , 'status'              ] ,
       " \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
       " \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
@@ -430,6 +439,7 @@ let g:which_key_map.T = {
       \ '<Right>' : [ ':tabm +1'           , '=> Tab'  ] ,
       \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
       \ 'T' :       [ ':tabnew | terminal' , 'new tab' ] ,
+      \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
       \ }
       " \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
 map <leader>Tt :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
