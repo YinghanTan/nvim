@@ -416,7 +416,6 @@ let g:which_key_map.t = {
       \ 'f': [ ':FloatermNew fzf'                        , 'fzf'            ] ,
       \ 'g': [ ':FloatermNew lazygit'                    , 'git'            ] ,
       \ 'i': [ ':vsplit | terminal ipython'              , 'ipython vsplit' ] ,
-      \ 'I': [ ':tabnew | terminal ipython'              , 'ipython'        ] ,
       \ 'd': [ ':FloatermNew lazydocker'                 , 'docker'         ] ,
       \ 'n': [ ':FloatermNew node'                       , 'node'           ] ,
       \ 'N': [ ':FloatermNew nnn'                        , 'nnn'            ] ,
@@ -433,6 +432,7 @@ let g:which_key_map.t = {
         \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
         \ 'c' :       [ ':tabnew | terminal' , 'new tab' ] ,
         \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
+        \ 'i' :       [ ':tabnew | terminal ipython'              , 'ipython'        ] ,
         \ },
       \ }
       " \ 'i' :       [ ':FloatermNew! ipython'                   , 'ipython'  ] ,
