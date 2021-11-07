@@ -13,7 +13,7 @@ let g:floaterm_wintitle=0
 let g:floaterm_autoclose=1
 
 " " :FloatermUpdate --wintype=normal --position=right
-tnoremap   <silent>   <leader>tt  <C-\><C-n>:FloatermToggle<CR>
+tnoremap   <silent>   <leader>tc  <C-\><C-n>:FloatermToggle<CR>
 " nnoremap   <silent>   <leader>`n    :FloatermNew<CR>
 " tnoremap   <silent>   <leader>`n    <C-\><C-n>:FloatermNew<CR>
 " nnoremap   <silent>   <leader>`k    :FloatermPrev<CR>

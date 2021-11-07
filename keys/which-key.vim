@@ -423,25 +423,33 @@ let g:which_key_map.t = {
       \ 'p': [ ':FloatermNew python3'                    , 'python'         ] ,
       \ 'r': [ ':RnvimrToggle'                           , 'ranger'         ] ,
       \ 'R': [ ':FloatermNew ranger'                     , 'ranger'         ] ,
-      \ 't': [ ':FloatermToggle'                         , 'toggle'         ] ,
+      \ 'c': [ ':FloatermToggle'                         , 'console'         ] ,
       \ 'h': [ ':FloatermNew htop'                       , 'htop'           ] ,
       \ 's': [ ':FloatermNew ncdu'                       , 'ncdu'           ] ,
+      \ 't' : {
+        \ 'name': '+tab',
+        \ '<Left>' :  [ ':tabm -1'           , '<= Tab'  ] ,
+        \ '<Right>' : [ ':tabm +1'           , '=> Tab'  ] ,
+        \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
+        \ 'c' :       [ ':tabnew | terminal' , 'new tab' ] ,
+        \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
+        \ },
       \ }
       " \ 'i' :       [ ':FloatermNew! ipython'                   , 'ipython'  ] ,
       " \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
       " \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
 
-" T is for tab
-let g:which_key_map.T = {
-      \ 'name' : '+Tab'                    ,
-      \ '<Left>' :  [ ':tabm -1'           , '<= Tab'  ] ,
-      \ '<Right>' : [ ':tabm +1'           , '=> Tab'  ] ,
-      \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
-      \ 'T' :       [ ':tabnew | terminal' , 'new tab' ] ,
-      \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
-      \ }
-      " \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
-map <leader>Tt :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
+" " T is for tab
+" let g:which_key_map.T = {
+"       \ 'name' : '+Tab'                    ,
+"       \ '<Left>' :  [ ':tabm -1'           , '<= Tab'  ] ,
+"       \ '<Right>' : [ ':tabm +1'           , '=> Tab'  ] ,
+"       \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
+"       \ 'T' :       [ ':tabnew | terminal' , 'new tab' ] ,
+"       \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
+"       \ }
+"       " \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
+" map <leader>Tt :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
