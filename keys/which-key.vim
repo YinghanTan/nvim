@@ -96,7 +96,6 @@ let g:which_key_map.d = {
         \ },
       \ 'c' : ['<Plug>VimspectorContinue | zz'                    , 'continue'               ] ,
       \ 'C' : ['<Plug>VimspectorRunToCursor | zz'                 , 'run to cursor'          ] ,
-      \ 'D' : [':call vimspector#Launch()<CR>'               , 'debug'                  ] ,
       \ 'e' : [':VimspectorEval'                             , 'evaluate'               ] ,
       \ 'i' : ['<Plug>VimspectorBalloonEval'                 , 'inspect'                ] ,
       \ 'n' : ['<Plug>VimspectorStepOver | zz'                    , 'next'                   ] ,
@@ -121,9 +120,11 @@ let g:which_key_map.d = {
       \ 'w' : [':call AddToWatch()<CR>'                      , 'add to watch'           ] ,
       \ 'z' : [':MaximizerToggle'                            , 'maximize window'        ] ,
       \ }
+      " \ 'D' : [':call vimspector#Launch()<CR>'               , 'debug'                  ] ,
 
 " nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
+nnoremap <leader>dD :call vimspector#Launch()<CR>
  " debug inspect
 " for normal mode - the word under the cursor
 " for visual mode, the visually selected text
