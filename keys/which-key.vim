@@ -96,6 +96,7 @@ let g:which_key_map.d = {
         \ },
       \ 'c' : ['<Plug>VimspectorContinue | zz'                    , 'continue'               ] ,
       \ 'C' : ['<Plug>VimspectorRunToCursor | zz'                 , 'run to cursor'          ] ,
+      \ 'D' : [':call vimspector#Launch()<CR>'               , 'debug'                  ] ,
       \ 'e' : [':VimspectorEval'                             , 'evaluate'               ] ,
       \ 'i' : ['<Plug>VimspectorBalloonEval'                 , 'inspect'                ] ,
       \ 'n' : ['<Plug>VimspectorStepOver | zz'                    , 'next'                   ] ,
@@ -106,8 +107,8 @@ let g:which_key_map.d = {
         \ 'v' : [':call GoToWindow(g:vimspector_session_windows.variables)<CR>'     , 'variables'],
         \ 'w' : [':call GoToWindow(g:vimspector_session_windows.watches)<CR>' , 'watches'],
         \ 's' : [':call GoToWindow(g:vimspector_session_windows.stack_trace)<CR>' , 'stack'],
-        \ 't' : [':call GoToWindow(g:vimspector_session_windows.tagpage)<CR>' , 'tag'],
-        \ 'T' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>' , 'terminal'],
+        \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>' , 'terminal'],
+        \ 'T' : [':call GoToWindow(g:vimspector_session_windows.tagpage)<CR>' , 'tag'],
         \ 'o' : [':call GoToWindow(g:vimspector_session_windows.output)<CR>' , 'output'],
         \ 'c' : [':call GoToWindow(g:vimspector_session_windows.code)<CR>' , 'code'],
         \ },
@@ -120,7 +121,6 @@ let g:which_key_map.d = {
       \ 'w' : [':call AddToWatch()<CR>'                      , 'add to watch'           ] ,
       \ 'z' : [':MaximizerToggle'                            , 'maximize window'        ] ,
       \ }
-      " \ 'D' : [':call vimspector#Launch()<CR>'               , 'debug'                  ] ,
 
 " nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
@@ -129,7 +129,7 @@ nnoremap <leader>dD :call vimspector#Launch()<CR>
 " for normal mode - the word under the cursor
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
-
+nmap <leader>di <Plug>VimspectorBalloonEval
 
 
 " f is for find and replace

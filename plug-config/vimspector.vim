@@ -13,3 +13,6 @@ func! AddToWatch()
     call vimspector#AddWatch(word)
 endfunction
 " let g:vimspector_base_dir = expand('$HOME/.config/nvim/vimspector-config')
+
+
+let g:vimspector_install_gadgets = [ 'debugpy', 'debugger-for-chrome', 'CodeLLDB', 'vscode-node-debug2' ]
