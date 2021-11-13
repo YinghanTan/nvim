@@ -92,6 +92,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-fugitive' " Git
     Plug 'tpope/vim-rhubarb' " enables Gbrowse for github
     Plug 'shumphrey/fugitive-gitlab.vim' " enables Gbrowse for gitlab
+    Plug 'tommcdo/vim-fubitive' " enables Gbrowse for bitbucket
     Plug 'junegunn/gv.vim' " Git Commit Browser
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist

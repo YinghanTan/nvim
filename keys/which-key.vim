@@ -149,7 +149,7 @@ let g:which_key_map.g = {
       \ 'L' : [':Git log'                           , 'log'                ] ,
       \ 'm' : ['<Plug>(git-messenger)'              , 'message'            ] ,
       \ 'p' : [':GGrep'                             , 'git grep'           ] ,
-      \ 'r' : [':GRemove'                           , 'remove'             ] ,
+      \ 'r' : [':GDelete'                           , 'remove'             ] ,
       \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
       \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
       \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
