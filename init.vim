@@ -1,5 +1,4 @@
 " General Settings
-
 set runtimepath^=~/.config/nvim/autoload/coc.nvim/
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
@@ -12,13 +11,11 @@ source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/carbonized.vim
 
-
+" Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
-
-
 
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
@@ -45,11 +42,6 @@ source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/dart.vim
 source $HOME/.config/nvim/plug-config/easy-align.vim
-
-
-
-" luafile $HOME/.config/nvim/lua/config-telescope.lua
-
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
@@ -60,6 +52,7 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 " source $HOME/.config/nvim/plug-config/start-screen.vim
+" luafile $HOME/.config/nvim/lua/config-telescope.lua
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
