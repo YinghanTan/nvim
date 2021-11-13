@@ -1,23 +1,20 @@
-
+" Functions
 fun! GoToWindow(id)
     call win_gotoid(a:id)
     " MaximizerToggle
 endfun
 
 
-" Leader Key Maps
-
+" Which-Key settings
 " Timeout
 let g:which_key_timeout = 100
 let g:which_key_display_names = {'<CR>': '↵', '<TAB>': '⇆'}
-
+let g:which_key_map =  {}    " Create map to add keys to
+let g:which_key_sep = '→'    " Define a separator
 
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
-
-let g:which_key_map =  {}    " Create map to add keys to
-let g:which_key_sep = '→'    " Define a separator
 
 " Coc Search & refactor
 nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
@@ -39,7 +36,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 
-" Single mappings
+" WhichKey Mappings
 let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
 let g:which_key_map['.'   ] = [ ':tabnew | e $MYVIMRC'                , 'open init'          ]
 let g:which_key_map[';'   ] = [ ':Commands'                           , 'commands'           ]
@@ -48,10 +45,6 @@ let g:which_key_map[';'   ] = [ ':Commands'                           , 'command
 " let g:which_key_map['T' ] = [ ':TSHighlightCapturesUnderCursor'   , 'treesitter highlight' ]
 " let g:which_key_map['W' ] = [ ':call WindowSwap#EasyWindowSwap()' , 'move window'          ]
 " let g:which_key_map['n' ] = [ ':let @/ = ""'                      , 'no highlight'         ]
-
-
-" Group mappings
-
 
 " a is for actions
 let g:which_key_map.a = {
@@ -81,8 +74,6 @@ let g:which_key_map.c = {
       \ }
       " \ 't' : [':FloatermToggle'         , 'terminal'],
       " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
-
-
 
 " d is for debug
 let g:which_key_map.d = {
@@ -125,45 +116,45 @@ let g:which_key_map.d = {
 " nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
 nnoremap <leader>dD :call vimspector#Launch()<CR>
- " debug inspect
-" for normal mode - the word under the cursor
-" for visual mode, the visually selected text
-xmap <Leader>di <Plug>VimspectorBalloonEval
+" inspect word under cursor - normal mode
 nmap <leader>di <Plug>VimspectorBalloonEval
-
+" inspect word under cursor - visual mode
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 " f is for find and replace
 let g:which_key_map.f = {
       \ 'name' : '+find & replace'      ,
-      \ 'f' : [':Farr --source=vimgrep' , 'file'    ] ,
-      \ 'p' : [':Farr --source=rgnvim'  , 'project' ] ,
+      \ 'f' : [':Farr --source=vimgrep' , 'in File'    ] ,
+      \ 'p' : [':Farr --source=rgnvim'  , 'in Project' ] ,
       \ }
-
 
 " g is for git
 let g:which_key_map.g = {
       \ 'name' : '+git'                             ,
-      \ 'a' : [':Git add .'                         , 'add all'             ] ,
-      \ 'A' : [':CocCommand fzf-preview.GitActions' , 'actions'             ] ,
+      \ 'g' : {
+            \ 'name': '+git options',
+            \ 'a' : [':Git add .'                         , 'add all'             ] ,
+            \ 'A' : [':CocCommand fzf-preview.GitActions' , 'actions'             ] ,
+            \ 'b' : [':GBrowse'                           , 'browse'              ] ,
+            \ 'f' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'      ] ,
+            \ 'i' : [':CocCommand git.diffCached'         , 'diff info'           ] ,
+            \ 'r' : [':GRemove'                           , 'remove'              ] ,
+            \ 'p' : [':GGrep'                             , 'git grep'            ] ,
+            \ },
       \ 'b' : [':Git blame'                         , 'blame'               ] ,
-      \ 'B' : [':GBrowse'                           , 'browse'              ] ,
       \ 'c' : [':BCommits'                          , 'buffer commits'      ] ,
       \ 'C' : [':Commits'                           , 'commits'             ] ,
       \ 'd' : [':Git diff'                          , 'diff'                ] ,
       \ 'D' : [':Gdiffsplit'                        , 'diff split'          ] ,
-      \ 'F' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'      ] ,
-      \ 'g' : [':GGrep'                             , 'git grep'            ] ,
       \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'          ] ,
-      \ 'I' : [':CocCommand git.diffCached'         , 'diff info'           ] ,
       \ 'l' : [':Git log --oneline'                 , 'log'                 ] ,
       \ 'L' : [':Git log'                           , 'log'                 ] ,
       \ 'm' : ['<Plug>(git-messenger)'              , 'message'             ] ,
-      \ 'R' : [':GRemove'                           , 'remove'              ] ,
       \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'          ] ,
       \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'        ] ,
       \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'           ] ,
-      \ 'v' : [':GV!'                               , 'view buffer commits' ] ,
-      \ 'V' : [':GV'                                , 'view commits'        ] ,
+      \ 'v' : [':GV!'                               , 'file commits' ] ,
+      \ 'V' : [':GV'                                , 'all commits'        ] ,
       \ 'f' : [':diffget //2'                       , 'diffget left hunk'   ] ,
       \ 'j' : [':diffget //3'                       , 'diffget right hunk'  ] ,
       \ }
