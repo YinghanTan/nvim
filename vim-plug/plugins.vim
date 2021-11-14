@@ -41,6 +41,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'tpope/vim-surround' " Surround
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    Plug 'antoinemadec/coc-fzf'
+    Plug 'neovim/nvim-lspconfig' " Language Server Protocol
 
 
     " Dart
@@ -50,7 +52,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Tools
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
-    Plug 'antoinemadec/coc-fzf'
     Plug 'jremmen/vim-ripgrep' " awaiting fixed version
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'metakirby5/codi.vim' " interactive Code
