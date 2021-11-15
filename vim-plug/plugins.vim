@@ -42,8 +42,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround' " Surround
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
     Plug 'antoinemadec/coc-fzf'
-    Plug 'neovim/nvim-lspconfig' " Language Server Protocol
-
 
     " Dart
     Plug 'dart-lang/dart-vim-plugin'
