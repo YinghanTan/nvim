@@ -38,7 +38,7 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 
 " WhichKey Mappings
 let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
-let g:which_key_map['.'   ] = [ ':tabnew | e $MYVIMRC'                , 'open init'          ]
+let g:which_key_map['.'   ] = [ ':e $MYVIMRC'                , 'open init'          ]
 let g:which_key_map[';'   ] = [ ':Commands'                           , 'commands'           ]
 " let g:which_key_map['q' ] = [ '<Plug>(coc-fix-current)'           , 'quickfix'             ]
 " let g:which_key_map['u' ] = [ ':UndotreeToggle'                   , 'undo tree'            ]
@@ -200,7 +200,7 @@ let g:which_key_map.G = {
 " l is for language server protocol
 let g:which_key_map.l = {
       \ 'name' : '+lsp'                                        ,
-      \ '.' : [':tabnew | CocConfig'                           , 'config'                                          ] ,
+      \ '.' : [':CocConfig'                           , 'config'                                          ] ,
       \ 'a' : ['<Plug>(coc-codeaction)'                        , 'line action'                                     ] ,
       \ 'A' : ['<Plug>(coc-codeaction-selected)'               , 'selected action'                                 ] ,
       \ 'c' : [':CocCommand rest-client.request'               , 'api Client'                                         ] ,

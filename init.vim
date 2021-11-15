@@ -9,7 +9,6 @@ source $HOME/.config/nvim/keys/which-key.vim
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
-" source $HOME/.config/nvim/themes/carbonized.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
