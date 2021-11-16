@@ -35,17 +35,21 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-speeddating' " Change dates fast
 
 
-    " Update
-    " Plug 'neovim/nvim-lspconfig'
-    Plug 'glepnir/lspsaga.nvim'
+    " Neovim Lsp
+    Plug 'neovim/nvim-lspconfig' " Language Server Protocol
+    Plug 'glepnir/lspsaga.nvim' "  provides nice UIs for LSP functions
+    Plug 'iamcco/diagnostic-languageserver' " Language Server that integrate with linter to support diagnostic features
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
     Plug 'hrsh7th/nvim-cmp'
-    Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
-    Plug 'nvim-treesitter/playground'
-    Plug 'onsails/lspkind-nvim'
+    Plug 'onsails/lspkind-nvim' " adds vscode-like pictograms to neovim built-in lsp:
     Plug 'windwp/nvim-autopairs'
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips' " For ultisnips users.
+    " Plug 'folke/lsp-colors.nvim'
     " Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -53,12 +57,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
     " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
 
+    " " Autocomplete
+    " Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    " Plug 'antoinemadec/coc-fzf'
+    " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 
-    " Autocomplete
-    Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
-    Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+
+
 
     Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'honza/vim-snippets' " Snippets

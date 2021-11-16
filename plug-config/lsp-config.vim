@@ -96,20 +96,12 @@ nvim_lsp.flow.setup {
   capabilities = capabilities
 }
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'javascript', 'ansiblels', 'bashls',
-'cmake', 'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'gopls', 'html', 'jsonls',
-'pyright', 'sqlls', 'terraform_lsp', 'texlab', 'tflint', 'vimls', 'yamlls',
-'java_language_server'
-}
 -- tsserver specifically
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
-
 
 -- lsp diagnostics
 nvim_lsp.diagnosticls.setup {
@@ -186,14 +178,48 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   }
 )
 
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup {
---     on_attach = on_attach,
---     flags = {
---       debounce_text_changes = 150,
---     }
---   }
--- end
+
+
+-- local servers = { 'pyright', 'rust_analyzer', 'javascript', 'ansiblels', 'bashls',
+-- 'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'html', 'jsonls',
+-- 'sqlls', 'terraform_ls', 'texlab', 'tflint', 'vimls', 'yamlls',
+-- 'java_language_server'
+-- }
+
+-- nvim_lsp.pyright.setup{}
+-- nvim_lsp.rust_analyzer.setup{}
+-- nvim_lsp.ansiblels.setup{}
+-- nvim_lsp.bashls.setup{}
+-- nvim_lsp.cssls.setup{}
+-- nvim_lsp.dartls.setup{}
+-- nvim_lsp.dockerls.setup{}
+-- nvim_lsp.emmet_ls.setup{}
+-- nvim_lsp.eslint.setup{}
+-- nvim_lsp.html.setup{}
+-- nvim_lsp.jsonls.setup{}
+-- nvim_lsp.sqlls.setup{}
+-- nvim_lsp.terraformls.setup{}
+-- nvim_lsp.texlab.setup{}
+-- nvim_lsp.tflint.setup{}
+-- nvim_lsp.vimls.setup{}
+-- nvim_lsp.yamlls.setup{}
+-- nvim_lsp.java_language_server.setup{}
+
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+local servers = { 'pyright', 'rust_analyzer', 'ansiblels', 'bashls',
+'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'html', 'jsonls',
+'sqlls', 'terraformls', 'texlab', 'tflint', 'vimls', 'yamlls',
+'java_language_server', 'sumneko_lua'
+}
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
 
 
 EOF
