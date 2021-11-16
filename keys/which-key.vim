@@ -306,7 +306,43 @@ let g:which_key_map.s = {
       " \ 'R' : [':Telescope registers'                   , 'registers'],
       " \ 'y' : [':CocFzfList yank'                              , 'list yank'          ]    ,
 
-
+" " s is for search
+" let g:which_key_map.s = {
+"       \ 'name' : '+search'                                     ,
+"       \ '/' : [':History/'                                     , 'history'            ]    ,
+"       \ ';' : [':Commands'                                     , 'commands'           ]    ,
+"       \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
+"       \ 'b' : [':Buffers'                                      , 'all buffers'        ]    ,
+"       \ 'c' : [':BCommits'                                     , 'buffer commits'     ]    ,
+"       \ 'C' : [':Commits'                                      , 'commits'            ]    ,
+"       \ 'D' : [':CocCommand fzf-preview.Changes'               , 'delta/changes'      ]    ,
+"       \ 'f' : [':Files'                                        , 'files'              ]    ,
+"       \ 'g' : [':GFiles'                                       , 'git files'          ]    ,
+"       \ 'G' : [':GFiles?'                                      , 'modified git files' ]    ,
+"       \ 'h' : [':History'                                      , 'file history'       ]    ,
+"       \ 'H' : [':History:'                                     , 'command history'    ]    ,
+"       \ 'i' : [':CocCommand fzf-preview.CocCurrentDiagnostics' , 'diagnostics'        ]    ,
+"       \ 'I' : [':CocCommand fzf-preview.CocDiagnostics'        , 'all diagnostics'    ]    ,
+"       \ 'j' : [':CocCommand fzf-preview.Jumps'                 , 'jumps'              ]    ,
+"       \ 'k' : [':Cheat'                                        , 'cheat.sh'           ]    ,
+"       \ 'l' : [':Lines'                                        , 'lines'              ]    ,
+"       \ 'L' : [':BLines'                                       , 'current buffer'     ]    ,
+"       \ 'm' : [':Marks'                                        , 'marks'              ]    ,
+"       \ 'M' : [':Maps'                                         , 'normal maps'        ]    ,
+"       \ 'p' : [':Helptags'                                     , 'help tags'          ]    ,
+"       \ 'P' : [':Tags'                                         , 'project tags'       ]    ,
+"       \ 'q' : [':CocCommand fzf-preview.QuickFix'              , 'quickfix list'      ]    ,
+"       \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,
+"       \ 'r' : [':RG'                                           , 'text Rg'            ]    ,
+"       \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
+"       \ 'S' : [':Colors'                                       , 'color schemes'      ]    ,
+"       \ 't' : [':RG'                                           , 'text Rg'            ]    ,
+"       \ 'T' : [':BTags'                                        , 'buffer tags'        ]    ,
+"       \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
+"       \ 'y' : [':CocFzfList yank'                              , 'list yank'          ]    ,
+"       \ 'Y' : [':Filetypes'                                    , 'file types'         ]    ,
+"       \ 'z' : [':FZF'                                          , 'FZF'                ]    ,
+"       \ }
 
 
 
