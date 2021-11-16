@@ -12,11 +12,14 @@ source $HOME/.config/nvim/themes/onedark.vim
 
 " Update
 luafile $HOME/.config/nvim/lua/config-telescope.lua
+luafile $HOME/.config/nvim/lua/telescopeCoc.lua
 " source $HOME/.config/nvim/plug-config/signify.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim
+source $HOME/.config/nvim/plug-config/coc/coc.vim
+source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Plugin Configuration
@@ -31,8 +34,6 @@ source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
