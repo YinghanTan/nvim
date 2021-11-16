@@ -34,6 +34,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting 
     Plug 'tpope/vim-speeddating' " Change dates fast
 
+
+    " Telescope
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
+
+
     " Autocomplete
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'SirVer/ultisnips' " Ultisnips snippets
@@ -74,11 +82,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-obsession' " Save Sessions on tmux
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
     Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " view html, js, css live
-    " Telescope
-    " Plug 'nvim-lua/popup.nvim'
-    " Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
-    " Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     " Languages
     " Python

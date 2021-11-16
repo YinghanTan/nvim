@@ -10,6 +10,9 @@ source $HOME/.config/nvim/keys/which-key.vim
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
 
+" Update
+luafile $HOME/.config/nvim/lua/config-telescope.lua
+
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
@@ -51,7 +54,6 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 " source $HOME/.config/nvim/plug-config/start-screen.vim
-" luafile $HOME/.config/nvim/lua/config-telescope.lua
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
