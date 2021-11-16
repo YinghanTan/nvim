@@ -137,6 +137,13 @@ let g:which_key_map.g = {
           \ 's' : [':Gdiffsplit'                , 'diff split'          ] ,
           \ 'i' : [':CocCommand git.diffCached' , 'diff info'           ] ,
           \ }                                   ,
+      \ 'g' : {
+          \ 'name': '+gutter'                     ,
+          \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
+          \ 'i' : ['<Plug>(coc-git-chunkinfo)'          , 'chunk info'         ] ,
+          \ 'c' : ['<Plug>(coc-git-commit)'             , 'comit info'         ] ,
+          \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
+          \ }                                   ,
       \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
       \ 'A' : [':Git add .'                         , 'add all'            ] ,
       \ 'b' : [':Git blame'                         , 'blame'              ] ,
@@ -144,16 +151,13 @@ let g:which_key_map.g = {
       \ 'c' : [':BCommits'                          , 'buffer commits'     ] ,
       \ 'C' : [':Commits'                           , 'commits'            ] ,
       \ 'F' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'     ] ,
-      \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
       \ 'l' : [':Git log --oneline'                 , 'log'                ] ,
       \ 'L' : [':Git log'                           , 'log'                ] ,
       \ 'm' : ['<Plug>(git-messenger)'              , 'message'            ] ,
       \ 'p' : [':GGrep'                             , 'git grep'           ] ,
       \ 'r' : [':GDelete'                           , 'remove'             ] ,
-      \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
       \ 'S' : [':Telescope git_stash'               , 'stash'         ] ,
       \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
-      \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
       \ 'v' : [':GV!'                               , 'file commits'       ] ,
       \ 'V' : [':GV'                                , 'all commits'        ] ,
       \ 'f' : [':diffget //2'                       , 'diffget left hunk'  ] ,
@@ -163,9 +167,9 @@ let g:which_key_map.g = {
       " \ 'u' : [':SignifyHunkUndo'          , 'undo hunk'           ] ,
       " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
       " \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
+      " coc-git
+      " \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
 
-      " \ 'd' : [':Git diff'                          , 'diff'                ] ,
-      " \ 'D' : [':Gdiffsplit'                        , 'diff split'          ] ,
 
 
 " :CocCommand fzf-pmeview.BlamePR

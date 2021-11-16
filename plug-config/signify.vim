@@ -9,10 +9,10 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_show_count = 0
 let g:signify_sign_show_text = 1
 
-" omap ih <plug>(signify-motion-inner-pending)
-" xmap ih <plug>(signify-motion-inner-visual)
-" omap ah <plug>(signify-motion-outer-pending)
-" xmap ah <plug>(signify-motion-outer-visual)
+omap ih <plug>(signify-motion-inner-pending)
+xmap ih <plug>(signify-motion-inner-visual)
+omap ah <plug>(signify-motion-outer-pending)
+xmap ah <plug>(signify-motion-outer-visual)
 
 
 nmap ]h <plug>(signify-next-hunk)

@@ -35,6 +35,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-speeddating' " Change dates fast
 
 
+    " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
     " Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -99,7 +100,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
     Plug 'rhysd/git-messenger.vim'
-    " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
 
 
 

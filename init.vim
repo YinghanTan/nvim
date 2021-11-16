@@ -12,10 +12,10 @@ source $HOME/.config/nvim/themes/onedark.vim
 
 " Update
 luafile $HOME/.config/nvim/lua/config-telescope.lua
+" source $HOME/.config/nvim/plug-config/signify.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
-" source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
