@@ -12,15 +12,17 @@ source $HOME/.config/nvim/themes/onedark.vim
 
 " Update
 luafile $HOME/.config/nvim/lua/config-telescope.lua
-luafile $HOME/.config/nvim/lua/telescopeCoc.lua
+source $HOME/.config/nvim/plug-config/ultisnips.vim
+source $HOME/.config/nvim/plug-config/lsp-config.vim
+source $HOME/.config/nvim/plug-config/lsp-kind.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
 
 " Autocompletion
-source $HOME/.config/nvim/plug-config/coc/coc-git.vim
-source $HOME/.config/nvim/plug-config/cocSnippets.vim
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-source $HOME/.config/nvim/plug-config/ultisnips.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" source $HOME/.config/nvim/plug-config/cocSnippets.vim
+" source $HOME/.config/nvim/plug-config/coc/coc.vim
+" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" source $HOME/.config/nvim/plug-config/autopairs.vim
 
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
@@ -36,7 +38,6 @@ source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
-source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/bracey.vim
 source $HOME/.config/nvim/plug-config/leetcode.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
@@ -61,6 +62,7 @@ source $HOME/.config/nvim/themes/airline.vim
 
 
 " Brief help
+" use gf to explore the different files sourced here and use <C-o> to jump back
 " :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " :PlugUpdate     - To update your plugins

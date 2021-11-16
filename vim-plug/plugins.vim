@@ -35,23 +35,33 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-speeddating' " Change dates fast
 
 
-    " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
+    " Update
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'glepnir/lspsaga.nvim', { 'branch': 'nvim51' }
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+    Plug 'onsails/lspkind-nvim'
+    Plug 'windwp/nvim-autopairs'
     " Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
-    Plug 'fannheyward/telescope-coc.nvim'
+    " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
 
 
     " Autocomplete
-    Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+    " Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    " Plug 'antoinemadec/coc-fzf'
+    " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+
     Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'tpope/vim-surround' " Surround
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
 
     " Dart
     Plug 'dart-lang/dart-vim-plugin'
@@ -120,8 +130,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
 
-    " " Coc extensions
-    " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 
 call plug#end()
 
