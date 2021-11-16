@@ -13,8 +13,13 @@ source $HOME/.config/nvim/themes/onedark.vim
 " Update
 luafile $HOME/.config/nvim/lua/config-telescope.lua
 source $HOME/.config/nvim/plug-config/ultisnips.vim
+
 source $HOME/.config/nvim/plug-config/lsp-config.vim
-source $HOME/.config/nvim/plug-config/lsp-kind.vim
+luafile $HOME/.config/nvim/plug-config/lsp-kind.lua
+source $HOME/.config/nvim/plug-config/lsp-saga.vim
+luafile $HOME/.config/nvim/plug-config/nvim-autopairs.lua
+source $HOME/.config/nvim/plug-config/cmp.vim
+source $HOME/.config/nvim/plug-config/treesitter.vim
 " source $HOME/.config/nvim/plug-config/signify.vim
 
 " Autocompletion

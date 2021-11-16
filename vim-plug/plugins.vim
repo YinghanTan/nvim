@@ -36,14 +36,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
     " Update
-    Plug 'neovim/nvim-lspconfig'
-    Plug 'glepnir/lspsaga.nvim', { 'branch': 'nvim51' }
+    " Plug 'neovim/nvim-lspconfig'
+    Plug 'glepnir/lspsaga.nvim'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+    Plug 'nvim-treesitter/playground'
     Plug 'onsails/lspkind-nvim'
     Plug 'windwp/nvim-autopairs'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
     " Telescope
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -53,10 +55,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
     " Autocomplete
-    " Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    " Plug 'antoinemadec/coc-fzf'
-    " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    Plug 'antoinemadec/coc-fzf'
+    Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
 
     Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'honza/vim-snippets' " Snippets
