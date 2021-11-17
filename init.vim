@@ -1,5 +1,4 @@
 " General Settings
-set runtimepath^=~/.config/nvim/autoload/coc.nvim/
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
@@ -15,15 +14,16 @@ luafile $HOME/.config/nvim/lua/config-telescope.lua
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 source $HOME/.config/nvim/plug-config/lsp-config.vim
-luafile $HOME/.config/nvim/plug-config/lsp-config-lua.lua
 luafile $HOME/.config/nvim/plug-config/lsp-kind.lua
 source $HOME/.config/nvim/plug-config/lsp-saga.vim
 luafile $HOME/.config/nvim/plug-config/nvim-autopairs.lua
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/treesitter.vim
+" luafile $HOME/.config/nvim/plug-config/lsp-config-lua.lua
 " source $HOME/.config/nvim/plug-config/signify.vim
 
 " Autocompletion
+" set runtimepath^=~/.config/nvim/autoload/coc.nvim/
 " source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 " source $HOME/.config/nvim/plug-config/cocSnippets.vim
 " source $HOME/.config/nvim/plug-config/coc/coc.vim

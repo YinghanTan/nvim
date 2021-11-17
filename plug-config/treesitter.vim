@@ -13,12 +13,12 @@ require'nvim-treesitter.configs'.setup {
     enable = false,
     disable = {},
   },
+  -- ensure_installed = 'maintained'
   ensure_installed = {
     "tsx",
     "toml",
     "json",
     "yaml",
-    "swift",
     "html",
     "scss",
     "css",

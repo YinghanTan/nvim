@@ -57,31 +57,33 @@ local on_attach = function(client, bufnr)
 
   --protocol.SymbolKind = { }
   protocol.CompletionItemKind = {
-    '?', -- Text
-    '?', -- Method
-    '?', -- Function
-    '?', -- Constructor
-    '?', -- Field
-    '?', -- Variable
-    '?', -- Class
-    '?', -- Interface
-    '?', -- Module
-    '?', -- Property
-    '?', -- Unit
-    '?', -- Value
-    '?', -- Enum
-    '?', -- Keyword
-    '?', -- Snippet
-    '?', -- Color
-    '?', -- File
-    '?', -- Reference
-    '?', -- Folder
-    '?', -- EnumMember
-    '?', -- Constant
-    '?', -- Struct
-    '?', -- Event
-    '?', -- Operator
-    '?', -- TypeParameter
+    '', -- Text
+    '', -- Method
+    '', -- Function
+    '', -- Constructor
+    '', -- Field
+    '', -- Variable
+    '', -- Class
+    'ﰮ', -- Interface
+    '', -- Module
+    '', -- Property
+    '', -- Unit
+    '', -- Value
+    '', -- Enum
+    '', -- Keyword
+    '﬌', -- Snippet
+    '', -- Color
+    '', -- File
+    '', -- Reference
+    '', -- Folder
+    '', -- EnumMember
+    '', -- Constant
+    '', -- Struct
+    '', -- Event
+    'ﬦ', -- Operator
+    '', -- TypeParameter
+
+
   }
 end
 
@@ -90,6 +92,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
+-- flow server specifically
 nvim_lsp.flow.setup {
   on_attach = on_attach,
   capabilities = capabilities
@@ -102,13 +105,50 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities
 }
 
+-- lua server specifically
+local sumneko_binary_path = vim.fn.exepath('lua-language-server')
+local sumneko_root_path = vim.fn.fnamemodify(sumneko_binary_path, ':h:h:h')
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
+nvim_lsp.sumneko_lua.setup {
+    cmd = {sumneko_binary_path, "-E", sumneko_root_path .. "/main.lua"};
+    settings = {
+        Lua = {
+        runtime = {
+            -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT',
+            -- Setup your lua path
+            path = runtime_path,
+        },
+        diagnostics = {
+            -- Get the language server to recognize the `vim` global
+            globals = {'vim'},
+        },
+        workspace = {
+            -- Make the server aware of Neovim runtime files
+            library = vim.api.nvim_get_runtime_file("", true),
+        },
+        -- Do not send telemetry data containing a randomized but unique identifier
+        telemetry = {
+            enable = false,
+        },
+        },
+    },
+}
+
+-- sqlls server specifically
+nvim_lsp.sqlls.setup {
+  on_attach = on_attach,
+  cmd = {'sql-language-server', 'up', '--method', 'stdio'},
+  capabilities = capabilities,
+}
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-
 local servers = { 'pyright', 'rust_analyzer', 'ansiblels', 'bashls',
 'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'html', 'jsonls',
-'sqlls', 'terraformls', 'texlab', 'tflint', 'vimls', 'yamlls',
-'java_language_server' }
+'terraformls', 'texlab', 'tflint', 'vimls', 'yamlls', }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -122,7 +162,7 @@ end
 -- lsp diagnostics
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc', 'python', 'html' },
   init_options = {
     linters = {
       eslint = {
@@ -164,7 +204,7 @@ nvim_lsp.diagnosticls.setup {
         rootPatterns = { '.git' },
         -- requiredFiles: { 'prettier.config.js' },
         args = { '--stdin', '--stdin-filepath', '%filename' }
-      }
+      },
     },
     formatFiletypes = {
       css = 'prettier',
@@ -188,7 +228,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     -- This sets the spacing and the prefix, obviously.
     virtual_text = {
       spacing = 4,
-      prefix = '?'
+      prefix = ''
     }
   }
 )
