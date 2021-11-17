@@ -23,7 +23,6 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
-
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -103,11 +102,27 @@ nvim_lsp.tsserver.setup {
   capabilities = capabilities
 }
 
+-- Use a loop to conveniently call 'setup' on multiple servers and
+-- map buffer local keybindings when the language server attaches
+
+local servers = { 'pyright', 'rust_analyzer', 'ansiblels', 'bashls',
+'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'html', 'jsonls',
+'sqlls', 'terraformls', 'texlab', 'tflint', 'vimls', 'yamlls',
+'java_language_server' }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+
 -- lsp diagnostics
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach,
-  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact',
-  'css', 'less', 'scss', 'markdown', 'pandoc', 'vim', 'html', 'python', 'lua', },
+  filetypes = { 'javascript', 'javascriptreact', 'json', 'typescript', 'typescriptreact', 'css', 'less', 'scss', 'markdown', 'pandoc' },
   init_options = {
     linters = {
       eslint = {
@@ -177,49 +192,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
   }
 )
-
-
-
--- local servers = { 'pyright', 'rust_analyzer', 'javascript', 'ansiblels', 'bashls',
--- 'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'html', 'jsonls',
--- 'sqlls', 'terraform_ls', 'texlab', 'tflint', 'vimls', 'yamlls',
--- 'java_language_server'
--- }
-
--- nvim_lsp.pyright.setup{}
--- nvim_lsp.rust_analyzer.setup{}
--- nvim_lsp.ansiblels.setup{}
--- nvim_lsp.bashls.setup{}
--- nvim_lsp.cssls.setup{}
--- nvim_lsp.dartls.setup{}
--- nvim_lsp.dockerls.setup{}
--- nvim_lsp.emmet_ls.setup{}
--- nvim_lsp.eslint.setup{}
--- nvim_lsp.html.setup{}
--- nvim_lsp.jsonls.setup{}
--- nvim_lsp.sqlls.setup{}
--- nvim_lsp.terraformls.setup{}
--- nvim_lsp.texlab.setup{}
--- nvim_lsp.tflint.setup{}
--- nvim_lsp.vimls.setup{}
--- nvim_lsp.yamlls.setup{}
--- nvim_lsp.java_language_server.setup{}
-
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'ansiblels', 'bashls',
-'cssls', 'dartls', 'dockerls', 'emmet_ls',  'eslint', 'html', 'jsonls',
-'sqlls', 'terraformls', 'texlab', 'tflint', 'vimls', 'yamlls',
-'java_language_server', 'sumneko_lua'
-}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
 
 
 EOF

@@ -15,6 +15,7 @@ luafile $HOME/.config/nvim/lua/config-telescope.lua
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 source $HOME/.config/nvim/plug-config/lsp-config.vim
+luafile $HOME/.config/nvim/plug-config/lsp-config-lua.lua
 luafile $HOME/.config/nvim/plug-config/lsp-kind.lua
 source $HOME/.config/nvim/plug-config/lsp-saga.vim
 luafile $HOME/.config/nvim/plug-config/nvim-autopairs.lua
