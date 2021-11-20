@@ -17,8 +17,8 @@ nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
 " Coc Search & refactor
-nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
-let g:which_key_map['?'] = 'search word'
+" nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
+" let g:which_key_map['?'] = 'search word'
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -40,40 +40,14 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
 let g:which_key_map['.'   ] = [ ':e $MYVIMRC'                , 'open init'          ]
 let g:which_key_map[';'   ] = [ ':Commands'                           , 'commands'           ]
-" let g:which_key_map['q' ] = [ '<Plug>(coc-fix-current)'           , 'quickfix'             ]
-" let g:which_key_map['u' ] = [ ':UndotreeToggle'                   , 'undo tree'            ]
-" let g:which_key_map['T' ] = [ ':TSHighlightCapturesUnderCursor'   , 'treesitter highlight' ]
-" let g:which_key_map['W' ] = [ ':call WindowSwap#EasyWindowSwap()' , 'move window'          ]
-" let g:which_key_map['n' ] = [ ':let @/ = ""'                      , 'no highlight'         ]
+let g:which_key_map['T' ] = [ ':TSHighlightCapturesUnderCursor'   , 'treesitter highlight' ]
 
 " a is for actions
 let g:which_key_map.a = {
       \ 'name' : '+actions'                 ,
-      \ 'c' : [':ColorizerToggle'           , 'colorizer'               ] ,
-      \ 'C' : [':cd %:p:h<cr>:pwd<cr>'      , 'set current directory'   ] ,
+      \ 'c' : [':cd %:p:h<cr>:pwd<cr>'      , 'set current directory'   ] ,
       \ 's' : [':source $MYVIMRC'           , 'source init'             ] ,
-      \ 'S' : [':CocCommand swagger.render' , 'swagger'                 ] ,
-      \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
-      \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
-      \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
-      \ 'v' : [':Codi'                      , 'virtual repl on'         ] ,
-      \ 'V' : [':Codi!'                     , 'virtual repl off'        ] ,
       \ }
-      " \ 'l' : [':Bracey'                    , 'start live server'       ] ,
-      " \ 'L' : [':BraceyStop'                , 'stop live server'        ] ,
-      " \ 't' : [':FloatermToggle'         , 'terminal'],
-      " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
-
-" c is for code
-let g:which_key_map.c = {
-      \ 'name' : '+code'         ,
-      \ 'l' : [':LeetCodeList'   , 'list'    ] ,
-      \ 't' : [':LeetCodeTest'   , 'test'    ] ,
-      \ 's' : [':LeetCodeSubmit' , 'submit'  ] ,
-      \ 'i' : [':LeetCodeSignIn' , 'sign in' ] ,
-      \ }
-      " \ 't' : [':FloatermToggle'         , 'terminal'],
-      " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
 
 " d is for debug
 let g:which_key_map.d = {
@@ -98,9 +72,8 @@ let g:which_key_map.d = {
             \ 'v' : [':call GoToWindow(g:vimspector_session_windows.variables)<CR>'   , 'variables'              ] ,
             \ 'w' : [':call GoToWindow(g:vimspector_session_windows.watches)<CR>'     , 'watches'                ] ,
             \ 's' : [':call GoToWindow(g:vimspector_session_windows.stack_trace)<CR>' , 'stack'                  ] ,
-            \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>'    , 'terminal'               ] ,
+            \ 't' : [':call GoToWindow(g:vimspector_session_windows.output)<CR>'      , 'terminal'                 ] ,
             \ 'T' : [':call GoToWindow(g:vimspector_session_windows.tagpage)<CR>'     , 'tag'                    ] ,
-            \ 'o' : [':call GoToWindow(g:vimspector_session_windows.output)<CR>'      , 'output'                 ] ,
             \ 'c' : [':call GoToWindow(g:vimspector_session_windows.code)<CR>'        , 'code'                   ] ,
             \ }                                                                       ,
         \ 'u' : ['<Plug>VimspectorUpFrame'                                            , 'Up frame'               ] ,
@@ -112,6 +85,7 @@ let g:which_key_map.d = {
         \ 'w' : [':call AddToWatch()<CR>'                                             , 'add to watch'           ] ,
         \ 'z' : [':MaximizerToggle'                                                   , 'maximize window'        ] ,
         \ }
+        " \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>'    , 'terminal'               ] ,
 
 " nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
@@ -135,16 +109,16 @@ let g:which_key_map.g = {
           \ 'name': '+diff'                     ,
           \ 'd' : [':Gdiff'                  , 'diff'                ] ,
           \ 's' : [':Gdiffsplit'                , 'diff split'          ] ,
-          \ 'i' : [':CocCommand git.diffCached' , 'diff info'           ] ,
           \ }                                   ,
       \ 'g' : {
           \ 'name': '+gutter'                     ,
-          \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
+          \ 'u' : [':SignifyHunkUndo'          , 'undo hunk'           ] ,
           \ 'i' : ['<Plug>(coc-git-chunkinfo)'          , 'chunk info'         ] ,
           \ 'c' : ['<Plug>(coc-git-commit)'             , 'comit info'         ] ,
           \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
+          \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
+          \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
           \ }                                   ,
-      \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
       \ 'A' : [':Git add .'                         , 'add all'            ] ,
       \ 'b' : [':Git blame'                         , 'blame'              ] ,
       \ 'B' : [':GBrowse'                           , 'browse'             ] ,
@@ -157,7 +131,6 @@ let g:which_key_map.g = {
       \ 'p' : [':GGrep'                             , 'git grep'           ] ,
       \ 'r' : [':GDelete'                           , 'remove'             ] ,
       \ 'S' : [':Telescope git_stash'               , 'stash'         ] ,
-      \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
       \ 'v' : [':GV!'                               , 'file commits'       ] ,
       \ 'V' : [':GV'                                , 'all commits'        ] ,
       \ 'f' : [':diffget //2'                       , 'diffget left hunk'  ] ,
@@ -169,6 +142,9 @@ let g:which_key_map.g = {
       " \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
       " coc-git
       " \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
+      " \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
+      " \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
+      " \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
 
 
 
@@ -195,11 +171,6 @@ let g:which_key_map.G = {
       \ 'P' : [':Gist -P'  , 'post public gist '     ] ,
       \ 'p' : [':Gist -p'  , 'post private gist '    ] ,
       \ }
-
-" k is for cheat.sh
-" TODO
-
-
 
 
 " l is for language server protocol
@@ -247,7 +218,6 @@ let g:which_key_map.o = {
       \ 'S' : [':Obsess!<CR>' , ':Obsess!' ] ,
       \ }
 
-
 let g:which_key_map.q = {
       \ 'name' : 'QuickFix'      ,
       \ 'g' : [':CocDiagnostics' , 'Diagnostics'          ] ,
@@ -294,7 +264,7 @@ let g:which_key_map.s = {
       \ 'q' : [':Telescope quickfix'                    , 'quickfix list'],
       \ 'r' : [':Telescope resume'                      , 'resume'],
       \ 'R' : [':Telescope reloader'                    , 'reloader'],
-      \ 's' : [':CocFzfList snippets'                   , 'snippets'],
+      \ 's' : [':Telescope ultisnips'                   , 'snippets'],
       \ 'S' : [':Telescope grep_string'                 , 'grep_string'],
       \ 't' : [':Telescope live_grep'                   , 'text'],
       \ 'T' : [':Telescope filetypes'                   , 'fileTypes'],
@@ -386,28 +356,17 @@ let g:which_key_map.t = {
       " \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
       " \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
 
-" " T is for tab
-" let g:which_key_map.T = {
-"       \ 'name' : '+Tab'                    ,
-"       \ '<Left>' :  [ ':tabm -1'           , '<= Tab'  ] ,
-"       \ '<Right>' : [ ':tabm +1'           , '=> Tab'  ] ,
-"       \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
-"       \ 'T' :       [ ':tabnew | terminal' , 'new tab' ] ,
-"       \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
-"       \ }
-"       " \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
-" map <leader>Tt :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
       \ 'name' : '+ultisnips or undo'                  ,
-      \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'     ] ,
+      \ 'e' : [':UltiSnipsEdit<cr>'                    , 'Ultisnips Edit'],
       \ 'f' : [':CocCommand snippets.openSnippetFiles' , 'Ultisnips Files'    ] ,
-      \ 's' : [':CocList snippets'                     , 'Ultisnips Snippets' ] ,
+      \ 's' : [':Snippets'                     , 'Ultisnips Snippets' ] ,
       \ 't' : [':UndotreeToggle'                       , 'UndoTree'           ] ,
       \ }
-" \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'],
-" \ 'e' : [':UltiSnipsEdit<cr>'                    , 'Ultisnips Edit'],
+    " \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'],
+      " \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'     ] ,
 " convert visual selected code to snippet
 xmap <leader>uc  <Plug>(coc-convert-snippet)
 
@@ -420,6 +379,35 @@ let g:which_key_map.w = {
       \ 'j' : ['<plug>(wiki-journal)'    , 'journal'         ] ,
       \ 't' : [':VimwikiTable'           , 'vimwikiTable' ] ,
       \ }
+
+
+" yo is for toggle
+let g:which_key_map.y = {
+      \ 'name' : '+toggle'                 ,
+      \ 'o' : {
+          \ 'name': '+options'                                           ,
+          \ 'g' : [':IndentGuidesToggle'        , 'indent Guide'            ] ,
+          \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
+          \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
+          \ 'C' : [':ColorizerToggle'           , 'colorizer'               ] ,
+          \ 'b': ['yob',	'background'],
+          \ 'c': ['yoc',	'cursorline'],
+          \ 'd': ['yod',	'diff'],
+          \ 'e': ['yoe',	'spell'],
+          \ 'h': ['yoh',	'hlsearch'],
+          \ 'i': ['yoi',	'ignorecase'],
+          \ 'l': ['yol',	'list'],
+          \ 'n': ['yon',	'number'],
+          \ 'r': ['yor',	'relativenumber'],
+          \ 'u': ['you',	'cursorcolumn'],
+          \ 'v': ['yov',	'virtualedit'],
+          \ 'w': ['yow',	'wrap'],
+          \ 'x': ['yox',	'crosshairs'],
+          \ }                                                                       ,
+      \ }
+nnoremap yog :IndentGuidesToggle<cr>
+nnoremap yom <Plug>MarkdownPreview
+nnoremap yoC :ColorizerToggle<cr>
 
 
 " --- Edit Files ---
