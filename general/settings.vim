@@ -389,3 +389,6 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+" Programming Languages Config
+autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100)

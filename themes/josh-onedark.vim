@@ -36,4 +36,3 @@ if !exists('g:loaded_color')
 endif
 
 
-

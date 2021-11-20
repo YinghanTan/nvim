@@ -51,7 +51,7 @@ let g:airline_theme = 'onedark'   " Switch to your current theme
 let g:webdevicons_enable_airline_tabline = 1
 " let g:airline_section_b = airline#section#create_left(['hunks'])
 " let g:airline_section_c = '%{airline#extensions#branch#get_head()} %t' " in section B of the status line display the CWD                                                 
-let g:airline_section_c = airline#section#create_left(['%{airline#extensions#branch#get_head()}', '%t']) " in section B of the status line display the CWD                                                 
+" let g:airline_section_c = airline#section#create_left(['%{airline#extensions#branch#get_head()}', '%t']) " in section B of the status line display the CWD                                                 
 
 
 " let g:airline_section_a = " NVCode"
