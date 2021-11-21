@@ -147,6 +147,17 @@ let g:which_key_map.G = {
       \ 'p' : [':Gist -p'  , 'post private gist '    ] ,
       \ }
 
+" " l is for language server protocol
+" let g:which_key_map.l = {
+"       \ 'name' : '+lsp'                      ,
+"       \ 'a' : ['\la'                  , 'line action'  ] ,
+"       \ 'A' : [':Telescope lsp_code_actions' , 'code_actions' ] ,
+"       \ 'f' : ['\lf'                  , 'format'       ] ,
+"       \ 'r' : ['\lr'                  , 'rename'       ] ,
+"       \ }
+"       " <C-w>p jump in and out of floating notifications
+"       " <C-w>w jump in and out of floating notifications
+"       " \ 'F' : ['<Plug>(coc-format-selected)'                   , 'format selected'                                 ] ,
 
 " " l is for language server protocol
 " let g:which_key_map.l = {

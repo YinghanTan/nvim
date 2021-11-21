@@ -13,14 +13,26 @@ wk.register({
     ["<leader>T"] = {':TSHighlightCapturesUnderCursor', 'treesitter highlight'}
 })
 
--- wk.register({
---   f = {
---     name = "file", -- optional group name
---     f = { "<cmd>Telescope find_files<cr>", "Find File" }, -- create a binding with label
---     r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File", noremap=false, buffer = 123 }, -- additional options for creating the keymap
---     n = { "New File" }, -- just a label. don't create any mapping
---     e = "Edit File", -- same as above
---     ["1"] = "which_key_ignore",  -- special label to hide it in the popup
---     b = { function() print("bar") end, "Foobar" } -- you can also pass functions!
---   },
--- }, { prefix = "<leader>" })
+wk.register({
+    d = {
+        name = "+debug", -- optional group name
+        b = {'<Plug>VimspectorToggleBreakpoint', 'breakpoint'},
+        c = {'<Plug>VimspectorContinue | zz', 'continue'},
+        C = {'<Plug>VimspectorRunToCursor | zz', 'run to cursor'},
+        D = {':call vimspector#Launch()<CR>', 'debug'},
+        e = {':VimspectorEval', 'evaluate'},
+        i = {'<Plug>VimspectorBalloonEval', 'inspect'},
+        n = {'<Plug>VimspectorStepOver | zz', 'next'},
+        s = {'<Plug>VimspectorStepInto | zz', 'step into'},
+        S = {'<Plug>VimspectorStepOut | zz', 'step out'},
+        u = {'<Plug>VimspectorUpFrame', 'Up frame'},
+        d = {'<Plug>VimspectorDownFrame', 'Down frame'},
+        p = {'<Plug>VimspectorPause', 'pause'},
+        P = {'<Plug>VimspectorStop', 'stoP'},
+        r = {'<Plug>VimspectorRestart', 'restart'},
+        R = {'VimspectorReset', 'Reset'},
+        w = {':call AddToWatch()<CR>', 'add to watch'},
+        z = {':MaximizerToggle', 'maximize window'}
+    }
+
+}, {prefix = "<leader>"})
