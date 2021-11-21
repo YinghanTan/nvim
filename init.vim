@@ -12,7 +12,6 @@ source $HOME/.config/nvim/themes/onedark.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc-git.vim
-" source $HOME/.config/nvim/plug-config/signify.vim
 source $HOME/.config/nvim/plug-config/cocSnippets.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
@@ -33,14 +32,11 @@ source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
-source $HOME/.config/nvim/plug-config/bracey.vim
-source $HOME/.config/nvim/plug-config/leetcode.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/dart.vim
-source $HOME/.config/nvim/plug-config/easy-align.vim
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
@@ -50,16 +46,24 @@ source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
-" source $HOME/.config/nvim/plug-config/start-screen.vim
-" luafile $HOME/.config/nvim/lua/config-telescope.lua
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
 
 
 " Brief help
+" gf gF           - cursor above imported file to explore imported files
+" \.              - go to init.vim
 " :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 " :PlugUpdate     - To update your plugins
 " :PlugUpgrade    - Upgrade vim-plug itself
 " :PlugStatus     - Check Status of plugins
+
+" Deprecated
+" source $HOME/.config/nvim/plug-config/easy-align.vim
+" source $HOME/.config/nvim/plug-config/signify.vim
+" source $HOME/.config/nvim/plug-config/start-screen.vim
+" luafile $HOME/.config/nvim/lua/config-telescope.lua
+" source $HOME/.config/nvim/plug-config/bracey.vim
+" source $HOME/.config/nvim/plug-config/leetcode.vim

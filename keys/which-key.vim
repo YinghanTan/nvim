@@ -40,11 +40,6 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
 let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
 let g:which_key_map['.'   ] = [ ':e $MYVIMRC'                , 'open init'          ]
 let g:which_key_map[';'   ] = [ ':Commands'                           , 'commands'           ]
-" let g:which_key_map['q' ] = [ '<Plug>(coc-fix-current)'           , 'quickfix'             ]
-" let g:which_key_map['u' ] = [ ':UndotreeToggle'                   , 'undo tree'            ]
-" let g:which_key_map['T' ] = [ ':TSHighlightCapturesUnderCursor'   , 'treesitter highlight' ]
-" let g:which_key_map['W' ] = [ ':call WindowSwap#EasyWindowSwap()' , 'move window'          ]
-" let g:which_key_map['n' ] = [ ':let @/ = ""'                      , 'no highlight'         ]
 
 " a is for actions
 let g:which_key_map.a = {
@@ -56,24 +51,20 @@ let g:which_key_map.a = {
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
-      \ 'v' : [':Codi'                      , 'virtual repl on'         ] ,
-      \ 'V' : [':Codi!'                     , 'virtual repl off'        ] ,
       \ }
+      " \ 'v' : [':Codi'                      , 'virtual repl on'         ] ,
+      " \ 'V' : [':Codi!'                     , 'virtual repl off'        ] ,
       " \ 'l' : [':Bracey'                    , 'start live server'       ] ,
       " \ 'L' : [':BraceyStop'                , 'stop live server'        ] ,
-      " \ 't' : [':FloatermToggle'         , 'terminal'],
-      " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
 
-" c is for code
-let g:which_key_map.c = {
-      \ 'name' : '+code'         ,
-      \ 'l' : [':LeetCodeList'   , 'list'    ] ,
-      \ 't' : [':LeetCodeTest'   , 'test'    ] ,
-      \ 's' : [':LeetCodeSubmit' , 'submit'  ] ,
-      \ 'i' : [':LeetCodeSignIn' , 'sign in' ] ,
-      \ }
-      " \ 't' : [':FloatermToggle'         , 'terminal'],
-      " \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
+" " c is for code
+" let g:which_key_map.c = {
+"       \ 'name' : '+code'         ,
+"       \ 'l' : [':LeetCodeList'   , 'list'    ] ,
+"       \ 't' : [':LeetCodeTest'   , 'test'    ] ,
+"       \ 's' : [':LeetCodeSubmit' , 'submit'  ] ,
+"       \ 'i' : [':LeetCodeSignIn' , 'sign in' ] ,
+"       \ }
 
 " d is for debug
 let g:which_key_map.d = {
@@ -162,19 +153,8 @@ let g:which_key_map.g = {
       " \ 'u' : [':SignifyHunkUndo'          , 'undo hunk'           ] ,
       " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
       " \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
-
-      " \ 'd' : [':Git diff'                          , 'diff'                ] ,
       " \ 'D' : [':Gdiffsplit'                        , 'diff split'          ] ,
 
-
-" :CocCommand fzf-pmeview.BlamePR
-      " \ 'S' : [':CocCommand fzf-preview.GitStatus'  , 'status'              ] ,
-      " \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
-      " \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
-      " \ 'A' : [':Git add %'                        , 'add current'],
-      " \ 's' : [':G'                                , 'status'],
-      " \ 's' : ['<Plug>(GitGutterStageHunk)'         , 'stage hunk'],
-      " \ 'H' : ['<Plug>(GitGutterPreviewHunk)'       , 'preview hunk'],
 
 " G is for Gist
 let g:which_key_map.G = {
@@ -190,12 +170,6 @@ let g:which_key_map.G = {
       \ 'P' : [':Gist -P'  , 'post public gist '     ] ,
       \ 'p' : [':Gist -p'  , 'post private gist '    ] ,
       \ }
-
-" k is for cheat.sh
-" TODO
-
-
-
 
 " l is for language server protocol
 let g:which_key_map.l = {
@@ -225,8 +199,7 @@ let g:which_key_map.l = {
       \ }
       " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
       " <C-w>p jump in and out of floating notifications
-      " \ 'b' : [':CocNext'                            , 'next action'],
-      " \ 'B' : [':CocPrev'                            , 'prev action'],
+      " <C-w>w jump in and out of floating notifications
 
 " n is for NerdTree
 let g:which_key_map.n = {
@@ -236,11 +209,11 @@ let g:which_key_map.n = {
       \ 'f' : [':NERDTreeFind'         , 'NerdTree Find'          ] ,
       \ }
 
-let g:which_key_map.o = {
-      \ 'name' : 'Obsess'     ,
-      \ 's' : [':Obsess<CR>'  , ':Obsess'  ] ,
-      \ 'S' : [':Obsess!<CR>' , ':Obsess!' ] ,
-      \ }
+" let g:which_key_map.o = {
+"       \ 'name' : 'Obsess'     ,
+"       \ 's' : [':Obsess<CR>'  , ':Obsess'  ] ,
+"       \ 'S' : [':Obsess!<CR>' , ':Obsess!' ] ,
+"       \ }
 
 
 let g:which_key_map.q = {
@@ -433,17 +406,6 @@ let g:which_key_map.t = {
       " \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
       " \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
 
-" " T is for tab
-" let g:which_key_map.T = {
-"       \ 'name' : '+Tab'                    ,
-"       \ '<Left>' :  [ ':tabm -1'           , '<= Tab'  ] ,
-"       \ '<Right>' : [ ':tabm +1'           , '=> Tab'  ] ,
-"       \ 'n' :       [ ':tabnew'            , 'new tab' ] ,
-"       \ 'T' :       [ ':tabnew | terminal' , 'new tab' ] ,
-"       \ '%' :       [ ':tabedit %' ,         'file in new tab' ] ,
-"       \ }
-"       " \ '.' :       [ ':tabnew $MYVIMRC'                               ,  'init in new tab'],
-" map <leader>Tt :let $VIM_DIR=expand('%:p:h')<CR>:terminal<CR>cd $VIM_DIR<CR>
 
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
@@ -453,7 +415,6 @@ let g:which_key_map.u = {
       \ 's' : [':CocList snippets'                     , 'Ultisnips Snippets' ] ,
       \ 't' : [':UndotreeToggle'                       , 'UndoTree'           ] ,
       \ }
-" \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'],
 " \ 'e' : [':UltiSnipsEdit<cr>'                    , 'Ultisnips Edit'],
 " convert visual selected code to snippet
 xmap <leader>uc  <Plug>(coc-convert-snippet)

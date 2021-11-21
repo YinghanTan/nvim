@@ -10,7 +10,8 @@ nnoremap <silent> <C-w>z :MaximizerToggle<CR>
 nmap gV `[v`]
 
 " Open file under cursor in split
-nmap gF <c-w>f
+" nmap gF <c-w>f
+nmap gF :vert wincmd f<CR>
 
 if !exists('g:lasttab')
   let g:lasttab = 1
