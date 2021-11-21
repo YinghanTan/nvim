@@ -55,11 +55,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
-    " Telescope
-    " Plug 'nvim-lua/popup.nvim'
-    " Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
-    " Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
@@ -73,8 +68,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
     Plug 'rhysd/git-messenger.vim' " Popup Git messages
-
-
 
     Plug 'konfekt/fastfold'
     Plug 'MarcWeber/vim-addon-mw-utils'
@@ -125,3 +118,8 @@ autocmd VimEnter *
     " Plug 'tpope/vim-commentary' " Code Commentting
     " Plug 'thinca/vim-qfreplace'
     " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
+    " Telescope
+    " Plug 'nvim-lua/popup.nvim'
+    " Plug 'nvim-lua/plenary.nvim'
+    " Plug 'nvim-telescope/telescope.nvim'
+    " Plug 'nvim-telescope/telescope-fzy-native.nvim'

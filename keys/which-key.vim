@@ -52,10 +52,6 @@ let g:which_key_map.a = {
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
       \ }
-      " \ 'v' : [':Codi'                      , 'virtual repl on'         ] ,
-      " \ 'V' : [':Codi!'                     , 'virtual repl off'        ] ,
-      " \ 'l' : [':Bracey'                    , 'start live server'       ] ,
-      " \ 'L' : [':BraceyStop'                , 'stop live server'        ] ,
 
 " " c is for code
 " let g:which_key_map.c = {
@@ -71,7 +67,7 @@ let g:which_key_map.d = {
         \ 'name' : '+debug'                                                           ,
         \ 'b' : ['<Plug>VimspectorToggleBreakpoint'                                   , 'breakpoint'             ] ,
         \ 'B' : {
-            \ 'name': '+breakpoint options'                                           ,
+            \ 'name': '+breakpoint'                                           ,
             \ 'd' : [':call vimspector#ClearBreakpoints()'                            , 'remove all breakpoints' ] ,
             \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint'                          , 'func breakpoint'        ] ,
             \ 'c' : ['<Plug>VimspectorToggleConditionalBreakpoint'                    , 'conditional breakpoint' ] ,
@@ -89,9 +85,8 @@ let g:which_key_map.d = {
             \ 'v' : [':call GoToWindow(g:vimspector_session_windows.variables)<CR>'   , 'variables'              ] ,
             \ 'w' : [':call GoToWindow(g:vimspector_session_windows.watches)<CR>'     , 'watches'                ] ,
             \ 's' : [':call GoToWindow(g:vimspector_session_windows.stack_trace)<CR>' , 'stack'                  ] ,
-            \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>'    , 'terminal'               ] ,
+            \ 't' : [':call GoToWindow(g:vimspector_session_windows.output)<CR>'      , 'terminal'                 ] ,
             \ 'T' : [':call GoToWindow(g:vimspector_session_windows.tagpage)<CR>'     , 'tag'                    ] ,
-            \ 'o' : [':call GoToWindow(g:vimspector_session_windows.output)<CR>'      , 'output'                 ] ,
             \ 'c' : [':call GoToWindow(g:vimspector_session_windows.code)<CR>'        , 'code'                   ] ,
             \ }                                                                       ,
         \ 'u' : ['<Plug>VimspectorUpFrame'                                            , 'Up frame'               ] ,
@@ -103,6 +98,7 @@ let g:which_key_map.d = {
         \ 'w' : [':call AddToWatch()<CR>'                                             , 'add to watch'           ] ,
         \ 'z' : [':MaximizerToggle'                                                   , 'maximize window'        ] ,
         \ }
+        " \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>'    , 'terminal'               ] ,
 
 " nmap <leader>dw :VimspectorWatch 
 nmap <leader>do :VimspectorShowOutput 
@@ -127,23 +123,26 @@ let g:which_key_map.g = {
           \ 'd' : [':Gdiff'                  , 'diff'                ] ,
           \ 's' : [':Gdiffsplit'                , 'diff split'          ] ,
           \ 'i' : [':CocCommand git.diffCached' , 'diff info'           ] ,
-          \ }                                   ,
+          \ },
       \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
       \ 'A' : [':Git add .'                         , 'add all'            ] ,
       \ 'b' : [':Git blame'                         , 'blame'              ] ,
       \ 'B' : [':GBrowse'                           , 'browse'             ] ,
       \ 'c' : [':BCommits'                          , 'buffer commits'     ] ,
       \ 'C' : [':Commits'                           , 'commits'            ] ,
-      \ 'F' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'     ] ,
-      \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
+      \ 'g' : {
+          \ 'name': '+gutter'                           ,
+          \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
+          \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
+          \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
+          \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
+          \ 'f' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'     ] ,
+          \ },
       \ 'l' : [':Git log --oneline'                 , 'log'                ] ,
       \ 'L' : [':Git log'                           , 'log'                ] ,
       \ 'm' : ['<Plug>(git-messenger)'              , 'message'            ] ,
       \ 'p' : [':GGrep'                             , 'git grep'           ] ,
       \ 'r' : [':GDelete'                           , 'remove'             ] ,
-      \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
-      \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
-      \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
       \ 'v' : [':GV!'                               , 'file commits'       ] ,
       \ 'V' : [':GV'                                , 'all commits'        ] ,
       \ 'f' : [':diffget //2'                       , 'diffget left hunk'  ] ,
@@ -154,6 +153,10 @@ let g:which_key_map.g = {
       " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
       " \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
       " \ 'D' : [':Gdiffsplit'                        , 'diff split'          ] ,
+      " \ 'i' : [':SignifyHunkDiff'                   , 'chunk info'      ] ,
+      " \ 'f' : [':SignifyFold!'                      , 'fold unchanged'  ] ,
+      " \ 'r' : [':SignifyRefresh'                    , 'refresh'         ] ,
+      " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks' ] ,
 
 
 " G is for Gist
@@ -200,6 +203,7 @@ let g:which_key_map.l = {
       " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
       " <C-w>p jump in and out of floating notifications
       " <C-w>w jump in and out of floating notifications
+      " nnoremap <leader>lA : <Plug>(coc-codeaction-selected)
 
 " n is for NerdTree
 let g:which_key_map.n = {
@@ -322,7 +326,6 @@ let g:which_key_map.s = {
       " \ 'M' : [':Maps'                        , 'normal maps'] ,
 
 
-" TODO fix FZF preview or just move to Telescope
 " s is for search powered by telescope
 
 " let g:which_key_map.s = {
@@ -402,9 +405,6 @@ let g:which_key_map.t = {
         \ 'i' :       [ ':tabnew | terminal ipython'              , 'ipython'        ] ,
         \ },
       \ }
-      " \ 'i' :       [ ':FloatermNew! ipython'                   , 'ipython'  ] ,
-      " \ 'i' :       [ ':vsplit | terminal ipython'              , 'ipython vsplit'  ] ,
-      " \ 'I' :       [ ':tabnew | terminal ipython'              , 'ipython'  ] ,
 
 
 " u is for UltiSnips or Undo
@@ -425,9 +425,38 @@ let g:which_key_map.w = {
       \ 'name' : '+wiki'                 ,
       \ 'w' : ['<Plug>VimwikiIndex'      , 'Wiki'         ] ,
       \ 'd' : ['<plug>VimwikiDiaryIndex' , 'Diary'        ] ,
-      \ 'j' : ['<plug>(wiki-journal)'    , 'journal'         ] ,
+      \ 'j' : ['<plug>(wiki-journal)'    , 'journal'      ] ,
       \ 't' : [':VimwikiTable'           , 'vimwikiTable' ] ,
       \ }
+
+
+" yo is for toggle
+let g:which_key_map.y = {
+      \ 'name' : '+toggle'                 ,
+      \ 'o' : {
+          \ 'name': '+options'                                           ,
+          \ 'g' : [':IndentGuidesToggle'        , 'indent Guide'            ] ,
+          \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
+          \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
+          \ 'C' : [':ColorizerToggle'           , 'colorizer'               ] ,
+          \ 'b': ['yob',	'background'],
+          \ 'c': ['yoc',	'cursorline'],
+          \ 'd': ['yod',	'diff'],
+          \ 'e': ['yoe',	'spell'],
+          \ 'h': ['yoh',	'hlsearch'],
+          \ 'i': ['yoi',	'ignorecase'],
+          \ 'l': ['yol',	'list'],
+          \ 'n': ['yon',	'number'],
+          \ 'r': ['yor',	'relativenumber'],
+          \ 'u': ['you',	'cursorcolumn'],
+          \ 'v': ['yov',	'virtualedit'],
+          \ 'w': ['yow',	'wrap'],
+          \ 'x': ['yox',	'crosshairs'],
+          \ }                                                                       ,
+      \ }
+nnoremap yog :IndentGuidesToggle<cr>
+nnoremap yom <Plug>MarkdownPreview
+nnoremap yoC :ColorizerToggle<cr>
 
 
 " --- Edit Files ---
