@@ -1,17 +1,4 @@
-const a= {foo: "bar"};
-a.blah
-a.foo
-clearInterval
-console.log()
-console.log('')
-cl
-cltest
-console.log()
+const a = {foo: "bar"};
 
-cltestcltest..
-  console.log()
-console.log(this)
-cl
-console.log("new")
 
-console.log("new")
+

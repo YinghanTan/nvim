@@ -129,7 +129,7 @@ set background=dark         " tell vim what the background color looks like
 set nobackup                " This is recommended by coc
 set nowritebackup           " This is recommended by coc
 set updatetime=100          " Faster completion
-set timeoutlen=500          " By default timeoutlen is 1000 ms
+set timeoutlen=900          " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus   " Copy paste between vim and everything else
 set autochdir               " Your working directory will always be the same as your file directory
 set diffopt=vertical
@@ -392,3 +392,9 @@ vnoremap K :m '<-2<CR>gv=gv
 
 " Programming Languages Config
 autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100)
+
+" Highlight yank
+augroup highlight_yank
+    autocmd!
+    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank("IncSearch", 1000)
+augroup END

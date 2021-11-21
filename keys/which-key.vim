@@ -4,7 +4,6 @@ fun! GoToWindow(id)
     " MaximizerToggle
 endfun
 
-
 " Which-Key settings
 " Timeout
 let g:which_key_timeout = 100
@@ -15,10 +14,6 @@ let g:which_key_sep = '→'    " Define a separator
 " Map leader to which_key
 nnoremap <silent> <leader> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
-
-" Coc Search & refactor
-" nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
-" let g:which_key_map['?'] = 'search word'
 
 " Not a fan of floating windows for this
 let g:which_key_use_floating_win = 0
@@ -107,24 +102,24 @@ let g:which_key_map.g = {
       \ 'name' : '+git'                         ,
       \ 'd' : {
           \ 'name': '+diff'                     ,
-          \ 'd' : [':Gdiff'                  , 'diff'                ] ,
+          \ 'd' : [':Gdiff'                     , 'diff'                ] ,
           \ 's' : [':Gdiffsplit'                , 'diff split'          ] ,
           \ }                                   ,
       \ 'g' : {
-          \ 'name': '+gutter'                     ,
-          \ 'u' : [':SignifyHunkUndo'          , 'undo hunk'           ] ,
-          \ 'i' : ['<Plug>(coc-git-chunkinfo)'          , 'chunk info'         ] ,
-          \ 'c' : ['<Plug>(coc-git-commit)'             , 'comit info'         ] ,
-          \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
-          \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
-          \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
-          \ }                                   ,
+          \ 'name': '+gutter'                           ,
+          \ 'u' : [':SignifyHunkUndo'                   , 'undo hunk'       ] ,
+          \ 'i' : [':SignifyHunkDiff'                   , 'chunk info'      ] ,
+          \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks' ] ,
+          \ 't' : [':SignifyToggle'                     , 'toggle signs'    ] ,
+          \ 'r' : [':SignifyRefresh'                    , 'refresh'         ] ,
+          \ 'f' : [':SignifyFold!'                      , 'fold unchanged'  ] ,
+          \ 'e' : [':SignifyRefresh'                    , 'refresh'         ] ,
+          \ }                                       ,
       \ 'A' : [':Git add .'                         , 'add all'            ] ,
       \ 'b' : [':Git blame'                         , 'blame'              ] ,
       \ 'B' : [':GBrowse'                           , 'browse'             ] ,
       \ 'c' : [':BCommits'                          , 'buffer commits'     ] ,
       \ 'C' : [':Commits'                           , 'commits'            ] ,
-      \ 'F' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'     ] ,
       \ 'l' : [':Git log --oneline'                 , 'log'                ] ,
       \ 'L' : [':Git log'                           , 'log'                ] ,
       \ 'm' : ['<Plug>(git-messenger)'              , 'message'            ] ,
@@ -136,26 +131,6 @@ let g:which_key_map.g = {
       \ 'f' : [':diffget //2'                       , 'diffget left hunk'  ] ,
       \ 'j' : [':diffget //3'                       , 'diffget right hunk' ] ,
       \ }
-        " Vim-Signify
-      " \ 'u' : [':SignifyHunkUndo'          , 'undo hunk'           ] ,
-      " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
-      " \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
-      " coc-git
-      " \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
-      " \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
-      " \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
-      " \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
-
-
-
-" :CocCommand fzf-pmeview.BlamePR
-      " \ 'S' : [':CocCommand fzf-preview.GitStatus'  , 'status'              ] ,
-      " \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
-      " \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
-      " \ 'A' : [':Git add %'                        , 'add current'],
-      " \ 's' : [':G'                                , 'status'],
-      " \ 's' : ['<Plug>(GitGutterStageHunk)'         , 'stage hunk'],
-      " \ 'H' : ['<Plug>(GitGutterPreviewHunk)'       , 'preview hunk'],
 
 " G is for Gist
 let g:which_key_map.G = {
@@ -176,33 +151,14 @@ let g:which_key_map.G = {
 " l is for language server protocol
 let g:which_key_map.l = {
       \ 'name' : '+lsp'                                        ,
-      \ '.' : [':CocConfig'                           , 'config'                                          ] ,
-      \ 'a' : ['<Plug>(coc-codeaction)'                        , 'line action'                                     ] ,
-      \ 'A' : ['<Plug>(coc-codeaction-selected)'               , 'selected action'                                 ] ,
-      \ 'c' : [':CocCommand rest-client.request'               , 'api Client'                                         ] ,
-      \ 'f' : ['<Plug>(coc-format)'                            , 'format'                                          ] ,
-      \ 'F' : ['<Plug>(coc-format-selected)'                   , 'format selected'                                 ] ,
-      \ 'g' : [':CocCommand fzf-preview.CocCurrentDiagnostics' , 'diagnostics current'                             ] ,
-      \ 'G' : [':CocCommand fzf-preview.CocDiagnostics'        , 'diagnostics'                                     ] ,
-      \ 'i' : [":call CocAction('runCommand', 'editor.action.organizeImport')" , 'organise imports'                ] ,
-      \ 'r' : ['<Plug>(coc-rename)'                            , 'rename'                                          ] ,
-      \ 'R' : ['<Plug>(coc-refactor)'                          , 'refactor'                                        ] ,
-      \ 'q' : ['<Plug>(coc-fix-current)'                       , 'coc quick fix'                                        ] ,
-      \ 'l' : {
-            \ 'name': '+lsp options',
-            \ 'a' : [':CocFzfList -I symbols'                        , 'all coc'                                      ] ,
-            \ ';' : [':CocFzfList commands'                          , 'commands'                                        ] ,
-            \ 'r' : [':CocRestart'                                   , 'restart'                                     ] ,
-            \ 'u' : [':CocUpdate'                                    , 'update'                                      ] ,
-            \ 'c' : [':CocDisable'                                   , 'close'                                     ] ,
-            \ 'o' : [':CocEnable'                                    , 'open'                                      ] ,
-            \ 'e' : [':CocFzfList extensions'                        , 'extensions'                                      ] ,
-            \ },
+      \ 'a' : ['<cmd>lua vim.lsp.buf.code_action()<CR>'        , 'line action'                                     ] ,
+      \ 'A' : [':Telescope lsp_code_actions'            , 'code_actions'],
+      \ 'f' : ['<cmd>lua vim.lsp.buf.formatting()<CR>'         , 'format'                                          ] ,
+      \ 'r' : ['<cmd>lua vim.lsp.buf.rename()<CR>'             , 'rename'                                          ] ,
       \ }
-      " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
       " <C-w>p jump in and out of floating notifications
-      " \ 'b' : [':CocNext'                            , 'next action'],
-      " \ 'B' : [':CocPrev'                            , 'prev action'],
+      " <C-w>w jump in and out of floating notifications
+      " \ 'F' : ['<Plug>(coc-format-selected)'                   , 'format selected'                                 ] ,
 
 " n is for NerdTree
 let g:which_key_map.n = {
@@ -220,7 +176,6 @@ let g:which_key_map.o = {
 
 let g:which_key_map.q = {
       \ 'name' : 'QuickFix'      ,
-      \ 'g' : [':CocDiagnostics' , 'Diagnostics'          ] ,
       \ 't' : [':Todo'           , 'Add todo to quickfix' ] ,
       \ 'q' : [':copen'          , 'QuickFix'             ] ,
       \ 'Q' : [':cclose'         , 'close QuickFix'       ] ,
@@ -228,11 +183,13 @@ let g:which_key_map.q = {
       \ 'L' : [':lclose'         , 'close LocalFix'       ] ,
       \ }
       " " Use unimpaired shortcuts instead [q ]q [l ]l
+      " \ 'g' : [':CocDiagnostics' , 'Diagnostics'          ] ,
 
+" TODO: fix autostart for eslint <21-11-21, Yinghan Tan> "
+" TODO: fix cmd mapping must end with a <cr> <21-11-21, Yinghan Tan> "
+" TODO: fix ultisnips repeated snippets problem <21-11-21, Yinghan Tan> "
 
-" TODO fix FZF preview or just move to Telescope
 " s is for search powered by telescope
-
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
       \ ';' : [':Telescope commands'                    , 'commands'],
@@ -276,43 +233,6 @@ let g:which_key_map.s = {
       " \ 'R' : [':Telescope registers'                   , 'registers'],
       " \ 'y' : [':CocFzfList yank'                              , 'list yank'          ]    ,
 
-" " s is for search
-" let g:which_key_map.s = {
-"       \ 'name' : '+search'                                     ,
-"       \ '/' : [':History/'                                     , 'history'            ]    ,
-"       \ ';' : [':Commands'                                     , 'commands'           ]    ,
-"       \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
-"       \ 'b' : [':Buffers'                                      , 'all buffers'        ]    ,
-"       \ 'c' : [':BCommits'                                     , 'buffer commits'     ]    ,
-"       \ 'C' : [':Commits'                                      , 'commits'            ]    ,
-"       \ 'D' : [':CocCommand fzf-preview.Changes'               , 'delta/changes'      ]    ,
-"       \ 'f' : [':Files'                                        , 'files'              ]    ,
-"       \ 'g' : [':GFiles'                                       , 'git files'          ]    ,
-"       \ 'G' : [':GFiles?'                                      , 'modified git files' ]    ,
-"       \ 'h' : [':History'                                      , 'file history'       ]    ,
-"       \ 'H' : [':History:'                                     , 'command history'    ]    ,
-"       \ 'i' : [':CocCommand fzf-preview.CocCurrentDiagnostics' , 'diagnostics'        ]    ,
-"       \ 'I' : [':CocCommand fzf-preview.CocDiagnostics'        , 'all diagnostics'    ]    ,
-"       \ 'j' : [':CocCommand fzf-preview.Jumps'                 , 'jumps'              ]    ,
-"       \ 'k' : [':Cheat'                                        , 'cheat.sh'           ]    ,
-"       \ 'l' : [':Lines'                                        , 'lines'              ]    ,
-"       \ 'L' : [':BLines'                                       , 'current buffer'     ]    ,
-"       \ 'm' : [':Marks'                                        , 'marks'              ]    ,
-"       \ 'M' : [':Maps'                                         , 'normal maps'        ]    ,
-"       \ 'p' : [':Helptags'                                     , 'help tags'          ]    ,
-"       \ 'P' : [':Tags'                                         , 'project tags'       ]    ,
-"       \ 'q' : [':CocCommand fzf-preview.QuickFix'              , 'quickfix list'      ]    ,
-"       \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,
-"       \ 'r' : [':RG'                                           , 'text Rg'            ]    ,
-"       \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
-"       \ 'S' : [':Colors'                                       , 'color schemes'      ]    ,
-"       \ 't' : [':RG'                                           , 'text Rg'            ]    ,
-"       \ 'T' : [':BTags'                                        , 'buffer tags'        ]    ,
-"       \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
-"       \ 'y' : [':CocFzfList yank'                              , 'list yank'          ]    ,
-"       \ 'Y' : [':Filetypes'                                    , 'file types'         ]    ,
-"       \ 'z' : [':FZF'                                          , 'FZF'                ]    ,
-"       \ }
 
 
 
@@ -360,15 +280,16 @@ let g:which_key_map.t = {
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
       \ 'name' : '+ultisnips or undo'                  ,
-      \ 'e' : [':UltiSnipsEdit<cr>'                    , 'Ultisnips Edit'],
+      \ 'e' : ['UltiSnipsEdit'                    , 'Ultisnips Edit'],
       \ 'f' : [':CocCommand snippets.openSnippetFiles' , 'Ultisnips Files'    ] ,
-      \ 's' : [':Snippets'                     , 'Ultisnips Snippets' ] ,
+      \ 's' : [':Telescope ultisnips'                     , 'Ultisnips Snippets' ] ,
       \ 't' : [':UndotreeToggle'                       , 'UndoTree'           ] ,
       \ }
     " \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'],
       " \ 'e' : [':CocCommand snippets.editSnippets'     , 'Ultisnips Edit'     ] ,
+nnoremap <leader>ue :UltiSnipsEdit<cr>
 " convert visual selected code to snippet
-xmap <leader>uc  <Plug>(coc-convert-snippet)
+" xmap <leader>uc  <Plug>(coc-convert-snippet)
 
 
 " w is for wiki
@@ -436,3 +357,101 @@ inoremap <4-MiddleMouse> <Nop>
 " Selecting last pasted text 2 versions
 " nnoremap gp `[v`]
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+
+" == Deprecated ==
+
+" Coc Search & refactor
+" nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
+" let g:which_key_map['?'] = 'search word'
+
+" " l is for language server protocol
+" let g:which_key_map.l = {
+"       \ 'name' : '+lsp'                                        ,
+"       \ '.' : [':CocConfig'                           , 'config'                                          ] ,
+"       \ 'a' : ['<Plug>(coc-codeaction)'                        , 'line action'                                     ] ,
+"       \ 'A' : ['<Plug>(coc-codeaction-selected)'               , 'selected action'                                 ] ,
+"       \ 'c' : [':CocCommand rest-client.request'               , 'api Client'                                         ] ,
+"       \ 'f' : ['<Plug>(coc-format)'                            , 'format'                                          ] ,
+"       \ 'F' : ['<Plug>(coc-format-selected)'                   , 'format selected'                                 ] ,
+"       \ 'g' : [':CocCommand fzf-preview.CocCurrentDiagnostics' , 'diagnostics current'                             ] ,
+"       \ 'G' : [':CocCommand fzf-preview.CocDiagnostics'        , 'diagnostics'                                     ] ,
+"       \ 'i' : [":call CocAction('runCommand', 'editor.action.organizeImport')" , 'organise imports'                ] ,
+"       \ 'r' : ['<Plug>(coc-rename)'                            , 'rename'                                          ] ,
+"       \ 'R' : ['<Plug>(coc-refactor)'                          , 'refactor'                                        ] ,
+"       \ 'q' : ['<Plug>(coc-fix-current)'                       , 'coc quick fix'                                        ] ,
+"       \ 'l' : {
+"             \ 'name': '+lsp options',
+"             \ 'a' : [':CocFzfList -I symbols'                        , 'all coc'                                      ] ,
+"             \ ';' : [':CocFzfList commands'                          , 'commands'                                        ] ,
+"             \ 'r' : [':CocRestart'                                   , 'restart'                                     ] ,
+"             \ 'u' : [':CocUpdate'                                    , 'update'                                      ] ,
+"             \ 'c' : [':CocDisable'                                   , 'close'                                     ] ,
+"             \ 'o' : [':CocEnable'                                    , 'open'                                      ] ,
+"             \ 'e' : [':CocFzfList extensions'                        , 'extensions'                                      ] ,
+"             \ },
+"       \ }
+"       " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
+"       " <C-w>p jump in and out of floating notifications
+"       " \ 'b' : [':CocNext'                            , 'next action'],
+"       " \ 'B' : [':CocPrev'                            , 'prev action'],
+
+
+      " coc-git
+      " \ 'i' : [':CocCommand git.chunkInfo'          , 'chunk info'         ] ,
+      " \ 't' : [':CocCommand git.toggleGutters'      , 'toggle signs'       ] ,
+      " \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
+      " \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
+      " \ 'F' : [':CocCommand git.foldUnchanged'      , 'fold unchanged'     ] ,
+      " \ 'c' : ['<Plug>(coc-git-commit)'             , 'comit info'         ] ,
+      " \ 'i' : ['<Plug>(coc-git-chunkinfo)'          , 'chunk info'         ] ,
+      " \ 's' : [':CocCommand git.chunkStage'         , 'stage hunk'         ] ,
+
+
+" :CocCommand fzf-pmeview.BlamePR
+      " \ 'S' : [':CocCommand fzf-preview.GitStatus'  , 'status'              ] ,
+      " \ 'k' : ['<Plug>(GitGutterPrevHunk)'         , 'prev hunk'],
+      " \ 'j' : ['<Plug>(GitGutterNextHunk)'         , 'next hunk'],
+      " \ 'A' : [':Git add %'                        , 'add current'],
+      " \ 's' : [':G'                                , 'status'],
+      " \ 's' : ['<Plug>(GitGutterStageHunk)'         , 'stage hunk'],
+      " \ 'H' : ['<Plug>(GitGutterPreviewHunk)'       , 'preview hunk'],
+
+
+" " s is for search
+" let g:which_key_map.s = {
+"       \ 'name' : '+search'                                     ,
+"       \ '/' : [':History/'                                     , 'history'            ]    ,
+"       \ ';' : [':Commands'                                     , 'commands'           ]    ,
+"       \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
+"       \ 'b' : [':Buffers'                                      , 'all buffers'        ]    ,
+"       \ 'c' : [':BCommits'                                     , 'buffer commits'     ]    ,
+"       \ 'C' : [':Commits'                                      , 'commits'            ]    ,
+"       \ 'D' : [':CocCommand fzf-preview.Changes'               , 'delta/changes'      ]    ,
+"       \ 'f' : [':Files'                                        , 'files'              ]    ,
+"       \ 'g' : [':GFiles'                                       , 'git files'          ]    ,
+"       \ 'G' : [':GFiles?'                                      , 'modified git files' ]    ,
+"       \ 'h' : [':History'                                      , 'file history'       ]    ,
+"       \ 'H' : [':History:'                                     , 'command history'    ]    ,
+"       \ 'i' : [':CocCommand fzf-preview.CocCurrentDiagnostics' , 'diagnostics'        ]    ,
+"       \ 'I' : [':CocCommand fzf-preview.CocDiagnostics'        , 'all diagnostics'    ]    ,
+"       \ 'j' : [':CocCommand fzf-preview.Jumps'                 , 'jumps'              ]    ,
+"       \ 'k' : [':Cheat'                                        , 'cheat.sh'           ]    ,
+"       \ 'l' : [':Lines'                                        , 'lines'              ]    ,
+"       \ 'L' : [':BLines'                                       , 'current buffer'     ]    ,
+"       \ 'm' : [':Marks'                                        , 'marks'              ]    ,
+"       \ 'M' : [':Maps'                                         , 'normal maps'        ]    ,
+"       \ 'p' : [':Helptags'                                     , 'help tags'          ]    ,
+"       \ 'P' : [':Tags'                                         , 'project tags'       ]    ,
+"       \ 'q' : [':CocCommand fzf-preview.QuickFix'              , 'quickfix list'      ]    ,
+"       \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,
+"       \ 'r' : [':RG'                                           , 'text Rg'            ]    ,
+"       \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
+"       \ 'S' : [':Colors'                                       , 'color schemes'      ]    ,
+"       \ 't' : [':RG'                                           , 'text Rg'            ]    ,
+"       \ 'T' : [':BTags'                                        , 'buffer tags'        ]    ,
+"       \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
+"       \ 'y' : [':CocFzfList yank'                              , 'list yank'          ]    ,
+"       \ 'Y' : [':Filetypes'                                    , 'file types'         ]    ,
+"       \ 'z' : [':FZF'                                          , 'FZF'                ]    ,
+"       \ }
