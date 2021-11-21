@@ -148,17 +148,17 @@ let g:which_key_map.G = {
       \ }
 
 
-" l is for language server protocol
-let g:which_key_map.l = {
-      \ 'name' : '+lsp'                                        ,
-      \ 'a' : ['<cmd>lua vim.lsp.buf.code_action()<CR>'        , 'line action'                                     ] ,
-      \ 'A' : [':Telescope lsp_code_actions'            , 'code_actions'],
-      \ 'f' : ['<cmd>lua vim.lsp.buf.formatting()<CR>'         , 'format'                                          ] ,
-      \ 'r' : ['<cmd>lua vim.lsp.buf.rename()<CR>'             , 'rename'                                          ] ,
-      \ }
-      " <C-w>p jump in and out of floating notifications
-      " <C-w>w jump in and out of floating notifications
-      " \ 'F' : ['<Plug>(coc-format-selected)'                   , 'format selected'                                 ] ,
+" " l is for language server protocol
+" let g:which_key_map.l = {
+"       \ 'name' : '+lsp'                      ,
+"       \ 'a' : ['\la'                  , 'line action'  ] ,
+"       \ 'A' : [':Telescope lsp_code_actions' , 'code_actions' ] ,
+"       \ 'f' : ['\lf'                  , 'format'       ] ,
+"       \ 'r' : ['\lr'                  , 'rename'       ] ,
+"       \ }
+"       " <C-w>p jump in and out of floating notifications
+"       " <C-w>w jump in and out of floating notifications
+"       " \ 'F' : ['<Plug>(coc-format-selected)'                   , 'format selected'                                 ] ,
 
 " n is for NerdTree
 let g:which_key_map.n = {
@@ -187,7 +187,6 @@ let g:which_key_map.q = {
 
 " TODO: fix autostart for eslint <21-11-21, Yinghan Tan> "
 " TODO: fix cmd mapping must end with a <cr> <21-11-21, Yinghan Tan> "
-" TODO: fix ultisnips repeated snippets problem <21-11-21, Yinghan Tan> "
 
 " s is for search powered by telescope
 let g:which_key_map.s = {

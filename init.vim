@@ -5,6 +5,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/keys/which-key.vim
+" luafile $HOME/.config/nvim/lua/which-key.lua
 
 " Update
 luafile $HOME/.config/nvim/lua/config-telescope.lua

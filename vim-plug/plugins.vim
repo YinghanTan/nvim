@@ -55,6 +55,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'tpope/vim-surround' " Surround
+    " Plug 'folke/which-key.nvim' " View Shortcut keys lua
+    Plug 'liuchengxu/vim-which-key' " View Shortcut keys
 
     " Tools
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
@@ -64,7 +66,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mbbill/undotree' " Undo Time Travel
     Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger
@@ -140,3 +141,4 @@ autocmd VimEnter *
     " Plug 'tomtom/tlib_vim' " snipmate dependencies
     " Plug 'editorconfig/editorconfig-vim' " editor-agnostic file format for defining coding styles
     " Plug 'navarasu/onedark.nvim' " A dark Neovim color scheme for the GUI and 16/256/true-color terminals
+    " Plug 'AckslD/nvim-whichkey-setup.lua'
