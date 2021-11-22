@@ -4,6 +4,13 @@ fun! GoToWindow(id)
     " MaximizerToggle
 endfun
 
+function TrimWhitespace()
+ let l = line(“.”)
+ let c = col(“.”)
+ %s/\s\+$//e
+ call cursor(l, c)
+endfun
+
 
 " Which-Key settings
 " Timeout
@@ -51,7 +58,9 @@ let g:which_key_map.a = {
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
+      \ 'w' : ['TrimWhitespace()'           , 'trim whitespace'             ] ,
       \ }
+     
 
 " " c is for code
 " let g:which_key_map.c = {

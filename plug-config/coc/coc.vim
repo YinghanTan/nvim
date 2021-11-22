@@ -1,4 +1,5 @@
 " --- COC ---
+autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
 set hidden     " TextEdit might fail if hidden is not set.
 set nobackup   " Some servers have issues with backup files, see #649.
 set nowritebackup   " Some servers have issues with backup files, see #649.
@@ -162,3 +163,5 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
 "   let g:coc_global_extensions += ['coc-eslint']
 " endif
+
+
