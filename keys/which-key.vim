@@ -58,9 +58,10 @@ let g:which_key_map.a = {
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
-      \ 'w' : ['TrimWhitespace()'           , 'trim whitespace'             ] ,
       \ }
-     
+      " \ 'w' : [':call TrimWhitespace()<cr>' , 'trim whitespace'             ] ,
+nnoremap <leader>aw :call TrimWhitespace()<CR>
+    
 
 " " c is for code
 " let g:which_key_map.c = {
@@ -109,8 +110,8 @@ let g:which_key_map.d = {
         \ }
         " \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>'    , 'terminal'               ] ,
 
-" nmap <leader>dw :VimspectorWatch 
-nmap <leader>do :VimspectorShowOutput 
+" nmap <leader>dw :VimspectorWatch
+nmap <leader>do :VimspectorShowOutput
 nnoremap <leader>dD :call vimspector#Launch()<CR>
 " inspect word under cursor - normal mode
 nmap <leader>di <Plug>VimspectorBalloonEval
@@ -477,7 +478,7 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " --- --- ---
 
 " Register which key map
-call which_key#register('<Space>', "g:which_key_map") 
+call which_key#register('<Space>', "g:which_key_map")
 
 
 nnoremap <MiddleMouse> <Nop>

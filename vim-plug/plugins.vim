@@ -18,13 +18,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nathanaelkane/vim-indent-guides' " text Objects
     Plug 'tpope/vim-unimpaired'
     Plug 'vimwiki/vimwiki' " Note Taking
+    Plug 'michal-h21/vimwiki-sync' " Note git sync
     Plug 'easymotion/vim-easymotion' " Navigation
     Plug 'godlygeek/tabular' " Alignment and formatting
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
 
     " New / Testing
-    Plug 'suy/vim-context-commentstring' " Useful for React Commenting 
+    Plug 'suy/vim-context-commentstring' " Useful for React Commenting
 
     " Autocomplete
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete

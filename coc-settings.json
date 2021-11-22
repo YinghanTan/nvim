@@ -63,19 +63,22 @@
   "prettier.disableSuccessMessage": false,
   // "prettier.onlyUseLocalVersion": true,
 
-  // python config coc-pyright
-  "python.analysis.autoImportCompletions": true,
-  "python.analysis.autoSearchPaths": true,
-  "python.analysis.diagnosticMode": "openFilesOnly",
-  "python.analysis.stubPath": "typings",
-  "python.analysis.typeshedPaths": [],
-  "python.analysis.diagnosticSeverityOverrides": {},
-  "python.analysis.typeCheckingMode": "basic",
-  "python.analysis.useLibraryCodeForTypes": true,
-  "python.pythonPath": "$HOME/.pyenv/versions/3.8.12/bin/python3",
-  // "python.pythonPath": "python",
-  "python.venvPath": "${env:HOME}/.pyenv/versions",
+  // // python config coc-pyright
+  // "python.analysis.autoImportCompletions": true,
+  // "python.analysis.autoSearchPaths": true,
+  // "python.analysis.diagnosticMode": "openFilesOnly",
+  // "python.analysis.stubPath": "typings",
+  // "python.analysis.typeshedPaths": [],
+  // "python.analysis.diagnosticSeverityOverrides": {},
+  // "python.analysis.typeCheckingMode": "basic",
+  // "python.analysis.useLibraryCodeForTypes": true,
+  // "python.pythonPath": "$HOME/.pyenv/versions/3.8.12/bin/python3",
+  // // "python.pythonPath": "python",
+  // "python.venvPath": "${env:HOME}/.pyenv/versions",
   // "python.venvPath": "~/venvs/",
+
+
+
   // formatting
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.pyenv/versions/3.8.12/bin/black",
