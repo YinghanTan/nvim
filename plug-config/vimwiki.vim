@@ -10,3 +10,8 @@ let g:vimwiki_folding = 'expr'
 " map <leader>wt :VimwikiTable<cr>
 
 nnoremap yot :syn on<cr>    " turn on syntax highlighting
+
+
+
+
+" let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
