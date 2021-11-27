@@ -397,6 +397,7 @@ let g:which_key_map.t = {
       \ 'g': [ ':FloatermNew lazygit'                    , 'git'            ] ,
       \ 'i': [ ':vsplit | terminal ipython'              , 'ipython vsplit' ] ,
       \ 'd': [ ':FloatermNew lazydocker'                 , 'docker'         ] ,
+      \ 'l': [ ':FloatermNew lua'                        , 'lua'            ] ,
       \ 'n': [ ':FloatermNew node'                       , 'node'           ] ,
       \ 'N': [ ':FloatermNew nnn'                        , 'nnn'            ] ,
       \ 'p': [ ':FloatermNew python3'                    , 'python'         ] ,
