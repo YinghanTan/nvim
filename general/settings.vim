@@ -1,4 +1,3 @@
-
 " " python with virtualenv support
 " py << EOF
 " import os

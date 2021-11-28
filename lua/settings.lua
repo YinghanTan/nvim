@@ -1,0 +1,3 @@
+-- vim.opt.autoindent = true
+-- vim.opt.cursorline = true
+-- vim.opt.wildignore = {'*/cache/*,*/tmp/*'}

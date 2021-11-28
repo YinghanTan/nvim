@@ -1,0 +1,116 @@
+-- print('hello from ~/.config/nvim/lua/basic.lua')
+-- # scopes 
+-- vim.o.background = 'dark'
+-- vim.wo.colorcolumn = '80'
+-- vim.bo.filetype = 'lua'
+-- -- use space as the leader key
+-- vim.g.mapleader = ' '
+-- vim.g['zoom#statustext'] = 'Z'
+-- # print
+-- print(vim.inspect(vim.opt.wildignore))
+-- print(vim.opt.autoindent:get())
+-- print(vim.inspect(vim.opt.autoindent))
+-- # append lists
+-- set errorformat+=%f\|%l\ col\ %c\|%m
+-- vim.opt.errorformat = vim.opt.errorformat + '%f|%l col %c|%m'
+-- vim.opt.errorformat:append('%f|%l col %c|%m')
+-- -- # Add to the beginning
+-- set errorformat^=%f\|%l\ col\ %c\|%m
+-- vim.opt.erroformat = vim.opt.errorformat ^ '%f|%l col %c|%m'
+-- vim.opt.errorformat:prepend('%f|%l col %c|%m')
+-- # delete an item
+-- set errorformat-=%f\|%l\ col\ %c|%m
+-- vim.opt.errorformat = vim.opt.errorformat - '%f|%l col %c|%m'
+-- vim.opt.errorformat:remove('%f|%l col %c|%m')
+-- # Pairs
+-- set listchars=tab:>\,eol:backspace, trail: .
+-- vim.opt.listchars = { eol= 'backspace', tab = '> ', trail = '. '}
+-- -- # vim functions
+-- if vim.fn.has('nvim-0.5') == 1 then print('we got neovim 0.5') end
+-- vim.fn['fzf#vim#files']('~/projects', false)
+-- vim.call('fzf#vim#files', '~/projects', false)
+-- -- # vim-plug in lua
+-- vim.fn
+-- vim.call
+-- local Plug = vim.fn['plug#']
+-- vim.call('plug#begin', '~/.config/nvim/plugged')
+-- -- List of plugins goes here
+-- Plug 'wellle/targets.vim'
+-- Plug 'tpope/vim-surround'
+-- Plug 'tpope/vim-repeat'
+-- vim.call('plug#end')
+-- Plug'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
+-- Plug('scrooloose/nerdtree', {on = 'NERDTreeToggle'})
+-- Plug('junegunn/goyo.vim', {['for'] = 'markdown'})
+-- Plug('VonHeikemen/rubber-themes.vim', {
+--     ['do'] = function()
+--         vim.opt.termguicolors = true
+--         vim.cmd('colorscheme rubber')
+--     end
+-- })
+-- vim.cmd [[
+--     syntax enable
+--     colorschmeme dark
+--     command! Hello echom "hello!!"
+-- ]]
+-- vim.cmd 'source ~/.config/nvim/theme.vim'
+-- function~ MyHighlights() abort
+--     hi! link Question String
+--     hi! link NonText LineNr
+--     hi! link telescopeMatching Boolean
+--     hi! link telescopeSelection Cursorline
+-- endfunction
+-- augroup MyColors
+--     autocmd!
+--     autocmd ColorScheme * call MyHighlights()
+-- augroup END
+-- vim.api.nvim_set_keymap
+-- vim.api.nvim_set_keymap
+-- vim.api.nvim_buf_set_keymap
+-- nnoremap <Leader>w :write<CR>
+-- vim.api.nvim_set_keymap('n', '<Leader>w', ':write<CR>', {noremap = true})
+-- local map = vim.api.nvim_set_keymap
+-- map('n', '<Leader>w', ':write<CR>', {noremap = true})
+-- local map = function(key)
+--     -- get the extra options
+--     local opts = {noremap = true}
+--     for i, v in pairs(key) do if type(i) == 'string' then opts[i] = v end end
+--     -- basic support for buffer-scoped keybindings
+--     local buffer = opts.buffer
+--     opts.buffer = nil
+--     if buffer then
+--         vim.api.nvim_buf_set_keymap(0, key[1], key[2], key[3], opts)
+--     else
+--         vim.api.nvim_set_keymap(key[1], key[2], key[3], opts)
+--     end
+-- end
+-- map {noremap = false, 'n', '<Leader>e', '%'}
+-- map {'n', '<Leader>e', '%', noremap = false}
+-- local M = {}
+-- M.somefunction = function()
+--     print('all good')
+-- end
+-- return M
+-- vim.api.nvim_set_keymap(
+--     'n',
+--     '<Leader>w',
+--     "<cmd>lua require('usermod').somefunction()<CR>",
+--         {noremap=true}
+-- )
+-- local t = function(str)
+--     return vim.api.nvim_replace_termcodes(str, true,true, true)
+-- end
+-- _G.smart_tab = function()
+--     if vim.fn.pumvisible() == 1 then
+--         return t'<C-n>'
+--     else
+--         return t'<Tab>'
+--     end
+-- end
+-- vim.api.nvim_set_keymap(
+--     'i',
+--     '<Tab>',
+--     'v:lua.smart_tab()',
+--     {noremap = true, expr = true}
+-- )
+-- vim.cmd 'source ~/.config/nvim/keymap.vim'

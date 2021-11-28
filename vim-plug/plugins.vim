@@ -36,7 +36,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'quangnguyen30192/cmp-nvim-ultisnips' " For ultisnips users.
     Plug 'onsails/lspkind-nvim' " adds vscode-like pictograms to neovim built-in lsp:
-    Plug 'windwp/nvim-autopairs'
+    Plug 'windwp/nvim-autopairs' " Brackets autocomplete
     Plug 'vim-airline/vim-airline' " Status Line
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system

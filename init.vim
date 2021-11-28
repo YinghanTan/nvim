@@ -1,5 +1,14 @@
-" General Settings
+" " Lua
+" lua <<EOF
+" require('settings')
+" EOF
+" " lua print('basic')
 
+luafile $HOME/.config/nvim/lua/settings.lua
+luafile $HOME/.config/nvim/lua/reference.lua
+
+
+" General Settings
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/functions.vim
@@ -14,7 +23,7 @@ luafile $HOME/.config/nvim/plug-config/lua-ls.lua
 luafile $HOME/.config/nvim/plug-config/py-ls.lua
 luafile $HOME/.config/nvim/plug-config/lsp-kind.lua
 source $HOME/.config/nvim/plug-config/lsp-saga.vim
-luafile $HOME/.config/nvim/plug-config/nvim-autopairs.lua
+" luafile $HOME/.config/nvim/plug-config/nvim-autopairs.lua
 source $HOME/.config/nvim/plug-config/cmp.vim
 source $HOME/.config/nvim/plug-config/treesitter.vim
 source $HOME/.config/nvim/plug-config/web-devicons.vim
@@ -82,3 +91,4 @@ source $HOME/.config/nvim/plug-config/markdown.vim
 " source $HOME/.config/nvim/themes/neoSolarized.vim
 " luafile $HOME/.config/nvim/lua/lua-line.lua
 " source $HOME/.config/nvim/plug-config/tab-line.vim
+
