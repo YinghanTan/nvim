@@ -20,7 +20,7 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
-source $HOME/.config/nvim/plug-config/codi.vim
+source $HOME/.config/nvim/plug-config/vimpad.vim
 source $HOME/.config/nvim/plug-config/easyMotion.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
@@ -68,3 +68,4 @@ source $HOME/.config/nvim/themes/airline.vim
 " luafile $HOME/.config/nvim/lua/config-telescope.lua
 " source $HOME/.config/nvim/plug-config/bracey.vim
 " source $HOME/.config/nvim/plug-config/leetcode.vim
+" source $HOME/.config/nvim/plug-config/codi.vim

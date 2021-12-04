@@ -5,8 +5,8 @@ fun! GoToWindow(id)
 endfun
 
 function TrimWhitespace()
- let l = line(“.”)
- let c = col(“.”)
+ let l = line(".")
+ let c = col(".")
  %s/\s\+$//e
  call cursor(l, c)
 endfun
@@ -58,8 +58,16 @@ let g:which_key_map.a = {
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
+      \ 'p' : ['<Plug>(vimpad-toggle)'      , 'scratchpad' ] ,
       \ }
       " \ 'w' : [':call TrimWhitespace()<cr>' , 'trim whitespace'             ] ,
+      " \ 'p' : {
+      "     \ 'name': '+breakpoint'                                           ,
+      "     \ 'o' : ['<Plug>(vimpad-on)'                            , 'pad on' ] ,
+      "     \ 'f' : ['<Plug>(vimpad-off)'                           , 'pad off'        ] ,
+      "     \ 't' : ['<Plug>(vimpad-toggle)'                        , 'pad toggle' ] ,
+      "     \ 'r' : ['<Plug>(vimpad-refresh)'                       , 'pad refresh' ] ,
+      "     \ }                                                                       ,
 nnoremap <leader>aw :call TrimWhitespace()<CR>
     
 
@@ -238,6 +246,7 @@ let g:which_key_map.q = {
       \ 'Q' : [':cclose'         , 'close QuickFix'       ] ,
       \ 'l' : [':lopen'          , 'LocalFix'             ] ,
       \ 'L' : [':lclose'         , 'close LocalFix'       ] ,
+      \ 'r' : [':Rg :'         , 'close LocalFix'       ] ,
       \ }
       " " Use unimpaired shortcuts instead [q ]q [l ]l
       " \ 'j' : [':cnext',   'Cnext'],
