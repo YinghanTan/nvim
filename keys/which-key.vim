@@ -382,9 +382,6 @@ let g:which_key_map.s = {
 "       \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
 "       \ }
 
-
-
-
 " let g:which_key_map.S = {
 "       \ 'name' : '+Session' ,
 "       \ 'c' : [':SClose'          , 'Close Session']  ,
@@ -393,7 +390,6 @@ let g:which_key_map.s = {
 "       \ 's' : [':Startify'        , 'Start Page']     ,
 "       \ 'S' : [':SSave'           , 'Save Session']   ,
 "       \ }
-
 
 " t is for terminal
 let g:which_key_map.t = {
@@ -423,7 +419,6 @@ let g:which_key_map.t = {
         \ },
       \ }
 
-
 " u is for UltiSnips or Undo
 let g:which_key_map.u = {
       \ 'name' : '+ultisnips or undo'                  ,
@@ -436,7 +431,6 @@ let g:which_key_map.u = {
 " convert visual selected code to snippet
 xmap <leader>uc  <Plug>(coc-convert-snippet)
 
-
 " w is for wiki
 let g:which_key_map.w = {
       \ 'name' : '+wiki'                 ,
@@ -445,7 +439,6 @@ let g:which_key_map.w = {
       \ 'j' : ['<plug>(wiki-journal)'    , 'journal'      ] ,
       \ 't' : [':VimwikiTable'           , 'vimwikiTable' ] ,
       \ }
-
 
 " yo is for toggle
 let g:which_key_map.y = {
@@ -475,7 +468,6 @@ nnoremap yog :IndentGuidesToggle<cr>
 nnoremap yom <Plug>MarkdownPreview
 nnoremap yoC :ColorizerToggle<cr>
 
-
 " --- Edit Files ---
 cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
 map <leader>aJ :%!python3 -m json.tool<cr>        " format json
@@ -487,7 +479,6 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")
 
-
 nnoremap <MiddleMouse> <Nop>
 nnoremap <2-MiddleMouse> <Nop>
 nnoremap <3-MiddleMouse> <Nop>
@@ -497,7 +488,6 @@ inoremap <MiddleMouse> <Nop>
 inoremap <2-MiddleMouse> <Nop>
 inoremap <3-MiddleMouse> <Nop>
 inoremap <4-MiddleMouse> <Nop>
-
 
 " Selecting last pasted text 2 versions
 " nnoremap gp `[v`]
