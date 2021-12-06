@@ -11,7 +11,6 @@ function TrimWhitespace()
  call cursor(l, c)
 endfun
 
-
 " Which-Key settings
 " Timeout
 let g:which_key_timeout = 100
@@ -41,7 +40,6 @@ highlight default link WhichKeyDesc      Function
 autocmd! FileType which_key
 autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
-
 
 " WhichKey Mappings
 let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
@@ -175,7 +173,6 @@ let g:which_key_map.g = {
       " \ 'f' : [':SignifyFold!'                      , 'fold unchanged'  ] ,
       " \ 'r' : [':SignifyRefresh'                    , 'refresh'         ] ,
       " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks' ] ,
-
 
 " G is for Gist
 let g:which_key_map.G = {
