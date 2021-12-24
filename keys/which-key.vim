@@ -90,7 +90,7 @@ let g:which_key_map.d = {
             \ }                                                                       ,
         \ 'c' : ['<Plug>VimspectorContinue | zz'                                      , 'continue'               ] ,
         \ 'C' : ['<Plug>VimspectorRunToCursor | zz'                                   , 'run to cursor'          ] ,
-        \ 'D' : [':call vimspector#Launch()<CR>'                                      , 'debug'                  ] ,
+        \ 'd' : [':call vimspector#Launch()<CR>'                                      , 'debug'                  ] ,
         \ 'e' : [':VimspectorEval'                                                    , 'evaluate'               ] ,
         \ 'i' : ['<Plug>VimspectorBalloonEval'                                        , 'inspect'                ] ,
         \ 'n' : ['<Plug>VimspectorStepOver | zz'                                      , 'next'                   ] ,
@@ -105,12 +105,12 @@ let g:which_key_map.d = {
             \ 'T' : [':call GoToWindow(g:vimspector_session_windows.tagpage)<CR>'     , 'tag'                    ] ,
             \ 'c' : [':call GoToWindow(g:vimspector_session_windows.code)<CR>'        , 'code'                   ] ,
             \ }                                                                       ,
-        \ 'u' : ['<Plug>VimspectorUpFrame'                                            , 'Up frame'               ] ,
-        \ 'd' : ['<Plug>VimspectorDownFrame'                                          , 'Down frame'             ] ,
+        \ 'k' : ['<Plug>VimspectorUpFrame'                                            , 'Up frame'               ] ,
+        \ 'j' : ['<Plug>VimspectorDownFrame'                                          , 'Down frame'             ] ,
         \ 'p' : ['<Plug>VimspectorPause'                                              , 'pause'                  ] ,
         \ 'P' : ['<Plug>VimspectorStop'                                               , 'stoP'                   ] ,
         \ 'r' : ['<Plug>VimspectorRestart'                                            , 'restart'                ] ,
-        \ 'R' : ['VimspectorReset'                                                    , 'Reset'                  ] ,
+        \ 'D' : ['VimspectorReset'                                                    , 'Reset'                  ] ,
         \ 'w' : [':call AddToWatch()<CR>'                                             , 'add to watch'           ] ,
         \ 'z' : [':MaximizerToggle'                                                   , 'maximize window'        ] ,
         \ }
@@ -118,7 +118,7 @@ let g:which_key_map.d = {
 
 " nmap <leader>dw :VimspectorWatch
 nmap <leader>do :VimspectorShowOutput
-nnoremap <leader>dD :call vimspector#Launch()<CR>
+nnoremap <leader>dd :call vimspector#Launch()<CR>
 " inspect word under cursor - normal mode
 nmap <leader>di <Plug>VimspectorBalloonEval
 " inspect word under cursor - visual mode
