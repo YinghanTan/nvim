@@ -59,6 +59,7 @@ autocmd UIEnter * call OnUIEnter(deepcopy(v:event))
 let g:firenvim_config = { 
     \ 'globalSettings': {
         \ 'alt': 'all',
+        \ '<C-n>': 'noop',
     \  },
     \ 'localSettings': {
         \ '.*': {

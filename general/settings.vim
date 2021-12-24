@@ -182,7 +182,18 @@ au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 " let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
 " let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
 " let g:node_host_prog = '/opt/homebrew/lib/node_modules/neovim/bin/cli.js' " Mac
-let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
+
+
+if has('unix')
+    if has('mac')
+        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
+    else
+        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.13.1/lib/node_modules/neovim/bin/cli.js' " Ubuntu
+    endif
+elseif has('win32')
+endif
+
+" let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype javascript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
@@ -230,7 +241,7 @@ if has('unix')
     if has('mac')
         let g:python3_host_prog="/opt/homebrew/bin/python3"
     else
-        let g:python3_host_prog="$HOME/.pyenv/versions/3.8.12/bin/python3" " ubuntu Mac
+        let g:python3_host_prog="$HOME/.pyenv/versions/3.9.9/bin/python3" " ubuntu Mac
     endif
 elseif has('win32')
 endif

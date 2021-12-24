@@ -60,6 +60,7 @@ source $HOME/.config/nvim/themes/airline.vim
 " :PlugUpdate     - To update your plugins
 " :PlugUpgrade    - Upgrade vim-plug itself
 " :PlugStatus     - Check Status of plugins
+" :UpdateRemotePlugins
 
 " Deprecated
 " source $HOME/.config/nvim/plug-config/easy-align.vim

@@ -157,7 +157,7 @@ let g:which_key_map.g = {
       \ 'l' : [':Git log --oneline'                 , 'log'                ] ,
       \ 'L' : [':Git log'                           , 'log'                ] ,
       \ 'm' : ['<Plug>(git-messenger)'              , 'message'            ] ,
-      \ 'p' : [':GGrep'                             , 'git grep'           ] ,
+      \ 'p' : [':GGrep'                             , 'search grep'           ] ,
       \ 'r' : [':GDelete'                           , 'remove'             ] ,
       \ 'v' : [':GV!'                               , 'file commits'       ] ,
       \ 'V' : [':GV'                                , 'all commits'        ] ,
@@ -258,7 +258,7 @@ let g:which_key_map.s = {
       \ '/' : [':History/'                                     , 'history'            ]    ,
       \ ';' : [':Commands'                                     , 'commands'           ]    ,
       \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
-      \ 'b' : [':Buffers'                                      , 'all buffers'        ]    ,
+      \ 'b' : [':Buffers'                                      , 'buffers'        ]    ,
       \ 'c' : [':BCommits'                                     , 'buffer commits'     ]    ,
       \ 'C' : [':Commits'                                      , 'commits'            ]    ,
       \ 'D' : [':CocCommand fzf-preview.Changes'               , 'delta/changes'      ]    ,
@@ -270,7 +270,6 @@ let g:which_key_map.s = {
       \ 'i' : [':CocCommand fzf-preview.CocCurrentDiagnostics' , 'diagnostics'        ]    ,
       \ 'I' : [':CocCommand fzf-preview.CocDiagnostics'        , 'all diagnostics'    ]    ,
       \ 'j' : [':CocCommand fzf-preview.Jumps'                 , 'jumps'              ]    ,
-      \ 'k' : [':Cheat'                                        , 'cheat.sh'           ]    ,
       \ 'l' : [':Lines'                                        , 'lines'              ]    ,
       \ 'L' : [':BLines'                                       , 'current buffer'     ]    ,
       \ 'm' : [':Marks'                                        , 'marks'              ]    ,
@@ -289,6 +288,7 @@ let g:which_key_map.s = {
       \ 'Y' : [':Filetypes'                                    , 'file types'         ]    ,
       \ 'z' : [':FZF'                                          , 'FZF'                ]    ,
       \ }
+      " \ 'k' : [':Cheat'                                        , 'cheat.sh'           ]    ,
 
 " " s is for search
 " let g:which_key_map.s = {
