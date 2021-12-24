@@ -1,13 +1,15 @@
-let g:rnvimr_ranger_cmd='$HOME/.pyenv/versions/3.8.12/bin/python3'
+" pip install ranger-fm
+
+" Draw border with both
+let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
+
 " let g:ranger_replace_netrw = 1 "// open ranger when vim open a directory
+
 let g:NERDTreeHijackNetrw = 0 " add this line if you use NERDTree
+
 let g:ranger_map_keys = 0 " let g:NERDTreeHijackNetrw = 0
+
 " let g:rnvimr_vanilla = 1
-
-
-" nmap <space>r :RnvimrToggle<CR>
-
-
 
 " Make Ranger replace Netrw and be the file explorer
 let g:rnvimr_enable_ex = 1
@@ -104,3 +106,4 @@ let g:rnvimr_presets = [
 "
 " Only use initial preset layout
 " let g:rnvimr_presets = [{}]
+
