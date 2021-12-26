@@ -30,8 +30,11 @@ elseif has('win32')
 
 endif
 
+
+
+
 let g:vimtex_context_pdf_viewer=1
-let g:vimtex_context_pdf_viewer= 'okular'
+let g:vimtex_context_pdf_viewer='zathura'
 
 let g:tex_flavor  = 'latex'
 let g:vimtex_quickfix_open_on_warning = 0
@@ -57,4 +60,20 @@ let g:tex_conceal = ""
 let g:vimtex_compiler_latexmk_engines={'_':'-xelatex'}
 let g:vimtex_compiler_latexrun_engines={'_':'xelatex'}
 
+let g:vimtex_compiler_latexmk = { 
+        \ 'executable' : 'latexmk',
+        \ 'options' : [ 
+        \   '-xelatex',
+        \   '-interaction=nonstopmode',
+        \ ],
+        \}
 
+" let g:vimtex_compiler_latexmk = { 
+"         \ 'executable' : 'latexmk',
+"         \ 'options' : [ 
+"         \   '-xelatex',
+"         \   '-file-line-error',
+"         \   '-synctex=1',
+"         \   '-interaction=nonstopmode',
+"         \ ],
+"         \}

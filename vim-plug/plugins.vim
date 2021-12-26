@@ -61,6 +61,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
     Plug 'lervag/vimtex' " latex development
+    Plug 'matze/vim-tex-fold'
     " Git
     Plug 'tpope/vim-fugitive' " Git
     Plug 'tpope/vim-rhubarb' " enables Gbrowse for github
