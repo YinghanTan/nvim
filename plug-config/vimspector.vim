@@ -2,7 +2,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 
 " nmap <leader>dv :call vimspector#Launch()<CR>
-" nmap <leader>de :VimspectorReset<CR>
+nmap <leader>dD :VimspectorReset<CR>
 " nmap <leader>de :VimspectorEval
 " nmap <leader>dw :VimspectorWatch
 " nmap <leader>do :VimspectorShowOutput

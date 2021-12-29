@@ -210,8 +210,10 @@ let g:which_key_map.l = {
             \ ';' : [':CocFzfList commands'                          , 'commands'                                        ] ,
             \ 'r' : [':CocRestart'                                   , 'restart'                                     ] ,
             \ 'u' : [':CocUpdate'                                    , 'update'                                      ] ,
-            \ 'c' : [':CocDisable'                                   , 'close'                                     ] ,
+            \ 'O' : [':CocDisable'                                   , 'close'                                     ] ,
             \ 'o' : [':CocEnable'                                    , 'open'                                      ] ,
+            \ 'i' : [':VimtexInfo'                                    , 'latex info'                                      ] ,
+            \ 'c' : [':VimtexCompile'                                    , 'latex compile'                                      ] ,
             \ 'e' : [':CocFzfList extensions'                        , 'extensions'                                      ] ,
             \ },
       \ }
@@ -219,6 +221,8 @@ let g:which_key_map.l = {
       " <C-w>p jump in and out of floating notifications
       " <C-w>w jump in and out of floating notifications
       " nnoremap <leader>lA : <Plug>(coc-codeaction-selected)
+
+
 
 " n is for NerdTree
 let g:which_key_map.n = {
@@ -257,6 +261,7 @@ let g:which_key_map.s = {
       \ 'name' : '+search'                                     ,
       \ '/' : [':History/'                                     , 'history'            ]    ,
       \ ';' : [':Commands'                                     , 'commands'           ]    ,
+      \ '?' : [':Helptags'                                     , 'help'          ]    ,
       \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
       \ 'b' : [':Buffers'                                      , 'buffers'        ]    ,
       \ 'c' : [':BCommits'                                     , 'buffer commits'     ]    ,
@@ -274,7 +279,6 @@ let g:which_key_map.s = {
       \ 'L' : [':BLines'                                       , 'current buffer'     ]    ,
       \ 'm' : [':Marks'                                        , 'marks'              ]    ,
       \ 'M' : [':Maps'                                         , 'normal maps'        ]    ,
-      \ 'p' : [':Helptags'                                     , 'help tags'          ]    ,
       \ 'P' : [':Tags'                                         , 'project tags'       ]    ,
       \ 'q' : [':CocCommand fzf-preview.QuickFix'              , 'quickfix list'      ]    ,
       \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,

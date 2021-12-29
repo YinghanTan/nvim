@@ -45,7 +45,7 @@ let g:vimtex_mappings_enabled = 1
 
 " " show the compiler hint
 " let g:vimtex_quickfix_mode = 1
-let g:vimtex_quickfix_mode = 2
+let g:vimtex_quickfix_mode = 0
 
 if has('nvim')
     let g:vimtex_compiler_progname = 'nvr'
@@ -60,20 +60,21 @@ let g:tex_conceal = ""
 let g:vimtex_compiler_latexmk_engines={'_':'-xelatex'}
 let g:vimtex_compiler_latexrun_engines={'_':'xelatex'}
 
+" let g:vimtex_compiler_latexmk = { 
+"         \ 'executable' : 'latexmk',
+"         \ 'options' : [ 
+"         \   '-f',
+"         \   '-xelatex',
+"         \   '-interaction=nonstopmode',
+"         \ ],
+"         \}
+
 let g:vimtex_compiler_latexmk = { 
         \ 'executable' : 'latexmk',
         \ 'options' : [ 
         \   '-xelatex',
+        \   '-file-line-error',
+        \   '-synctex=1',
         \   '-interaction=nonstopmode',
         \ ],
         \}
-
-" let g:vimtex_compiler_latexmk = { 
-"         \ 'executable' : 'latexmk',
-"         \ 'options' : [ 
-"         \   '-xelatex',
-"         \   '-file-line-error',
-"         \   '-synctex=1',
-"         \   '-interaction=nonstopmode',
-"         \ ],
-"         \}
