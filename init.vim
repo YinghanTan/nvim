@@ -20,7 +20,8 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
-source $HOME/.config/nvim/plug-config/vimpad.vim
+" source $HOME/.config/nvim/plug-config/vimpad.vim
+source $HOME/.config/nvim/plug-config/codi.vim
 source $HOME/.config/nvim/plug-config/easyMotion.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim

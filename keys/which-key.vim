@@ -56,7 +56,7 @@ let g:which_key_map.a = {
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
-      \ 'p' : ['<Plug>(vimpad-toggle)'      , 'scratchpad' ] ,
+      \ 'p' : [':codi'                      , 'scratchpad' ] ,
       \ }
       " \ 'w' : [':call TrimWhitespace()<cr>' , 'trim whitespace'             ] ,
       " \ 'p' : {
@@ -65,6 +65,7 @@ let g:which_key_map.a = {
       "     \ 'f' : ['<Plug>(vimpad-off)'                           , 'pad off'        ] ,
       "     \ 't' : ['<Plug>(vimpad-toggle)'                        , 'pad toggle' ] ,
       "     \ 'r' : ['<Plug>(vimpad-refresh)'                       , 'pad refresh' ] ,
+      "     \ 'p' : ['<Plug>(vimpad-toggle)'      , 'scratchpad' ] ,
       "     \ }                                                                       ,
 nnoremap <leader>aw :call TrimWhitespace()<CR>
     

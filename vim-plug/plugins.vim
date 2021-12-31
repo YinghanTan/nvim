@@ -26,7 +26,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " New / Testing
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
-    Plug 'yuki-uthman/nvim-vimpad'
+    " Plug 'yuki-uthman/nvim-vimpad'
+    Plug 'metakirby5/codi.vim'
 
     " Autocomplete
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
