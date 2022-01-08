@@ -1,0 +1,24 @@
+{
+  "configurations": {
+    "<name>: Launch": {
+      "adapter": "debugpy",
+      "breakpoints": {
+        "exception": {
+          "raised": "N",
+          "uncaught": "N",
+          "userUnhandled": ""
+        }
+      },
+      "configuration": {
+        "name": "Python: Launch",
+        "type": "python",
+        "request": "launch",
+        "python": "~/miniconda3/bin/python",
+        "stopOnEntry": true,
+        "console": "externalTerminal",
+        "debugOptions": [],
+        "program": "${file}"
+      }
+    }
+  }
+}
