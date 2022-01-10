@@ -27,21 +27,17 @@ if not status_ok then
     return
 end
 
--- -- Have packer use a popup window
--- packer.init {
---     display = {
---         open_fn = function()
---             return require("packer.util").float { border = "rounded" }
---         end,
---     },
--- }
-
 -- Install your plugins here
 return packer.startup(function(use)
     -- My plugins here
     use "wbthomason/packer.nvim" -- Have packer manage itself
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
+
+    -- Colorschemes
+    -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+    use "lunarvim/darkplus.nvim"
+    use "folke/tokyonight.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
