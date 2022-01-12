@@ -21,4 +21,5 @@ configs.setup {
     -- termcolors = {} -- table of colour name strings
   },
 }
-require 'nvim-treesitter.install'.compilers = { "clang" }
+
+
