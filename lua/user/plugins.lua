@@ -43,6 +43,7 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "numToStr/Comment.nvim" -- Easily comment stuff
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -79,16 +80,11 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Git
   use "tpope/vim-fugitive"
-  use { -- Git integration: signs, hunk actions, blame, etc.
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    -- tag = 'release' == To use the latest release
-  }
+  use 'lewis6991/gitsigns.nvim' -- Git integration: signs, hunk actions, blame, etc.
   use 'tpope/vim-rhubarb' -- enables Gbrowse for github
   use 'shumphrey/fugitive-gitlab.vim' -- enables Gbrowse for gitlab
   use 'tommcdo/vim-fubitive' -- enables Gbrowse for bitbucket

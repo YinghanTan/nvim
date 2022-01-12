@@ -7,6 +7,7 @@ require "user.lsp"
 require "user._telescope"
 require "user.treesitter"
 require "user.autopairs"
+require "user.comment"
 require "user.gitsigns"
 
 -- Use gd to go to each file
