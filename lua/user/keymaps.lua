@@ -24,7 +24,6 @@ local keymap = vim.api.nvim_set_keymap
 -- keymap("n", "<C-j>", "<C-w>j", opts) -- easier windows navigation down
 -- keymap("n", "<C-k>", "<C-w>k", opts) -- easier windows navigation up
 -- keymap("n", "<C-k>", "<C-w>l", opts) -- easier windows navigation right
-keymap("n", "<leader>e", ":Lex 30<cr>", opts) -- file explorer
 
 -- Resize with arrows
 keymap("n", "<A-k>", ":resize +2<CR>", opts)       -- resize window
@@ -62,3 +61,6 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

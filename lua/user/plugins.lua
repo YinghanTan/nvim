@@ -49,6 +49,7 @@ return packer.startup(function(use)
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "folke/tokyonight.nvim"
+  use 'kyazdani42/nvim-web-devicons'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -90,6 +91,7 @@ return packer.startup(function(use)
   use 'tommcdo/vim-fubitive' -- enables Gbrowse for bitbucket
 
   -- File Explorer
+  use 'kyazdani42/nvim-tree.lua'
   use 'kevinhwang91/rnvimr' -- ranger file explorer for Neovim.
 
   -- Note Taking

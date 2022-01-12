@@ -9,6 +9,7 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
+require "user.nvim-tree"
 
 -- Use gd to go to each file
 
