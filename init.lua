@@ -12,6 +12,7 @@ require "user.gitsigns"
 require "user.nvim-tree"
 -- require "user.bufferline"
 require "user.null-ls"
+require "user.lualine"
 
 -- Use gd to go to each file
 
