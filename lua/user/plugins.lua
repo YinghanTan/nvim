@@ -44,13 +44,14 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used by lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use 'nvim-lualine/lualine.nvim'
+  use "nvim-lualine/lualine.nvim"
+  use "ahmedkhalf/project.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "folke/tokyonight.nvim"
-  use 'kyazdani42/nvim-web-devicons'
+  use "kyazdani42/nvim-web-devicons"
   -- use "akinsho/bufferline.nvim"
   -- use "moll/vim-bbye"
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
@@ -89,33 +90,33 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
   use "tpope/vim-fugitive"
-  use 'lewis6991/gitsigns.nvim' -- Git integration: signs, hunk actions, blame, etc.
-  use 'tpope/vim-rhubarb' -- enables Gbrowse for github
-  use 'shumphrey/fugitive-gitlab.vim' -- enables Gbrowse for gitlab
-  use 'tommcdo/vim-fubitive' -- enables Gbrowse for bitbucket
+  use "lewis6991/gitsigns.nvim" -- Git integration: signs, hunk actions, blame, etc.
+  use "tpope/vim-rhubarb" -- enables Gbrowse for github
+  use "shumphrey/fugitive-gitlab.vim" -- enables Gbrowse for gitlab
+  use "tommcdo/vim-fubitive" -- enables Gbrowse for bitbucket
 
   -- File Explorer
-  use 'kyazdani42/nvim-tree.lua'
-  use 'kevinhwang91/rnvimr' -- ranger file explorer for Neovim.
+  use "kyazdani42/nvim-tree.lua"
+  use "kevinhwang91/rnvimr" -- ranger file explorer for Neovim.
 
   -- Note Taking
-  use 'vimwiki/vimwiki' -- Note Taking
-  use 'michal-h21/vimwiki-sync' -- Note git sync
+  use "vimwiki/vimwiki" -- Note Taking
+  use "michal-h21/vimwiki-sync" -- Note git sync
 
   -- Comment
 
   -- Text Edit
-  use 'tpope/vim-surround' -- Surround
-  use 'tpope/vim-unimpaired'
-  use 'easymotion/vim-easymotion' -- Navigation
-  use 'godlygeek/tabular' -- Alignment and formatting
-  use 'nelstrom/vim-visual-star-search' -- Enable * to search in visual mode
-  use 'mbbill/undotree' -- Undo Time Travel
-  use 'puremourning/vimspector' -- Debugger
+  use "tpope/vim-surround" -- Surround
+  use "tpope/vim-unimpaired"
+  use "easymotion/vim-easymotion" -- Navigation
+  use "godlygeek/tabular" -- Alignment and formatting
+  use "nelstrom/vim-visual-star-search" -- Enable * to search in visual mode
+  use "mbbill/undotree" -- Undo Time Travel
+  use "puremourning/vimspector" -- Debugger
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

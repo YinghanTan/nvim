@@ -14,6 +14,7 @@ require "user.nvim-tree"
 require "user.null-ls"
 require "user.lualine"
 require "user.toggleterm"
+require "user.project"
 
 -- Use gd to go to each file
 
