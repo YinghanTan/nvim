@@ -13,6 +13,7 @@ require "user.nvim-tree"
 -- require "user.bufferline"
 require "user.null-ls"
 require "user.lualine"
+require "user.toggleterm"
 
 -- Use gd to go to each file
 
