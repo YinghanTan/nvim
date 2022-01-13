@@ -26,22 +26,22 @@ local keymap = vim.api.nvim_set_keymap
 -- keymap("n", "<C-k>", "<C-w>l", opts) -- easier windows navigation right
 
 -- Resize with arrows
-keymap("n", "<A-k>", ":resize +2<CR>", opts)       -- resize window
-keymap("n", "<A-j>", ":resize -2<CR>", opts)     -- resize window
-keymap("n", "<A-h>", ":vertical resize -2<CR>", opts)        -- resize window
-keymap("n", "<A-l>", ":vertical resize +2<CR>", opts)       -- resize window
+keymap("n", "<A-k>", ":resize +2<CR>", opts) -- resize window
+keymap("n", "<A-j>", ":resize -2<CR>", opts) -- resize window
+keymap("n", "<A-h>", ":vertical resize -2<CR>", opts) -- resize window
+keymap("n", "<A-l>", ":vertical resize +2<CR>", opts) -- resize window
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)        -- right buffer
-keymap("n", "<S-h>", ":bprevious<CR>", opts)        -- left buffer
+keymap("n", "<S-l>", ":bnext<CR>", opts) -- right buffer
+keymap("n", "<S-h>", ":bprevious<CR>", opts) -- left buffer
 
 -- Insert Mode --
 -- Press jk fast to enter
 -- keymap("i", "jk", "<ESC", opts)
 
 -- Visual Mode --
-keymap("v", "<", "<gv", opts)       -- indent left visually selected text
-keymap("v", ">", ">gv", opts)       -- indent right visually selected text
+keymap("v", "<", "<gv", opts) -- indent left visually selected text
+keymap("v", ">", ">gv", opts) -- indent right visually selected text
 
 -- Move text up and down
 keymap("v", "J", ":m .+1<CR>==", opts)
@@ -64,3 +64,4 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>lf", ":Format<cr>", opts)

@@ -10,6 +10,8 @@ require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
+-- require "user.bufferline"
+require "user.null-ls"
 
 -- Use gd to go to each file
 

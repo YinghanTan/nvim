@@ -50,6 +50,9 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "folke/tokyonight.nvim"
   use 'kyazdani42/nvim-web-devicons'
+  -- use "akinsho/bufferline.nvim"
+  -- use "moll/vim-bbye"
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
