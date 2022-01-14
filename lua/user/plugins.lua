@@ -46,6 +46,9 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "nvim-lualine/lualine.nvim"
   use "ahmedkhalf/project.nvim"
+  use "lewis6991/impatient.nvim"
+  use "hrsh7th/cmp-nvim-lsp"
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out

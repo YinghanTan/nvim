@@ -15,6 +15,8 @@ require "user.null-ls"
 require "user.lualine"
 require "user.toggleterm"
 require "user.project"
+require "user.impatient"
+require "user.indentline"
 
 -- Use gd to go to each file
 
