@@ -1,3 +1,6 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/10-adding-color/
+
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
 let g:rainbow_conf = {'guis': ['bold']}
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle

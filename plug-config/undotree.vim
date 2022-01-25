@@ -1,9 +1,6 @@
-
-" .............................................................................
 " 'mbbill/undotree' Undo Time Travel
-" .............................................................................
-
-
+" --- Reference ---
+" https://www.youtube.com/watch?v=9msMqGdtVAE
 
 if has("persistent_undo")
    let target_path = expand('~/.undodir')

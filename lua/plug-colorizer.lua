@@ -1,3 +1,6 @@
+-- Reference
+-- https://www.chrisatmachine.com/Neovim/10-adding-color/
+
 require'colorizer'.setup(
     {'*';},
     {

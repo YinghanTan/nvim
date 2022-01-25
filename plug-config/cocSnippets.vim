@@ -1,3 +1,5 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/17-snippets/
 
 " --- Coc Snippets ---
 

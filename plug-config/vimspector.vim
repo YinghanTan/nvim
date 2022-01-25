@@ -1,5 +1,7 @@
-let g:vimspector_enable_mappings = 'HUMAN'
+" --- Reference ---
+" https://www.youtube.com/watch?v=AnTX2mtOl9Q
 
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " nmap <leader>dv :call vimspector#Launch()<CR>
 nmap <leader>dD :VimspectorReset<CR>

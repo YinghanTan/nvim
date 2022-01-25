@@ -1,3 +1,6 @@
+""" --- Reference --- """
+" https://www.chrisatmachine.com/Neovim/18-codi/
+
 " Change the color
 highlight CodiVirtualText guifg=cyan
 let g:codi#virtual_text_prefix = "❯ "

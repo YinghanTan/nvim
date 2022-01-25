@@ -1,3 +1,6 @@
+" --- Reference ---
+" https://www.youtube.com/watch?v=ID_kNcj9cMo&t=89s
+
 " Fire Neovim
 
 set guifont=FiraCode_Nerd_Font:h17 " for Firenvim only as Neovim does not use guifont only GVim uses guifont

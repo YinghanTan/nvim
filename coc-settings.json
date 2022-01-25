@@ -189,3 +189,6 @@
   "flutter.lsp.debug": true,
   "flutter.provider.enableSnippet": true
 }
+
+// Reference
+// https://www.chrisatmachine.com/Neovim/26-lsp-symbols/

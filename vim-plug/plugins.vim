@@ -1,3 +1,6 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/01-vim-plug/
+
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
   silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -95,35 +98,3 @@ autocmd VimEnter *
   \|   PlugInstall --sync | q
   \| endif
 
-
-
-" Deprecated
-    " Plug 'tpope/vim-sleuth' " auto set indent settings
-    " Plug 'pedrohdz/vim-yaml-folds' "simple folding configuration for YAML - slow when file gets large
-    " Plug 'editorconfig/editorconfig-vim'
-    " Plug 'mhinz/vim-signify' " Signify (or just Sy) uses the sign column to indicate added, modified and removed lines in a file that is managed by a version control system
-    " Plug 'leafgarland/typescript-vim' " syntax highlighting for typescript keywords
-    " Plug 'tmhedberg/SimpylFold' "properly folding Python code - slow when file gets large
-    " Plug 'tpope/vim-obsession' " Save Sessions on tmux
-    " Plug 'turbio/bracey.vim', {'do': 'npm install --prefix server'} " view html, js, css live
-    " Plug 'vim-utils/vim-man' "View man pages in vim. Grep for the man pages.
-    " Plug 'dbeniamine/cheat.sh-vim' "browse cheat sheet from cheat.sh directly from vim.
-    " Plug 'RishabhRD/popfix'
-    " Plug 'RishabhRD/nvim-cheat.sh'
-    " Plug 'ianding1/leetcode.vim' " LeetCode coding practise
-    " Plug 'mg979/vim-visual-multi', {'branch': 'master'} " multi cursors
-    " Plug 'terryma/vim-multiple-cursors'
-    " Plug 'mhinz/vim-startify' " Start Screen
-    " Plug 'metakirby5/codi.vim' " interactive Code
-    " Plug 'tpope/vim-speeddating' " Change dates fast
-    " Plug 'wellle/targets.vim' " for editing paired text objects
-    " Plug 'tpope/vim-abolish'
-    " Plug 'junegunn/vim-easy-align'
-    " Plug 'tpope/vim-commentary' " Code Commentting
-    " Plug 'thinca/vim-qfreplace'
-    " Plug 'yaegassy/coc-htmldjango', {'do': 'yarn install --frozen-lockfile'}
-    " Telescope
-    " Plug 'nvim-lua/popup.nvim'
-    " Plug 'nvim-lua/plenary.nvim'
-    " Plug 'nvim-telescope/telescope.nvim'
-    " Plug 'nvim-telescope/telescope-fzy-native.nvim'

@@ -1,3 +1,6 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/23-far-find-and-replace/
+
 let g:far#source='rgnvim'
 " let g:far#source='rg'
 " let g:far#source='vimgrep'

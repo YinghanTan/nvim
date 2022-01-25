@@ -1,3 +1,14 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/19-coc-marketplace/
+
+" Brief help
+" :CocUninstall   - Uninstall extensions
+" :CocInstall     - installs extensions
+" :CocUpdate      - To update your extensions
+" :CocEnable      - Enable Coc
+" :CocDisable     - Disable Coc
+" :CocList extensions
+
 let g:coc_global_extensions = [
     \ 'coc-restclient',
     \ 'coc-actions',
@@ -43,14 +54,9 @@ let g:coc_global_extensions = [
     " \ 'coc-pairs',
     " \ 'coc-python',
 
-
-
-
 " coc-fzf-preview options
 let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
-
-
 
 " Prettier
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
@@ -66,10 +72,3 @@ let g:coc_filetype_map = {
   \ }
 
 
-" Brief help
-" :CocUninstall   - Uninstall extensions
-" :CocInstall     - installs extensions
-" :CocUpdate      - To update your extensions
-" :CocEnable      - Enable Coc
-" :CocDisable     - Disable Coc
-" :CocList extensions

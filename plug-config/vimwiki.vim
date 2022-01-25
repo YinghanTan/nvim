@@ -1,3 +1,6 @@
+" --- Reference ---
+" https://www.youtube.com/watch?v=vBJj7YMVn6I
+
 " --- Vim Wiki & Instant Markdown Plugin ---
 let g:vimwiki_listsyms = ' x'
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}

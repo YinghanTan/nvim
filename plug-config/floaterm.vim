@@ -1,3 +1,5 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/16-floaterm/
 
 " let g:floaterm_keymap_toggle = '<F1>'
 " let g:floaterm_keymap_next   = '<F2>'

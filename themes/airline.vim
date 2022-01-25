@@ -1,4 +1,5 @@
-
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/05-vim-airline/
                                                                                                                                           
 " " TABLINE:                                                                                                                                 
 " let g:airline#extensions#tabline#enabled = 1           " enable airline tabline                                                           

@@ -1,3 +1,6 @@
+" --- Reference --- 
+" https://www.chrisatmachine.com/Neovim/15-which-key/
+
 " Functions
 fun! GoToWindow(id)
     call win_gotoid(a:id)

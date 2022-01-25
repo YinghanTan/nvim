@@ -1,3 +1,7 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/04-vim-coc/
+
+
 " --- COC ---
 autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
 set hidden     " TextEdit might fail if hidden is not set.

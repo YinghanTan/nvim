@@ -1,3 +1,6 @@
+" --- Reference ---
+" https://www.chrisatmachine.com/Neovim/08-fzf/
+
 " Ctrl-A Ctrl-Q to select all and build quickfix list
 function! s:build_quickfix_list(lines)
     call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
