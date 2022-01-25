@@ -13,6 +13,7 @@
 #    * ci               Change to CI pipeline/workflow
 #    * chore            General tooling/config/min refactor
 #    * content          Content changes
+#    * doc              Document code that requires context
 # ----------------------------------------------------------
 
 
