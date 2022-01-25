@@ -47,8 +47,10 @@ return packer.startup(function(use)
   use "nvim-lualine/lualine.nvim"
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
-  use "hrsh7th/cmp-nvim-lsp"
   use "lukas-reineke/indent-blankline.nvim"
+  use "goolord/alpha-nvim"
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+  use "folke/which-key.nvim"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -56,8 +58,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "kyazdani42/nvim-web-devicons"
   -- use "akinsho/bufferline.nvim"
-  -- use "moll/vim-bbye"
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "moll/vim-bbye"
 
 
   -- cmp plugins
@@ -66,9 +67,24 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-nvim-lsp" -- lsp completions
+  use "hrsh7th/cmp-emoji" -- emoji completions
+  use "hrsh7th/cmp-nvim-lua" -- lua completions
   use "David-Kunz/cmp-npm" -- npm completions
+  -- use {
+  --     "tzachar/cmp-tabnine", -- AI completions
+  --     config = function()
+  --       local tabnine = require "cmp_tabnine.config"
+  --       tabnine:setup {
+  --         max_lines = 1000,
+  --         max_num_results = 20,
+  --         sort = true,
+  --       }
+  --     end,
+  --
+  --     run = "./install.sh",
+  --     requires = "hrsh7th/nvim-cmp",
+  --   }
 
   -- Terminal
   use "akinsho/toggleterm.nvim"
@@ -81,6 +97,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -96,15 +113,11 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
 
   -- Git
-  use "tpope/vim-fugitive"
   use "lewis6991/gitsigns.nvim" -- Git integration: signs, hunk actions, blame, etc.
-  use "tpope/vim-rhubarb" -- enables Gbrowse for github
-  use "shumphrey/fugitive-gitlab.vim" -- enables Gbrowse for gitlab
-  use "tommcdo/vim-fubitive" -- enables Gbrowse for bitbucket
+
 
   -- File Explorer
-  use "kyazdani42/nvim-tree.lua"
-  use "kevinhwang91/rnvimr" -- ranger file explorer for Neovim.
+  use "kyazdani42/nvim-tree.lua" -- File Explorer
 
   -- Note Taking
   use "vimwiki/vimwiki" -- Note Taking
@@ -112,14 +125,64 @@ return packer.startup(function(use)
 
   -- Comment
 
+
+
+
+
+
+
+
   -- Text Edit
-  use "tpope/vim-surround" -- Surround
-  use "tpope/vim-unimpaired"
-  use "easymotion/vim-easymotion" -- Navigation
-  use "godlygeek/tabular" -- Alignment and formatting
+  use 'tpope/vim-repeat' -- Repeat.vim remaps . in a way that plugins can tap into it.
+  use 'tpope/vim-eunuch' -- Files
+  use 'michaeljsmith/vim-indent-object' -- text Objects
+  use 'nathanaelkane/vim-indent-guides' -- text Objects
+  use "tpope/vim-unimpaired" -- common mappings for toggling optons
+  use 'godlygeek/tabular' -- Alignment and formatting
   use "nelstrom/vim-visual-star-search" -- Enable * to search in visual mode
+  use 'metakirby5/codi.vim'
+  use { -- Turn your browser¹ into a Neovim client
+      'glacambre/firenvim',
+      run = function() vim.fn['firenvim#install'](0) end 
+  }
   use "mbbill/undotree" -- Undo Time Travel
   use "puremourning/vimspector" -- Debugger
+
+  use "tpope/vim-fugitive"
+  use "tpope/vim-rhubarb" -- enables Gbrowse for github
+  use "shumphrey/fugitive-gitlab.vim" -- enables Gbrowse for gitlab
+  use "tommcdo/vim-fubitive" -- enables Gbrowse for bitbucket
+  -- use 'junegunn/gv.vim' " Git Commit Browser
+  -- use 'rhysd/git-messenger.vim' " Popup Git messages
+  use "f-person/git-blame.nvim"-- A git blame plugin for neovim
+  use "ruifm/gitlinker.nvim" -- generate shareable file permalinks
+  use 'mattn/vim-gist' -- Gist
+  use 'mattn/webapi-vim' -- Gist
+
+  use "Shatur/neovim-session-manager"
+  use "kevinhwang91/nvim-bqf" -- Better quickfix window
+  use "monaqa/dial.nvim" -- Extended increment/decrement plugin
+  use "nacro90/numb.nvim" -- peeks lines of the buffer in non-obtrusive way.
+  use "andymass/vim-matchup" -- operate on sets of matching text
+  use "unblevable/quick-scope" -- Preview f,t navigation
+  use "phaazon/hop.nvim" -- Easymotion Replacement
+  -- use "easymotion/vim-easymotion" -- Navigation
+  use "windwp/nvim-spectre" -- A search panel for neovim.
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    ft = "markdown",
+  }
+  use "folke/todo-comments.nvim"
+  use "kevinhwang91/rnvimr" -- ranger file explorer for Neovim.
+  use "tversteeg/registers.nvim" -- Show register contents
+  -- use "tpope/vim-surround" -- Surround
+  use "blackCauldron7/surround.nvim" -- Surround
+  -- Plug 'szw/vim-maximizer' " Zoom window
+  use { "nyngwang/NeoZoom.lua", } -- Zoom window
+  use 'norcalli/nvim-colorizer.lua' -- colorizer
+  --  Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
+  use "karb94/neoscroll.nvim" -- Smooth scrolling for vim
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

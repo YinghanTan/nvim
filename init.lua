@@ -17,6 +17,9 @@ require "user.toggleterm"
 require "user.project"
 require "user.impatient"
 require "user.indentline"
+require "user.alpha"
+require "user.whichkey"
+require "user.autocommands"
 
 -- Use gd to go to each file
 
