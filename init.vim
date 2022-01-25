@@ -9,6 +9,8 @@ source $HOME/.config/nvim/keys/which-key.vim
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
+" --- Reference ---
+" https://www.chrisatmachine.com/Linux/05-nerd-fonts/
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -73,3 +75,4 @@ source $HOME/.config/nvim/themes/airline.vim
 " https://www.youtube.com/channel/UC8ENHE5xdFSwx71u3fDH5Xw
 " http://vimcasts.org/episodes/
 " https://www.youtube.com/c/BrodieRobertson/community
+
