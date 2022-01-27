@@ -56,7 +56,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'liuchengxu/vim-which-key' " View Shortcut keys
-    Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise
+    " Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise - no longer working
     " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger
