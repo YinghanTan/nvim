@@ -59,7 +59,7 @@ let g:which_key_map.a = {
       \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
-      \ 'p' : [':codi'                      , 'scratchpad' ] ,
+      \ 'p' : [':Codi'                      , 'scratchpad' ] ,
       \ }
       " \ 'w' : [':call TrimWhitespace()<cr>' , 'trim whitespace'             ] ,
       " \ 'p' : {
