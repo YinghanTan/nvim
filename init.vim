@@ -45,7 +45,6 @@ source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/dart.vim
-luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
@@ -54,20 +53,21 @@ source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
 
 " --- Brief help ---
-" \.              - go to init.vim
-" gf              - cursor on sourced file to explore configs
-" gx              - cursor on url to explore references
-" :checkhealth    - check that installations are healthy
-" :PlugInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" :PlugUpdate     - To update your plugins
-" :PlugUpgrade    - Upgrade vim-plug itself
-" :PlugStatus     - Check Status of plugins
+" \.                        - go to init.vim
+" gf                        - cursor on sourced file to explore configs
+" gx                        - cursor on url to explore references
+" :checkhealth              - check that installations are healthy
+" :PlugInstall              - installs plugins; append `!` to update or just :PluginUpdate
+" :PlugClean                - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PlugUpdate               - To update your plugins
+" :PlugUpgrade              - Upgrade vim-plug itself
+" :PlugStatus               - Check Status of plugins
 " :UpdateRemotePlugins
 
 " --- References ---
