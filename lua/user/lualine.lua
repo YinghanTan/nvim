@@ -7,11 +7,23 @@ local hide_in_width = function()
 	return vim.fn.winwidth(0) > 80
 end
 
+--   git add
+--   git mod
+--   git remove
+--   git ignore
+--   git rename
+--   error
+--   info
+--   question
+--   warning
+--   lightbulb
+
 local diagnostics = {
 	"diagnostics",
 	sources = { "nvim_diagnostic" },
 	sections = { "error", "warn" },
 	symbols = { error = " ", warn = " " },
+	-- symbols = { error = "  ", warn = "  " },
 	colored = false,
 	update_in_insert = false,
 	always_visible = true,
@@ -48,7 +60,7 @@ local location = {
 	padding = 0,
 }
 
--- cool function for progress
+-- function for progress
 local progress = function()
 	local current_line = vim.fn.line(".")
 	local total_lines = vim.fn.line("$")
@@ -68,7 +80,7 @@ lualine.setup({
     theme = "auto",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
-    disabled_filetypes = { "dashboard", "NvimTree", "Outline" },
+    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
     always_divide_middle = true,
   },
   sections = {
