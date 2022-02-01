@@ -93,6 +93,12 @@ return packer.startup(function(use)
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
+  use {
+    "AckslD/nvim-neoclip.lua",
+    config = function()
+      require("neoclip").setup()
+    end,
+  }
 
   -- Treesitter
   -- use {

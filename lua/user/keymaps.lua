@@ -65,3 +65,17 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 keymap("n", "<leader>lf", ":Format<cr>", opts)
+
+-- IndentGuides
+keymap("n", "yog", "<cmd>IndentGuidesToggle<cr>", opts) -- Toggle Indent Guides
+
+-- URL handling
+if vim.fn.has("mac") == 1 then
+
+  keymap("n", "gx", '<Cmd>call jobstart(["open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
+elseif vim.fn.has("unix") == 1 then
+
+  keymap("n", "gx", '<Cmd>call jobstart(["xdg-open", expand("<cfile>")], {"detach": v:true})<CR>', opts)
+else
+  keymap("n", "gx", '<Cmd>lua print("Error: gx is not supported on this OS!")<CR>', opts)
+end

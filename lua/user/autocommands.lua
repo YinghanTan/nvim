@@ -1,5 +1,9 @@
 -- autocmd! remove all autocommands, if entered under a group it will clear that group
 vim.cmd [[
+
+  " Return to last edit position when opening files (You want this!)
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo,spectre_panel nnoremap <silent> <buffer> q :close<CR> 
