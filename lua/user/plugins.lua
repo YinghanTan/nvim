@@ -90,15 +90,23 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use "nvim-telescope/telescope-media-files.nvim"
+  use 'nvim-telescope/telescope-fzy-native.nvim'
   use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
   use "nvim-telescope/telescope-file-browser.nvim"
-  use {
-    "AckslD/nvim-neoclip.lua",
-    config = function()
-      require("neoclip").setup()
-    end,
-  }
+  use 'dhruvmanila/telescope-bookmarks.nvim'
+use {
+  "AckslD/nvim-neoclip.lua",
+  requires = {
+    -- you'll need at least one of these
+    {'nvim-telescope/telescope.nvim'},
+    -- {'ibhagwan/fzf-lua'},
+  },
+  config = function()
+    require('neoclip').setup()
+  end,
+}
+
 
   -- Treesitter
   -- use {

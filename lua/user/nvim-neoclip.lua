@@ -1,4 +1,4 @@
-local status_ok, neoclip = pcall(require, "hop")
+local status_ok, neoclip = pcall(require, "neoclip")
 if not status_ok then
 	return
 end
@@ -45,7 +45,5 @@ neoclip.setup({
 	},
 })
 
-
 -- References
 -- https://github.com/AckslD/nvim-neoclip.lua
-
