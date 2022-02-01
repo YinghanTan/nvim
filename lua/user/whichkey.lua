@@ -102,14 +102,13 @@ local opts = {
 
 local mappings = {
 	["/"] = { '<cmd>let @/ = ""<cr>', "Clear highlight" },
+	-- ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 	["."] = { "<cmd>e $MYVIMRC<cr>", "open init" },
 	[";"] = { "<cmd>Telescope commands<cr>", "Commands" },
 
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
-	["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
 
-	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["R"] = { '<cmd>lua require("renamer").rename()<cr>', "Rename" },
 
 	a = {
@@ -242,11 +241,12 @@ local mappings = {
 		c = { "<cmd>Telescope command_history<cr>", "Commands History" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
-		m = { "<cmd>Telescope marks<cr>", "Marks" },
-		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		h = { "<cmd>Telescope search_history<cr>", "Search History" },
 		j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+		m = { "<cmd>Telescope marks<cr>", "Marks" },
+		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+    P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 		q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
 		t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 		y = { "<cmd>Telescope neoclip<cr>", "Yank Lists" },
@@ -257,7 +257,8 @@ local mappings = {
 		gS = { "<cmd>Telescope git_stash<cr>", "Stach" },
 		gc = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		gC = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
-		i = { "<cmd>Telescope diagnostics<cr>", "Document Diagnostics" },
+		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Doc Diagnostics" },
+		I = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		-- i = { "<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics" },
 		-- I = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
 
