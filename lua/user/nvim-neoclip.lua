@@ -19,30 +19,30 @@ neoclip.setup({
 	on_replay = {
 		set_reg = false,
 	},
-	-- keys = {
-	-- 	telescope = {
-	-- 		i = {
-	-- 			select = "<cr>",
-	-- 			paste = "<c-p>",
-	-- 			-- paste_behind = "<c-k>",
-	-- 			replay = "<c-q>",
-	-- 			custom = {},
-	-- 		},
-	-- 		n = {
-	-- 			select = "<cr>",
-	-- 			paste = "p",
-	-- 			paste_behind = "P",
-	-- 			replay = "q",
-	-- 			custom = {},
-	-- 		},
-	-- 	},
-	-- 	fzf = {
-	-- 		select = "default",
-	-- 		paste = "ctrl-p",
-	-- 		-- paste_behind = "ctrl-k",
-	-- 		custom = {},
-	-- 	},
-	-- },
+	keys = {
+		telescope = {
+			i = {
+				select = "<cr>",
+				paste = "<c-p>",
+				paste_behind = "<c-P>",
+				replay = "<c-q>",
+				custom = {},
+			},
+			n = {
+				select = "<cr>",
+				paste = "p",
+				paste_behind = "P",
+				replay = "q",
+				custom = {},
+			},
+		},
+		fzf = {
+			select = "default",
+			paste = "ctrl-p",
+			paste_behind = "ctrl-P",
+			custom = {},
+		},
+	},
 })
 
 -- References
