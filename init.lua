@@ -61,3 +61,9 @@ vim.cmd("source $HOME/.config/nvim/plug-config/vimspector.vim")
 -- Treesitter
 -- :TSUninstall all
 -- :TSInstall all
+-- :PackerUpdate
+-- :PackerSync
+-- :PackerStatus
+
+
+
