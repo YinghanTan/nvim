@@ -58,12 +58,10 @@ vim.cmd("source $HOME/.config/nvim/plug-config/vimspector.vim")
 -- Use gd to go to each file
 -- Use gf to go to each file if path is provided
 -- :checkhealth
+
 -- Treesitter
 -- :TSUninstall all
 -- :TSInstall all
 -- :PackerUpdate
 -- :PackerSync
 -- :PackerStatus
-
-
-

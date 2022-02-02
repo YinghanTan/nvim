@@ -46,7 +46,6 @@ keymap("v", ">", ">gv", opts) -- indent right visually selected text
 -- Move text up and down
 keymap("v", "J", ":m .+1<CR>==", opts)
 keymap("v", "K", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dp', opts)
 
 -- Visual Block Mode --
 -- Move text up and down
