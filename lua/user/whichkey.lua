@@ -101,7 +101,7 @@ local opts = {
 -- }
 
 local mappings = {
-	["/"] = { '<cmd>nohlsearch<cr>', "Clear highlight" },
+	["/"] = { "<cmd>nohlsearch<cr>", "Clear highlight" },
 	["."] = { "<cmd>e $MYVIMRC<cr>", "open init" },
 	[";"] = { "<cmd>Telescope commands<cr>", "Commands" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
@@ -181,24 +181,30 @@ local mappings = {
 
 	g = {
 		name = "Git",
-		g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
-		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
-		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-		p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-		r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-		R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-		s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-		u = {
-			"<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-			"Undo Stage Hunk",
+		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+
+		g = {
+			name = "Gutter",
+			t = { "<cmd>lua require 'gitsigns'.toggle_signs()<cr>", "Undo Stage Hunk" },
+			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+			p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
+			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
+			l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+			R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
+			d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 		},
 		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
+		c = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
+		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		d = {
-			"<cmd>Gitsigns diffthis HEAD<cr>",
-			"Diff",
+			name = "+diff",
+			["d"] = { ":Gdiff", "diff" },
+			["s"] = { ":Gdiffsplit", "diff split" },
+			["i"] = { ":CocCommand git.diffCached", "diff info" },
 		},
 		-- ["gy"] = "Link",
 	},
@@ -238,13 +244,11 @@ local mappings = {
 		[";"] = { "<cmd>Telescope commands<cr>", "Commands" },
 		["?"] = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		A = { "<cmd>Telescope builtin<cr>", "All" },
-		b = {
-			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-			"Buffers",
-		},
+		b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers", },
 		B = { "<cmd>Telescope bookmarks<cr>", "Bookmarks" },
 		c = { "<cmd>Telescope command_history<cr>", "Commands History" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
+
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		h = { "<cmd>Telescope search_history<cr>", "Search History" },
 		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Doc Diagnostics" },
@@ -255,7 +259,6 @@ local mappings = {
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
 		P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-		-- q = { "<cmd>Telescope quickfix<cr>", "Quickfix" },
 		q = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "Quickfix" },
 		r = { "<cmd>Telescope registers<cr>", "Registers" },
 		R = { "<cmd>Telescope resume<cr>", "Resume" },
@@ -268,11 +271,10 @@ local mappings = {
 		gb = { "<cmd>Telescope git_branches<cr>", "Branch" },
 		gs = { "<cmd>Telescope git_status<cr>", "Status" },
 		gS = { "<cmd>Telescope git_stash<cr>", "Stach" },
-		gc = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		gC = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
+		gc = { "<cmd>Telescope git_bcommits<cr>", "Commits" },
+		gC = { "<cmd>Telescope git_commits<cr>", "all commits" },
 		gf = { "<cmd>Telescope git_files<cr>", "Git Files" },
 
-		-- \ 'q' : [':CocCommand fzf-preview.QuickFix'              , 'quickfix list'      ]    ,
 		-- \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,
 		-- \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
 		-- \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
@@ -343,7 +345,6 @@ local mappings = {
 		t = { "<cmd>VimwikiTable<cr>", "vimwikiTable" },
 		-- j = {'<cmd>wiki-journal<cr>'    , 'journal'      } ,
 	},
-
 }
 
 local vopts = {
