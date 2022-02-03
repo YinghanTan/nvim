@@ -181,8 +181,10 @@ local mappings = {
 
 	g = {
 		name = "Git",
-		-- g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
 
+		j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
+		f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
+		G = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Gui" },
 		g = {
 			name = "Gutter",
 			t = { "<cmd>lua require 'gitsigns'.toggle_signs()<cr>", "Undo Stage Hunk" },
@@ -198,6 +200,7 @@ local mappings = {
 		},
 		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
+		B = { "<cmd>GBrowse<cr>", "browse" },
 		c = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
 		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		d = {
@@ -206,7 +209,10 @@ local mappings = {
 			["s"] = { ":Gdiffsplit", "diff split" },
 			["i"] = { ":CocCommand git.diffCached", "diff info" },
 		},
-		-- ["gy"] = "Link",
+		l = { "<cmd>Git log --oneline<cr>", "Log" },
+		L = { "<cmd>Git log<cr>", "Log long" },
+		r = { "<cmd>GDelete<cr>", "remove" },
+		y = "GitLink",
 	},
 
 	G = {
@@ -222,21 +228,26 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { "<cmd>Telescope lsp_document_diagnostics<cr>", "Document Diagnostics" },
-		w = { "<cmd>Telescope lsp_workspace_diagnostics<cr>", "Workspace Diagnostics" },
+		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+		I = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
-		i = { "<cmd>LspInfo<cr>", "Info" },
-		I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-		j = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
-		k = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
-		l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+		g = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
+		G = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+		c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", "Workspace Symbols" },
+		l = {
+			name = "LSP/Latex",
+			v = { "<cmd>VimtexInfo<cr>", "vimtex info" },
+			c = { "<cmd>VimtexCompile<cr>", "latex compile" },
+			i = { "<cmd>LspInfo<cr>", "Info" },
+			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
+		},
 	},
 
 	s = {
@@ -244,11 +255,15 @@ local mappings = {
 		[";"] = { "<cmd>Telescope commands<cr>", "Commands" },
 		["?"] = { "<cmd>Telescope help_tags<cr>", "Find Help" },
 		A = { "<cmd>Telescope builtin<cr>", "All" },
-		b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers", },
+		b = {
+			"<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+			"Buffers",
+		},
 		B = { "<cmd>Telescope bookmarks<cr>", "Bookmarks" },
 		c = { "<cmd>Telescope command_history<cr>", "Commands History" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
-
+		d = { "<cmd>require('telescope').extensions.vimspector.configurations()<cr>", "Debug" },
+    e = { "<cmd>Telescope env<cr>", "Env"},
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		h = { "<cmd>Telescope search_history<cr>", "Search History" },
 		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Doc Diagnostics" },
@@ -260,6 +275,7 @@ local mappings = {
 		o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
 		P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 		q = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "Quickfix" },
+		l = { "<cmd>lua require('telescope.builtin').loclist()<cr>", "Loc list" },
 		r = { "<cmd>Telescope registers<cr>", "Registers" },
 		R = { "<cmd>Telescope resume<cr>", "Resume" },
 		S = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
@@ -268,17 +284,18 @@ local mappings = {
 		y = { "<cmd>Telescope neoclip<cr>", "Yank Lists" },
 		Y = { "<cmd>Telescope filetypes<cr>", "Filetypes" },
 		-- changelist -- \ 'D' : [':CocCommand fzf-preview.Changes'               , 'delta/changes'      ]    ,
-		gb = { "<cmd>Telescope git_branches<cr>", "Branch" },
-		gs = { "<cmd>Telescope git_status<cr>", "Status" },
-		gS = { "<cmd>Telescope git_stash<cr>", "Stach" },
-		gc = { "<cmd>Telescope git_bcommits<cr>", "Commits" },
-		gC = { "<cmd>Telescope git_commits<cr>", "all commits" },
-		gf = { "<cmd>Telescope git_files<cr>", "Git Files" },
+		g = {
+			name = "Git",
+			b = { "<cmd>Telescope git_branches<cr>", "Branch" },
+			s = { "<cmd>Telescope git_status<cr>", "Status" },
+			S = { "<cmd>Telescope git_stash<cr>", "Stach" },
+			c = { "<cmd>Telescope git_bcommits<cr>", "Commits" },
+			C = { "<cmd>Telescope git_commits<cr>", "all commits" },
+			f = { "<cmd>Telescope git_files<cr>", "Git Files" },
+		},
 
-		-- \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,
 		-- \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
 		-- \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
-		-- \ 'y' : [':CocFzfList yank'                              , 'list yank'          ]    ,
 
 		-- i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 	},

@@ -1,7 +1,3 @@
-
-
-
-
 " --- UltiSnip Plugin ---
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"

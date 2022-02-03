@@ -1,7 +1,3 @@
-
-
-
-
 " --- UltiSnip Plugin ---
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
@@ -30,5 +26,4 @@ set runtimepath+=~/.config/nvim/autoload/plugged/vim-react-snippets   " Vim Ulti
 " When vim starts, Ultisnips tries to find snippet directories defined below, under the paths in runtimepath.
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "user_snippets", "pythonx"]
 
-" Hitting $ now directly translates into being in inline math mode. How cool is that?
-" inoremap <silent> $$ $$<C-R>=UltiSnips#Anon(':latex:\`$1\`', '$$')<cr>
+
