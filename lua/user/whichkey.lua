@@ -77,28 +77,28 @@ local opts = {
 	nowait = true, -- use `nowait` when creating keymaps
 }
 
--- local m_opts = {
---   mode = "n", -- NORMAL mode
---   prefix = "m",
---   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
---   silent = true, -- use `silent` when creating keymaps
---   noremap = true, -- use `noremap` when creating keymaps
---   nowait = true, -- use `nowait` when creating keymaps
--- }
--- local m_mappings = {
---   a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
---   c = { "<cmd>BookmarkClear<cr>", "Clear" },
---   m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
---   h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
---   j = { "<cmd>BookmarkNext<cr>", "Next" },
---   k = { "<cmd>BookmarkPrev<cr>", "Prev" },
---   s = {
---     "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
---     "Show",
---   },
---   x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
---   u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
--- }
+local m_opts = {
+	mode = "n", -- NORMAL mode
+	prefix = "m",
+	buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+	silent = true, -- use `silent` when creating keymaps
+	noremap = true, -- use `noremap` when creating keymaps
+	nowait = true, -- use `nowait` when creating keymaps
+}
+local m_mappings = {
+	a = { "<cmd>BookmarkAnnotate<cr>", "Annotate" },
+	c = { "<cmd>BookmarkClear<cr>", "Clear" },
+	m = { "<cmd>BookmarkToggle<cr>", "Toggle" },
+	-- h = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+	j = { "<cmd>BookmarkNext<cr>", "Next" },
+	k = { "<cmd>BookmarkPrev<cr>", "Prev" },
+	s = {
+		"<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
+		"Show",
+	},
+	x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+	-- u = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+}
 
 local mappings = {
 	["/"] = { "<cmd>nohlsearch<cr>", "Clear highlight" },
@@ -160,7 +160,7 @@ local mappings = {
 		["r"] = { "<plug>VimspectorRestart<cr>", "restart" },
 		["D"] = { "<cmd>VimspectorReset<cr>", "Reset" },
 		["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
-		["z"] = { "<cmd>MaximizerToggle<cr>", "maximize window" },
+		["z"] = { "<cmd>NeoZoomToggle<CR>", "maximize window" },
 	},
 
 	p = {
@@ -181,16 +181,21 @@ local mappings = {
 
 	g = {
 		name = "Git",
-
-		j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
-		f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
-		G = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Gui" },
+		d = {
+			name = "+diff",
+			["d"] = { "<cmd>Gdiff<cr>", "diff" },
+			["s"] = { "<cmd>Gdiffsplit<cr>", "diff split" },
+		},
+		b = { "<cmd>Git blame<cr>", "blame" },
+		B = { "<cmd>GBrowse<cr>", "browse" },
+		c = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
+		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		g = {
 			name = "Gutter",
-			t = { "<cmd>lua require 'gitsigns'.toggle_signs()<cr>", "Undo Stage Hunk" },
-			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
-			p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
+			t = { "<cmd>lua require 'gitsigns'.toggle_signs()<cr>", "Toggle git gutter" },
 			s = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
+			u = { "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>", "Undo Stage Hunk" },
+			i = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "info Hunk" },
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 			l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -198,20 +203,19 @@ local mappings = {
 			R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 			d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
 		},
-		o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
-		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-		B = { "<cmd>GBrowse<cr>", "browse" },
-		c = { "<cmd>Telescope git_bcommits<cr>", "Checkout commit" },
-		C = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
-		d = {
-			name = "+diff",
-			["d"] = { ":Gdiff", "diff" },
-			["s"] = { ":Gdiffsplit", "diff split" },
-			["i"] = { ":CocCommand git.diffCached", "diff info" },
-		},
+		G = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Gui" },
 		l = { "<cmd>Git log --oneline<cr>", "Log" },
 		L = { "<cmd>Git log<cr>", "Log long" },
+		p = { "<cmd>GGrep<cr>", "Grep" },
 		r = { "<cmd>GDelete<cr>", "remove" },
+		v = { "<cmd>GV!<cr>", "file commits" },
+		V = { "<cmd>GV<cr>", "all commits" },
+		f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
+		j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
+		s = {
+			b = { "<cmd>Telescope git_branches<cr>", "Branches" },
+      c = { "<cmd>Telescope git_status<cr>", "Changes" },
+		},
 		y = "GitLink",
 	},
 
@@ -236,7 +240,6 @@ local mappings = {
 		G = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 		c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		o = { "<cmd>SymbolsOutline<cr>", "Outline" },
-		q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
@@ -248,6 +251,7 @@ local mappings = {
 			i = { "<cmd>LspInfo<cr>", "Info" },
 			I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
 		},
+		-- q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
 	},
 
 	s = {
@@ -260,12 +264,12 @@ local mappings = {
 			"Buffers",
 		},
 		B = { "<cmd>Telescope bookmarks<cr>", "Bookmarks" },
-		c = { "<cmd>Telescope command_history<cr>", "Commands History" },
-		C = { "<cmd>Telescope commands<cr>", "Commands" },
+		c = { "<cmd>Telescope commands<cr>", "Commands" },
 		d = { "<cmd>require('telescope').extensions.vimspector.configurations()<cr>", "Debug" },
-    e = { "<cmd>Telescope env<cr>", "Env"},
+		e = { "<cmd>Telescope env<cr>", "Env" },
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
 		h = { "<cmd>Telescope search_history<cr>", "Search History" },
+		H = { "<cmd>Telescope command_history<cr>", "Command History" },
 		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Doc Diagnostics" },
 		I = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		j = { "<cmd>Telescope jumplist<cr>", "Jumplist" },
@@ -273,6 +277,7 @@ local mappings = {
 		m = { "<cmd>Telescope marks<cr>", "Marks" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
+		p = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Preview media" },
 		P = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 		q = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "Quickfix" },
 		l = { "<cmd>lua require('telescope.builtin').loclist()<cr>", "Loc list" },
@@ -280,6 +285,7 @@ local mappings = {
 		R = { "<cmd>Telescope resume<cr>", "Resume" },
 		S = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+		T = { "<cmd>TodoTelescope<cr>", "Todos" },
 		v = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
 		y = { "<cmd>Telescope neoclip<cr>", "Yank Lists" },
 		Y = { "<cmd>Telescope filetypes<cr>", "Filetypes" },
@@ -288,7 +294,7 @@ local mappings = {
 			name = "Git",
 			b = { "<cmd>Telescope git_branches<cr>", "Branch" },
 			s = { "<cmd>Telescope git_status<cr>", "Status" },
-			S = { "<cmd>Telescope git_stash<cr>", "Stach" },
+			S = { "<cmd>Telescope git_stash<cr>", "Stash" },
 			c = { "<cmd>Telescope git_bcommits<cr>", "Commits" },
 			C = { "<cmd>Telescope git_commits<cr>", "all commits" },
 			f = { "<cmd>Telescope git_files<cr>", "Git Files" },
@@ -296,19 +302,19 @@ local mappings = {
 
 		-- \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
 		-- \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
-
-		-- i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
 	},
 
 	q = {
 		name = "QuickFix",
-		["g"] = { "<cmd>CocDiagnostics", "Diagnostics" },
-		["t"] = { "<cmd>Todo", "Add todo to quickfix" },
-		["q"] = { "<cmd>copen", "QuickFix" },
-		["Q"] = { "<cmd>cclose", "close QuickFix" },
-		["l"] = { "<cmd>lopen", "LocalFix" },
-		["L"] = { "<cmd>lclose", "close LocalFix" },
-		["r"] = { "<cmd>Rg :", "close LocalFix" },
+		g = { "<cmd>lua vim.lsp.diagnostic.set_qflist()<cr>", "Quickfix" },
+		t = { "<cmd>TodoQuickFix<cr>", "Add todo to quickfix" },
+		T = { "<cmd>TodoLocList<cr>", "Add todo to loclist" },
+		q = { "<cmd>copen<cr>", "QuickFix" },
+		Q = { "<cmd>cclose<cr>", "close QuickFix" },
+		l = { "<cmd>lopen<cr>", "LocalFix" },
+		L = { "<cmd>lclose<cr>", "close LocalFix" },
+		r = { "<cmd>Rg :<cr>", "close LocalFix" },
+		-- Use unimpaired shortcuts [q ]q [l ]l to navigate quickfix
 	},
 
 	S = {
@@ -326,9 +332,12 @@ local mappings = {
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
 		h = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
-		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		-- h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
-		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+		l = { "<cmd>lua _LUA_TOGGLE()<cr>", "Lua" },
+		c = { "<cmd>ToggleTerm direction=float<cr>", "Console" },
+		d = { "<cmd>lua _LAZYDOCKER_TOGGLE()<cr>", "Docker" },
+		g = { "<cmd>lua _LAZYGIT_TOGGLE()<cr>", "Git" },
+		H = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+		V = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
 		r = { "<cmd>RnvimrToggle<cr>", "ranger" },
 		t = {
 			name = "Tab",
@@ -349,18 +358,52 @@ local mappings = {
 
 	u = {
 		name = "Ultisnips / Undo",
-		e = { "<cmd>CocCommand snippets.editSnippets<cr>", "Ultisnips Edit" },
-		f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
-		s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
 		t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
+		-- e = { "<cmd>CocCommand snippets.editSnippets<cr>", "Ultisnips Edit" },
+		-- f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
+		-- s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
 	},
 
 	w = {
 		name = "Wiki",
-		w = { "<cmd>VimwikiIndex<cr>", "Wiki" },
-		d = { "<cmd>VimwikiDiaryIndex<cr>", "Diary" },
-		t = { "<cmd>VimwikiTable<cr>", "vimwikiTable" },
-		-- j = {'<cmd>wiki-journal<cr>'    , 'journal'      } ,
+		-- Wiki
+		w = "Wiki Index",
+		t = "Tab",
+		T = { "<cmd>VimwikiTable<cr>", "vimwikiTable" },
+		d = "Delete",
+		r = "Rename",
+		-- Diary
+		i = "Diary Index",
+		["<leader>"] = {
+			w = "Diary Today",
+			t = "New Tab Diary Today",
+			i = "Update Diary Index",
+		},
+	},
+
+	y = {
+		name = "+toggle",
+		o = {
+			name = "Options",
+			b = { "yob", "background" },
+			d = { "yod", "diff" },
+			e = { "yoe", "spell" },
+			c = { "yoc", "cursorline" },
+			g = { ":IndentGuidesToggle", "indent Guide" },
+			m = { "<Plug>MarkdownPreview", "markdown preview toggle" },
+			M = { "<Plug>MarkdownPreviewStop", "markdown preview stop" },
+			C = { ":ColorizerToggle", "colorizer" },
+			h = { "yoh", "hlsearch" },
+			i = { "yoi", "ignorecase" },
+			l = { "yol", "list" },
+			n = { "yon", "number" },
+			p = { "yop", "scratchPad" },
+			r = { "yor", "relativenumber" },
+			u = { "you", "cursorcolumn" },
+			v = { "yov", "virtualedit" },
+			w = { "yow", "wrap" },
+			x = { "yox", "crosshairs" },
+		},
 	},
 }
 
@@ -379,4 +422,4 @@ local vmappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
--- which_key.register(m_mappings, m_opts)
+which_key.register(m_mappings, m_opts)

@@ -184,21 +184,16 @@ return packer.startup(function(use)
 	use("matze/vim-tex-fold")
 
 	-- Plug 'dart-lang/dart-vim-plugin'
-	-- use 'rhysd/git-messenger.vim' " Popup Git messages
 
+  -- Ultisnips
 	-- use("sirver/ultisnips") -- the engine
 	-- use("honza/vim-snippets") -- the coal (the actuall snippets)
 	-- use("mlaursen/vim-react-snippets")
 	-- use("natebosch/dartlang-snippets")
 	-- use("fhill2/telescope-ultisnips.nvim")
-  -- use("quangnguyen30192/cmp-nvim-ultisnips")
+	-- use("quangnguyen30192/cmp-nvim-ultisnips")
 
 	-- Deprecated
-
-	-- use "easymotion/vim-easymotion" -- Navigation
-	--  use 'psliwka/vim-smoothie' -- Smooth scrolling for Vim
-	-- use 'szw/vim-maximizer' -- Zoom window
-	-- use "nelstrom/vim-visual-star-search" -- Enable * to search in visual mode
 
 	-- use "rcarriga/nvim-notify" -- configurable notification manager for NeoVim
 	-- use "unblevable/quick-scope" -- Preview f,t navigation

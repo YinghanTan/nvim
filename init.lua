@@ -3,6 +3,7 @@ require("plenary.reload").reload_module("user", true) -- To refresh cached lua m
 require("user.options")
 require("user.keymaps")
 require("user.plugins") -- Plugins managed with Packer
+require("user.snippets")
 require("user.functions")
 require("user.colorscheme")
 require("user.cmp") -- Completion plugin
@@ -14,7 +15,6 @@ require("user.autopairs") -- Autopairs, integrates with both cmp and treesitter
 require("user.comment") -- Easily comment stuff
 require("user.gitsigns") -- shows git status for each line in the gutter
 require("user.nvim-tree")
--- require "user.bufferline"
 require("user.lualine")
 require("user.toggleterm")
 require("user.project")
@@ -39,6 +39,7 @@ require("user.gitlinker")
 require("user.session-manager")
 require("user.ts-context")
 require("user.registers")
+-- require "user.bufferline"
 
 -- Configs in Vimscript
 vim.cmd("source $HOME/.config/nvim/plug-config/firenvim.vim")

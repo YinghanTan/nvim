@@ -24,6 +24,9 @@ local keymap = vim.api.nvim_set_keymap
 -- keymap("n", "<C-j>", "<C-w>j", opts) -- easier windows navigation down
 -- keymap("n", "<C-k>", "<C-w>k", opts) -- easier windows navigation up
 -- keymap("n", "<C-k>", "<C-w>l", opts) -- easier windows navigation right
+keymap("n", "<C-w>z", "<cmd>NeoZoomToggle<CR>", opts) -- easier windows navigation right
+keymap("n", "<C-w>t", "<cmd>tabnew %<cr>", opts) -- easier windows navigation right
+
 
 -- Resize with arrows
 keymap("n", "<A-k>", ":resize +2<CR>", opts) -- resize window
@@ -67,6 +70,9 @@ keymap("n", "<leader>lf", ":Format<cr>", opts)
 
 -- IndentGuides
 keymap("n", "yog", "<cmd>IndentGuidesToggle<cr>", opts) -- Toggle Indent Guides
+keymap("n", "yom", "<cmd>MarkdownPreview<cr>", opts) -- Toggle Markdown Toggle
+keymap("n", "yoC", "<cmd>ColorizerToggle<cr>", opts) -- Toggle Colorizer Toggle
+keymap("n", "yop", "<cmd>Codi<cr>", opts) -- Toggle Colorizer Toggle
 
 -- URL handling
 if vim.fn.has("mac") == 1 then
