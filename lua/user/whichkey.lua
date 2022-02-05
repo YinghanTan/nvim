@@ -182,7 +182,7 @@ local mappings = {
 	g = {
 		name = "Git",
 		d = {
-			name = "+diff",
+			name = "Diff",
 			["d"] = { "<cmd>Gdiff<cr>", "diff" },
 			["s"] = { "<cmd>Gdiffsplit<cr>", "diff split" },
 		},
@@ -198,7 +198,7 @@ local mappings = {
 			i = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "info Hunk" },
 			j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 			k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
-			l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+			b = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
 			r = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
 			R = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
 			d = { "<cmd>Gitsigns diffthis HEAD<cr>", "Diff" },
@@ -213,6 +213,7 @@ local mappings = {
 		f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
 		j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
 		s = {
+      name = "Search",
 			b = { "<cmd>Telescope git_branches<cr>", "Branches" },
       c = { "<cmd>Telescope git_status<cr>", "Changes" },
 		},
@@ -232,12 +233,12 @@ local mappings = {
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
-		I = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
 		F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
 		g = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Next Diagnostic" },
 		G = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
+		i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+		I = { "<cmd>Telescope diagnostics<cr>", "Workspace Diagnostics" },
 		c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		o = { "<cmd>SymbolsOutline<cr>", "Outline" },
 		r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
@@ -264,7 +265,7 @@ local mappings = {
 			"Buffers",
 		},
 		B = { "<cmd>Telescope bookmarks<cr>", "Bookmarks" },
-		c = { "<cmd>Telescope commands<cr>", "Commands" },
+		-- c = { "<cmd>Telescope commands<cr>", "Commands" },
 		d = { "<cmd>require('telescope').extensions.vimspector.configurations()<cr>", "Debug" },
 		e = { "<cmd>Telescope env<cr>", "Env" },
 		f = { "<cmd>Telescope find_files<cr>", "Find File" },
@@ -286,6 +287,7 @@ local mappings = {
 		S = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		t = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 		T = { "<cmd>TodoTelescope<cr>", "Todos" },
+
 		v = { "<cmd>Telescope vim_options<cr>", "Vim Options" },
 		y = { "<cmd>Telescope neoclip<cr>", "Yank Lists" },
 		Y = { "<cmd>Telescope filetypes<cr>", "Filetypes" },
@@ -293,8 +295,8 @@ local mappings = {
 		g = {
 			name = "Git",
 			b = { "<cmd>Telescope git_branches<cr>", "Branch" },
-			s = { "<cmd>Telescope git_status<cr>", "Status" },
-			S = { "<cmd>Telescope git_stash<cr>", "Stash" },
+			m = { "<cmd>Telescope git_status<cr>", "Modified Files" },
+			s = { "<cmd>Telescope git_stash<cr>", "Stash" },
 			c = { "<cmd>Telescope git_bcommits<cr>", "Commits" },
 			C = { "<cmd>Telescope git_commits<cr>", "all commits" },
 			f = { "<cmd>Telescope git_files<cr>", "Git Files" },
@@ -313,7 +315,6 @@ local mappings = {
 		Q = { "<cmd>cclose<cr>", "close QuickFix" },
 		l = { "<cmd>lopen<cr>", "LocalFix" },
 		L = { "<cmd>lclose<cr>", "close LocalFix" },
-		r = { "<cmd>Rg :<cr>", "close LocalFix" },
 		-- Use unimpaired shortcuts [q ]q [l ]l to navigate quickfix
 	},
 
