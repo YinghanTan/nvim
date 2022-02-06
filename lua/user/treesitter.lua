@@ -15,7 +15,11 @@ configs.setup {
     disable = { "" }, -- list of language that will be disabled
     additional_vim_regex_highlighting = true,
   },
-  indent = { enable = true, disable = { "yaml" } },
+	indent = { enable = true, disable = { "yaml", "python", "css" } },
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
+  },
   rainbow = {
     enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
@@ -32,9 +36,5 @@ configs.setup {
   },
   playground = {
     enable = true,
-  },
-  context_commentstring = {
-    enable = true,
-    enable_autocmd = false,
   },
 }
