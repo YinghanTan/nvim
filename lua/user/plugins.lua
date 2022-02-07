@@ -58,6 +58,7 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	-- use "akinsho/bufferline.nvim"
 	use("moll/vim-bbye")
+	use("RRethy/vim-illuminate")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -85,6 +86,7 @@ return packer.startup(function(use)
 	use("filipdutescu/renamer.nvim") -- renaming UI for Neovim
 	use("simrat39/symbols-outline.nvim") -- tree like view for symbols using LSP
 	use("ray-x/lsp_signature.nvim") -- show function signature when you type
+  use "b0o/SchemaStore.nvim"
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -185,7 +187,7 @@ return packer.startup(function(use)
 
 	-- Plug 'dart-lang/dart-vim-plugin'
 
-  -- Ultisnips
+	-- Ultisnips
 	-- use("sirver/ultisnips") -- the engine
 	-- use("honza/vim-snippets") -- the coal (the actuall snippets)
 	-- use("mlaursen/vim-react-snippets")

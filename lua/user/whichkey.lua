@@ -124,6 +124,7 @@ local mappings = {
 		p = { "<cmd>Codi<cr>", "scratchpad" },
 		P = { "<cmd>Codi!<cr>", "scratchpad" },
 		m = { "<plug>MarkdownPreview<cr>", "Markdown preview" },
+		j = { "<cmd>%!python3 -m json.tool<cr>", "format json" },
 	},
 
 	d = {

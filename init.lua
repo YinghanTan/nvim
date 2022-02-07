@@ -39,6 +39,7 @@ require("user.gitlinker")
 require("user.session-manager")
 require("user.ts-context")
 require("user.registers")
+require("user.illuminate")
 -- require "user.bufferline"
 
 -- Configs in Vimscript
@@ -52,9 +53,8 @@ vim.cmd("source $HOME/.config/nvim/plug-config/vimtex.vim")
 vim.cmd("source $HOME/.config/nvim/plug-config/rnvimr.vim")
 vim.cmd("source $HOME/.config/nvim/plug-config/undotree.vim")
 vim.cmd("source $HOME/.config/nvim/plug-config/vimspector.vim")
+vim.cmd("source $HOME/.config/nvim/plug-config/tabline.vim")
 
--- Deprecated
--- require "user.surround"
 
 -- Use gd to go to each file
 -- Use gf to go to each file if path is provided
@@ -63,6 +63,15 @@ vim.cmd("source $HOME/.config/nvim/plug-config/vimspector.vim")
 -- Treesitter
 -- :TSUninstall all
 -- :TSInstall all
+
+-- Packer
 -- :PackerUpdate
 -- :PackerSync
 -- :PackerStatus
+
+-- Lsp
+-- :LspInstallInfo
+
+
+-- Deprecated
+-- require "user.surround"
