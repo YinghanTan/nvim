@@ -1,8 +1,10 @@
 {
-  // coc-restclient
+
+  // Coc-RestClient
   "rest-client.showHeaders" : false,
   "rest-client.proxy" : "",
-  // suggestions
+
+  // Suggestions
   "suggest.completionItemKindLabels": {
     "text": "t",
     "method": "m",
@@ -14,7 +16,7 @@
   "coc.source.around.priority": 3,
   "coc.source.buffer.priority": 4,
 
-  // diagnostics
+  // Diagnostics
   "diagnostic.errorSign": " ",
   "diagnostic.warningSign": " ",
   "diagnostic.infoSign": "",
@@ -22,11 +24,11 @@
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": false, // this won't work with codelens when error on same line
 
-  // list
+  // List
   "list.indicator": ">",
   "list.selectedSignText": " ",
 
-  // autoformat
+  // AutoFormat
   "suggest.noselect": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
@@ -50,11 +52,11 @@
     "zsh"
   ],
   "coc.preferences.formatOnType": true,
-
   "tsserver.formatOnType": true, // Run format on type special characters., default: true
   "tsserver.enableJavascript": true, // use tsserver for javascript files enabled by default
   "codeLens.enable": false, // to speed things up
-  // Javascript config
+
+  // Javascript Formatting
   "eslint.autoFixOnSave": true, // pause autofix
   // "prettier.tabWidth": 4, // useful for some projects
   // "prettier.eslintIntegration": true,
@@ -63,32 +65,13 @@
   "prettier.disableSuccessMessage": false,
   // "prettier.onlyUseLocalVersion": true,
 
-  // // python config coc-pyright
-  // "python.analysis.autoImportCompletions": true,
-  // "python.analysis.autoSearchPaths": true,
-  // "python.analysis.diagnosticMode": "openFilesOnly",
-  // "python.analysis.stubPath": "typings",
-  // "python.analysis.typeshedPaths": [],
-  // "python.analysis.diagnosticSeverityOverrides": {},
-  // "python.analysis.typeCheckingMode": "basic",
-  // "python.analysis.useLibraryCodeForTypes": true,
-  // "python.pythonPath": "$HOME/.pyenv/versions/3.8.12/bin/python3",
-  // // "python.pythonPath": "python",
-  // "python.venvPath": "${env:HOME}/.pyenv/versions",
-  // "python.venvPath": "~/venvs/",
 
-
-
-  // formatting
+  // Python Formatting
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.pyenv/versions/3.9.9/bin/black",
   "python.formatting.blackArgs": [],
-  /* "python.formatting.blackPath": "~/venvs/black/bin/black", */
-  // "python.formatting.blackPath": "~/.pyenv/shims/black",
-  // Change this if you are using the packages in the repo instead
-  // "python.formatting.blackPath": "~/.local/bin/black",
 
-  // linting
+  // Linting
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
   "python.linting.flake8Enabled": false,
@@ -102,18 +85,7 @@
   // "python.linting.pylintEnabled": true,
   // "python.jediPath": "~/.local/lib/python3.8/site-packages",
 
-  // coc-jedi config
-  // "python.jediPath": "~/venvs/jedi/lib/python3.9/site-packages/",
-  // "python.jediPath": "~/.pyenv/versions/3.8.12/lib/python3.9/site-packages/",
-  // "python.jeditEnabled": false, */
-  // "suggest.timeout": 5000, */
-  // "jedi.executable.command": "~/.local/bin/jedi-language-server",
-  // "jedi.diagnostics.enable": false,
-  // "jedi.diagnostics.didOpen": false,
-  // "jedi.diagnostics.didChange": false,
-  // "jedi.diagnostics.didSave": false,
-
-  // snippets
+  // Snippets
   "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
   "snippets.editSnippetsCommand": "vsplit",
   "snippets.extends": {
@@ -122,7 +94,7 @@
     "typescript": ["typescript", "javascript", "javascript-jasmine-arrow"]
   },
 
-  // emmet
+  // Emmet
   "emmet.includeLanguages": {
     "vue-html": "html",
     "javascript": "javascriptreact",
@@ -130,17 +102,7 @@
     "htmldjango": "html"
   },
 
-  // // coc-jira-complete
-  // "jira.workspaceUrl": "https://minterest.atlassian.net",
-  // "jira.user.email": "yinghan.tan@minterest.sg",
-  // "jira.user.apiKey": "X6FnMg0SxKNCAex3EIoTA6AC",
-  // "jira.workspaceUrl": "",
-  // "jira.user.email": "yinghan.yhtan@gmail.com",
-  // "jira.user.apiKey": "DNmfHpQ9e8iCMX43ZFR83088",
-
-  // coc-leetcode
-  // "leetcode.language": "javascript"
-  // coc-git
+  // Coc-Git
   "git.enableGutters": true,
   // coc-sh
   "languageserver": {
@@ -156,11 +118,6 @@
     "sh": "shellcheck",
     "zsh": "shellcheck"
   },
-  "diagnostic-languageserver.formatFileTypes": {
-    // format `sh` (includes `bash`) files using formatter defined below
-    "sh": "shfmt",
-    "zsh": "shfmt"
-  },
   "diagnostic-languageserver.formatters": {
     // define our formatter so that we can reference it from
     // `diagnostic-languageserver.formatFiletypes`
@@ -174,20 +131,21 @@
     }
   },
   "yaml.format.enable": true,
-  // coc-html
+
+  // Coc-Html
   "html.enable": true,
   "html.format.enable": true,
   "html.filetypes": ["html", "handlebars", "django", "htmldjango"],
 
-  // html django
+  // Html Django
   "htmldjango.enable": true,
   "htmldjango.djhtml.tabWidth": 2,
 
   // Dart Flutter
-
   "dart.enableSdkFormatter": true,
   "flutter.lsp.debug": true,
   "flutter.provider.enableSnippet": true
+
 }
 
 // --- Reference ---
