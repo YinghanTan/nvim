@@ -30,7 +30,6 @@ source $HOME/.config/nvim/plug-config/git-messenger.vim
 source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/rainbow.vim
 source $HOME/.config/nvim/plug-config/codi.vim
-source $HOME/.config/nvim/plug-config/easyMotion.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
@@ -54,6 +53,7 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/lua/hop.lua
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
@@ -75,4 +75,7 @@ source $HOME/.config/nvim/themes/airline.vim
 " https://www.youtube.com/channel/UC8ENHE5xdFSwx71u3fDH5Xw
 " http://vimcasts.org/episodes/
 " https://www.youtube.com/c/BrodieRobertson/community
+
+" --- Deprecated ---
+" source $HOME/.config/nvim/plug-config/easyMotion.vim
 

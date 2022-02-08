@@ -22,14 +22,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-unimpaired'
     Plug 'vimwiki/vimwiki' " Note Taking
     Plug 'michal-h21/vimwiki-sync' " Note git sync
-    Plug 'easymotion/vim-easymotion' " Navigation
+
+    " Navigation
+    Plug 'phaazon/hop.nvim' " Navigation
+    " Plug 'easymotion/vim-easymotion' " Navigation
     Plug 'godlygeek/tabular' " Alignment and formatting
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
 
     " New / Testing
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
-    " Plug 'yuki-uthman/nvim-vimpad'
     Plug 'metakirby5/codi.vim'
 
     " Autocomplete
@@ -46,9 +48,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'natebosch/dartlang-snippets'
 
     " Tools
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
-    Plug 'junegunn/fzf.vim' " Fuzzy Find
-    Plug 'jremmen/vim-ripgrep' " awaiting fixed version
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'mbbill/undotree' " Undo Time Travel
     Plug 'ChristianChiarulli/far.vim' " Find and Replace
@@ -56,11 +55,22 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'liuchengxu/vim-which-key' " View Shortcut keys
-    " Plug 'ThePrimeagen/vim-be-good', {'do': './install.sh'} " Vim Practise - no longer working
     " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
+
+
+    " Search (FZF)
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
+    Plug 'junegunn/fzf.vim' " Fuzzy Find
+    Plug 'jremmen/vim-ripgrep' " awaiting fixed version
+
+    " Search (Telescope)
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files

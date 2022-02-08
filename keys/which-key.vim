@@ -45,9 +45,19 @@ autocmd  FileType which_key set laststatus=0 noshowmode noruler
   \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
 
 " WhichKey Mappings
-let g:which_key_map['/'   ] = [ ':let @/ = ""'                        , 'Clear highlight'    ]
-let g:which_key_map['.'   ] = [ ':e $MYVIMRC'                , 'open init'          ]
-let g:which_key_map[';'   ] = [ ':Commands'                           , 'commands'           ]
+let g:which_key_map['/' ] = [ ':let @/ = ""'                        , 'Clear highlight' ]
+let g:which_key_map['.' ] = [ ':e $MYVIMRC'                , 'open init'                ]
+let g:which_key_map[';' ] = [ ':Commands'                           , 'commands'        ]
+
+
+" \ is for nav
+let g:which_key_map['\'] = {
+      \ 'name' : '+nav'                 ,
+      \ 'w' : ['HopWord'           , 'word' ] ,
+      \ 'f' : ['HopChar2'          , 'find' ] ,
+      \ 'l' : ['HopLine'           , 'line' ] ,
+      \ }
+
 
 " a is for actions
 let g:which_key_map.a = {
@@ -62,14 +72,6 @@ let g:which_key_map.a = {
       \ 'p' : [':Codi'                      , 'scratchpad' ] ,
       \ }
       " \ 'w' : [':call TrimWhitespace()<cr>' , 'trim whitespace'             ] ,
-      " \ 'p' : {
-      "     \ 'name': '+breakpoint'                                           ,
-      "     \ 'o' : ['<Plug>(vimpad-on)'                            , 'pad on' ] ,
-      "     \ 'f' : ['<Plug>(vimpad-off)'                           , 'pad off'        ] ,
-      "     \ 't' : ['<Plug>(vimpad-toggle)'                        , 'pad toggle' ] ,
-      "     \ 'r' : ['<Plug>(vimpad-refresh)'                       , 'pad refresh' ] ,
-      "     \ 'p' : ['<Plug>(vimpad-toggle)'      , 'scratchpad' ] ,
-      "     \ }                                                                       ,
 nnoremap <leader>aw :call TrimWhitespace()<CR>
     
 
