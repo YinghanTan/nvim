@@ -83,6 +83,18 @@ ls.snippets = {
       insert(0),
     }),
 
+  -- ${1:"${2:key}"}:  ${3:"${4:value}"}${5:, }
+    snip({
+      trig = ":",
+      namr = "key:value",
+      dscr = "key:value",
+    }, {
+      insert(1, '"key"'),
+      text({": "}),
+      insert(2, '"value"'),
+      insert(3, ", "),
+      insert(0),
+    }),
 
 
   },
