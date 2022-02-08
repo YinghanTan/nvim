@@ -9,8 +9,9 @@ source $HOME/.config/nvim/keys/which-key.vim
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
-" --- Reference ---
-" https://www.chrisatmachine.com/Linux/05-nerd-fonts/
+
+" Status Line
+source $HOME/.config/nvim/themes/airline.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -19,12 +20,9 @@ source $HOME/.config/nvim/plug-config/cocSnippets.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Git
-source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 source $HOME/.config/nvim/plug-config/fugitive.vim
+source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
-" --- Reference ---
-" https://www.chrisatmachine.com/Neovim/12-git-integration/
-" https://www.youtube.com/watch?v=PO6DxfGPQvw&t=12s
 
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
@@ -52,11 +50,13 @@ source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
+
+" --- Lua Plugins
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
+luafile $HOME/.config/nvim/lua/neoscroll.lua
+luafile $HOME/.config/nvim/lua/dial.lua
 
-" Status Line
-source $HOME/.config/nvim/themes/airline.vim
 
 " --- Brief help ---
 " \.                        - go to init.vim

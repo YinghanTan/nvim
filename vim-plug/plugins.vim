@@ -22,17 +22,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-unimpaired'
     Plug 'vimwiki/vimwiki' " Note Taking
     Plug 'michal-h21/vimwiki-sync' " Note git sync
+    Plug 'godlygeek/tabular' " Alignment and formatting
+    Plug 'monaqa/dial.nvim'  " Extended increment/decrement plugin
+    " Plug 'kevinhwang91/nvim-bqf'  " Better quickfix window
 
     " Navigation
     Plug 'phaazon/hop.nvim' " Navigation
-    " Plug 'easymotion/vim-easymotion' " Navigation
-    Plug 'godlygeek/tabular' " Alignment and formatting
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
-
-    " New / Testing
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
-    Plug 'metakirby5/codi.vim'
 
     " Autocomplete
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
@@ -43,22 +41,19 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
     Plug 'antoinemadec/coc-fzf'
 
-    " Dart
-    Plug 'dart-lang/dart-vim-plugin'
-    Plug 'natebosch/dartlang-snippets'
 
     " Tools
+    Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'mbbill/undotree' " Undo Time Travel
     Plug 'ChristianChiarulli/far.vim' " Find and Replace
     Plug 'mhinz/vim-grepper' " Handle multi-file find and replace.
     Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
-    Plug 'liuchengxu/vim-which-key' " View Shortcut keys
-    " Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
     Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
+    Plug 'metakirby5/codi.vim'
 
 
     " Search (FZF)
@@ -76,6 +71,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
     Plug 'lervag/vimtex' " latex development
     Plug 'matze/vim-tex-fold'
+    " Dart
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'natebosch/dartlang-snippets'
+
     " Git
     Plug 'tpope/vim-fugitive' " Git
     Plug 'tpope/vim-rhubarb' " enables Gbrowse for github
@@ -85,20 +84,26 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
     Plug 'rhysd/git-messenger.vim' " Popup Git messages
+    " use("lewis6991/gitsigns.nvim") -- Git integration: signs, hunk actions, blame, etc.
 
     Plug 'konfekt/fastfold'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
 
-    " UIUX
+    " Theme
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
-    Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
+    Plug 'karb94/neoscroll.nvim' " Smooth scrolling
     Plug 'ryanoasis/vim-devicons' "Cool icons
     Plug 'szw/vim-maximizer' " Zoom window
     Plug 'norcalli/nvim-colorizer.lua' " colorizer
     Plug 'vim-airline/vim-airline' " Status Line
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
+
+
+    " Deprecated
+    " Plug 'easymotion/vim-easymotion' " Navigation
+    " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
 
 call plug#end()
 

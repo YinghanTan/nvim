@@ -1,5 +1,6 @@
 " --- Reference ---
 " https://www.chrisatmachine.com/Neovim/03-vim-themes/
+" https://www.chrisatmachine.com/Linux/05-nerd-fonts/
 
 " onedark.vim override: Don't set a background color when running in a terminal;
 if (has("autocmd") && !has("gui_running"))
