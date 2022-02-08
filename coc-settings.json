@@ -1,15 +1,37 @@
 {
-
   // Coc-RestClient
-  "rest-client.showHeaders" : false,
-  "rest-client.proxy" : "",
+  "rest-client.showHeaders": false,
+  "rest-client.proxy": "",
 
   // Suggestions
   "suggest.completionItemKindLabels": {
-    "text": "t",
-    "method": "m",
-    "function": "ル"
+    "method": "  ",
+    "function": "  ",
+    "variable": "[]",
+    "field": "  ",
+    "typeParameter": "<>",
+    "constant": "  ",
+    "class": " פּ ",
+    "interface": " 蘒",
+    "struct": "  ",
+    "event": "  ",
+    "operator": "  ",
+    "module": "  ",
+    "property": "  ",
+    "enum": " 練",
+    "reference": "  ",
+    "keyword": "  ",
+    "file": "  ",
+    "folder": " ﱮ ",
+    "color": "  ",
+    "unit": " 塞 ",
+    "snippet": "  ",
+    "text": "  ",
+    "constructor": "  ",
+    "value": "  ",
+    "enumMember": "  "
   },
+
   "snippets.priority": 1,
   "suggest.languageSourcePriority": 99,
   "coc.source.file.priority": 2,
@@ -64,7 +86,6 @@
   "prettier.bracketSpacing": true,
   "prettier.disableSuccessMessage": false,
   // "prettier.onlyUseLocalVersion": true,
-
 
   // Python Formatting
   "python.formatting.provider": "black",
@@ -145,7 +166,6 @@
   "dart.enableSdkFormatter": true,
   "flutter.lsp.debug": true,
   "flutter.provider.enableSnippet": true
-
 }
 
 // --- Reference ---
