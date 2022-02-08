@@ -56,6 +56,10 @@ luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
 luafile $HOME/.config/nvim/lua/dial.lua
+luafile $HOME/.config/nvim/lua/numb.lua
+luafile $HOME/.config/nvim/lua/vim-matchup.lua
+luafile $HOME/.config/nvim/lua/todo-comments.lua
+luafile $HOME/.config/nvim/lua/gitlinker.lua
 
 
 " --- Brief help ---

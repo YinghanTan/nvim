@@ -31,6 +31,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
+    Plug 'nacro90/numb.nvim'  " peeks lines of the buffer in non-obtrusive way.
+    Plug 'andymass/vim-matchup'  " operate on sets of matching text
 
     " Autocomplete
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
@@ -84,7 +86,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
     Plug 'rhysd/git-messenger.vim' " Popup Git messages
-    " use("lewis6991/gitsigns.nvim") -- Git integration: signs, hunk actions, blame, etc.
+    Plug 'ruifm/gitlinker.nvim' " generate shareable file permalinks
+    " use("lewis6991/gitsigns.nvim") " Git integration: signs, hunk actions, blame, etc.
 
     Plug 'konfekt/fastfold'
     Plug 'MarcWeber/vim-addon-mw-utils'
@@ -99,6 +102,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline' " Status Line
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
+    Plug 'folke/todo-comments.nvim'
 
 
     " Deprecated
