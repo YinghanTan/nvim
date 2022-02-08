@@ -1,6 +1,7 @@
 require("plenary.reload").reload_module("user", true) -- To refresh cached lua modules
 
 require("user.options")
+require("user.autocommands")
 require("user.keymaps")
 require("user.plugins") -- Plugins managed with Packer
 require("user.snippets")
@@ -22,7 +23,6 @@ require("user.impatient")
 require("user.indentline")
 require("user.alpha")
 require("user.whichkey")
-require("user.autocommands")
 require("user.hop")
 require("user.matchup")
 require("user.numb")
@@ -75,3 +75,5 @@ vim.cmd("source $HOME/.config/nvim/plug-config/tabline.vim")
 
 -- Deprecated
 -- require "user.surround"
+
+

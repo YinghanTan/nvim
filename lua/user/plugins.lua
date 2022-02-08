@@ -86,7 +86,7 @@ return packer.startup(function(use)
 	use("filipdutescu/renamer.nvim") -- renaming UI for Neovim
 	use("simrat39/symbols-outline.nvim") -- tree like view for symbols using LSP
 	use("ray-x/lsp_signature.nvim") -- show function signature when you type
-  use "b0o/SchemaStore.nvim"
+	use("b0o/SchemaStore.nvim")
 
 	-- Telescope
 	use("nvim-telescope/telescope.nvim")
@@ -152,6 +152,7 @@ return packer.startup(function(use)
 	use({ "nyngwang/NeoZoom.lua" }) -- Zoom window
 	use("norcalli/nvim-colorizer.lua") -- colorizer
 	use("karb94/neoscroll.nvim") -- Smooth scrolling for vim
+	use("nelstrom/vim-visual-star-search") -- Enable * to search in visual mode
 
 	-- Vimscript plugins
 	use("tpope/vim-repeat") -- Repeat.vim remaps . in a way that plugins can tap into it.

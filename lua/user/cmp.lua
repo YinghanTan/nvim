@@ -15,35 +15,9 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
---   פּ ﯟ   some other good icons
-local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
--- find more here: https://www.nerdfonts.com/cheat-sheet
+local icons = require("user.icons")
+
+local kind_icons = icons.kind
 
 cmp.setup {
   snippet = {
@@ -54,30 +28,10 @@ cmp.setup {
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous completion
     ["<C-n>"] = cmp.mapping.select_next_item(), -- next completion
-    ["<C-j>"] = cmp.mapping(function(fallback) -- next input position
-        if luasnip.jumpable(1) then
-            luasnip.jump(1)
-        else
-            fallback()
-        end
-    end, {
-        "i",
-        "s",
-    }),
-    ["<C-k>"] = cmp.mapping(function(fallback) -- previous input position
-        if luasnip.jumpable(-1) then
-            luasnip.jump(-1)
-        else
-            fallback()
-        end
-    end, {
-        "i",
-        "s",
-    }),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }), -- popup window scroll back 
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }), -- popup window scroll forward
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- trigger completion
-    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
     ["<C-e>"] = cmp.mapping { -- exit completion
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -85,16 +39,6 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true }, -- confirm selected completion
-    ["<Leader><Tab>"] = cmp.mapping(function(fallback)
-      if luasnip.expandable() then
-        luasnip.expand()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
     -- ["<Tab>"] = cmp.mapping(function(fallback)
     --   if cmp.visible() then
     --     cmp.select_next_item()
@@ -123,6 +67,36 @@ cmp.setup {
     --   "i",
     --   "s",
     -- }),
+    ["<C-j>"] = cmp.mapping(function(fallback) -- next input position
+        if luasnip.jumpable(1) then
+            luasnip.jump(1)
+        else
+            fallback()
+        end
+    end, {
+        "i",
+        "s",
+    }),
+    ["<C-k>"] = cmp.mapping(function(fallback) -- previous input position
+        if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+        else
+            fallback()
+        end
+    end, {
+        "i",
+        "s",
+    }),
+    ["<Leader><Tab>"] = cmp.mapping(function(fallback)
+      if luasnip.expandable() then
+        luasnip.expand()
+      else
+        fallback()
+      end
+    end, {
+      "i",
+      "s",
+    }),
   },
   formatting = {
     fields = { "kind", "abbr", "menu" },
@@ -136,6 +110,7 @@ cmp.setup {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        emoji = "[Emoji]",
       })[entry.source.name]
       return vim_item
     end,
@@ -147,6 +122,7 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "npm" },
+    { name = "emoji" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,

@@ -1,7 +1,8 @@
 local ls = require "luasnip"
 -- some shorthands...
 local snip = ls.snippet
-local node = ls.snippet_node
+local snode = ls.snippet_node
+local isn = ls.indent_snippet_node
 local text = ls.text_node
 local insert = ls.insert_node
 local func = ls.function_node
@@ -21,6 +22,10 @@ ls.config.set_config {
 local date = function()
   return { os.date "%Y-%m-%d" }
 end
+local datetime = function()
+  return { os.date "%a %d %b %Y %H:%M:%S" }
+end
+
 -- Make sure to not pass an invalid command, as io.popen() may write over nvim-text.
 local function bash(_, _, command)
   local file = io.popen(command, "r")
@@ -52,9 +57,34 @@ ls.snippets = {
       namr = "Signature",
       dscr = "Name and Surname",
     }, {
-      text "Sergei Bulavintsev",
+      text "Yinghan Tan",
       insert(0),
     }),
+
+    snip("trigger", {
+      text({"After expanding, the cursor is here ->"}), insert(1),
+      text({"", "After jumping forward once, cursor is here ->"}), insert(2),
+      text({"", "After jumping once more, the snippet is exited there ->"}), insert(0),
+    }),
+
+    snip({
+      trig = "td",
+      namr = "Todo",
+      dscr = "TODO comment",
+    }, {
+      insert(1, "#"),
+      text({" "}),
+      insert(2, "TODO"),
+      text({": "}),
+      insert(3, "description"),
+      text({" <"}),
+      func(datetime, {}),
+      text({" - Yinghan Tan>"}),
+      insert(0),
+    }),
+
+
+
   },
   sh = {
     snip("shebang", {
@@ -262,3 +292,11 @@ ls.snippets = {
     }),
   },
 }
+
+
+-- One peculiarity of honza/vim-snippets is that the file with the global snippets is _.snippets, so global snippets
+-- are stored in `ls.snippets._`.
+-- We need to tell luasnip that "_" contains global snippets:
+ls.filetype_extend("all", { "_" })
+
+require("luasnip.loaders.from_snipmate").lazy_load()
