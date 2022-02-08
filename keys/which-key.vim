@@ -66,23 +66,14 @@ let g:which_key_map.a = {
       \ 'C' : [':cd %:p:h<cr>:pwd<cr>'      , 'set current directory'   ] ,
       \ 's' : [':source $MYVIMRC'           , 'source init'             ] ,
       \ 'S' : [':CocCommand swagger.render' , 'swagger'                 ] ,
-      \ 'g' : [':IndentGuidesToggle<CR>'    , 'indent Guide'            ] ,
+      \ 'g' : ['IndentGuidesToggle'    , 'indent Guide'            ] ,
       \ 'm' : ['<Plug>MarkdownPreview'      , 'markdown preview toggle' ] ,
       \ 'M' : ['<Plug>MarkdownPreviewStop'  , 'markdown preview stop'   ] ,
-      \ 'p' : [':Codi'                      , 'scratchpad' ] ,
+      \ 'p' : ['Codi'                      , 'scratchpad' ] ,
       \ }
       " \ 'w' : [':call TrimWhitespace()<cr>' , 'trim whitespace'             ] ,
 nnoremap <leader>aw :call TrimWhitespace()<CR>
     
-
-" " c is for code
-" let g:which_key_map.c = {
-"       \ 'name' : '+code'         ,
-"       \ 'l' : [':LeetCodeList'   , 'list'    ] ,
-"       \ 't' : [':LeetCodeTest'   , 'test'    ] ,
-"       \ 's' : [':LeetCodeSubmit' , 'submit'  ] ,
-"       \ 'i' : [':LeetCodeSignIn' , 'sign in' ] ,
-"       \ }
 
 " d is for debug
 let g:which_key_map.d = {
@@ -149,9 +140,9 @@ let g:which_key_map.g = {
       \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
       \ 'A' : [':Git add .'                         , 'add all'            ] ,
       \ 'b' : [':Git blame'                         , 'blame'              ] ,
-      \ 'B' : [':GBrowse'                           , 'browse'             ] ,
-      \ 'c' : [':BCommits'                          , 'buffer commits'     ] ,
-      \ 'C' : [':Commits'                           , 'commits'            ] ,
+      \ 'B' : ['GBrowse'                           , 'browse'             ] ,
+      \ 'c' : ['BCommits'                          , 'buffer commits'     ] ,
+      \ 'C' : ['Commits'                           , 'commits'            ] ,
       \ 'g' : {
           \ 'name': '+gutter'                           ,
           \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
@@ -170,15 +161,6 @@ let g:which_key_map.g = {
       \ 'f' : [':diffget //2'                       , 'diffget left hunk'  ] ,
       \ 'j' : [':diffget //3'                       , 'diffget right hunk' ] ,
       \ }
-        " Vim-Signify
-      " \ 'u' : [':SignifyHunkUndo'          , 'undo hunk'           ] ,
-      " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks'     ] ,
-      " \ 't' : [':SignifyToggle'                     , 'toggle signs'        ] ,
-      " \ 'D' : [':Gdiffsplit'                        , 'diff split'          ] ,
-      " \ 'i' : [':SignifyHunkDiff'                   , 'chunk info'      ] ,
-      " \ 'f' : [':SignifyFold!'                      , 'fold unchanged'  ] ,
-      " \ 'r' : [':SignifyRefresh'                    , 'refresh'         ] ,
-      " \ 'h' : [':SignifyToggleHighlight'            , 'highlight hunks' ] ,
 
 " G is for Gist
 let g:which_key_map.G = {
@@ -256,10 +238,6 @@ let g:which_key_map.q = {
       \ 'r' : [':Rg :'         , 'close LocalFix'       ] ,
       \ }
       " " Use unimpaired shortcuts instead [q ]q [l ]l
-      " \ 'j' : [':cnext',   'Cnext'],
-      " \ 'k' : [':cprev',  'Cprev'],
-      " \ 'n' : [':lnext',   'lnext'],
-      " \ 'p' : [':lprev',  'lprev'],
 
 
 " s is for search
@@ -298,58 +276,6 @@ let g:which_key_map.s = {
       \ 'Y' : [':Filetypes'                                    , 'file types'         ]    ,
       \ 'z' : [':FZF'                                          , 'FZF'                ]    ,
       \ }
-      " \ 'k' : [':Cheat'                                        , 'cheat.sh'           ]    ,
-
-" " s is for search
-" let g:which_key_map.s = {
-      " \ 'name' : '+search' ,
-      " \ '/' : [':History/'                                      , 'search history'],
-      " \ ';' : [':Commands'                                      , 'commands'],
-      " \ 'a' : [':Ag'                                            , 'text Ag'],
-      " \ 'b' : [':CocCommand fzf-preview.Buffers'                , 'buffers'],
-      " \ 'B' : [':CocCommand fzf-preview.AllBuffers'             , 'all buffers'],
-      " \ 'c' : [':BCommits'                                      , 'buffer commits'],
-      " \ 'C' : [':Commits'                                       , 'commits'],
-      " \ 'd' : [':CocCommand fzf-preview.DirectoryFiles'         , 'directories'],
-      " \ 'D' : [':CocCommand fzf-preview.Changes'                , 'delta changes'],
-      " \ 'f' : [':CocCommand fzf-preview.DirectoryFiles'         , 'files'],
-      " \ 'F' : [':Files'                                         , 'project files'],
-      " \ 'g' : [':CocCommand fzf-preview.GitFiles'               , 'git files'],
-      " \ 'G' : [':CocCommand fzf-preview.GitActions'             , 'git actions'],
-      " \ 'h' : ['::CocCommand fzf-preview.GitFilesHistory'       , 'file history'],
-      " \ 'H' : [':CocCommand fzf-preview.CommandPalette'         , 'command history'],
-      " \ 'i' : [':CocCommand fzf-preview.CocCurrentDiagnostics'  , 'diagnostics'],
-      " \ 'I' : [':CocCommand fzf-preview.CocDiagnostics'         , 'all diagnostics'],
-      " \ 'j' : [':CocCommand fzf-preview.Jumps'                  , 'jumps'],
-      " \ 'l' : [':CocCommand fzf-preview.Lines'                  , 'lines'] ,
-      " \ 'L' : [':CocCommand fzf-preview.BufferLines'            , 'Buffer lines'] ,
-      " \ 'm' : [':CocCommand fzf-preview.Marks'                  , 'list marks'],
-      " \ 'M' : [':Maps'                                          , 'key maps'] ,
-      " \ 'p' : [':Helptags'                                      , 'help tags'] ,
-      " \ 'P' : [':CocCommand fzf-preview.Ctags'                  , 'project tags'],
-      " \ 'q' : [':CocCommand fzf-preview.QuickFix'               , 'quickfix list'],
-      " \ 'Q' : [':CocCommand fzf-preview.LocationList'           , 'location list'],
-      " \ 'r' : [':Rg'                                            , 'text Rg'],
-      " \ 's' : [':CocList snippets'                              , 'Snippets Search'],
-      " \ 'S' : [':Colors'                                        , 'color schemes'],
-      " \ 't' : [':Ag'                                            , 'text Grep'],
-      " \ 'T' : [':CocCommand fzf-preview.BufferTags'             , 'buffer tags'],
-      " \ 'w' : [':Windows'                                       , 'search windows'],
-      " \ 'y' : [':CocFzfList yank'                               , 'list yank'],
-      " \ 'Y' : [':Filetypes'                                     , 'filetypes'],
-      " \ 'z' : [':FZF'                                           , 'FZF'],
-      " \ }
-
-      " \ 'g' : [':CocCommand fzf-preview.GitFiles'                   , 'git files'],
-      " \ 'l' : [':Lines'                       , 'lines'] ,
-      " \ 'l' : [':Lines'                       , 'lines'] ,
-      " \ 'r' : [':CocCommand fzf-preview.DirectoryFiles'                          , 'text Rg'],
-      " \ 'b' : [':Buffers'                     , 'open buffers'],
-      " \ 'B' : [':BLines'                      , 'current buffer'],
-      " \ 'f' : [':Files'                       , 'files'],
-      " \ 'g' : [':GFiles'                      , 'git files'],
-      " \ 'm' : [':Marks'                       , 'marks'] ,
-      " \ 'M' : [':Maps'                        , 'normal maps'] ,
 
 
 " s is for search powered by telescope
