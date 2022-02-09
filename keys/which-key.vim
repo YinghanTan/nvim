@@ -55,7 +55,7 @@ let g:which_key_map['\'] = {
       \ 'name' : '+nav'                 ,
       \ 'w' : ['HopWord'           , 'word' ] ,
       \ 'f' : ['HopChar2'          , 'find' ] ,
-      \ 'l' : ['HopLine'           , 'line' ] ,
+      \ 'l' : ['HopLineStart'           , 'line' ] ,
       \ }
 
 
@@ -87,7 +87,7 @@ let g:which_key_map.d = {
             \ }                                                                       ,
         \ 'c' : ['<Plug>VimspectorContinue | zz'                                      , 'continue'               ] ,
         \ 'C' : ['<Plug>VimspectorRunToCursor | zz'                                   , 'run to cursor'          ] ,
-        \ 'd' : [':call vimspector#Launch()<CR>'                                      , 'debug'                  ] ,
+        \ 'd' : [':call vimspector#Launch()'                                      , 'debug'                  ] ,
         \ 'e' : [':VimspectorEval'                                                    , 'evaluate'               ] ,
         \ 'i' : ['<Plug>VimspectorBalloonEval'                                        , 'inspect'                ] ,
         \ 'n' : ['<Plug>VimspectorStepOver | zz'                                      , 'next'                   ] ,

@@ -1,4 +1,7 @@
+// --- Reference ---
+// https://www.chrisatmachine.com/Neovim/26-lsp-symbols/
 {
+
   // Coc-RestClient
   "rest-client.showHeaders": false,
   "rest-client.proxy": "",
@@ -125,6 +128,12 @@
 
   // Coc-Git
   "git.enableGutters": true,
+  "git.changedSign.text": "~",
+  "git.addedSign.text": "+",
+  "git.removedSign.text": "_",
+  "git.topRemovedSign.text": "‾",
+  "git.changeRemovedSign.text": "≃",
+
   // coc-sh
   "languageserver": {
     "bash": {
