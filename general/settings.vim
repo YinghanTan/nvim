@@ -140,7 +140,7 @@ set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
 set shiftwidth=4                " displacement of each shift is 4 spaces
 " set smarttab                    " Be smart when using tabs
 set expandtab                   " tabs are spaces
-set smartindent                 " automatically add indent 
+" set smartindent                 " automatically add indent 
 set autoindent                  " apply indentation of current line to next line
 set nowrap                      " text do not get wrappped around at the end of the line
 autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
@@ -377,7 +377,6 @@ nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
-" nnoremap <C-j>
 
 " Undo break points
 inoremap , ,<c-g>u
