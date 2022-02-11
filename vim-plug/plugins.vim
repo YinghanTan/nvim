@@ -97,17 +97,27 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
     Plug 'ryanoasis/vim-devicons' "Cool icons
-    Plug 'szw/vim-maximizer' " Zoom window
     Plug 'norcalli/nvim-colorizer.lua' " colorizer
     Plug 'vim-airline/vim-airline' " Status Line
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim'
+    Plug 'nyngwang/NeoZoom.lua' " Zoom Window
+    "sindrets/diffview.nvim",
+    "folke/trouble.nvim",
+    "dccsillag/magma-nvim",
+    "gelguy/wilder.nvim",
+    "simrat39/symbols-outline.nvim",
+    "f-person/git-blame.nvim",
+    "nvim-treesitter/nvim-treesitter-textobjects"
+    "https://github.com/MattesGroeger/vim-bookmarks"
+    " 'tom-anders/telescope-vim-bookmarks.nvim'
 
 
     " Deprecated
     " Plug 'easymotion/vim-easymotion' " Navigation
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
+    " Plug 'szw/vim-maximizer' " Zoom window
 
 call plug#end()
 

@@ -109,7 +109,7 @@ let g:which_key_map.d = {
         \ 'r' : ['<Plug>VimspectorRestart'                                            , 'restart'                ] ,
         \ 'D' : ['VimspectorReset'                                                    , 'Reset'                  ] ,
         \ 'w' : [':call AddToWatch()<CR>'                                             , 'add to watch'           ] ,
-        \ 'z' : [':MaximizerToggle'                                                   , 'maximize window'        ] ,
+        \ 'z' : ['NeoZoomToggle'                                                   , 'maximize window'        ] ,
         \ }
         " \ 't' : [':call GoToWindow(g:vimspector_session_windows.terminal)<CR>'    , 'terminal'               ] ,
 

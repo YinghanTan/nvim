@@ -5,7 +5,7 @@ nnoremap <M-k>    :resize +2<CR>
 nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
-nnoremap <silent> <C-w>z :MaximizerToggle<CR>
+nnoremap <silent> <C-w>z :NeoZoomToggle<CR>
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
