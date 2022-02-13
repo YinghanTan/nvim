@@ -106,12 +106,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "sindrets/diffview.nvim",
     "folke/trouble.nvim",
     "dccsillag/magma-nvim",
-    "gelguy/wilder.nvim",
     "simrat39/symbols-outline.nvim",
     "f-person/git-blame.nvim",
     "nvim-treesitter/nvim-treesitter-textobjects"
     "https://github.com/MattesGroeger/vim-bookmarks"
     " 'tom-anders/telescope-vim-bookmarks.nvim'
+    "gelguy/wilder.nvim",
 
 
     " Deprecated

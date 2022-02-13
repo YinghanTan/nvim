@@ -1,4 +1,3 @@
-" --- Reference ---
 " https://www.chrisatmachine.com/Neovim/07-ranger/
 " pip install ranger-fm
 
