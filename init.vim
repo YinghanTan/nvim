@@ -83,3 +83,10 @@ luafile $HOME/.config/nvim/lua/gitlinker.lua
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
 
+" --- Python Dependencies ---
+" pynvim pyright black pylint ranger-fm
+
+" --- Node Dependencies ---
+" neovim prettier 
+
+" ripgrep fzf
