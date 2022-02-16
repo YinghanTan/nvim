@@ -33,7 +33,7 @@ set ruler                       " show current row and column
 set encoding=utf-8
 set history=1000                " increate the undo limit
 set t_Co=256
-" set scrolloff=8
+set scrolloff=3
 
 autocmd BufNewFile,BufRead,FileType,OptionSet * set formatoptions-=cro
 autocmd BufNewFile,BufRead,FileType,OptionSet * setlocal formatoptions-=cro
