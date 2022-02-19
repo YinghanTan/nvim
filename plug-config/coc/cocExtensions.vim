@@ -7,7 +7,8 @@
 " :CocUpdate      - To update your extensions
 " :CocEnable      - Enable Coc
 " :CocDisable     - Disable Coc
-" :CocList extensions
+" :CocList extensions  - Manage extensions
+" :CocList marketplace    - List all extensions for installation
 
 let g:coc_global_extensions = [
     \ 'coc-restclient',
@@ -44,6 +45,8 @@ let g:coc_global_extensions = [
     \ 'coc-xml',
     \ 'coc-yaml',
     \ 'coc-yank',
+    \ '@yaegassy/coc-ansible',
+    \ 'coc-cfn-lint',
     \ ]
     " \ 'coc-fzf',
     " \ 'coc-hightlight',
