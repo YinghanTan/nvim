@@ -136,6 +136,7 @@ let g:which_key_map.g = {
           \ 'd' : [':Gdiff'                  , 'diff'                ] ,
           \ 's' : [':Gdiffsplit'                , 'diff split'          ] ,
           \ 'i' : [':CocCommand git.diffCached' , 'diff info'           ] ,
+          \ 'u' : [':diffupdate'                , 'diff update'           ] ,
           \ },
       \ 'a' : [':CocCommand fzf-preview.GitActions' , 'actions'            ] ,
       \ 'A' : [':Git add .'                         , 'add all'            ] ,
@@ -143,6 +144,8 @@ let g:which_key_map.g = {
       \ 'B' : ['GBrowse'                           , 'browse'             ] ,
       \ 'c' : ['BCommits'                          , 'buffer commits'     ] ,
       \ 'C' : ['Commits'                           , 'commits'            ] ,
+      \ 'h' : [':0Gclog'                           , 'file history'            ] ,
+      \ 'e' : [':Gedit<cr>'                           , 'Gedit'            ] ,
       \ 'g' : {
           \ 'name': '+gutter'                           ,
           \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,

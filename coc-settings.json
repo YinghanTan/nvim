@@ -28,11 +28,12 @@
     "folder": " ﱮ ",
     "color": "  ",
     "unit": " 塞 ",
-    "snippet": "  ",
+    "snippet": "\ue60b", //  pair of curly braces
     "text": "  ",
     "constructor": "  ",
     "value": "  ",
-    "enumMember": "  "
+    "enumMember": "  ",
+    "default": "\uf29c" //  question mark in circle
   },
 
   "snippets.priority": 1,
@@ -134,6 +135,7 @@
   "git.removedSign.text": "_",
   "git.topRemovedSign.text": "‾",
   "git.changeRemovedSign.text": "≃",
+  "git.issueFormat": "#%i",
 
   // coc-sh
   "languageserver": {
@@ -175,7 +177,17 @@
   // Dart Flutter
   "dart.enableSdkFormatter": true,
   "flutter.lsp.debug": true,
-  "flutter.provider.enableSnippet": true
+  "flutter.provider.enableSnippet": true,
+
+  "list.insertMappings": {
+    "<C-x>": "action:split",
+    "<C-v>": "action:vsplit"
+  },
+  "list.normalMappings": {
+    "s": "action:split",
+    "v": "action:vsplit"
+  }
+
 }
 
 // --- Reference ---
