@@ -94,6 +94,7 @@
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.pyenv/versions/3.9.9/bin/black",
   "python.formatting.blackArgs": [],
+  // "python.formatting.blackArgs": ["--line-length", "79"],
 
   // Linting
   "python.linting.enabled": true,
