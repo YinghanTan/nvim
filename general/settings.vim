@@ -280,7 +280,6 @@ autocmd Filetype typescript.tsx set foldlevelstart=99 "start file with all folds
 
 " Git Settings
 autocmd FileType gitcommit set textwidth=80 " lines longer than 72 columns will be broken
-
 " In Git commit messages, also colour the 51st column (for titles)
 autocmd FileType gitcommit set colorcolumn+=51
 

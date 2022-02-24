@@ -145,7 +145,7 @@ let g:which_key_map.g = {
       \ 'c' : ['BCommits'                          , 'buffer commits'     ] ,
       \ 'C' : ['Commits'                           , 'commits'            ] ,
       \ 'h' : [':0Gclog'                           , 'file history'            ] ,
-      \ 'e' : [':Gedit<cr>'                           , 'Gedit'            ] ,
+      \ 'e' : ['Gedit'                           , 'Gedit'            ] ,
       \ 'g' : {
           \ 'name': '+gutter'                           ,
           \ 'u' : [':CocCommand git.chunkUndo'          , 'undo hunk'          ] ,
