@@ -44,16 +44,6 @@ set shortmess+=I                " Don't five intro message when starting vim
 " --- --- ---
 
 
-" --- Folding ---
-set foldenable          " enable folding
-" set foldmethod=syntax   "syntax highlighting items specify folds - slow when file gets large
-set foldmethod=indent   "syntax highlighting items specify folds
-set foldcolumn=0        "defines 1 col at window left, to indicate folding
-set foldlevelstart=99   "start file with all folds opened
-" set fillchars=fold:-    " remove ---- in folds
-" --- --- ---
-
-
 " --- Better copy & paste ---
 " set clipboard^=unnamed,unnamedplus
 set clipboard=unnamedplus
