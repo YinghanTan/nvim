@@ -3,7 +3,7 @@
 
 " Fire Neovim
 
-set guifont=FiraCode_Nerd_Font:h17 " for Firenvim only as Neovim does not use guifont only GVim uses guifont
+" set guifont=FiraCode_Nerd_Font:h10 " for Firenvim only as Neovim does not use guifont only GVim uses guifont
 if !exists('g:started_by_firenvim')
   " set laststatus=0
   " augroup firenvim
