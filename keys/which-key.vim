@@ -341,10 +341,15 @@ let g:which_key_map.t = {
       \ 'l': [ ':FloatermNew lua'                        , 'lua'            ] ,
       \ 'n': [ ':FloatermNew node'                       , 'node'           ] ,
       \ 'N': [ ':FloatermNew nnn'                        , 'nnn'            ] ,
+      \ 'm' : {
+        \ 'name': '+mux',
+        \ 'P': [ ':FloatermNew tmuxinator-fzf-start.sh'    , 'projects'     ] ,
+        \ },
+      \ 'C': [ ':FloatermNew tmux-cht.sh'                , 'cheatsheet'     ] ,
       \ 'p': [ ':FloatermNew python3'                    , 'python'         ] ,
       \ 'r': [ ':RnvimrToggle'                           , 'ranger'         ] ,
       \ 'R': [ ':FloatermNew ranger'                     , 'ranger'         ] ,
-      \ 'c': [ ':FloatermToggle'                         , 'console'         ] ,
+      \ 'c': [ ':FloatermToggle'                         , 'console'        ] ,
       \ 'h': [ ':FloatermNew htop'                       , 'htop'           ] ,
       \ 's': [ ':FloatermNew ncdu'                       , 'ncdu'           ] ,
       \ 't' : {
