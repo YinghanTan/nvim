@@ -38,7 +38,11 @@ endfunction
 function! OnUIEnter(event) abort
     if s:IsFirenvimActive(a:event)
         " set guifont=Hack\ Nerd\ Font:h10
-        set guifont=FiraCode\ Nerd\ Font:h10
+        if has('mac')
+            set guifont=FiraCode\ Nerd\ Font:h20
+        else
+            set guifont=FiraCode\ Nerd\ Font:h10
+        endif
         nnoremap <C-w>M :set lines=100 columns=100<cr>
         nnoremap <C-w>m :set lines=25 columns=100<cr>
     endif
