@@ -46,8 +46,8 @@ let g:coc_global_extensions = [
     \ 'coc-yaml',
     \ 'coc-yank',
     \ '@yaegassy/coc-ansible',
-    \ 'coc-cfn-lint',
     \ ]
+    " \ 'coc-cfn-lint',
     " \ 'coc-fzf',
     " \ 'coc-hightlight',
     " \ 'coc-jedi',
