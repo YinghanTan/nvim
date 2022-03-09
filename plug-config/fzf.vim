@@ -8,6 +8,8 @@ function! s:build_quickfix_list(lines)
     cc
 endfunction
 
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr %an"'
 
 
 " This is the default extra key bindings
