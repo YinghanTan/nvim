@@ -249,7 +249,6 @@ let g:which_key_map.s = {
       \ '/' : [':History/'                                     , 'history'            ]    ,
       \ ';' : [':Commands'                                     , 'commands'           ]    ,
       \ '?' : [':Helptags'                                     , 'help'          ]    ,
-      \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
       \ 'b' : [':Buffers'                                      , 'buffers'        ]    ,
       \ 'c' : [':BCommits'                                     , 'buffer commits'     ]    ,
       \ 'C' : [':Commits'                                      , 'commits'            ]    ,
@@ -269,7 +268,8 @@ let g:which_key_map.s = {
       \ 'P' : [':Tags'                                         , 'project tags'       ]    ,
       \ 'q' : [':CocCommand fzf-preview.QuickFix'              , 'quickfix list'      ]    ,
       \ 'Q' : [':CocCommand fzf-preview.LocationList'          , 'location list'      ]    ,
-      \ 'r' : [':RG'                                           , 'text Rg'            ]    ,
+      \ 'r' : [':Telescope registers'                   , 'registers'],
+      \ 'R' : [':CocFzfListResume'                             , 'resume'          ]    ,
       \ 's' : [':CocList snippets'                             , 'snippets'           ]    ,
       \ 'S' : [':Colors'                                       , 'color schemes'      ]    ,
       \ 't' : [':RG'                                           , 'text Rg'            ]    ,
@@ -279,6 +279,9 @@ let g:which_key_map.s = {
       \ 'Y' : [':Filetypes'                                    , 'file types'         ]    ,
       \ 'z' : [':FZF'                                          , 'FZF'                ]    ,
       \ }
+      " \ 'a' : [':Ag'                                           , 'text Ag'            ]    ,
+      " \ 'r' : [':RG'                                           , 'text Rg'            ]    ,
+      " \ 'r' : [':CocCommand fzf-preview.registers'                                    , 'registers'          ]    ,
 
 
 " s is for search powered by telescope
@@ -315,7 +318,6 @@ let g:which_key_map.s = {
 "       \ 'u' : [':Telescope colorscheme'                 , 'colorschemes'],
 "       \ 'y' : [':Telescope symbols'                     , 'symbols'],
 "       \ 'Y' : [':Telescope lsp_workspace_symbols'       , 'lsp_workspace_symbols'],
-"       \ 'r' : [':Telescope registers'                   , 'registers'],
 "       \ 'R' : [':Telescope reloader'                    , 'reloader'],
 "       \ 'w' : [':Telescope file_browser'                , 'buf_fuz_find'],
 "       \ 'z' : [':Telescope current_buffer_fuzzy_find'   , 'buf_fuz_find'],
@@ -379,10 +381,18 @@ xmap <leader>uc  <Plug>(coc-convert-snippet)
 let g:which_key_map.w = {
       \ 'name' : '+wiki'                 ,
       \ 'w' : ['<Plug>VimwikiIndex'      , 'Wiki'         ] ,
-      \ 'd' : ['<plug>VimwikiDiaryIndex' , 'Diary'        ] ,
-      \ 'j' : ['<plug>(wiki-journal)'    , 'journal'      ] ,
-      \ 't' : [':VimwikiTable'           , 'vimwikiTable' ] ,
+      \ 'd' : ['<Plug>VimwikiDeleteFile' , 'Delete'         ] ,
+      \ 'r' : ['<Plug>VimwikiRenameFile' , 'Rename'         ] ,
+      \ 'T' : [':VimwikiTable'           , 'vimwikiTable' ] ,
+      \ 'j' : {
+          \ 'name': '+journal',
+          \ 'i' : ['<plug>VimwikiDiaryIndex'        , 'index'            ] ,
+          \ 'n' : ['<Plug>VimwikiDiaryGenerateLinks'        , 'Note'            ] ,
+          \ },
       \ }
+map <leader>wji <plug>VimwikiDiaryIndex
+map <leader>wjn <Plug>VimwikiDiaryGenerateLinks
+map <leader>wT :VimwikiTable
 
 " yo is for toggle
 let g:which_key_map.y = {
