@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 
+
 local actions = require("telescope.actions")
 telescope.setup({
 	defaults = {
@@ -156,11 +157,15 @@ telescope.setup({
 	},
 })
 
+
 -- 🔭 Extensions --
 require("telescope").load_extension("ui-select") -- https://github.com/nvim-telescope/telescope-ui-select.nvim
 require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
--- require("telescope").load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
 require("telescope").load_extension("fzy_native") -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
 require("telescope").load_extension("bookmarks") -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
-require("telescope").load_extension("vimspector") -- https://github.com/nvim-telescope/telescope-vimspector.nvim
-require('telescope').load_extension('env') -- https://github.com/LinArcX/telescope-env.nvim
+-- require('telescope').load_extension('env') -- https://github.com/LinArcX/telescope-env.nvim
+-- require("telescope").load_extension("vimspector") -- https://github.com/nvim-telescope/telescope-vimspector.nvim
+
+
+-- Deprecated --
+-- require("telescope").load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
