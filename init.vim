@@ -62,6 +62,8 @@ luafile $HOME/.config/nvim/lua/todo-comments.lua
 luafile $HOME/.config/nvim/lua/gitlinker.lua
 luafile $HOME/.config/nvim/lua/dial.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
+luafile $HOME/.config/nvim/lua/_telescope.lua
+" luafile $HOME/.config/nvim/lua/whichkey.lua
 
 
 " --- Brief help ---

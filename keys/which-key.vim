@@ -255,7 +255,7 @@ let g:which_key_map.s = {
       \ 'C' : [':Commits'                                      , 'commits'            ]    ,
       \ 'D' : [':CocCommand fzf-preview.Changes'               , 'delta/changes'      ]    ,
       \ 'f' : [':Telescope find_files'                  , 'files'],
-      \ 'g' : [':GFiles'                                       , 'git files'          ]    ,
+      \ 'g' : [':Telescope git_files'                   , 'git_files'],
       \ 'G' : [':GFiles?'                                      , 'modified git files' ]    ,
       \ 'h' : [':History'                                      , 'file history'       ]    ,
       \ 'H' : [':History:'                                     , 'command history'    ]    ,
