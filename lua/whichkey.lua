@@ -182,7 +182,7 @@ local mappings = {
 			["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
 			["u"] = { "<cmd>diffupdate<cr>", "update" },
 		},
-		e = { "<cmd>Gedit<cr>", "gedit" }, -- todo: show in cmd input without running :
+		e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
 		g = {
 			name = "gutter",
 			u = { "<cmd>CocCommand git.chunkUndo<cr>", "undo hunk" },
@@ -249,12 +249,12 @@ local mappings = {
     },
     q = {
         name = "quickfix",
-        g = { "<cmd>CocDiagnostics<cr>", "Diagnostics" },
-        t = { "<cmd>Todo<cr>", "Add todo to quickfix" },
-        q = { "<cmd>copen<cr>", "fork" },
-        Q = { "<cmd>cclose<cr>", "create" },
-        l = { "<cmd>lopen<cr>", "list" },
-        L = { "<cmd>lclose<cr>", "create private" },
+        g = { "<cmd>CocDiagnostics<cr>", "diagnostics to quickfix" },
+        t = { "<cmd>Todo<cr>", "todo to quickfix" },
+        q = { "<cmd>copen<cr>", "quickfixlist" },
+        Q = { "<cmd>cclose<cr>", "close quickfixlist" },
+        l = { "<cmd>lopen<cr>", "loclist" },
+        L = { "<cmd>lclose<cr>", "close loclist" },
     },
     -- Use unimpaired shortcuts instead [q ]q [l ]l
 	s = {
