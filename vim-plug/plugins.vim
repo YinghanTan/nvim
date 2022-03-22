@@ -45,7 +45,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
     " Tools
-    Plug 'liuchengxu/vim-which-key' " View Shortcut keys
+    " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
+    Plug 'folke/which-key.nvim' " View Shortcut keys
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'mbbill/undotree' " Undo Time Travel
     Plug 'ChristianChiarulli/far.vim' " Find and Replace
@@ -72,6 +73,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'dhruvmanila/telescope-bookmarks.nvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
+    Plug 'LinArcX/telescope-env.nvim'
+    Plug 'TC72/telescope-tele-tabby.nvim'
+    Plug 'nvim-telescope/telescope-vimspector.nvim'
+    Plug 'fhill2/telescope-ultisnips.nvim'
 
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files

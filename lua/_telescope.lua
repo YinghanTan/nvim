@@ -154,6 +154,11 @@ telescope.setup({
 			-- Provide a custom profile name for Firefox
 			firefox_profile_name = nil,
 		},
+
+        tele_tabby = {
+            use_highlighter = true,
+        },
+
 	},
 })
 
@@ -163,9 +168,14 @@ require("telescope").load_extension("ui-select") -- https://github.com/nvim-tele
 require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
 require("telescope").load_extension("fzy_native") -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
 require("telescope").load_extension("bookmarks") -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
--- require('telescope').load_extension('env') -- https://github.com/LinArcX/telescope-env.nvim
--- require("telescope").load_extension("vimspector") -- https://github.com/nvim-telescope/telescope-vimspector.nvim
+require("telescope").load_extension("vimspector") -- https://github.com/nvim-telescope/telescope-vimspector.nvim
+require('telescope').load_extension('ultisnips') -- https://github.com/fhill2/telescope-ultisnips.nvim
+require('telescope').load_extension('env') -- https://github.com/LinArcX/telescope-env.nvim
+require('telescope').load_extension("tele_tabby") -- https://github.com/TC72/telescope-tele-tabby.nvim
 
 
 -- Deprecated --
 -- require("telescope").load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
+
+
+-- TeleTaby

@@ -6,7 +6,7 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/folding.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
-source $HOME/.config/nvim/keys/which-key.vim
+" source $HOME/.config/nvim/keys/which-key.vim
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
@@ -62,8 +62,8 @@ luafile $HOME/.config/nvim/lua/todo-comments.lua
 luafile $HOME/.config/nvim/lua/gitlinker.lua
 luafile $HOME/.config/nvim/lua/dial.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
-luafile $HOME/.config/nvim/lua/_telescope.lua
-" luafile $HOME/.config/nvim/lua/whichkey.lua
+source $HOME/.config/nvim/keys/which-key-maps.vim
+luafile $HOME/.config/nvim/lua/whichkey.lua
 
 
 " --- Brief help ---

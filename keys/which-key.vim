@@ -238,7 +238,6 @@ let g:which_key_map.q = {
       \ 'Q' : [':cclose'         , 'close QuickFix'       ] ,
       \ 'l' : [':lopen'          , 'LocalFix'             ] ,
       \ 'L' : [':lclose'         , 'close LocalFix'       ] ,
-      \ 'r' : [':Rg :'         , 'close LocalFix'       ] ,
       \ }
       " " Use unimpaired shortcuts instead [q ]q [l ]l
 
@@ -246,7 +245,7 @@ let g:which_key_map.q = {
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search'                                     ,
-      \ '/' : [':History/'                                     , 'history'            ]    ,
+      \ '/' : [':History/'                                     , 'search history'            ]    ,
       \ '.' : [':Telescope filetypes'                   , 'filetypes'],
       \ ';' : [':Telescope commands'                           , 'commands'],
       \ '?' : [':Helptags'                                     , 'help'          ]    ,
@@ -420,22 +419,22 @@ let g:which_key_map.u = {
 " convert visual selected code to snippet
 xmap <leader>uc  <Plug>(coc-convert-snippet)
 
-" w is for wiki
-let g:which_key_map.w = {
-      \ 'name' : '+wiki'                 ,
-      \ 'w' : ['<Plug>VimwikiIndex'      , 'Wiki'         ] ,
-      \ 'd' : ['<Plug>VimwikiDeleteFile' , 'Delete'         ] ,
-      \ 'r' : ['<Plug>VimwikiRenameFile' , 'Rename'         ] ,
-      \ 'T' : [':VimwikiTable'           , 'vimwikiTable' ] ,
-      \ 'j' : {
-          \ 'name': '+journal',
-          \ 'i' : ['<plug>VimwikiDiaryIndex'        , 'index'            ] ,
-          \ 'n' : ['<Plug>VimwikiDiaryGenerateLinks'        , 'Note'            ] ,
-          \ },
-      \ }
-map <leader>wji <plug>VimwikiDiaryIndex
-map <leader>wjn <Plug>VimwikiDiaryGenerateLinks
-map <leader>wT :VimwikiTable
+" " w is for wiki
+" let g:which_key_map.w = {
+"       \ 'name' : '+wiki'                 ,
+"       \ 'w' : ['<Plug>VimwikiIndex'      , 'Wiki'         ] ,
+"       \ 'd' : ['<Plug>VimwikiDeleteFile' , 'Delete'         ] ,
+"       \ 'r' : ['<Plug>VimwikiRenameFile' , 'Rename'         ] ,
+"       \ 'T' : [':VimwikiTable'           , 'vimwikiTable' ] ,
+"       \ 'j' : {
+"           \ 'name': '+journal',
+"           \ 'i' : ['<plug>VimwikiDiaryIndex'        , 'index'            ] ,
+"           \ 'n' : ['<Plug>VimwikiDiaryGenerateLinks'        , 'Note'            ] ,
+"           \ },
+"       \ }
+" map <leader>wji <plug>VimwikiDiaryIndex
+" map <leader>wjn <Plug>VimwikiDiaryGenerateLinks
+" map <leader>wT :VimwikiTable
 
 " yo is for toggle
 let g:which_key_map.y = {
