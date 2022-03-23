@@ -72,7 +72,7 @@ local opts = {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
+    silent = false, -- use `silent` when creating keymaps
     noremap = true, -- use `noremap`
     nowait = true, -- use `nowait` when creating keympas
 }
@@ -99,6 +99,41 @@ local m_mappings = {
     },
     x = { "<cmd>BookmarkClearAll<cr>", "clear all" },
 }
+
+local y_opts = {
+    mode = "n", -- NORMAL mode
+    prefix = "y",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = false, -- use `silent` when creating keymaps
+    noremap = false, -- use `noremap` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
+}
+
+local y_mappings = {
+    o = {
+        name = "toggle",
+        b = "background",
+        d = "diff",
+        e = "spell",
+        c = "cursorline",
+        C = { "<cmd>ColorizerToggle<cr>", "colorizer" },
+        g = { "<cmd>IndentGuidesToggle<cr>", "indent guide" },
+        h = "hlsearch",
+        i = "ignorecase",
+        l = "list char",
+        m = { "<plug>MarkdownPreview<cr>", "markdown preview" },
+        M = { "<plug>MarkdownPreviewStop<cr>", "markdown preview stop" },
+        n = "number",
+        -- p = { "yop", "scratchPad" },
+        r = "relative number",
+        u = "cursor column",
+        v = "virtualedit",
+        w = "line wrap",
+        x = "crosshairs",
+    },
+}
+
+
 
 local mappings = {
     ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
@@ -134,6 +169,7 @@ local mappings = {
 		["c"] = { "<plug>VimspectorContinue | zz<cr>", "continue" },
 		["C"] = { "<plug>VimspectorRunToCursor | zz<cr>", "cursor" },
 		["d"] = { "<cmd>call vimspector#Launch()<cr>", "debug" },
+		["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
 		["e"] = { "<cmd>VimspectorEval<cr>", "Evaluate" },
 		["i"] = { "<plug>VimspectorBalloonEval<cr>", "inspect" },
 		["n"] = { "<plug>VimspectorStepOver | zz<cr>", "next" },
@@ -148,13 +184,13 @@ local mappings = {
 			["t"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.output)<cr>", "terminal" },
 			["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "tag" },
 			["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
+			["b"] = { "<Plug>VimspectorBreakpoints<cr>", "code" },
 		},
 		["j"] = { "<plug>VimspectorDownFrame<cr>", "down frame" },
 		["k"] = { "<plug>VimspectorUpFrame<cr>", "up frame" },
 		["p"] = { "<plug>VimspectorPause<cr>", "pause" },
 		["P"] = { "<plug>VimspectorStop<cr>", "stop" },
 		["r"] = { "<plug>VimspectorRestart<cr>", "restart" },
-		["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
 		["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
 		["z"] = { "<cmd>NeoZoomToggle<CR>", "maximize window" },
 	},
@@ -423,30 +459,6 @@ local mappings = {
 			i = "Update Diary Index",
 		},
 	},
-	y = {
-		name = "+toggle",
-		o = {
-			name = "Options",
-			b = { "yob", "background" },
-			d = { "yod", "diff" },
-			e = { "yoe", "spell" },
-			c = { "yoc", "cursorline" },
-			g = { ":IndentGuidesToggle", "indent Guide" },
-			m = { "<plug>MarkdownPreview", "markdown preview toggle" },
-			M = { "<plug>MarkdownPreviewStop", "markdown preview stop" },
-			C = { ":ColorizerToggle", "colorizer" },
-			h = { "yoh", "hlsearch" },
-			i = { "yoi", "ignorecase" },
-			l = { "yol", "list" },
-			n = { "yon", "number" },
-			p = { "yop", "scratchPad" },
-			r = { "yor", "relativenumber" },
-			u = { "you", "cursorcolumn" },
-			v = { "yov", "virtualedit" },
-			w = { "yow", "wrap" },
-			x = { "yox", "crosshairs" },
-		},
-	},
 }
 
 -- local vopts = {
@@ -464,5 +476,6 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+which_key.register(y_mappings, y_opts)
 -- which_key.register(vmappings, vopts)
 -- which_key.register(m_mappings, m_opts)

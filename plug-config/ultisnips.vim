@@ -1,7 +1,3 @@
-
-
-
-
 " --- UltiSnip Plugin ---
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-j>"
@@ -32,3 +28,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "user_snippets", "pythonx"]
 
 " Hitting $ now directly translates into being in inline math mode. How cool is that?
 " inoremap <silent> $$ $$<C-R>=UltiSnips#Anon(':latex:\`$1\`', '$$')<cr>
+
+
+" ultisnips
+xmap <leader>uc  <Plug>(coc-convert-snippet)
