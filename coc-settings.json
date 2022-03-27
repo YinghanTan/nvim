@@ -57,7 +57,7 @@
   // AutoFormat
   "suggest.noselect": false,
   "coc.preferences.formatOnSaveFiletypes": [
-    "css",
+    // "css",
     "markdown",
     // "javascript",
     "javascriptreact",
@@ -83,7 +83,7 @@
   "codeLens.enable": false, // to speed things up
 
   // Javascript Formatting
-  "eslint.autoFixOnSave": true, // pause autofix
+  "eslint.autoFixOnSave": false, // pause autofix
   // "prettier.tabWidth": 4, // useful for some projects
   // "prettier.eslintIntegration": true,
   "prettier.requireConfig": false,
@@ -169,7 +169,7 @@
   "html.enable": true,
   "html.format.enable": true,
   "html.filetypes": ["html", "handlebars", "django", "htmldjango"],
-
+  "html.autoCreateQuotes": false,
   // Html Django
   "htmldjango.enable": true,
   "htmldjango.djhtml.tabWidth": 2,
