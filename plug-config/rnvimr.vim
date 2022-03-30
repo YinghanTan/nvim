@@ -2,7 +2,7 @@
 " pip install ranger-fm
 
 " Draw border with both
-let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
+let g:rnvimr_ranger_cmd = '$HOME/.pyenv/versions/3.9.9/bin/ranger --cmd="set draw_borders both"'
 
 " let g:ranger_replace_netrw = 1 "// open ranger when vim open a directory
 
@@ -32,9 +32,6 @@ let g:rnvimr_enable_bw = 1
 
 " Add a shadow window, value is equal to 100 will disable shadow
 let g:rnvimr_shadow_winblend = 70
-
-" Draw border with both
-let g:rnvimr_ranger_cmd = 'ranger --cmd="set draw_borders both"'
 
 " Link CursorLine into RnvimrNormal highlight in the Floating window
 highlight link RnvimrNormal CursorLine
