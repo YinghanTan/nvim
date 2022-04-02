@@ -6,7 +6,6 @@ source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/folding.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
-" source $HOME/.config/nvim/keys/which-key.vim
 
 " Themes
 source $HOME/.config/nvim/themes/onedark.vim
@@ -85,6 +84,7 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
+" source $HOME/.config/nvim/keys/which-key.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm

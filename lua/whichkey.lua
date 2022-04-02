@@ -462,21 +462,25 @@ local mappings = {
 	},
 }
 
--- local vopts = {
---     mode = "v", -- VISUAL mode
---     prefix = "<leader>",
---     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
---     silent = true, -- use `silent` when creating keymaps
---     noremap = true, -- use `noremap` when creating keymaps
---     nowait = true, -- use `nowait` when creating keymaps
--- }
+local vopts = {
+    mode = "v", -- VISUAL mode
+    prefix = "<leader>",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
+}
 
--- local vmappings = {
---     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment"},
--- }
+local vmappings = {
+    ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment"},
+    l = {
+        name = "lsp / latex",
+        f = { "<plug>(coc-format-selected)<cr>", "format selected" },
+    },
+}
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(y_mappings, y_opts)
--- which_key.register(vmappings, vopts)
+which_key.register(vmappings, vopts)
 -- which_key.register(m_mappings, m_opts)
