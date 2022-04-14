@@ -449,7 +449,7 @@ local mappings = {
 		name = "Wiki",
 		w = "Wiki Index",
 		t = "Tab",
-		T = { "<cmd>VimwikiTable<cr>", "vimwikiTable" },
+		T = { ":VimwikiTable", "vimwikiTable" },
 		d = "Delete",
 		r = "Rename",
 		-- Diary
