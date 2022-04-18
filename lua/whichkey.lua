@@ -210,7 +210,6 @@ local mappings = {
 		b = { "<cmd>Git blame<cr>", "blame" },
 		B = { "<cmd>GBrowse<cr>", "browse" },
 		[".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
-		["!B"] = { "<cmd>GBrowse!<cr>", "browse url" },
 		-- c = { "<cmd>Telescope git_bcommits<cr>", "buffer commits" }, -- edit commit message to show branch author and date
 		-- C = { "<cmd>Telescope git_commits<cr>", "all commits" }, -- edit commit message to show branch author and date
         c = { "<cmd>BCommits<cr>", "commits" },
@@ -468,7 +467,7 @@ local vopts = {
     mode = "v", -- VISUAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
+    silent = false, -- use `silent` when creating keymaps
     noremap = true, -- use `noremap` when creating keymaps
     nowait = true, -- use `nowait` when creating keymaps
 }
@@ -483,7 +482,6 @@ local vmappings = {
     g = {
         name = "git",
         B = { ":GBrowse<cr>", "browse" },
-		["!B"] = { ":GBrowse!<cr>", "browse url" },
     },
 }
 
