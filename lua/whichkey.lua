@@ -209,6 +209,7 @@ local mappings = {
 		name = "git",
 		b = { "<cmd>Git blame<cr>", "blame" },
 		B = { "<cmd>GBrowse<cr>", "browse" },
+		[".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
 		-- c = { "<cmd>Telescope git_bcommits<cr>", "buffer commits" }, -- edit commit message to show branch author and date
 		-- C = { "<cmd>Telescope git_commits<cr>", "all commits" }, -- edit commit message to show branch author and date
         c = { "<cmd>BCommits<cr>", "commits" },
@@ -476,6 +477,11 @@ local vmappings = {
     l = {
         name = "lsp / latex",
         f = { "<plug>(coc-format-selected)<cr>", "format selected" },
+    },
+
+    g = {
+        name = "git",
+        B = { ":GBrowse<cr>", "browse" },
     },
 }
 
