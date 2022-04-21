@@ -192,7 +192,7 @@ local mappings = {
 		["P"] = { "<plug>VimspectorStop<cr>", "stop" },
 		["r"] = { "<plug>VimspectorRestart<cr>", "restart" },
 		["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
-		["z"] = { "<cmd>NeoZoomToggle<CR>", "maximize window" },
+		["z"] = { "<Plug>(zoom-toggle)", "zoom window" },
 	},
     f = {
         name = "file",

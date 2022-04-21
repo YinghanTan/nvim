@@ -111,7 +111,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim'
-    Plug 'nyngwang/NeoZoom.lua' " Zoom Window
+    Plug 'dhruvasagar/vim-zoom' " Zoom Window
     "sindrets/diffview.nvim",
     "folke/trouble.nvim",
     "dccsillag/magma-nvim",
@@ -127,6 +127,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'easymotion/vim-easymotion' " Navigation
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     " Plug 'szw/vim-maximizer' " Zoom window
+    " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
 
 call plug#end()
 
