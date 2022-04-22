@@ -9,7 +9,8 @@ telescope.setup({
         defaults = {
             -- prompt_prefix = " ",
             prompt_prefix = "   ",
-            selection_caret = " ",
+            -- selection_caret = " ",
+            selection_caret = "> ",
             path_display = { "smart" },
             initial_mode = "insert",
             sorting_strategy = "ascending",

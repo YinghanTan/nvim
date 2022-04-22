@@ -157,6 +157,11 @@ local mappings = {
 		M = { "<plug>MarkdownPreviewStop<cr>", "markdown preview stop" },
 		w = { "<cmd>call TrimWhitespace()<cr>", "trim whitespace" },
 	},
+	c = {
+		name = "context",
+		f = { "<cmd>lua ContextSetup(true)<CR>", "ContextSetup" },
+		p = { "<cmd>lua ContextSetup(false)<cr>", "ContextSetup" },
+	},
 	d = {
 		name = "debug",
 		["b"] = { "<plug>VimspectorToggleBreakpoint<cr>", "breakpoint" },
@@ -338,8 +343,8 @@ local mappings = {
 		-- y = { "<cmd>Telescope neoclip<cr>", "Yank Lists" },
 		g = {
 			name = "Git",
-			-- c = { "<cmd>Telescope git_bcommits<cr>", "commits" },
-			-- C = { "<cmd>Telescope git_commits<cr>", "all commits" },
+			k = { "<cmd>Telescope git_bcommits<cr>", "commits" },
+			K = { "<cmd>Telescope git_commits<cr>", "all commits" },
 			b = { "<cmd>Telescope git_branches<cr>", "branch" },
 			c = { "<cmd>BCommits<cr>", "commits" },
 			C = { "<cmd>Commits<cr>", "all commits" },

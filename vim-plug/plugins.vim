@@ -109,15 +109,26 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'norcalli/nvim-colorizer.lua' " colorizer
     Plug 'vim-airline/vim-airline' " Status Line
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
-    Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
-    Plug 'folke/todo-comments.nvim'
+    " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
+    Plug 'folke/todo-comments.nvim' " highlight the different todo comments
     Plug 'dhruvasagar/vim-zoom' " Zoom Window
+
+    " Treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
+    Plug 'romgrk/nvim-treesitter-context'
+
+    Plug 'p00f/nvim-ts-rainbow' " Rainbow parentheses for neovim using tree-sitter
+    Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+    Plug 'windwp/nvim-ts-autotag'
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+    Plug 'mizlan/iswap.nvim'
+
     "sindrets/diffview.nvim",
     "folke/trouble.nvim",
     "dccsillag/magma-nvim",
     "simrat39/symbols-outline.nvim",
     "f-person/git-blame.nvim",
-    "nvim-treesitter/nvim-treesitter-textobjects"
     "https://github.com/MattesGroeger/vim-bookmarks"
     " 'tom-anders/telescope-vim-bookmarks.nvim'
     "gelguy/wilder.nvim",
