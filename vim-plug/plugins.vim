@@ -34,14 +34,32 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nacro90/numb.nvim'  " peeks lines of the buffer in non-obtrusive way.
     Plug 'andymass/vim-matchup'  " operate on sets of matching text
 
-    " Autocomplete
+    " LSP
+    Plug 'neovim/nvim-lspconfig' " enable LSP
+    Plug 'williamboman/nvim-lsp-installer' " simple to use language server Installer
+    Plug 'tamago324/nlsp-settings.nvim' " language server settings defined in json
+    Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
+    Plug 'filipdutescu/renamer.nvim' " renaming UI for Neovim
+    Plug 'simrat39/symbols-outline.nvim' " tree like view for symbols using LSP
+    Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
+    Plug 'b0o/SchemaStore.nvim'
+    " Completion
+    Plug 'hrsh7th/nvim-cmp' " Completion plugin
+    Plug 'hrsh7th/cmp-buffer' " Buffer completion
+    Plug 'hrsh7th/cmp-path' " Path completion
+    Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
+    Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
+    Plug 'tpope/vim-surround' " Surround
+    " COC
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    " Plug 'antoinemadec/coc-fzf'
+
+    " Snippets
     Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
-    Plug 'tpope/vim-surround' " Surround
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
+
 
 
     " Tools

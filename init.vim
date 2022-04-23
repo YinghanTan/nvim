@@ -13,15 +13,17 @@ source $HOME/.config/nvim/themes/onedark.vim
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
 
+" COC
+" source $HOME/.config/nvim/plug-config/coc/coc.vim
+" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" source $HOME/.config/nvim/plug-config/cocSnippets.vim
+
 " Autocompletion
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-source $HOME/.config/nvim/plug-config/cocSnippets.vim
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Git
 source $HOME/.config/nvim/plug-config/fugitive.vim
-source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 " Plugin Configuration
@@ -52,7 +54,7 @@ source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/vim-zoom.vim
 
-" --- Lua Plugins
+" --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
@@ -65,6 +67,9 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
+
+" LSP
+luafile $HOME/.config/nvim/lua/lsp-config.lua
 
 
 " --- Brief help ---
