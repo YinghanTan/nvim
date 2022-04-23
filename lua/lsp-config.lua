@@ -3,9 +3,9 @@ if not status_ok then
     return
 end
 
--- require("lsp-signature")
-require("lsp-installer")
 require("handlers").setup()
+require("lsp-installer")
+require("lsp-signature")
 require("null-ls")
 
 
