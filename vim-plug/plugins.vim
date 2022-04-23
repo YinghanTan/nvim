@@ -49,6 +49,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'hrsh7th/cmp-path' " Path completion
     Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
     Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'tpope/vim-surround' " Surround
     " COC

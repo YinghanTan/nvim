@@ -5,6 +5,8 @@ end
 
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
+local icons = require("icons")
+
 telescope.setup({
         defaults = {
             -- prompt_prefix = " ",
@@ -57,8 +59,9 @@ telescope.setup({
                     ["<M-q>"] = actions.send_to_qflist + actions.open_qflist,
                     ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
                     ["<C-l>"] = actions.complete_tag,
+
                     ["<M-w>"] = actions.which_key,
-                    ["<C-_>"] = action_layout.toggle_preview,
+                    ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
                 },
 
                 n = {
@@ -91,7 +94,7 @@ telescope.setup({
                     ["<PageDown>"] = actions.results_scrolling_down,
 
                     ["<M-w>"] = actions.which_key,
-                    ["<C-_>"] = action_layout.toggle_preview,
+                    ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
                 },
             },
         },

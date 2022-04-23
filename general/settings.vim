@@ -357,6 +357,8 @@ autocmd Filetype dart set foldcolumn=1 "defines 1 col at window left, to indicat
 " autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
 " autocmd Filetype dart set foldlevelstart=99 "start file with all folds opened
 
+" Ultisnips Auto Reload
+autocmd BufWritePost *.snippets :CmpUltisnipsReloadSnippets
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>

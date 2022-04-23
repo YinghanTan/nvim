@@ -70,6 +70,7 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 
 " LSP
 luafile $HOME/.config/nvim/lua/lsp-config.lua
+luafile $HOME/.config/nvim/lua/cmp.lua
 
 
 " --- Brief help ---
