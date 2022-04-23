@@ -101,7 +101,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lervag/vimtex' " latex development
     Plug 'matze/vim-tex-fold'
     " Dart
-    Plug 'dart-lang/dart-vim-plugin'
+    " Plug 'dart-lang/dart-vim-plugin'
     Plug 'natebosch/dartlang-snippets'
 
     " Git
