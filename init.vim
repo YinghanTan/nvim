@@ -14,16 +14,16 @@ source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/themes/airline.vim
 
 " COC
-" source $HOME/.config/nvim/plug-config/coc/coc.vim
-" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-" source $HOME/.config/nvim/plug-config/cocSnippets.vim
+source $HOME/.config/nvim/plug-config/coc/coc.vim
+source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+source $HOME/.config/nvim/plug-config/cocSnippets.vim
+source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Git
 source $HOME/.config/nvim/plug-config/fugitive.vim
-" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 " Plugin Configuration
@@ -69,8 +69,8 @@ luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 
 " LSP
-luafile $HOME/.config/nvim/lua/lsp-config.lua
-luafile $HOME/.config/nvim/lua/cmp.lua
+" luafile $HOME/.config/nvim/lua/lsp-config.lua
+" luafile $HOME/.config/nvim/lua/cmp.lua
 
 
 " --- Brief help ---
