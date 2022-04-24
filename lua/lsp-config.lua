@@ -3,10 +3,10 @@ if not status_ok then
     return
 end
 
-require("lsp-signature")
-require("lsp-installer")
-require("handlers").setup()
-require("null-ls")
+require("lsp.lsp-signature")
+require("lsp.lsp-installer")
+require("lsp.handlers").setup()
+require("lsp.null-ls")
 
 
 

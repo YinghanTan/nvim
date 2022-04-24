@@ -7,25 +7,25 @@ end
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)
     local opts = {
-       on_attach = require('handlers').on_attach,
-       capabilities = require('handlers').capabilities,
+       on_attach = require('lsp.handlers').on_attach,
+       capabilities = require('lsp.handlers').capabilities,
         flags = {
         -- This will be the default in neovim 0.7+
         debounce_text_changes = 150,
         },
     }
     if server.name == "jsonls" then
-        local jsonls_opts = require "settings.jsonls"
+        local jsonls_opts = require "lsp.server-settings.jsonls"
         opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
     end
 
     if server.name == "sumneko_lua" then
-        local sumneko_opts = require "settings.sumneko_lua"
+        local sumneko_opts = require "lsp.server-settings.sumneko_lua"
         opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
     end
 
     if server.name == "pyright" then
-        local pyright_opts = require "settings.pyright"
+        local pyright_opts = require "lsp.server-settings.pyright"
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end
 
@@ -34,17 +34,17 @@ lsp_installer.on_server_ready(function(server)
     end
 
     if server.name == "solang" then
-        local solang_opts = require "settings.solang"
+        local solang_opts = require "lsp.server-settings.solang"
         opts = vim.tbl_deep_extend("force", solang_opts, opts)
     end
 
     if server.name == "solc" then
-        local solc_opts = require "settings.solc"
+        local solc_opts = require "lsp.server-settings.solc"
         opts = vim.tbl_deep_extend("force", solc_opts, opts)
     end
 
     if server.name == "emmet_ls" then
-        local emmet_ls_opts = require "settings.emmet_ls"
+        local emmet_ls_opts = require "lsp.server-settings.emmet_ls"
         opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
     end
 
