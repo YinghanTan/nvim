@@ -265,7 +265,7 @@ local mappings = {
         name = "lsp / latex",
         ["."] = { "<cmd>CocConfig<cr>", "config" },
         a = { "<plug>(coc-codeaction)<cr>", "line action" },
-        -- A = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
+        A = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
         c = { "<cmd>CocCommand rest-client.request<cr>", "api client" },
         f = { "<plug>(coc-format)<cr>", "format" },
         F = { "<plug>(coc-format-selected)<cr>", "format selected" },
@@ -460,9 +460,10 @@ local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
     l = {
         name = "lsp / latex",
-        a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
         f = { "<plug>(coc-format-selected)<cr>", "format selected" },
+        a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
     },
+
     g = {
         name = "git",
         B = { ":GBrowse<cr>", "browse" },

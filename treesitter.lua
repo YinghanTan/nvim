@@ -33,10 +33,10 @@ configs.setup({
         colors = {
             "Gold",
             "Orchid",
-            "DodgerBlue"
-            -- "Cornsilk",
-            -- "Salmon",
-            -- "Lawngreen",
+            "DodgerBlue",
+            "Cornsilk",
+            "Salmon",
+            "Lawngreen",
         },
         disable = {"html"},
     },
