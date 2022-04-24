@@ -13,11 +13,11 @@ source $HOME/.config/nvim/themes/onedark.vim
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
 
-" COC
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-source $HOME/.config/nvim/plug-config/cocSnippets.vim
-source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" " COC
+" source $HOME/.config/nvim/plug-config/coc/coc.vim
+" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" source $HOME/.config/nvim/plug-config/cocSnippets.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -28,7 +28,6 @@ source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
-" source $HOME/.config/nvim/plug-config/rainbow.vim
 source $HOME/.config/nvim/plug-config/codi.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
@@ -43,7 +42,6 @@ source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
-" source $HOME/.config/nvim/plug-config/dart.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
@@ -69,8 +67,8 @@ luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 
 " LSP
-" luafile $HOME/.config/nvim/lua/lsp-config.lua
-" luafile $HOME/.config/nvim/lua/cmp.lua
+luafile $HOME/.config/nvim/lua/lsp-config.lua
+luafile $HOME/.config/nvim/lua/cmp.lua
 
 
 " --- Brief help ---
@@ -94,6 +92,8 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
 " source $HOME/.config/nvim/keys/which-key.vim
+" source $HOME/.config/nvim/plug-config/rainbow.vim
+" source $HOME/.config/nvim/plug-config/dart.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm

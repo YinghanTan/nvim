@@ -34,26 +34,26 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nacro90/numb.nvim'  " peeks lines of the buffer in non-obtrusive way.
     Plug 'andymass/vim-matchup'  " operate on sets of matching text
 
-    " " LSP
-    " Plug 'neovim/nvim-lspconfig' " enable LSP
-    " Plug 'williamboman/nvim-lsp-installer' " simple to use language server Installer
-    " Plug 'tamago324/nlsp-settings.nvim' " language server settings defined in json
-    " Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
-    " Plug 'filipdutescu/renamer.nvim' " renaming UI for Neovim
-    " Plug 'simrat39/symbols-outline.nvim' " tree like view for symbols using LSP
-    " Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
-    " Plug 'b0o/SchemaStore.nvim'
-    " " Completion
-    " Plug 'hrsh7th/nvim-cmp' " Completion plugin
-    " Plug 'hrsh7th/cmp-buffer' " Buffer completion
-    " Plug 'hrsh7th/cmp-path' " Path completion
-    " Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
-    " Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
-    " Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
+    " LSP
+    Plug 'neovim/nvim-lspconfig' " enable LSP
+    Plug 'williamboman/nvim-lsp-installer' " simple to use language server Installer
+    Plug 'tamago324/nlsp-settings.nvim' " language server settings defined in json
+    Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
+    Plug 'filipdutescu/renamer.nvim' " renaming UI for Neovim
+    Plug 'simrat39/symbols-outline.nvim' " tree like view for symbols using LSP
+    Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
+    Plug 'b0o/SchemaStore.nvim'
+    " Completion
+    Plug 'hrsh7th/nvim-cmp' " Completion plugin
+    Plug 'hrsh7th/cmp-buffer' " Buffer completion
+    Plug 'hrsh7th/cmp-path' " Path completion
+    Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
+    Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
-    " COC
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
+    " " COC
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    " Plug 'antoinemadec/coc-fzf'
 
     " Snippets
     Plug 'SirVer/ultisnips' " Ultisnips snippets
@@ -65,7 +65,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 
     " Tools
-    " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     Plug 'folke/which-key.nvim' " View Shortcut keys
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'mbbill/undotree' " Undo Time Travel
@@ -159,6 +158,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     " Plug 'szw/vim-maximizer' " Zoom window
     " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
+    " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
 
 call plug#end()
 
