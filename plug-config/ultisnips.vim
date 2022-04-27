@@ -21,7 +21,10 @@ set runtimepath^=~/dotfiles
 set runtimepath+=~/.config/nvim   " Vim Ultisnips Emmet SkeletonFolder
 set runtimepath+=~/.config/nvim/autoload/plugged/vim-snippets   " Vim Ultisnips Emmet SkeletonFolder
 set runtimepath+=~/.config/nvim/autoload/plugged/vim-snippets/pythonx   " Vim Ultisnips Emmet SkeletonFolder
-set runtimepath+=~/.config/nvim/autoload/plugged/vim-react-snippets   " Vim Ultisnips Emmet SkeletonFolder
+set runtimepath+=~/.config/nvim/autoload/plugged/vim-react-snippets   " add vim-react-snippets
+set runtimepath+=~/.config/nvim/autoload/plugged/dartlang-snippets " add dartlang snippets
+set runtimepath+=~/.config/nvim/autoload/plugged/dartlang-snippets/UltiSnips/dart " add dartlang snippets
+
 
 " When vim starts, Ultisnips tries to find snippet directories defined below, under the paths in runtimepath.
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "user_snippets", "pythonx"]

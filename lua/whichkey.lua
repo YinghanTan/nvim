@@ -428,6 +428,7 @@ local mappings = {
         f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
         s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
+        r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
     },
     w = {
         -- Wiki

@@ -358,7 +358,7 @@ autocmd Filetype dart set foldcolumn=1 "defines 1 col at window left, to indicat
 " autocmd Filetype dart set foldlevelstart=99 "start file with all folds opened
 
 " Ultisnips Auto Reload
-autocmd BufWritePost *.snippets :CmpUltisnipsReloadSnippets
+autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets()
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
