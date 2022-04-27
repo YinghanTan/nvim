@@ -55,12 +55,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
     Plug 'antoinemadec/coc-fzf'
 
+
+    " Dart
+    " Plug 'dart-lang/dart-vim-plugin'
+
     " Snippets
-    Plug 'SirVer/ultisnips' " Ultisnips snippets
+    Plug 'natebosch/dartlang-snippets'
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'tpope/vim-surround' " Surround
+    Plug 'SirVer/ultisnips' " Ultisnips snippets
 
 
 
@@ -102,9 +107,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
     Plug 'lervag/vimtex' " latex development
     Plug 'matze/vim-tex-fold'
-    " Dart
-    " Plug 'dart-lang/dart-vim-plugin'
-    Plug 'natebosch/dartlang-snippets'
 
     " Git
     Plug 'tpope/vim-fugitive' " Git
