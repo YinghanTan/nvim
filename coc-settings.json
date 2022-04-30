@@ -2,11 +2,35 @@
   // coc-restclient
   "rest-client.showHeaders" : false,
   "rest-client.proxy" : "",
-  // suggestions
+
+  // Suggestions
   "suggest.completionItemKindLabels": {
-    "text": "t",
-    "method": "m",
-    "function": "ル"
+    "method": "  ",
+    "function": "  ",
+    "variable": "[]",
+    "field": "  ",
+    "typeParameter": "<>",
+    "constant": "  ",
+    "class": " פּ ",
+    "interface": " 蘒",
+    "struct": "  ",
+    "event": "  ",
+    "operator": "  ",
+    "module": "  ",
+    "property": "  ",
+    "enum": " 練",
+    "reference": "  ",
+    "keyword": "  ",
+    "file": "  ",
+    "folder": " ﱮ ",
+    "color": "  ",
+    "unit": " 塞 ",
+    "snippet": "\ue60b", //  pair of curly braces
+    "text": "  ",
+    "constructor": "  ",
+    "value": "  ",
+    "enumMember": "  ",
+    "default": "\uf29c" //  question mark in circle
   },
   "snippets.priority": 1,
   "suggest.languageSourcePriority": 99,
