@@ -43,16 +43,16 @@ source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
-" source $HOME/.config/nvim/plug-config/dart.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/gist.vim
-source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/vim-zoom.vim
+
+source $HOME/.config/nvim/plug-config/grepper.vim
 
 " --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
@@ -94,6 +94,7 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
 " source $HOME/.config/nvim/keys/which-key.vim
+" source $HOME/.config/nvim/plug-config/dart.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm
