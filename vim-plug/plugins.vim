@@ -60,12 +60,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'dart-lang/dart-vim-plugin'
 
     " Snippets
+    Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'natebosch/dartlang-snippets'
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'tpope/vim-surround' " Surround
-    Plug 'SirVer/ultisnips' " Ultisnips snippets
 
 
 
