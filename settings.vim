@@ -20,7 +20,7 @@ set t_vb=                       " turn off visual bell
 set novisualbell                " turn off visual bell
 set tm=500
 set colorcolumn=79
-highlight ColorColumn ctermbg=0 guibg=black " lightgrey
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 set hidden                      " Hide files in the background instead of closing them"
 set showmode
 set showcmd
@@ -354,11 +354,12 @@ autocmd Filetype dart set expandtab     " insert spaces when hitting TABs
 autocmd Filetype dart set shiftround    " round indent to multiple of 'shiftwidth'
 autocmd Filetype dart set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype dart set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype dart set autoindent
 " autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
 " autocmd Filetype dart set foldlevelstart=99 "start file with all folds opened
 
 " Ultisnips Auto Reload
-autocmd BufWritePost *.snippets :CmpUltisnipsReloadSnippets
+autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets()
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>

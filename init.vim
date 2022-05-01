@@ -51,7 +51,7 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/vim-zoom.vim
-
+source $HOME/.config/nvim/plug-config/dart.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 
 " --- Lua Plugins ---
@@ -94,7 +94,6 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
 " source $HOME/.config/nvim/keys/which-key.vim
-" source $HOME/.config/nvim/plug-config/dart.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm

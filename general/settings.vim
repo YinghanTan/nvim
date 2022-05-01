@@ -354,6 +354,7 @@ autocmd Filetype dart set expandtab     " insert spaces when hitting TABs
 autocmd Filetype dart set shiftround    " round indent to multiple of 'shiftwidth'
 autocmd Filetype dart set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype dart set foldcolumn=1 "defines 1 col at window left, to indicate folding
+autocmd Filetype dart set autoindent
 " autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
 " autocmd Filetype dart set foldlevelstart=99 "start file with all folds opened
 
