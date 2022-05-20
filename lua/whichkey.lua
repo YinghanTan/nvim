@@ -225,6 +225,7 @@ local mappings = {
             ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
             ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
             ["u"] = { "<cmd>diffupdate<cr>", "update" },
+            ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
         },
         e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
         g = {
