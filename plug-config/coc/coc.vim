@@ -60,7 +60,7 @@ nmap <silent> ]G <Plug>(coc-diagnostic-next-error)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gD :call CocAction('jumpDefinition', 'vsplit')<cr>
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gI <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " nmap <silent> gr :CocCommand fzf-preview.CocReferences<CR>
 
