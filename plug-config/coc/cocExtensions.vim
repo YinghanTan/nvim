@@ -21,6 +21,7 @@ let g:coc_global_extensions = [
     \ 'coc-eslint',
     \ 'coc-flutter',
     \ 'coc-flutter-tools',
+    \ '@frogsquare/coc-dart-analyze',
     \ 'coc-fzf-preview',
     \ 'coc-git',
     \ 'coc-html',
