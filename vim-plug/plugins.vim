@@ -56,8 +56,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'antoinemadec/coc-fzf'
 
 
-    " Dart
-    " Plug 'dart-lang/dart-vim-plugin'
+    " Dart/Flutter
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'thosakwe/vim-flutter'
 
     " Snippets
     Plug 'SirVer/ultisnips' " Ultisnips snippets

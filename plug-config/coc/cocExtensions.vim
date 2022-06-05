@@ -19,7 +19,6 @@ let g:coc_global_extensions = [
     \ 'coc-docker',
     \ 'coc-emmet',
     \ 'coc-eslint',
-    \ 'coc-flutter',
     \ 'coc-flutter-tools',
     \ '@frogsquare/coc-dart-analyze',
     \ 'coc-fzf-preview',
