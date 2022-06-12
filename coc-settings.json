@@ -7,6 +7,8 @@
   "rest-client.proxy": "",
 
   // Suggestions
+  "suggest.enablePreselect": false,
+  "suggest.noselect": true,
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",

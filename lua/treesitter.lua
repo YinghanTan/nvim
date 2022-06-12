@@ -51,3 +51,8 @@ configs.setup({
     },
 })
 
+
+-- :TSUninstall all
+-- :TSInstall all -- outside of tmux
+-- :TSUpdate all
+-- :TSUpdateSync all

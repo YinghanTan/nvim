@@ -51,7 +51,6 @@ source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/vim-zoom.vim
-source $HOME/.config/nvim/plug-config/dart.vim
 source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 
