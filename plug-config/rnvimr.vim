@@ -2,7 +2,10 @@
 " pip install ranger-fm
 
 " Draw border with both
-let g:rnvimr_ranger_cmd = '$HOME/.pyenv/versions/3.9.9/bin/ranger --cmd="set draw_borders both"'
+" let g:rnvimr_ranger_cmd = ['$HOME/.pyenv/versions/3.9.9/bin/ranger --cmd="set draw_borders both"']
+" let g:rnvimr_ranger_cmd = ['$HOME/.pyenv/versions/3.9.9/bin/ranger']
+" Draw border with both
+" let g:rnvimr_ranger_cmd = ['$HOME/.pyenv/versions/3.9.9/bin/ranger', '--cmd=set draw_borders both']
 
 " let g:ranger_replace_netrw = 1 "// open ranger when vim open a directory
 

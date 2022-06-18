@@ -7,8 +7,6 @@
   "rest-client.proxy": "",
 
   // Suggestions
-  "suggest.enablePreselect": false,
-  "suggest.noselect": true,
   "suggest.completionItemKindLabels": {
     "method": "  ",
     "function": "  ",
@@ -57,7 +55,8 @@
   "list.selectedSignText": " ",
 
   // AutoFormat
-  "suggest.noselect": false,
+  "suggest.enablePreselect": false,
+  "suggest.noselect": true,
   "coc.preferences.formatOnSaveFiletypes": [
     // "css",
     // "markdown",
