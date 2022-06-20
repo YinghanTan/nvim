@@ -6,9 +6,6 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 
 
-map <C-L> 20zl " Scroll 20 characters to the right
-map <C-H> 20zh " Scroll 20 characters to the left
-
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
 
