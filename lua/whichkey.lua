@@ -346,8 +346,8 @@ local mappings = {
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
         -- f = { "<cmd>Telescope find_files<cr>", "find file" },
-        F = { "<cmd>Files<cr>", "find file" },
-        f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
+        f = { "<cmd>Files<cr>", "find file" },
+        -- f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
         h = { "<cmd>Telescope oldfiles<cr>", "files history" },
         H = { "<cmd>Telescope command_history<cr>", "command history" },
         -- i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "diagnostics" },
@@ -364,8 +364,8 @@ local mappings = {
         R = { "<cmd>Telescope resume<cr>", "Resume" },
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
-        t = { "<cmd>Telescope live_grep<cr>", "find text" },
-        G = { "<cmd>RG<cr>", "text" },
+        -- t = { "<cmd>Telescope live_grep<cr>", "find text" },
+        t = { "<cmd>RG<cr>", "text" },
         T = { "<cmd>TodoTelescope<cr>", "Todos" },
         u = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
         w = { "<cmd>Telescope tele_tabby list<cr>", "windows" },
@@ -459,6 +459,12 @@ local vopts = {
 
 local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+    ["\\"] = {
+        name = "nav",
+        f = { "<cmd>HopChar2<cr>", "Find" },
+        w = { "<cmd>HopWord<cr>", "Word" },
+        l = { "<cmd>HopLineStart<cr>", "Line" },
+    },
     l = {
         name = "lsp / latex",
         a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },

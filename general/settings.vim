@@ -159,6 +159,9 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
+autocmd Filetype javascriptreact setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype javascriptreact set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype javascriptreact set foldmethod=indent "syntax highlighting items specify folds
 " let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
 " let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
 " let g:node_host_prog = '/opt/homebrew/lib/node_modules/neovim/bin/cli.js' " Mac

@@ -62,10 +62,10 @@
     // "markdown",
     // "javascript",
     // "dart",
-    "javascriptreact",
+    // "javascriptreact",
     "typescript",
-    "typescriptreact",
-    "typescript.tsx",
+    // "typescriptreact",
+    // "typescript.tsx",
     "graphql",
     // "html",
     // "htmldjango",
@@ -146,6 +146,16 @@
       "args": ["start"],
       "filetypes": ["sh", "bash", "zsh"],
       "ignoredRootPaths": ["~"]
+    },
+    "terraform": {
+        "command": "terraform-ls",
+        "args": ["serve"],
+        "filetypes": [
+            "terraform",
+            "tf"
+        ],
+        "initializationOptions": {},
+        "settings": {}
     }
   },
   "diagnostic-languageserver.filetypes": {
