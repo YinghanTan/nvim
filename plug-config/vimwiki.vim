@@ -11,7 +11,7 @@ let wiki_1.ext = '.md' " set extension to .md
 let g:vimwiki_list = [wiki_1]
 let g:vimwiki_folding = 'expr'
 
-let g:vimwiki_global_ext = 0 " make sure vimwiki doesn't own all .md files
+let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
 
 
 
