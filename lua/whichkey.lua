@@ -474,6 +474,7 @@ local vmappings = {
         name = "git",
         B = { ":GBrowse<cr>", "browse" },
     },
+    p = { '\"_dP', "paste keep buffer" },
 }
 
 which_key.setup(setup)
@@ -481,3 +482,6 @@ which_key.register(mappings, opts)
 which_key.register(y_mappings, y_opts)
 which_key.register(vmappings, vopts)
 -- which_key.register(m_mappings, m_opts)
+
+
+-- something new

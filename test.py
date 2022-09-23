@@ -1,4 +1,4 @@
 def fname():
-    return "Hello World"
+    return "World World"
 
 print(fname())

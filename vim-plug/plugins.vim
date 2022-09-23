@@ -23,7 +23,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vimwiki/vimwiki' " Note Taking
     " Plug 'michal-h21/vimwiki-sync' " Note git sync
     Plug 'godlygeek/tabular' " Alignment and formatting
-    Plug 'monaqa/dial.nvim'  " Extended increment/decrement plugin
+    " Plug 'monaqa/dial.nvim'  " Extended increment/decrement plugin
     " Plug 'kevinhwang91/nvim-bqf'  " Better quickfix window
 
     " Navigation
@@ -82,7 +82,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
     Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
-    Plug 'metakirby5/codi.vim'
+    " Plug 'metakirby5/codi.vim'
 
 
     " Search (FZF)

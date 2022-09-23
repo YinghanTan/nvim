@@ -1,4 +1,7 @@
 
+" xnoremap('<leader>P', '\"_dp') " Paste keeping buffer intact
+
+
 " Use alt + hjkl to resize windows
 nnoremap <M-j>    :resize -2<CR>
 nnoremap <M-k>    :resize +2<CR>
@@ -8,8 +11,8 @@ nnoremap <M-l>    :vertical resize +2<CR>
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
-
 " Open file under cursor in split
+
 " nmap gF <c-w>f
 nmap gF :vert wincmd f<CR>
 

@@ -183,13 +183,12 @@ local mappings = {
         ["S"] = { "<plug>VimspectorStepOut | zz<cr>", "step out" },
         ["v"] = {
             name = "view",
+            ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
             ["v"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", "variables" },
             ["w"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", "watches" },
             ["s"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", "stack" },
             ["t"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.output)<cr>", "terminal" },
             ["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "tag" },
-            ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
-            ["b"] = { "<Plug>VimspectorBreakpoints<cr>", "code" },
         },
         ["j"] = { "<plug>VimspectorDownFrame<cr>", "down frame" },
         ["k"] = { "<plug>VimspectorUpFrame<cr>", "up frame" },
@@ -215,8 +214,8 @@ local mappings = {
         b = { "<cmd>Git blame<cr>", "blame" },
         B = { "<cmd>GBrowse<cr>", "browse" },
         [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
-        -- c = { "<cmd>Telescope git_bcommits<cr>", "buffer commits" }, -- edit commit message to show branch author and date
-        -- C = { "<cmd>Telescope git_commits<cr>", "all commits" }, -- edit commit message to show branch author and date
+        k = { "<cmd>Telescope git_bcommits<cr>", "buffer commits" }, -- edit commit message to show branch author and date
+        K = { "<cmd>Telescope git_commits<cr>", "all commits" }, -- edit commit message to show branch author and date
         c = { "<cmd>BCommits<cr>", "commits" },
         C = { "<cmd>Commits<cr>", "all commits" },
         d = {
@@ -225,6 +224,7 @@ local mappings = {
             ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
             ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
             ["u"] = { "<cmd>diffupdate<cr>", "update" },
+            ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
         },
         e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
         g = {
@@ -265,7 +265,7 @@ local mappings = {
         name = "lsp / latex",
         ["."] = { "<cmd>CocConfig<cr>", "config" },
         a = { "<plug>(coc-codeaction)<cr>", "line action" },
-        A = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
+        -- A = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
         c = { "<cmd>CocCommand rest-client.request<cr>", "api client" },
         f = { "<plug>(coc-format)<cr>", "format" },
         F = { "<plug>(coc-format-selected)<cr>", "format selected" },
@@ -346,8 +346,8 @@ local mappings = {
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
         -- f = { "<cmd>Telescope find_files<cr>", "find file" },
-        -- f = { "<cmd>Files<cr>", "find file" },
-        f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
+        f = { "<cmd>Files<cr>", "find file" },
+        -- f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
         h = { "<cmd>Telescope oldfiles<cr>", "files history" },
         H = { "<cmd>Telescope command_history<cr>", "command history" },
         -- i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "diagnostics" },
@@ -364,8 +364,8 @@ local mappings = {
         R = { "<cmd>Telescope resume<cr>", "Resume" },
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
-        t = { "<cmd>Telescope live_grep<cr>", "find text" },
-        -- t = { "<cmd>RG<cr>", "text" },
+        -- t = { "<cmd>Telescope live_grep<cr>", "find text" },
+        t = { "<cmd>RG<cr>", "text" },
         T = { "<cmd>TodoTelescope<cr>", "Todos" },
         u = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
         w = { "<cmd>Telescope tele_tabby list<cr>", "windows" },
@@ -428,6 +428,7 @@ local mappings = {
         f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
         s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
+        r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
     },
     w = {
         -- Wiki
@@ -458,16 +459,22 @@ local vopts = {
 
 local vmappings = {
     ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+    ["\\"] = {
+        name = "nav",
+        f = { "<cmd>HopChar2<cr>", "Find" },
+        w = { "<cmd>HopWord<cr>", "Word" },
+        l = { "<cmd>HopLineStart<cr>", "Line" },
+    },
     l = {
         name = "lsp / latex",
-        f = { "<plug>(coc-format-selected)<cr>", "format selected" },
         a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
+        f = { "<plug>(coc-format-selected)<cr>", "format selected" },
     },
-
     g = {
         name = "git",
         B = { ":GBrowse<cr>", "browse" },
     },
+    p = { '\"_dP', "paste keep buffer" },
 }
 
 which_key.setup(setup)
