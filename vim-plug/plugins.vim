@@ -16,6 +16,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-eunuch' " Files
     Plug 'airblade/vim-rooter' " Have the file system follow you around
     Plug 'sheerun/vim-polyglot' " Better Syntax Support
+    Plug 'wsdjeg/vim-fetch' " Fetch that line and column
+    Plug 'tpope/vim-abolish' " change cases
 
     Plug 'michaeljsmith/vim-indent-object' " text Objects
     Plug 'nathanaelkane/vim-indent-guides' " text Objects

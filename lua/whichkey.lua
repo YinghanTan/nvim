@@ -430,6 +430,10 @@ local mappings = {
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
         r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
     },
+    v = {
+        name = "vim",
+        e = { "<CMD>w<CR>:! ./%<CR>", "execute" },
+    },
     w = {
         -- Wiki
         name = "Wiki",
