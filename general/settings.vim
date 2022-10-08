@@ -5,6 +5,7 @@
 " --- Standard Settings ---
 
 syntax on
+filetype on
 filetype plugin on
 filetype plugin indent on
 set noswapfile                  " do not create a swap file"

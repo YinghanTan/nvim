@@ -425,10 +425,12 @@ local mappings = {
     u = {
         name = "ultisnips / undo",
         e = { "<cmd>CocCommand snippets.editSnippets<cr>", "Ultisnips Edit" },
+        -- e = { "<cmd>:UltiSnipsEdit<cr>", "Ultisnips Edit" },
         f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
         s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
         r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
+
     },
     v = {
         name = "vim",
@@ -479,6 +481,17 @@ local vmappings = {
         B = { ":GBrowse<cr>", "browse" },
     },
     p = { '\"_dP', "paste keep buffer" },
+    u = {
+        name = "ultisnips / undo",
+        e = { "<cmd>CocCommand snippets.editSnippets<cr>", "Ultisnips Edit" },
+        -- e = { "<cmd>:UltiSnipsEdit<cr>", "Ultisnips Edit" },
+        f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
+        s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
+        t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
+        a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
+        r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
+
+    },
 }
 
 which_key.setup(setup)

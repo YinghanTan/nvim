@@ -119,7 +119,8 @@
   "snippets.extends": {
     "javascriptreact": ["javascript"],
     "typescriptreact": ["typescript", "javascript", "javascript-jasmine-arrow"],
-    "typescript": ["typescript", "javascript", "javascript-jasmine-arrow"]
+    "typescript": ["typescript", "javascript", "javascript-jasmine-arrow"],
+    "latex":  ["tex", "texmath"]
   },
 
   // Emmet
