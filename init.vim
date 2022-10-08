@@ -36,7 +36,7 @@ source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
-" source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
+source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
