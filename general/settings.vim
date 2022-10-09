@@ -200,6 +200,7 @@ autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
 " --- OS Configuration ---
 if has('unix')
     let s:uname = system("uname")
+    call system("command -v termux-setup-storage")
     if s:uname == "Darwin\n"
         " Do Mac stuff here
         let b:system = 'mac'
