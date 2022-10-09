@@ -163,21 +163,7 @@ au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 autocmd Filetype javascriptreact setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascriptreact set shiftround    " round indent to multiple of 'shiftwidth'
 autocmd Filetype javascriptreact set foldmethod=indent "syntax highlighting items specify folds
-" let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
-" let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
-" let g:node_host_prog = '/opt/homebrew/lib/node_modules/neovim/bin/cli.js' " Mac
 
-
-if has('unix')
-    if has('mac')
-        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
-    else
-        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.13.1/lib/node_modules/neovim/bin/cli.js' " Ubuntu
-    endif
-elseif has('win32')
-endif
-
-" let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype javascript set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
@@ -192,8 +178,6 @@ autocmd Filetype javascript set foldlevelstart=99 "start file with all folds ope
 
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
-" let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
-" let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
 autocmd Filetype js setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype js set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype js set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
@@ -213,30 +197,39 @@ autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
 " autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
 " --- --- ---
 
-" Python Settings
-" let g:loaded_python_provider = 0
+" --- OS Configuration ---
 if has('unix')
     let s:uname = system("uname")
     if s:uname == "Darwin\n"
         " Do Mac stuff here
+        let b:system = 'mac'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
+        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
     elseif exists("$WSL_DISTRO_NAME")
         " Do wsl stuff here
+        let b:system = 'wsl'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
+        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.13.1/lib/node_modules/neovim/bin/cli.js' " Ubuntu
     elseif v:shell_error == 0
         " Do termux stuff here
         let b:system = 'termux'
         let s:termux_prefix = '/data/data/com.termux/files/usr'
         let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python3' " ubuntu
+        let g:node_host_prog = '/data/data/com.termux/files/usr/lib/node' " Ubuntu
     else
         " Do Linux stuff here
         let b:system = 'linux'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
+        let g:node_host_prog = '$HOME/.nvm/versions/node/v16.13.1/lib/node_modules/neovim/bin/cli.js' " Ubuntu
     endif
 elseif has('win32')
     " Do Windows stuff here
     let b:system = 'windows'
 endif
+" --- --- ---
+
+" Python Settings
+" let g:loaded_python_provider = 0
 autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns
 autocmd Filetype python set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype python set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
@@ -353,8 +346,6 @@ let g:tex_indent_brace=0
 
 " dart Settings
 " au BufNewFile,BufRead *.dart setlocal filetype=dart
-" let g:node_host_prog = expand('~/.nvm/versions/node/v15.5.0/lib/node_modules/neovim/bin/cli.js')
-" let g:node_host_prog = '.nvim/versions/node/v15.5.0/bin/neovim-node-host'
 autocmd Filetype dart setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype dart set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype dart set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
