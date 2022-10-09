@@ -215,7 +215,7 @@ if has('unix')
         let b:system = 'termux'
         let s:termux_prefix = '/data/data/com.termux/files/usr'
         let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python3' " ubuntu
-        let g:node_host_prog = '/data/data/com.termux/files/usr/lib/node' " Ubuntu
+        let g:node_host_prog = '/data/data/com.termux/files/usr/lib/node_modules/neovim/bin/cli.js' " Ubuntu
     else
         " Do Linux stuff here
         let b:system = 'linux'
