@@ -1,9 +1,10 @@
 if has('unix')
-    if has('mac')
+    if b:system == "mac"
         let g:vimtex_view_method = "skim"
         let g:vimtex_view_general_viewer
                 \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
         let g:vimtex_view_general_options = '-r @line @pdf @tex'
+        let g:vimtex_context_pdf_viewer='skim'
 
         function! UpdateSkim(status)
             if !a:status | return | endif
@@ -22,9 +23,16 @@ if has('unix')
             call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
             endif
         endfunction
-    else
+    elseif b:system == 'wsl'
         let g:latex_view_general_viewer = "zathura"
         let g:vimtex_view_method = "zathura"
+        let g:vimtex_context_pdf_viewer='zathura'
+    elseif b:system == 'termux'
+
+    elseif b:system == 'linux'
+        let g:latex_view_general_viewer = "zathura"
+        let g:vimtex_view_method = "zathura"
+        let g:vimtex_context_pdf_viewer='zathura'
     endif
 elseif has('win32')
 
@@ -33,8 +41,6 @@ endif
 
 
 
-let g:vimtex_context_pdf_viewer=1
-let g:vimtex_context_pdf_viewer='zathura'
 
 let g:tex_flavor  = 'latex'
 let g:vimtex_quickfix_open_on_warning = 0
@@ -59,15 +65,6 @@ let g:tex_conceal = ""
 " use vimtex as default compiler
 let g:vimtex_compiler_latexmk_engines={'_':'-xelatex'}
 let g:vimtex_compiler_latexrun_engines={'_':'xelatex'}
-
-" let g:vimtex_compiler_latexmk = { 
-"         \ 'executable' : 'latexmk',
-"         \ 'options' : [ 
-"         \   '-f',
-"         \   '-xelatex',
-"         \   '-interaction=nonstopmode',
-"         \ ],
-"         \}
 
 let g:vimtex_compiler_latexmk = { 
         \ 'executable' : 'latexmk',
