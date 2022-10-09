@@ -215,22 +215,27 @@ autocmd Filetype js set foldlevelstart=99 "start file with all folds opened
 
 " Python Settings
 " let g:loaded_python_provider = 0
-" let g:python3_host_prog='$HOME/.pyenv/versions/3.9.1/bin/python3' " Mac
-" let g:python3_host_prog="usr/bin/python3" " Mac
-" let g:python3_host_prog="/opt/homebrew/opt/python@3.9/bin/python3.9"
-" let g:python3_host_prog="$HOME/.pyenv/versions/3.8.12/bin/python3" " ubuntu Mac
-" let g:python_host_prog='/usr/bin/python2.7' " Mac
-" let g:python3_host_prog='/home/yinghan/.local/lib/python3.8' " Ubuntu
-" let g:python3_host_prog = '$HOME/.pyenv/versions/3.9.9/bin/python3'
-
-let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
 if has('unix')
-    if has('mac')
-        let g:python3_host_prog='/opt/homebrew/bin/python3' " Mac
+    let s:uname = system("uname")
+    if s:uname == "Darwin\n"
+        " Do Mac stuff here
+        let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
+    elseif exists("$WSL_DISTRO_NAME")
+        " Do wsl stuff here
+        let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
+    elseif v:shell_error == 0
+        " Do termux stuff here
+        let b:system = 'termux'
+        let s:termux_prefix = '/data/data/com.termux/files/usr'
+        let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python3' " ubuntu
     else
+        " Do Linux stuff here
+        let b:system = 'linux'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
     endif
 elseif has('win32')
+    " Do Windows stuff here
+    let b:system = 'windows'
 endif
 autocmd Filetype python set tabstop=4     " a hard TAB displays as 4 columns
 autocmd Filetype python set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
