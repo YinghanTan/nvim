@@ -109,7 +109,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
     Plug 'lervag/vimtex' " latex development
-    Plug 'KeitaNakamura/tex-conceal.vim'
+    Plug 'KeitaNakamura/tex-conceal.vim' " show math symbol instead of latex code
     Plug 'matze/vim-tex-fold'
 
     " Git
