@@ -19,8 +19,8 @@ let g:fzf_action = {
   \ 'ctrl-x': 'vsplit',     
   \ 'ctrl-s': 'split',     
   \ 'ctrl-v': 'vsplit',
-  \ 'ctrl-y': {lines -> setreg('*', join(lines, "\n"))}}   
-
+  \ 'ctrl-y': {lines -> setreg('+', join(lines, "\n"))}}
+ 
 " add to quickfix_list after selecting file
 " open in new tab after selecting file
 " open in new split after selecting file
@@ -62,7 +62,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } } " Border color
 " let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" --preview-window="right:50%" --preview="bat --style=numbers --color=always --line-range :500 {}"'
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-y:yank" --preview="bat --style=numbers --color=always --line-range :500 {}"'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" --preview="bat --style=numbers --color=always --line-range :500 {}"'
 let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
 
