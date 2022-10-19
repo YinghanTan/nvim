@@ -3,7 +3,6 @@
 set nofoldenable          " disable initial folded files 
 set foldlevel=99          " start file with all folds opened
 set foldlevelstart=99   "start file with all folds opened
-set fillchars=fold:\ " remove dots or spaces to indicate folded line
 set foldcolumn=0        "defines 0 columns at left window, to indicate folding
 set foldtext=CustomFoldText()
 " set foldmethod=syntax   "syntax highlighting items specify folds - slow when file gets large

@@ -6,7 +6,7 @@
 
 " remove dots or spaces to indicate folded line
 " set fillchars=fold:\
-set fillchars=vert:│,diff:╱,foldclose:,foldopen:,fold:\\,msgsep:─
+set fillchars=vert:│,diff:╱,foldclose:,foldopen:,msgsep:─,fold:\\
 syntax on
 filetype on
 filetype plugin on
