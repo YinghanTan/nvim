@@ -44,14 +44,20 @@ endif
 " DiffDelete diffmode: Deleted line
 " DiffText diffmode: Changed text within a changed line
 
+" hi DiffAdd gui=none guifg=none guibg=#23394C
+" hi DiffChange gui=none guifg=none guibg=#232C4C
+" hi DiffText gui=none guifg=none guibg=#33406C
+" " hi EndOfBuffer ctermfg=#FFFFFF guifg=#FFFFFF guibg=#FFFFFF
+" hi DiffDelete gui=none guifg=#341C28 guibg=#341C28
+
 hi DiffAdd gui=none guifg=none guibg=#23394C
-hi DiffChange gui=none guifg=none guibg=#232C4C
-hi DiffText gui=none guifg=none guibg=#33406C
-" hi EndOfBuffer ctermfg=#FFFFFF guifg=#FFFFFF guibg=#FFFFFF
+hi DiffChange gui=none guifg=none guibg=#2D2C4C
+hi DiffText gui=none guifg=none guibg=#46466C
+hi DiffDelete gui=none guifg=#3E2628 guibg=#3E2628 " as a key to the music opposite for 
+hi diffRemoved gui=none guifg=#3E2628 guibg=#3E2628
+" hi DiffDelete gui=none guifg=#3E2628 guibg=none " as a key to the music opposite for 
 
-hi DiffDelete gui=none guifg=#341C28 guibg=#341C28
-
-
+" highlight NonText ctermfg=bg guifg=bg
 
 
   " vim.g.terminal_color_0  = "#15161E"

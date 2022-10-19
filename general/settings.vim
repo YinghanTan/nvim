@@ -5,8 +5,8 @@
 " --- Standard Settings ---
 
 " remove dots or spaces to indicate folded line
-" set fillchars=vert:│,diff:╱,foldclose:,foldopen:,fold:\ ,msgsep:─
-set fillchars=vert:│,diff:\ ,foldclose:,foldopen:,fold:\ ,msgsep:─
+set fillchars=vert:│,diff:╱,foldclose:,foldopen:,fold:\ ,msgsep:─
+" set fillchars=vert:│,diff:\ ,foldclose:,foldopen:,fold:\ ,msgsep:─
 syntax on
 filetype on
 filetype plugin on
