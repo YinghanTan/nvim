@@ -415,5 +415,15 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 
 " --- Diff ---
-set diffopt=vertical,filler,context:3,foldcolumn:1 " vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
+set diffopt=vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:patience,internal " vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
+if &diff
+    let s:is_started_as_vim_diff = 1
+    syntax off
+    setlocal nospell
+endif
+function s:PatchColorScheme()
+    hi! link DiffChange NONE
+    hi! clear DiffChange
+    hi! DiffText term=NONE ctermfg=215 ctermbg=233 cterm=NONE guifg=#FFB86C guibg=#14141a gui=NONE
+endfunction
 " --- --- ---

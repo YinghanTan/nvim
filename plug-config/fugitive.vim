@@ -9,6 +9,7 @@
 " let g:fugitive_summary_format =  '%C(auto)%h%d %<(90,trunc)%s %<(12,trunc)%cr %C(auto)%C(blue)%an'
 let g:fugitive_summary_format = "%<(12,trunc)%an | %<(14,trunc)%cr | %s"
 
+
 " Open current line in the browser
 " nnoremap <Leader>gB :.GBrowse<CR>
 
