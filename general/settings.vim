@@ -113,7 +113,6 @@ set updatetime=100          " Faster completion
 set timeoutlen=800          " By default timeoutlen is 1000 ms
 set clipboard=unnamedplus   " Copy paste between vim and everything else
 set autochdir               " Your working directory will always be the same as your file directory
-set diffopt=vertical
 set textwidth=0
 set wrapmargin=0
 set noshowmode              " We don't need to see things like -- INSERT -- anymore
@@ -412,4 +411,9 @@ inoremap <4-MiddleMouse> <Nop>
 " --- Edit Files ---
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+" --- --- ---
+
+
+" --- Diff ---
+set diffopt=vertical,filler,context:3,foldcolumn:1 " vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
 " --- --- ---
