@@ -202,29 +202,29 @@ if has('unix')
     call system("command -v termux-setup-storage")
     if s:uname == "Darwin\n"
         " Do Mac stuff here
-        let b:system = 'mac'
+        let g:system = 'mac'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
         let g:node_host_prog = '$HOME/.nvm/versions/node/v16.9.0/lib/node_modules/neovim/bin/cli.js' " Mac
     elseif exists("$WSL_DISTRO_NAME")
         " Do wsl stuff here
-        let b:system = 'wsl'
+        let g:system = 'wsl'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
         let g:node_host_prog = '$HOME/.nvm/versions/node/v16.13.1/lib/node_modules/neovim/bin/cli.js' " Ubuntu
     elseif v:shell_error == 0
         " Do termux stuff here
-        let b:system = 'termux'
+        let g:system = 'termux'
         let s:termux_prefix = '/data/data/com.termux/files/usr'
         let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python3' " ubuntu
         let g:node_host_prog = '/data/data/com.termux/files/usr/lib/node_modules/neovim/bin/cli.js' " Ubuntu
     else
         " Do Linux stuff here
-        let b:system = 'linux'
+        let g:system = 'linux'
         let g:python3_host_prog='$HOME/.pyenv/versions/3.9.9/bin/python3' " ubuntu
         let g:node_host_prog = '$HOME/.nvm/versions/node/v16.13.1/lib/node_modules/neovim/bin/cli.js' " Ubuntu
     endif
 elseif has('win32')
     " Do Windows stuff here
-    let b:system = 'windows'
+    let g:system = 'windows'
 endif
 " --- --- ---
 
@@ -416,14 +416,14 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " --- Diff ---
 set diffopt=vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:patience,internal " vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
-if &diff
-    let s:is_started_as_vim_diff = 1
-    syntax off
-    setlocal nospell
-endif
-function s:PatchColorScheme()
-    hi! link DiffChange NONE
-    hi! clear DiffChange
-    hi! DiffText term=NONE ctermfg=215 ctermbg=233 cterm=NONE guifg=#FFB86C guibg=#14141a gui=NONE
-endfunction
+" if &diff
+"     let s:is_started_as_vim_diff = 1
+"     syntax off
+"     setlocal nospell
+" endif
+" function s:PatchColorScheme()
+"     hi! link DiffChange NONE
+"     hi! clear DiffChange
+"     hi! DiffText term=NONE ctermfg=215 ctermbg=233 cterm=NONE guifg=#FFB86C guibg=#14141a gui=NONE
+" endfunction
 " --- --- ---

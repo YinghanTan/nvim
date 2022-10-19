@@ -1,5 +1,5 @@
 if has('unix')
-    if b:system == "mac"
+    if g:system == "mac"
         let g:vimtex_view_method = "skim"
         let g:vimtex_view_general_viewer
                 \ = '/Applications/Skim.app/Contents/SharedSupport/displayline'
@@ -23,13 +23,13 @@ if has('unix')
             call system(join(l:cmd + [line('.'), shellescape(l:out), shellescape(l:tex)], ' '))
             endif
         endfunction
-    elseif b:system == 'wsl'
+    elseif g:system == 'wsl'
         let g:latex_view_general_viewer = "zathura"
         let g:vimtex_view_method = "zathura"
         let g:vimtex_context_pdf_viewer='zathura'
-    elseif b:system == 'termux'
+    elseif g:system == 'termux'
 
-    elseif b:system == 'linux'
+    elseif g:system == 'linux'
         let g:latex_view_general_viewer = "zathura"
         let g:vimtex_view_method = "zathura"
         let g:vimtex_context_pdf_viewer='zathura'
