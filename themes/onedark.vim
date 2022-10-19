@@ -51,6 +51,9 @@ hi EndOfBuffer ctermfg=#FFFFFF guifg=bg
 
 hi DiffDelete gui=none guifg=#ff8080 guibg=#341C28
 
+
+
+
   " vim.g.terminal_color_0  = "#15161E"
   " vim.g.terminal_color_8  = "#414868"
   " -- red
