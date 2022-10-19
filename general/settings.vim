@@ -5,8 +5,8 @@
 " --- Standard Settings ---
 
 " remove dots or spaces to indicate folded line
-" set fillchars=fold:\
-set fillchars=vert:│,diff:╱,foldclose:,foldopen:,fold:\\,msgsep:─
+" set fillchars=vert:│,diff:╱,foldclose:,foldopen:,fold:\ ,msgsep:─
+set fillchars=vert:│,diff:\ ,foldclose:,foldopen:,fold:\ ,msgsep:─
 syntax on
 filetype on
 filetype plugin on
@@ -416,7 +416,6 @@ inoremap <4-MiddleMouse> <Nop>
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " --- --- ---
 
-
 " --- Diff ---
 set diffopt=vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:patience,internal " vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
 
@@ -494,3 +493,6 @@ set diffopt=vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:pa
 "     endif
 " endfunction
 " " --- --- ---
+
+
+

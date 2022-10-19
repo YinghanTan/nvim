@@ -46,10 +46,10 @@ endif
 
 hi DiffAdd gui=none guifg=none guibg=#23394C
 hi DiffChange gui=none guifg=none guibg=#232C4C
-hi DiffText gui=none guifg=NONE guibg=#33406C
-hi EndOfBuffer ctermfg=#FFFFFF guifg=bg
+hi DiffText gui=none guifg=none guibg=#33406C
+" hi EndOfBuffer ctermfg=#FFFFFF guifg=#FFFFFF guibg=#FFFFFF
 
-hi DiffDelete gui=none guifg=#ff8080 guibg=#341C28
+hi DiffDelete gui=none guifg=#341C28 guibg=#341C28
 
 
 
@@ -77,3 +77,10 @@ hi DiffDelete gui=none guifg=#ff8080 guibg=#341C28
   " -- white
   " vim.g.terminal_color_7  = "#a9b1d6"
   " vim.g.terminal_color_15 = "#c0caf5"
+
+
+
+
+
+
+
