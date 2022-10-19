@@ -17,8 +17,6 @@ xmap ic <Plug>(coc-git-chunk-inner)
 omap ac <Plug>(coc-git-chunk-outer)
 xmap ac <Plug>(coc-git-chunk-outer)
 
-
-
 " airline status line integration
 
 function! s:update_git_status()
@@ -26,6 +24,3 @@ function! s:update_git_status()
 endfunction
 let g:airline_section_b = "%{get(b:,'coc_git_status','')}"
 autocmd User CocGitStatusChange call s:update_git_status()
-
-new
-
