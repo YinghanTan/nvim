@@ -134,8 +134,11 @@
   // Coc-Git
   "git.enableGutters": true,
   "git.changedSign.text": "~",
+  "git.changedSign.hlGroup": "MyDiffChange",
   "git.addedSign.text": "+",
+  "git.addedSign.hlGroup": "MyDiffAdd",
   "git.removedSign.text": "_",
+  "git.removedSign.hlGroup": "MyDiffDelete",
   "git.topRemovedSign.text": "‾",
   "git.changeRemovedSign.text": "≃",
   "git.issueFormat": "#%i",
