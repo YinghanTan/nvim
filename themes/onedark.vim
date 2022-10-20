@@ -44,59 +44,17 @@ endif
 " DiffDelete diffmode: Deleted line
 " DiffText diffmode: Changed text within a changed line
 
-" hi DiffAdd gui=none guifg=none guibg=#23394C
-" hi DiffChange gui=none guifg=none guibg=#232C4C
-" hi DiffText gui=none guifg=none guibg=#33406C
-" " hi EndOfBuffer ctermfg=#FFFFFF guifg=#FFFFFF guibg=#FFFFFF
-" hi DiffDelete gui=none guifg=#341C28 guibg=#341C28
-
-
 
 " Linux Vim
-hi DiffAdd gui=none guifg=none guibg=#23384C
-hi DiffChange gui=none guifg=none guibg=#242A40
-hi DiffText gui=none guifg=#FFFFFF guibg=#33406B
-hi DiffDelete gui=none guifg=#3E2628 guibg=none " as a key to the music opposite for 
-
-hi diffRemoved gui=none guifg=#341C28 guibg=#341C28
-" hi DiffDelete gui=none guifg=#3E2628 guibg=none " as a key to the music opposite for 
+hi DiffAdd gui=none guifg=none guibg=#23394C
+hi DiffChange gui=none guifg=none guibg=#2D2C4C
+hi DiffText gui=none guifg=none guibg=#414868
+hi DiffDelete gui=none guifg=#EA4A34 guibg=none " as a key to the music opposite for 
+hi diffRemoved gui=none guifg=#EA4A34 guibg=#E06C75
 
 
-" " Mac Vim
-" hi DiffAdd gui=none guifg=none guibg=#23394C
-" hi DiffChange gui=none guifg=none guibg=#2D2C4C
-" hi DiffText gui=none guifg=none guibg=#46466C
-" hi DiffDelete gui=none guifg=#3E2628 guibg=none " as a key to the music opposite for 
-" hi diffRemoved gui=none guifg=#3E2628 guibg=#3E2628
-" " hi DiffDelete gui=none guifg=#3E2628 guibg=none " as a key to the music opposite for 
 
 " highlight NonText ctermfg=bg guifg=bg
-
-  " vim.g.terminal_color_0  = "#15161E"
-  " vim.g.terminal_color_8  = "#414868"
-  " -- red
-  " vim.g.terminal_color_1  = "#f7768e"
-  " vim.g.terminal_color_9  = "#f7768e"
-  " -- green
-  " vim.g.terminal_color_2  = "#9ece6a"
-  " vim.g.terminal_color_10 = "#9ece6a"
-  " -- yellow
-  " vim.g.terminal_color_3  = "#e0af68"
-  " vim.g.terminal_color_11 = "#e0af68"
-  " -- blue
-  " vim.g.terminal_color_4  = "#7aa2f7"
-  " vim.g.terminal_color_12 = "#7aa2f7"
-  " -- magenta
-  " vim.g.terminal_color_5  = "#bb9af7"
-  " vim.g.terminal_color_13 = "#bb9af7"
-  " -- cyan
-  " vim.g.terminal_color_6  = "#7dcfff"
-  " vim.g.terminal_color_14 = "#7dcfff"
-  " -- white
-  " vim.g.terminal_color_7  = "#a9b1d6"
-  " vim.g.terminal_color_15 = "#c0caf5"
-
-
 
   " vim.g.terminal_color_0  = "#15161E"
   " vim.g.terminal_color_8  = "#414868"
