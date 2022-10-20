@@ -296,3 +296,6 @@ snippet pdb "pdb set_trace"
 import pdb; pdb.set_trace();
 endsnippet
 
+snippet log "logging" b
+logging.getLogger(__name__).${1:info}(f"${2:variable}: {${3:variable}}")$0
+endsnippet

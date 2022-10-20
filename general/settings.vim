@@ -11,6 +11,7 @@ syntax on
 filetype on
 filetype plugin on
 filetype plugin indent on
+set nocompatible                " incompatible with vi
 set noswapfile                  " do not create a swap file"
 set nobackup                    " no backup because we have undodir"
 set incsearch                   " starting search before typing the parameter completes
