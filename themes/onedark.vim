@@ -50,7 +50,8 @@ hi DiffAdd gui=none guifg=none guibg=#23394C
 hi DiffChange gui=none guifg=none guibg=#2D2C4C
 hi DiffText gui=none guifg=none guibg=#414868
 hi DiffDelete gui=none guifg=#EA4A34 guibg=none " as a key to the music opposite for 
-hi diffRemoved gui=none guifg=#EA4A34 guibg=#E06C75
+" hi diffRemoved gui=none guifg=#EA4A34 guibg=#E06C75
+hi diffRemoved gui=none guifg=#EA4A34 guibg=none
 " Linux Vim
 hi MyDiffAdd gui=none guifg=#15161E guibg=#9ece6a
 hi MyDiffChange gui=none guifg=#15161E guibg=#7aa2f7

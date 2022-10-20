@@ -140,7 +140,9 @@
   "git.removedSign.text": "_",
   "git.removedSign.hlGroup": "MyDiffDelete",
   "git.topRemovedSign.text": "‾",
+  "git.topRemovedSign.hlGroup": "MyDiffDelete",
   "git.changeRemovedSign.text": "≃",
+  "git.changeRemovedSign.hlGroup": "MyDiffChange",
   "git.issueFormat": "#%i",
 
   // coc-sh
