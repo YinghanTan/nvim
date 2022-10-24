@@ -136,7 +136,7 @@ local y_mappings = {
 
 
 local mappings = {
-    -- ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
+    ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
     ["."] = { "<cmd>e $MYVIMRC<cr>", "open init" },
     [";"] = { "<cmd>Telescope commands<CR>", "commands" },
     ["\\"] = {

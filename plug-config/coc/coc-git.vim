@@ -1,6 +1,6 @@
 " navigate chunks of current buffer
-nmap [c <Plug>(coc-git-prevchunk)
-nmap ]c <Plug>(coc-git-nextchunk)
+nmap [h <Plug>(coc-git-prevchunk)
+nmap ]h <Plug>(coc-git-nextchunk)
 
 
 " " navigate conflicts of current buffer
@@ -12,10 +12,10 @@ nmap ]c <Plug>(coc-git-nextchunk)
 " nmap gC <Plug>(coc-git-commit)
 " create text object for git chunks
 
-omap ic <Plug>(coc-git-chunk-inner)
-xmap ic <Plug>(coc-git-chunk-inner)
-omap ac <Plug>(coc-git-chunk-outer)
-xmap ac <Plug>(coc-git-chunk-outer)
+omap ih <Plug>(coc-git-chunk-inner)
+xmap ih <Plug>(coc-git-chunk-inner)
+omap ah <Plug>(coc-git-chunk-outer)
+xmap ah <Plug>(coc-git-chunk-outer)
 
 " airline status line integration
 
