@@ -136,7 +136,7 @@ local y_mappings = {
 
 
 local mappings = {
-    ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
+    -- ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
     ["."] = { "<cmd>e $MYVIMRC<cr>", "open init" },
     [";"] = { "<cmd>Telescope commands<CR>", "commands" },
     ["\\"] = {
@@ -234,6 +234,12 @@ local mappings = {
             t = { "<cmd>CocCommand git.toggleGutters<cr>", "toggle gutter" },
             s = { "<cmd>CocCommand git.chunkStage<cr>", "stage hunk" },
             z = { "<cmd>CocCommand git.foldUnchanged<cr>", "fold unchanged" },
+            f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
+            j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
+            -- f = { "<cmd>diffget LOCAL<Bar>diffupdate<CR>", "diffget left hunk" },
+            -- j = { "<cmd>diffget REMOTE<Bar>diffupdate<CR>", "diffget right hunk" },
+            -- g = { "<cmd>diffget BASE<Bar>diffupdate<CR>", "diffget base" },
+            b = { "<cmd>:/>>>>>>>/;?<<<<<<<?,.g/^\\(<<<<<<<\\|=======\\|>>>>>>>\\)/d<CR>", "diffget both" },
         },
         G = { "<cmd>FloatermNew lazygit<CR>", "gui" },
         h = { "<cmd>0Gclog<cr>", "file history" },
@@ -244,8 +250,8 @@ local mappings = {
         r = { "<cmd>GDelete<cr>", "remove" },
         v = { "<cmd>GV!<cr>", "file commits" },
         V = { "<cmd>GV<cr>", "all commits" },
-        f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
-        j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
+        -- f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
+        -- j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
         s = {
             name = "Search",
             b = { "<cmd>Telescope git_branches<cr>", "Branches" },
@@ -425,10 +431,16 @@ local mappings = {
     u = {
         name = "ultisnips / undo",
         e = { "<cmd>CocCommand snippets.editSnippets<cr>", "Ultisnips Edit" },
+        -- e = { "<cmd>:UltiSnipsEdit<cr>", "Ultisnips Edit" },
         f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
         s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
         r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
+
+    },
+    v = {
+        name = "vim",
+        e = { ":w<CR>:! ./%<CR>", "execute" },
     },
     w = {
         -- Wiki
@@ -475,6 +487,17 @@ local vmappings = {
         B = { ":GBrowse<cr>", "browse" },
     },
     p = { '\"_dP', "paste keep buffer" },
+    u = {
+        name = "ultisnips / undo",
+        e = { "<cmd>CocCommand snippets.editSnippets<cr>", "Ultisnips Edit" },
+        -- e = { "<cmd>:UltiSnipsEdit<cr>", "Ultisnips Edit" },
+        f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
+        s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
+        t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
+        a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
+        r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
+
+    },
 }
 
 which_key.setup(setup)
@@ -482,3 +505,6 @@ which_key.register(mappings, opts)
 which_key.register(y_mappings, y_opts)
 which_key.register(vmappings, vopts)
 -- which_key.register(m_mappings, m_opts)
+
+
+-- something new
