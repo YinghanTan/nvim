@@ -102,7 +102,7 @@ cmap w!! w !sudo tee %
 
 " --- NVIM Settings ---
 set pumheight=10            " Makes popup menu smaller
-set fileencoding=utf-8      "The encoding written to file
+set fileencoding=utf-8      " The encoding written to file
 set cmdheight=2             " More space for displaying messages"
 set iskeyword+=-            " treat dash separated words as a word text object
 set mouse=a                 " enable your mouse
