@@ -144,6 +144,9 @@
   "git.changeRemovedSign.text": "≃",
   "git.changeRemovedSign.hlGroup": "MyDiffChange",
   "git.issueFormat": "#%i",
+  "git.conflict.enabled": false,
+  "git.conflict.current.hlGroup": "MyDiffChange",
+  "git.conflict.incoming.hlGroup": "MyDiffAdd",
 
   // coc-sh
   "languageserver": {

@@ -65,6 +65,11 @@ hi MyDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
 hi MyDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
 hi MyDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
 hi MyDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
+hi MyDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
+
+hi GitConflictCurrent gui=bold guifg=white guibg=#307265
+hi GitConflictIncoming gui=bold guifg=white guibg=#2F628D
+hi GitConflictAncestor gui=bold guifg=white guibg=#2D2C4C
 
 " " Linux Vim
 " hi DiffAdd gui=none guifg=none guibg=#23394C

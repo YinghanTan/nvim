@@ -13,9 +13,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Theme
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-    Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'akinsho/git-conflict.nvim'
+    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    " Plug 'dracula/vim', { 'as': 'dracula' }
+    " Plug 'akinsho/git-conflict.nvim'
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
