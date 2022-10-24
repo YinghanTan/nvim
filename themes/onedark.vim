@@ -46,18 +46,37 @@ endif
 
 
 " Linux Vim
-hi DiffAdd gui=none guifg=none guibg=#23394C
-hi DiffChange gui=none guifg=none guibg=#2D2C4C
-hi DiffText gui=none guifg=none guibg=#414868
-hi DiffDelete gui=none guifg=#EA4A34 guibg=none " as a key to the music opposite for 
-" hi diffRemoved gui=none guifg=#EA4A34 guibg=#E06C75
+" <<<<<< #307265
+" #2D4B4C
+" >>>>>> #2F628D
+" #2D435D
+" |||||| #3D4045
+" #31343A
+
+" #EA4A34
+" #4B1818
+hi DiffAdd gui=none guifg=none guibg=#2D4B4C
+hi DiffChange gui=none guifg=none guibg=#2D435D
+hi DiffText gui=none guifg=#FFFFFF guibg=#33699A
+hi DiffDelete gui=none guifg=#B44A34 guibg=none " as a key to the music opposite for 
 hi diffRemoved gui=none guifg=#EA4A34 guibg=none
 " Linux Vim
-hi MyDiffAdd gui=none guifg=#15161E guibg=#9ece6a
-hi MyDiffChange gui=none guifg=#15161E guibg=#7aa2f7
-hi MyDiffText gui=none guifg=#15161E guibg=#7aa2f7
-hi MyDiffDelete gui=none guifg=#15161E guibg=#f7768e
+hi MyDiffAdd gui=none guifg=#FFFFFF guibg=#307265
+hi MyDiffChange gui=none guifg=#FFFFFF guibg=#2F628D
+hi MyDiffText gui=none guifg=#FFFFFF guibg=#2F628D
+hi MyDiffDelete gui=none guifg=#FFFFFF guibg=#EA4A34
 
+" " Linux Vim
+" hi DiffAdd gui=none guifg=none guibg=#23394C
+" hi DiffChange gui=none guifg=none guibg=#2D2C4C
+" hi DiffText gui=none guifg=none guibg=#414868
+" hi DiffDelete gui=none guifg=#EA4A34 guibg=none " as a key to the music opposite for 
+" hi diffRemoved gui=none guifg=#EA4A34 guibg=none
+" " Linux Vim
+" hi MyDiffAdd gui=none guifg=#15161E guibg=#9ece6a
+" hi MyDiffChange gui=none guifg=#15161E guibg=#7aa2f7
+" hi MyDiffText gui=none guifg=#15161E guibg=#7aa2f7
+" hi MyDiffDelete gui=none guifg=#15161E guibg=#EA4A34
 
 
 " highlight NonText ctermfg=bg guifg=bg
