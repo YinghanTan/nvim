@@ -107,4 +107,29 @@ hi MyDiffDelete gui=none guifg=#FFFFFF guibg=#EA4A34
 
 
 
+" function! ConflictsHighlight() abort
+"     syn region conflictStart start=/^<<<<<<< .*$/ end=/^\ze\(=======$\||||||||\)/
+"     syn region conflictMiddle start=/^||||||| .*$/ end=/^\ze=======$/
+"     syn region conflictEnd start=/^\(=======$\||||||| |\)/ end=/^>>>>>>> .*$/
+"     highlight conflictStart ctermbg=red ctermfg=black
+"     highlight conflictMiddle ctermbg=blue ctermfg=black
+"     highlight conflictEnd ctermbg=green cterm=bold ctermfg=black
+" endfunction
+" augroup MyColors
+"     autocmd!
+"     autocmd BufEnter * call ConflictsHighlight()
+" augroup END
+
+
+" augroup aug_diffs
+"   au!
+"   " Inspect whether some windows are in diff mode, and apply changes for such windows
+"   " Run asynchronously, to ensure '&diff' option is properly set by Vim
+"   au WinEnter,BufEnter * call timer_start(50, 'CheckDiffMode')
+"     " Highlight VCS conflict markers
+"   au VimEnter,WinEnter * if !exists('w:_vsc_conflict_marker_match') |
+"         \   let w:_vsc_conflict_marker_match = matchadd('ErrorMsg', '^\(<\|=\||\|>\)\{7\}\([^=].\+\)\?$') |
+"         \ endif
+" augroup END
+
 
