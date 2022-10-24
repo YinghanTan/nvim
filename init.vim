@@ -30,8 +30,6 @@ source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
-" source $HOME/.config/nvim/plug-config/rainbow.vim
-" source $HOME/.config/nvim/plug-config/codi.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
@@ -76,6 +74,8 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " luafile $HOME/.config/nvim/lua/lsp-config.lua
 " luafile $HOME/.config/nvim/lua/cmp.lua
 " luafile $HOME/.config/nvim/lua/dial.lua
+" source $HOME/.config/nvim/plug-config/rainbow.vim
+" source $HOME/.config/nvim/plug-config/codi.vim
 
 
 " --- Brief help ---
