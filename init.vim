@@ -26,7 +26,6 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Git
 source $HOME/.config/nvim/plug-config/fugitive.vim
-source $HOME/.config/nvim/plug-config/conflict-marker.vim
 source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 " Plugin Configuration
@@ -70,6 +69,7 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
+luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 
 " LSP

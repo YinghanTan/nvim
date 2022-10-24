@@ -11,6 +11,12 @@ endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 
+    " Theme
+    Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'akinsho/git-conflict.nvim'
+
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
@@ -123,17 +129,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'rhysd/git-messenger.vim' " Popup Git messages
     Plug 'ruifm/gitlinker.nvim' " generate shareable file permalinks
     Plug 'ThePrimeagen/git-worktree.nvim'
-    Plug 'rhysd/conflict-marker.vim'
     " use("lewis6991/gitsigns.nvim") " Git integration: signs, hunk actions, blame, etc.
 
     Plug 'konfekt/fastfold'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
 
-    " Theme
-    Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-    Plug 'dracula/vim', { 'as': 'dracula' }
 
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
     Plug 'ryanoasis/vim-devicons' "Cool icons
