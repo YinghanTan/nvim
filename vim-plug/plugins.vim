@@ -12,10 +12,9 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Theme
-    Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
+    " Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     " Plug 'dracula/vim', { 'as': 'dracula' }
-    " Plug 'akinsho/git-conflict.nvim'
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
@@ -149,12 +148,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-treesitter/playground'
     Plug 'romgrk/nvim-treesitter-context'
-
     Plug 'p00f/nvim-ts-rainbow' " Rainbow parentheses for neovim using tree-sitter
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-ts-autotag'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
+    Plug 'akinsho/git-conflict.nvim'
 
     "sindrets/diffview.nvim",
     "folke/trouble.nvim",

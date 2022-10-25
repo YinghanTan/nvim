@@ -39,37 +39,27 @@ if !exists('g:loaded_color')
 endif
 
 
-" DiffAdd diff mode: Added line
-" DiffChange diff mode: Changed line
-" DiffDelete diffmode: Deleted line
-" DiffText diffmode: Changed text within a changed line
+" hi DiffAdd gui=none guifg=none guibg=#2D4B4C
+" hi DiffChange gui=none guifg=none guibg=#2D435D
+" hi DiffText gui=none guifg=#FFFFFF guibg=#33699A
+" hi DiffDelete gui=none guifg=#B44A34 guibg=none " as a key to the music opposite for 
+" " hi diffRemoved gui=none guifg=#EA4A34 guibg=none
+" " Linux Vim
 
+" " --- coc-git color configs ---
+" hi MyDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
+" hi MyDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
+" hi MyDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
+" hi MyDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
+" hi MyDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
 
-" Linux Vim
-" <<<<<< #307265
-" #2D4B4C
-" >>>>>> #2F628D
-" #2D435D
-" |||||| #3D4045
-" #31343A
+" " --- git-conflict color configs ---
+" hi GitDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
+" hi GitDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
+" hi GitDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
+" hi GitDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
+" hi GitDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
 
-" #EA4A34
-" #4B1818
-hi DiffAdd gui=none guifg=none guibg=#2D4B4C
-hi DiffChange gui=none guifg=none guibg=#2D435D
-hi DiffText gui=none guifg=#FFFFFF guibg=#33699A
-hi DiffDelete gui=none guifg=#B44A34 guibg=none " as a key to the music opposite for 
-" hi diffRemoved gui=none guifg=#EA4A34 guibg=none
-" Linux Vim
-hi MyDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
-hi MyDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
-hi MyDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
-hi MyDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
-hi MyDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
-
-hi GitConflictCurrent gui=bold guifg=white guibg=#307265
-hi GitConflictIncoming gui=bold guifg=white guibg=#2F628D
-hi GitConflictAncestor gui=bold guifg=white guibg=#2D2C4C
 
 " " Linux Vim
 " hi DiffAdd gui=none guifg=none guibg=#23394C
@@ -77,3 +67,17 @@ hi GitConflictAncestor gui=bold guifg=white guibg=#2D2C4C
 " hi DiffText gui=none guifg=none guibg=#414868
 " hi DiffDelete gui=none guifg=#EA4A34 guibg=none " as a key to the music opposite for 
 " hi diffRemoved gui=none guifg=#EA4A34 guibg=none
+
+
+" --- Diff Color Reference ---
+" DiffAdd diff mode: Added line
+" DiffChange diff mode: Changed line
+" DiffDelete diffmode: Deleted line
+" DiffText diffmode: Changed text within a changed line
+" Linux Vim
+" <<<<<< #307265
+" #2D4B4C
+" >>>>>> #2F628D
+" #2D435D
+" |||||| #3D4045
+" #31343A
