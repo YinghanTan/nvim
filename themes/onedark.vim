@@ -39,26 +39,26 @@ if !exists('g:loaded_color')
 endif
 
 
-" hi DiffAdd gui=none guifg=none guibg=#2D4B4C
-" hi DiffChange gui=none guifg=none guibg=#2D435D
-" hi DiffText gui=none guifg=#FFFFFF guibg=#33699A
-" hi DiffDelete gui=none guifg=#B44A34 guibg=none " as a key to the music opposite for 
-" " hi diffRemoved gui=none guifg=#EA4A34 guibg=none
-" " Linux Vim
+hi DiffAdd gui=none guifg=none guibg=#2D4B4C
+hi DiffChange gui=none guifg=none guibg=#2D435D
+hi DiffText gui=none guifg=#FFFFFF guibg=#33699A
+hi DiffDelete gui=none guifg=#B44A34 guibg=none " as a key to the music opposite for 
+" hi diffRemoved gui=none guifg=#EA4A34 guibg=none
+" Linux Vim
 
-" " --- coc-git color configs ---
-" hi MyDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
-" hi MyDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
-" hi MyDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
-" hi MyDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
-" hi MyDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
+" --- coc-git color configs ---
+hi MyDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
+hi MyDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
+hi MyDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
+hi MyDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
+hi MyDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
 
-" " --- git-conflict color configs ---
-" hi GitDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
-" hi GitDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
-" hi GitDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
-" hi GitDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
-" hi GitDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
+" --- git-conflict color configs ---
+hi GitDiffAdd gui=bold guifg=#FFFFFF guibg=#307265
+hi GitDiffChange gui=bold guifg=#FFFFFF guibg=#2F628D
+hi GitDiffText gui=bold guifg=#FFFFFF guibg=#2F628D
+hi GitDiffDelete gui=bold guifg=#FFFFFF guibg=#EA4A34
+hi GitDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
 
 
 " " Linux Vim

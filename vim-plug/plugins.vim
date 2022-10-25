@@ -12,7 +12,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Theme
-    " Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
+    Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     " Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -153,7 +153,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'windwp/nvim-ts-autotag'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
-    Plug 'akinsho/git-conflict.nvim'
 
     "sindrets/diffview.nvim",
     "folke/trouble.nvim",
