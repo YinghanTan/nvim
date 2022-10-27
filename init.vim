@@ -76,6 +76,11 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim
 " source $HOME/.config/nvim/plug-config/codi.vim
 
+" --- Test ---
+" nnoremap Q n.
+" nnoremap Q @='n.'<CR>
+" nnoremap Q :normal n.<CR>
+
 
 " --- Brief help ---
 " \.                        - go to init.vim
