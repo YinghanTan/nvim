@@ -54,6 +54,7 @@ source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/vim-zoom.vim
 source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
+source $HOME/.config/nvim/plug-config/scripts.vim
 
 " --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
