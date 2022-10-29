@@ -60,7 +60,7 @@ source $HOME/.config/nvim/plug-config/scripts.vim
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
-luafile $HOME/.config/nvim/lua/numb.lua
+" luafile $HOME/.config/nvim/lua/numb.lua
 luafile $HOME/.config/nvim/lua/vim-matchup.lua
 luafile $HOME/.config/nvim/lua/todo-comments.lua
 luafile $HOME/.config/nvim/lua/gitlinker.lua
@@ -112,3 +112,8 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " neovim prettier 
 
 " ripgrep fzf
+
+" map <leader>ew :e <C-R>=expand("%:p:h") ."/"<CR>
+" map <leader>es :sp <C-R>=expand("%:p:h") ."/"<CR>
+" map <leader>ev :vsp <C-R>=expand("%:p:h") ."/"<CR>
+" map <leader>et :tabe <C-R>=expand("%:p:h") ."/"<CR>

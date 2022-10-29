@@ -6,7 +6,6 @@
 
 " remove dots or spaces to indicate folded line
 set fillchars=vert:│,diff:╱,foldclose:,foldopen:,fold:\ ,msgsep:─
-" set fillchars=vert:│,diff:\ ,foldclose:,foldopen:,fold:\ ,msgsep:─
 syntax on                                       " Turn on syntax highlighting
 filetype on
 filetype plugin on
@@ -35,6 +34,7 @@ set cursorline                                  " highlight current line
 " set relativenumber                              " show relative row numbers
 set number                                      " show line numbers
 set wildmenu                                    " visual autocomplete for command menu
+set wildmode=longest:full,list:full
 set ruler                                       " show current row and column
 set encoding=utf-8                              " encoding/format
 set history=1000                                " increate the undo limit
