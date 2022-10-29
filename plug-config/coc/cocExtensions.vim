@@ -51,6 +51,7 @@ let g:coc_global_extensions = [
     \ 'coc-sumneko-lua',
     \ 'coc-gitignore',
     \ 'coc-sql',
+    \ 'coc-word',
     \ ]
     " \ 'coc-nginx',
     " \ 'coc-cfn-lint',
