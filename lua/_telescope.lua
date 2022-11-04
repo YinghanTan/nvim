@@ -175,7 +175,7 @@ require('telescope').load_extension('ultisnips') -- https://github.com/fhill2/te
 require('telescope').load_extension('env') -- https://github.com/LinArcX/telescope-env.nvim
 require('telescope').load_extension("tele_tabby") -- https://github.com/TC72/telescope-tele-tabby.nvim
 
-if vim.b.system ~= 'termux' then
+if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
     require("telescope").load_extension("fzy_native") -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
 end
