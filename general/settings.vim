@@ -40,6 +40,7 @@ set encoding=utf-8                              " encoding/format
 set history=1000                                " increate the undo limit
 set t_Co=256
 set scrolloff=3                                 " line buffer of 3 lines when scrolling
+set nocp " netrw
 
 autocmd BufNewFile,BufRead,FileType,OptionSet * set formatoptions-=cro
 autocmd BufNewFile,BufRead,FileType,OptionSet * setlocal formatoptions-=cro

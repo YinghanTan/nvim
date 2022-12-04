@@ -207,7 +207,8 @@
   "list.normalMappings": {
     "s": "action:split",
     "v": "action:vsplit"
-  }
+  },
+  "snippets.ultisnips.pythonPrompt": false
 
 }
 
