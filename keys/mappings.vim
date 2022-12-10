@@ -26,6 +26,9 @@ au TabLeave * let g:lasttab = tabpagenr()
 " modify paste in visual mode to paste repeatedly
 xnoremap <leader>p "_dP
 
+" add :Te to :tabe.
+cnoreabbrev Te tabe.
+
 " map <leader>pp :setlocal paste!<cr>             " Toggle paste mode on and off
 " set pastetoggle=<leader>pt       " paste mode: avoid auto indent, treat chars
 
@@ -88,3 +91,4 @@ function! s:profile(bang)
 endfunction
 
 command! -bang Profile call s:profile(<bang>0)
+
