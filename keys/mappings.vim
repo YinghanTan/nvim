@@ -93,10 +93,10 @@ endfunction
 command! -bang Profile call s:profile(<bang>0)
 
 
-if g:system == "mac"
-    nnoremap gX :silent :execute
-                \ "!open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
-elseif g:system == linux
-    nnoremap gX :silent :execute
-                \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
-endif
+" if g:system == "mac"
+"     nnoremap gX :silent :execute
+"                 \ "!open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
+" elseif g:system == linux
+"     nnoremap gX :silent :execute
+"                 \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
+" endif
