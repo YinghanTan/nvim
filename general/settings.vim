@@ -97,8 +97,8 @@ nnoremap <M-l>    :vertical resize +2<CR>
 
 " --- Refresh VIMRC on Save ---
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vim alternatively you can run :source $MYVIMRC
-" You can't stop me
-cmap w!! w !sudo tee %
+" write or save file with sudo
+" cmap w!! w !sudo tee %
 " --- --- ---
 
 " --- NVIM Settings ---
