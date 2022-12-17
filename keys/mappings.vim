@@ -28,6 +28,15 @@ xnoremap <leader>p "_dP
 
 " add :Te to :tabe.
 cnoreabbrev Te tabe.
+cnoreabbrev uuidgen r! uuidgen
+inoreabbrev datenow cdate strftime('%Y-%m-%d')
+
+" sessions
+" nnoremap <leader>zr :source $HOME/.config/nvim/sessions/
+" nnoremap <leader>zz :mksession! $HOME/.config/nvim/sessions/
+let g:session_dir='$HOME/.config/nvim/sessions'
+exec 'nnoremap <Leader>zz :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
+exec 'nnoremap <Leader>zr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 " map <leader>pp :setlocal paste!<cr>             " Toggle paste mode on and off
 " set pastetoggle=<leader>pt       " paste mode: avoid auto indent, treat chars

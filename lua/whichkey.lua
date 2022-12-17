@@ -390,7 +390,7 @@ local mappings = {
             m = { "<cmd>Telescope git_status<cr>", "modified files" },
             s = { "<cmd>Telescope git_stash<cr>", "stash" },
         },
-        z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fzf file" },
+        -- z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fzf file" },
     },
 
     t = {

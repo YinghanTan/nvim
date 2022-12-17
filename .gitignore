@@ -8,3 +8,5 @@ vimspector-config/*
 paths.vim
 session
 wiki/
+sessions/*
+shada/*
