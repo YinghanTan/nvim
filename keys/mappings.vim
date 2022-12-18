@@ -29,7 +29,7 @@ xnoremap <leader>p "_dP
 " add :Te to :tabe.
 cnoreabbrev Te tabe.
 cnoreabbrev uuidgen r! uuidgen
-inoreabbrev datenow cdate strftime('%Y-%m-%d')
+inoreabbrev <expr> cdate strftime('%Y-%m-%d')
 
 " sessions
 " nnoremap <leader>zr :source $HOME/.config/nvim/sessions/
@@ -109,3 +109,23 @@ command! -bang Profile call s:profile(<bang>0)
 "     nnoremap gX :silent :execute
 "                 \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
 " endif
+
+" Testing
+
+" function IScream(content)
+"     echom toupper(a:content)
+" endfunction
+" command -nargs=1 Scream call IScream(<args>)
+
+" augroup vimrc
+"     autocmd!
+" augroup END
+
+" command! -nargs=? DevDocs call system('xdg-open https://devdocs.io/#q=<args>')
+
+
+" autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>D :execute "DevDocs " . expand('<cword>')<CR>
+" " autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A :echom 'hello'<cr>
+" " autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A execute "echom 'hello'<cr>"
+" " autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A :execute "echom 'hello'"<cr>
+" autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A :execute "DevDocs hello"<cr>
