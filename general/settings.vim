@@ -18,6 +18,7 @@ set ignorecase                                  " Ignore case when searching
 set smartcase                                   " search only include case when a case is added
 set hlsearch                                    " highlight search results
 set showmatch                                   " highlight matching brackets [{()}]
+set scrolloff=8
 set nolazyredraw                                " Don't redraw while executing macros (good performance config)
 set magic                                       " For regular expressions turn magic on
 set noerrorbells                                " No error sounds
@@ -377,6 +378,8 @@ nnoremap Y y$
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
 " Undo break points
 inoremap , ,<c-g>u
