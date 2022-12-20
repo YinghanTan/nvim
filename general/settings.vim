@@ -405,6 +405,11 @@ vnoremap K :m '<-2<CR>gv=gv
 " nnoremap gp `[v`]
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+" multiple paste
+" use "0p instead after selection
+" xnoremap <leader>p \"_dP
+xnoremap p pgvy
+
 " --- disable mouse clicks ---
 nnoremap <MiddleMouse> <Nop>
 nnoremap <2-MiddleMouse> <Nop>
