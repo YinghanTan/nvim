@@ -408,7 +408,7 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " multiple paste
 " use "0p instead after selection
 " xnoremap <leader>p \"_dP
-xnoremap p pgvy
+xnoremap <leader>p pgvy
 
 " --- disable mouse clicks ---
 nnoremap <MiddleMouse> <Nop>
@@ -420,6 +420,10 @@ inoremap <MiddleMouse> <Nop>
 inoremap <2-MiddleMouse> <Nop>
 inoremap <3-MiddleMouse> <Nop>
 inoremap <4-MiddleMouse> <Nop>
+
+" nnoremap Q <Nop>
+nnoremap <leader><leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
+nnoremap <leader><leader>x <cmd>!chmod +x %<CR>", {silent = true}
 
 " --- Edit Files ---
 " Return to last edit position when opening files (You want this!)
