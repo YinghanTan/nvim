@@ -96,6 +96,11 @@ nnoremap <M-h>    :vertical resize -2<CR>
 nnoremap <M-l>    :vertical resize +2<CR>
 " --- --- ---
 
+
+" --- highlight without moving ---
+nnoremap * *``
+" --- --- --
+
 " --- Refresh VIMRC on Save ---
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vim alternatively you can run :source $MYVIMRC
 " write or save file with sudo
