@@ -98,7 +98,9 @@ nnoremap <M-l>    :vertical resize +2<CR>
 
 
 " --- highlight without moving ---
-nnoremap * *``
+" nnoremap * *``
+nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
+nnoremap <silent> g* :let @/=expand('<cword>') <bar> set hls <cr>
 " --- --- --
 
 " --- Refresh VIMRC on Save ---
