@@ -49,6 +49,7 @@
   "diagnostic.hintSign": " ",
   "diagnostic.checkCurrentLine": true,
   "diagnostic.virtualText": false, // this won't work with codelens when error on same line
+  "diagnostic.level":  "information", 
 
   // List
   "list.indicator": ">",
@@ -112,6 +113,9 @@
   /* "python.linting.pylintPath": "~/.local/bin/pylint", */
   // "python.linting.pylintEnabled": true,
   // "python.jediPath": "~/.local/lib/python3.8/site-packages",
+  // Python coc-pyright
+  "pyright.enable":  true, 
+  "pyright.inlayHints.variableTypes": false, 
 
   // Snippets
   "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
