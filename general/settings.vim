@@ -202,6 +202,19 @@ autocmd Filetype js set foldcolumn=1                          " defines 1 col at
 autocmd Filetype js let javaScript_fold=1                     " activate folding by JS syntax
 autocmd Filetype js set foldlevelstart=99                     " start file with all folds opened
 
+" vimwiki Settings
+" au BufNewFile,BufRead *.jsx setlocal filetype=vimwiki
+autocmd Filetype vimwiki setlocal ts=2 sw=2 sts=2 expandtab
+autocmd Filetype vimwiki set tabstop=2                             " a hard TAB displays as 2 columns
+autocmd Filetype vimwiki set softtabstop=2                         " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype vimwiki set shiftwidth=2                          " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype vimwiki set expandtab                             " insert spaces when hitting TABs
+autocmd Filetype vimwiki set shiftround                            " round indent to multiple of 'shiftwidth'
+" autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype vimwiki set foldmethod=indent                     " syntax highlighting items specify folds
+autocmd Filetype vimwiki set foldcolumn=1                          " defines 1 col at window left, to indicate folding
+autocmd Filetype vimwiki let javaScript_fold=1                     " activate folding by vimwiki syntax
+autocmd Filetype vimwiki set foldlevelstart=99                     " start file with all folds opened
 
 
 " for js/coffee:w/jade files, 4 spaces
