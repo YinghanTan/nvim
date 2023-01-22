@@ -116,7 +116,7 @@
   // Python coc-pyright
   "pyright.enable":  true, 
   "pyright.inlayHints.variableTypes": false, 
-
+  "pyright.inlayHints.typeHints.enable": false,
   // Snippets
   "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
   "snippets.editSnippetsCommand": "vsplit",
