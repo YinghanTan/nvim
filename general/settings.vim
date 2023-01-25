@@ -204,10 +204,10 @@ autocmd Filetype js set foldlevelstart=99                     " start file with 
 
 " vimwiki Settings
 " au BufNewFile,BufRead *.jsx setlocal filetype=vimwiki
-autocmd Filetype vimwiki setlocal ts=2 sw=2 sts=2 expandtab
-autocmd Filetype vimwiki set tabstop=2                             " a hard TAB displays as 2 columns
-autocmd Filetype vimwiki set softtabstop=2                         " insert/delete 2 spaces when hitting a TAB/BACKSPACE
-autocmd Filetype vimwiki set shiftwidth=2                          " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype vimwiki set tabstop=4                             " a hard TAB displays as 4 columns
+autocmd Filetype vimwiki set softtabstop=4                         " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype vimwiki set shiftwidth=4                          " operation >> indents 4 columns; << unindents 4 columns
 autocmd Filetype vimwiki set expandtab                             " insert spaces when hitting TABs
 autocmd Filetype vimwiki set shiftround                            " round indent to multiple of 'shiftwidth'
 " autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
