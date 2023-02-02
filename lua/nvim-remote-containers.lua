@@ -136,7 +136,7 @@ local y_mappings = {
 
 
 local mappings = {
-    -- ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
+    ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
     ["."] = { "<cmd>e $MYVIMRC<cr>", "open init" },
     [";"] = { "<cmd>Telescope commands<CR>", "commands" },
     ["\\"] = {
@@ -236,10 +236,10 @@ local mappings = {
             z = { "<cmd>CocCommand git.foldUnchanged<cr>", "fold unchanged" },
             f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
             j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
+            b = { "<cmd>:/>>>>>>>/;?<<<<<<<?,.g/^\\(<<<<<<<\\|=======\\|>>>>>>>\\)/d<CR>", "diffget both" },
             -- f = { "<cmd>diffget LOCAL<Bar>diffupdate<CR>", "diffget left hunk" },
             -- j = { "<cmd>diffget REMOTE<Bar>diffupdate<CR>", "diffget right hunk" },
             -- g = { "<cmd>diffget BASE<Bar>diffupdate<CR>", "diffget base" },
-            b = { "<cmd>:/>>>>>>>/;?<<<<<<<?,.g/^\\(<<<<<<<\\|=======\\|>>>>>>>\\)/d<CR>", "diffget both" },
         },
         G = { "<cmd>FloatermNew lazygit<CR>", "gui" },
         h = { "<cmd>0Gclog<cr>", "file history" },
@@ -390,7 +390,7 @@ local mappings = {
             m = { "<cmd>Telescope git_status<cr>", "modified files" },
             s = { "<cmd>Telescope git_stash<cr>", "stash" },
         },
-        z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fzf file" },
+        -- z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fzf file" },
     },
 
     t = {

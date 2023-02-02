@@ -69,6 +69,7 @@ luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
+luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/lsp-config.lua

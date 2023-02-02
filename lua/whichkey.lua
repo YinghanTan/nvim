@@ -68,37 +68,6 @@ local setup = {
     },
 }
 
-local opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = false, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap`
-    nowait = true, -- use `nowait` when creating keympas
-}
-
-local m_opts = {
-    mode = "n", -- NORMAL mode
-    prefix = "m",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = true, -- use `silent` when creating keymaps
-    noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
-}
-
-local m_mappings = {
-    a = { "<cmd>BookmarkAnnotate<cr>", "annotate" },
-    c = { "<cmd>BookmarkClear<cr>", "clear" },
-    m = { "<cmd>BookmarkToggle<cr>", "toggle" },
-    -- h = { "<cmd>BookmarkNext<cr>", "Next" },
-    j = { "<cmd>BookmarkNext<cr>", "next" },
-    k = { "<cmd>BookmarkPrev<cr>", "prev" },
-    s = {
-        "<cmd>lua require('telescope').extensions.vim_bookmarks.all({ hide_filename=false, prompt_title=\"bookmarks\", shorten_path=false })<cr>",
-        "show",
-    },
-    x = { "<cmd>BookmarkClearAll<cr>", "clear all" },
-}
 
 local y_opts = {
     mode = "n", -- NORMAL mode
@@ -134,6 +103,14 @@ local y_mappings = {
 }
 
 
+local opts = {
+    mode = "n", -- NORMAL mode
+    prefix = "<leader>",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = false, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap`
+    nowait = true, -- use `nowait` when creating keympas
+}
 
 local mappings = {
     ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },

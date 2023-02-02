@@ -154,6 +154,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
 
+    " Docker
+    Plug 'jamestthompson3/nvim-remote-containers'
+
     "sindrets/diffview.nvim",
     "folke/trouble.nvim",
     "dccsillag/magma-nvim",
