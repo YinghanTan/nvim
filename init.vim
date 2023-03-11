@@ -11,6 +11,7 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/dracula.vim
 " luafile $HOME/.config/nvim/lua/tokyonight.lua
+luafile $HOME/.config/nvim/lua/dracula.lua
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim
@@ -51,16 +52,16 @@ source $HOME/.config/nvim/plug-config/gist.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
-source $HOME/.config/nvim/plug-config/vim-zoom.vim
+source $HOME/.config/nvim/plug-config/zoomwintab.vim
 source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/scripts.vim
+" source $HOME/.config/nvim/plug-config/vim-zoom.vim
 
 " --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
-" luafile $HOME/.config/nvim/lua/numb.lua
 luafile $HOME/.config/nvim/lua/vim-matchup.lua
 luafile $HOME/.config/nvim/lua/todo-comments.lua
 luafile $HOME/.config/nvim/lua/gitlinker.lua
@@ -70,6 +71,8 @@ luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
+" luafile $HOME/.config/nvim/lua/neozoom.lua
+" luafile $HOME/.config/nvim/lua/numb.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/lsp-config.lua

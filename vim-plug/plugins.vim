@@ -15,6 +15,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     " Plug 'dracula/vim', { 'as': 'dracula' }
+    Plug 'Mofiqul/dracula.nvim'
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
@@ -142,7 +143,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline-themes' " Status Line theme
     " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim' " highlight the different todo comments
-    Plug 'dhruvasagar/vim-zoom' " Zoom Window
+    " Plug 'dhruvasagar/vim-zoom' " Zoom Window
+    " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
+    Plug 'troydm/zoomwintab.vim' " Zoom Window
 
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

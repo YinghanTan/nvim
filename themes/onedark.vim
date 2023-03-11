@@ -81,3 +81,6 @@ hi GitDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
 " #2D435D
 " |||||| #3D4045
 " #31343A
+
+" --- remove background color from popup menu
+highlight Pmenu ctermbg=none guibg=none

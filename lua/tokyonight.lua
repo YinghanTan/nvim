@@ -1,7 +1,7 @@
 -- Reference
 -- https://github.com/phaazon/hop.nvim#using-vim-plug
 
-local status_ok, tokyonight = pcall(require, "hop")
+local status_ok, tokyonight = pcall(require, "tokyonight")
 if not status_ok then
   return
 end

@@ -155,6 +155,13 @@ autocmd Filetype html set foldmethod=indent "syntax highlighting items specify f
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
+" lua
+autocmd Filetype lua setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype lua set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype lua set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype lua set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype lua set shiftround    " round indent to multiple of 'shiftwidth'
+autocmd Filetype lua set foldmethod=indent "syntax highlighting items specify folds
 
 au BufNewFile,BufRead *.handlebars setlocal filetype=jst
 au BufNewFile,BufRead *.ejs set filetype=jst
