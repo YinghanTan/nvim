@@ -8,11 +8,11 @@ source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 
 " Themes
-" source $HOME/.config/nvim/themes/onedark.vim
+source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/dracula.vim
 " luafile $HOME/.config/nvim/lua/tokyonight.lua
-luafile $HOME/.config/nvim/lua/dracula.lua
-source $HOME/.config/nvim/themes/theme.vim
+" luafile $HOME/.config/nvim/lua/dracula.lua
+" source $HOME/.config/nvim/themes/theme.vim
 
 " Status Line
 source $HOME/.config/nvim/themes/airline.vim

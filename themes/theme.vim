@@ -19,6 +19,7 @@ if !exists('g:loaded_color')
   colorscheme dracula
 endif
 
+" --- Diff Colors ---
 
 hi DiffAdd gui=none guifg=none guibg=#2D4B4C
 hi DiffChange gui=none guifg=none guibg=#2D435D
@@ -63,5 +64,5 @@ hi GitDiffBase gui=bold guifg=#FFFFFF guibg=#31343B
 " |||||| #3D4045
 " #31343A
 
-" --- remove background color from popup menu
-highlight Pmenu ctermbg=none guibg=none
+" " --- remove background color from popup menu
+" highlight Pmenu ctermbg=none guibg=none
