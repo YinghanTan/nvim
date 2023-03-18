@@ -62,7 +62,8 @@ treesitter_configs.setup({
                 ['af'] = '@function.outer',
                 ['if'] = '@function.inner',
                 ['ac'] = '@class.outer',
-                ['ic'] = '@class.inner',
+                ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+                ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
             },
         },
         move = {
@@ -88,10 +89,10 @@ treesitter_configs.setup({
         swap = {
             enable = true,
             swap_next = {
-                ['<leader>a'] = '@parameter.inner',
+                ["<leader>a"] = "@parameter.inner",
             },
             swap_previous = {
-                ['<leader>A'] = '@parameter.inner',
+                ["<leader>A"] = "@parameter.inner",
             },
         },
     },
