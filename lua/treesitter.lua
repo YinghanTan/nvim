@@ -1,4 +1,4 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
+local status_ok, treesitter_configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
     return
 end
@@ -6,19 +6,20 @@ end
 -- local ft_to_parser = require "nvim-treesitter.parsers".filetype_to_parsername
 -- ft_to_parser.motoko = "typescript"
 
-configs.setup({
+treesitter_configs.setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { "c", "lua", "vim", "help", "query" },
+    ensure_installed = { 'c', 'lua', 'vim', 'help', 'query', 'go', 'python', 'rust', 'typescript', 'javascript', 'css',
+        'html' },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- Automatically install missing parsers when entering buffer
     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
     auto_install = true,
     -- List of parsers to ignore installing (for "all")
-    ignore_install = { "smali" },
+    ignore_install = { 'smali' },
     highlight = {
-        enable = true,    -- false will disable the whole extension
-        disable = { "" }, -- list of language that will be disabled
+        enable = true, -- false will disable the whole extension
+        disable = {},  -- list of language that will be disabled
         additional_vim_regex_highlighting = false,
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
@@ -51,7 +52,48 @@ configs.setup({
         },
     },
     textobjects = {
-        enable = true
+        select = {
+            enable = true,
+            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+            keymaps = {
+                -- You can use the capture groups defined in textobjects.scm
+                ['aa'] = '@parameter.outer',
+                ['ia'] = '@parameter.inner',
+                ['af'] = '@function.outer',
+                ['if'] = '@function.inner',
+                ['ac'] = '@class.outer',
+                ['ic'] = '@class.inner',
+            },
+        },
+        move = {
+            enable = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+                [']m'] = '@function.outer',
+                [']]'] = '@class.outer',
+            },
+            goto_next_end = {
+                [']M'] = '@function.outer',
+                [']['] = '@class.outer',
+            },
+            goto_previous_start = {
+                ['[m'] = '@function.outer',
+                ['[['] = '@class.outer',
+            },
+            goto_previous_end = {
+                ['[M'] = '@function.outer',
+                ['[]'] = '@class.outer',
+            },
+        },
+        swap = {
+            enable = true,
+            swap_next = {
+                ['<leader>a'] = '@parameter.inner',
+            },
+            swap_previous = {
+                ['<leader>A'] = '@parameter.inner',
+            },
+        },
     },
     -- autopairs = {
     --     enable = true,
@@ -64,6 +106,7 @@ configs.setup({
     --     enable = true,
     --     disable = { "xml" },
     -- },
+
 })
 
 

@@ -156,12 +156,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Treesitter
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'nvim-treesitter/playground'
     Plug 'romgrk/nvim-treesitter-context'
     Plug 'p00f/nvim-ts-rainbow' " Rainbow parentheses for neovim using tree-sitter
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-ts-autotag'
-    Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
 
     " Docker
