@@ -350,12 +350,14 @@ local mappings = {
         A = { "<cmd>Telescope builtin<cr>", "all" },
         b = { "<cmd>Telescope buffers<cr>", "buffers" },
         B = { "<cmd>Telescope bookmarks<cr>", "Bookmarks" },
-        d = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
+        d = { "<cmd>lua require('utils.finder').find_dotfiles()<cr>", "Dotfiles" },
+        D = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
 
-        f = { "<cmd>lua require('fzf-lua').files()<cr>", "find file" },
-        -- f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
+        f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
+        -- f = { "<cmd>lua require('utils.finder').find_files()<cr>", "find file" },
+        -- f = { "<cmd>lua require('fzf-lua').files()<cr>", "find file" },
         -- f = { "<cmd>Files<cr>", "find file" },
         -- f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
 
@@ -369,6 +371,7 @@ local mappings = {
         k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
         m = { "<cmd>Telescope marks<cr>", "marks" },
         M = { "<cmd>Telescope man_pages<cr>", "man pages" },
+        p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "Project" },
         q = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "quickfix" },
         l = { "<cmd>lua require('telescope.builtin').loclist()<cr>", "loc list" },
         r = { "<cmd>Telescope registers<cr>", "Registers" },
@@ -376,8 +379,9 @@ local mappings = {
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
 
-        t = { "<cmd>lua require('fzf-lua').grep_project<cr>", "text" },
+        -- t = { "<cmd>lua require('fzf-lua').grep_project()<cr>", "text" },
         -- t = { "<cmd>Telescope live_grep<cr>", "find text" },
+        t = { "<cmd>Telescope grep_string<cr>", "find text" },
         -- t = { "<cmd>RG<cr>", "text" },
 
         T = { "<cmd>TodoTelescope<cr>", "Todos" },
@@ -516,4 +520,5 @@ which_key.register(vmappings, vopts)
 -- which_key.register(m_mappings, m_opts)
 
 
+-- testing1234
 -- something new

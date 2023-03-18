@@ -462,7 +462,7 @@ set diffopt=vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:pa
 " --- --- ---
 
 
-" --- Shada ---
-set shadafile=$HOME/.config/nvim/shada/main.shada
-set shada=!,'100,<100,s100,h,f1,/10000,:10000 
-set updatetime=10000
+" " --- Shada ---
+" set shadafile=$HOME/.config/nvim/shada/main.shada
+" set shada=!,'100,<100,s100,h,f1,/10000,:10000 
+" set updatetime=10000

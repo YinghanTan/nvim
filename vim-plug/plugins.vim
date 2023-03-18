@@ -106,8 +106,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
     Plug 'nvim-telescope/telescope-fzy-native.nvim'
+    Plug 'nvim-telescope/telescope-project.nvim'
+    Plug 'cljoly/telescope-repo.nvim'
+    Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-telescope/telescope-ui-select.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
+    Plug 'ahmedkhalf/project.nvim'
     Plug 'dhruvmanila/telescope-bookmarks.nvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'LinArcX/telescope-env.nvim'

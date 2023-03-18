@@ -14,7 +14,6 @@ luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 
 " Status Line
 luafile $HOME/.config/nvim/lua/lua-line.lua
-luafile $HOME/.config/nvim/lua/fzf-lua.lua
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -34,8 +33,6 @@ source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 
 
-" source $HOME/.config/nvim/plug-config/fzf.vim
-" source $HOME/.config/nvim/plug-config/fzfPreview.vim
 
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
@@ -71,7 +68,12 @@ luafile $HOME/.config/nvim/lua/todo-comments.lua
 luafile $HOME/.config/nvim/lua/gitlinker.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
+
 luafile $HOME/.config/nvim/lua/_telescope.lua
+luafile $HOME/.config/nvim/lua/fzf-lua.lua
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/fzfPreview.vim
+
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
