@@ -129,9 +129,6 @@ telescope.setup({
                 },
             },
         },
-        projects = {
-
-        },
         ["ui-select"] = {
             require("telescope.themes").get_dropdown({
                 previewer = false,

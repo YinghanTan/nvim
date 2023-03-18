@@ -111,7 +111,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-telescope/telescope-ui-select.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
-    Plug 'ahmedkhalf/project.nvim'
+    " Plug 'ahmedkhalf/project.nvim'
     Plug 'dhruvmanila/telescope-bookmarks.nvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'LinArcX/telescope-env.nvim'

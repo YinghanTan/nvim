@@ -12,14 +12,18 @@ nvim_tree.setup({
   disable_netrw = false,
   hijack_netrw = false,
   hijack_cursor = true,
-  sync_root_with_cwd = true,
-  respect_buf_cwd = true,
-  update_focused_file = {
-    enable = true,
-    update_root = true,
-    ignore_list = { "help" },
-    update_cwd = true
-  },
+  respect_buf_cwd = false,
+
+
+  -- sync_root_with_cwd = false,
+  -- update_focused_file = {
+  --   enable = false,
+  --   update_root = false,
+  --   ignore_list = { "help" },
+  --   update_cwd = false
+  -- },
+
+
   diagnostics = {
     enable = true,
     show_on_dirs = true,
@@ -46,6 +50,4 @@ nvim_tree.setup({
     number = true,
     relativenumber = true
   },
-  update_cwd = true,
 })
-vim.g.nvim_tree_respect_buf_cwd = 1

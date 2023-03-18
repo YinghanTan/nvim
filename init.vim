@@ -59,7 +59,7 @@ source $HOME/.config/nvim/plug-config/zoomwintab.vim
 " source $HOME/.config/nvim/plug-config/vim-zoom.vim
 
 " --- Lua Plugins ---
-luafile $HOME/.config/nvim/lua/project-nvim.lua
+" luafile $HOME/.config/nvim/lua/project-nvim.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
