@@ -15,13 +15,12 @@ nvim_tree.setup({
   respect_buf_cwd = false,
 
 
-  -- sync_root_with_cwd = false,
-  -- update_focused_file = {
-  --   enable = false,
-  --   update_root = false,
-  --   ignore_list = { "help" },
-  --   update_cwd = false
-  -- },
+  sync_root_with_cwd = false,
+  update_focused_file = {
+    enable = false,
+    update_root = false,
+    ignore_list = {},
+  },
 
 
   diagnostics = {
