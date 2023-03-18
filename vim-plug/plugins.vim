@@ -83,7 +83,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mbbill/undotree' " Undo Time Travel
     Plug 'ChristianChiarulli/far.vim' " Find and Replace
     Plug 'mhinz/vim-grepper' " Handle multi-file find and replace.
-    Plug 'scrooloose/nerdtree' " File Explorer SideBar
+
+    Plug 'nvim-tree/nvim-tree.lua' " A File Explorer For Neovim Written In Lua
+    " Plug 'scrooloose/nerdtree' " File Explorer SideBar
+
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
     Plug 'puremourning/vimspector' " Debugger
