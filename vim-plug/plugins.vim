@@ -12,10 +12,8 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Theme
-    Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
-    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-    " Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'Mofiqul/dracula.nvim'
+    Plug 'navarasu/onedark.nvim' " Dark and Light Themes for neovim >= 0.5 based on Atom One Dark & Atom One Light theme written in lua with TreeSitter syntax highlight.
+    " Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
@@ -136,11 +134,17 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tomtom/tlib_vim'
 
 
+
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
+
+    Plug 'nvim-tree/nvim-web-devicons' 
     Plug 'ryanoasis/vim-devicons' "Cool icons
+
     Plug 'norcalli/nvim-colorizer.lua' " colorizer
-    Plug 'vim-airline/vim-airline' " Status Line
-    Plug 'vim-airline/vim-airline-themes' " Status Line theme
+    
+    Plug 'nvim-lualine/lualine.nvim' " A blazing fast and easy to configure Neovim statusline written in Lua.
+    " Plug 'vim-airline/vim-airline' " Status Line
+    " Plug 'vim-airline/vim-airline-themes' " Status Line theme
     " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim' " highlight the different todo comments
     " Plug 'dhruvasagar/vim-zoom' " Zoom Window
@@ -175,6 +179,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     " Plug 'szw/vim-maximizer' " Zoom window
     " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
+    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    " Plug 'Mofiqul/dracula.nvim'
 
 call plug#end()
 

@@ -10,18 +10,17 @@ if !exists('g:syntax_on')
   syntax on
 endif
 
-if !exists('g:loaded_color')
-  let g:loaded_color = 1
-
-  set background=dark
-  " Put your favorite colorscheme here
-  " colorscheme onedark
-  colorscheme dracula
-endif
+" if !exists('g:loaded_color')
+"   let g:loaded_color = 1
+"   set background=dark
+"   " Put your favorite colorscheme here
+"   colorscheme onedark
+"   " colorscheme dracula
+" endif
 
 " --- Diff Colors ---
 
-hi DiffAdd gui=none guifg=none guibg=#2D4B4C
+hi DiffAdd gui=none guifg=#FFFFFF guibg=#2D4B4C
 hi DiffChange gui=none guifg=none guibg=#2D435D
 hi DiffText gui=none guifg=#FFFFFF guibg=#33699A
 hi DiffDelete gui=none guifg=#B44A34 guibg=none " as a key to the music opposite for 

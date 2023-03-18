@@ -8,14 +8,14 @@ source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 
 " Themes
-source $HOME/.config/nvim/themes/onedark.vim
-" source $HOME/.config/nvim/themes/dracula.vim
-" luafile $HOME/.config/nvim/lua/tokyonight.lua
-" luafile $HOME/.config/nvim/lua/dracula.lua
-" source $HOME/.config/nvim/themes/theme.vim
+" source $HOME/.config/nvim/themes/onedark.vim
+luafile $HOME/.config/nvim/lua/one-dark.lua
+source $HOME/.config/nvim/themes/theme.vim
+luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 
 " Status Line
-source $HOME/.config/nvim/themes/airline.vim
+" luafile $HOME/.config/nvim/lua/lua-line.lua
+" source $HOME/.config/nvim/themes/airline.vim
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -109,6 +109,9 @@ luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
 " source $HOME/.config/nvim/keys/which-key.vim
+" source $HOME/.config/nvim/themes/dracula.vim
+" luafile $HOME/.config/nvim/lua/tokyonight.lua
+" luafile $HOME/.config/nvim/lua/dracula.lua
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm
