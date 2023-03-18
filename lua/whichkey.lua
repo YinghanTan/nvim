@@ -353,9 +353,12 @@ local mappings = {
         d = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
-        -- f = { "<cmd>Telescope find_files<cr>", "find file" },
-        f = { "<cmd>Files<cr>", "find file" },
+
+        f = { "<cmd>lua require('fzf-lua').files()<cr>", "find file" },
+        -- f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
+        -- f = { "<cmd>Files<cr>", "find file" },
         -- f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
+
         h = { "<cmd>Telescope oldfiles<cr>", "files history" },
         H = { "<cmd>Telescope command_history<cr>", "command history" },
         -- i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "diagnostics" },
@@ -372,8 +375,11 @@ local mappings = {
         R = { "<cmd>Telescope resume<cr>", "Resume" },
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
+
+        t = { "<cmd>lua require('fzf-lua').grep_project<cr>", "text" },
         -- t = { "<cmd>Telescope live_grep<cr>", "find text" },
-        t = { "<cmd>RG<cr>", "text" },
+        -- t = { "<cmd>RG<cr>", "text" },
+
         T = { "<cmd>TodoTelescope<cr>", "Todos" },
         u = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
         w = { "<cmd>Telescope tele_tabby list<cr>", "windows" },

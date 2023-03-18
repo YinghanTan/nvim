@@ -14,6 +14,7 @@ luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 
 " Status Line
 luafile $HOME/.config/nvim/lua/lua-line.lua
+luafile $HOME/.config/nvim/lua/fzf-lua.lua
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -33,9 +34,11 @@ source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 
 
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/fzfPreview.vim
+
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
@@ -46,7 +49,6 @@ source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
-source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/gist.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
