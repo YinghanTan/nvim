@@ -32,7 +32,6 @@ source $HOME/.config/nvim/plug-config/git-messenger.vim
 source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 
-luafile $HOME/.config/nvim/lua/nvim-tree.lua
 
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
@@ -61,6 +60,7 @@ source $HOME/.config/nvim/plug-config/zoomwintab.vim
 " source $HOME/.config/nvim/plug-config/vim-zoom.vim
 
 " --- Lua Plugins ---
+luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua

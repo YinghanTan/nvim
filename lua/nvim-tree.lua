@@ -8,4 +8,36 @@ vim.opt.termguicolors = true
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 
 nvim_tree.setup({
+    auto_reload_on_write = true,
+    disable_netrw = false,
+    hijack_netrw = false,
+    hijack_cursor = true,
+    sync_root_with_cwd = true,
+    update_focused_file = {
+      enable = true,
+      update_root = true,
+      ignore_list = { "help" },
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+    },
+    filters = {
+        custom = {
+            "^.git$",
+        },
+    },
+    log = {
+      enable = false,
+      truncate = true,
+      types = {
+        all = false,
+        config = false,
+        copy_paste = false,
+        diagnostics = false,
+        git = false,
+        profile = false,
+        watcher = false,
+      },
+    },
 })

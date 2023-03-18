@@ -115,3 +115,19 @@ treesitter_configs.setup({
 -- :TSInstall all -- outside of tmux
 -- :TSUpdate all
 -- :TSUpdateSync all
+
+local ts_repeat_move_status_ok, ts_repeat_move = pcall(require, "nvim-treesitter.textobjects.repeatable_move")
+if not ts_repeat_move_status_ok then
+    return
+end
+-- repeat movement with ; and ,
+-- ensure ; goes forward and , goes backward regardless of the last direction
+vim.keymap.set({ "n", "x", "o"  }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o"  }, ";", ts_repeat_move.repeat_last_move_previous)
+
+-- Optionally, make builtin f, F, t, T also repeatable with ; and ,
+vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+
