@@ -14,7 +14,7 @@ source $HOME/.config/nvim/themes/theme.vim
 luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 
 " Status Line
-" luafile $HOME/.config/nvim/lua/lua-line.lua
+luafile $HOME/.config/nvim/lua/lua-line.lua
 " source $HOME/.config/nvim/themes/airline.vim
 
 " COC

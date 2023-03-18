@@ -1,38 +1,62 @@
-local status_ok, onedark = pcall(require, "onedark")
+local status_ok, lualine = pcall(require, "lualine")
 
-onedark.setup({
-    -- Main options --
-    style = 'light',                                                                    -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-    transparent = false,                                                                 -- Show/hide background
-    term_colors = true,                                                                  -- Change terminal color as per the selected theme style
-    ending_tildes = false,                                                               -- Show the end-of-buffer tildes, By default they are hidden
-    cmp_itemkind_reverse = false,                                                        -- reverse item kind highlights in cmp menu
-    -- toggle theme style --
-    toggle_style_key = nil,                                                              -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-    toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
-    -- Change code style --
-    -- Options are italic, bold, underline none
-    -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
-    code_style = {
-        comments = 'none',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none'
+lualine.setup({
+    options = {
+        icons_enabled = true,
+        theme = 'auto', -- auto is a special theme. It will automatically load theme for your colorscheme. If there's no theme available for your colorscheme then it'll try it's best to generate one.
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
+        disabled_filetypes = {
+            -- Filetypes to disable lualine for. --
+            statusline = {}, -- only ignores the ft for statusline.
+            winbar = {},     -- only ignores the ft for winbar.
+        },
+        ignore_focus = {},
+        -- If current filetype is in this list it'll
+        -- always be drawn as inactive statusline
+        -- and the last window will be drawn as active statusline.
+        -- for example if you don't want statusline of
+        -- your file tree / sidebar window to have active
+        -- statusline you can add their filetypes here.
+        always_divide_middle = true,
+        -- When set to true, left sections i.e. 'a','b' and 'c'
+        -- can't take over the entire statusline even
+        -- if neither of 'x', 'y' or 'z' are present.
+        globalstatus = false,
+        -- enable global statusline (have a single statusline
+        -- at bottom of neovim instead of one for  every window).
+        -- This feature is only available in neovim 0.7 and higher.
+        refresh = {
+            -- sets how often lualine should refresh it's contents (in ms) --
+            statusline = 1000,
+            tabline = 1000,
+            winbar = 1000
+            -- The refresh option sets minimum time that lualine tries
+            -- to maintain between refresh. It's not guarantied if situation
+            -- arises that lualine needs to refresh itself before this time
+            -- it'll do it.
+            -- Also you can force lualine's refresh by calling refresh function
+            -- like require('lualine').refresh()
+        }
     },
-    -- Lualine options --
-    lualine = {
-        transparent = false, -- lualine center bar transparency
+    sections = {
+        lualine_a = { { 'mode', fmt = function(str) return str:sub(1, 1) end } },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
     },
-    -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
-    -- Plugins Config --
-    diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true, -- use undercurl instead of underline for diagnostics
-        background = true, -- use background color for virtual text
-    }
+    inactive_sections = {
+        lualine_a = {},
+        lualine_b = {},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
+        lualine_y = {},
+        lualine_z = {},
+    },
+    tabline = {},
+    winbar = {},
+    inactive_winbar = {},
+    extensions = {}
 })
-
-onedark.load()
