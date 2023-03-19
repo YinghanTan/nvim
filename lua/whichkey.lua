@@ -277,8 +277,12 @@ local mappings = {
         c = { "<cmd>CocCommand rest-client.request<cr>", "api client" },
         f = { "<plug>(coc-format)<cr>", "format" },
         F = { "<plug>(coc-format-selected)<cr>", "format selected" },
+
+        -- i = { "<cmd>lua require('telescope.builtin').diagnostics({ bufnr=0 })<cr>", "diagnostics" },
+        -- I = { "<cmd>lua require('telescope.builtin').diagnostics()<cr>", "all diagnostics" },
         i = { "<cmd>CocCommand fzf-preview.CocCurrentDiagnostics<cr>", "diagnostics" },
         I = { "<cmd>CocCommand fzf-preview.CocDiagnostics<cr>", "all diagnostics" },
+
         o = { "<cmd>call CocAction('runCommand', 'editor.action.organizeImport')<cr>", "organise imports" },
         r = { "<plug>(coc-rename)<cr>", "rename" },
         R = { "<plug>(coc-refactor)<cr>", "refactor" },
@@ -295,8 +299,8 @@ local mappings = {
         },
         t = {
             name = "latex",
-            c = { "<cmd>CocFzfList -I symbols<cr>", "latex info" },
-            e = { "<cmd>CocFzfList -I symbols<cr>", "latex compile" },
+            -- c = { "<cmd>CocFzfList -I symbols<cr>", "latex info" },
+            -- e = { "<cmd>CocFzfList -I symbols<cr>", "latex compile" },
         },
     },
     -- l = { -- Neovim builtin LSP
@@ -353,7 +357,6 @@ local mappings = {
         d = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
-
         -- f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
         -- f = { "<cmd>lua require('utils.finder').find_files()<cr>", "find file" },
@@ -361,10 +364,14 @@ local mappings = {
 
         h = { "<cmd>Telescope oldfiles<cr>", "files history" },
         H = { "<cmd>Telescope command_history<cr>", "command history" },
+
         -- i = { "<cmd>Telescope diagnostics bufnr=0<cr>", "diagnostics" },
         -- I = { "<cmd>Telescope diagnostics<cr>", "all diagnostics" },
-        i = { "<cmd>CocCommand fzf-preview.CocCurrentDiagnostics<cr>", "diagnostics" },
-        I = { "<cmd>CocCommand fzf-preview.CocDiagnostics<cr>", "all diagnostics" },
+        -- i = { "<cmd>CocCommand fzf-preview.CocCurrentDiagnostics<cr>", "diagnostics" },
+        -- I = { "<cmd>CocCommand fzf-preview.CocDiagnostics<cr>", "all diagnostics" },
+        i = { "<cmd>lua require('telescope.builtin').diagnostics({ bufnr=0 })<cr>", "diagnostics" },
+        I = { "<cmd>lua require('telescope.builtin').diagnostics()<cr>", "all diagnostics" },
+
         j = { "<cmd>Telescope jumplist<cr>", "jumplist" },
         k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
         m = { "<cmd>Telescope marks<cr>", "marks" },
@@ -376,7 +383,6 @@ local mappings = {
         R = { "<cmd>Telescope resume<cr>", "Resume" },
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
-
         t = { "<cmd>Telescope live_grep search_dirs=.<cr>", "find text" },
         -- t = { "<cmd>Telescope grep_string<cr>", "find text" },
         -- t = { "<cmd>RG<cr>", "text" },

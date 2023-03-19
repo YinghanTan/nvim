@@ -17,6 +17,7 @@ telescope.setup({
         path_display = { "smart" },
         initial_mode = "insert",
         sorting_strategy = "ascending",
+        file_ignore_patterns = { "^.git/" },
         layout_config = {
             horizontal = {
                 prompt_position = "top",
@@ -40,15 +41,10 @@ telescope.setup({
                 ["<C-c>"]      = actions.close,
                 ["<Down>"]     = actions.move_selection_next,
                 ["<Up>"]       = actions.move_selection_previous,
-                -- ["<C-v>"] = telescope_custom_actions.multi_selection_open_vsplit,
-                -- ["<C-x>"] = telescope_custom_actions.multi_selection_open_split,
-                -- ["<C-t>"] = telescope_custom_actions.multi_selection_open_tab,
-
                 ['<C-v>']      = multiopen.i['<C-v>'],
                 ['<C-x>']      = multiopen.i['<C-s>'],
                 ['<C-t>']      = multiopen.i['<C-t>'],
                 ['<CR>']       = multiopen.i['<CR>'],
-
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
                 ["<PageUp>"]   = actions.results_scrolling_up,
@@ -63,16 +59,10 @@ telescope.setup({
             },
             n = {
                 ["<esc>"]      = actions.close,
-                -- ["<CR>"] = actions.select_default,
-                -- ["<C-v>"] = telescope_custom_actions.multi_selection_open_vsplit,
-                -- ["<C-x>"] = telescope_custom_actions.multi_selection_open_split,
-                -- ["<C-t>"] = telescope_custom_actions.multi_selection_open_tab,
-
                 ['<C-v>']      = multiopen.i['<C-v>'],
                 ['<C-x>']      = multiopen.i['<C-s>'],
                 ['<C-t>']      = multiopen.i['<C-t>'],
                 ['<CR>']       = multiopen.i['<CR>'],
-
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
                 ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
@@ -103,6 +93,9 @@ telescope.setup({
         -- }
         -- Now the picker_config_key will be applied every time you call this
         -- builtin picker
+        find_files = {
+            hidden = true
+        },
     },
     extensions = {
         -- Your extension configuration goes here:
