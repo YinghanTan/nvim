@@ -16,10 +16,10 @@ luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 luafile $HOME/.config/nvim/lua/lua-line.lua
 
 " COC
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-source $HOME/.config/nvim/plug-config/cocSnippets.vim
-source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" source $HOME/.config/nvim/plug-config/coc/coc.vim
+" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" source $HOME/.config/nvim/plug-config/cocSnippets.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -42,8 +42,6 @@ source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
-source $HOME/.config/nvim/plug-config/vim-rooter.vim
-source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
@@ -71,9 +69,6 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 
 luafile $HOME/.config/nvim/lua/_telescope.lua
-" luafile $HOME/.config/nvim/lua/fzf-lua.lua
-" source $HOME/.config/nvim/plug-config/fzf.vim
-" source $HOME/.config/nvim/plug-config/fzfPreview.vim
 
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
@@ -82,7 +77,9 @@ luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 
 " LSP
-" luafile $HOME/.config/nvim/lua/lsp-config.lua
+
+luafile $HOME/.config/nvim/lua/lsp-config.lua
+luafile $HOME/.config/nvim/lua/nvim-notify.lua
 " luafile $HOME/.config/nvim/lua/cmp.lua
 " luafile $HOME/.config/nvim/lua/dial.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim
@@ -121,6 +118,12 @@ luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
 " source $HOME/.config/nvim/themes/airline.vim
 " source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
+" luafile $HOME/.config/nvim/lua/vim-notify.lua
+" luafile $HOME/.config/nvim/lua/fzf-lua.lua
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/fzfPreview.vim
+" source $HOME/.config/nvim/plug-config/vim-rooter.vim
+" source $HOME/.config/nvim/plug-config/vimtex.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm

@@ -18,7 +18,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
-    Plug 'airblade/vim-rooter' " Have the file system follow you around
     Plug 'sheerun/vim-polyglot' " Better Syntax Support
     Plug 'wsdjeg/vim-fetch' " Fetch that line and column
     Plug 'tpope/vim-abolish' " change cases
@@ -31,6 +30,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'godlygeek/tabular' " Alignment and formatting
     " Plug 'monaqa/dial.nvim'  " Extended increment/decrement plugin
     " Plug 'kevinhwang91/nvim-bqf'  " Better quickfix window
+    Plug 'rcarriga/nvim-notify'
 
     " Navigation
     Plug 'phaazon/hop.nvim' " Navigation
@@ -41,8 +41,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'andymass/vim-matchup'  " operate on sets of matching text
 
     " " LSP
-    " Plug 'neovim/nvim-lspconfig' " enable LSP
-    " Plug 'williamboman/nvim-lsp-installer' " simple to use language server Installer
+    Plug 'neovim/nvim-lspconfig' " enable LSP
+    Plug 'williamboman/nvim-lsp-installer' " simple to use language server Installer
     " Plug 'tamago324/nlsp-settings.nvim' " language server settings defined in json
     " Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
     " Plug 'filipdutescu/renamer.nvim' " renaming UI for Neovim
@@ -57,9 +57,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
     " Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
-    " COC
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
+    " " COC
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    " Plug 'antoinemadec/coc-fzf'
 
 
     " Dart/Flutter
@@ -190,6 +190,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
     " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     " Plug 'Mofiqul/dracula.nvim'
+    " Plug 'airblade/vim-rooter' " Have the file system follow you around
 
 call plug#end()
 
