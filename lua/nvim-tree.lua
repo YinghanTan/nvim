@@ -52,3 +52,4 @@ nvim_tree.setup({
     relativenumber = true
   },
 })
+vim.g.nvim_tree_respect_buf_cwd = 1
