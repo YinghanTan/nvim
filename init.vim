@@ -71,7 +71,7 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 
 luafile $HOME/.config/nvim/lua/_telescope.lua
-luafile $HOME/.config/nvim/lua/fzf-lua.lua
+" luafile $HOME/.config/nvim/lua/fzf-lua.lua
 " source $HOME/.config/nvim/plug-config/fzf.vim
 " source $HOME/.config/nvim/plug-config/fzfPreview.vim
 

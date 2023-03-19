@@ -354,10 +354,9 @@ local mappings = {
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
 
-        f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
-        -- f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
+        -- f = { "<cmd>lua require'_telescope'.project_files()<cr>", "find files" },
+        f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
         -- f = { "<cmd>lua require('utils.finder').find_files()<cr>", "find file" },
-        -- f = { "<cmd>lua require('fzf-lua').files()<cr>", "find file" },
         -- f = { "<cmd>Files<cr>", "find file" },
 
         h = { "<cmd>Telescope oldfiles<cr>", "files history" },
@@ -378,9 +377,8 @@ local mappings = {
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
 
-        -- t = { "<cmd>lua require('fzf-lua').grep_project()<cr>", "text" },
-        -- t = { "<cmd>Telescope live_grep<cr>", "find text" },
-        t = { "<cmd>Telescope grep_string<cr>", "find text" },
+        t = { "<cmd>Telescope live_grep search_dirs=.<cr>", "find text" },
+        -- t = { "<cmd>Telescope grep_string<cr>", "find text" },
         -- t = { "<cmd>RG<cr>", "text" },
 
         T = { "<cmd>TodoTelescope<cr>", "Todos" },
