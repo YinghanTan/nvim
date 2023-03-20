@@ -21,7 +21,14 @@ function M.setup(servers, options)
     if server_available then
       server:on_ready(function()
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
-        server:setup(opts)
+
+        -- Check if server object exists
+        if server~=nil and type(server.setup) == "function" then
+          server:setup(opts)
+        else
+          print("Error: server object does not have a setup method")
+        end
+
       end)
 
       if not server:is_installed() then

@@ -19,7 +19,7 @@ luafile $HOME/.config/nvim/lua/lua-line.lua
 " source $HOME/.config/nvim/plug-config/coc/coc.vim
 " source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 " source $HOME/.config/nvim/plug-config/cocSnippets.vim
-" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" source HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim

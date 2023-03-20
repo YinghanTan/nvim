@@ -43,19 +43,24 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " " LSP
     Plug 'neovim/nvim-lspconfig' " enable LSP
     Plug 'williamboman/nvim-lsp-installer' " simple to use language server Installer
+    Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
     " Plug 'tamago324/nlsp-settings.nvim' " language server settings defined in json
     " Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
     " Plug 'filipdutescu/renamer.nvim' " renaming UI for Neovim
     " Plug 'simrat39/symbols-outline.nvim' " tree like view for symbols using LSP
-    " Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
     " Plug 'b0o/SchemaStore.nvim'
     " " Completion
-    " Plug 'hrsh7th/nvim-cmp' " Completion plugin
-    " Plug 'hrsh7th/cmp-buffer' " Buffer completion
-    " Plug 'hrsh7th/cmp-path' " Path completion
-    " Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
-    " Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
-    " Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
+    Plug 'L3MON4D3/LuaSnip' " Completion plugin
+    Plug 'rafamadriz/friendly-snippets' " Completion plugin
+    Plug 'hrsh7th/nvim-cmp' " Completion plugin
+    Plug 'hrsh7th/cmp-buffer' " Buffer completion
+    Plug 'hrsh7th/cmp-path' " Path completion
+    Plug 'hrsh7th/cmp-nvim-lua' " lua completion
+    Plug 'ray-x/cmp-treesitter' " tree-sitter completion
+    Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
+    Plug 'saadparwaiz1/cmp_luasnip' " luasnip completion
+    Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
     " " COC
     " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
@@ -67,7 +72,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'thosakwe/vim-flutter'
 
     " Snippets
-    Plug 'SirVer/ultisnips' " Ultisnips snippets
+    " Plug 'SirVer/ultisnips' " Ultisnips snippets
     Plug 'natebosch/dartlang-snippets'
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets

@@ -24,6 +24,7 @@ local function keymappings(client, bufnr)
       a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
       d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
       i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+      f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" },
 
 --         vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace - folder, opts)
 --         vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, opts)

@@ -32,28 +32,18 @@ local servers = {
         telemetry = { enable = false },
       },
     },
-    -- lua_ls = {
-    --   Lua = {
-    --     runtime = {
-    --       -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-    --       version = 'LuaJIT',
-    --     },
-    --     diagnostics = {
-    --       -- Get the language server to recognize the `vim` global
-    --       globals = {'vim'},
-    --     },
-    --     workspace = {
-    --       -- Make the server aware of Neovim runtime files
-    --       library = vim.api.nvim_get_runtime_file("", true),
-    --     },
-    --     -- Do not send telemetry data containing a randomized but unique identifier
-    --     workspace = { checkThirdParty = false },
-    --     telemetry = { enable = false },
-    --   },
-    -- },
     tsserver = {},
     vimls = {},
 }
+
+local lsp_signature = require "lsp_signature"
+lsp_signature.setup {
+  bind = true,
+  handler_opts = {
+    border = "rounded",
+  },
+}
+
 
 local function on_attach(client, bufnr)
     -- Enable completion triggered by <C-X><C-O>
@@ -68,8 +58,11 @@ local function on_attach(client, bufnr)
     require("config.lsp.keymaps").setup(client, bufnr)
 end
 
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()) -- for nvim-cmp
+
 local opts = {
     on_attach = on_attach,
+    capabilities = capabilities, -- for nvim-cmp
     flags = {
         debounce_text_changes = 150,
     },
