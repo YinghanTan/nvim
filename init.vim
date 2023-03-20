@@ -40,16 +40,16 @@ source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
-source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
-source $HOME/.config/nvim/plug-config/gist.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
-source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
+" source $HOME/.config/nvim/plug-config/autopairs.vim
+" source $HOME/.config/nvim/plug-config/gist.vim
+" source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/scripts.vim
 
