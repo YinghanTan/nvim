@@ -11,10 +11,10 @@ local function keymappings(client, bufnr)
   -- For normal and visual mode
   vim.keymap.set({"n", "v"}, "K", vim.lsp.buf.hover, { buffer = 0 })
 
-  keymap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-  keymap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-  keymap("n", "[e", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
-  keymap("n", "]e", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
+  keymap("n", "[g", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+  keymap("n", "]g", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+  keymap("n", "[i", "<cmd>lua vim.diagnostic.goto_prev({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
+  keymap("n", "]i", "<cmd>lua vim.diagnostic.goto_next({severity = vim.diagnostic.severity.ERROR})<CR>", opts)
   keymap('n', '<leader>lq', "<cmd>lua vim.diagnostic.setloclist", opts)
   -- Whichkey
   local keymap_l = {

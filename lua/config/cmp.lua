@@ -3,11 +3,16 @@ local M = {}
 function M.setup()
     local has_words_before = function()
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
     end
 
-    local luasnip = require("luasnip")
-    local cmp = require("cmp")
+    local luasnip = require "luasnip"
+    local cmp = require "cmp"
+
+    local snip_status_ok, cmp_ultisnips_mappings = pcall(require, "cmp_nvim_ultisnips.mappings")
+    if not snip_status_ok then
+        return
+    end
 
     cmp.setup({
         completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1 },
@@ -22,6 +27,7 @@ function M.setup()
                 vim_item.menu = ({
                     nvim_lsp = "[LSP]",
                     buffer = "[Buffer]",
+                    ultisnips = "[Snippet]",
                     luasnip = "[Snip]",
                     nvim_lua = "[Lua]",
                     treesitter = "[Treesitter]",
@@ -30,13 +36,19 @@ function M.setup()
                 return vim_item
             end,
         },
+        confirm_opts = {
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = false,
+        },
         mapping = {
-            ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-            ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
-            ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-            ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-            ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-            ["<C-e>"] = cmp.mapping { i = cmp.mapping.close(), c = cmp.mapping.close() },
+            ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }), -- previous completion
+            ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }), -- next completion
+            ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }), -- popup window scroll back
+            ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }), -- popup window scroll forward
+            ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- trigger completion
+            -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+            ["<C-e>"] = cmp.mapping { i = cmp.mapping.close(), c = cmp.mapping.close() }, -- exit completion
+            -- ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             ["<CR>"] = cmp.mapping {
                 i = cmp.mapping.confirm { behavior = cmp.ConvirmBehavior.Replace, select = false },
                 c = function(fallback)
@@ -47,43 +59,38 @@ function M.setup()
                     end
                 end,
             },
-            ["<Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_next_item()
-                elseif luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
-                elseif has_words_before() then
-                    cmp.complete()
-                else
-                    fallback()
-                end
-            end, {
-                    "i",
-                    "s",
-                    "c",
-                }),
-            ["<S-Tab>"] = cmp.mapping(function(fallback)
-                if cmp.visible() then
-                    cmp.select_prev_item()
-                elseif luasnip.jumpable(-1) then
-                    luasnip.jump(-1)
-                else
-                    fallback()
-                end
-            end, {
-                    "i",
-                    "s",
-                    "c"
-                }),
+            ["<C-j>"] = cmp.mapping( -- next input position
+                function(fallback)
+                    cmp_ultisnips_mappings.compose { "jump_forwards", "select_next_item" }(fallback)
+                end,
+                { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+            ),
+            ["<C-k>"] = cmp.mapping(
+                function(fallback)
+                    cmp_ultisnips_mappings.jump_backwards(fallback)
+                end,
+                { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+            ),
+            ["<Leader><Tab>"] = cmp.mapping(
+                function(fallback)
+                    cmp_ultisnips_mappings.compose { "expand" }(fallback)
+                end,
+                { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
+            ),
 
+        },
+        window = {
+            completion = cmp.config.window.bordered(),
+            documentation = "native",
         },
         sources = {
             { name = "nvim_lsp" },
-            { name = "treesitter" },
-            { name = "buffer" },
-            { name = "luasnip" },
             { name = "nvim_lua" },
+            { name = "ultisnips" },
+            { name = "buffer" },
             { name = "path" },
+            { name = "treesitter" },
+            { name = "luasnip" },
             -- { name = "spell" },
             -- { name = "emoji" },
             -- { name = "calc" },
@@ -101,18 +108,18 @@ function M.setup()
         },
     })
 
-    -- Use cmdline & path source for ":"
+    -- Use cmdline & path source for ':'
     cmp.setup.cmdline(":", {
         sources = cmp.config.sources({
             { name = "path" },
         }, {
-            { name = "cmdline" }
-        }),
+                { name = "cmdline" },
+            }),
     })
 
     -- Auto pairs
-    local cmp_autopairs = require("nvim-autopairs.completion.cmp")
-    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done({ map_char = { tex = "" } }))
+    local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+    cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
 end
 
 return M

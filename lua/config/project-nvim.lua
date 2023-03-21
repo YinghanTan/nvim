@@ -1,9 +1,12 @@
-local status_ok, project_nvim = pcall(require, "project_nvim")
-if not status_ok then
-    return
-end
+local M = {}
 
-project_nvim.setup({
+function M.setup()
+  local status_ok, project_nvim = pcall(require, "project_nvim")
+  if not status_ok then
+    return
+  end
+
+  project_nvim.setup({
     -- Manual mode doesn't automatically change your root directory, so you have
     -- the option to manually do so using `:ProjectRoot` command.
     manual_mode = false,
@@ -34,4 +37,7 @@ project_nvim.setup({
     -- Path where project.nvim will store the project history for use in
     -- telescope
     datapath = vim.fn.stdpath("data"),
-})
+  })
+end
+
+return M

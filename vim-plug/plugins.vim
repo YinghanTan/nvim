@@ -18,7 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
-    Plug 'sheerun/vim-polyglot' " Better Syntax Support
+    " Plug 'sheerun/vim-polyglot' " Better Syntax Support
     Plug 'wsdjeg/vim-fetch' " Fetch that line and column
     Plug 'tpope/vim-abolish' " change cases
 
@@ -34,8 +34,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Navigation
     Plug 'phaazon/hop.nvim' " Navigation
+
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     Plug 'tomtom/tcomment_vim' " Code Commentting
+
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
     " Plug 'nacro90/numb.nvim'  " peeks lines of the buffer in non-obtrusive way.
     Plug 'andymass/vim-matchup'  " operate on sets of matching text
@@ -106,6 +108,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf.vim' " Fuzzy Find
     " Plug 'jremmen/vim-ripgrep' " awaiting fixed version
 
+
+
+
+
+
     " Search (Telescope)
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
@@ -115,13 +122,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'cljoly/telescope-repo.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'nvim-telescope/telescope-ui-select.nvim'
-    Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'ahmedkhalf/project.nvim'
     Plug 'dhruvmanila/telescope-bookmarks.nvim'
     Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'LinArcX/telescope-env.nvim'
     Plug 'TC72/telescope-tele-tabby.nvim'
-    Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'fhill2/telescope-ultisnips.nvim'
 
     " Languages

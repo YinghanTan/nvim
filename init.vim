@@ -1,28 +1,29 @@
 " General Settings
 set runtimepath^=~/.config/nvim/autoload/coc.nvim/
 
-source $HOME/.config/nvim/vim-plug/plugins.vim
+" source $HOME/.config/nvim/vim-plug/plugins.vim
+luafile $HOME/.config/nvim/init-new.lua
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/general/folding.vim
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 
 " Themes
-luafile $HOME/.config/nvim/lua/one-dark.lua
+" luafile $HOME/.config/nvim/lua/one-dark.lua
 source $HOME/.config/nvim/themes/theme.vim
-luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
+" luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 
-" Status Line
-luafile $HOME/.config/nvim/lua/lua-line.lua
-
-" COC
-" source $HOME/.config/nvim/plug-config/coc/coc.vim
-" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-" source $HOME/.config/nvim/plug-config/cocSnippets.vim
-" source HOME/.config/nvim/plug-config/coc/coc-git.vim
-
-" Autocompletion
-source $HOME/.config/nvim/plug-config/ultisnips.vim
+" " Status Line
+" luafile $HOME/.config/nvim/lua/lua-line.lua
+"
+" " COC
+" " source $HOME/.config/nvim/plug-config/coc/coc.vim
+" " source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" " source $HOME/.config/nvim/plug-config/cocSnippets.vim
+" " source HOME/.config/nvim/plug-config/coc/coc-git.vim
+"
+" " Autocompletion
+" source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Git
 source $HOME/.config/nvim/plug-config/fugitive.vim
@@ -34,52 +35,54 @@ source $HOME/.config/nvim/plug-config/surround.vim
 
 
 
-source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
+" source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
-source $HOME/.config/nvim/plug-config/far.vim
+" source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
-source $HOME/.config/nvim/plug-config/tex-conceal.vim
+" source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
-source $HOME/.config/nvim/plug-config/markdown.vim
+" source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
 " source $HOME/.config/nvim/plug-config/autopairs.vim
 " source $HOME/.config/nvim/plug-config/gist.vim
-" source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
+" " source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/scripts.vim
-
+"
 source $HOME/.config/nvim/plug-config/zoomwintab.vim
-" source $HOME/.config/nvim/plug-config/vim-zoom.vim
+" " source $HOME/.config/nvim/plug-config/vim-zoom.vim
+"
+" " --- Lua Plugins ---
+" luafile $HOME/.config/nvim/lua/project-nvim.lua
 
-" --- Lua Plugins ---
-luafile $HOME/.config/nvim/lua/project-nvim.lua
-luafile $HOME/.config/nvim/lua/nvim-tree.lua
-luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-luafile $HOME/.config/nvim/lua/hop.lua
-luafile $HOME/.config/nvim/lua/neoscroll.lua
-luafile $HOME/.config/nvim/lua/vim-matchup.lua
-luafile $HOME/.config/nvim/lua/todo-comments.lua
-luafile $HOME/.config/nvim/lua/gitlinker.lua
-luafile $HOME/.config/nvim/lua/treesitter.lua
-luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
-
-luafile $HOME/.config/nvim/lua/_telescope.lua
-
-luafile $HOME/.config/nvim/lua/whichkey.lua
-luafile $HOME/.config/nvim/lua/git-worktree.lua
-luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
-" luafile $HOME/.config/nvim/lua/neozoom.lua
-" luafile $HOME/.config/nvim/lua/numb.lua
+" luafile $HOME/.config/nvim/lua/nvim-tree.lua
+" luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+" luafile $HOME/.config/nvim/lua/hop.lua
+" luafile $HOME/.config/nvim/lua/neoscroll.lua
+" luafile $HOME/.config/nvim/lua/vim-matchup.lua
+" luafile $HOME/.config/nvim/lua/todo-comments.lua
+" luafile $HOME/.config/nvim/lua/gitlinker.lua
+" luafile $HOME/.config/nvim/lua/treesitter.lua
+" luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
+"
+" luafile $HOME/.config/nvim/lua/_telescope.lua
+"
+" " luafile $HOME/.config/nvim/lua/whichkey.lua
+" luafile $HOME/.config/nvim/lua/git-worktree.lua
+" luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
+" " luafile $HOME/.config/nvim/lua/neozoom.lua
+" " luafile $HOME/.config/nvim/lua/numb.lua
 
 " LSP
 
-luafile $HOME/.config/nvim/lua/lsp-config.lua
-luafile $HOME/.config/nvim/lua/nvim-notify.lua
+" luafile $HOME/.config/nvim/lua/lsp-config.lua
+" luafile $HOME/.config/nvim/lua/nvim-notify.lua
+
 " luafile $HOME/.config/nvim/lua/cmp.lua
 " luafile $HOME/.config/nvim/lua/dial.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim

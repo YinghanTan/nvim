@@ -1,6 +1,9 @@
-local status_ok, onedark = pcall(require, "onedark")
+local M = {}
 
-onedark.setup({
+function M.setup()
+  local status_ok, onedark = pcall(require, "onedark")
+
+  onedark.setup({
     -- Main options --
     style = 'light',                                                                     -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = true,                                                                  -- Show/hide background
@@ -14,25 +17,28 @@ onedark.setup({
     -- Options are italic, bold, underline none
     -- You can configure multiple style with comma seperated, For e.g., keywords = 'italic,bold'
     code_style = {
-        comments = 'none',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none'
+      comments = 'none',
+      keywords = 'none',
+      functions = 'none',
+      strings = 'none',
+      variables = 'none'
     },
     -- Lualine options --
     lualine = {
-        transparent = false, -- lualine center bar transparency
+      transparent = false, -- lualine center bar transparency
     },
     -- Custom Highlights --
     colors = {},     -- Override default colors
     highlights = {}, -- Override highlight groups
     -- Plugins Config --
     diagnostics = {
-        darker = false,     -- darker colors for diagnostic
-        undercurl = false,  -- use undercurl instead of underline for diagnostics
-        background = false, -- use background color for virtual text
+      darker = false,     -- darker colors for diagnostic
+      undercurl = false,  -- use undercurl instead of underline for diagnostics
+      background = false, -- use background color for virtual text
     }
-})
+  })
 
-onedark.load()
+  onedark.load()
+end
+
+return M

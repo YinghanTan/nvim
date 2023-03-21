@@ -1,15 +1,5 @@
-local status_ok, nvim_notify = pcall(require, "notify")
-if not status_ok then
-    return
-end
-nvim_notify.setup {
-    stages = "fade",
-    background_colour = 'FloatShadow',
-    timeout = 3000,
-}
-
-local lsp_installer_servers = require "nvim-lsp-installer.servers"
-local utils = require ("utils")
+local lsp_installer_servers = require("nvim-lsp-installer.servers")
+local utils = require("utils")
 
 
 local M = {}
@@ -32,17 +22,11 @@ function M.setup(servers, options)
       end)
 
       if not server:is_installed() then
-        nvim_notify("Installing " .. server.name)
-        -- require('notify')("Installing " .. server.name)
-        -- vim.notify("Installing " .. server.name)
-        -- utils("Installing " .. server.name)
+        utils.info("Installing " .. server.name)
         server:install()
       end
     else
-      nvim_notify(server)
-      -- require('notify')(server)
-      -- vim.notify(server)
-      -- utils(server)
+      utils.error(server)
     end
   end
 end
