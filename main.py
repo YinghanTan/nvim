@@ -5,9 +5,6 @@ import io
 
 defplugins
 
-defdef
 
-defmain
 
-defmain.
 

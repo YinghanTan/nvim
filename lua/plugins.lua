@@ -298,6 +298,33 @@ function M.setup()
       end,
     }
 
+
+    -- Auto pairs
+    use {
+      "windwp/nvim-autopairs",
+      wants = "nvim-treesitter",
+      module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+      config = function()
+        require("config.autopairs").setup()
+      end,
+    }
+
+    -- LSP
+    use {
+      "neovim/nvim-lspconfig",
+      opt = true,
+      event = "BufReadPre",
+      wants = { "nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp" },  -- for nvim-cmp
+      -- wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },  -- for coq.nvim
+      config = function()
+        require("config.lsp").setup()
+      end,
+      requires = {
+        "williamboman/nvim-lsp-installer",
+        "ray-x/lsp_signature.nvim",
+      },
+    }
+
     use {
       "hrsh7th/nvim-cmp",
       event = "InsertEnter",
@@ -331,41 +358,17 @@ function M.setup()
       disable = false
     }
 
-    -- Auto pairs
-    use {
-      "windwp/nvim-autopairs",
-      wants = "nvim-treesitter",
-      module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
-      config = function()
-        require("config.autopairs").setup()
-      end,
-    }
-
-    -- LSP
-    use {
-      "neovim/nvim-lspconfig",
-      opt = true,
-      event = "BufReadPre",
-      wants = {"nvim-lsp-installer", "lsp_signature.nvim", "cmp-nvim-lsp"}, -- for nvim-cmp
-      config = function()
-        require("config.lsp").setup()
-      end,
-      requires = {
-        "williamboman/nvim-lsp-installer",
-        "ray-x/lsp_signature.nvim",
-      },
-    }
 
     -- Bootstrap Neovim
     if packer_bootstrap then
-      print("Restart Neovim required after installation!")
+      print "Restart Neovim required after installation!"
       require("packer").sync()
     end
   end
 
   -- Init and start packer
   packer_init()
-  local packer = require("packer")
+  local packer = require "packer"
   packer.init(conf)
   packer.startup(plugins)
 end

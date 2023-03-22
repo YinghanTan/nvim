@@ -51,7 +51,7 @@ function M.setup()
             ["<C-e>"] = cmp.mapping { i = cmp.mapping.close(), c = cmp.mapping.close() }, -- exit completion
             -- ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             ["<CR>"] = cmp.mapping {
-                i = cmp.mapping.confirm { behavior = cmp.ConvirmBehavior.Replace, select = false },
+                i = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false },
                 c = function(fallback)
                     if cmp.visible() then
                         cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })

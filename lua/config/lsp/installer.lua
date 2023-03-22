@@ -1,5 +1,5 @@
-local lsp_installer_servers = require("nvim-lsp-installer.servers")
-local utils = require("utils")
+local lsp_installer_servers = require "nvim-lsp-installer.servers"
+local utils = require "utils"
 
 
 local M = {}
@@ -12,12 +12,7 @@ function M.setup(servers, options)
       server:on_ready(function()
         local opts = vim.tbl_deep_extend("force", options, servers[server.name] or {})
 
-        -- Check if server object exists
-        if server~=nil and type(server.setup) == "function" then
-          server:setup(opts)
-        else
-          print("Error: server object does not have a setup method")
-        end
+        server:setup(opts)
 
       end)
 

@@ -94,7 +94,8 @@ source $HOME/.config/nvim/plug-config/zoomwintab.vim
 " nnoremap Q :normal n.<CR>
 
 
-" --- Brief help ---
+" local lsp_installer_servers = require "nvim-lsp-installer.servers"
+local utils = require "utils"--- Brief help ---
 " \.                        - go to init.vim
 " gf                        - cursor on sourced file to explore configs
 " gx                        - cursor on url to explore references
