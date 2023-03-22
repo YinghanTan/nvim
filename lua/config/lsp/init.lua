@@ -1,5 +1,6 @@
 local M = {}
 
+function M.setup()
 local servers = {
   gopls = {
     settings = {
@@ -155,6 +156,7 @@ local opts = {
 
 function M.setup()
   require("config.lsp.installer").setup(servers, opts)
+end
 end
 
 return M

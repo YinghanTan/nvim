@@ -123,8 +123,8 @@ function M.setup()
           "telescope-bookmarks.nvim",
           "telescope-vimspector.nvim",
           "telescope-env.nvim",
-          "escope-tele-tabby.nvim",
-          "elescope-ultisnips.nvim",
+          "telescope-tele-tabby.nvim",
+          "telescope-ultisnips.nvim",
         },
         requires = {
           "nvim-lua/popup.nvim",
@@ -178,7 +178,7 @@ function M.setup()
     -- " Plug 'kevinhwang91/nvim-bqf'  " Better quickfix window
     -- Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
     -- Plug 'tomtom/tcomment_vim' " Code Commentting
-    -- " Plug 'SirVer/ultisnips' " Ultisnips snippets
+    use { "SirVer/ultisnips" }
 
     -- use { "andymass/vim-matchup" }
     use { "honza/vim-snippets" }
@@ -227,11 +227,11 @@ function M.setup()
     -- Motions
     use {
       "phaazon/hop.nvim",
-      cmd = { "HopWord", "HopChar1" },
+      cmd = { "HopWord", "HopChar1", "HopChar2", "HopLineStart"  },
       config = function()
         require("config.hop").setup()
       end,
-      disable = true
+      disable = false
     }
 
     -- Markdown

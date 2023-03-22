@@ -19,7 +19,8 @@ function M.setup()
         experimental = { native_menu = false, ghost_text = false },
         snippet = {
             expand = function(args)
-                require("luasnip").lsp_expand(args.body)
+                -- require("luasnip").lsp_expand(args.body)
+                vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
             end,
         },
         formatting = {
@@ -90,7 +91,7 @@ function M.setup()
             { name = "buffer" },
             { name = "path" },
             { name = "treesitter" },
-            { name = "luasnip" },
+            -- { name = "luasnip" },
             -- { name = "spell" },
             -- { name = "emoji" },
             -- { name = "calc" },
@@ -115,6 +116,15 @@ function M.setup()
         }, {
                 { name = "cmdline" },
             }),
+    })
+
+    -- Set configuration for specific filetype.
+    cmp.setup.filetype('gitcommit', {
+        sources = cmp.config.sources({
+        { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+        }, {
+        { name = 'buffer' },
+        })
     })
 
     -- Auto pairs

@@ -218,6 +218,15 @@ _G.packer_plugins = {
     path = "/home/yinghan/.local/share/nvim/site/pack/packer/start/gv.vim",
     url = "https://github.com/junegunn/gv.vim"
   },
+  ["hop.nvim"] = {
+    commands = { "HopWord", "HopChar1", "HopChar2", "HopLineStart" },
+    config = { "\27LJ\2\0028\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15config.hop\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/hop.nvim",
+    url = "https://github.com/phaazon/hop.nvim"
+  },
   ["indent-blankline.nvim"] = {
     config = { "\27LJ\2\2D\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\27config.indentblankline\frequire\0" },
     loaded = false,
@@ -270,7 +279,7 @@ _G.packer_plugins = {
     wants = { "nvim-treesitter" }
   },
   ["nvim-cmp"] = {
-    after = { "cmp-nvim-lsp", "cmp-treesitter", "cmp-buffer", "cmp_luasnip", "friendly-snippets", "cmp-nvim-ultisnips", "cmp-cmdline", "cmp-nvim-lua", "cmp-path", "LuaSnip" },
+    after = { "cmp-nvim-lsp", "cmp-treesitter", "cmp-nvim-lua", "cmp-buffer", "cmp_luasnip", "friendly-snippets", "cmp-nvim-ultisnips", "cmp-cmdline", "cmp-path", "LuaSnip" },
     config = { "\27LJ\2\0028\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15config.cmp\frequire\0" },
     loaded = false,
     needs_bufread = false,
@@ -385,6 +394,24 @@ _G.packer_plugins = {
     path = "/home/yinghan/.local/share/nvim/site/pack/packer/start/tabular",
     url = "https://github.com/godlygeek/tabular"
   },
+  ["telescope-bookmarks.nvim"] = {
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-bookmarks.nvim",
+    url = "https://github.com/dhruvmanila/telescope-bookmarks.nvim"
+  },
+  ["telescope-env.nvim"] = {
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-env.nvim",
+    url = "https://github.com/LinArcX/telescope-env.nvim"
+  },
   ["telescope-file-browser.nvim"] = {
     load_after = {
       ["telescope.nvim"] = true
@@ -394,14 +421,14 @@ _G.packer_plugins = {
     path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-file-browser.nvim",
     url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
   },
-  ["telescope-fzf-native.nvim"] = {
+  ["telescope-fzy-native.nvim"] = {
     load_after = {
       ["telescope.nvim"] = true
     },
     loaded = false,
     needs_bufread = false,
-    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-fzf-native.nvim",
-    url = "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
   },
   ["telescope-project.nvim"] = {
     load_after = {
@@ -421,8 +448,44 @@ _G.packer_plugins = {
     path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-repo.nvim",
     url = "https://github.com/cljoly/telescope-repo.nvim"
   },
+  ["telescope-tele-tabby.nvim"] = {
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-tele-tabby.nvim",
+    url = "https://github.com/TC72/telescope-tele-tabby.nvim"
+  },
+  ["telescope-ui-select.nvim"] = {
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-ui-select.nvim",
+    url = "https://github.com/nvim-telescope/telescope-ui-select.nvim"
+  },
+  ["telescope-ultisnips.nvim"] = {
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-ultisnips.nvim",
+    url = "https://github.com/fhill2/telescope-ultisnips.nvim"
+  },
+  ["telescope-vimspector.nvim"] = {
+    load_after = {
+      ["telescope.nvim"] = true
+    },
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope-vimspector.nvim",
+    url = "https://github.com/nvim-telescope/telescope-vimspector.nvim"
+  },
   ["telescope.nvim"] = {
-    after = { "telescope-repo.nvim", "telescope-project.nvim", "project.nvim", "telescope-fzf-native.nvim", "telescope-file-browser.nvim" },
+    after = { "telescope-ui-select.nvim", "telescope-repo.nvim", "telescope-project.nvim", "telescope-vimspector.nvim", "project.nvim", "telescope-ultisnips.nvim", "telescope-bookmarks.nvim", "telescope-tele-tabby.nvim", "telescope-file-browser.nvim", "telescope-env.nvim", "telescope-fzy-native.nvim" },
     commands = { "Telescope" },
     config = { "\27LJ\2\2>\0\0\2\0\3\0\0066\0\0\0'\1\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\21config.telescope\frequire\0" },
     keys = { { "", "<leader>f" }, { "", "<leader>p" } },
@@ -431,12 +494,17 @@ _G.packer_plugins = {
     only_cond = false,
     path = "/home/yinghan/.local/share/nvim/site/pack/packer/opt/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim",
-    wants = { "plenary.nvim", "popup.nvim", "telescope-fzf-native.nvim", "telescope-project.nvim", "telescope-repo.nvim", "telescope-file-browser.nvim", "project.nvim" }
+    wants = { "popup.nvim", "plenary.nvim", "telescope-fzy-native.nvim", "telescope-project.nvim", "telescope-repo.nvim", "telescope-file-browser.nvim", "telescope-ui-select.nvim", "project.nvim", "telescope-bookmarks.nvim", "telescope-vimspector.nvim", "telescope-env.nvim", "telescope-tele-tabby.nvim", "telescope-ultisnips.nvim" }
   },
   ["todo-comments.nvim"] = {
     loaded = true,
     path = "/home/yinghan/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
+  },
+  ultisnips = {
+    loaded = true,
+    path = "/home/yinghan/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
   },
   undotree = {
     loaded = true,
@@ -601,12 +669,12 @@ pcall(vim.api.nvim_create_user_command, 'MarkdownPreview', function(cmdargs)
           require('packer.load')({'markdown-preview.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('MarkdownPreview ', 'cmdline')
       end})
-pcall(vim.api.nvim_create_user_command, 'NvimTreeClose', function(cmdargs)
-          require('packer.load')({'nvim-tree.lua'}, { cmd = 'NvimTreeClose', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'HopLineStart', function(cmdargs)
+          require('packer.load')({'hop.nvim'}, { cmd = 'HopLineStart', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-tree.lua'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('NvimTreeClose ', 'cmdline')
+          require('packer.load')({'hop.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('HopLineStart ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
           require('packer.load')({'telescope.nvim'}, { cmd = 'Telescope', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
@@ -615,6 +683,13 @@ pcall(vim.api.nvim_create_user_command, 'Telescope', function(cmdargs)
           require('packer.load')({'telescope.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('Telescope ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'HopChar1', function(cmdargs)
+          require('packer.load')({'hop.nvim'}, { cmd = 'HopChar1', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'hop.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('HopChar1 ', 'cmdline')
+      end})
 pcall(vim.api.nvim_create_user_command, 'NvimTreeToggle', function(cmdargs)
           require('packer.load')({'nvim-tree.lua'}, { cmd = 'NvimTreeToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
@@ -622,15 +697,36 @@ pcall(vim.api.nvim_create_user_command, 'NvimTreeToggle', function(cmdargs)
           require('packer.load')({'nvim-tree.lua'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('NvimTreeToggle ', 'cmdline')
       end})
+pcall(vim.api.nvim_create_user_command, 'NvimTreeClose', function(cmdargs)
+          require('packer.load')({'nvim-tree.lua'}, { cmd = 'NvimTreeClose', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'nvim-tree.lua'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('NvimTreeClose ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'HopChar2', function(cmdargs)
+          require('packer.load')({'hop.nvim'}, { cmd = 'HopChar2', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'hop.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('HopChar2 ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'HopWord', function(cmdargs)
+          require('packer.load')({'hop.nvim'}, { cmd = 'HopWord', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'hop.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('HopWord ', 'cmdline')
+      end})
 time([[Defining lazy-load commands]], false)
 
 -- Keymap lazy-loads
 time([[Defining lazy-load keymaps]], true)
-vim.cmd [[noremap <silent> <leader>f <cmd>lua require("packer.load")({'telescope.nvim'}, { keys = "<lt>leader>f", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> gbc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gbc", prefix = "" }, _G.packer_plugins)<cr>]]
-vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> gcc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gcc", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> gbc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gbc", prefix = "" }, _G.packer_plugins)<cr>]]
 vim.cmd [[noremap <silent> <leader>p <cmd>lua require("packer.load")({'telescope.nvim'}, { keys = "<lt>leader>p", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> gc <cmd>lua require("packer.load")({'Comment.nvim'}, { keys = "gc", prefix = "" }, _G.packer_plugins)<cr>]]
+vim.cmd [[noremap <silent> <leader>f <cmd>lua require("packer.load")({'telescope.nvim'}, { keys = "<lt>leader>f", prefix = "" }, _G.packer_plugins)<cr>]]
 time([[Defining lazy-load keymaps]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
