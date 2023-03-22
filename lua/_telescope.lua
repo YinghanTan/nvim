@@ -5,7 +5,7 @@ end
 
 local actions = require("telescope.actions")
 local action_layout = require("telescope.actions.layout")
-local multiopen = require('config.telescope_multiopen')
+local multiopen = require('telescope_multiopen')
 local icons = require("icons")
 
 telescope.setup({
