@@ -269,6 +269,7 @@ local mappings = {
             O = { "<cmd>CocDisable<cr>", "close" },
             e = { "<cmd>CocFzfList extensions<cr>", "extensions" },
         },
+        L = { "<cmd><cr>", "lint" },
         t = {
             name = "latex",
             c = { "<cmd>CocFzfList -I symbols<cr>", "latex info" },

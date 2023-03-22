@@ -101,24 +101,26 @@
   "python.formatting.blackArgs": [],
   // "python.formatting.blackArgs": ["--line-length", "79"],
 
-  // Linting
+  // Python Linting
   "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
   "python.linting.pylintEnabled": true,
-  "python.linting.flake8Enabled": false,
-  /* "python.linting.pylintPath": "~/venvs/pylint/bin/pylint", */
   "python.linting.pylintPath": "~/.pyenv/versions/3.9.9/bin/pylint",
   "python.linting.pylintArgs": [
     "--init-hook",
     "import pylint_venv; pylint_venv.inithook(force_venv_activation=True)"
   ],
-  /* "python.linting.pylintPath": "~/.local/bin/pylint", */
-  // "python.linting.pylintEnabled": true,
-  // "python.jediPath": "~/.local/lib/python3.8/site-packages",
   // Python coc-pyright
   "pyright.inlayHints.variableTypes": false,
   "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.testing.provider": "pytest",
+  "pyright.testing.pytestArgs": [],
   // Snippets
   "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
+  "snippets.ultisnips.directories": [ 
+      "Ultisnips",
+      "~/.config/nvim/UltiSnips"
+  ],
   "snippets.editSnippetsCommand": "vsplit",
   "snippets.extends": {
     "javascriptreact": ["javascript"],
