@@ -110,6 +110,11 @@ telescope.setup({
         -- }
         -- please take a look at the readme of the extension you want to configure
         --
+        coc = {
+            theme = 'ivy',
+            prefer_locations = true, -- always use telescope locations to preview definitions/declarations/implementations etc
+        }
+
         fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true,
@@ -162,6 +167,7 @@ telescope.setup({
 
 
 -- 🔭 Extensions --
+require('telescope').load_extension('coc')
 require("telescope").load_extension("ui-select")  -- https://github.com/nvim-telescope/telescope-ui-select.nvim
 require("telescope").load_extension("bookmarks")  -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
 require("telescope").load_extension("vimspector") -- https://github.com/nvim-telescope/telescope-vimspector.nvim
