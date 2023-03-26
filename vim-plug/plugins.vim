@@ -14,8 +14,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Theme
     Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-    " Plug 'dracula/vim', { 'as': 'dracula' }
-    Plug 'Mofiqul/dracula.nvim'
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
@@ -176,6 +174,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     " Plug 'szw/vim-maximizer' " Zoom window
     " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
+    " Plug 'dracula/vim', { 'as': 'dracula' }
+    " Plug 'Mofiqul/dracula.nvim'
 
 call plug#end()
 
