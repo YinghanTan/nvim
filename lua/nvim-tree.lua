@@ -11,10 +11,8 @@ nvim_tree.setup({
   disable_netrw = false,
   hijack_netrw = false,
   hijack_cursor = true,
-  respect_buf_cwd = false,
-
-
   update_cwd = true,
+  respect_buf_cwd = true,
   sync_root_with_cwd = true,
   update_focused_file = {
     enable = true,
