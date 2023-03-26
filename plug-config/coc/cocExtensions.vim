@@ -23,7 +23,6 @@ let g:coc_global_extensions = [
     \ 'coc-flutter-tools',
     \ 'coc-flutter',
     \ 'coc-fzf-preview',
-    \ 'coc-git',
     \ 'coc-gist',
     \ 'coc-html',
     \ 'coc-htmldjango',
@@ -63,6 +62,7 @@ let g:coc_global_extensions = [
     " \ 'coc-list',
     " \ 'coc-pairs',
     " \ 'coc-python',
+    " \ 'coc-git',
 
 " coc-fzf-preview options
 let g:coc_fzf_preview = ''

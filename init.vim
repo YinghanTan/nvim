@@ -15,14 +15,14 @@ luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/project-nvim.lua
 " source $HOME/.config/nvim/plug-config/vim-rooter.vim
+luafile $HOME/.config/nvim/lua/gitsigns.lua
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Status Line
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
 source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-source $HOME/.config/nvim/plug-config/cocSnippets.vim
-source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -113,6 +113,7 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " source $HOME/.config/nvim/themes/onedark.vim
 " source $HOME/.config/nvim/themes/airline.vim
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
+" source $HOME/.config/nvim/plug-config/cocSnippets.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm

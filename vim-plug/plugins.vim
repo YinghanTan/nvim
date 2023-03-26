@@ -136,7 +136,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'rhysd/git-messenger.vim' " Popup Git messages
     Plug 'ruifm/gitlinker.nvim' " generate shareable file permalinks
     Plug 'ThePrimeagen/git-worktree.nvim'
-    " use("lewis6991/gitsigns.nvim") " Git integration: signs, hunk actions, blame, etc.
+    Plug 'lewis6991/gitsigns.nvim' " Git integration: signs, hunk actions, blame, etc.
 
     Plug 'konfekt/fastfold'
     Plug 'MarcWeber/vim-addon-mw-utils'
