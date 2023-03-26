@@ -178,9 +178,8 @@ local mappings = {
     },
     f = {
         name = "file",
-        t = { "<cmd>NERDTreeToggle<cr>", "filetree" },
-        b = { "<cmd>NERDTreeFromBookmark<cr>", "bookmark" },
-        f = { "<cmd>NERDTreeFind<cr>", "find" },
+        t = { ":NvimTreeToggle<cr>", "filetree" },
+        f = { ":NvimTreeFindFileToggle<cr>", "find" },
         r = {
             name = "replace",
             f = { "<cmd>Farr --source=vimgrep<cr>", "in file" },

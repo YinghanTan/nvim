@@ -31,7 +31,6 @@ endif
 
 if !exists('g:loaded_color')
   let g:loaded_color = 1
-
   set background=dark
   " Put your favorite colorscheme here
   colorscheme onedark

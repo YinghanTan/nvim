@@ -8,14 +8,13 @@ source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 
 " Themes
-source $HOME/.config/nvim/themes/onedark.vim
-" source $HOME/.config/nvim/themes/dracula.vim
-" luafile $HOME/.config/nvim/lua/tokyonight.lua
-" luafile $HOME/.config/nvim/lua/dracula.lua
-" source $HOME/.config/nvim/themes/theme.vim
+luafile $HOME/.config/nvim/lua/one-dark.lua
+source $HOME/.config/nvim/themes/theme.vim
+luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
+luafile $HOME/.config/nvim/lua/lualine.lua
+luafile $HOME/.config/nvim/lua/nvim-tree.lua
 
 " Status Line
-source $HOME/.config/nvim/themes/airline.vim
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -33,7 +32,6 @@ source $HOME/.config/nvim/plug-config/git-messenger.vim
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/surround.vim
-source $HOME/.config/nvim/plug-config/nerdtree.vim
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
@@ -109,6 +107,12 @@ luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
 " --- Deprecated ---
 " source $HOME/.config/nvim/plug-config/easyMotion.vim
 " source $HOME/.config/nvim/keys/which-key.vim
+" source $HOME/.config/nvim/themes/dracula.vim
+" luafile $HOME/.config/nvim/lua/tokyonight.lua
+" luafile $HOME/.config/nvim/lua/dracula.lua
+" source $HOME/.config/nvim/themes/onedark.vim
+" source $HOME/.config/nvim/themes/airline.vim
+" source $HOME/.config/nvim/plug-config/nerdtree.vim
 
 " --- Python Dependencies ---
 " pynvim pyright black pylint ranger-fm
