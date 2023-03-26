@@ -3,6 +3,7 @@ if not status_ok then
     return
 end
 
+
 gitsigns_config.setup {
     signs                        = {
         add          = { hl = "GitSignsAdd", text = "▎", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
@@ -18,7 +19,7 @@ gitsigns_config.setup {
         untracked    = { text = '┆' },
     },
     signcolumn                   = true,  -- Toggle with `:Gitsigns toggle_signs`
-    numhl                        = false, -- Toggle with `:Gitsigns toggle_numhl`
+    numhl                        = true, -- Toggle with `:Gitsigns toggle_numhl`
     linehl                       = false, -- Toggle with `:Gitsigns toggle_linehl`
     word_diff                    = false, -- Toggle with `:Gitsigns toggle_word_diff`
     watch_gitdir                 = {
@@ -102,3 +103,4 @@ gitsigns_config.setup {
         map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end
 }
+

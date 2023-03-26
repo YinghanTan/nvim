@@ -115,6 +115,9 @@
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.testing.provider": "pytest",
   "pyright.testing.pytestArgs": [],
+
+  // Lua
+  "Lua.diagnostics.globals": ["vim"],
   // Snippets
   "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
   "snippets.ultisnips.directories": [ 

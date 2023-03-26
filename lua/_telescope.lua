@@ -49,15 +49,17 @@ telescope.setup({
                 ['<CR>']       = multiopen.i['<CR>'],
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
-                ["<PageUp>"]   = actions.results_scrolling_up,
-                ["<PageDown>"] = actions.results_scrolling_down,
+                ["<C-h>"]   = actions.results_scrolling_up,
+                ["<C-l>"] = actions.results_scrolling_down,
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
                 ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
                 ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
-                ["<C-l>"]      = actions.complete_tag,
+                -- ["<C-l>"]      = actions.complete_tag,
                 ["<M-w>"]      = actions.which_key,
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-a>"]      = actions.select_all,
+                ["<C-r>"]      = actions.drop_all,
             },
             n = {
                 ["<esc>"]      = actions.close,
@@ -81,13 +83,16 @@ telescope.setup({
                 ["<Down>"]     = actions.move_selection_next,
                 ["<Up>"]       = actions.move_selection_previous,
                 ["gg"]         = actions.move_to_top,
+                ["zz"]         = actions.center,
                 ["G"]          = actions.move_to_bottom,
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
-                ["<PageUp>"]   = actions.results_scrolling_up,
-                ["<PageDown>"] = actions.results_scrolling_down,
+                ["<C-h>"]   = actions.results_scrolling_up,
+                ["<C-l>"] = actions.results_scrolling_down,
                 ["<M-w>"]      = actions.which_key,
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-a>"]      = actions.select_all,
+                ["<C-r>"]      = actions.drop_all,
             },
         },
     },
@@ -114,7 +119,6 @@ telescope.setup({
             theme = 'ivy',
             prefer_locations = true, -- always use telescope locations to preview definitions/declarations/implementations etc
         },
-
         fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true,
@@ -123,7 +127,7 @@ telescope.setup({
             -- filetypes whitelist
             -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
             filetypes = { "png", "webp", "jpg", "jpeg" },
-            find_cmd = "rg",     -- find command (defaults to `fd`)
+            find_cmd = "rg", -- find command (defaults to `fd`)
         },
         file_browser = {
             -- theme = "ivy",
@@ -175,7 +179,7 @@ telescope.load_extension('ultisnips')  -- https://github.com/fhill2/telescope-ul
 telescope.load_extension('env')        -- https://github.com/LinArcX/telescope-env.nvim
 telescope.load_extension("tele_tabby") -- https://github.com/TC72/telescope-tele-tabby.nvim
 telescope.load_extension("project")    -- telescope-project.nvim
-telescope.load_extension("projects") -- project.nvim
+telescope.load_extension("projects")   -- project.nvim
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
