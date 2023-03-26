@@ -14,9 +14,7 @@ luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/project-nvim.lua
-" source $HOME/.config/nvim/plug-config/vim-rooter.vim
 luafile $HOME/.config/nvim/lua/gitsigns.lua
-" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Status Line
 
@@ -36,7 +34,6 @@ source $HOME/.config/nvim/plug-config/firenvim.vim
 source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
@@ -46,7 +43,6 @@ source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
-source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
@@ -79,12 +75,6 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim
 " source $HOME/.config/nvim/plug-config/codi.vim
 
-" --- Test ---
-" nnoremap Q n.
-" nnoremap Q @='n.'<CR>
-" nnoremap Q :normal n.<CR>
-
-
 " --- Brief help ---
 " \.                        - go to init.vim
 " gf                        - cursor on sourced file to explore configs
@@ -113,16 +103,17 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " source $HOME/.config/nvim/themes/airline.vim
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
 " source $HOME/.config/nvim/plug-config/cocSnippets.vim
+" source $HOME/.config/nvim/plug-config/vim-rooter.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/fzfPreview.vim
 
+" === Dependencies ===
 " --- Python Dependencies ---
-" pynvim pyright black pylint ranger-fm
+" pynvim pyright black pylint ranger-fm flake8
 
 " --- Node Dependencies ---
 " neovim prettier 
 
-" ripgrep fzf
-
-" map <leader>ew :e <C-R>=expand("%:p:h") ."/"<CR>
-" map <leader>es :sp <C-R>=expand("%:p:h") ."/"<CR>
-" map <leader>ev :vsp <C-R>=expand("%:p:h") ."/"<CR>
-" map <leader>et :tabe <C-R>=expand("%:p:h") ."/"<CR>
+" --- linux dependencies ---
+" ripgrep fzf bat fdfind delta
