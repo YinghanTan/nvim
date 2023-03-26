@@ -5,21 +5,21 @@ end
 
 local setup = {
     plugins = {
-        marks = true, -- shows a list of your marks on ' and ``'
-        registers = true, -- shows your registers on " in NORMAL or <C-r> in InSERT mode"
+        marks = true,         -- shows a list of your marks on ' and ``'
+        registers = true,     -- shows your registers on " in NORMAL or <C-r> in InSERT mode"
         spelling = {
-            enabled = true, -- enabling will show WhichKey when pressing z= to select spelling suggestions
+            enabled = true,   -- enabling will show WhichKey when pressing z= to select spelling suggestions
             suggestions = 20, -- how many suggestions should be shown in the list
         },
         -- the presets plugins, adds help for a bunch of default keybindings in Neovim
         -- No actual key bindings are created
         presets = {
-            operators = false, -- adds help for operators like d, y, ... and registers them for motion /text object completetion
-            motions = true, -- adds help for motions
+            operators = false,   -- adds help for operators like d, y, ... and registers them for motion /text object completetion
+            motions = true,      -- adds help for motions
             text_objects = true, -- help for text objects triggered after entering an operator
-            windows = true, -- misc bindings to work with windows
-            z = true, -- bindings for folds, spelling and others prefixed with z
-            g = true, --bindings for prefixed with g
+            windows = true,      -- misc bindings to work with windows
+            z = true,            -- bindings for folds, spelling and others prefixed with z
+            g = true,            --bindings for prefixed with g
         },
     },
     -- add operators that will trigger motion and text object completion
@@ -35,29 +35,29 @@ local setup = {
     icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = "+", -- symbol prepended to a group
+        group = "+",      -- symbol prepended to a group
     },
     popup_mappings = {
         scroll_down = "<c-d>", -- binding to scroll down inside the popup,
-        scroll_up = "<c-u>", -- binding to scroll up inside the popup
+        scroll_up = "<c-u>",   -- binding to scroll up inside the popup
     },
     window = {
-        border = "rounded", -- none, single, double, shadow
-        position = "bottom", -- bottom, top
-        margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+        border = "rounded",       -- none, single, double, shadow
+        position = "bottom",      -- bottom, top
+        margin = { 1, 0, 1, 0 },  -- extra window margin [top, right, bottom, left]
         padding = { 1, 1, 1, 1 }, -- extra window padding [top, right, bottom, left]
         winblend = 0,
     },
     layout = {
-        height = { min = 4, max = 25 }, -- min and max height of the columns
-        width = { min = 20, max = 50 }, -- min and max width of the columns:
-        spacing = 2, -- spacing between columns
-        align = "left", --- align columns left, center or right
+        height = { min = 4, max = 25 },                                           -- min and max height of the columns
+        width = { min = 20, max = 50 },                                           -- min and max width of the columns:
+        spacing = 2,                                                              -- spacing between columns
+        align = "left",                                                           --- align columns left, center or right
     },
-    ignore_missing = true, -- enable this to hide mpaaing for which you didn't specify a label
+    ignore_missing = true,                                                        -- enable this to hide mpaaing for which you didn't specify a label
     hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
-    show_help = true, -- show help message on the command line when the popup is visible
-    trigger = "auto", --automatically setup triggers
+    show_help = true,                                                             -- show help message on the command line when the popup is visible
+    trigger = "auto",                                                             --automatically setup triggers
     -- triggers = {"<leader>"} -- or specify a list manually
     triggers_blacklist = {
         -- list of mode / prefixes that should never be hooked by WhichKey
@@ -70,12 +70,12 @@ local setup = {
 
 
 local y_opts = {
-    mode = "n", -- NORMAL mode
+    mode = "n",      -- NORMAL mode
     prefix = "y",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    silent = false, -- use `silent` when creating keymaps
+    buffer = nil,    -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = false,  -- use `silent` when creating keymaps
     noremap = false, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
+    nowait = true,   -- use `nowait` when creating keymaps
 }
 
 local y_mappings = {
@@ -104,12 +104,12 @@ local y_mappings = {
 
 
 local opts = {
-    mode = "n", -- NORMAL mode
+    mode = "n",     -- NORMAL mode
     prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
     silent = false, -- use `silent` when creating keymaps
     noremap = true, -- use `noremap`
-    nowait = true, -- use `nowait` when creating keympas
+    nowait = true,  -- use `nowait` when creating keympas
 }
 
 local mappings = {
@@ -192,7 +192,7 @@ local mappings = {
         B = { "<cmd>GBrowse<cr>", "browse" },
         [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
         k = { "<cmd>Telescope git_bcommits<cr>", "buffer commits" }, -- edit commit message to show branch author and date
-        K = { "<cmd>Telescope git_commits<cr>", "all commits" }, -- edit commit message to show branch author and date
+        K = { "<cmd>Telescope git_commits<cr>", "all commits" },     -- edit commit message to show branch author and date
         c = { "<cmd>BCommits<cr>", "commits" },
         C = { "<cmd>Commits<cr>", "all commits" },
         d = {
@@ -242,7 +242,8 @@ local mappings = {
         l = { "<cmd>Gist -l<cr>", "list" },
         p = { "<cmd>Gist -b -p<cr>", "create private" },
     },
-    l = { -- COC as LSP
+    l = {
+          -- COC as LSP
         name = "lsp / latex",
         ["."] = { "<cmd>CocConfig<cr>", "config" },
         a = { "<plug>(coc-codeaction)<cr>", "line action" },
@@ -363,7 +364,6 @@ local mappings = {
         },
         -- z = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "fzf file" },
     },
-
     t = {
         name = "terminal",
         f = { "<cmd>FloatermNew fzf<cr>", "fzf" },
@@ -403,8 +403,7 @@ local mappings = {
         f = { "<cmd>CocCommand snippets.openSnippetFiles<cr>", "Ultisnips Files" },
         s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
-        r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
-
+        r = { "<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh" },
     },
     v = {
         name = "vim",
@@ -429,12 +428,12 @@ local mappings = {
 }
 
 local vopts = {
-    mode = "v", -- VISUAL mode
+    mode = "v",     -- VISUAL mode
     prefix = "<leader>",
-    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
     silent = false, -- use `silent` when creating keymaps
     noremap = true, -- use `noremap` when creating keymaps
-    nowait = true, -- use `nowait` when creating keymaps
+    nowait = true,  -- use `nowait` when creating keymaps
 }
 
 local vmappings = {
@@ -467,8 +466,7 @@ local vmappings = {
         s = { "<cmd>CocList snippets<cr>", "Ultisnips Snippets" },
         t = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
         a = { "<plug>(coc-codeaction-selected)<cr>", "selected action" },
-        r = {"<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh"},
-
+        r = { "<cmd>call UltiSnips#RefreshSnippets()<cr>", "refresh" },
     },
 }
 
