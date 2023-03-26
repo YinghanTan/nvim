@@ -113,7 +113,7 @@ telescope.setup({
         coc = {
             theme = 'ivy',
             prefer_locations = true, -- always use telescope locations to preview definitions/declarations/implementations etc
-        }
+        },
 
         fzy_native = {
             override_generic_sorter = false,
