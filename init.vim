@@ -13,6 +13,8 @@ source $HOME/.config/nvim/themes/theme.vim
 luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
 luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
+luafile $HOME/.config/nvim/lua/project-nvim.lua
+" source $HOME/.config/nvim/plug-config/vim-rooter.vim
 
 " Status Line
 
@@ -41,7 +43,6 @@ source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
 source $HOME/.config/nvim/plug-config/fastFold.vim
-source $HOME/.config/nvim/plug-config/vim-rooter.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
@@ -69,7 +70,6 @@ luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
-luafile $HOME/.config/nvim/lua/nvim-remote-containers.lua
 " luafile $HOME/.config/nvim/lua/neozoom.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 

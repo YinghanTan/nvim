@@ -21,11 +21,13 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-tree/nvim-tree.lua' "A File Explorer For Neovim Written In Lua
     " Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'tpope/vim-vinegar' " Better Netrw
+    Plug 'ahmedkhalf/project.nvim' " project.nvim is an all in one neovim plugin written in lua that provides superior project management.
+    Plug 'nvim-telescope/telescope-project.nvim' " An extension for telescope.nvim that allows you to switch between projects.
+    " Plug 'airblade/vim-rooter' " Have the file system follow you around
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
     Plug 'tpope/vim-eunuch' " Files
-    Plug 'airblade/vim-rooter' " Have the file system follow you around
     Plug 'sheerun/vim-polyglot' " Better Syntax Support
     Plug 'wsdjeg/vim-fetch' " Fetch that line and column
     Plug 'tpope/vim-abolish' " change cases
