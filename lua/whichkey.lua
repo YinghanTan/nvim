@@ -395,19 +395,16 @@ local mappings = {
         h = { "<cmd>FloatermNew htop<cr>", "htop" },
         u = { "<cmd>FloatermNew ncdu<cr>", "ncdu" },
         t = {
-            name = "tab",
+            name = "tab/treesitter",
             ["<Left>"] = { "<cmd>tabm -1<cr>", "<= Tab" },
             ["<Right>"] = { "<cmd>tabm +1<cr>", "=> Tab" },
             ["n"] = { "<cmd>tabnew<cr>", "new tab" },
             ["c"] = { "<cmd>tabnew | terminal<cr>", "new tab" },
             ["%"] = { "<cmd>tabedit %<cr>", "file in new tab" },
             ["i"] = { "<cmd>tabnew | terminal ipython<cr>", "ipython" },
+            h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
+            p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
         },
-    },
-    T = {
-        name = "treesitter",
-        h = { "<cmd>TSHighlightCapturesUnderCursor<cr>", "Highlight" },
-        p = { "<cmd>TSPlaygroundToggle<cr>", "Playground" },
     },
     u = {
         name = "ultisnips / undo",
