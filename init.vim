@@ -48,7 +48,6 @@ source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/fzfPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
-source $HOME/.config/nvim/plug-config/gist.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim

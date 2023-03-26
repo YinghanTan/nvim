@@ -131,7 +131,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'shumphrey/fugitive-gitlab.vim' " enables Gbrowse for gitlab
     Plug 'tommcdo/vim-fubitive' " enables Gbrowse for bitbucket
     Plug 'junegunn/gv.vim' " Git Commit Browser
-    Plug 'mattn/vim-gist' " Gist
     Plug 'mattn/webapi-vim' " Gist
     Plug 'rhysd/git-messenger.vim' " Popup Git messages
     Plug 'ruifm/gitlinker.nvim' " generate shareable file permalinks
