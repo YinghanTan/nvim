@@ -30,6 +30,9 @@ telescope.setup({
             height = 0.80,
             preview_cutoff = 120,
         },
+        preview = {
+            treesitter = true
+        },
         mappings = {
             i = {
                 ["<C-n>"]      = actions.cycle_history_next,
@@ -119,9 +122,12 @@ telescope.setup({
             theme = 'ivy',
             prefer_locations = true, -- always use telescope locations to preview definitions/declarations/implementations etc
         },
-        fzy_native = {
-            override_generic_sorter = false,
-            override_file_sorter = true,
+        fzf = {
+            fuzzy = true,                    -- false will only do exact matching
+            override_generic_sorter = true,  -- override the generic sorter
+            override_file_sorter = true,     -- override the file sorter
+            case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+            -- the default case_mode is "smart_case"
         },
         media_files = {
             -- filetypes whitelist
@@ -171,6 +177,7 @@ telescope.setup({
 
 
 -- 🔭 Extensions --
+telescope.load_extension("fzf")
 telescope.load_extension('coc')
 telescope.load_extension("ui-select")  -- https://github.com/nvim-telescope/telescope-ui-select.nvim
 telescope.load_extension("bookmarks")  -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
@@ -183,7 +190,6 @@ telescope.load_extension("projects")   -- project.nvim
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
-    require("telescope").load_extension("fzy_native")   -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
 end
 
 -- Deprecated --

@@ -20,7 +20,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-tree/nvim-web-devicons' " A lua fork of vim-devicons. This plugin provides the same icons as well as colors for each icon.
     Plug 'nvim-tree/nvim-tree.lua' "A File Explorer For Neovim Written In Lua
     " Plug 'scrooloose/nerdtree' " File Explorer SideBar
-    Plug 'tpope/vim-vinegar' " Better Netrw
     Plug 'ahmedkhalf/project.nvim' " project.nvim is an all in one neovim plugin written in lua that provides superior project management.
     Plug 'nvim-telescope/telescope-project.nvim' " An extension for telescope.nvim that allows you to switch between projects.
     " Plug 'airblade/vim-rooter' " Have the file system follow you around
@@ -107,9 +106,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Search (Telescope)
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
     Plug 'fannheyward/telescope-coc.nvim'
-    Plug 'nvim-telescope/telescope-fzy-native.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
     Plug 'nvim-telescope/telescope-ui-select.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
     Plug 'dhruvmanila/telescope-bookmarks.nvim'
