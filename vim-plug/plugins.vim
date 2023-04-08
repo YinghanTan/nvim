@@ -106,7 +106,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Search (Telescope)
     Plug 'nvim-lua/popup.nvim'
     Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.x' }
     Plug 'fannheyward/telescope-coc.nvim'
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
     Plug 'nvim-telescope/telescope-ui-select.nvim'
@@ -143,7 +143,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
     Plug 'ryanoasis/vim-devicons' "Cool icons
-    Plug 'norcalli/nvim-colorizer.lua' " colorizer
+    " Plug 'norcalli/nvim-colorizer.lua' " colorizer
     " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim' " highlight the different todo comments
     " Plug 'dhruvasagar/vim-zoom' " Zoom Window

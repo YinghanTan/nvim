@@ -55,7 +55,7 @@ source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 
 " --- Lua Plugins ---
-luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+" luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
 luafile $HOME/.config/nvim/lua/vim-matchup.lua
