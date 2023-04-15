@@ -2,9 +2,10 @@
 set runtimepath^=~/.config/nvim/autoload/coc.nvim/
 
 source $HOME/.config/nvim/vim-plug/plugins.vim
+luafile $HOME/.config/nvim/lua/settings.lua
 source $HOME/.config/nvim/general/settings.vim
-" luafile $HOME/.config/nvim/lua/settings.lua
-source $HOME/.config/nvim/general/folding.vim
+" source $HOME/.config/nvim/general/folding.vim
+luafile $HOME/.config/nvim/lua/folding.lua
 source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/keys/mappings.vim
 
@@ -38,7 +39,7 @@ source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/autopairs.vim
-source $HOME/.config/nvim/plug-config/fastFold.vim
+" source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
@@ -67,6 +68,7 @@ luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
+luafile $HOME/.config/nvim/lua/hop.lua
 " luafile $HOME/.config/nvim/lua/neozoom.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 
