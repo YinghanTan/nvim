@@ -64,6 +64,7 @@ luafile $HOME/.config/nvim/lua/gitlinker.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
+luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 " luafile $HOME/.config/nvim/lua/neozoom.lua

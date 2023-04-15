@@ -82,8 +82,6 @@
     "zsh"
   ],
   "coc.preferences.formatOnType": true,
-  "tsserver.formatOnType": true, // Run format on type special characters., default: true
-  "tsserver.enableJavascript": true, // use tsserver for javascript files enabled by default
   "codeLens.enable": false, // to speed things up
 
   // Javascript Formatting
@@ -94,6 +92,8 @@
   "prettier.bracketSpacing": true,
   "prettier.disableSuccessMessage": false,
   // "prettier.onlyUseLocalVersion": true,
+  
+  // Python
 
   // Python Formatting
   "python.formatting.provider": "black",
@@ -111,6 +111,7 @@
     "import pylint_venv; pylint_venv.inithook(force_venv_activation=True)"
   ],
   // Python coc-pyright
+  // "pyright.inlayHints.enable": false,
   "pyright.inlayHints.variableTypes": false,
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.testing.provider": "pytest",
@@ -118,6 +119,8 @@
 
   // Lua
   "Lua.diagnostics.globals": ["vim"],
+  "Lua.hint.enable": false,
+
   // Snippets
   "snippets.userSnippetsDirectory": "~/.config/nvim/UltiSnips",
   "snippets.ultisnips.directories": [ 
@@ -139,23 +142,6 @@
     "handlebars": "html",
     "htmldjango": "html"
   },
-
-  // Coc-Git
-  "git.enableGutters": true,
-  "git.changedSign.text": "~",
-  "git.changedSign.hlGroup": "MyDiffChange",
-  "git.addedSign.text": "+",
-  "git.addedSign.hlGroup": "MyDiffAdd",
-  "git.removedSign.text": "_",
-  "git.removedSign.hlGroup": "MyDiffDelete",
-  "git.topRemovedSign.text": "‾",
-  "git.topRemovedSign.hlGroup": "MyDiffDelete",
-  "git.changeRemovedSign.text": "≃",
-  "git.changeRemovedSign.hlGroup": "MyDiffChange",
-  "git.issueFormat": "#%i",
-  "git.conflict.enabled": true,
-  "git.conflict.current.hlGroup": "MyDiffChange",
-  "git.conflict.incoming.hlGroup": "MyDiffAdd",
 
   // coc-sh
   "languageserver": {

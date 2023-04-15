@@ -243,7 +243,7 @@ local mappings = {
         p = { "<cmd>Gist -b -p<cr>", "create private" },
     },
     l = {
-          -- COC as LSP
+        -- COC as LSP
         name = "lsp / latex",
         ["."] = { "<cmd>CocConfig<cr>", "config" },
         a = { "<plug>(coc-codeaction)<cr>", "line action" },
@@ -319,12 +319,17 @@ local mappings = {
         ["."] = { "<cmd>Telescope filetypes<cr>", "filetypes" },
         A = { "<cmd>Telescope builtin<cr>", "all" },
         b = { "<cmd>Telescope buffers<cr>", "buffers" },
-        B = { "<cmd>Telescope bookmarks<cr>", "Bookmarks" },
+        B = { "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", "Bookmarks" },
+
+        c = { "<cmd>lua require('telescope.builtin').loclist()<cr>", "location list" },
+        C = { "<cmd>Telescope command_palette<cr>", "marks" },
+
         d = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
         D = { "<cmd>TodoTelescope<cr>", "toDos" },
         e = { "<cmd>Telescope env<cr>", "env" },
         E = { "<cmd>Telescope spell_suggest<cr>", "spell" },
         f = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "find file" },
+        F = { "<cmd>lua require('telescope').extensions.file_browser.file_browser()<cr>", "file browser" },
         -- f = { "<cmd>Files<cr>", "find file" },
         h = { "<cmd>Telescope oldfiles<cr>", "files history" },
         H = { "<cmd>Telescope command_history<cr>", "command history" },
@@ -334,23 +339,26 @@ local mappings = {
         -- I = { "<cmd>Telescope diagnostics<cr>", "all diagnostics" },
         j = { "<cmd>Telescope jumplist<cr>", "jumplist" },
         k = { "<cmd>Telescope keymaps<cr>", "keymaps" },
+
+        l = { "<cmd>lua require('telescope.builtin').live_grep({debounce = 100, grep_open_files=true})<cr>", "lines" },
+        L = { "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>", "BLines" },
         m = { "<cmd>Telescope marks<cr>", "marks" },
         M = { "<cmd>Telescope man_pages<cr>", "man pages" },
+        p = { "<cmd>lua require('telescope').extensions.repo.list{}<cr>", "repo" },
         q = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "quickfix" },
-        l = { "<cmd>lua require('telescope.builtin').loclist()<cr>", "loc list" },
+
         r = { "<cmd>Telescope registers<cr>", "Registers" },
         R = { "<cmd>Telescope resume<cr>", "Resume" },
         s = { "<cmd>CocList snippets<cr>", "snippets" },
         S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
-        t = { "<cmd>Telescope live_grep search_dirs=.<cr>", "find text" },
-        T = { "<cmd>Telescope live_grep<cr>", "find text" },
-        -- t = { "<cmd>RG<cr>", "text" },
+        t = { "<cmd>lua require('telescope.builtin').live_grep({debounce = 100, search_dirs={'.'}})<cr>", "find text" },
+        T = { "<cmd>Telescope live_grep({debounce = 100,})<cr>", "find text" },
         u = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
         w = { "<cmd>Telescope tele_tabby list<cr>", "windows" },
-        -- \ 'w' : [':Windows'                                      , 'search windows'     ]    ,
         v = { "<cmd>Telescope vim_options<cr>", "vim Options" },
-        y = { "<cmd>CocFzfList yank<cr>", "yank Lists" },
-        -- y = { "<cmd>Telescope neoclip<cr>", "Yank Lists" },
+
+        y = { "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", "Yank Lists" },
+
         g = {
             name = "Git",
             k = { "<cmd>Telescope git_bcommits<cr>", "commits" },

@@ -45,7 +45,9 @@ telescope.setup({
                 ['<C-v>']   = multiopen.i['<C-v>'],
                 ['<C-x>']   = multiopen.i['<C-s>'],
                 ['<C-t>']   = multiopen.i['<C-t>'],
-                ['<CR>']    = multiopen.i['<CR>'],
+                -- ['<CR>']    = multiopen.i['<CR>'],
+
+                ["<CR>"]    = actions.select_default,
                 ["<C-u>"]   = actions.preview_scrolling_up,
                 ["<C-d>"]   = actions.preview_scrolling_down,
                 ["<C-h>"]   = actions.results_scrolling_up,
@@ -56,16 +58,17 @@ telescope.setup({
                 ["<C-q>"]   = actions.send_selected_to_qflist + actions.open_qflist,
                 -- ["<C-l>"]      = actions.complete_tag,
                 ["<C-_>"]   = actions.which_key,
-                ["<C-\\>"]   = action_layout.toggle_preview,    -- <C-/> to trigger
+                ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
                 ["<C-a>"]   = actions.select_all,
                 ["<C-r>"]   = actions.drop_all,
             },
             n = {
                 ["<esc>"]   = actions.close,
-                ['<C-v>']   = multiopen.i['<C-v>'],
-                ['<C-x>']   = multiopen.i['<C-s>'],
-                ['<C-t>']   = multiopen.i['<C-t>'],
-                ['<CR>']    = multiopen.i['<CR>'],
+                ['<C-v>']   = multiopen.n['<C-v>'],
+                ['<C-x>']   = multiopen.n['<C-s>'],
+                ['<C-t>']   = multiopen.n['<C-t>'],
+                -- ['<CR>']    = multiopen.n['<CR>'],
+                ["<CR>"]    = actions.select_default,
                 ["<Tab>"]   = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
                 ["<M-q>"]   = actions.send_to_qflist + actions.open_qflist,
@@ -85,7 +88,7 @@ telescope.setup({
                 ["<C-h>"]   = actions.results_scrolling_up,
                 ["<C-l>"]   = actions.results_scrolling_down,
                 ["<C-_>"]   = actions.which_key,
-                ["<C-\\>"]   = action_layout.toggle_preview,    -- <C-/> to trigger
+                ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
                 ["<C-a>"]   = actions.select_all,
                 ["<C-r>"]   = actions.drop_all,
             },
@@ -110,6 +113,70 @@ telescope.setup({
         -- }
         -- please take a look at the readme of the extension you want to configure
         --
+        repo = {
+            list= {
+                fd_opts = {
+                    -- "--no-ignore-vcs",
+                },
+                search_dirs = {
+                    "~/projects/"
+                }
+            }
+        },
+        command_palette = {
+            {
+                "File",
+                { "Yank Current File Name", ":lua require('joel.funcs').yank_current_file_name()" },
+                { "Write Current Buffer", ":w" },
+                { "Write All Buffers", ":wa" },
+                { "Quit", ":qa" },
+                { "File Browser", ":lua require'telescope'.extensions.file_browser.file_browser()", 1 },
+                { "Search for Word", ":lua require('telescope.builtin').live_grep()", 1 },
+                { "Project Files", ":lua require'joel.telescope'.project_files()", 1 },
+            },
+            {
+                "Notes",
+                { "Find Notes",        ":lua require('telescope_commands').find_notes()", 1 },
+                { "Search/Grep Notes", ":lua require('telescope_commands').grep_notes()", 1 },
+                { "Browse Notes", ":lua require('telescope_commands').browse_notes()", 1 },
+            },
+            {
+                "Projects",
+                { "Find Files Meshbio",        ":lua require('telescope_commands').find_files_meshbio()", 1 },
+                { "Search/Grep Meshbio", ":lua require('telescope_commands').grep_meshbio()", 1 },
+                { "Search Todos", ":lua require('telescope_commands').search_todos()", 1 },
+            },
+            {
+                "Toggle",
+                { "cursor line", ":set cursorline!" },
+                { "cursor column", ":set cursorcolumn!" },
+                { "spell checker", ":set spell!" },
+                { "relative number", ":set relativenumber!" },
+                { "search highlighting", ":set hlsearch!" },
+                { "Colorizer", ":set ColorToggle!" },
+                -- { "Fold Column", ":set ColorToggle!" },
+
+            },
+            { "Neovim",
+                { "reload vimrc (\as)",        ":source $MYVIMRC" },
+                { 'check health',              ":checkhealth" },
+                { "jumps (\\sj)",              ":lua require('telescope.builtin').jumplist()" },
+                { "commands (\\s;)",           ":lua require('telescope.builtin').commands()" },
+                { "command history (\\sH)",    ":lua require('telescope.builtin').command_history()" },
+                { "registers (\\sr)",          ":lua require('telescope.builtin').registers()" },
+                { "colorscheme",               ":lua require('telescope.builtin').colorscheme()",    1 },
+                { "vim options",               ":lua require('telescope.builtin').vim_options()" },
+                { "keymaps",                   ":lua require('telescope.builtin').keymaps()" },
+                { "buffers",                   ":Telescope buffers" },
+                { "search history (C-h)",      ":lua require('telescope.builtin').search_history()" },
+                { "paste mode",                ':set paste!' },
+                { 'cursor line',               ':set cursorline!' },
+                { 'cursor column',             ':set cursorcolumn!' },
+                { "spell checker",             ':set spell!' },
+                { "relative number",           ':set relativenumber!' },
+                { "search highlighting (F12)", ':set hlsearch!' },
+            }
+        },
         coc = {
             theme = 'ivy',
             prefer_locations = true, -- always use telescope locations to preview definitions/declarations/implementations etc
@@ -152,7 +219,7 @@ telescope.setup({
             -- Available: 'brave', 'buku', 'chrome', 'edge', 'safari', 'firefox'
             selected_browser = "chrome",
             -- Either provide a shell command to open the URL
-            url_open_command = "open",
+            url_open_command = "xdg-open",
             -- Or provide the plugin name which is already installed
             -- Available: 'vim_external', 'open_browser'
             url_open_plugin = nil,
@@ -179,12 +246,13 @@ telescope.load_extension('env')        -- https://github.com/LinArcX/telescope-e
 telescope.load_extension("tele_tabby") -- https://github.com/TC72/telescope-tele-tabby.nvim
 telescope.load_extension("project")    -- telescope-project.nvim
 telescope.load_extension("projects")   -- project.nvim
--- telescope.load_extension("repo")
 telescope.load_extension("file_browser")
+telescope.load_extension("command_palette")
+telescope.load_extension("repo")
+telescope.load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
 end
 
 -- Deprecated --
--- require("telescope").load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
