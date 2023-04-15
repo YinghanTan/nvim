@@ -1,6 +1,5 @@
 local M = {}
 
-
 function M.grep_notes()
     local opts = {}
     opts.search_dirs = { '~/vimwiki/' }

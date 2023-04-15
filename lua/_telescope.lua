@@ -59,6 +59,8 @@ telescope.setup({
                 -- ["<C-l>"]      = actions.complete_tag,
                 ["<C-_>"]   = actions.which_key,
                 ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-f>"]  = actions.cycle_previewers_next,
+                ["<C-b>"]  = actions.cycle_previewers_prev,
                 ["<C-a>"]   = actions.select_all,
                 ["<C-r>"]   = actions.drop_all,
             },
@@ -89,6 +91,8 @@ telescope.setup({
                 ["<C-l>"]   = actions.results_scrolling_down,
                 ["<C-_>"]   = actions.which_key,
                 ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-f>"]  = actions.cycle_previewers_next,
+                ["<C-b>"]  = actions.cycle_previewers_prev,
                 ["<C-a>"]   = actions.select_all,
                 ["<C-r>"]   = actions.drop_all,
             },
@@ -177,6 +181,16 @@ telescope.setup({
                 { "search highlighting (F12)", ':set hlsearch!' },
             }
         },
+        advanced_git_search = {
+            -- fugitive or diffview
+            diff_plugin = "fugitive",
+            -- customize git in previewer 
+            -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
+            git_flags = {},
+            -- customize git diff in previewer 
+            -- e.g. flags such as { "--raw" }
+            git_diff_flags = {},
+        },
         coc = {
             theme = 'ivy',
             prefer_locations = true, -- always use telescope locations to preview definitions/declarations/implementations etc
@@ -250,6 +264,7 @@ telescope.load_extension("file_browser")
 telescope.load_extension("command_palette")
 telescope.load_extension("repo")
 telescope.load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
+telescope.load_extension("advanced_git_search")
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim

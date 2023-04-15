@@ -191,10 +191,12 @@ local mappings = {
         b = { "<cmd>Git blame<cr>", "blame" },
         B = { "<cmd>GBrowse<cr>", "browse" },
         [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
-        k = { "<cmd>Telescope git_bcommits<cr>", "buffer commits" }, -- edit commit message to show branch author and date
-        K = { "<cmd>Telescope git_commits<cr>", "all commits" },     -- edit commit message to show branch author and date
-        c = { "<cmd>BCommits<cr>", "commits" },
-        C = { "<cmd>Commits<cr>", "all commits" },
+        k = { "<cmd>BCommits<cr>", "commits" },
+        K = { "<cmd>Commits<cr>", "all commits" },
+        c = { "<cmd>lua require('telescope').extensions.advanced_git_search.search_log_content_file()<cr>", "buffer commit log" }, -- edit commit message to show branch author and date
+        C = { "<cmd>lua require('telescope').extensions.advanced_git_search.search_log_content()<cr>", "all commit log" },     -- edit commit message to show branch author and date
+
+
         d = {
             name = "diff",
             ["d"] = { "<cmd>Gdiff<cr>", "diff" },
@@ -202,6 +204,8 @@ local mappings = {
             ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
             ["u"] = { "<cmd>diffupdate<cr>", "update" },
             ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
+            ["l"] = { "<cmd>lua require('telescope').extensions.advanced_git_search.diff_commit_line()<cr>", "line" },
+            ["f"] = { "<cmd>lua require('telescope').extensions.advanced_git_search.diff_commit_file()<cr>", "file" },
         },
         e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
         g = {
@@ -223,6 +227,7 @@ local mappings = {
         m = { "<plug>(git-messenger)<cr>", "messenger" },
         p = { "<cmd>GGrep<cr>", "Grep" },
         r = { "<cmd>GDelete<cr>", "remove" },
+        R = { "<cmd>lua require('telescope').extensions.advanced_git_search.checkout_reflog()<cr>", "reflog" }, -- edit commit message to show branch author and date
         v = { "<cmd>GV!<cr>", "file commits" },
         V = { "<cmd>GV<cr>", "all commits" },
         -- f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
@@ -230,6 +235,7 @@ local mappings = {
         s = {
             name = "Search",
             b = { "<cmd>Telescope git_branches<cr>", "Branches" },
+            B = { "<cmd>lua require('telescope').extensions.advanced_git_search.diff_branch_file()<cr>", "buffer commits" }, -- edit commit message to show branch author and date
             s = { "<cmd>Telescope git_status<cr>", "Status" },
         },
     },
