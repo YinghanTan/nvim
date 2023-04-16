@@ -59,29 +59,8 @@
   // AutoFormat
   "suggest.enablePreselect": false,
   "suggest.noselect": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    // "css",
-    // "markdown",
-    // "javascript",
-    // "dart",
-    // "javascriptreact",
-    "typescript",
-    // "typescriptreact",
-    // "typescript.tsx",
-    "graphql",
-    // "html",
-    // "htmldjango",
-    // "yaml",
-    // "json",
-    // "python",
-    // "py",
-    "java",
-    // "dart",
-    "bash",
-    "sh",
-    "zsh"
-  ],
-  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSave": false,
+  "coc.preferences.formatOnType": false,
   "codeLens.enable": false, // to speed things up
 
   // Javascript Formatting
@@ -90,12 +69,11 @@
   // "prettier.eslintIntegration": true,
   "prettier.requireConfig": false,
   "prettier.bracketSpacing": true,
-  "prettier.disableSuccessMessage": false,
-  // "prettier.onlyUseLocalVersion": true,
   
   // Python
 
   // Python Formatting
+  "pyright.enable": true,
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.pyenv/versions/3.9.9/bin/black",
   "python.formatting.blackArgs": [],
@@ -182,7 +160,6 @@
   "yaml.format.enable": true,
 
   // Coc-Html
-  "html.enable": true,
   "html.format.enable": true,
   "html.filetypes": ["html", "handlebars", "django", "htmldjango"],
   "html.autoCreateQuotes": false,

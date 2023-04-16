@@ -94,9 +94,9 @@ treesitterConfigs.setup({
             },
         },
     },
-    -- autopairs = {
-    --     enable = true,
-    -- },
+    autopairs = {
+        enable = false,
+    },
     -- context_commentstring = {
     --     enable = true,
     --     enable_autocmd = false,

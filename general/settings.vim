@@ -21,7 +21,6 @@ autocmd Filetype html set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype html set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype html set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype html set shiftround    " round indent to multiple of 'shiftwidth'
-" autocmd Filetype html set foldmethod=indent "syntax highlighting items specify folds
 autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
 " autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
 
@@ -31,18 +30,15 @@ autocmd Filetype lua set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype lua set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype lua set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype lua set shiftround    " round indent to multiple of 'shiftwidth'
-" autocmd Filetype lua set foldmethod=indent "syntax highlighting items specify folds
 
 au BufNewFile,BufRead *.handlebars setlocal filetype=jst
 au BufNewFile,BufRead *.ejs set filetype=jst
 autocmd Filetype jst setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype jst set shiftround        " round indent to multiple of 'shiftwidth'
-" autocmd Filetype jst set foldmethod=indent " syntax highlighting items specify folds
 
 
 
 " Yaml Formatting
-" au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
@@ -52,7 +48,6 @@ autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 autocmd Filetype javascriptreact setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascriptreact set shiftround                " round indent to multiple of 'shiftwidth'
-" autocmd Filetype javascriptreact set foldmethod=indent         " syntax highlighting items specify folds
 
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set tabstop=2                      " a hard TAB displays as 2 columns
@@ -61,10 +56,7 @@ autocmd Filetype javascript set shiftwidth=2                   " operation >> in
 autocmd Filetype javascript set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype javascript set shiftround                     " round indent to multiple of 'shiftwidth'
 " autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
-" autocmd Filetype javascript set foldmethod=indent              " syntax highlighting items specify folds
-autocmd Filetype javascript set foldcolumn=1                   " defines 1 col at window left, to indicate folding
 autocmd Filetype javascript let javaScript_fold=1              " activate folding by JS syntax
-autocmd Filetype javascript set foldlevelstart=99             " start file with all folds opened
 
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
@@ -75,10 +67,7 @@ autocmd Filetype js set shiftwidth=2                          " operation >> ind
 autocmd Filetype js set expandtab                             " insert spaces when hitting TABs
 autocmd Filetype js set shiftround                            " round indent to multiple of 'shiftwidth'
 " autocmd Filetype js setlocal ts=4 sw=4 sts=4 expandtab
-" autocmd Filetype js set foldmethod=indent                     " syntax highlighting items specify folds
-autocmd Filetype js set foldcolumn=1                          " defines 1 col at window left, to indicate folding
 autocmd Filetype js let javaScript_fold=1                     " activate folding by JS syntax
-autocmd Filetype js set foldlevelstart=99                     " start file with all folds opened
 
 " vimwiki Settings
 " au BufNewFile,BufRead *.jsx setlocal filetype=vimwiki
@@ -89,10 +78,7 @@ autocmd Filetype vimwiki set shiftwidth=4                          " operation >
 autocmd Filetype vimwiki set expandtab                             " insert spaces when hitting TABs
 autocmd Filetype vimwiki set shiftround                            " round indent to multiple of 'shiftwidth'
 " autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
-" autocmd Filetype vimwiki set foldmethod=indent                     " syntax highlighting items specify folds
-autocmd Filetype vimwiki set foldcolumn=1                          " defines 1 col at window left, to indicate folding
 autocmd Filetype vimwiki let javaScript_fold=1                     " activate folding by vimwiki syntax
-autocmd Filetype vimwiki set foldlevelstart=99                     " start file with all folds opened
 
 
 " for js/coffee:w/jade files, 4 spaces
@@ -142,9 +128,6 @@ autocmd Filetype python set expandtab         " insert spaces when hitting TABs
 autocmd Filetype python set autoindent        " align the new line indent with the previous line
 autocmd Filetype python set shiftround        " round indent to multiple of 'shiftwidth'
 autocmd Filetype python set fileformat=unix   " round indent to multiple of 'shiftwidth'
-" autocmd Filetype python set foldmethod=indent " fold base on indentation
-autocmd Filetype python set foldlevelstart=99 " start file with all folds opened
-autocmd Filetype python set foldcolumn=1      " defines 1 col at window left, to indicate folding
 " Flagging Unnecessary Whitespace
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
@@ -161,9 +144,6 @@ autocmd Filetype typescript set shiftwidth=2          " operation >> indents 2 c
 autocmd Filetype typescript set expandtab             " insert spaces when hitting TABs
 autocmd Filetype typescript set autoindent            " align the new line indent with the previous line
 autocmd Filetype typescript set shiftround            " round indent to multiple of 'shiftwidth'
-" autocmd Filetype typescript set foldmethod=indent     " syntax highlighting items specify folds
-autocmd Filetype typescript set foldcolumn=1          " defines 1 col at window left, to indicate folding
-autocmd Filetype typescript set foldlevelstart=99     " start file with all folds opened
 
 autocmd Filetype typescript.tsx set tabstop=2         " a hard TAB displays as 2 columns
 autocmd Filetype typescript.tsx set softtabstop=2     " insert/delete 2 spaces when hitting a TAB/BACKSPACE
@@ -172,9 +152,6 @@ autocmd Filetype typescript.tsx set shiftwidth=2      " operation >> indents 2 c
 autocmd Filetype typescript.tsx set expandtab         " insert spaces when hitting TABs
 autocmd Filetype typescript.tsx set autoindent        " align the new line indent with the previous line
 autocmd Filetype typescript.tsx set shiftround        " round indent to multiple of 'shiftwidth'
-" autocmd Filetype typescript.tsx set foldmethod=indent " syntax highlighting items specify folds
-autocmd Filetype typescript.tsx set foldcolumn=1      " defines 1 col at window left, to indicate folding
-autocmd Filetype typescript.tsx set foldlevelstart=99 " start file with all folds opened
 
 
 " Git Settings
@@ -198,9 +175,6 @@ autocmd Filetype json set shiftwidth=2      " operation >> indents 2 columns; <<
 autocmd Filetype json set expandtab         " insert spaces when hitting TABs
 autocmd Filetype json set autoindent        " align the new line indent with the previous line
 autocmd Filetype json set shiftround        " round indent to multiple of 'shiftwidth'
-" autocmd Filetype json set foldmethod=indent " syntax highlighting items specify folds
-autocmd Filetype json set foldcolumn=1      " defines 1 col at window left, to indicate folding
-autocmd Filetype json set foldlevelstart=99 " start file with all folds opened
 
 " Bash Settings
 au BufNewFile,BufRead *.sh setlocal filetype=sh
@@ -210,10 +184,7 @@ autocmd Filetype sh set softtabstop=2                  " insert/delete 2 spaces 
 autocmd Filetype sh set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype sh set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype sh set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype sh set foldmethod=indent              " syntax highlighting items specify folds
-autocmd Filetype sh set foldcolumn=1                   " defines 1 col at window left, to indicate folding
 " autocmd Filetype sh let javaScript_fold=1 "activate folding by sh syntax
-autocmd Filetype sh set foldlevelstart=99              "start file with all folds opened
 
 
 " zsh Settings
@@ -224,10 +195,7 @@ autocmd Filetype zsh set softtabstop=2                  " insert/delete 2 spaces
 autocmd Filetype zsh set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype zsh set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype zsh set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype zsh set foldmethod=indent              " syntax highlighting items specify folds
-autocmd Filetype zsh set foldcolumn=1                   " defines 1 col at window left, to indicate folding
 " autocmd Filetype zsh let javaScript_fold=1 "activate folding by sh syntax
-autocmd Filetype zsh set foldlevelstart=99              "start file with all folds opened
 
 " LaTeX
 au BufNewFile,BufRead *.tex,*.sty,*.cls setlocal filetype=tex
@@ -237,10 +205,7 @@ autocmd Filetype tex set softtabstop=2                  " insert/delete 2 spaces
 autocmd Filetype tex set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype tex set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype tex set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype tex set foldmethod=indent              " syntax highlighting items specify folds
-autocmd Filetype tex set foldcolumn=1                   " defines 1 col at window left, to indicate folding
 " autocmd Filetype tex let javaScript_fold=1 "activate folding by sh syntax
-autocmd Filetype tex set foldlevelstart=99              "start file with all folds opened
 setlocal autoindent
 let g:tex_indent_items=0
 let g:tex_indent_and=0
@@ -256,11 +221,8 @@ autocmd Filetype dart set softtabstop=2                  " insert/delete 2 space
 autocmd Filetype dart set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype dart set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype dart set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype dart set foldmethod=indent              " syntax highlighting items specify folds
-autocmd Filetype dart set foldcolumn=1                   " defines 1 col at window left, to indicate folding
 autocmd Filetype dart set autoindent
 " autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
-" autocmd Filetype dart set foldlevelstart=99 "start file with all folds opened
 
 " Ultisnips Auto Reload
 autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets()
