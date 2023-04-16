@@ -1,11 +1,22 @@
 -- remove dots or spaces to indicate folded line
+-- vim.opt.fillchars = {
+--   vert = "│",
+--   diff = "╱",
+--   foldclose = "",
+--   foldopen = "",
+--   fold = " ",
+--   msgsep = "─"
+-- }
+
 vim.opt.fillchars = {
   vert = "│",
   diff = "╱",
   foldclose = "",
   foldopen = "",
   fold = " ",
-  msgsep = "─"
+  eob = " ",
+  foldsep: " ",
+  msgsep = "─",
 }
 vim.opt.listchars = {
   tab = '▸ ',

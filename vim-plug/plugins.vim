@@ -142,7 +142,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lewis6991/gitsigns.nvim' " Git integration: signs, hunk actions, blame, etc.
 
     " Plug 'konfekt/fastfold'
-    Plug 'anuvyklack/pretty-fold.nvim'
+    " Plug 'anuvyklack/pretty-fold.nvim'
+    Plug 'kevinhwang91/nvim-ufo'
+    Plug 'kevinhwang91/promise-async'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
 
