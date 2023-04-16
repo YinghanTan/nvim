@@ -165,6 +165,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'p00f/nvim-ts-rainbow' " Rainbow parentheses for neovim using tree-sitter
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-ts-autotag'
+    " Plug 'windwp/nvim-autopairs'
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
 

@@ -119,7 +119,7 @@ vim.cmd("au! BufWritePost $MYVIMRC source %")      -- auto source when writing t
 -- write or save file with sudo
 --- --- ---
 
--- -- Indentation
+-- --- Indentation ---
 -- vim.opt.tabstop = 2
 -- vim.opt.shiftwidth = 2
 -- vim.opt.softtabstop = 2
