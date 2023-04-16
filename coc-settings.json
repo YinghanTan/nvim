@@ -71,7 +71,6 @@
   "prettier.bracketSpacing": true,
   
   // Python
-
   // Python Formatting
   "pyright.enable": true,
   "python.formatting.provider": "black",
