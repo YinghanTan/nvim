@@ -15,7 +15,6 @@ vim.opt.fillchars = {
   foldopen = "",
   fold = " ",
   eob = " ",
-  foldsep: " ",
   msgsep = "─",
 }
 vim.opt.listchars = {
