@@ -17,14 +17,16 @@ treesitterConfigs.setup({
     ignore_install = { 'smali' },
     highlight = {
         enable = true, -- false will disable the whole extension
-        disable = {}, -- list of language that will be disabled
+        disable = {},  -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
         -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
         -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
     },
-    indent = { enable = true, disable = { "yaml" } },
+    indent = {
+        enable = false,
+    },
     rainbow = {
         enable = true,
         colors = {
@@ -39,6 +41,26 @@ treesitterConfigs.setup({
     },
     playground = {
         enable = true,
+        disable = {},
+        updatetime = 25,         -- Debounced time for highlighting nodes in the playground from source code
+        persist_queries = false, -- Whether the query persists across vim sessions
+        keybindings = {
+            toggle_query_editor = 'o',
+            toggle_hl_groups = 'i',
+            toggle_injected_languages = 't',
+            toggle_anonymous_nodes = 'a',
+            toggle_language_display = 'I',
+            focus_language = 'f',
+            unfocus_language = 'F',
+            update = 'R',
+            goto_node = '<cr>',
+            show_help = '?',
+        }
+    },
+    query_linter = {
+        enable = true,
+        use_virtual_text = true,
+        lint_events = { "BufWrite", "CursorHold" },
     },
     incremental_selection = {
         enable = true,
@@ -112,3 +134,40 @@ treesitterConfigs.setup({
 -- :TSInstall all -- outside of tmux
 -- :TSUpdate all
 -- :TSUpdateSync all
+
+
+local M = {}
+local python_function_query_string = [[
+(function_definition
+    name: (identifier) @func_name (#offset! @func_name)
+)
+]]
+
+local lua_function_query_string = [[
+    (function_declaration
+    name:
+    [
+    (dot_index_expression)
+    (identifier)
+    ] @func_name (#offset! @func_name)
+    )
+]]
+
+local func_lookup = {
+    python = python_function_query_string,
+    lua = lua_function_query_string,
+}
+
+local function get_functions(bufnr, lang, query_string)
+    local parser = vim.treesitter.get_parser(bufnr, lang)
+    local syntax_tree = parser:parse()[1]
+    local root = syntax_tree:root()
+    local query = vim.treesitter.parse_query(lang, query_string)
+    local func_list = {}
+    for _, captues, metadata in query:iter_matches(root, bufnr) do
+        local row, col, _ = captures[1]:start()
+        local name = vim.treesitter.query.get_node_text(captures[1], bufnr)
+        table.insert(func_list, { name, row, col, metadata[1].range })
+    end
+    return func_list
+end

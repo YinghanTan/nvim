@@ -38,8 +38,6 @@ source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/far.vim
-source $HOME/.config/nvim/plug-config/autopairs.vim
-" source $HOME/.config/nvim/plug-config/fastFold.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
@@ -70,7 +68,7 @@ luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 " luafile $HOME/.config/nvim/lua/pretty-fold.lua
-" luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
+luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " luafile $HOME/.config/nvim/lua/neozoom.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 
@@ -117,6 +115,8 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 " source $HOME/.config/nvim/plug-config/fzf.vim
 " source $HOME/.config/nvim/plug-config/fzfPreview.vim
 " source $HOME/.config/nvim/plug-config/vim-zoom.vim
+" source $HOME/.config/nvim/plug-config/autopairs.vim
+" source $HOME/.config/nvim/plug-config/fastFold.vim
 
 " === Dependencies ===
 " --- Python Dependencies ---

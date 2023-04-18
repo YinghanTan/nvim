@@ -80,7 +80,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'natebosch/dartlang-snippets'
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
-    Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'tpope/vim-surround' " Surround
 
 
@@ -165,7 +164,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'p00f/nvim-ts-rainbow' " Rainbow parentheses for neovim using tree-sitter
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-ts-autotag'
-    " Plug 'windwp/nvim-autopairs'
+    Plug 'windwp/nvim-autopairs'
+    " Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
 
