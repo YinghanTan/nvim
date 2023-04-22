@@ -191,10 +191,10 @@ local mappings = {
         b = { "<cmd>Git blame<cr>", "blame" },
         B = { "<cmd>GBrowse<cr>", "browse" },
         [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
-        k = { "<cmd>BCommits<cr>", "commits" },
-        K = { "<cmd>Commits<cr>", "all commits" },
-        c = { "<cmd>Telescope git_bcommits<cr>", "commits" },
-        C = { "<cmd>Telescope git_commits<cr>", "all commits" },
+        c = { "<cmd>BCommits<cr>", "commits" },
+        C = { "<cmd>Commits<cr>", "all commits" },
+        k = { "<cmd>lua require('telescope.builtin').git_bcommits()<cr>", "commits" },
+        K = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "all commits" },
 
 
         d = {
@@ -363,8 +363,8 @@ local mappings = {
         y = { "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", "Yank Lists" },
         g = {
             name = "Git",
-            k = { "<cmd>Telescope git_bcommits<cr>", "commits" },
-            K = { "<cmd>Telescope git_commits<cr>", "all commits" },
+            k = { "<cmd>lua require('telescope.builtin').git_bcommits()<cr>", "commits" },
+            K = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "all commits" },
             b = { "<cmd>Telescope git_branches<cr>", "branch" },
             c = { "<cmd>BCommits<cr>", "commits" },
             C = { "<cmd>Commits<cr>", "all commits" },

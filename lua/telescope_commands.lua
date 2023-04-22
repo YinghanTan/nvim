@@ -116,6 +116,15 @@ function M.search_todos()
 end
 
 
+-- function M.git_bcommits_01()
+--     local opts = {}
+--     -- opts.git_command = {"git","log","--pretty=oneline","--abbrev-commit"}
+--     opts.git_command = {"git", "log", "--graph", "--color=always", "--pretty=oneline", "--abbrev-commit", "--format='%C(auto)%h%d %s %C(white)%C(bold)%cr %C(auto)%C(blue)%an'"}
+--     opts.prompt_title = "Git BCommits"
+--     opts.path_display = { "smart" }
+--     opts.debounce = 100
+--     require("telescope.builtin").git_bcommits(opts)
+-- end
 
 
 return M

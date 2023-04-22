@@ -113,8 +113,8 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " source $HOME/.config/nvim/plug-config/cocSnippets.vim
 " source $HOME/.config/nvim/plug-config/vim-rooter.vim
 " source $HOME/.config/nvim/plug-config/coc/coc-git.vim
-" source $HOME/.config/nvim/plug-config/fzf.vim
-" source $HOME/.config/nvim/plug-config/fzfPreview.vim
+source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/fzfPreview.vim
 " source $HOME/.config/nvim/plug-config/vim-zoom.vim
 " source $HOME/.config/nvim/plug-config/autopairs.vim
 " source $HOME/.config/nvim/plug-config/fastFold.vim
