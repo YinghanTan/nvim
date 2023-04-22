@@ -56,6 +56,7 @@ source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 " --- Lua Plugins ---
 " luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
+luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/nvim-ufo.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
 luafile $HOME/.config/nvim/lua/vim-matchup.lua
@@ -126,4 +127,4 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " neovim prettier 
 
 " --- linux dependencies ---
-" ripgrep fzf bat fdfind delta
+" ripgrep fzf bat fdfind delta glow

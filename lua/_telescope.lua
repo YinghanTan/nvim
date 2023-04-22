@@ -45,7 +45,6 @@ telescope.setup({
                 ['<C-v>']   = multiopen.i['<C-v>'],
                 ['<C-x>']   = multiopen.i['<C-s>'],
                 ['<C-t>']   = multiopen.i['<C-t>'],
-                -- ['<CR>']    = multiopen.i['<CR>'],
 
                 ["<CR>"]    = actions.select_default,
                 ["<C-u>"]   = actions.preview_scrolling_up,
@@ -59,8 +58,8 @@ telescope.setup({
                 -- ["<C-l>"]      = actions.complete_tag,
                 ["<C-_>"]   = actions.which_key,
                 ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
-                ["<C-f>"]  = actions.cycle_previewers_next,
-                ["<C-b>"]  = actions.cycle_previewers_prev,
+                ["<C-f>"]   = actions.cycle_previewers_next,
+                ["<C-b>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]   = actions.select_all,
                 ["<C-r>"]   = actions.drop_all,
             },
@@ -69,7 +68,6 @@ telescope.setup({
                 ['<C-v>']   = multiopen.n['<C-v>'],
                 ['<C-x>']   = multiopen.n['<C-s>'],
                 ['<C-t>']   = multiopen.n['<C-t>'],
-                -- ['<CR>']    = multiopen.n['<CR>'],
                 ["<CR>"]    = actions.select_default,
                 ["<Tab>"]   = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -91,8 +89,8 @@ telescope.setup({
                 ["<C-l>"]   = actions.results_scrolling_down,
                 ["<C-_>"]   = actions.which_key,
                 ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
-                ["<C-f>"]  = actions.cycle_previewers_next,
-                ["<C-b>"]  = actions.cycle_previewers_prev,
+                ["<C-f>"]   = actions.cycle_previewers_next,
+                ["<C-b>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]   = actions.select_all,
                 ["<C-r>"]   = actions.drop_all,
             },
@@ -118,7 +116,7 @@ telescope.setup({
         -- please take a look at the readme of the extension you want to configure
         --
         repo = {
-            list= {
+            list = {
                 fd_opts = {
                     -- "--no-ignore-vcs",
                 },
@@ -131,33 +129,33 @@ telescope.setup({
             {
                 "File",
                 { "Yank Current File Name", ":lua require('joel.funcs').yank_current_file_name()" },
-                { "Write Current Buffer", ":w" },
-                { "Write All Buffers", ":wa" },
-                { "Quit", ":qa" },
-                { "File Browser", ":lua require'telescope'.extensions.file_browser.file_browser()", 1 },
-                { "Search for Word", ":lua require('telescope.builtin').live_grep()", 1 },
-                { "Project Files", ":lua require'joel.telescope'.project_files()", 1 },
+                { "Write Current Buffer",   ":w" },
+                { "Write All Buffers",      ":wa" },
+                { "Quit",                   ":qa" },
+                { "File Browser",           ":lua require'telescope'.extensions.file_browser.file_browser()", 1 },
+                { "Search for Word",        ":lua require('telescope.builtin').live_grep()",                  1 },
+                { "Project Files",          ":lua require'joel.telescope'.project_files()",                   1 },
             },
             {
                 "Notes",
-                { "Find Notes",        ":lua require('telescope_commands').find_notes()", 1 },
-                { "Search/Grep Notes", ":lua require('telescope_commands').grep_notes()", 1 },
-                { "Browse Notes", ":lua require('telescope_commands').browse_notes()", 1 },
+                { "Find Notes",        ":lua require('telescope_commands').find_notes()",   1 },
+                { "Search/Grep Notes", ":lua require('telescope_commands').grep_notes()",   1 },
+                { "Browse Notes",      ":lua require('telescope_commands').browse_notes()", 1 },
             },
             {
                 "Projects",
-                { "Find Files Meshbio",        ":lua require('telescope_commands').find_files_meshbio()", 1 },
-                { "Search/Grep Meshbio", ":lua require('telescope_commands').grep_meshbio()", 1 },
-                { "Search Todos", ":lua require('telescope_commands').search_todos()", 1 },
+                { "Find Files Meshbio",  ":lua require('telescope_commands').find_files_meshbio()", 1 },
+                { "Search/Grep Meshbio", ":lua require('telescope_commands').grep_meshbio()",       1 },
+                { "Search Todos",        ":lua require('telescope_commands').search_todos()",       1 },
             },
             {
                 "Toggle",
-                { "cursor line", ":set cursorline!" },
-                { "cursor column", ":set cursorcolumn!" },
-                { "spell checker", ":set spell!" },
-                { "relative number", ":set relativenumber!" },
+                { "cursor line",         ":set cursorline!" },
+                { "cursor column",       ":set cursorcolumn!" },
+                { "spell checker",       ":set spell!" },
+                { "relative number",     ":set relativenumber!" },
                 { "search highlighting", ":set hlsearch!" },
-                { "Colorizer", ":set ColorToggle!" },
+                { "Colorizer",           ":set ColorToggle!" },
                 -- { "Fold Column", ":set ColorToggle!" },
 
             },
@@ -180,16 +178,6 @@ telescope.setup({
                 { "relative number",           ':set relativenumber!' },
                 { "search highlighting (F12)", ':set hlsearch!' },
             }
-        },
-        advanced_git_search = {
-            -- fugitive or diffview
-            diff_plugin = "fugitive",
-            -- customize git in previewer 
-            -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
-            git_flags = {},
-            -- customize git diff in previewer 
-            -- e.g. flags such as { "--raw" }
-            git_diff_flags = {},
         },
         coc = {
             theme = 'ivy',
@@ -245,6 +233,39 @@ telescope.setup({
         tele_tabby = {
             use_highlighter = true,
         },
+        ultisnips = {
+
+        },
+        undo = {
+            use_delta = true,
+            use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
+            side_by_side = false,
+            -- side_by_side = true,
+            -- layout_strategy = "vertical",
+            -- layout_config = {
+            --     preview_height = 0.8,
+            -- },
+            diff_context_lines = vim.o.scrolloff,
+            entry_format = "state #$ID, $STAT, $TIME",
+            mappings = {
+                i = {
+                    -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
+                    -- you want to replicate these defaults and use the following actions. This means
+                    -- installing as a dependency of telescope in it's `requirements` and loading this
+                    -- extension from there instead of having the separate plugin definition as outlined
+                    -- above.
+                    ["<cr>"] = require("telescope-undo.actions").yank_additions,
+                    ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+                    ["<C-cr>"] = require("telescope-undo.actions").restore,
+                }
+            }
+        },
+        terraform_doc = {
+            url_open_command = "xdg-open",
+            latest_provider_symbol = "  ",
+            wincmd = "botright vnew",
+            wrap = "nowrap",
+        }
     },
 })
 
@@ -256,15 +277,16 @@ telescope.load_extension("ui-select")  -- https://github.com/nvim-telescope/tele
 telescope.load_extension("bookmarks")  -- https://github.com/dhruvmanila/telescope-bookmarks.nvim
 telescope.load_extension("vimspector") -- https://github.com/nvim-telescope/telescope-vimspector.nvim
 telescope.load_extension('ultisnips')  -- https://github.com/fhill2/telescope-ultisnips.nvim
-telescope.load_extension('env')        -- https://github.com/LinArcX/telescope-env.nvim
 telescope.load_extension("tele_tabby") -- https://github.com/TC72/telescope-tele-tabby.nvim
 telescope.load_extension("project")    -- telescope-project.nvim
 telescope.load_extension("projects")   -- project.nvim
 telescope.load_extension("file_browser")
 telescope.load_extension("command_palette")
 telescope.load_extension("repo")
-telescope.load_extension("neoclip") -- https://github.com/AckslD/nvim-neoclip.lua
-telescope.load_extension("advanced_git_search")
+telescope.load_extension("neoclip")                  -- https://github.com/AckslD/nvim-neoclip.lua
+require('telescope').load_extension('ultisnips')     -- https://github.com/fhill2/telescope-ultisnips.nvim
+require('telescope').load_extension('undo')          -- https://github.com/fhill2/telescope-ultisnips.nvim
+require('telescope').load_extension('terraform_doc') -- https://github.com/ANGkeith/telescope-terraform-doc.nvim
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim

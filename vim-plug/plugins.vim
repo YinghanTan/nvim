@@ -21,8 +21,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-tree/nvim-tree.lua' "A File Explorer For Neovim Written In Lua
     " Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'ahmedkhalf/project.nvim' " project.nvim is an all in one neovim plugin written in lua that provides superior project management.
-    Plug 'nvim-telescope/telescope-project.nvim' " An extension for telescope.nvim that allows you to switch between projects.
-    Plug 'LinArcX/telescope-command-palette.nvim' " a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings.
     " Plug 'airblade/vim-rooter' " Have the file system follow you around
 
     " Editing
@@ -111,16 +109,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
     Plug 'nvim-telescope/telescope-ui-select.nvim'
     Plug 'nvim-telescope/telescope-file-browser.nvim'
-    Plug 'aaronhallaert/advanced-git-search.nvim'
     Plug 'dhruvmanila/telescope-bookmarks.nvim', { 'tag': '*' }
     Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'cljoly/telescope-repo.nvim'
     Plug 'AckslD/nvim-neoclip.lua'
-
-    Plug 'LinArcX/telescope-env.nvim'
+    Plug 'nvim-telescope/telescope-project.nvim' " An extension for telescope.nvim that allows you to switch between projects.
+    Plug 'LinArcX/telescope-command-palette.nvim' " a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings.
     Plug 'TC72/telescope-tele-tabby.nvim'
+
     Plug 'nvim-telescope/telescope-vimspector.nvim'
-    Plug 'fhill2/telescope-ultisnips.nvim'
+    Plug 'fhill2/telescope-ultisnips.nvim' " Integration for ultisnips.nvim with telescope.nvim.
+    Plug 'debugloop/telescope-undo.nvim' " Visualize your undo tree and fuzzy-search changes in it.
+    Plug 'ANGkeith/telescope-terraform-doc.nvim' " provides its users with ability to search and browse terraform providers docs.
 
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files

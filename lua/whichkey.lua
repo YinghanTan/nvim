@@ -193,8 +193,8 @@ local mappings = {
         [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
         k = { "<cmd>BCommits<cr>", "commits" },
         K = { "<cmd>Commits<cr>", "all commits" },
-        c = { "<cmd>lua require('telescope').extensions.advanced_git_search.search_log_content_file()<cr>", "buffer commit log" }, -- edit commit message to show branch author and date
-        C = { "<cmd>lua require('telescope').extensions.advanced_git_search.search_log_content()<cr>", "all commit log" },     -- edit commit message to show branch author and date
+        c = { "<cmd>Telescope git_bcommits<cr>", "commits" },
+        C = { "<cmd>Telescope git_commits<cr>", "all commits" },
 
 
         d = {
@@ -204,8 +204,6 @@ local mappings = {
             ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
             ["u"] = { "<cmd>diffupdate<cr>", "update" },
             ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
-            ["l"] = { "<cmd>lua require('telescope').extensions.advanced_git_search.diff_commit_line()<cr>", "line" },
-            ["f"] = { "<cmd>lua require('telescope').extensions.advanced_git_search.diff_commit_file()<cr>", "file" },
         },
         e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
         g = {
@@ -227,7 +225,6 @@ local mappings = {
         m = { "<plug>(git-messenger)<cr>", "messenger" },
         p = { "<cmd>GGrep<cr>", "Grep" },
         r = { "<cmd>GDelete<cr>", "remove" },
-        R = { "<cmd>lua require('telescope').extensions.advanced_git_search.checkout_reflog()<cr>", "reflog" }, -- edit commit message to show branch author and date
         v = { "<cmd>GV!<cr>", "file commits" },
         V = { "<cmd>GV<cr>", "all commits" },
         -- f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
@@ -235,7 +232,6 @@ local mappings = {
         s = {
             name = "Search",
             b = { "<cmd>Telescope git_branches<cr>", "Branches" },
-            B = { "<cmd>lua require('telescope').extensions.advanced_git_search.diff_branch_file()<cr>", "buffer commits" }, -- edit commit message to show branch author and date
             s = { "<cmd>Telescope git_status<cr>", "Status" },
         },
     },
@@ -351,20 +347,20 @@ local mappings = {
         m = { "<cmd>Telescope marks<cr>", "marks" },
         M = { "<cmd>Telescope man_pages<cr>", "man pages" },
         p = { "<cmd>lua require('telescope').extensions.repo.list{}<cr>", "repo" },
+        P = { "<cmd>Telescope terraform_doc<cr>", "Provider" },
         q = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "quickfix" },
 
         r = { "<cmd>Telescope registers<cr>", "Registers" },
         R = { "<cmd>Telescope resume<cr>", "Resume" },
         s = { "<cmd>CocList snippets<cr>", "snippets" },
-        S = { "<cmd>lua require'telescope'.extensions.ultisnips.ultisnips{}<cr>", "snippets" },
+        S = { "<cmd>lua require('telescope').extensions.ultisnips.ultisnips{}<cr>", "snippets" },
         t = { "<cmd>lua require('telescope.builtin').live_grep({debounce = 100, search_dirs={'.'}})<cr>", "find text" },
-        T = { "<cmd>Telescope live_grep({debounce = 100,})<cr>", "find text" },
-        u = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
+        u = { "<cmd>Telescope undo<cr>", "undo" },
+        U = { "<cmd>Telescope colorscheme<cr>", "colorscheme" },
         w = { "<cmd>Telescope tele_tabby list<cr>", "windows" },
         v = { "<cmd>Telescope vim_options<cr>", "vim Options" },
 
         y = { "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", "Yank Lists" },
-
         g = {
             name = "Git",
             k = { "<cmd>Telescope git_bcommits<cr>", "commits" },
