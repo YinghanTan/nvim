@@ -1,5 +1,6 @@
-
-" xnoremap('<leader>P', '\"_dp') " Paste keeping buffer intact
+" modify paste in visual mode to paste repeatedly
+xnoremap <leader>p "_dP
+" xnoremap <leader>p pgvy
 
 
 " Use alt + hjkl to resize windows
@@ -11,11 +12,8 @@ nnoremap <M-l>    :vertical resize +2<CR>
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
-" Open file under cursor in split
 
-" nmap gF <c-w>f
-nmap gF :vert wincmd f<CR>
-
+" jump to previous tab
 if !exists('g:lasttab')
   let g:lasttab = 1
 endif
@@ -23,20 +21,10 @@ nmap g^ :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
 
 
-" modify paste in visual mode to paste repeatedly
-xnoremap <leader>p "_dP
-
 " add :Te to :tabe.
 cnoreabbrev Te tabe.
 cnoreabbrev uuidgen r! uuidgen
 inoreabbrev <expr> cdate strftime('%Y-%m-%d')
-
-" sessions
-" nnoremap <leader>zr :source $HOME/.config/nvim/sessions/
-" nnoremap <leader>zz :mksession! $HOME/.config/nvim/sessions/
-let g:session_dir='$HOME/.config/nvim/sessions'
-exec 'nnoremap <Leader>zz :mks! ' . g:session_dir . '/*.vim<C-D><BS><BS><BS><BS><BS>'
-exec 'nnoremap <Leader>zr :so ' . g:session_dir. '/*.vim<C-D><BS><BS><BS><BS><BS>'
 
 " map <leader>pp :setlocal paste!<cr>             " Toggle paste mode on and off
 " set pastetoggle=<leader>pt       " paste mode: avoid auto indent, treat chars
@@ -56,10 +44,6 @@ xnoremap <Leader>rc :s///gc<Left><Left><Left>
 
 " Prevent x from overriding what's in the clipboard.
 " noremap x "_x
-" noremap X "_x
-
-" Ensure tabs don't get converted to spaces in Makefiles.
-autocmd FileType make setlocal noexpandtab
 
 " Ensure tabs don't get converted to spaces in Makefiles.
 autocmd FileType make setlocal noexpandtab
@@ -78,13 +62,11 @@ function! s:todo() abort
     endfor
     break
   endfor
-
   if !empty(entries)
     call setqflist(entries)
     copen
   endif
 endfunction
-
 command! Todo call s:todo()
 
 " Profile Vim by running this command once to start it and again to stop it.
@@ -98,34 +80,5 @@ function! s:profile(bang)
     profile file *
   endif
 endfunction
-
 command! -bang Profile call s:profile(<bang>0)
 
-
-" if g:system == "mac"
-"     nnoremap gX :silent :execute
-"                 \ "!open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
-" elseif g:system == linux
-"     nnoremap gX :silent :execute
-"                 \ "!xdg-open" expand('%:p:h') . "/" . expand("<cfile>") " &"<cr>
-" endif
-
-" Testing
-
-" function IScream(content)
-"     echom toupper(a:content)
-" endfunction
-" command -nargs=1 Scream call IScream(<args>)
-
-" augroup vimrc
-"     autocmd!
-" augroup END
-
-" command! -nargs=? DevDocs call system('xdg-open https://devdocs.io/#q=<args>')
-
-
-" autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>D :execute "DevDocs " . expand('<cword>')<CR>
-" " autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A :echom 'hello'<cr>
-" " autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A execute "echom 'hello'<cr>"
-" " autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A :execute "echom 'hello'"<cr>
-" autocmd vimrc FileType python,ruby,javascript,go,html,php nnoremap <buffer> <leader>A :execute "DevDocs hello"<cr>

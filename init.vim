@@ -5,7 +5,7 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 luafile $HOME/.config/nvim/lua/settings.lua
 source $HOME/.config/nvim/general/settings.vim
 luafile $HOME/.config/nvim/lua/folding.lua
-source $HOME/.config/nvim/general/functions.vim
+luafile $HOME/.config/nvim/lua/functions.lua
 source $HOME/.config/nvim/keys/mappings.vim
 " source $HOME/.config/nvim/general/folding.vim
 

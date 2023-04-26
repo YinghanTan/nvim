@@ -183,9 +183,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Deprecated
     " Plug 'easymotion/vim-easymotion' " Navigation
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
-    " Plug 'szw/vim-maximizer' " Zoom window
-    " Plug 'dracula/vim', { 'as': 'dracula' }
-    " Plug 'Mofiqul/dracula.nvim'
 
 call plug#end()
 
