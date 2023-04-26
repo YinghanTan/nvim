@@ -70,7 +70,6 @@ luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 
 " luafile $HOME/.config/nvim/lua/pretty-fold.lua
-" luafile $HOME/.config/nvim/lua/neozoom.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 
 " LSP

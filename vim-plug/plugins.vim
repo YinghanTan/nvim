@@ -153,8 +153,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'norcalli/nvim-colorizer.lua' " colorizer
     " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim' " highlight the different todo comments
-    " Plug 'dhruvasagar/vim-zoom' " Zoom Window
-    " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
     Plug 'troydm/zoomwintab.vim' " Zoom Window
 
     " Treesitter
@@ -186,7 +184,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'easymotion/vim-easymotion' " Navigation
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
     " Plug 'szw/vim-maximizer' " Zoom window
-    " Plug 'nyngwang/NeoZoom.lua' " Zoom Window
     " Plug 'dracula/vim', { 'as': 'dracula' }
     " Plug 'Mofiqul/dracula.nvim'
 
