@@ -284,7 +284,7 @@ telescope.load_extension("command_palette")
 telescope.load_extension("repo")
 telescope.load_extension("neoclip")                  -- https://github.com/AckslD/nvim-neoclip.lua
 require('telescope').load_extension('ultisnips')     -- https://github.com/fhill2/telescope-ultisnips.nvim
-require('telescope').load_extension('undo')          -- https://github.com/fhill2/telescope-ultisnips.nvim
+require('telescope').load_extension('undo')          -- 
 require('telescope').load_extension('terraform_doc') -- https://github.com/ANGkeith/telescope-terraform-doc.nvim
 
 if vim.g.system ~= 'termux' then
