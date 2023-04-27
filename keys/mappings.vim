@@ -41,13 +41,8 @@ nnoremap <Leader>rc :%s///gc<Left><Left><Left>
 xnoremap <Leader>r :s///g<Left><Left>
 xnoremap <Leader>rc :s///gc<Left><Left><Left>
 
-
-" Prevent x from overriding what's in the clipboard.
-" noremap x "_x
-
 " Ensure tabs don't get converted to spaces in Makefiles.
 autocmd FileType make setlocal noexpandtab
-
 
 " Add all TODO items to the quickfix list relative to where you opened Vim.
 function! s:todo() abort

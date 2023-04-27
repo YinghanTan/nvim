@@ -7,9 +7,9 @@ source $HOME/.config/nvim/general/settings.vim
 luafile $HOME/.config/nvim/lua/folding.lua
 luafile $HOME/.config/nvim/lua/functions.lua
 source $HOME/.config/nvim/keys/mappings.vim
-" source $HOME/.config/nvim/general/folding.vim
 
 " Themes
+luafile $HOME/.config/nvim/lua/icons.lua
 luafile $HOME/.config/nvim/lua/one-dark.lua
 source $HOME/.config/nvim/themes/theme.vim
 luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
@@ -64,6 +64,8 @@ luafile $HOME/.config/nvim/lua/gitlinker.lua
 luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
+source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/fzfPreview.vim
 luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
@@ -112,11 +114,10 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " source $HOME/.config/nvim/plug-config/cocSnippets.vim
 " source $HOME/.config/nvim/plug-config/vim-rooter.vim
 " source $HOME/.config/nvim/plug-config/coc/coc-git.vim
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/fzfPreview.vim
 " source $HOME/.config/nvim/plug-config/vim-zoom.vim
 " source $HOME/.config/nvim/plug-config/autopairs.vim
 " source $HOME/.config/nvim/plug-config/fastFold.vim
+" source $HOME/.config/nvim/general/folding.vim
 
 " === Dependencies ===
 " --- Python Dependencies ---

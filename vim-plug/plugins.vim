@@ -42,7 +42,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Navigation
     Plug 'phaazon/hop.nvim' " Navigation
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
-    Plug 'tomtom/tcomment_vim' " Code Commentting
+    " Plug 'tomtom/tcomment_vim' " Code Commentting
+    Plug 'tpope/vim-commentary' " Code Commenting
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
     " Plug 'nacro90/numb.nvim'  " peeks lines of the buffer in non-obtrusive way.
     Plug 'andymass/vim-matchup'  " operate on sets of matching text
@@ -146,6 +147,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kevinhwang91/promise-async'
     Plug 'MarcWeber/vim-addon-mw-utils'
     Plug 'tomtom/tlib_vim'
+
 
 
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
