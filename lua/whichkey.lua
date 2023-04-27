@@ -195,6 +195,8 @@ local mappings = {
         C = { "<cmd>Commits<cr>", "all commits" },
         k = { "<cmd>lua require('telescope.builtin').git_bcommits()<cr>", "commits" },
         K = { "<cmd>lua require('telescope.builtin').git_commits()<cr>", "all commits" },
+        -- k = { "<cmd>lua require('telescope').extensions.advanced_git_search.search_log_content_file()<cr>", "commits" },
+        -- K = { "<cmd>lua require('telescope').extensions.advanced_git_search.search_log_content()<cr>", "all commits" },
 
 
         d = {

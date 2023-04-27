@@ -35,63 +35,63 @@ telescope.setup({
         },
         mappings = {
             i = {
-                ["<C-n>"]     = actions.cycle_history_next,
-                ["<C-p>"]     = actions.cycle_history_prev,
-                ["<C-j>"]     = actions.move_selection_next,
-                ["<C-k>"]     = actions.move_selection_previous,
-                ["<C-c>"]     = actions.close,
-                ["<Down>"]    = actions.move_selection_next,
-                ["<Up>"]      = actions.move_selection_previous,
-                ['<C-v>']     = multiopen.i['<C-v>'],
-                ['<C-x>']     = multiopen.i['<C-s>'],
-                ['<C-t>']     = multiopen.i['<C-t>'],
-                ["<CR>"]      = actions.select_default,
-                ["<C-u>"]     = actions.preview_scrolling_up,
-                ["<C-d>"]     = actions.preview_scrolling_down,
-                ["<PageUp>"]     = actions.results_scrolling_up,
-                ["<PageDown>"]     = actions.results_scrolling_down,
-                ["<Tab>"]     = actions.toggle_selection + actions.move_selection_worse,
-                ["<S-Tab>"]   = actions.toggle_selection + actions.move_selection_better,
-                ["<M-q>"]     = actions.send_to_qflist + actions.open_qflist,
-                ["<C-q>"]     = actions.send_selected_to_qflist + actions.open_qflist,
+                ["<C-n>"]      = actions.cycle_history_next,
+                ["<C-p>"]      = actions.cycle_history_prev,
+                ["<C-j>"]      = actions.move_selection_next,
+                ["<C-k>"]      = actions.move_selection_previous,
+                ["<C-c>"]      = actions.close,
+                ["<Down>"]     = actions.move_selection_next,
+                ["<Up>"]       = actions.move_selection_previous,
+                ['<C-v>']      = multiopen.i['<C-v>'],
+                ['<C-x>']      = multiopen.i['<C-s>'],
+                ['<C-t>']      = multiopen.i['<C-t>'],
+                ["<CR>"]       = actions.select_default,
+                ["<C-u>"]      = actions.preview_scrolling_up,
+                ["<C-d>"]      = actions.preview_scrolling_down,
+                ["<PageUp>"]   = actions.results_scrolling_up,
+                ["<PageDown>"] = actions.results_scrolling_down,
+                ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
+                ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
+                ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
+                ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
                 -- ["<C-l>"]      = actions.complete_tag,
-                ["<C-_>"]     = actions.which_key,
-                ["<C-\\>"]    = action_layout.toggle_preview, -- <C-/> to trigger
-                ["<C-right>"] = actions.cycle_previewers_next,
-                ["<C-left>"]  = actions.cycle_previewers_prev,
-                ["<C-a>"]     = actions.select_all,
-                ["<C-r>"]     = actions.drop_all,
+                ["<C-_>"]      = actions.which_key,
+                ["<C-\\>"]     = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-right>"]  = actions.cycle_previewers_next,
+                ["<C-left>"]   = actions.cycle_previewers_prev,
+                ["<C-a>"]      = actions.select_all,
+                ["<C-r>"]      = actions.drop_all,
             },
             n = {
-                ["<esc>"]   = actions.close,
-                ['<C-v>']   = multiopen.n['<C-v>'],
-                ['<C-x>']   = multiopen.n['<C-s>'],
-                ['<C-t>']   = multiopen.n['<C-t>'],
-                ["<CR>"]    = actions.select_default,
-                ["<Tab>"]   = actions.toggle_selection + actions.move_selection_worse,
-                ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
-                ["<M-q>"]   = actions.send_to_qflist + actions.open_qflist,
-                ["<C-q>"]   = actions.send_selected_to_qflist + actions.open_qflist,
-                ["j"]       = actions.move_selection_next,
-                ["k"]       = actions.move_selection_previous,
-                ["H"]       = actions.move_to_top,
-                ["M"]       = actions.move_to_middle,
-                ["L"]       = actions.move_to_bottom,
-                ["<Down>"]  = actions.move_selection_next,
-                ["<Up>"]    = actions.move_selection_previous,
-                ["gg"]      = actions.move_to_top,
-                ["zz"]      = actions.center,
-                ["G"]       = actions.move_to_bottom,
-                ["<C-u>"]   = actions.preview_scrolling_up,
-                ["<C-d>"]   = actions.preview_scrolling_down,
-                ["<PageUp>"]     = actions.results_scrolling_up,
-                ["<PageDown>"]     = actions.results_scrolling_down,
-                ["<C-_>"]   = actions.which_key,
-                ["<C-\\>"]  = action_layout.toggle_preview, -- <C-/> to trigger
-                ["<C-right>"] = actions.cycle_previewers_next,
-                ["<C-left>"]  = actions.cycle_previewers_prev,
-                ["<C-a>"]   = actions.select_all,
-                ["<C-r>"]   = actions.drop_all,
+                ["<esc>"]      = actions.close,
+                ['<C-v>']      = multiopen.n['<C-v>'],
+                ['<C-x>']      = multiopen.n['<C-s>'],
+                ['<C-t>']      = multiopen.n['<C-t>'],
+                ["<CR>"]       = actions.select_default,
+                ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
+                ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
+                ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
+                ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
+                ["j"]          = actions.move_selection_next,
+                ["k"]          = actions.move_selection_previous,
+                ["H"]          = actions.move_to_top,
+                ["M"]          = actions.move_to_middle,
+                ["L"]          = actions.move_to_bottom,
+                ["<Down>"]     = actions.move_selection_next,
+                ["<Up>"]       = actions.move_selection_previous,
+                ["gg"]         = actions.move_to_top,
+                ["zz"]         = actions.center,
+                ["G"]          = actions.move_to_bottom,
+                ["<C-u>"]      = actions.preview_scrolling_up,
+                ["<C-d>"]      = actions.preview_scrolling_down,
+                ["<PageUp>"]   = actions.results_scrolling_up,
+                ["<PageDown>"] = actions.results_scrolling_down,
+                ["<C-_>"]      = actions.which_key,
+                ["<C-\\>"]     = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-right>"]  = actions.cycle_previewers_next,
+                ["<C-left>"]   = actions.cycle_previewers_prev,
+                ["<C-a>"]      = actions.select_all,
+                ["<C-r>"]      = actions.drop_all,
             },
         },
     },
@@ -106,6 +106,20 @@ telescope.setup({
         find_files = {
             hidden = true
         },
+        git_commits = {
+            git_command = {
+                "git", "log", "--graph", "--color=always",
+                "--decorate",
+                "--pretty=format:%h%d %s %cr %an"
+            }
+        },
+        git_bcommits = {
+            git_command = {
+                "git", "log", "--graph", "--color=always",
+                "--decorate",
+                "--pretty=format:%h%d %s %cr %an"
+            }
+        }
     },
     extensions = {
         -- Your extension configuration goes here:
@@ -264,6 +278,18 @@ telescope.setup({
             latest_provider_symbol = "  ",
             wincmd = "botright vnew",
             wrap = "nowrap",
+        },
+        advanced_git_search = {
+            -- fugitive or diffview
+            diff_plugin = "fugitive",
+            -- customize git in previewer
+            -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
+            git_flags = {},
+            -- customize git diff in previewer
+            -- e.g. flags such as { "--raw" }
+            git_diff_flags = {},
+            -- Show builtin git pickers when executing "show_custom_functions" or :AdvancedGitSearch
+            show_builtin_git_pickers = false,
         }
     },
 })
@@ -282,10 +308,11 @@ telescope.load_extension("projects")   -- project.nvim
 telescope.load_extension("file_browser")
 telescope.load_extension("command_palette")
 telescope.load_extension("repo")
-telescope.load_extension("neoclip")                  -- https://github.com/AckslD/nvim-neoclip.lua
-require('telescope').load_extension('ultisnips')     -- https://github.com/fhill2/telescope-ultisnips.nvim
-require('telescope').load_extension('undo')          -- 
-require('telescope').load_extension('terraform_doc') -- https://github.com/ANGkeith/telescope-terraform-doc.nvim
+telescope.load_extension("neoclip")                        -- https://github.com/AckslD/nvim-neoclip.lua
+require('telescope').load_extension('ultisnips')           -- https://github.com/fhill2/telescope-ultisnips.nvim
+require('telescope').load_extension('undo')                --
+require('telescope').load_extension('terraform_doc')       -- https://github.com/ANGkeith/telescope-terraform-doc.nvim
+require("telescope").load_extension("advanced_git_search") -- https://github.com/aaronhallaert/advanced-git-search.nvim
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim

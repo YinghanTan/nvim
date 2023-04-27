@@ -122,6 +122,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'fhill2/telescope-ultisnips.nvim' " Integration for ultisnips.nvim with telescope.nvim.
     Plug 'debugloop/telescope-undo.nvim' " Visualize your undo tree and fuzzy-search changes in it.
     Plug 'ANGkeith/telescope-terraform-doc.nvim' " provides its users with ability to search and browse terraform providers docs.
+    Plug 'aaronhallaert/advanced-git-search.nvim'
 
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
