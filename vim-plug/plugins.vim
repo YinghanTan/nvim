@@ -101,6 +101,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
     Plug 'jremmen/vim-ripgrep' " awaiting fixed version
+    Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
     " Search (Telescope)
     Plug 'nvim-lua/popup.nvim'

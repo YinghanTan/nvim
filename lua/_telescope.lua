@@ -35,8 +35,8 @@ telescope.setup({
         },
         mappings = {
             i = {
-                ["<C-n>"]      = actions.cycle_history_next,
-                ["<C-p>"]      = actions.cycle_history_prev,
+                ["<C-l>"]      = actions.cycle_history_next,
+                ["<C-h>"]      = actions.cycle_history_prev,
                 ["<C-j>"]      = actions.move_selection_next,
                 ["<C-k>"]      = actions.move_selection_previous,
                 ["<C-c>"]      = actions.close,
@@ -48,15 +48,16 @@ telescope.setup({
                 ["<CR>"]       = actions.select_default,
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
-                ["<PageUp>"]   = actions.results_scrolling_up,
-                ["<PageDown>"] = actions.results_scrolling_down,
+                ["<C-p>"]   = actions.results_scrolling_up,
+                ["<C-n>"] = actions.results_scrolling_down,
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
-                ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
-                ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
+                -- ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
+                ["<M-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
                 -- ["<C-l>"]      = actions.complete_tag,
+                -- fegyio
                 ["<C-_>"]      = actions.which_key,
-                ["<C-\\>"]     = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-o>"]     = action_layout.toggle_preview, -- open
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]      = actions.select_all,
@@ -70,8 +71,8 @@ telescope.setup({
                 ["<CR>"]       = actions.select_default,
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
-                ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
-                ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
+                -- ["<M-q>"]      = actions.send_to_qflist + actions.open_qflist,
+                ["<M-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
                 ["j"]          = actions.move_selection_next,
                 ["k"]          = actions.move_selection_previous,
                 ["H"]          = actions.move_to_top,
@@ -84,10 +85,10 @@ telescope.setup({
                 ["G"]          = actions.move_to_bottom,
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
-                ["<PageUp>"]   = actions.results_scrolling_up,
-                ["<PageDown>"] = actions.results_scrolling_down,
+                ["<C-p>"]   = actions.results_scrolling_up,
+                ["<C-n>"] = actions.results_scrolling_down,
                 ["<C-_>"]      = actions.which_key,
-                ["<C-\\>"]     = action_layout.toggle_preview, -- <C-/> to trigger
+                ["<C-o>"]     = action_layout.toggle_preview, -- <C-/> to trigger
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]      = actions.select_all,
