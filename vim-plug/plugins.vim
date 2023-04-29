@@ -154,7 +154,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
     Plug 'ryanoasis/vim-devicons' "Cool icons
-    " Plug 'norcalli/nvim-colorizer.lua' " colorizer
+    Plug 'norcalli/nvim-colorizer.lua' " colorizer
     " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim' " highlight the different todo comments
     Plug 'troydm/zoomwintab.vim' " Zoom Window
