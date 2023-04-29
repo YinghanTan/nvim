@@ -336,9 +336,9 @@ fzf_lua.setup({
         commits = {
             prompt  = 'Commits❯ ',
             cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %s %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)<%an>%Creset'",
-            preview = "git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color {1}",
+            -- preview = "git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color {1}",
             -- uncomment if you wish to use git-delta as pager
-            --preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
+            preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
             actions = {
                 ["default"] = actions.git_checkout,
                 ["ctrl-s"]  = actions.git_buf_split,
@@ -359,9 +359,9 @@ fzf_lua.setup({
             --   {1}    : commit SHA (fzf field index expression)
             --   <file> : filepath placement within the commands
             cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %s %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)<%an>%Creset'",
-            preview = "git diff --color {1}~1 {1} -- <file>",
+            -- preview = "git diff --color {1}~1 {1} -- <file>",
             -- uncomment if you wish to use git-delta as pager
-            --preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
+            preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
             actions = {
                 ["default"] = actions.git_buf_edit,
                 ["ctrl-s"]  = actions.git_buf_split,
