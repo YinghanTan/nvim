@@ -218,7 +218,6 @@ local mappings = {
         h = { "<cmd>0Gclog<cr>", "file history" },
         l = { "<cmd>Git log --oneline<cr>", "Log" },
         L = { "<cmd>Git log<cr>", "Log long" },
-        m = { "<plug>(git-messenger)<cr>", "messenger" },
         p = { "<cmd>GGrep<cr>", "Grep" },
         r = { "<cmd>GDelete<cr>", "remove" },
         v = { "<cmd>GV!<cr>", "file commits" },

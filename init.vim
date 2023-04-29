@@ -29,7 +29,6 @@ source $HOME/.config/nvim/plug-config/ultisnips.vim
 
 " Git
 source $HOME/.config/nvim/plug-config/fugitive.vim
-source $HOME/.config/nvim/plug-config/git-messenger.vim
 
 " Plugin Configuration
 source $HOME/.config/nvim/plug-config/firenvim.vim
