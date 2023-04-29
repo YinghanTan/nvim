@@ -2,7 +2,22 @@ local status_ok, fzf_lua = pcall(require, "fzf-lua")
 if not status_ok then
     return
 end
+
+
 local actions = require "fzf-lua.actions"
+
+local function filterForCommitId(str)
+    local commitId = nil
+    for sha in str:gmatch('[0-9a-fA-F]+') do
+        if #sha == 7 then
+            commitId = sha
+            break -- stop searching after first matching commitId is found
+        end
+    end
+    return commitId
+end
+
+
 fzf_lua.setup({
     -- fzf_bin         = 'sk',            -- use skim instead of fzf?
     -- https://github.com/lotabout/skim
@@ -329,6 +344,11 @@ fzf_lua.setup({
                 ["ctrl-s"]  = actions.git_buf_split,
                 ["ctrl-v"]  = actions.git_buf_vsplit,
                 ["ctrl-t"]  = actions.git_buf_tabedit,
+                ["ctrl-y"]  = function(selected)
+                    local commitId = filterForCommitId(selected[1])
+                    print(commitId)
+                    vim.fn.setreg('+', commitId)
+                end,
             },
         },
         bcommits = {
@@ -347,6 +367,11 @@ fzf_lua.setup({
                 ["ctrl-s"]  = actions.git_buf_split,
                 ["ctrl-v"]  = actions.git_buf_vsplit,
                 ["ctrl-t"]  = actions.git_buf_tabedit,
+                ["ctrl-y"]  = function(selected)
+                    local commitId = filterForCommitId(selected[1])
+                    print(commitId)
+                    vim.fn.setreg('+', commitId)
+                end,
             },
         },
         branches = {
@@ -710,3 +735,4 @@ fzf_lua.setup({
     -- 'EN SPACE' (U+2002), the below sets it to 'NBSP' (U+00A0) instead
     -- nbsp = '\xc2\xa0',
 })
+
