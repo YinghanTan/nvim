@@ -736,3 +736,9 @@ fzf_lua.setup({
     -- nbsp = '\xc2\xa0',
 })
 
+
+vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>",
+  function() require("fzf-lua").complete_path() end,
+  { silent = true, desc = "Fuzzy complete path" })
+
+
