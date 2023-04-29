@@ -53,7 +53,7 @@ source $HOME/.config/nvim/plug-config/tex-conceal.vim
 source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 
 " --- Lua Plugins ---
-" luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+luafile $HOME/.config/nvim/lua/plug-colorizer.lua
 luafile $HOME/.config/nvim/lua/hop.lua
 luafile $HOME/.config/nvim/lua/nvim-ufo.lua
 luafile $HOME/.config/nvim/lua/neoscroll.lua
@@ -64,8 +64,6 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/fzf-lua.lua
-source $HOME/.config/nvim/plug-config/fzf.vim
-source $HOME/.config/nvim/plug-config/fzfPreview.vim
 luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
@@ -118,6 +116,8 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " source $HOME/.config/nvim/plug-config/autopairs.vim
 " source $HOME/.config/nvim/plug-config/fastFold.vim
 " source $HOME/.config/nvim/general/folding.vim
+" source $HOME/.config/nvim/plug-config/fzf.vim
+" source $HOME/.config/nvim/plug-config/fzfPreview.vim
 
 " === Dependencies ===
 " --- Python Dependencies ---
