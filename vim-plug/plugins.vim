@@ -13,7 +13,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Theme
     Plug 'navarasu/onedark.nvim' " Dark and Light Themes for neovim >= 0.5 based on Atom One Dark & Atom One Light theme written in lua with TreeSitter syntax highlight.
-    " Plug 'joshdick/onedark.vim' " A dark Vim/Neovim color scheme for the GUI and 16/256/true-color terminals
     Plug 'nvim-lualine/lualine.nvim' "A blazing fast and easy to configure Neovim statusline written in Lua.
     " Plug 'vim-airline/vim-airline' " Status Line
     " Plug 'vim-airline/vim-airline-themes' " Status Line theme

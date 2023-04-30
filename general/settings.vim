@@ -1,6 +1,4 @@
 " --- Indentation ---
-
-
 filetype plugin indent on
 set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
 set shiftwidth=4                " displacement of each shift is 4 spaces
@@ -29,7 +27,6 @@ au BufNewFile,BufRead *.ejs set filetype=jst
 autocmd Filetype jst setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype jst set shiftround        " round indent to multiple of 'shiftwidth'
 
-
 " Makefiles formatting
 autocmd FileType make setlocal noexpandtab
 
@@ -38,12 +35,10 @@ au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 
-
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
 autocmd Filetype javascriptreact setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype javascriptreact set shiftround                " round indent to multiple of 'shiftwidth'
-
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype javascript set tabstop=2                      " a hard TAB displays as 2 columns
 autocmd Filetype javascript set softtabstop=2                  " insert/delete 2 spaces when hitting a TAB/BACKSPACE
@@ -142,7 +137,6 @@ autocmd Filetype typescript.tsx set expandtab         " insert spaces when hitti
 autocmd Filetype typescript.tsx set autoindent        " align the new line indent with the previous line
 autocmd Filetype typescript.tsx set shiftround        " round indent to multiple of 'shiftwidth'
 
-
 " Git Settings
 autocmd FileType gitcommit set textwidth=80 " lines longer than 72 columns will be broken
 " In Git commit messages, also colour the 51st column (for titles)
@@ -154,7 +148,6 @@ let g:loaded_ruby_provider = 0
 
 " Perl Settings
 let g:loaded_perl_provider = 0
-
 
 " json
 autocmd Filetype json set tabstop=2         " a hard TAB displays as 2 columns
@@ -174,7 +167,6 @@ autocmd Filetype sh set shiftwidth=2                   " operation >> indents 2 
 autocmd Filetype sh set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype sh set shiftround                     " round indent to multiple of 'shiftwidth'
 " autocmd Filetype sh let javaScript_fold=1 "activate folding by sh syntax
-
 
 " zsh Settings
 au BufNewFile,BufRead *.zsh setlocal filetype=zsh
@@ -200,8 +192,6 @@ let g:tex_indent_items=0
 let g:tex_indent_and=0
 let g:tex_indent_brace=0
 
-
-
 " dart Settings
 " au BufNewFile,BufRead *.dart setlocal filetype=dart
 autocmd Filetype dart setlocal ts=2 sw=2 sts=2 expandtab
@@ -212,7 +202,6 @@ autocmd Filetype dart set expandtab                      " insert spaces when hi
 autocmd Filetype dart set shiftround                     " round indent to multiple of 'shiftwidth'
 autocmd Filetype dart set autoindent
 " autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
-
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
