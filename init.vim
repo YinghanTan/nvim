@@ -6,7 +6,6 @@ luafile $HOME/.config/nvim/lua/settings.lua
 source $HOME/.config/nvim/general/settings.vim
 luafile $HOME/.config/nvim/lua/folding.lua
 luafile $HOME/.config/nvim/lua/functions.lua
-source $HOME/.config/nvim/keys/mappings.vim
 luafile $HOME/.config/nvim/lua/keymaps.lua
 
 " Themes
@@ -18,8 +17,6 @@ luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/project-nvim.lua
 luafile $HOME/.config/nvim/lua/gitsigns.lua
-
-" Status Line
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
@@ -44,7 +41,6 @@ source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/zoomwintab.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/scripts.vim
-
 source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
@@ -79,9 +75,6 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " luafile $HOME/.config/nvim/lua/dial.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim
 " source $HOME/.config/nvim/plug-config/codi.vim
-
-
-
 
 " --- Brief help ---
 " \.                        - go to init.vim
@@ -126,6 +119,3 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 
 " --- linux dependencies ---
 " ripgrep fzf bat fdfind delta glow
-
-
-
