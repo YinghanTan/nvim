@@ -56,6 +56,8 @@ vim.opt.errorformat:append('%f:%l:%c%p%m') -- description of the lines in the er
 -- vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
 vim.opt.diffopt = "vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:patience,internal"
 vim.opt.shada = "" -- disable shada
+vim.opt.matchpairs = "(:),{:},[:],<:>"
+vim.opt.spell = false
 
 --- NVIM Settings ---
 vim.opt.pumheight = 10         -- Makes popup menu smaller
@@ -114,8 +116,12 @@ vim.cmd("au! BufWritePost $MYVIMRC source %")      -- auto source when writing t
 -- vim.opt.expandtab = true
 -- vim.opt.wrap = false
 
--- Return to last edit position when opening files (You want this!)
-vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
+-- return to last edit location when opening a buffer
+-- vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
+vim.api.nvim_create_autocmd(
+  "BufReadPost",
+  { command = [[ if line("'\"") > 1 && line ("'\"") <= line("$") | execute "normal! g'\"" | endif ]]}
+  )
 
 -- Ultisnips Auto Reload
 vim.cmd("autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets()")
