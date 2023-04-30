@@ -1,13 +1,4 @@
 -- remove dots or spaces to indicate folded line
--- vim.opt.fillchars = {
---   vert = "│",
---   diff = "╱",
---   foldclose = "",
---   foldopen = "",
---   fold = " ",
---   msgsep = "─"
--- }
-
 vim.opt.fillchars = {
   vert = "│",
   diff = "╱",
@@ -62,7 +53,9 @@ vim.opt.signcolumn = "yes" -- always show the sign column, otherwise it would sh
 vim.opt.completeopt = { 'menu', 'menuone' } -- options for Insert mode completion
 vim.opt.termguicolors = true
 vim.opt.errorformat:append('%f:%l:%c%p%m') -- description of the lines in the error file
-
+-- vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
+vim.opt.diffopt = "vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:patience,internal"
+vim.opt.shada = "" -- disable shada
 
 --- NVIM Settings ---
 vim.opt.pumheight = 10         -- Makes popup menu smaller
@@ -109,11 +102,6 @@ vim.cmd("nnoremap <M-h>    :vertical resize -2<CR>")
 vim.cmd("nnoremap <M-l>    :vertical resize +2<CR>")
 --- --- ---
 
--- --- highlight without moving ---
--- vim.cmd("nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>")
--- vim.cmd("nnoremap <silent> g* :let @/=expand('<cword>') <bar> set hls <cr>")
--- --- --- --
-
 --- Refresh VIMRC on Save ---
 vim.cmd("au! BufWritePost $MYVIMRC source %")      -- auto source when writing to init.vim alternatively you can run :source $MYVIMRC
 -- write or save file with sudo
@@ -126,7 +114,8 @@ vim.cmd("au! BufWritePost $MYVIMRC source %")      -- auto source when writing t
 -- vim.opt.expandtab = true
 -- vim.opt.wrap = false
 
+-- Return to last edit position when opening files (You want this!)
+vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
 
--- Shada --
--- vim.cmd("set shada='NONE'")
--- vim.o.shada = "NONE"
+-- Ultisnips Auto Reload
+vim.cmd("autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets()")

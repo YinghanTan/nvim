@@ -7,6 +7,7 @@ source $HOME/.config/nvim/general/settings.vim
 luafile $HOME/.config/nvim/lua/folding.lua
 luafile $HOME/.config/nvim/lua/functions.lua
 source $HOME/.config/nvim/keys/mappings.vim
+luafile $HOME/.config/nvim/lua/keymaps.lua
 
 " Themes
 luafile $HOME/.config/nvim/lua/icons.lua
@@ -128,3 +129,6 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 
 " --- linux dependencies ---
 " ripgrep fzf bat fdfind delta glow
+
+
+

@@ -1,12 +1,5 @@
-" --- highlight without moving ---
-" nnoremap * *``
-nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
-nnoremap <silent> g* :let @/=expand('<cword>') <bar> set hls <cr>
-" --- --- --
-
-
 " --- Indentation ---
-" for html/rb files, 2 spaces
+
 
 filetype plugin indent on
 set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
@@ -37,6 +30,8 @@ autocmd Filetype jst setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype jst set shiftround        " round indent to multiple of 'shiftwidth'
 
 
+" Makefiles formatting
+autocmd FileType make setlocal noexpandtab
 
 " Yaml Formatting
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
@@ -79,12 +74,6 @@ autocmd Filetype vimwiki set expandtab                             " insert spac
 autocmd Filetype vimwiki set shiftround                            " round indent to multiple of 'shiftwidth'
 " autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
 autocmd Filetype vimwiki let javaScript_fold=1                     " activate folding by vimwiki syntax
-
-
-" for js/coffee:w/jade files, 4 spaces
-" autocmd Filetype coffeescript setlocal ts=2 sw=2 sts=0 expandtab
-" autocmd Filetype jade setlocal ts=4 sw=4 sts=0 expandtab
-" --- --- ---
 
 " --- OS Configuration ---
 if has('unix')
@@ -224,78 +213,7 @@ autocmd Filetype dart set shiftround                     " round indent to multi
 autocmd Filetype dart set autoindent
 " autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
 
-" Ultisnips Auto Reload
-autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets()
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
 imap <F1> <C-o>:echo<CR>
-
-" make Y Behave nice
-nnoremap Y y$
-
-" keep cursor centered 
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-nnoremap <C-d> <C-d>zz
-nnoremap <C-u> <C-u>zz
-
-" Undo break points
-inoremap , ,<c-g>u
-inoremap . .<c-g>u
-inoremap [ [<c-g>u
-inoremap ( (<c-g>u
-inoremap { {<c-g>u
-inoremap ! !<c-g>u
-inoremap ? ?<c-g>u
-
-" Jumplist mutations
-nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
-nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
-
-
-" Moving text
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
-
-" Selecting last pasted text 2 versions
-" nnoremap gp `[v`]
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-" multiple paste
-" use "0p instead after selection
-" xnoremap <leader>p \"_dP
-xnoremap <leader>p pgvy
-
-" --- disable mouse clicks ---
-nnoremap <MiddleMouse> <Nop>
-nnoremap <2-MiddleMouse> <Nop>
-nnoremap <3-MiddleMouse> <Nop>
-nnoremap <4-MiddleMouse> <Nop>
-
-inoremap <MiddleMouse> <Nop>
-inoremap <2-MiddleMouse> <Nop>
-inoremap <3-MiddleMouse> <Nop>
-inoremap <4-MiddleMouse> <Nop>
-
-" nnoremap Q <Nop>
-nnoremap <leader><leader>s :%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>
-nnoremap <leader><leader>x <cmd>!chmod +x %<CR>", {silent = true}
-
-" --- Edit Files ---
-" Return to last edit position when opening files (You want this!)
-au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-" --- --- ---
-
-" --- Diff ---
-set diffopt=vertical,filler,context:3,foldcolumn:1,indent-heuristic,algorithm:patience,internal " vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
-" --- --- ---
-
-
-" " --- Shada ---
-" set shadafile=$HOME/.config/nvim/shada/main.shada
-" set shada=!,'100,<100,s100,h,f1,/10000,:10000 
-" set updatetime=10000

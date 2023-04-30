@@ -1,48 +1,21 @@
-" modify paste in visual mode to paste repeatedly
-xnoremap <leader>p "_dP
-" xnoremap <leader>p pgvy
+" " Use alt + hjkl to resize windows
+" nnoremap <M-j>    :resize -2<CR>
+" nnoremap <M-k>    :resize +2<CR>
+" nnoremap <M-h>    :vertical resize -2<CR>
+" nnoremap <M-l>    :vertical resize +2<CR>
 
-
-" Use alt + hjkl to resize windows
-nnoremap <M-j>    :resize -2<CR>
-nnoremap <M-k>    :resize +2<CR>
-nnoremap <M-h>    :vertical resize -2<CR>
-nnoremap <M-l>    :vertical resize +2<CR>
-
-
-" Visually select the text that was last edited/pasted
-nmap gV `[v`]
-
-" jump to previous tab
-if !exists('g:lasttab')
-  let g:lasttab = 1
-endif
-nmap g^ :exe "tabn ".g:lasttab<CR>
-au TabLeave * let g:lasttab = tabpagenr()
-
+" " jump to previous tab
+" if !exists('g:lasttab')
+"   let g:lasttab = 1
+" endif
+" nmap g^ :exe "tabn ".g:lasttab<CR>
+" au TabLeave * let g:lasttab = tabpagenr()
 
 " add :Te to :tabe.
-cnoreabbrev Te tabe.
-cnoreabbrev uuidgen r! uuidgen
-inoreabbrev <expr> cdate strftime('%Y-%m-%d')
-
-" map <leader>pp :setlocal paste!<cr>             " Toggle paste mode on and off
-" set pastetoggle=<leader>pt       " paste mode: avoid auto indent, treat chars
-
-" Press * to search for the term under the cursor or a visual selection and
-" then press the keys below to replace all instances of it in the current file.
-nnoremap <Leader>r :%s///g<Left><Left>
-nnoremap <Leader>rc :%s///gc<Left><Left><Left>
-
-" The same as above but instead of acting on the whole file it will be
-" restricted to the previously visually selected range. You can do that by
-" pressing *, visually selecting the range you want it to apply to and then
-" press a key below to replace all instances of it in the current selection.
-xnoremap <Leader>r :s///g<Left><Left>
-xnoremap <Leader>rc :s///gc<Left><Left><Left>
-
-" Ensure tabs don't get converted to spaces in Makefiles.
-autocmd FileType make setlocal noexpandtab
+" cnoreabbrev Te tabe.
+" cnoreabbrev uuidgen r! uuidgen
+" inoreabbrev <expr> cdate strftime('%Y-%m-%d')
+" map <leader><leader>p :setlocal paste!<cr>             " Toggle paste mode on and off
 
 " Add all TODO items to the quickfix list relative to where you opened Vim.
 function! s:todo() abort
