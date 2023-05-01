@@ -30,8 +30,12 @@ cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
         ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+        -- ['<C-k>'] = cmp.config.diable,
+        -- ['<C-j>'] = cmp.config.diable,
         ['<C-PageUp>'] = cmp.mapping.scroll_docs(-4),
         ['<C-PageDown>'] = cmp.mapping.scroll_docs(4),
+        ['<C-h>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-l>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-c>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
