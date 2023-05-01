@@ -3,6 +3,24 @@ if not status_ok then
     return
 end
 
+local colors = {
+    bg = "#202328",
+    fg = "#bbc2cf",
+    yellow = "#ECBE7B",
+    cyan = "#008080",
+    darkblue = "#081633",
+    green = "#98be65",
+    orange = "#FF8800",
+    violet = "#a9a1e1",
+    magenta = "#c678dd",
+    blue = "#51afef",
+    red = "#ec5f67",
+}
+
+local function separator()
+    return "%="
+end
+
 lualine.setup({
     options = {
         icons_enabled = true,
@@ -12,7 +30,7 @@ lualine.setup({
         disabled_filetypes = {
             -- Filetypes to disable lualine for. --
             statusline = {}, -- only ignores the ft for statusline.
-            winbar = {}, -- only ignores the ft for winbar.
+            winbar = {},     -- only ignores the ft for winbar.
         },
         ignore_focus = {},
         -- If current filetype is in this list it'll

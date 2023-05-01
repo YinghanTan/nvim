@@ -61,6 +61,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'neovim/nvim-lspconfig' " enable LSP
     Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' } " :MasonUpdate updates registry contents
     Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
+    Plug 'folke/neodev.nvim' " Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
 
     " Completion 2.0
     Plug 'hrsh7th/nvim-cmp' " Completion plugin
