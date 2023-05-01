@@ -8,6 +8,7 @@
         "/usr/share/nvim/runtime/lua",
         "/home/yinghan/.config/nvim/lua",
         "/home/yinghan/.config/nvim/lua",
-        "/home/yinghan/.config/nvim/lua"
+        "/home/yinghan/.config/nvim/lua",
+        "${3rd}/luv/library"
     ]
 }

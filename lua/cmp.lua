@@ -9,6 +9,34 @@ if not snip_status_ok then
     return
 end
 
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = "",
+}
+
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -20,7 +48,7 @@ cmp.setup({
         end,
     },
     window = {
-        completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1 },
+        completion = { completeopt = "menu,menuone,noinsert,noselect", keyword_length = 1 },
         experimental = { native_menu = false, ghost_text = false },
         documentation = {
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
@@ -42,6 +70,9 @@ cmp.setup({
     }),
     formatting = {
         format = function(entry, vim_item)
+            -- Kind icons
+            vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This conca 
+            -- Source
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
                 buffer = "[Buffer]",
