@@ -18,9 +18,9 @@ luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/project-nvim.lua
 luafile $HOME/.config/nvim/lua/gitsigns.lua
 
-" COC
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" " COC
+" source $HOME/.config/nvim/plug-config/coc/coc.vim
+" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -68,6 +68,10 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 
 " luafile $HOME/.config/nvim/lua/pretty-fold.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
+
+" LSP 2.0
+luafile $HOME/.config/nvim/lua/mason.lua
+luafile $HOME/.config/nvim/lua/lsp-config.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/lsp-config.lua

@@ -56,6 +56,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'simrat39/symbols-outline.nvim' " tree like view for symbols using LSP
     " Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
     " Plug 'b0o/SchemaStore.nvim'
+
+    " LSP 2.0
+    Plug 'neovim/nvim-lspconfig' " enable LSP
+    Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' } " :MasonUpdate updates registry contents
+
     " " Completion
     " Plug 'hrsh7th/nvim-cmp' " Completion plugin
     " Plug 'hrsh7th/cmp-buffer' " Buffer completion
@@ -64,9 +69,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
     " Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
-    " COC
-    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
+    " " COC
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    " Plug 'antoinemadec/coc-fzf'
 
 
     " Dart/Flutter
