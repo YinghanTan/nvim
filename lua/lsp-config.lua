@@ -22,9 +22,17 @@ lspconfig.lua_ls.setup({
     },
     settings = {
         Lua = {
+            telemetry = { enable = false },
+            runtime = {
+                version = "LuaJIT",
+                special = {
+                    reload = "require",
+                }
+            },
             diagnostics = {
-                globals = { 'vim' }
-            }
+                globals = { 'vim', "lvim", "reload" }
+            },
+            workspace = default_workspace,
         }
     }
 })
@@ -62,6 +70,12 @@ lspconfig.rust_analyzer.setup({
     settings = {
         ['rust-analyzer'] = {},
     }
+})
+lspconfig.ansiblels.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
 })
 
 
