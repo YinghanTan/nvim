@@ -74,6 +74,7 @@ luafile $HOME/.config/nvim/lua/mason.lua
 luafile $HOME/.config/nvim/lua/lsp-config.lua
 luafile $HOME/.config/nvim/lua/lsp-signature.lua
 luafile $HOME/.config/nvim/lua/cmp.lua
+luafile $HOME/.config/nvim/lua/illuminate.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/lsp-config.lua
