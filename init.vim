@@ -72,10 +72,11 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 " LSP 2.0
 luafile $HOME/.config/nvim/lua/mason.lua
 luafile $HOME/.config/nvim/lua/lsp-config.lua
+luafile $HOME/.config/nvim/lua/lsp-signature.lua
+luafile $HOME/.config/nvim/lua/cmp.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/lsp-config.lua
-" luafile $HOME/.config/nvim/lua/cmp.lua
 " luafile $HOME/.config/nvim/lua/dial.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim
 " source $HOME/.config/nvim/plug-config/codi.vim

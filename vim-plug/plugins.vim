@@ -60,6 +60,18 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " LSP 2.0
     Plug 'neovim/nvim-lspconfig' " enable LSP
     Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' } " :MasonUpdate updates registry contents
+    Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
+
+    " Completion 2.0
+    Plug 'hrsh7th/nvim-cmp' " Completion plugin
+    Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
+    Plug 'hrsh7th/cmp-buffer' " Buffer completion
+    Plug 'hrsh7th/cmp-path' " Path completion
+    Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
+    Plug 'hrsh7th/cmp-nvim-lua'
+    Plug 'ray-x/cmp-treesitter'
+    Plug 'petertriho/cmp-git' " git completion
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
     " " Completion
     " Plug 'hrsh7th/nvim-cmp' " Completion plugin

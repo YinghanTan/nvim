@@ -1,10 +1,25 @@
 local whichkey = require("which-key")
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Setup language servers
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup({})
-lspconfig.tsserver.setup({})
+lspconfig.pyright.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+})
+lspconfig.tsserver.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+})
 lspconfig.lua_ls.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
     settings = {
         Lua = {
             diagnostics = {
@@ -13,16 +28,42 @@ lspconfig.lua_ls.setup({
         }
     }
 })
-lspconfig.vimls.setup({})
-lspconfig.html.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.gopls.setup({})
+lspconfig.vimls.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+})
+lspconfig.html.setup({
+    capabilities = capabilities,
+
+    flags = {
+        debounce_text_changes = 150,
+    },
+})
+lspconfig.jsonls.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+})
+lspconfig.gopls.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+})
 lspconfig.rust_analyzer.setup({
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
     -- Server-specific settings
     settings = {
         ['rust-analyzer'] = {},
     }
 })
+
 
 -- Global mappings
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { noremap = true, silent = true, expr = true })

@@ -1,4 +1,4 @@
-local cmp_status_ok, cmp  = pcall(require, "cmp")
+local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
     return
 end
@@ -9,105 +9,84 @@ if not snip_status_ok then
     return
 end
 
-
--- local check_backspace = function()
---     local col = vim.fn.col(".") - 1
---     return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
--- end
-
-
-local icons = require("icons")
-local kind_icons = icons.kind
-
 cmp.setup({
-        snippet = {
-            expand = function(args)
-                vim.fn["UltiSnips#Anon"](args.body)
-            end
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        end,
+    },
+    window = {
+        completion = { completeopt = "menu,menuone,noinsert", keyword_length = 1 },
+        experimental = { native_menu = false, ghost_text = false },
+        documentation = {
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+            winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
         },
-        mapping = {
-            ["<C-p>"] = cmp.mapping.select_prev_item(), -- previous completion
-            ["<C-n>"] = cmp.mapping.select_next_item(), -- next completion
-            ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), {"i", "c"}), -- popup window scroll back
-            ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }), -- popup window scroll forward
-            ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), -- trigger completion
-            -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-            ["<C-e>"] = cmp.mapping({ -- exit completion
-                    i = cmp.mapping.abort(),
-                    c = cmp.mapping.close(),
-                }),
-            ["<CR>"] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-
-            -- ["<Tab>"] = cmp.mapping(
-            --     function(fallback)
-            --         cmp_ultisnips_mappings.expand_or_jump_forwards(fallback)
-            --     end,
-            --     { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-            --     ),
-            -- ["<S-Tab>"] = cmp.mapping(
-            --     function(fallback)
-            --         cmp_ultisnips_mappings.jump_backwards(fallback)
-            --     end,
-            --     { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-            --     ),
-
-            ["<C-j>"] = cmp.mapping( -- next input position
-                function(fallback)
-                    cmp_ultisnips_mappings.compose { "jump_forwards", "select_next_item" }(fallback)
-                end,
-                { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-                ),
-            ["<C-k>"] = cmp.mapping(
-                function(fallback)
-                    cmp_ultisnips_mappings.jump_backwards(fallback)
-                end,
-                { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-                ),
-            ["<Leader><Tab>"] = cmp.mapping(
-                function(fallback)
-                    cmp_ultisnips_mappings.compose { "expand" }(fallback)
-                end,
-                { "i", "s", --[[ "c" (to enable the mapping in command mode) ]] }
-                ),
-        },
-        formatting = {
-            fields = { "kind", "abbr", "menu" },
-            format = function(entry, vim_item)
-                -- Kind icons
-                vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-                -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
-                vim_item.menu = ({
-                        nvim_lsp = "[LSP]",
-                        nvim_lua = "[NVIM_LUA]",
-                        ultisnips = "[Snippet]",
-                        buffer = "[Buffer]",
-                        path = "[Path]",
-                        emoji = "[Emoji]",
-                    })[entry.source.name]
-                return vim_item
-            end,
-        },
-        
-        sources = {
-            { name = "nvim_lsp" },
-            { name = "nvim_lua" },
-            { name = "ultisnips" },
-            { name = "buffer" },
-            { name = "path" },
-            { name = "npm" },
-            { name = "emoji" },
-        },
-        confirm_opts = {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-        },
-        window = {
-          completion = cmp.config.window.bordered(),
-          documentation = "native",
-        },
-        experimental = {
-            ghost_text = false,
-            native_menu = false,
-        }
-
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+        ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    }),
+    formatting = {
+        format = function(entry, vim_item)
+            vim_item.menu = ({
+                nvim_lsp = "[LSP]",
+                buffer = "[Buffer]",
+                luasnip = "[Snip]",
+                nvim_lua = "[Lua]",
+                treesitter = "[Treesitter]",
+                path = "[Path]",
+            })[entry.source.name]
+            return vim_item
+        end,
+    },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = "treesitter" },
+        { name = "buffer" },
+        -- { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'luasnip' }, -- For luasnip users.
+        { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+        { name = "nvim_lua" },
+        { name = "path" },
+    }, {
+        { name = 'buffer' },
     })
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+        { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
+    }, {
+        { name = 'buffer' },
+    })
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})
