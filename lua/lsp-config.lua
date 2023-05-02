@@ -105,8 +105,17 @@ lspconfig.lua_ls.setup({
             },
             workspace = {
                 -- Make the server aware of neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
+                -- library = vim.api.nvim_get_runtime_file("", true),
+                library = {
+                    vim.fn.expand "$VIMRUNTIME",
+                    require("neodev.config").types(),
+                    "${3rd}/busted/library",
+                    "${3rd}/luassert/library",
+                    "${3rd}/luv/library",
+                },
                 checkThirdParty = false,
+                maxPreload = 5000,
+                preloadFilesize = 10000,
             }
         }
     }
@@ -128,7 +137,40 @@ lspconfig.jsonls.setup({
     flags = {
         debounce_text_changes = 150,
     },
+    settings = {
+        json = {
+            schemas = require("schemastore").json.schemas()
+        }
+    }
+    setup = {
+        commands = {
+            Format = {
+                function()
+                    vim.lsp.buf.range_formatting({}, { 0, 0 }, { vim.fn.line "$, 0" })
+                end
+            }
+        }
+    }
 })
+lspconfig.yamlls.setup {
+    capabilities = capabilities,
+    flags = {
+        debounce_text_changes = 150,
+    },
+    settings = {
+        yaml = {
+            hover = true,
+            completion = true,
+            validate = true,
+            schemaStore = {
+                enable = true,
+                url = "https://www.schemastore.org/api/json/catalog.json",
+            },
+            schemas = require('schemastore').yaml.schemas(),
+        },
+    },
+}
+
 lspconfig.gopls.setup({
     capabilities = capabilities,
     flags = {
