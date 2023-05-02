@@ -14,13 +14,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Theme
     Plug 'navarasu/onedark.nvim' " Dark and Light Themes for neovim >= 0.5 based on Atom One Dark & Atom One Light theme written in lua with TreeSitter syntax highlight.
     Plug 'nvim-lualine/lualine.nvim' "A blazing fast and easy to configure Neovim statusline written in Lua.
-    " Plug 'vim-airline/vim-airline' " Status Line
-    " Plug 'vim-airline/vim-airline-themes' " Status Line theme
     Plug 'nvim-tree/nvim-web-devicons' " A lua fork of vim-devicons. This plugin provides the same icons as well as colors for each icon.
     Plug 'nvim-tree/nvim-tree.lua' "A File Explorer For Neovim Written In Lua
-    " Plug 'scrooloose/nerdtree' " File Explorer SideBar
     Plug 'ahmedkhalf/project.nvim' " project.nvim is an all in one neovim plugin written in lua that provides superior project management.
-    " Plug 'airblade/vim-rooter' " Have the file system follow you around
 
     " Editing
     Plug 'tpope/vim-repeat' " Repeat.vim remaps . in a way that plugins can tap into it.
@@ -64,6 +60,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
     Plug 'folke/neodev.nvim' " Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
     Plug 'RRethy/vim-illuminate' " Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
+    Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
 
     " Completion 2.0
     Plug 'hrsh7th/nvim-cmp' " Completion plugin
@@ -107,7 +104,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'folke/which-key.nvim' " View Shortcut keys
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'mbbill/undotree' " Undo Time Travel
-    Plug 'ChristianChiarulli/far.vim' " Find and Replace
     Plug 'mhinz/vim-grepper' " Handle multi-file find and replace.
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
@@ -205,6 +201,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Deprecated
     " Plug 'easymotion/vim-easymotion' " Navigation
     " Plug 'psliwka/vim-smoothie' " Smooth scrolling for Vim
+    " Plug 'vim-airline/vim-airline' " Status Line
+    " Plug 'vim-airline/vim-airline-themes' " Status Line theme
+    " Plug 'scrooloose/nerdtree' " File Explorer SideBar
+    " Plug 'airblade/vim-rooter' " Have the file system follow you around
 
 call plug#end()
 

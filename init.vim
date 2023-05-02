@@ -34,7 +34,6 @@ source $HOME/.config/nvim/plug-config/surround.vim
 source $HOME/.config/nvim/plug-config/vimIndentGuide.vim
 source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
-source $HOME/.config/nvim/plug-config/far.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
 source $HOME/.config/nvim/plug-config/vimspector.vim
@@ -76,6 +75,7 @@ luafile $HOME/.config/nvim/lua/lsp-config.lua
 luafile $HOME/.config/nvim/lua/lsp-signature.lua
 luafile $HOME/.config/nvim/lua/cmp.lua
 luafile $HOME/.config/nvim/lua/illuminate.lua
+luafile $HOME/.config/nvim/lua/null-ls.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/lsp-config.lua
