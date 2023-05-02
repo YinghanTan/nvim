@@ -236,7 +236,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = ev.buf })
         vim.keymap.set('n', '<leader>lf', function()
-            vim.lsp.buf.format({ async = true })
+            vim.lsp.buf.format({
+                async = true,
+                filter = function(client)
+                    return client.name == "null-ls"
+                end,
+            })
         end, { buffer = ev.buf })
 
         -- Whichkey
