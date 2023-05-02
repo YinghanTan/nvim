@@ -36,7 +36,6 @@ source $HOME/.config/nvim/plug-config/tabularize.vim
 source $HOME/.config/nvim/plug-config/floaterm.vim
 source $HOME/.config/nvim/plug-config/rnvimr.vim
 source $HOME/.config/nvim/plug-config/undotree.vim
-source $HOME/.config/nvim/plug-config/vimspector.vim
 source $HOME/.config/nvim/plug-config/zoomwintab.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/scripts.vim
@@ -46,6 +45,10 @@ source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
+
+" --- Debugger ---
+source $HOME/.config/nvim/plug-config/vimspector.vim
+luafile $HOME/.config/nvim/lua/nvim-dap-virtual-text.lua
 
 " --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
@@ -64,7 +67,6 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 
-" luafile $HOME/.config/nvim/lua/pretty-fold.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 
 " LSP 2.0
@@ -77,10 +79,8 @@ luafile $HOME/.config/nvim/lua/illuminate.lua
 luafile $HOME/.config/nvim/lua/null-ls.lua
 
 " LSP
-" luafile $HOME/.config/nvim/lua/lsp-config.lua
 " luafile $HOME/.config/nvim/lua/dial.lua
 " source $HOME/.config/nvim/plug-config/rainbow.vim
-" source $HOME/.config/nvim/plug-config/codi.vim
 
 " --- Brief help ---
 " \.                        - go to init.vim

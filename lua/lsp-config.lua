@@ -141,7 +141,7 @@ lspconfig.jsonls.setup({
         json = {
             schemas = require("schemastore").json.schemas()
         }
-    }
+    },
     setup = {
         commands = {
             Format = {

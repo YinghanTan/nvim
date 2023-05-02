@@ -90,8 +90,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mhinz/vim-grepper' " Handle multi-file find and replace.
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
-    Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
+
+    " Debugger
+    Plug 'puremourning/vimspector' " Debugger
+    Plug 'mfussenegger/nvim-dap' " nvim-dap is a Debug Adapter Protocol client implementation for Neovim.
+    Plug 'rcarriga/nvim-dap-ui' " A UI for nvim-dap which provides a good out of the box configuration.
+    Plug 'theHamsta/nvim-dap-virtual-text' " This plugin adds virtual text support to nvim-dap. nvim-treesitter is used to find variable definitions.
+    " Plug 'Pocco81/dap-buddy.nvim' " Dap Buddy allows you to manage debuggers provided by nvim-dap. It should ease out the process of installing, configuring and interacting with said debuggers.
+    " Plug 'nvim-telescope/telescope-dap.nvim' " Integration for nvim-dap with telescope.nvim.
 
     " Search (FZF)
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
@@ -139,7 +146,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lewis6991/gitsigns.nvim' " Git integration: signs, hunk actions, blame, etc.
 
     " Plug 'konfekt/fastfold'
-    " Plug 'anuvyklack/pretty-fold.nvim'
     Plug 'kevinhwang91/nvim-ufo'
     Plug 'kevinhwang91/promise-async'
     Plug 'MarcWeber/vim-addon-mw-utils'
