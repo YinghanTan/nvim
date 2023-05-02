@@ -37,10 +37,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Navigation
     Plug 'phaazon/hop.nvim' " Navigation
     Plug 'nelstrom/vim-visual-star-search' " Enable * to search in visual mode
-    " Plug 'tomtom/tcomment_vim' " Code Commentting
     Plug 'tpope/vim-commentary' " Code Commenting
     Plug 'suy/vim-context-commentstring' " Useful for React Commenting
-    " Plug 'nacro90/numb.nvim'  " peeks lines of the buffer in non-obtrusive way.
     Plug 'andymass/vim-matchup'  " operate on sets of matching text
 
     " " LSP
@@ -61,6 +59,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'folke/neodev.nvim' " Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
     Plug 'RRethy/vim-illuminate' " Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
     Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
+    Plug 'b0o/SchemaStore.nvim' " A Neovim Lua plugin providing access to the SchemaStore catalog.
 
     " Completion 2.0
     Plug 'hrsh7th/nvim-cmp' " Completion plugin
@@ -73,31 +72,15 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'petertriho/cmp-git' " git completion
     Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
-    " " Completion
-    " Plug 'hrsh7th/nvim-cmp' " Completion plugin
-    " Plug 'hrsh7th/cmp-buffer' " Buffer completion
-    " Plug 'hrsh7th/cmp-path' " Path completion
-    " Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
-    " Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
-    " Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
-
     " " COC
     " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
     " Plug 'antoinemadec/coc-fzf'
 
-
-    " Dart/Flutter
-    Plug 'dart-lang/dart-vim-plugin'
-    Plug 'thosakwe/vim-flutter'
-
     " Snippets
     Plug 'SirVer/ultisnips' " Ultisnips snippets
-    Plug 'natebosch/dartlang-snippets'
     Plug 'honza/vim-snippets' " Snippets
     Plug 'mlaursen/vim-react-snippets' " Snippets
     Plug 'tpope/vim-surround' " Surround
-
-
 
     " Tools
     " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
@@ -109,7 +92,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
     Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
-    " Plug 'metakirby5/codi.vim'
 
 
     " Search (FZF)
@@ -192,8 +174,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     "folke/trouble.nvim",
     "dccsillag/magma-nvim",
     "simrat39/symbols-outline.nvim",
-    "f-person/git-blame.nvim",
-    "https://github.com/MattesGroeger/vim-bookmarks"
     " 'tom-anders/telescope-vim-bookmarks.nvim'
     "gelguy/wilder.nvim",
 

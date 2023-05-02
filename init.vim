@@ -46,7 +46,6 @@ source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
 source $HOME/.config/nvim/plug-config/vimtex.vim
 source $HOME/.config/nvim/plug-config/tex-conceal.vim
-source $HOME/.config/nvim/plug-config/dart-vim-plugin.vim
 
 " --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
