@@ -93,7 +93,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'puremourning/vimspector' " Debugger
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
 
-
     " Search (FZF)
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
