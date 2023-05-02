@@ -27,7 +27,7 @@ local sources = {
     b.formatting.shfmt,
     b.formatting.fixjson,
     b.formatting.black.with({ extra_args = { "--fast" } }),
-    b.formatting.isort,
+    -- b.formatting.isort,
     with_root_file(b.formatting.stylua, "stylua.toml"),
 
     -- diagnostics
@@ -40,6 +40,7 @@ local sources = {
     -- code actions
     b.code_actions.gitsigns,
     b.code_actions.gitrebase,
+    b.code_actions.shellcheck,
 
     -- hover
     b.hover.dictionary,
