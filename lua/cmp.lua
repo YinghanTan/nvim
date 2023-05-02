@@ -71,14 +71,14 @@ cmp.setup({
     formatting = {
         format = function(entry, vim_item)
             -- Kind icons
-            vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This conca 
+            vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
             -- Source
             vim_item.menu = ({
                 nvim_lsp = "[LSP]",
-                buffer = "[Buffer]",
+                buffer = "[Buf]",
                 luasnip = "[Snip]",
                 nvim_lua = "[Lua]",
-                treesitter = "[Treesitter]",
+                treesitter = "[TS]",
                 path = "[Path]",
             })[entry.source.name]
             return vim_item

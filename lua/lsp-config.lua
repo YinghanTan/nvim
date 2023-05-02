@@ -46,6 +46,7 @@ lspconfig.pyright.setup({
                 useLibraryCodeForTypes = true,
                 diagnosticMode = "workspace",
             },
+            single_file_support = true,
         },
     },
 })
@@ -104,10 +105,7 @@ lspconfig.lua_ls.setup({
             },
             workspace = {
                 -- Make the server aware of neovim runtime files
-                library = {
-                    [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-                    -- [vim.fn.expand "$VIMRUNTIME/lua/vim/lsp"] = true,
-                },
+                library = vim.api.nvim_get_runtime_file("", true),
                 checkThirdParty = false,
             }
         }

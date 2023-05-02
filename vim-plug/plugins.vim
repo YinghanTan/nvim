@@ -58,8 +58,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'b0o/SchemaStore.nvim'
 
     " LSP 2.0
-    Plug 'neovim/nvim-lspconfig' " enable LSP
     Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' } " :MasonUpdate updates registry contents
+    Plug 'williamboman/mason-lspconfig.nvim' " mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig
+    Plug 'neovim/nvim-lspconfig' " enable LSP
     Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
     Plug 'folke/neodev.nvim' " Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
     Plug 'RRethy/vim-illuminate' " Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.

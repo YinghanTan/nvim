@@ -71,6 +71,7 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 
 " LSP 2.0
 luafile $HOME/.config/nvim/lua/mason.lua
+luafile $HOME/.config/nvim/lua/mason-lspconfig.lua
 luafile $HOME/.config/nvim/lua/lsp-config.lua
 luafile $HOME/.config/nvim/lua/lsp-signature.lua
 luafile $HOME/.config/nvim/lua/cmp.lua
