@@ -48,7 +48,8 @@ source $HOME/.config/nvim/plug-config/tex-conceal.vim
 
 " --- Debugger ---
 source $HOME/.config/nvim/plug-config/vimspector.vim
-luafile $HOME/.config/nvim/lua/nvim-dap-virtual-text.lua
+luafile $HOME/.config/nvim/lua/dap/init.lua
+luafile $HOME/.config/nvim/lua/dap/nvim-dap-virtual-text.lua
 
 " --- Lua Plugins ---
 luafile $HOME/.config/nvim/lua/plug-colorizer.lua
@@ -66,6 +67,9 @@ luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
+luafile $HOME/.config/nvim/lua/vim-slime.lua
+" luafile $HOME/.config/nvim/lua/chatgpt.lua
+luafile $HOME/.config/nvim/lua/neoai.lua
 
 " luafile $HOME/.config/nvim/lua/numb.lua
 

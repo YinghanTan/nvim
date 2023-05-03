@@ -91,6 +91,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kevinhwang91/rnvimr', {'do': 'make sync'}
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Preview Markdown
     Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } " Turn your browser¹ into a Neovim client
+    Plug 'jpalardy/vim-slime' " Grab some text and send it to a target, most probably: GNU Screen, tmux or Vim Terminal.
+    Plug 'MunifTanjim/nui.nvim' " UI Component Library for Neovim.
+    " Plug 'jackMort/ChatGPT.nvim' " ChatGPT is a Neovim plugin that allows you to interact with OpenAI's GPT-3 language model.
+    Plug 'Bryley/neoai.nvim' " NeoAI is a Neovim plugin that brings the power of OpenAI's GPT-4 directly to your editor.
 
     " Debugger
     Plug 'puremourning/vimspector' " Debugger

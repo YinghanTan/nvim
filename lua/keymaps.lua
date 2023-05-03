@@ -83,9 +83,7 @@ vim.cmd("cnoreabbrev uuidgen r! uuidgen")
 vim.cmd("cnoreabbrev Te tabe.")
 
 -- add date
-vim.cmd("inoreabbrev <expr> cdate strftime('%Y-%m-%d')") 
+vim.cmd("inoreabbrev <expr> cdate strftime('%Y-%m-%d')")
 
 -- Toggle paste mode on and off
 vim.api.nvim_set_keymap("n", "<leader><leader>p", ":setlocal paste!<cr>", { noremap = false, silent = true})
-
-
