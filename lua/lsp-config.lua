@@ -173,23 +173,6 @@ lspconfig.jsonls.setup({
         }
     }
 })
-
--- yaml = {
---     schemaStore = {
---         url = "https://www.schemastore.org/api/json/catalog.json",
---         enable = true,
---     },
---    settings = {
---       yaml = {
---         schemas = function()
---           require('schemastore').yaml.schemas()
---         end,
---         validate = { enable = true },
---       },
---     },
--- }
-
-
 -- lspconfig.yamlls.setup {
 --     capabilities = capabilities,
 --     flags = {
@@ -208,39 +191,6 @@ lspconfig.jsonls.setup({
 --         },
 --     },
 -- }
-
--- require'lspconfig'.yamlls.setup{
---     on_attach=on_attach,
---     capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
---     settings = {
---         yaml = {
---             schemas = {
---                 ["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"]= "conf/**/*catalog*",
---                 ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
---             }
---         }
---     }
--- }
-
--- lspconfig.yamlls.setup {
---     capabilities = capabilities,
---     flags = {
---         debounce_text_changes = 150,
---     },
---     settings = {
---         yaml = {
---             hover = true,
---             completion = true,
---             validate = true,
---             schemaStore = {
---                 enable = true,
---                 url = "https://www.schemastore.org/api/json/catalog.json",
---             },
---             schemas = require('schemastore').json.schemas({}),
---         },
---     },
--- }
-
 lspconfig.gopls.setup({
     capabilities = capabilities,
     flags = {

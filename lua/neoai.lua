@@ -1,3 +1,4 @@
+local whichkey = require("which-key")
 local status_ok, neoai = pcall(require, "neoai")
 if not status_ok then
     return
@@ -43,7 +44,7 @@ neoai.setup({
     shortcuts = {
         {
             name = "textify",
-            key = "<leader>as",
+            key = "<leader>aas",
             desc = "fix text with AI",
             use_context = true,
             prompt = [[
@@ -56,7 +57,7 @@ neoai.setup({
         },
         {
             name = "gitcommit",
-            key = "<leader>ag",
+            key = "<leader>aag",
             desc = "generate git commit message",
             use_context = false,
             prompt = function()
@@ -71,3 +72,41 @@ neoai.setup({
         },
     },
 })
+
+local keymap_na = {
+    a = {
+        name = "ai",
+        q = { "<cmd>NeoAIToggle<CR>", "Query" },
+        c = { "<cmd>NeoAIContext<cr>", "Context" },
+        s = { "Fix text with ai" },
+        g = {"generate git commit message" },
+    },
+}
+
+local keymap_va = {
+    a = {
+        name = "ai",
+        q = { ":'<,'>NeoAIToggle<cr>", "Query" },
+        c = { ":'<,'>NeoAIContext<cr>", "Context" },
+        s = { "Fix text with ai" },
+    },
+}
+
+local opts = {
+    mode = "n",     -- NORMAL mode
+    prefix = "<leader>a",
+    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = false, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap`
+    nowait = true,  -- use `nowait` when creating keympas
+}
+local vopts = {
+    mode = "v",     -- VISUAL mode
+    prefix = "<leader>a",
+    buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = false, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = true,  -- use `nowait` when creating keymaps
+}
+whichkey.register(keymap_na, opts)
+whichkey.register(keymap_va, vopts)

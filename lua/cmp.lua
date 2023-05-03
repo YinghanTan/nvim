@@ -41,6 +41,7 @@ local kind_icons = {
 }
 
 cmp.setup({
+    preselect = cmp.PreselectMode.None,
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -69,7 +70,7 @@ cmp.setup({
         ['<C-l>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-c>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = false }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     formatting = {
         format = function(entry, vim_item)
