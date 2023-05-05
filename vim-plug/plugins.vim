@@ -51,30 +51,30 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
     " Plug 'b0o/SchemaStore.nvim'
 
-    " LSP 2.0
-    Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' } " :MasonUpdate updates registry contents
-    Plug 'williamboman/mason-lspconfig.nvim' " mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig
-    Plug 'neovim/nvim-lspconfig' " enable LSP
-    Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
-    Plug 'folke/neodev.nvim' " Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
-    Plug 'RRethy/vim-illuminate' " Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
-    Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
-    Plug 'b0o/SchemaStore.nvim' " A Neovim Lua plugin providing access to the SchemaStore catalog.
+    " " LSP 2.0
+    " Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' } " :MasonUpdate updates registry contents
+    " Plug 'williamboman/mason-lspconfig.nvim' " mason-lspconfig.nvim closes some gaps that exist between mason.nvim and lspconfig
+    " Plug 'neovim/nvim-lspconfig' " enable LSP
+    " Plug 'ray-x/lsp_signature.nvim' " show function signature when you type
+    " Plug 'folke/neodev.nvim' " Neovim setup for init.lua and plugin development with full signature help, docs and completion for the nvim lua API.
+    " Plug 'RRethy/vim-illuminate' " Vim plugin for automatically highlighting other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching.
+    " Plug 'jose-elias-alvarez/null-ls.nvim' " for formatters and linters
+    " Plug 'b0o/SchemaStore.nvim' " A Neovim Lua plugin providing access to the SchemaStore catalog.
 
-    " Completion 2.0
-    Plug 'hrsh7th/nvim-cmp' " Completion plugin
-    Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
-    Plug 'hrsh7th/cmp-buffer' " Buffer completion
-    Plug 'hrsh7th/cmp-path' " Path completion
-    Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
-    Plug 'hrsh7th/cmp-nvim-lua'
-    Plug 'ray-x/cmp-treesitter'
-    Plug 'petertriho/cmp-git' " git completion
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
+    " " Completion 2.0
+    " Plug 'hrsh7th/nvim-cmp' " Completion plugin
+    " Plug 'hrsh7th/cmp-nvim-lsp' " LSP Completion
+    " Plug 'hrsh7th/cmp-buffer' " Buffer completion
+    " Plug 'hrsh7th/cmp-path' " Path completion
+    " Plug 'hrsh7th/cmp-cmdline' " Cmdline completion
+    " Plug 'hrsh7th/cmp-nvim-lua'
+    " Plug 'ray-x/cmp-treesitter'
+    " Plug 'petertriho/cmp-git' " git completion
+    " Plug 'quangnguyen30192/cmp-nvim-ultisnips' " Completion Ultisnips Support
 
-    " " COC
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    " Plug 'antoinemadec/coc-fzf'
+    " COC
+    Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
+    Plug 'antoinemadec/coc-fzf'
 
     " Snippets
     Plug 'SirVer/ultisnips' " Ultisnips snippets
@@ -83,7 +83,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-surround' " Surround
 
     " Tools
-    " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
     Plug 'folke/which-key.nvim' " View Shortcut keys
     Plug 'voldikss/vim-floaterm' " Terminal
     Plug 'mbbill/undotree' " Undo Time Travel
@@ -95,6 +94,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'MunifTanjim/nui.nvim' " UI Component Library for Neovim.
     " Plug 'jackMort/ChatGPT.nvim' " ChatGPT is a Neovim plugin that allows you to interact with OpenAI's GPT-3 language model.
     Plug 'Bryley/neoai.nvim' " NeoAI is a Neovim plugin that brings the power of OpenAI's GPT-4 directly to your editor.
+    Plug 'dstein64/vim-startuptime'
 
     " Debugger
     Plug 'puremourning/vimspector' " Debugger
@@ -194,6 +194,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'vim-airline/vim-airline-themes' " Status Line theme
     " Plug 'scrooloose/nerdtree' " File Explorer SideBar
     " Plug 'airblade/vim-rooter' " Have the file system follow you around
+    " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
 
 call plug#end()
 

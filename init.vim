@@ -18,9 +18,10 @@ luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/project-nvim.lua
 luafile $HOME/.config/nvim/lua/gitsigns.lua
 
-" " COC
-" source $HOME/.config/nvim/plug-config/coc/coc.vim
-" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" COC
+source $HOME/.config/nvim/plug-config/coc/coc.vim
+source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -70,17 +71,16 @@ luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 luafile $HOME/.config/nvim/lua/vim-slime.lua
 " luafile $HOME/.config/nvim/lua/chatgpt.lua
 luafile $HOME/.config/nvim/lua/neoai.lua
-
 " luafile $HOME/.config/nvim/lua/numb.lua
 
-" LSP 2.0
-luafile $HOME/.config/nvim/lua/mason.lua
-luafile $HOME/.config/nvim/lua/mason-lspconfig.lua
-luafile $HOME/.config/nvim/lua/lsp-config.lua
-luafile $HOME/.config/nvim/lua/lsp-signature.lua
-luafile $HOME/.config/nvim/lua/cmp.lua
-luafile $HOME/.config/nvim/lua/illuminate.lua
-luafile $HOME/.config/nvim/lua/null-ls.lua
+" " LSP 2.0
+" luafile $HOME/.config/nvim/lua/mason.lua
+" luafile $HOME/.config/nvim/lua/mason-lspconfig.lua
+" luafile $HOME/.config/nvim/lua/lsp-config.lua
+" luafile $HOME/.config/nvim/lua/lsp-signature.lua
+" luafile $HOME/.config/nvim/lua/cmp.lua
+" luafile $HOME/.config/nvim/lua/illuminate.lua
+" luafile $HOME/.config/nvim/lua/null-ls.lua
 
 " LSP
 " luafile $HOME/.config/nvim/lua/dial.lua
@@ -112,7 +112,6 @@ luafile $HOME/.config/nvim/lua/null-ls.lua
 " source $HOME/.config/nvim/plug-config/nerdtree.vim
 " source $HOME/.config/nvim/plug-config/cocSnippets.vim
 " source $HOME/.config/nvim/plug-config/vim-rooter.vim
-" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 " source $HOME/.config/nvim/plug-config/vim-zoom.vim
 " source $HOME/.config/nvim/plug-config/autopairs.vim
 " source $HOME/.config/nvim/plug-config/fastFold.vim
