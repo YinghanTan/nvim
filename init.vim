@@ -21,7 +21,6 @@ luafile $HOME/.config/nvim/lua/gitsigns.lua
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim
 source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
-" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -118,6 +117,7 @@ luafile $HOME/.config/nvim/lua/neoai.lua
 " source $HOME/.config/nvim/general/folding.vim
 " source $HOME/.config/nvim/plug-config/fzf.vim
 " source $HOME/.config/nvim/plug-config/fzfPreview.vim
+" source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " === Dependencies ===
 " --- Python Dependencies ---

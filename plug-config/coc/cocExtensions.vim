@@ -67,6 +67,8 @@ let g:coc_global_extensions = [
 " coc-fzf-preview options
 let g:coc_fzf_preview = ''
 let g:coc_fzf_opts = []
+" " Set the priority of Coc diagnostics signs to display them after the GitGutter signs
+" let g:coc_sign_priority = 10
 
 " Prettier
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
