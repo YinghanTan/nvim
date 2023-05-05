@@ -50,7 +50,6 @@ vim.opt.relativenumber = false      -- set relative numbered lines
 vim.opt.numberwidth = 1    -- set number column width to 2 {default 4}
 vim.opt.shortmess:append('I') -- Don't have intro message when starting vim
 vim.opt.signcolumn = "yes:1" -- always show the sign column, otherwise it would shift the text each time
-vim.o.statuscolumn = "%=%l%s%C"
 vim.opt.completeopt = { 'menu', 'menuone' } -- options for Insert mode completion
 vim.opt.termguicolors = true
 vim.opt.errorformat:append('%f:%l:%c%p%m') -- description of the lines in the error file
