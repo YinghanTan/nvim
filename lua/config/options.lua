@@ -1,3 +1,5 @@
+local indent = 2
+
 -- remove dots or spaces to indicate folded line
 vim.opt.fillchars = {
   vert = "│",
@@ -75,7 +77,7 @@ vim.opt.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 vim.opt.autochdir = true               -- Your working directory will always be the same as your file directory 
 vim.opt.textwidth = 0 -- maximum width of text that is being inserted
 vim.opt.wrapmargin = 0  -- chars from the right where wrapping starts
-
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 
 --- Normalise Backspace ---
 vim.opt.backspace={'indent','eol','start'} -- how backspace works at start of line

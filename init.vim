@@ -1,26 +1,23 @@
-" General Settings
-set runtimepath^=~/.config/nvim/autoload/coc.nvim/
+" " General Settings
+" set runtimepath^=~/.config/nvim/autoload/coc.nvim/
 
-source $HOME/.config/nvim/vim-plug/plugins.vim
-luafile $HOME/.config/nvim/lua/settings.lua
+" " source $HOME/.config/nvim/vim-plug/plugins.vim
+luafile $HOME/.config/nvim/initialize.lua
 source $HOME/.config/nvim/general/settings.vim
-luafile $HOME/.config/nvim/lua/folding.lua
-luafile $HOME/.config/nvim/lua/functions.lua
-luafile $HOME/.config/nvim/lua/keymaps.lua
 
 " Themes
 luafile $HOME/.config/nvim/lua/icons.lua
 luafile $HOME/.config/nvim/lua/one-dark.lua
 source $HOME/.config/nvim/themes/theme.vim
-luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
-luafile $HOME/.config/nvim/lua/lualine.lua
-luafile $HOME/.config/nvim/lua/nvim-tree.lua
-luafile $HOME/.config/nvim/lua/project-nvim.lua
-luafile $HOME/.config/nvim/lua/gitsigns.lua
+" luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
+" luafile $HOME/.config/nvim/lua/lualine.lua
+" luafile $HOME/.config/nvim/lua/nvim-tree.lua
+" luafile $HOME/.config/nvim/lua/project-nvim.lua
+" luafile $HOME/.config/nvim/lua/gitsigns.lua
 
-" COC
-source $HOME/.config/nvim/plug-config/coc/coc.vim
-source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
+" " COC
+" source $HOME/.config/nvim/plug-config/coc/coc.vim
+" source $HOME/.config/nvim/plug-config/coc/cocExtensions.vim
 
 " Autocompletion
 source $HOME/.config/nvim/plug-config/ultisnips.vim
@@ -43,34 +40,34 @@ source $HOME/.config/nvim/plug-config/vimwiki.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
-source $HOME/.config/nvim/plug-config/vimtex.vim
-source $HOME/.config/nvim/plug-config/tex-conceal.vim
+" source $HOME/.config/nvim/plug-config/vimtex.vim
+" source $HOME/.config/nvim/plug-config/tex-conceal.vim
 
 " --- Debugger ---
 source $HOME/.config/nvim/plug-config/vimspector.vim
-luafile $HOME/.config/nvim/lua/dap/init.lua
-luafile $HOME/.config/nvim/lua/dap/nvim-dap-virtual-text.lua
+" luafile $HOME/.config/nvim/lua/dap/init.lua
+" luafile $HOME/.config/nvim/lua/dap/nvim-dap-virtual-text.lua
 
-" --- Lua Plugins ---
-luafile $HOME/.config/nvim/lua/plug-colorizer.lua
-luafile $HOME/.config/nvim/lua/hop.lua
-luafile $HOME/.config/nvim/lua/nvim-ufo.lua
-luafile $HOME/.config/nvim/lua/neoscroll.lua
-luafile $HOME/.config/nvim/lua/vim-matchup.lua
-luafile $HOME/.config/nvim/lua/todo-comments.lua
-luafile $HOME/.config/nvim/lua/gitlinker.lua
-luafile $HOME/.config/nvim/lua/treesitter.lua
-luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
-luafile $HOME/.config/nvim/lua/_telescope.lua
-luafile $HOME/.config/nvim/lua/fzf-lua.lua
-luafile $HOME/.config/nvim/lua/neo-clip.lua
-luafile $HOME/.config/nvim/lua/whichkey.lua
-luafile $HOME/.config/nvim/lua/git-worktree.lua
-luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
-luafile $HOME/.config/nvim/lua/vim-slime.lua
-" luafile $HOME/.config/nvim/lua/chatgpt.lua
-luafile $HOME/.config/nvim/lua/neoai.lua
-" luafile $HOME/.config/nvim/lua/numb.lua
+" " --- Lua Plugins ---
+" luafile $HOME/.config/nvim/lua/plug-colorizer.lua
+" luafile $HOME/.config/nvim/lua/hop.lua
+" luafile $HOME/.config/nvim/lua/nvim-ufo.lua
+" luafile $HOME/.config/nvim/lua/neoscroll.lua
+" luafile $HOME/.config/nvim/lua/vim-matchup.lua
+" luafile $HOME/.config/nvim/lua/todo-comments.lua
+" luafile $HOME/.config/nvim/lua/gitlinker.lua
+" luafile $HOME/.config/nvim/lua/treesitter.lua
+" luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
+" luafile $HOME/.config/nvim/lua/_telescope.lua
+" luafile $HOME/.config/nvim/lua/fzf-lua.lua
+" luafile $HOME/.config/nvim/lua/neo-clip.lua
+" luafile $HOME/.config/nvim/lua/whichkey.lua
+" luafile $HOME/.config/nvim/lua/git-worktree.lua
+" luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
+" luafile $HOME/.config/nvim/lua/vim-slime.lua
+" " luafile $HOME/.config/nvim/lua/chatgpt.lua
+" luafile $HOME/.config/nvim/lua/neoai.lua
+" " luafile $HOME/.config/nvim/lua/numb.lua
 
 " " LSP 2.0
 " luafile $HOME/.config/nvim/lua/mason.lua

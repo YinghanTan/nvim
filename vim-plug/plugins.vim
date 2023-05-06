@@ -108,6 +108,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
     Plug 'jremmen/vim-ripgrep' " awaiting fixed version
+
     Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
 
     " Search (Telescope)
@@ -126,11 +127,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'LinArcX/telescope-command-palette.nvim' " a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings.
     Plug 'TC72/telescope-tele-tabby.nvim'
 
-    Plug 'nvim-telescope/telescope-vimspector.nvim'
-    Plug 'fhill2/telescope-ultisnips.nvim' " Integration for ultisnips.nvim with telescope.nvim.
-    Plug 'debugloop/telescope-undo.nvim' " Visualize your undo tree and fuzzy-search changes in it.
-    Plug 'ANGkeith/telescope-terraform-doc.nvim' " provides its users with ability to search and browse terraform providers docs.
-    Plug 'aaronhallaert/advanced-git-search.nvim'
+    " Plug 'fhill2/telescope-ultisnips.nvim' " Integration for ultisnips.nvim with telescope.nvim.
+    " Plug 'debugloop/telescope-undo.nvim' " Visualize your undo tree and fuzzy-search changes in it.
+    " Plug 'ANGkeith/telescope-terraform-doc.nvim' " provides its users with ability to search and browse terraform providers docs.
+    " Plug 'aaronhallaert/advanced-git-search.nvim'
 
     " Languages
     Plug 'ianks/vim-tsx' " syntax highlighting for jsx in .tsx files
@@ -144,12 +144,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'shumphrey/fugitive-gitlab.vim' " enables Gbrowse for gitlab
     Plug 'tommcdo/vim-fubitive' " enables Gbrowse for bitbucket
     Plug 'junegunn/gv.vim' " Git Commit Browser
-    Plug 'mattn/webapi-vim' " Gist
     Plug 'ruifm/gitlinker.nvim' " generate shareable file permalinks
-    Plug 'ThePrimeagen/git-worktree.nvim'
     Plug 'lewis6991/gitsigns.nvim' " Git integration: signs, hunk actions, blame, etc.
+    " Plug 'mattn/webapi-vim' " Gist
+    " Plug 'ThePrimeagen/git-worktree.nvim'
 
-    " Plug 'konfekt/fastfold'
     Plug 'kevinhwang91/nvim-ufo'
     Plug 'kevinhwang91/promise-async'
     Plug 'MarcWeber/vim-addon-mw-utils'
@@ -160,7 +159,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'karb94/neoscroll.nvim' " Smooth scrolling
     Plug 'ryanoasis/vim-devicons' "Cool icons
     Plug 'norcalli/nvim-colorizer.lua' " colorizer
-    " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
     Plug 'folke/todo-comments.nvim' " highlight the different todo comments
     Plug 'troydm/zoomwintab.vim' " Zoom Window
 
@@ -172,7 +170,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'JoosepAlviste/nvim-ts-context-commentstring'
     Plug 'windwp/nvim-ts-autotag'
     Plug 'windwp/nvim-autopairs'
-    " Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
     Plug 'nvim-treesitter/nvim-treesitter-textobjects'
     Plug 'mizlan/iswap.nvim'
 
@@ -195,6 +192,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Plug 'scrooloose/nerdtree' " File Explorer SideBar
     " Plug 'airblade/vim-rooter' " Have the file system follow you around
     " Plug 'liuchengxu/vim-which-key' " View Shortcut keys
+    " Plug 'konfekt/fastfold'
+    " Plug 'junegunn/rainbow_parentheses.vim' " Rainbow Brackets
+    " Plug 'jiangmiao/auto-pairs' " Brackets autocomplete
 
 call plug#end()
 
