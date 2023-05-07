@@ -1,6 +1,6 @@
 return {
     "nvim-lua/popup.nvim",
-    { "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
+    "nvim-lua/plenary.nvim",
 
     -- Theme
 
@@ -21,15 +21,24 @@ return {
 
     -- Navigation
     {
-      "phaazon/hop.nvim",
-      config = function()
-        require("hop").setup({})
-      end
+        "phaazon/hop.nvim",
+        event = "BufReadPre", 
+        config = function()
+            require("hop").setup({})
+        end
     },
     {"nelstrom/vim-visual-star-search", lazy = false},
     {"tpope/vim-commentary", lazy = false},
     {"suy/vim-context-commentstring", lazy = false},
-    {"andymass/vim-matchup", lazy = false },
+    {
+        "andymass/vim-matchup",
+        event = { "BufReadPost" },
+        config = function()
+            vim.g.matchup_matchparen_offscreen = { method = nil }
+            vim.g.matchup_matchpref = { html = { nolists = 1 } }
+            -- vim.g.matchup_matchparen_offscreen = { method = "popup" }
+        end,
+    },
 
     -- LSP 2.0
     {
@@ -43,7 +52,6 @@ return {
         "folke/neodev.nvim",
         lazy = true,
     },
-    "RRethy/vim-illuminate",
     { "jose-elias-alvarez/null-ls.nvim", lazy = true },
     "b0o/SchemaStore.nvim",
 
@@ -67,7 +75,7 @@ return {
     {"SirVer/ultisnips", lazy = false},
     {"honza/vim-snippets", lazy = false},
     {"mlaursen/vim-react-snippets", lazy = false},
-    {"tpope/vim-surround", lazy = false},
+    { "tpope/vim-surround", event = "BufReadPre" },
 
     -- Tools
     {"voldikss/vim-floaterm", lazy = false},
@@ -122,13 +130,17 @@ return {
     {"troydm/zoomwintab.vim", lazy = false},
 
     -- Treesitter
-    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
-    "nvim-treesitter/playground",
-    "romgrk/nvim-treesitter-context",
     "p00f/nvim-ts-rainbow",
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    "windwp/nvim-ts-autotag",
-    "windwp/nvim-autopairs",
+    {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            local npairs = require "nvim-autopairs"
+            npairs.setup {
+                check_ts = true,
+            }
+        end,
+    },
     "nvim-treesitter/nvim-treesitter-textobjects",
     "mizlan/iswap.nvim",
 
