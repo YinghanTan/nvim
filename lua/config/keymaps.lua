@@ -31,6 +31,7 @@ vim.api.nvim_set_keymap("i", "(", "(<c-g>u", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "{", "{<c-g>u", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "!", "!<c-g>u", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "?", "?<c-g>u", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", ";", ";<c-g>u", { noremap = true, silent = true })
 
 -- Visually select the text that was last selected
 vim.api.nvim_set_keymap("n", "gV", "`[v`]", { noremap = false, silent = true })
@@ -40,7 +41,7 @@ vim.api.nvim_set_keymap("n", "gV", "`[v`]", { noremap = false, silent = true })
 vim.api.nvim_set_keymap("n", "gp", "'`[' . strpart(getregtype(), 0, 1) . '`]'",
     { noremap = true, expr = true, silent = false })
 
--- multiple paste
+-- Paste over currently selected text without yanking it
 -- xnoremap <leader>p pgvy
 vim.api.nvim_set_keymap("x", "<leader>p", '\"_dP', { noremap = true, silent = true })
 

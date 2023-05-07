@@ -1,42 +1,39 @@
 return {
-    "folke/which-key.nvim",
     "nvim-lua/popup.nvim",
     { "nvim-lua/plenary.nvim", cmd = { "PlenaryBustedFile", "PlenaryBustedDirectory" }, lazy = true },
 
     -- Theme
 
-    "navarasu/onedark.nvim",
-    "nvim-lualine/lualine.nvim",
-    "nvim-tree/nvim-web-devicons",
-   {'nvim-tree/nvim-tree.lua', dependencies = {'nvim-tree/nvim-web-devicons'}},
-    "ahmedkhalf/project.nvim",
-
 
     -- Editing
-    "tpope/vim-repeat",
-    "tpope/vim-eunuch",
-    "sheerun/vim-polyglot",
-    "wsdjeg/vim-fetch",
-    "tpope/vim-abolish",
-    "michaeljsmith/vim-indent-object",
-    "nathanaelkane/vim-indent-guides",
-    "tpope/vim-unimpaired",
-    "vimwiki/vimwiki",
-    "michal-h21/vimwiki-sync",
-    "godlygeek/tabular",
-    "MarcWeber/vim-addon-mw-utils",
+    {"tpope/vim-repeat", lazy = false},
+    {"tpope/vim-eunuch", lazy = false},
+    {"sheerun/vim-polyglot", lazy = false},
+    {"wsdjeg/vim-fetch", lazy = false},
+    {"tpope/vim-abolish", lazy = false},
+    {"michaeljsmith/vim-indent-object", lazy = false},
+    {"nathanaelkane/vim-indent-guides", lazy = false},
+    {"tpope/vim-unimpaired", lazy = false},
+    {"vimwiki/vimwiki", lazy = false},
+    {"michal-h21/vimwiki-sync", lazy = false},
+    {"godlygeek/tabular", lazy = false},
+    {"MarcWeber/vim-addon-mw-utils", lazy = false},
 
     -- Navigation
-    "phaazon/hop.nvim",
-    "nelstrom/vim-visual-star-search",
-    "tpope/vim-commentary",
-    "suy/vim-context-commentstring",
-    "andymass/vim-matchup",
+    {
+      "phaazon/hop.nvim",
+      config = function()
+        require("hop").setup({})
+      end
+    },
+    {"nelstrom/vim-visual-star-search", lazy = false},
+    {"tpope/vim-commentary", lazy = false},
+    {"suy/vim-context-commentstring", lazy = false},
+    {"andymass/vim-matchup", lazy = false },
 
     -- LSP 2.0
     {
         "neovim/nvim-lspconfig",
-        lazy = true,
         dependencies = { "mason-lspconfig.nvim", "nlsp-settings.nvim" },
     },
     "williamboman/mason.nvim",
@@ -67,34 +64,32 @@ return {
     -- "antoinemadec/coc-fzf",
 
     -- Snippets
-    "SirVer/ultisnips",
-    "honza/vim-snippets",
-    "mlaursen/vim-react-snippets",
-    "tpope/vim-surround",
+    {"SirVer/ultisnips", lazy = false},
+    {"honza/vim-snippets", lazy = false},
+    {"mlaursen/vim-react-snippets", lazy = false},
+    {"tpope/vim-surround", lazy = false},
 
     -- Tools
-    "folke/which-key.nvim",
-    "voldikss/vim-floaterm",
-    "mbbill/undotree",
-    "mhinz/vim-grepper",
-    "kevinhwang91/rnvimr",
-    "iamcco/markdown-preview.nvim",
-    "glacambre/firenvim",
-    "jpalardy/vim-slime",
+    {"voldikss/vim-floaterm", lazy = false},
+    {"mbbill/undotree", lazy = false},
+    {"mhinz/vim-grepper", lazy = false},
+    {"kevinhwang91/rnvimr", lazy = false},
+    {"iamcco/markdown-preview.nvim", lazy = false},
+    {"glacambre/firenvim", lazy = false},
+    {"jpalardy/vim-slime", lazy = false},
     "MunifTanjim/nui.nvim",
     "Bryley/neoai.nvim",
-    "dstein64/vim-startuptime",
+    {"dstein64/vim-startuptime", lazy = false},
     "kevinhwang91/nvim-ufo",
     -- kevinhwang91/promise-async
 
     -- Debugger
-    "puremourning/vimspector",
+    {"puremourning/vimspector", lazy = false},
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
 
     -- search
-    "ibhagwan/fzf-lua",
     "nvim-telescope/telescope.nvim",
     "fannheyward/telescope-coc.nvim",
     "nvim-telescope/telescope-fzf-native.nvim",
@@ -111,21 +106,20 @@ return {
 
 
     -- Git
-    "tpope/vim-fugitive",
-    "tpope/vim-rhubarb",
-    "shumphrey/fugitive-gitlab.vim",
-    "tommcdo/vim-fubitive",
-    "junegunn/gv.vim",
-    "ruifm/gitlinker.nvim",
-    "lewis6991/gitsigns.nvim",
-    "tomtom/tlib_vim",
+    {"tpope/vim-fugitive", lazy = false},
+    {"tpope/vim-rhubarb", lazy = false},
+    {"shumphrey/fugitive-gitlab.vim", lazy = false},
+    {"tommcdo/vim-fubitive", lazy = false},
+    {"junegunn/gv.vim", lazy = false},
+    {"ruifm/gitlinker.nvim", lazy = false},
+    {"tomtom/tlib_vim", lazy = false},
 
     -- UI improvements
     "karb94/neoscroll.nvim",
-    "ryanoasis/vim-devicons",
+    {"ryanoasis/vim-devicons", lazy = false},
     "norcalli/nvim-colorizer.lua",
     "folke/todo-comments.nvim",
-    "troydm/zoomwintab.vim",
+    {"troydm/zoomwintab.vim", lazy = false},
 
     -- Treesitter
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},

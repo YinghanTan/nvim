@@ -7,12 +7,7 @@ source $HOME/.config/nvim/general/settings.vim
 
 " Themes
 luafile $HOME/.config/nvim/lua/icons.lua
-luafile $HOME/.config/nvim/lua/one-dark.lua
 source $HOME/.config/nvim/themes/theme.vim
-" luafile $HOME/.config/nvim/lua/nvim-web-devicons.lua
-" luafile $HOME/.config/nvim/lua/lualine.lua
-" luafile $HOME/.config/nvim/lua/nvim-tree.lua
-" luafile $HOME/.config/nvim/lua/project-nvim.lua
 " luafile $HOME/.config/nvim/lua/gitsigns.lua
 
 " " COC
