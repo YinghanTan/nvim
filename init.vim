@@ -63,6 +63,9 @@ luafile $HOME/.config/nvim/lua/treesitter.lua
 luafile $HOME/.config/nvim/lua/nvim-treesitter-context.lua
 luafile $HOME/.config/nvim/lua/_telescope.lua
 luafile $HOME/.config/nvim/lua/fzf-lua.lua
+source $HOME/.config/nvim/plug-config/fzf.vim
+source $HOME/.config/nvim/plug-config/fzfPreview.vim
+
 luafile $HOME/.config/nvim/lua/neo-clip.lua
 luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
@@ -115,8 +118,6 @@ luafile $HOME/.config/nvim/lua/neoai.lua
 " source $HOME/.config/nvim/plug-config/autopairs.vim
 " source $HOME/.config/nvim/plug-config/fastFold.vim
 " source $HOME/.config/nvim/general/folding.vim
-" source $HOME/.config/nvim/plug-config/fzf.vim
-" source $HOME/.config/nvim/plug-config/fzfPreview.vim
 " source $HOME/.config/nvim/plug-config/coc/coc-git.vim
 
 " === Dependencies ===

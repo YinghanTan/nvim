@@ -5,11 +5,12 @@ end
 
 
 local actions = require "fzf-lua.actions"
+local utils = require "fzf-lua.utils"
 
 local function filterForCommitId(str)
     local commitId = nil
     for sha in str:gmatch('[0-9a-fA-F]+') do
-        if #sha == 7 then
+        if #sha == 7 or #sha == 8 then
             commitId = sha
             break -- stop searching after first matching commitId is found
         end
@@ -335,15 +336,43 @@ fzf_lua.setup({
         },
         commits = {
             prompt  = 'Commits❯ ',
-            cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %s %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)<%an>%Creset'",
-            preview = "git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color {2}",
+            cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %C(auto)%s%Creset %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)%an%Creset'",
+            preview = "echo {} | sed -n 's/.*\\s\\([a-f0-9]\\{7,8\\}\\)\\s.*/\\1/p;q' | xargs git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color",
+
+            -- cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %s %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)<%an>%Creset'",
+            -- preview = "git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color {2}",
+
             -- uncomment if you wish to use git-delta as pager
             preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
             actions = {
-                ["default"] = actions.git_checkout,
-                ["ctrl-s"]  = actions.git_buf_split,
-                ["ctrl-v"]  = actions.git_buf_vsplit,
-                ["ctrl-t"]  = actions.git_buf_tabedit,
+                -- ["default"] = actions.git_checkout,
+                -- ["ctrl-s"]  = actions.git_buf_split,
+                -- ["ctrl-v"]  = actions.git_buf_vsplit,
+                -- ["ctrl-t"]  = actions.git_buf_tabedit,
+                ["default"]  = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    -- actions.git_buf_edit(selected, opts)
+                    vim.cmd("vsplit")
+                    vim.cmd("Gedit " .. selected[1])
+                end,
+                ["ctrl-s"]  = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    -- actions.git_buf_split(selected, opts)
+                    vim.cmd("hsplit")
+                    vim.cmd("Gedit " .. selected[1])
+                end,
+                ["ctrl-v"] = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    -- actions.git_buf_vplit(selected, opts)
+                    vim.cmd("vsplit")
+                    vim.cmd("Gedit " .. selected[1])
+                end,
+                ["ctrl-t"] = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    -- actions.git_buf_tabedit(selected, opts)
+                    vim.cmd("tab split")
+                    vim.cmd("Gedit " .. selected[1])
+                end,
                 ["ctrl-y"]  = function(selected)
                     local commitId = filterForCommitId(selected[1])
                     print(commitId)
@@ -358,15 +387,35 @@ fzf_lua.setup({
             --   git show --color {1} --rotate-to=<file>
             --   {1}    : commit SHA (fzf field index expression)
             --   <file> : filepath placement within the commands
-            cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %s %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)<%an>%Creset'",
-            preview = "git diff --color {2}~1 {2} -- <file>",
+            cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %C(auto)%s%Creset %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)%an%Creset'",
+            preview = "echo {} | sed -n 's/.*\\s\\([a-f0-9]\\{7,8\\}\\)\\s.*/\\1/p;q' | xargs -I % git diff --color %~1 % -- <file>",
             -- uncomment if you wish to use git-delta as pager
             preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
             actions = {
-                ["default"] = actions.git_buf_edit,
-                ["ctrl-s"]  = actions.git_buf_split,
-                ["ctrl-v"]  = actions.git_buf_vsplit,
-                ["ctrl-t"]  = actions.git_buf_tabedit,
+                ["default"]  = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    vim.cmd("vsplit")
+                    vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_edit(selected, opts)
+                end,
+                ["ctrl-s"]  = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    vim.cmd("hsplit")
+                    vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_split(selected, opts)
+                end,
+                ["ctrl-v"] = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    -- actions.git_buf_vplit(selected, opts)
+                    vim.cmd("vsplit")
+                    vim.cmd("Gedit " .. selected[1])
+                end,
+                ["ctrl-t"] = function(selected, opts)
+                    selected[1] = filterForCommitId(selected[1])
+                    -- actions.git_buf_tabedit(selected, opts)
+                    vim.cmd("tab split")
+                    vim.cmd("Gedit " .. selected[1])
+                end,
                 ["ctrl-y"]  = function(selected)
                     local commitId = filterForCommitId(selected[1])
                     print(commitId)
