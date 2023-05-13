@@ -5,7 +5,6 @@ end
 
 
 local actions = require "fzf-lua.actions"
-local utils = require "fzf-lua.utils"
 
 local function filterForCommitId(str)
     local commitId = nil
@@ -351,27 +350,27 @@ fzf_lua.setup({
                 -- ["ctrl-t"]  = actions.git_buf_tabedit,
                 ["default"]  = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
-                    -- actions.git_buf_edit(selected, opts)
                     vim.cmd("vsplit")
                     vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_edit(selected, opts)
                 end,
                 ["ctrl-s"]  = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
-                    -- actions.git_buf_split(selected, opts)
                     vim.cmd("hsplit")
                     vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_split(selected, opts)
                 end,
                 ["ctrl-v"] = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
-                    -- actions.git_buf_vplit(selected, opts)
                     vim.cmd("vsplit")
                     vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_vplit(selected, opts)
                 end,
                 ["ctrl-t"] = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
-                    -- actions.git_buf_tabedit(selected, opts)
                     vim.cmd("tab split")
                     vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_tabedit(selected, opts)
                 end,
                 ["ctrl-y"]  = function(selected)
                     local commitId = filterForCommitId(selected[1])
@@ -396,7 +395,6 @@ fzf_lua.setup({
                     selected[1] = filterForCommitId(selected[1])
                     vim.cmd("vsplit")
                     vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_edit(selected, opts)
                 end,
                 ["ctrl-s"]  = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
@@ -406,15 +404,16 @@ fzf_lua.setup({
                 end,
                 ["ctrl-v"] = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
-                    -- actions.git_buf_vplit(selected, opts)
                     vim.cmd("vsplit")
                     vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_vplit(selected, opts)
                 end,
                 ["ctrl-t"] = function(selected, opts)
                     selected[1] = filterForCommitId(selected[1])
-                    -- actions.git_buf_tabedit(selected, opts)
                     vim.cmd("tab split")
+                    git_buf_gedit(selected, opts)
                     vim.cmd("Gedit " .. selected[1])
+                    -- actions.git_buf_tabedit(selected, opts)
                 end,
                 ["ctrl-y"]  = function(selected)
                     local commitId = filterForCommitId(selected[1])
