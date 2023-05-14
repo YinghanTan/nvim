@@ -30,10 +30,10 @@ fzf_lua.setup({
         -- "aboveleft vnew   : split left
         -- Only valid when using a float window
         -- (i.e. when 'split' is not defined, default)
-        height     = 0.85,   -- window height
-        width      = 0.80,   -- window width
-        row        = 0.35,   -- window row position (0=top, 1=bottom)
-        col        = 0.50,   -- window col position (0=left, 1=right)
+        height     = 0.85, -- window height
+        width      = 0.80, -- window width
+        row        = 0.35, -- window row position (0=top, 1=bottom)
+        col        = 0.50, -- window col position (0=left, 1=right)
         -- border argument passthrough to nvim_open_win(), also used
         -- to manually draw the border characters around the preview
         -- window, can be set to 'false' to remove all borders or to
@@ -43,7 +43,7 @@ fzf_lua.setup({
         -- can be sent individually to any provider to set the win title
         -- title         = "Title",
         -- title_pos     = "center",    -- 'left', 'center' or 'right'
-        fullscreen = false,   -- start fullscreen?
+        fullscreen = false, -- start fullscreen?
         -- highlights should optimally be set by the colorscheme using
         -- FzfLuaXXX highlights. If your colorscheme doesn't set these
         -- or you wish to override its defaults use these:
@@ -68,28 +68,28 @@ fzf_lua.setup({
         preview = {
             -- default     = 'bat',           -- override the default previewer?
             -- default uses the 'builtin' previewer
-            border       = 'border', -- border|noborder, applies only to
+            border       = 'border',    -- border|noborder, applies only to
             -- native fzf previewers (bat/cat/git/etc)
-            wrap         = 'nowrap', -- wrap|nowrap
-            hidden       = 'nohidden', -- hidden|nohidden
-            vertical     = 'down:45%', -- up|down:size
+            wrap         = 'nowrap',    -- wrap|nowrap
+            hidden       = 'nohidden',  -- hidden|nohidden
+            vertical     = 'down:45%',  -- up|down:size
             horizontal   = 'right:60%', -- right|left:size
-            layout       = 'flex',  -- horizontal|vertical|flex
-            flip_columns = 120,     -- #cols to switch to horizontal on flex
+            layout       = 'flex',      -- horizontal|vertical|flex
+            flip_columns = 120,         -- #cols to switch to horizontal on flex
             -- Only used with the builtin previewer:
-            title        = true,    -- preview border title (file/buf)?
-            title_align  = "left",  -- left|center|right, title alignment
-            scrollbar    = 'float', -- `false` or string:'float|border'
+            title        = true,        -- preview border title (file/buf)?
+            title_align  = "left",      -- left|center|right, title alignment
+            scrollbar    = 'float',     -- `false` or string:'float|border'
             -- float:  in-window floating border
             -- border: in-border chars (see below)
-            scrolloff    = '-2',   -- float scrollbar offset from right
+            scrolloff    = '-2',        -- float scrollbar offset from right
             -- applies only when scrollbar = 'float'
             scrollchars  = { '█', '' }, -- scrollbar chars ({ <full>, <empty> }
             -- applies only when scrollbar = 'border'
-            delay        = 100,    -- delay(ms) displaying the preview
+            delay        = 100,         -- delay(ms) displaying the preview
             -- prevents lag on fast scrolling
             winopts      = {
-                                   -- builtin previewer window options
+                -- builtin previewer window options
                 number         = true,
                 relativenumber = false,
                 cursorline     = true,
@@ -113,31 +113,31 @@ fzf_lua.setup({
         -- delete or modify is sufficient
         builtin = {
             -- neovim `:tmap` mappings for the fzf win
-            ["<F1>"]   = "toggle-help",
-            ["<F2>"]   = "toggle-fullscreen",
+            ["<F1>"]  = "toggle-help",
+            ["<F2>"]  = "toggle-fullscreen",
             -- Only valid with the 'builtin' previewer
-            ["<C-w>"]  = "toggle-preview-wrap",
+            ["<C-w>"] = "toggle-preview-wrap",
             ["<C-o>"] = "toggle-preview", -- open
             -- -- Rotate preview clockwise/counter-clockwise
             -- ["<F5>"]        = "toggle-preview-ccw",
             -- ["<F6>"]        = "toggle-preview-cw",
-            ["<C-d>"]  = "preview-page-down",
-            ["<C-u>"]  = "preview-page-up",
+            ["<C-d>"] = "preview-page-down",
+            ["<C-u>"] = "preview-page-up",
             -- ["<S-left>"]    = "preview-page-reset",
         },
         fzf = {
             -- fzf '--bind=' options
             -- ["ctrl-z"]      = "abort",
-            ["ctrl-n"]  = "half-page-down",
-            ["ctrl-p"]  = "half-page-up",
+            ["ctrl-n"] = "half-page-down",
+            ["ctrl-p"] = "half-page-up",
             -- ["ctrl-a"]      = "beginning-of-line",
             -- ["ctrl-e"]      = "end-of-line",
-            ["ctrl-a"]  = "toggle-all",
+            ["ctrl-a"] = "toggle-all",
             -- Only valid with fzf previewers (bat/cat/git/etc)
-            ["ctrl-w"]  = "toggle-preview-wrap",
+            ["ctrl-w"] = "toggle-preview-wrap",
             ["ctrl-o"] = "toggle-preview", -- mode
-            ["ctrl-d"]  = "preview-page-down",
-            ["ctrl-u"]  = "preview-page-up",
+            ["ctrl-d"] = "preview-page-down",
+            ["ctrl-u"] = "preview-page-up",
         },
     },
     actions           = {
@@ -153,7 +153,7 @@ fzf_lua.setup({
             -- or sends multiple selection to quickfix
             -- replace the default action with the below
             -- to open all files whether single or multiple
-            ["default"]     = actions.file_edit,
+            ["default"] = actions.file_edit,
             -- ["default"] = actions.file_edit_or_qf,
             ["ctrl-s"]  = actions.file_split,
             ["ctrl-v"]  = actions.file_vsplit,
@@ -210,8 +210,8 @@ fzf_lua.setup({
         bat = {
             cmd    = "bat",
             args   = "--style=numbers,changes --color always",
-            theme  = 'Coldark-Dark',    -- bat preview theme (bat --list-themes)
-            config = nil,               -- nil uses $BAT_CONFIG_PATH
+            theme  = 'Coldark-Dark', -- bat preview theme (bat --list-themes)
+            config = nil,            -- nil uses $BAT_CONFIG_PATH
         },
         head = {
             cmd  = "head",
@@ -231,9 +231,9 @@ fzf_lua.setup({
             cmd = "man -c %s | col -bx",
         },
         builtin = {
-            syntax          = true,   -- preview syntax highlight?
-            syntax_limit_l  = 0,      -- syntax limit (lines), 0=nolimit
-            syntax_limit_b  = 1024 * 1024, -- syntax limit (bytes), 0=nolimit
+            syntax          = true,             -- preview syntax highlight?
+            syntax_limit_l  = 0,                -- syntax limit (lines), 0=nolimit
+            syntax_limit_b  = 1024 * 1024,      -- syntax limit (bytes), 0=nolimit
             limit_b         = 1024 * 1024 * 10, -- preview limit (bytes), 0=nolimit
             -- previewer treesitter options:
             -- enable specific filetypes with: `{ enable = { "lua" } }
@@ -268,10 +268,10 @@ fzf_lua.setup({
         -- (name from 'previewers' table)
         -- set to 'false' to disable
         prompt       = 'Files❯ ',
-        multiprocess = true,  -- run command in a separate process
-        git_icons    = true,  -- show git icons?
-        file_icons   = true,  -- show file icons?
-        color_icons  = true,  -- colorize file|git icons
+        multiprocess = true, -- run command in a separate process
+        git_icons    = true, -- show git icons?
+        file_icons   = true, -- show file icons?
+        color_icons  = true, -- colorize file|git icons
         -- path_shorten   = 1,              -- 'true' or number, shorten path?
         -- executed command priority is 'cmd' (if exists)
         -- otherwise auto-detect prioritizes `fd`:`rg`:`find`
@@ -295,7 +295,7 @@ fzf_lua.setup({
             ["ctrl-y"]  = function(selected) print(selected[1]) end,
         }
     },
-    git = {
+    git               = {
         files = {
             prompt       = 'GitFiles❯ ',
             cmd          = 'git ls-files --exclude-standard',
@@ -334,89 +334,122 @@ fzf_lua.setup({
             -- },
         },
         commits = {
-            prompt  = 'Commits❯ ',
-            cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %C(auto)%s%Creset %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)%an%Creset'",
-            preview = "echo {} | sed -n 's/.*\\s\\([a-f0-9]\\{7,8\\}\\)\\s.*/\\1/p;q' | xargs git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color",
-
+            prompt        = 'Commits❯ ',
+            cmd           =
+            "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %C(auto)%s%Creset %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)%an%Creset'",
+            preview       =
+            "echo {} | sed -n 's/.*\\s\\([a-f0-9]\\{7,8\\}\\)\\s.*/\\1/p;q' | xargs git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color",
             -- cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %s %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)<%an>%Creset'",
             -- preview = "git show --pretty='%Cred%H%n%Cblue%an <%ae>%n%C(yellow)%cD%n%Cgreen%s' --color {2}",
 
             -- uncomment if you wish to use git-delta as pager
             preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
-            actions = {
+            fzf_opts      = {
+                ["--no-multi"] = '',
+            },
+            actions       = {
                 -- ["default"] = actions.git_checkout,
                 -- ["ctrl-s"]  = actions.git_buf_split,
                 -- ["ctrl-v"]  = actions.git_buf_vsplit,
                 -- ["ctrl-t"]  = actions.git_buf_tabedit,
-                ["default"]  = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                ["default"] = function(selected, opts)
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("vsplit")
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_edit(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
                 ["ctrl-s"]  = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("hsplit")
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_split(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
-                ["ctrl-v"] = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                ["ctrl-v"]  = function(selected, opts)
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("vsplit")
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_vplit(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
-                ["ctrl-t"] = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                ["ctrl-t"]  = function(selected, opts)
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("tab split")
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_tabedit(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
                 ["ctrl-y"]  = function(selected)
-                    local commitId = filterForCommitId(selected[1])
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
+                    local commitId = selectedCommitIds[1]
                     print(commitId)
                     vim.fn.setreg('+', commitId)
                 end,
             },
         },
         bcommits = {
-            prompt  = 'BCommits❯ ',
+            prompt        = 'BCommits❯ ',
             -- default preview shows a git diff vs the previous commit
             -- if you prefer to see the entire commit you can use:
             --   git show --color {1} --rotate-to=<file>
             --   {1}    : commit SHA (fzf field index expression)
             --   <file> : filepath placement within the commands
-            cmd     = "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %C(auto)%s%Creset %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)%an%Creset'",
-            preview = "echo {} | sed -n 's/.*\\s\\([a-f0-9]\\{7,8\\}\\)\\s.*/\\1/p;q' | xargs -I % git diff --color %~1 % -- <file>",
+            cmd           =
+            "git log --graph --color --pretty=format:'%C(auto)%h%d%Creset %C(auto)%s%Creset %C(white)%C(bold)(%><(12)%cr%><|(12))%Creset %C(auto)%C(blue)%an%Creset'",
+            preview       =
+            "echo {} | sed -n 's/.*\\s\\([a-f0-9]\\{7,8\\}\\)\\s.*/\\1/p;q' | xargs -I % git diff --color %~1 % -- <file>",
             -- uncomment if you wish to use git-delta as pager
             preview_pager = "delta --width=$FZF_PREVIEW_COLUMNS",
-            actions = {
-                ["default"]  = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+            fzf_opts      = {
+                ["--no-multi"] = '',
+            },
+            actions       = {
+                ["default"] = function(selected, opts)
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("vsplit")
-                    vim.cmd("Gedit " .. selected[1])
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
                 ["ctrl-s"]  = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("hsplit")
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_split(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
-                ["ctrl-v"] = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                ["ctrl-v"]  = function(selected, opts)
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("vsplit")
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_vplit(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
-                ["ctrl-t"] = function(selected, opts)
-                    selected[1] = filterForCommitId(selected[1])
+                ["ctrl-t"]  = function(selected, opts)
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
                     vim.cmd("tab split")
-                    git_buf_gedit(selected, opts)
-                    vim.cmd("Gedit " .. selected[1])
-                    -- actions.git_buf_tabedit(selected, opts)
+                    vim.cmd("Gedit " .. selectedCommitIds[1])
                 end,
                 ["ctrl-y"]  = function(selected)
-                    local commitId = filterForCommitId(selected[1])
+                    local selectedCommitIds = {}
+                    for i, v in ipairs(selected) do
+                        selectedCommitIds[i] = filterForCommitId(v)
+                    end
+                    local commitId = selectedCommitIds[1]
                     print(commitId)
                     vim.fn.setreg('+', commitId)
                 end,
@@ -474,9 +507,9 @@ fzf_lua.setup({
         -- search strings will be split using the 'glob_separator' and translated
         -- to '--iglob=' arguments, requires 'rg'
         -- can still be used when 'false' by calling 'live_grep_glob' directly
-        rg_glob        = false,    -- default to glob parsing?
+        rg_glob        = false,     -- default to glob parsing?
         glob_flag      = "--iglob", -- for case sensitive globs use '--glob'
-        glob_separator = "%s%-%-", -- query separator pattern (lua): ' --'
+        glob_separator = "%s%-%-",  -- query separator pattern (lua): ' --'
         -- advanced usage: for custom argument parsing define
         -- 'rg_glob_fn' to return a pair:
         --   first returned argument is the new search query
@@ -490,8 +523,8 @@ fzf_lua.setup({
             -- this action toggles between 'grep' and 'live_grep'
             ["ctrl-g"] = { actions.grep_lgrep }
         },
-        no_header      = false,    -- hide grep|cwd header?
-        no_header_i    = false,    -- hide interactive header?
+        no_header      = false, -- hide grep|cwd header?
+        no_header_i    = false, -- hide interactive header?
     },
     args              = {
         prompt     = 'Args❯ ',
@@ -502,7 +535,7 @@ fzf_lua.setup({
     oldfiles          = {
         prompt                  = 'History❯ ',
         cwd_only                = false,
-        stat_file               = true, -- verify files exist on disk
+        stat_file               = true,  -- verify files exist on disk
         include_current_session = false, -- include bufs from current session
     },
     buffers           = {
@@ -525,8 +558,8 @@ fzf_lua.setup({
         prompt      = 'Tabs❯ ',
         tab_title   = "Tab",
         tab_marker  = "<<",
-        file_icons  = true,   -- show file icons?
-        color_icons = true,   -- colorize file|git icons
+        file_icons  = true, -- show file icons?
+        color_icons = true, -- colorize file|git icons
         actions     = {
             -- actions inherit from 'actions.buffers' and merge
             ["default"] = actions.buf_switch,
@@ -541,8 +574,8 @@ fzf_lua.setup({
     lines             = {
         previewer       = "builtin", -- set to 'false' to disable
         prompt          = 'Lines❯ ',
-        show_unlisted   = false,   -- exclude 'help' buffers
-        no_term_buffers = true,    -- exclude 'term' buffers
+        show_unlisted   = false,     -- exclude 'help' buffers
+        no_term_buffers = true,      -- exclude 'term' buffers
         fzf_opts        = {
             -- do not include bufnr in fuzzy matching
             -- tiebreak by line no.
@@ -561,8 +594,8 @@ fzf_lua.setup({
     blines            = {
         previewer       = "builtin", -- set to 'false' to disable
         prompt          = 'BLines❯ ',
-        show_unlisted   = true,    -- include 'help' buffers
-        no_term_buffers = false,   -- include 'term' buffers
+        show_unlisted   = true,      -- include 'help' buffers
+        no_term_buffers = false,     -- include 'term' buffers
         fzf_opts        = {
             -- hide filename, tiebreak by line no.
             ['--delimiter'] = "'[\\]:]'",
@@ -579,7 +612,7 @@ fzf_lua.setup({
     },
     tags              = {
         prompt       = 'Tags❯ ',
-        ctags_file   = nil,      -- auto-detect from tags-option
+        ctags_file   = nil, -- auto-detect from tags-option
         multiprocess = true,
         file_icons   = true,
         git_icons    = true,
@@ -592,13 +625,13 @@ fzf_lua.setup({
             -- this action toggles between 'grep' and 'live_grep'
             ["ctrl-g"] = { actions.grep_lgrep }
         },
-        no_header    = false,      -- hide grep|cwd header?
-        no_header_i  = false,      -- hide interactive header?
+        no_header    = false, -- hide grep|cwd header?
+        no_header_i  = false, -- hide interactive header?
     },
     btags             = {
         prompt        = 'BTags❯ ',
-        ctags_file    = nil,       -- auto-detect from tags-option
-        ctags_autogen = false,     -- dynamically generate ctags each call
+        ctags_file    = nil,   -- auto-detect from tags-option
+        ctags_autogen = false, -- dynamically generate ctags each call
         multiprocess  = true,
         file_icons    = true,
         git_icons     = true,
@@ -635,7 +668,7 @@ fzf_lua.setup({
         prompt_postfix     = '❯ ', -- will be appended to the LSP label
         -- to override use 'prompt' instead
         cwd_only           = false, -- LSP/diagnostics for cwd only?
-        async_or_timeout   = 5000, -- timeout(ms) or 'true' for async calls
+        async_or_timeout   = 5000,  -- timeout(ms) or 'true' for async calls
         file_icons         = true,
         git_icons          = false,
         -- The equivalent of using `includeDeclaration` in lsp buf calls, e.g:
@@ -644,7 +677,7 @@ fzf_lua.setup({
         -- settings for 'lsp_{document|workspace|lsp_live_workspace}_symbols'
         symbols            = {
             async_or_timeout = true, -- symbols are async by default
-            symbol_style     = 1, -- style for document/workspace symbols
+            symbol_style     = 1,    -- style for document/workspace symbols
             -- false: disable,    1: icon+kind
             --     2: icon only,  3: kind only
             -- NOTE: icons are extracted from
@@ -725,7 +758,7 @@ fzf_lua.setup({
         file_icons   = true,
         git_icons    = false,
         diag_icons   = true,
-        icon_padding = '',  -- add padding for wide diagnostics signs
+        icon_padding = '', -- add padding for wide diagnostics signs
         -- by default icons and highlights are extracted from 'DiagnosticSignXXX'
         -- and highlighted by a highlight group of the same name (which is usually
         -- set by your colorscheme, for more info see:
@@ -749,7 +782,7 @@ fzf_lua.setup({
         -- severity_bound:  keep any equal or less severe (higher)
     },
     complete_path     = {
-        cmd     = nil,  -- default: auto detect fd|rg|find
+        cmd     = nil, -- default: auto detect fd|rg|find
         actions = { ["default"] = actions.complete_insert },
     },
     complete_file     = {
@@ -786,7 +819,5 @@ fzf_lua.setup({
 
 
 vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>",
-  function() require("fzf-lua").complete_path() end,
-  { silent = true, desc = "Fuzzy complete path" })
-
-
+    function() require("fzf-lua").complete_path() end,
+    { silent = true, desc = "Fuzzy complete path" })
