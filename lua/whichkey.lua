@@ -323,7 +323,7 @@ local mappings = {
         -- :lua require'fzf-lua'.files({ prompt="LS> ", cmd = "ls", cwd="~/<folder>" })
         -- FZFLUA
         ["/"] = { "<cmd>lua require('fzf-lua').search_history()<cr>", "search history" },
-        [";"] = { "<cmd>Telescope command_palette<cr>", "command" },
+        [";"] = { "<cmd>lua require('fzf-lua').command_history()<cr>", "command history" },
         ["?"] = { "<cmd>lua require('fzf-lua').help_tags()<cr>", "help" },
         ["."] = { "<cmd>lua require('fzf-lua').filetypes()<cr>", "filetypes" },
         ['b'] = {
@@ -335,8 +335,8 @@ local mappings = {
         ["a"] = { "<cmd>lua require('fzf-lua').args()<cr>", "argslist" },
         ["A"] = { "<cmd>lua require('fzf-lua').builtin()<cr>", "all" },
         ["B"] = { "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", "Bookmarks" },
-        ["c"] = { "<cmd>lua require('fzf-lua').commands()<cr>", "commands" },
-        ["C"] = { "<cmd>lua require('fzf-lua').command_history()<cr>", "command history" },
+        ["c"] = { "<cmd>Telescope command_palette<cr>", "command" },
+        ["C"] = { "<cmd>lua require('fzf-lua').commands()<cr>", "commands" },
         ["d"] = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
         ["D"] = { "<cmd>TodoTelescope<cr>", "toDos" },
         ["e"] = { "<cmd>Telescope env<cr>", "env" },
