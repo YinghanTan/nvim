@@ -129,3 +129,9 @@ luafile $HOME/.config/nvim/lua/neoai.lua
 
 " --- linux dependencies ---
 " ripgrep fzf bat fdfind delta glow
+
+
+
+" --- commands ---
+" //e end of search selection
+" // start of search selection

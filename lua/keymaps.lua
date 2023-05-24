@@ -19,9 +19,9 @@ vim.api.nvim_set_keymap("n", "k", '(v:count > 5 ? ("m\'" .. v:count) : "") .. "k
 vim.api.nvim_set_keymap("n", "j", '((v:count > 5) ? ("m\'" .. v:count) : "") .. "j"',
     { noremap = true, expr = true, silent = true })
 
--- Better indent
-vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
+-- -- Better indent
+-- vim.api.nvim_set_keymap("v", "<", "<gv", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("v", ">", ">gv", { noremap = true, silent = true })
 
 -- create undo breakpoints when typing
 vim.api.nvim_set_keymap("i", ",", ",<c-g>u", { noremap = true, silent = true })

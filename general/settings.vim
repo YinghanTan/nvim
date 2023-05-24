@@ -7,21 +7,26 @@ set expandtab                   " tabs are spaces
 " set smartindent                 " automatically add indent 
 set autoindent                  " apply indentation of current line to next line
 set nowrap                      " text do not get wrappped around at the end of the line
-autocmd Filetype html setlocal ts=2 sts=2 sw=2 expandtab
+
+" html
 autocmd Filetype html set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype html set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype html set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype html set shiftround    " round indent to multiple of 'shiftwidth'
-autocmd Filetype css setlocal ts=2 sts=2 sw=2 expandtab
-" autocmd Filetype ruby setlocal ts=2 sw=2 expandtab
+
+" css
+autocmd Filetype css set tabstop=2     " a hard TAB displays as 2 columns
+autocmd Filetype css set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype css set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
+autocmd Filetype css set shiftround    " round indent to multiple of 'shiftwidth'
 
 " lua
-autocmd Filetype lua setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype lua set tabstop=2     " a hard TAB displays as 2 columns
 autocmd Filetype lua set softtabstop=2 " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype lua set shiftwidth=2  " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype lua set shiftround    " round indent to multiple of 'shiftwidth'
 
+" jst
 au BufNewFile,BufRead *.handlebars setlocal filetype=jst
 au BufNewFile,BufRead *.ejs set filetype=jst
 autocmd Filetype jst setlocal ts=2 sts=2 sw=2 expandtab
@@ -45,8 +50,6 @@ autocmd Filetype javascript set softtabstop=2                  " insert/delete 2
 autocmd Filetype javascript set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype javascript set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype javascript set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype javascript setlocal ts=4 sw=4 sts=4 expandtab
-autocmd Filetype javascript let javaScript_fold=1              " activate folding by JS syntax
 
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
@@ -56,8 +59,6 @@ autocmd Filetype js set softtabstop=2                         " insert/delete 2 
 autocmd Filetype js set shiftwidth=2                          " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype js set expandtab                             " insert spaces when hitting TABs
 autocmd Filetype js set shiftround                            " round indent to multiple of 'shiftwidth'
-" autocmd Filetype js setlocal ts=4 sw=4 sts=4 expandtab
-autocmd Filetype js let javaScript_fold=1                     " activate folding by JS syntax
 
 " vimwiki Settings
 " au BufNewFile,BufRead *.jsx setlocal filetype=vimwiki
@@ -67,8 +68,6 @@ autocmd Filetype vimwiki set softtabstop=4                         " insert/dele
 autocmd Filetype vimwiki set shiftwidth=4                          " operation >> indents 4 columns; << unindents 4 columns
 autocmd Filetype vimwiki set expandtab                             " insert spaces when hitting TABs
 autocmd Filetype vimwiki set shiftround                            " round indent to multiple of 'shiftwidth'
-" autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
-autocmd Filetype vimwiki let javaScript_fold=1                     " activate folding by vimwiki syntax
 
 " --- OS Configuration ---
 if has('unix')
@@ -102,12 +101,10 @@ elseif has('win32')
 endif
 " --- --- ---
 
-" Python Settings
-" let g:loaded_python_provider = 0
+" Python
 autocmd Filetype python set tabstop=4         " a hard TAB displays as 4 columns
 autocmd Filetype python set softtabstop=4     " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype python set shiftwidth=4      " operation >> indents 4 columns; << unindents 4 columns
-" autocmd Filetype python set textwidth=80      " lines longer than 79 columns will be broken
 autocmd Filetype python set expandtab         " insert spaces when hitting TABs
 autocmd Filetype python set autoindent        " align the new line indent with the previous line
 autocmd Filetype python set shiftround        " round indent to multiple of 'shiftwidth'
@@ -124,7 +121,6 @@ au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 autocmd Filetype typescript set tabstop=2             " a hard TAB displays as 2 columns
 autocmd Filetype typescript set softtabstop=2         " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype typescript set shiftwidth=2          " operation >> indents 2 columns; << unindents 2 columns
-" autocmd Filetype typescript set textwidth=80           " lines longer than 79 columns will be broken
 autocmd Filetype typescript set expandtab             " insert spaces when hitting TABs
 autocmd Filetype typescript set autoindent            " align the new line indent with the previous line
 autocmd Filetype typescript set shiftround            " round indent to multiple of 'shiftwidth'
@@ -132,7 +128,6 @@ autocmd Filetype typescript set shiftround            " round indent to multiple
 autocmd Filetype typescript.tsx set tabstop=2         " a hard TAB displays as 2 columns
 autocmd Filetype typescript.tsx set softtabstop=2     " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype typescript.tsx set shiftwidth=2      " operation >> indents 2 columns; << unindents 2 columns
-" autocmd Filetype typescript.tsx set textwidth=80       " lines longer than 79 columns will be broken
 autocmd Filetype typescript.tsx set expandtab         " insert spaces when hitting TABs
 autocmd Filetype typescript.tsx set autoindent        " align the new line indent with the previous line
 autocmd Filetype typescript.tsx set shiftround        " round indent to multiple of 'shiftwidth'
@@ -153,7 +148,6 @@ let g:loaded_perl_provider = 0
 autocmd Filetype json set tabstop=2         " a hard TAB displays as 2 columns
 autocmd Filetype json set softtabstop=2     " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype json set shiftwidth=2      " operation >> indents 2 columns; << unindents 2 columns
-" autocmd Filetype json set textwidth=80      " lines longer than 79 columns will be broken
 autocmd Filetype json set expandtab         " insert spaces when hitting TABs
 autocmd Filetype json set autoindent        " align the new line indent with the previous line
 autocmd Filetype json set shiftround        " round indent to multiple of 'shiftwidth'
@@ -166,7 +160,6 @@ autocmd Filetype sh set softtabstop=2                  " insert/delete 2 spaces 
 autocmd Filetype sh set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype sh set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype sh set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype sh let javaScript_fold=1 "activate folding by sh syntax
 
 " zsh Settings
 au BufNewFile,BufRead *.zsh setlocal filetype=zsh
@@ -176,7 +169,6 @@ autocmd Filetype zsh set softtabstop=2                  " insert/delete 2 spaces
 autocmd Filetype zsh set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype zsh set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype zsh set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype zsh let javaScript_fold=1 "activate folding by sh syntax
 
 " LaTeX
 au BufNewFile,BufRead *.tex,*.sty,*.cls setlocal filetype=tex
@@ -186,7 +178,6 @@ autocmd Filetype tex set softtabstop=2                  " insert/delete 2 spaces
 autocmd Filetype tex set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype tex set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype tex set shiftround                     " round indent to multiple of 'shiftwidth'
-" autocmd Filetype tex let javaScript_fold=1 "activate folding by sh syntax
 setlocal autoindent
 let g:tex_indent_items=0
 let g:tex_indent_and=0
@@ -194,14 +185,12 @@ let g:tex_indent_brace=0
 
 " dart Settings
 " au BufNewFile,BufRead *.dart setlocal filetype=dart
-autocmd Filetype dart setlocal ts=2 sw=2 sts=2 expandtab
 autocmd Filetype dart set tabstop=2                      " a hard TAB displays as 2 columns
 autocmd Filetype dart set softtabstop=2                  " insert/delete 2 spaces when hitting a TAB/BACKSPACE
 autocmd Filetype dart set shiftwidth=2                   " operation >> indents 2 columns; << unindents 4 columns
 autocmd Filetype dart set expandtab                      " insert spaces when hitting TABs
 autocmd Filetype dart set shiftround                     " round indent to multiple of 'shiftwidth'
 autocmd Filetype dart set autoindent
-" autocmd Filetype dart let javaScript_fold=1 "activate folding by dart syntax
 
 " Disable F1 for Help Menu
 nmap <F1> :echo<CR>
