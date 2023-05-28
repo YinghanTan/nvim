@@ -347,6 +347,10 @@ local mappings = {
         ["k"] = { "<cmd>lua require('fzf-lua').keymaps()<cr>", "keymaps" },
         ["m"] = { "<cmd>lua require('fzf-lua').marks()<cr>", "marks" },
         ["M"] = { "<cmd>lua require('fzf-lua').man_pages()<cr>", "manual" },
+
+        ["n"] = { "<cmd>lua require('fzf-lua').files({ prompt='notes> ', cwd='~/vimwiki', show_cwd_header = true })<cr>", "find notes" },
+        ["N"] = { "<cmd>lua require('fzf-lua').live_grep({ prompt='note text> ', cwd='~/vimwiki', show_cwd_header = true })<cr>", "note text" },
+
         p = { "<cmd>lua require('telescope').extensions.repo.list{}<cr>", "repo" },
         ["q"] = { "<cmd>lua require('fzf-lua').quickfix()<cr>", "quickfix" },
         ["Q"] = { "<cmd>lua require('fzf-lua').quickfix_stack()<cr>", "quickfix_stack" },
