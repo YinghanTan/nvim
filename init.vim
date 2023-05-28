@@ -71,7 +71,6 @@ luafile $HOME/.config/nvim/lua/whichkey.lua
 luafile $HOME/.config/nvim/lua/git-worktree.lua
 luafile $HOME/.config/nvim/lua/nvim-autopairs.lua
 luafile $HOME/.config/nvim/lua/vim-slime.lua
-" luafile $HOME/.config/nvim/lua/chatgpt.lua
 luafile $HOME/.config/nvim/lua/neoai.lua
 " luafile $HOME/.config/nvim/lua/numb.lua
 
@@ -119,6 +118,7 @@ luafile $HOME/.config/nvim/lua/neoai.lua
 " source $HOME/.config/nvim/plug-config/fastFold.vim
 " source $HOME/.config/nvim/general/folding.vim
 " source $HOME/.config/nvim/plug-config/coc/coc-git.vim
+" luafile $HOME/.config/nvim/lua/chatgpt.lua
 
 " === Dependencies ===
 " --- Python Dependencies ---
