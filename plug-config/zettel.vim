@@ -34,6 +34,7 @@ augroup filetype_vimwiki
   autocmd FileType vimwiki xmap z <Plug>ZettelNewSelectedMap
   autocmd FileType vimwiki nmap gZ <Plug>ZettelReplaceFileWithLink
 augroup END
+" for file search use <C-x><C-f> and use gZ
 
 " " Set template and custom header variable for the second Wiki
 " let g:zettel_options = [{},{"front_matter" : {"tags" : ""}, "template" :  "~/mytemplate.tpl"}]

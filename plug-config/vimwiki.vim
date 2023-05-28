@@ -31,18 +31,6 @@ map <leader>/ :let @/=''<cr>
 " -- Toggle paste mode on and off
 map <leader><leader>p :setlocal paste!<cr>
 
-"" --- search ---
-"function! HandleFZF(file)
-"    "let filename = fnameescape(fnamemodify(a:file, ":t"))
-"    "why only the tail ?  I believe the whole filename must be linked unless everything is flat ...
-"    let filename = fnameescape(a:file)
-"    let filename_wo_timestamp = fnameescape(fnamemodify(a:file, ":t:s/^[0-9]*-//"))
-"     " Insert the markdown link to the file in the current buffer
-"    let mdlink = "[ ".filename_wo_timestamp." ]( ".filename." )"
-"    put=mdlink
-"endfunction
-"command! -nargs=1 HandleFZF :call HandleFZF(<f-args>)
-
 
 " Deprecated
 " let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
