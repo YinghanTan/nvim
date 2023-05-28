@@ -51,5 +51,3 @@ command! -nargs=1 HandleFZF :call HandleFZF(<f-args>)
 
 " Deprecated
 " let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
-" let g:vimwiki_list = [{'path': '$HOME/Dropbox/wiki'}] " set path to a directory inside Dropbox
-" nnoremap yot :syn on<cr>    " turn on syntax highlighting

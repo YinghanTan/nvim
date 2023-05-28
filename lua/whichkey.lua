@@ -90,8 +90,7 @@ local y_mappings = {
         h = "hlsearch",
         i = "ignorecase",
         l = "list char",
-        m = { "<plug>MarkdownPreview<cr>", "markdown preview" },
-        M = { "<plug>MarkdownPreviewStop<cr>", "markdown preview stop" },
+        m = { "<plug>MarkdownPreviewToggle<cr>", "toggle markdown " },
         n = "number",
         -- p = { "yop", "scratchPad" },
         r = "relative number",
@@ -124,12 +123,8 @@ local mappings = {
     },
     a = {
         name = "action",
-        c = { "<cmd>ColorizerToggle<cr>", "colorizer" },
         d = { "<cmd>cd %:p:h<cr>:pwd<cr>", "set current dir" },
         s = { "<cmd>source $MYVIMRC<cr>", "source" },
-        g = { "<cmd>IndentGuidesToggle<cr>", "indent guide" },
-        m = { "<plug>MarkdownPreview<cr>", "markdown preview" },
-        M = { "<plug>MarkdownPreviewStop<cr>", "markdown preview stop" },
         w = { "<cmd>call TrimWhitespace()<cr>", "trim whitespace" },
 
     },
