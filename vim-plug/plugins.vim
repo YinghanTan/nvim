@@ -29,6 +29,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nathanaelkane/vim-indent-guides' " text Objects
     Plug 'tpope/vim-unimpaired'
     Plug 'vimwiki/vimwiki' " Note Taking
+    Plug 'michal-h21/vim-zettel'
     Plug 'michal-h21/vimwiki-sync' " Note git sync
     Plug 'godlygeek/tabular' " Alignment and formatting
     " Plug 'monaqa/dial.nvim'  " Extended increment/decrement plugin
