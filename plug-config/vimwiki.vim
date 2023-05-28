@@ -13,10 +13,6 @@ let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
 
 
-" --- zettlekasten ---
-let g:zettelkasten = "~/vimwiki/"
-command! -nargs=1 Zet :execute ":e" zettelkasten . strftime("%Y%m%d%H%M%S") . "-<args>.md"
-nnoremap <leader>nz :Zet 
 
 
 " --- Shortcuts ---

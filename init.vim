@@ -40,6 +40,7 @@ source $HOME/.config/nvim/plug-config/zoomwintab.vim
 source $HOME/.config/nvim/plug-config/grepper.vim
 source $HOME/.config/nvim/plug-config/scripts.vim
 source $HOME/.config/nvim/plug-config/vimwiki.vim
+source $HOME/.config/nvim/plug-config/zettel.vim
 source $HOME/.config/nvim/plug-config/vimwiki-sync.vim
 source $HOME/.config/nvim/plug-config/markdownPreview.vim
 source $HOME/.config/nvim/plug-config/markdown.vim
