@@ -1,7 +1,7 @@
 " --- Indentation ---
 filetype plugin indent on
-set tabstop=2 softtabstop=2     " tab stop 2 spaces, distance of each space 1
-set shiftwidth=2                " displacement of each shift is 2 spaces
+set tabstop=4 softtabstop=4     " tab stop 4 spaces, distance of each space 1
+set shiftwidth=4                " displacement of each shift is 4 spaces
 set nosmarttab                    " Be smart when using tabs
 set expandtab                   " tabs are spaces
 set nosmartindent                 " intelligently adjust the indentation level based on the code's syntax. 
@@ -62,10 +62,10 @@ autocmd Filetype js set shiftround                            " round indent to 
 
 " vimwiki Settings
 " au BufNewFile,BufRead *.jsx setlocal filetype=vimwiki
-autocmd Filetype vimwiki setlocal ts=2 sw=2 sts=2 expandtab
-autocmd Filetype vimwiki set tabstop=2                             " a hard TAB displays as 4 columns
-autocmd Filetype vimwiki set softtabstop=2                         " insert/delete 4 spaces when hitting a TAB/BACKSPACE
-autocmd Filetype vimwiki set shiftwidth=2                          " operation >> indents 4 columns; << unindents 4 columns
+autocmd Filetype vimwiki setlocal ts=4 sw=4 sts=4 expandtab
+autocmd Filetype vimwiki set tabstop=4                             " a hard TAB displays as 3 columns
+autocmd Filetype vimwiki set softtabstop=4                         " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+autocmd Filetype vimwiki set shiftwidth=4                          " operation >> indents 4 columns; << unindents 4 columns
 autocmd Filetype vimwiki set expandtab                             " insert spaces when hitting TABs
 autocmd Filetype vimwiki set shiftround                            " round indent to multiple of 'shiftwidth'
 " autocmd Filetype vimwiki set nosma                            " round indent to multiple of 'shiftwidth'
