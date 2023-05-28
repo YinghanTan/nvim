@@ -5,6 +5,7 @@ end
 
 
 local actions = require "fzf-lua.actions"
+local path = require "fzf-lua.path"
 
 local function filterForCommitId(str)
     local commitId = nil
@@ -293,7 +294,15 @@ fzf_lua.setup({
             -- or set bind to 'false' to disable a default action
             ["default"] = actions.file_edit,
             -- custom actions are available too
-            ["ctrl-y"]  = function(selected) print(selected[1]) end,
+            ["ctrl-y"] = function(selected, opts)
+                local list = {}
+                for i = 1, #selected do
+                    local file = path.entry_to_file(selected[i], opts)
+                    local text = selected[i]:match(":%d+:%d?%d?%d?%d?:?(.*)$")
+                    table.insert(list, file.bufname or file.path)
+                end
+                vim.fn.setreg('+', vim.fn.join(list, "\n"))
+            end,
         }
     },
     git               = {
@@ -307,6 +316,17 @@ fzf_lua.setup({
             -- force display the cwd header line regardles of your current working
             -- directory can also be used to hide the header when not wanted
             -- show_cwd_header = true
+            actions = {
+                ["ctrl-y"] = function(selected, opts)
+                    local list = {}
+                    for i = 1, #selected do
+                        local file = path.entry_to_file(selected[i], opts)
+                        local text = selected[i]:match(":%d+:%d?%d?%d?%d?:?(.*)$")
+                        table.insert(list, file.bufname or file.path)
+                    end
+                    vim.fn.setreg('+', vim.fn.join(list, "\n"))
+                end,
+            }
         },
         status = {
             prompt      = 'GitStatus❯ ',
@@ -522,7 +542,16 @@ fzf_lua.setup({
         actions        = {
             -- actions inherit from 'actions.files' and merge
             -- this action toggles between 'grep' and 'live_grep'
-            ["ctrl-g"] = { actions.grep_lgrep }
+            ["ctrl-g"] = { actions.grep_lgrep },
+            ["ctrl-y"] = function(selected, opts)
+                local list = {}
+                for i = 1, #selected do
+                    local file = path.entry_to_file(selected[i], opts)
+                    local text = selected[i]:match(":%d+:%d?%d?%d?%d?:?(.*)$")
+                    table.insert(list, file.bufname or file.path)
+                end
+                vim.fn.setreg('+', vim.fn.join(list, "\n"))
+            end,
         },
         no_header      = false, -- hide grep|cwd header?
         no_header_i    = false, -- hide interactive header?
