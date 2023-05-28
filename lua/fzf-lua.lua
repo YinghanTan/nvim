@@ -67,6 +67,7 @@ fzf_lua.setup({
     }, ]]
         preview = {
             -- default     = 'bat',           -- override the default previewer?
+            default     = 'builtin',           -- override the default previewer?
             -- default uses the 'builtin' previewer
             border       = 'border',    -- border|noborder, applies only to
             -- native fzf previewers (bat/cat/git/etc)
@@ -203,10 +204,10 @@ fzf_lua.setup({
         ["gutter"]  = { "bg", "Normal" },
     },
     previewers        = {
-        -- cat = {
-        --   cmd             = "cat",
-        --   args            = "--number",
-        -- },
+        cat = {
+          cmd             = "cat",
+          args            = "--number",
+        },
         bat = {
             cmd    = "bat",
             args   = "--style=numbers,changes --color always",
@@ -817,7 +818,10 @@ fzf_lua.setup({
     -- nbsp = '\xc2\xa0',
 })
 
-
-vim.keymap.set({ "n", "v", "i" }, "<C-x><C-f>",
-    function() require("fzf-lua").complete_path() end,
-    { silent = true, desc = "Fuzzy complete path" })
+vim.keymap.set({ "n","v", "i" }, "<C-x><C-f>",
+  function()
+    require("fzf-lua").complete_file({
+      cmd = "rg --files",
+      winopts = { preview = { hidden = "nohidden" } }
+    })
+  end, { silent = true, desc = "Fuzzy complete file" })
