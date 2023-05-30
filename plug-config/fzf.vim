@@ -62,7 +62,7 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } } " Border color
 " let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" --preview-window="right:50%" --preview="bat --style=numbers --color=always --line-range :500 {}"'
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" --preview="bat --style=numbers --color=always --line-range :500 {}"'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-o:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up" --preview="bat --style=numbers --color=always --line-range :500 {}"'
 let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
 
