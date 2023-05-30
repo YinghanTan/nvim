@@ -43,7 +43,7 @@ let g:mkdp_echo_preview_url = 0
 " a custom vim function name to open preview page
 " this function will receive url as param
 " default is empty
-let g:mkdp_browserfunc = ''
+" let g:mkdp_browserfunc = ''
 
 " options for markdown render
 " mkit: markdown-it options for render
@@ -96,3 +96,8 @@ let g:mkdp_filetypes = ['markdown']
 " set default theme (dark or light)
 " By default the theme is define according to the preferences of the system
 let g:mkdp_theme = 'dark'
+
+function OpenMarkdownPreview (url)
+    execute "silent ! google-chrome --new-window " . a:url
+endfunction
+let g:mkdp_browserfunc = 'OpenMarkdownPreview'

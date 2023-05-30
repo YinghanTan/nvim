@@ -66,7 +66,8 @@ let g:fzf_preview_cache_directory = expand('~/.cache/vim/fzf_preview')
 
 " Keyboard shortcuts while fzf preview is active
 " let g:fzf_preview_preview_key_bindings = ''
-let g:fzf_preview_preview_key_bindings = 'ctrl-d:preview-page-down,ctrl-u:preview-page-up,?:toggle-preview'
+let g:fzf_preview_preview_key_bindings = 'ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-o:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up'
+
 
 " Specify the color of fzf
 let g:fzf_preview_fzf_color_option = ''
