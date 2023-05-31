@@ -248,3 +248,15 @@ endfunction
 
 command! -bang Tabcr call TabCloseRight('<bang>')
 command! -bang Tabcl call TabCloseLeft('<bang>')
+
+" -- Toggle paste mode on and off
+function! TogglePaste()
+    if(&paste == 0)
+        set paste
+        echo "Paste Mode Enabled"
+    else
+        set nopaste
+        echo "Paste Mode Disabled"
+    endif
+endfunction
+" nnoremap yop :call TogglePaste()<cr>
