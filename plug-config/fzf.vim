@@ -8,8 +8,17 @@ function! s:build_quickfix_list(lines)
     cc
 endfunction
 
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
 " [[B]Commits] Customize the options used by 'git log':
-let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"'
+let g:fzf_commits_log_options = '--graph --color=always --pretty=oneline --format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"'
+
+" " [Tags] Command to generate tags file
+" let g:fzf_tags_command = 'ctags -R'
+
+" [Commands] --expect expression for directly executing the command
+let g:fzf_commands_expect = 'alt-enter,ctrl-x'
 
 
 " This is the default extra key bindings
@@ -28,47 +37,14 @@ let g:fzf_action = {
 
 
 " Enable per-command history.
-" CTRL-N and CTRL-P will be automatically bound to next-history and
-" previous-history instead of down and up. If you don't like the change,
-" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-" FZF Commands
-" map <C-f> :Files<CR>
-" map <leader>b :Buffers<CR>
-" nnoremap <leader>g :Rg<CR>
-" nnoremap <leader>t :Tags<CR>
-" nnoremap <leader>m :Marks<CR>
-" :History
-" :Lines<CR>
-" :BLines<CR>
-" :Ag
-" :FZF
-
-" Terminal commands
-" <Ctrl-t> -> files
-" <Ctrl-r>  -> previous ran commands
-" <alt-c> -> all the directories i can cd to
-
-" This is the default option:
-"   - Preview window on the right with 50% width
-"   - CTRL-/ will toggle preview window.
-" - Note that this array is passed as arguments to fzf#vim#with_preview function.
-" - To learn more about preview window options, see `--preview-window` section of `man fzf`.
-" let g:fzf_preview_window = ['right:50%', 'ctrl-/']
-
- 
 
 let g:fzf_tags_command = 'ctags -R'
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } } " Border color
 " let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" --preview-window="right:50%" --preview="bat --style=numbers --color=always --line-range :500 {}"'
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-o:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up" --preview="bat --style=numbers --color=always --line-range :500 {}"'
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-o:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up" --preview="bat --style=numbers --color=always --line-range :500 {}" --preview-window="right,70%,nowrap,nocycle,nohidden"'
 let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
-
-" let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-A:deselect-all"'
-
-" let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -89,7 +65,6 @@ let g:fzf_colors =
 "Get Files
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
-
 
 
 " Get text in files with Rg
