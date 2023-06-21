@@ -3,9 +3,9 @@
 
 " Ctrl-A Ctrl-Q to select all and build quickfix list
 function! s:build_quickfix_list(lines)
-    call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-    copen
-    cc
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
 endfunction
 
 " [Buffers] Jump to the existing window if possible
