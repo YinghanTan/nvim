@@ -1,3 +1,8 @@
+" oldfiles uses viminfo, but the default setting is 100
+" Change the number by setting it in viminfo with a single quote.
+" Ref: viminfo-'
+set viminfo='1000
+
 " floating window size ratio
 let g:fzf_preview_floating_window_rate = 0.9
 
@@ -66,7 +71,7 @@ let g:fzf_preview_cache_directory = expand('~/.cache/vim/fzf_preview')
 
 " Keyboard shortcuts while fzf preview is active
 " let g:fzf_preview_preview_key_bindings = ''
-let g:fzf_preview_preview_key_bindings = 'ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-o:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up'
+let g:fzf_preview_preview_key_bindings = 'ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up'
 
 
 " Specify the color of fzf
@@ -100,4 +105,4 @@ let g:fzf_preview_dev_icon_prefix_string_length = 3
 let g:fzf_preview_dev_icons_limit = 5000
 
 " " The theme used in the bat preview
-" $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'
+" $FZF_PREVIEW_PREVIEW_BAT_THEME = 'OneHalfDark'
