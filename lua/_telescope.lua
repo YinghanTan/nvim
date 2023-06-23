@@ -44,30 +44,21 @@ telescope.setup({
                 ["<CR>"]       = actions.select_default,
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
-                ["<M-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
-
+                ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
                 ["<C-Down>"] = require('telescope.actions').cycle_history_next,
                 ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
-
                 ["<C-j>"]      = actions.move_selection_next,
                 ["<C-k>"]      = actions.move_selection_previous,
-
                 ["<Down>"]     = actions.move_selection_next,
                 ["<Up>"]       = actions.move_selection_previous,
-
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
-
                 ["<C-p>"]      = actions.results_scrolling_up,
                 ["<C-n>"]      = actions.results_scrolling_down,
-
-
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
                 ["<C-m>"]      = actions.which_key,
-
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
-
                 ["<C-a>"]      = actions.toggle_all
 
             },
@@ -80,31 +71,22 @@ telescope.setup({
                 ["<CR>"]       = actions.select_default,
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
-                ["<M-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
-
+                ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
                 ["<C-Down>"] = require('telescope.actions').cycle_history_next,
                 ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
-
                 ["<C-j>"]      = actions.move_selection_next,
                 ["<C-k>"]      = actions.move_selection_previous,
-
                 ["<Down>"]     = actions.move_selection_next,
                 ["<Up>"]       = actions.move_selection_previous,
-
                 ["<C-u>"]      = actions.preview_scrolling_up,
                 ["<C-d>"]      = actions.preview_scrolling_down,
-
                 ["<C-p>"]      = actions.results_scrolling_up,
                 ["<C-n>"]      = actions.results_scrolling_down,
-                
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
                 ["<C-m>"]      = actions.which_key,
-
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
-
                 ["<C-a>"]      = actions.toggle_all,
-
                 ["j"]          = actions.move_selection_next,
                 ["k"]          = actions.move_selection_previous,
                 ["H"]          = actions.move_to_top,
