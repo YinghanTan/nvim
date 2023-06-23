@@ -10,7 +10,7 @@ let g:fzf_preview_floating_window_rate = 0.9
 let g:fzf_preview_direct_window_option = ''
 
 " fzf command default options
-let g:fzf_preview_default_fzf_options = { '--reverse': v:true, '--preview-window': 'wrap' }
+let g:fzf_preview_default_fzf_options = { '--reverse': v:true }
 
 " Add fzf quit mapping
 let g:fzf_preview_quit_map = 1
@@ -31,13 +31,13 @@ let g:fzf_binary_preview_command = 'echo "{} is a binary file"'
 
 " Commands used to get the file list from project
 " let g:fzf_preview_filelist_command = 'git ls-files --exclude-standard'               " Not Installed ripgrep
-let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *"' " Installed ripgrep
+let g:fzf_preview_filelist_command = 'rg --files --hidden --follow --no-messages -g \!"* *" -g "!.git"' " Installed ripgrep
 
 " Commands used to get the file list from git repository
 let g:fzf_preview_git_files_command = 'git ls-files --exclude-standard'
 
 " Commands used to get the file list from current directory
-let g:fzf_preview_directory_files_command = 'rg --files --hidden --follow --no-messages -g \!"* *"'
+let g:fzf_preview_directory_files_command = 'rg --files --hidden --follow --no-messages -g \!"* *" -g "!.git"'
 
 " Commands used to get the git status file list
 let g:fzf_preview_git_status_command = 'git -c color.status=always status --short --untracked-files=all'
@@ -70,7 +70,6 @@ let g:fzf_preview_grep_preview_cmd = expand('<sfile>:h:h') . '/bin/preview_fzf_g
 let g:fzf_preview_cache_directory = expand('~/.cache/vim/fzf_preview')
 
 " Keyboard shortcuts while fzf preview is active
-" let g:fzf_preview_preview_key_bindings = ''
 let g:fzf_preview_preview_key_bindings = 'ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up'
 
 
@@ -87,7 +86,7 @@ let g:fzf_preview_custom_processes = {}
 " call remove(g:fzf_preview_custom_processes['open-file'], 'ctrl-x')
 
 " Use as fzf preview-window option
-let g:fzf_preview_fzf_preview_window_option = ''
+let g:fzf_preview_fzf_preview_window_option = 'right:70%,nowrap,nocycle:hidden'
 " let g:fzf_preview_fzf_preview_window_option = 'up:30%'
 
 " Use vim-devicons
