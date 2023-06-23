@@ -311,13 +311,14 @@ local mappings = {
     -- Use unimpaired shortcuts instead [q ]q [l ]l
     s = {
         name = "search",
-
         ['h'] = {
             name = "history",
             ["/"] = { "<cmd>History/<cr>", "search history" },
+            -- todo: fix search history preview
             -- [":"] = { "<cmd>History:<cr>", "command history" },
             [":"] = { "<cmd>FzfPreviewCommandPalette<cr>", "command history" },
             ["f"] = { "<cmd>History<cr>", "file history" },
+            [";"] = { "<cmd>FzfPreviewChanges<cr>", "change history" },
         },
 
         ["?"] = { "<cmd>FzfPreviewGrepHelp<cr>", "help" },
@@ -328,16 +329,15 @@ local mappings = {
             ["b"] = { "<cmd>FzfPreviewBuffers<cr>", "buffers" },
             ["l"] = { "<cmd>FzfPreviewLines<cr>", "current file lines" },
             ["L"] = { "<cmd>FzfPreviewBufferLines<cr>", "all buffer lines" },
+            -- todo: fix change history preview
+            -- todo: fix commands preview
             -- ["l"] = { "<cmd>BLines<cr>", "current file lines" },
             -- ["L"] = { "<cmd>Lines<cr>", "all lines" },
         },
         ["a"] = { "<cmd>lua require('fzf-lua').args()<cr>", "argslist" },
         ["A"] = { "<cmd>FzfPreviewFromResources<cr>", "all" },
         ["B"] = { "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", "Bookmarks" },
-        ["c"] = { "<cmd>FzfPreviewChanges<cr>", "changelist" },
-        -- ["c"] = { "<cmd>Telescope command_palette<cr>", "command" },
-        ["C"] = { "<cmd>FzfPreviewCommandPalette<cr>", "commands" },
-        -- ["C"] = { "<cmd>lua require('fzf-lua').commands()<cr>", "commands" },
+        ["c"] = { "<cmd>Commands<cr>", "commands" },
         ["d"] = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "debug" },
         ["D"] = { "<cmd>FzfPreviewTodoComments<cr>", "toDos" },
         ["e"] = { "<cmd>Telescope env<cr>", "env" },
@@ -348,7 +348,7 @@ local mappings = {
         ["l"] = { "<cmd>FzfPreviewLocationList<cr>", "location list" },
         ["L"] = { "<cmd>lua require('fzf-lua').loclist_stack()<cr>", "loclist stack" },
         ["o"] = { "<cmd>lua require('fzf-lua').oldfiles()<cr>", "old files" },
-        i = { "<cmd>Telescope coc diagnostics<cr>", "diagnostics" },
+        i = { "<cmd>CocCommand fzf-preview.CocDiagnostics<cr>", "diagnostics" },
         I = { "<cmd>Telescope coc workspace_diagnostics<cr>", "all diagnostics" },
         -- ["j"] = { "<cmd>Jumps<cr>", "jumplist" },
         ["j"] = { "<cmd>FzfPreviewJumps<cr>", "jumplist" },

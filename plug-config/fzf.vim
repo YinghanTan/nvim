@@ -14,8 +14,8 @@ let g:fzf_buffers_jump = 1
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --pretty=oneline --format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"'
 
-" " [Tags] Command to generate tags file
-" let g:fzf_tags_command = 'ctags -R'
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R'
 
 " [Commands] --expect expression for directly executing the command
 let g:fzf_commands_expect = 'alt-enter,ctrl-x'
@@ -38,12 +38,12 @@ let g:fzf_action = {
 
 " Enable per-command history.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-let g:fzf_tags_command = 'ctags -R'
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } } " Border color
-" let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:select-all,ctrl-r:deselect-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down" --preview-window="right:50%" --preview="bat --style=numbers --color=always --line-range :500 {}"'
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up" --preview="bat --style=numbers --color=always --line-range :500 {}" --preview-window="right,70%,nowrap,nocycle,nohidden"'
+" Border color
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up"'
 let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
+
+let g:fzf_preview_window = ['right,70%,nowrap,nocycle,nohidden', 'ctrl-/']
 
 
 " Customize fzf colors to match your color scheme
