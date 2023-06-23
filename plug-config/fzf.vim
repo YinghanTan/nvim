@@ -93,4 +93,23 @@ command! -bang -nargs=* GGrep
 " command! -bang -nargs=? -complete=dir FindNotes
 "     \ call fzf#vim#files('~/vimwiki', fzf#vim#with_preview(), <bang>0)
 
+" Ripgrep Notes
+function! RipgrepNotes(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'dir': '~/vimwiki', 'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+command! -nargs=* -bang GrepNotes call RipgrepNotes(<q-args>, <bang>0)
+
+
+" command! -bang Args call fzf#run(fzf#wrap('args',
+"     \ {'source': map([argidx()]+(argidx()==0?[]:range(argc())[0:argidx()-1])+range(argc())[argidx()+1:], 'argv(v:val)')}, <bang>0))
+
+
+command! -bang Args call fzf#run(fzf#wrap('args',
+    \ {'source': argv()}, <bang>0))
+
 

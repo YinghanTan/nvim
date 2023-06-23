@@ -54,7 +54,6 @@ let g:coc_global_extensions = [
     \ ]
     " \ 'coc-nginx',
     " \ 'coc-cfn-lint',
-    " \ 'coc-fzf',
     " \ 'coc-hightlight',
     " \ 'coc-jedi',
     " \ 'coc-jira-complete',
