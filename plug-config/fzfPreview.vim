@@ -64,7 +64,7 @@ let g:fzf_preview_mru_limit = 1000
 let g:fzf_preview_lines_command = 'bat --color=always --plain --number' " Installed bat
 
 " Commands used for preview of the grep result
-let g:fzf_preview_grep_preview_cmd = expand('<sfile>:h:h') . '/bin/preview_fzf_grep'
+" let g:fzf_preview_grep_preview_cmd = expand('<sfile>:h:h') . '/bin/preview_fzf_grep'
 
 " Cache directory for mru and mrw
 let g:fzf_preview_cache_directory = expand('~/.cache/vim/fzf_preview')
