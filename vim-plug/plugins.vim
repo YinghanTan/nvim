@@ -75,7 +75,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " COC
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Intellisense
-    Plug 'antoinemadec/coc-fzf'
 
     " Snippets
     Plug 'SirVer/ultisnips' " Ultisnips snippets
@@ -108,7 +107,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Search (FZF)
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
-    Plug 'antoinemadec/coc-fzf' " Use FZF instead of coc.nvim built-in fuzzy finder.
     Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
     Plug 'jremmen/vim-ripgrep' " awaiting fixed version
     Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
