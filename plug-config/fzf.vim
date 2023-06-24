@@ -38,7 +38,7 @@ let g:fzf_action = {
 " Enable per-command history.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 " Border color
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'rounded' } }
 let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up"'
 let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
 
