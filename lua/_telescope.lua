@@ -22,8 +22,7 @@ telescope.setup({
         layout_config = {
             horizontal = {
                 prompt_position = "top",
-                preview_width = 0.55,
-                results_width = 0.8,
+                preview_width = 0.75
             },
             vertical = {
                 mirror = false,
@@ -45,8 +44,8 @@ telescope.setup({
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
                 ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
-                ["<C-Down>"] = require('telescope.actions').cycle_history_next,
-                ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+                ["<C-Down>"]   = require('telescope.actions').cycle_history_next,
+                ["<C-Up>"]     = require('telescope.actions').cycle_history_prev,
                 ["<C-j>"]      = actions.move_selection_next,
                 ["<C-k>"]      = actions.move_selection_previous,
                 ["<Down>"]     = actions.move_selection_next,
@@ -56,7 +55,7 @@ telescope.setup({
                 ["<C-p>"]      = actions.results_scrolling_up,
                 ["<C-n>"]      = actions.results_scrolling_down,
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
-                ["<C-m>"]      = actions.which_key,
+                -- ["<C-m>"]      = actions.which_key,
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]      = actions.toggle_all
@@ -72,8 +71,8 @@ telescope.setup({
                 ["<Tab>"]      = actions.toggle_selection + actions.move_selection_worse,
                 ["<S-Tab>"]    = actions.toggle_selection + actions.move_selection_better,
                 ["<C-q>"]      = actions.send_selected_to_qflist + actions.open_qflist,
-                ["<C-Down>"] = require('telescope.actions').cycle_history_next,
-                ["<C-Up>"] = require('telescope.actions').cycle_history_prev,
+                ["<C-Down>"]   = require('telescope.actions').cycle_history_next,
+                ["<C-Up>"]     = require('telescope.actions').cycle_history_prev,
                 ["<C-j>"]      = actions.move_selection_next,
                 ["<C-k>"]      = actions.move_selection_previous,
                 ["<Down>"]     = actions.move_selection_next,
@@ -83,7 +82,7 @@ telescope.setup({
                 ["<C-p>"]      = actions.results_scrolling_up,
                 ["<C-n>"]      = actions.results_scrolling_down,
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
-                ["<C-m>"]      = actions.which_key,
+                -- ["<C-m>"]      = actions.which_key,
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]      = actions.toggle_all,
@@ -320,5 +319,6 @@ require("telescope").load_extension("advanced_git_search") -- https://github.com
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
 end
-
+vim.cmd("autocmd User TelescopePreviewerLoaded setlocal number wrap")
 -- Deprecated --
+

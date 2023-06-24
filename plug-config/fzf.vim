@@ -29,7 +29,6 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',     
   \ 'ctrl-v': 'vsplit',
   \ 'ctrl-y': {lines -> setreg('+', join(lines, "\n"))}}
- 
 " add to quickfix_list after selecting file
 " open in new tab after selecting file
 " open in new split after selecting file

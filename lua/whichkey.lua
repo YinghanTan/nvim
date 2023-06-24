@@ -307,15 +307,30 @@ local mappings = {
         ["k"] = { "<cmd>lua require('fzf-lua').keymaps()<cr>", "keymaps" },
         ["l"] = {
             name = "lsp/list",
-            ["l"] = { "<cmd>FzfPreviewLocationList<cr>", "location list" },
-            ["q"] = { "<cmd>FzfPreviewQuickFix<cr>", "quickfix" },
-            ["r"] = { "<cmd>CocCommand fzf-preview.CocReferences<cr>", "reference" },
-            ["i"] = { "<cmd>CocCommand fzf-preview.CocCurrentDiagnostics --add-fzf-arg=--preview-window='right:70%,nowrap,nocycle:nohidden'<cr>", "diagnostics" },
-            ["I"] = { "<cmd>CocCommand fzf-preview.CocDiagnostics --add-fzf-arg=--preview-window='right:70%,nowrap,nocycle:nohidden'<cr>", "all diagnostics" },
-            ["d"] = { "<cmd>CocCommand fzf-preview.CocDefinition<cr>", "definition" },
-            ["y"] = { "<cmd>CocCommand fzf-preview.CocTypeDefinition<cr>", "type" },
-            ["Y"] = { "<cmd>CocCommand fzf-preview.CocImplementations<cr>", "implementation" },
-            ["o"] = { "<cmd>CocCommand fzf-preview.CocOutline<cr>", "outline" },
+            [";"] = { "<cmd>Telescope coc commands<cr>", "commands" },
+            -- ["A"] = { "<cmd>Telescope coc<cr>", "all coc" },
+
+            ["a"] = { "<cmd>Telescope coc line_code_actions<cr>", "line actions" },
+            ["A"] = { "<cmd>Telescope coc code_actions<cr>", "actions" },
+            ["f"] = { "<cmd>Telescope coc file_code_actions<cr>", "file actions" },
+
+
+            ["D"] = { "<cmd>Telescope coc declarations<cr>", "declarations" },
+            ["d"] = { "<cmd>Telescope coc definitions<cr>", "definitions" },
+            ["i"] = { "<cmd>Telescope coc diagnostics<cr>", "diagnostics" },
+            ["I"] = { "<cmd>Telescope coc workspace_diagnostics<cr>", "all diagnostics" },
+            ["l"] = { "<cmd>lua require('telescope.builtin').loclist()<cr>", "location list" },
+            ["L"] = { "<cmd>Telescope coc links<cr>", "links" },
+            ["s"] = { "<cmd>Telescope coc document_symbols<cr>", "document symbols" },
+            ["S"] = { "<cmd>Telescope coc workspace_symbols<cr>", "workspace symbols" },
+
+            -- ["L"] = { "<cmd>Telescope coc locations<cr>", "locations" },
+
+            ["q"] = { "<cmd>lua require('telescope.builtin').quickfix()<cr>", "quickfix list" },
+            ["r"] = { "<cmd>Telescope coc references<cr>", "reverences" },
+            ["Y"] = { "<cmd>Telescope coc implementations<cr>", "implementations" },
+            ["y"] = { "<cmd>Telescope coc type_definitions<cr>", "type" },
+
         },
         ["M"] = { "<cmd>lua require('fzf-lua').man_pages()<cr>", "manual" },
         ["m"] = { "<cmd>Marks<cr>", "marks" },
