@@ -108,9 +108,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Search (FZF)
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Find
     Plug 'junegunn/fzf.vim' " Fuzzy Find
-    Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
     Plug 'jremmen/vim-ripgrep' " awaiting fixed version
-    Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
+    " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
+    " Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 
     " Search (Telescope)
     Plug 'nvim-lua/popup.nvim'
@@ -127,6 +127,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'nvim-telescope/telescope-project.nvim' " An extension for telescope.nvim that allows you to switch between projects.
     Plug 'LinArcX/telescope-command-palette.nvim' " a neovim plugin written entirely in lua that will help you to access your custom commands/function/key-bindings.
     Plug 'TC72/telescope-tele-tabby.nvim'
+    Plug 'LinArcX/telescope-env.nvim' " Watch environment variables with telescope
+    Plug 'LinArcX/telescope-changes.nvim' " Telescope extension wrapper around :changes
+    Plug 'olacin/telescope-cc.nvim' " A Telescope integration of Conventional Commits.
+    " Plug 'LukasPietzschmann/telescope-tabs' " Fly through your tabs in neovim
 
     Plug 'nvim-telescope/telescope-vimspector.nvim'
     Plug 'fhill2/telescope-ultisnips.nvim' " Integration for ultisnips.nvim with telescope.nvim.

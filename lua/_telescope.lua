@@ -22,7 +22,7 @@ telescope.setup({
         layout_config = {
             horizontal = {
                 prompt_position = "top",
-                preview_width = 0.75
+                preview_width = 0.70
             },
             vertical = {
                 mirror = false,
@@ -292,7 +292,18 @@ telescope.setup({
             git_diff_flags = {},
             -- Show builtin git pickers when executing "show_custom_functions" or :AdvancedGitSearch
             show_builtin_git_pickers = false,
-        }
+        },
+        conventional_commits = {
+            action = function(entry)
+                -- entry = {
+                    --     display = "feat       A new feature",
+                    --     index = 7,
+                    --     ordinal = "feat",
+                    --     value = feat"
+                -- }
+                print(vim.inspect(entry))
+            end,
+        },
     },
 })
 
@@ -312,13 +323,15 @@ telescope.load_extension("command_palette")
 telescope.load_extension("repo")
 telescope.load_extension("neoclip")                        -- https://github.com/AckslD/nvim-neoclip.lua
 require('telescope').load_extension('ultisnips')           -- https://github.com/fhill2/telescope-ultisnips.nvim
-require('telescope').load_extension('undo')                --
+require('telescope').load_extension('undo')                -- https://github.com/debugloop/telescope-undo.nvim
 require('telescope').load_extension('terraform_doc')       -- https://github.com/ANGkeith/telescope-terraform-doc.nvim
 require("telescope").load_extension("advanced_git_search") -- https://github.com/aaronhallaert/advanced-git-search.nvim
+require('telescope').load_extension('env') -- https://github.com/LinArcX/telescope-env.nvim
+require('telescope').load_extension('changes') -- https://github.com/LinArcX/telescope-changes.nvim
+telescope.load_extension("conventional_commits") -- https://github.com/olacin/telescope-cc.nvim
 
 if vim.g.system ~= 'termux' then
     require("telescope").load_extension("file_browser") -- https://github.com/nvim-telescope/telescope-file-browser.nvim
 end
 vim.cmd("autocmd User TelescopePreviewerLoaded setlocal number wrap")
 -- Deprecated --
-

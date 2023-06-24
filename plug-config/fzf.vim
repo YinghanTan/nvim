@@ -112,3 +112,30 @@ command! -bang Args call fzf#run(fzf#wrap('args',
     \ {'source': argv()}, <bang>0))
 
 
+function! Changes()
+  let changefile=tempname()
+  let changenumfile=tempname()
+
+  let changes  = reverse(copy(getchangelist()[0]))
+
+  " Write changes to temp file with: changenumber, line number, line number - 15, file name
+  let offset = &lines / 2
+  let changetext = map(copy(changes), { index, val -> 
+    \ (val.lnum)."\t".(val.lnum < offset ? 1 : val.lnum - offset)."\t".(val.col+1)."\t".trim(getline(val.lnum)) })
+  call writefile(changetext, changefile)
+
+  execute 'silent !fzf --preview "bat % -H {+1} -r {+2}: --color=always" < '.changefile.' > '.changenumfile
+  call delete(changefile)
+
+  " Read fzf output and goto change
+  let changenumber=readfile(changenumfile)
+  call delete(changenumfile)
+  if(len(changenumber) > 0)
+    let values = split(changenumber[0], "\t")
+    call cursor(str2nr(values[0]), str2nr(values[2]))
+  endif
+  redraw!
+
+endfunction
+
+command! Changes call Changes()
