@@ -55,7 +55,7 @@ telescope.setup({
                 ["<C-p>"]      = actions.results_scrolling_up,
                 ["<C-n>"]      = actions.results_scrolling_down,
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
-                -- ["<C-m>"]      = actions.which_key,
+                ["<M-m>"]      = actions.which_key,
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]      = actions.toggle_all
@@ -82,7 +82,7 @@ telescope.setup({
                 ["<C-p>"]      = actions.results_scrolling_up,
                 ["<C-n>"]      = actions.results_scrolling_down,
                 ["<C-_>"]      = action_layout.toggle_preview, -- <C-/> to trigger
-                -- ["<C-m>"]      = actions.which_key,
+                ["<M-m>"]      = actions.which_key,
                 ["<C-right>"]  = actions.cycle_previewers_next,
                 ["<C-left>"]   = actions.cycle_previewers_prev,
                 ["<C-a>"]      = actions.toggle_all,
