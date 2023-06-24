@@ -32,6 +32,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'michal-h21/vim-zettel'
     Plug 'michal-h21/vimwiki-sync' " Note git sync
     Plug 'godlygeek/tabular' " Alignment and formatting
+    Plug 'milkypostman/vim-togglelist' " toggle quickfix and location list
     " Plug 'monaqa/dial.nvim'  " Extended increment/decrement plugin
     " Plug 'kevinhwang91/nvim-bqf'  " Better quickfix window
 
