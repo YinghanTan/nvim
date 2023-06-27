@@ -33,12 +33,15 @@ autocmd Filetype jst setlocal ts=2 sts=2 sw=2 expandtab
 autocmd Filetype jst set shiftround        " round indent to multiple of 'shiftwidth'
 
 " Makefiles formatting
-autocmd FileType make setlocal noexpandtab
+autocmd Filetype make setlocal noexpandtab
 
 " Yaml Formatting
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype yaml set shiftround                " round indent to multiple of 'shiftwidth'
+autocmd Filetype yml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd Filetype yml set shiftround                " round indent to multiple of 'shiftwidth'
+
 
 " Javascript Settings
 au BufNewFile,BufRead *.jsx setlocal filetype=javascriptreact
@@ -134,9 +137,9 @@ autocmd Filetype typescript.tsx set autoindent        " align the new line inden
 autocmd Filetype typescript.tsx set shiftround        " round indent to multiple of 'shiftwidth'
 
 " Git Settings
-autocmd FileType gitcommit set textwidth=80 " lines longer than 72 columns will be broken
+autocmd Filetype gitcommit set textwidth=80 " lines longer than 72 columns will be broken
 " In Git commit messages, also colour the 51st column (for titles)
-autocmd FileType gitcommit set colorcolumn+=51
+autocmd Filetype gitcommit set colorcolumn+=51
 
 " Ruby Settings
 " let g:ruby_host_prog='/opt/homebrew/opt/ruby/bin/ruby'

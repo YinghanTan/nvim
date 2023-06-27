@@ -157,6 +157,9 @@
     }
   },
   "yaml.format.enable": true,
+  "yaml.schemas": {
+    "https://git.zportal.co.uk/practically-oss/conventional-tools/-/raw/0.x/src/config.schema.json": "/.ctrc.yml"
+  },
 
   // Coc-Html
   "html.format.enable": true,
