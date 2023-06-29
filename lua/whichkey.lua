@@ -355,7 +355,7 @@ local mappings = {
             ["y"] = { "<cmd>Telescope coc type_definitions<cr>", "type" },
         },
         ["m"] = { "<cmd>Marks<cr>", "marks" },
-        ["n"] = { "<cmd>Files ~/vimwiki<cr>", "find notes" },
+        ["n"] = { "<cmd>Files ~/vimwiki/notes<cr>", "find notes" },
         ["N"] = { "<cmd>GrepNotes<cr>", "note text" },
         ["q"] = {
             name = "quickfix",
