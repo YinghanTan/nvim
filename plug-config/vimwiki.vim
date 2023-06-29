@@ -5,7 +5,7 @@
 let g:vimwiki_listsyms = ' x'
 let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
 let wiki_1 = {}
-let wiki_1.path = '~/vimwiki/' " set path to a wiki directory
+let wiki_1.path = '~/vimwiki/notes/' " set path to a wiki directory
 let wiki_1.syntax = 'markdown'
 let wiki_1.ext = '.md' " set extension to .md
 let g:vimwiki_list = [wiki_1]
