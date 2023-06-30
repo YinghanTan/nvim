@@ -8,8 +8,8 @@ function! s:build_quickfix_list(lines)
   cc
 endfunction
 
-" [Buffers] Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
+" " [Buffers] Jump to the existing window if possible
+" let g:fzf_buffers_jump = 0
 
 " [[B]Commits] Customize the options used by 'git log':
 let g:fzf_commits_log_options = '--graph --color=always --pretty=oneline --format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"'
