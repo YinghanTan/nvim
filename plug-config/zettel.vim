@@ -1,5 +1,5 @@
 " --- zettlekasten ---
-let g:zettelkasten = "~/vimwiki/"
+let g:zettelkasten = "~/vimwiki/notes/"
 command! -nargs=1 Zet :execute ":e" zettelkasten . strftime("%Y%m%d%H%M%S") . "-<args>.md"
 nnoremap <leader>nz :Zet 
 

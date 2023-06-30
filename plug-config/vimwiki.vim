@@ -19,8 +19,6 @@ let g:vimwiki_folding = 'expr'
 let g:vimwiki_global_ext = 1 " make sure vimwiki doesn't own all .md files
 
 
-
-
 " --- Shortcuts ---
 
 " multiple paste
