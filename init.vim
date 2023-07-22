@@ -17,6 +17,8 @@ luafile $HOME/.config/nvim/lua/lualine.lua
 luafile $HOME/.config/nvim/lua/nvim-tree.lua
 luafile $HOME/.config/nvim/lua/project-nvim.lua
 luafile $HOME/.config/nvim/lua/gitsigns.lua
+luafile $HOME/.config/nvim/lua/forgit.lua
+luafile $HOME/.config/nvim/lua/guihua.lua
 
 " COC
 source $HOME/.config/nvim/plug-config/coc/coc.vim

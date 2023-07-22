@@ -111,6 +111,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'jremmen/vim-ripgrep' " awaiting fixed version
     " Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
     " Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+    Plug 'ray-x/guihua.lua'  "lua GUI lib
+    Plug 'ray-x/forgit.nvim'
 
     " Search (Telescope)
     Plug 'nvim-lua/popup.nvim'
