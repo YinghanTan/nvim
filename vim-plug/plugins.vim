@@ -24,6 +24,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'sheerun/vim-polyglot' " Better Syntax Support
     Plug 'wsdjeg/vim-fetch' " Fetch that line and column
     Plug 'tpope/vim-abolish' " change cases
+    Plug 'stevearc/oil.nvim' " A vim-vinegar like file explorer that lets you edit your filesystem like a normal Neovim buffer.
 
     Plug 'michaeljsmith/vim-indent-object' " text Objects
     Plug 'nathanaelkane/vim-indent-guides' " text Objects
