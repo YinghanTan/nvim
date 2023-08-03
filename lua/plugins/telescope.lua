@@ -1,4 +1,4 @@
-local Util = require("lazyvim.util")
+local Util = require("util")
 
 return {
   {
@@ -45,8 +45,8 @@ return {
       { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "commands" },
       { "<leader>sC", "<cmd>Telescope command_palette<cr>", desc = "command palette" },
 
-      { "<leader>sd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
-      { "<leader>sD", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
+      { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
+      { "<leader>sdw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
 
       { "<leader>se", "<cmd>Telescope env<cr>", desc = "env" },
 
@@ -58,7 +58,6 @@ return {
       { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
 
       { "<leader>sw", "<cmd>Telescope tele_tabby list<cr>", desc = "window" },
-      { "<leader>sW", "<cmd>TodoTelescope<cr>", desc = "work todos" },
 
       { "<leader>sv", "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", desc = "vimspector" },
       { "<leader>sV", "<cmd>Telescope vim_options<cr>", desc = "vim options" },
