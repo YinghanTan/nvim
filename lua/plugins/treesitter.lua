@@ -20,6 +20,12 @@ return {
           load_textobjects = true
         end,
       },
+      {
+        'nvim-treesitter/playground'
+      },
+      {
+        "nvim-treesitter/nvim-treesitter-context"
+      }
     },
     cmd = { "TSUpdateSync" },
     keys = {
@@ -47,7 +53,6 @@ return {
         "vim",
         "vimdoc",
         "yaml",
-        "help",
         "go",
         "rust",
         "css",
@@ -82,6 +87,17 @@ return {
       --   },
       --   disable = { "html" },
       -- },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "gnn", -- set to `false` to disable one of the mappings
+          node_incremental = "grn",
+          scope_incremental = "grc",
+          node_decremental = "grm",
+        },
+      },
+
+      -- treesitter playground
       playground = {
         enable = true,
         disable = {},
@@ -104,15 +120,6 @@ return {
         enable = true,
         use_virtual_text = true,
         lint_events = { "BufWrite", "CursorHold" },
-      },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "gnn", -- set to `false` to disable one of the mappings
-          node_incremental = "grn",
-          scope_incremental = "grc",
-          node_decremental = "grm",
-        },
       },
 
       -- -- treesitter-textobjects configs
@@ -242,15 +249,15 @@ return {
             "class_declaration",
             "abstract_class_declaration",
             "else_clause",
-          },
-
-        },
+          }
+        }
       }
     end,
   },
   {
-    'nvim-treesitter/playground'
+    'nvim-treesitter/playground',
   },
+
 }
 
 
