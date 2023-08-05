@@ -1,6 +1,6 @@
 return {
   {
-    "folke/which-key.nvim",
+    "folke/which-key.nvim",    
     event = "VeryLazy",
     init = function()
       vim.o.timeout = true
@@ -125,23 +125,156 @@ return {
         },
       },
 
-      -- vopts = {
-      --   mode = "v", -- VISUAL mode
-      --   prefix = "<leader>",
-      --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-      --   silent = false, -- use `silent` when creating keymaps
-      --   noremap = true, -- use `noremap` when creating keymaps
-      --   nowait = true, -- use `nowait` when creating keymaps
-      -- },
-      vmappings = {
+      v_opts = {
         mode = "v", -- VISUAL mode
         prefix = "<leader>",
         buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
         silent = false, -- use `silent` when creating keymaps
         noremap = true, -- use `noremap` when creating keymaps
         nowait = true, -- use `nowait` when creating keymaps
-        p = { '"_dP', "paste keep buffer" },
       },
+      v_mappings = {
+        ["/"] = { '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>', "Comment" },
+        p = { '"_dP', "paste keep buffer" },
+        -- c = {
+        --   name = "coerce",
+        --   r = { "<plug>(abolish-coerce)", "coerce" },
+        -- },
+      },
+
+      n_opts = {
+        mode = "n",     -- NORMAL mode
+        prefix = "<leader>",
+        buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+        silent = false, -- use `silent` when creating keymaps
+        noremap = true, -- use `noremap`
+        nowait = true,  -- use `nowait` when creating keympas
+      },
+      n_mappings = {
+        ["/"] = { "<cmd>nohlsearch<cr>", "clear highlight" },
+        ["."] = { "<cmd>e $MYVIMRC<cr>", "open init" },
+        [":"] = { "<cmd>Telescope commands<CR>", "commands" },
+        a = {
+          name = "action",
+          d = { "<cmd>cd %:p:h<cr>:pwd<cr>", "set current dir" },
+          s = { "<cmd>source $MYVIMRC<cr>", "source" },
+          -- w = { "<cmd>call TrimWhitespace()<cr>", "trim whitespace" },
+        },
+        c = {
+          name = "context",
+          f = { "<cmd>lua ContextSetup(true)<CR>", "ContextSetup" },
+          p = { "<cmd>lua ContextSetup(false)<cr>", "ContextSetup" },
+        },
+        d = {
+          name = "debug",
+          ["b"] = { "<plug>VimspectorToggleBreakpoint", "breakpoint" },
+          ["B"] = {
+            name = "breakpoint",
+            ["c"] = { "<plug>VimspectorToggleConditionalBreakpoint", "conditional break" },
+            ["d"] = { "<cmd>call vimspector#ClearBreakpoints()", "remove all break" },
+            ["f"] = { "<plug>VimspectorAddFunctionBreakpoint", "func breakpoint" },
+          },
+          ["c"] = { "<plug>VimspectorContinue | zz", "continue" },
+          ["C"] = { "<plug>VimspectorRunToCursor | zz", "cursor" },
+          ["d"] = { "<cmd>call vimspector#Launch()<cr>", "debug" },
+          ["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
+          ["e"] = { "<cmd>VimspectorEval<cr>", "Evaluate" },
+          ["i"] = { "<plug>VimspectorBalloonEval", "inspect" },
+          ["n"] = { "<plug>VimspectorStepOver | zz", "next" },
+          ["o"] = { "<cmd>VimspectorShowOutput<cr>", "output" },
+          ["s"] = { "<plug>VimspectorStepInto | zz", "step into" },
+          ["S"] = { "<plug>VimspectorStepOut | zz", "step out" },
+          ["v"] = {
+            name = "view",
+            ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
+            ["o"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.terminal)<cr>", "output" },
+            ["v"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", "variables" },
+            ["w"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", "watches" },
+            ["s"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", "stack" },
+            ["t"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.output)<cr>", "terminal" },
+            ["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "tag" },
+          },
+          ["j"] = { "<plug>VimspectorDownFrame", "down frame" },
+          ["k"] = { "<plug>VimspectorUpFrame", "up frame" },
+          ["p"] = { "<plug>VimspectorPause", "pause" },
+          ["P"] = { "<plug>VimspectorStop", "stop" },
+          ["r"] = { "<plug>VimspectorRestart", "restart" },
+          ["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
+          ["z"] = { "<Plug>(zoom-toggle)", "zoom window" },
+        },
+        f = {
+          name = "file",
+          t = { ":NvimTreeToggle<cr>", "filetree" },
+          f = { ":NvimTreeFindFileToggle<cr>", "find" },
+          r = {
+            name = "replace",
+            f = { "<cmd>Farr --source=vimgrep<cr>", "in file" },
+            p = { "<cmd>Farr --source=rgnvim<cr>", "in project" },
+          },
+        },
+        G = {
+          name = "gist",
+          a = { "<cmd>Gist -b -a<cr>", "create anon" },
+          d = { "<cmd>Gist -d<cr>", "delete" },
+          f = { "<cmd>Gist -f<cr>", "fork" },
+          g = { "<cmd>Gist -b<cr>", "create" },
+          l = { "<cmd>Gist -l<cr>", "list" },
+          p = { "<cmd>Gist -b -p<cr>", "create private" },
+        },
+        l = {
+          -- COC as LSP
+          name = "lsp / latex",
+          ["."] = { "<cmd>CocConfig<cr>", "config" },
+          ["a"] = { "<plug>(coc-codeaction-cursor)", "line action" },
+          ["A"] = { "<plug>(coc-codeaction-source)", "file action" },
+          ["c"] = { "<cmd>CocCommand rest-client.request<cr>", "api client" },
+          ["f"] = { "<plug>(coc-format)", "format file" },
+          ["F"] = { "<plug>(coc-fix-current)", "fix diagnostics" },
+          ["i"] = { "<C-u><cmd>CocList diagnostics<cr>", "diagnostics" },
+          ["o"] = { "<C-u><cmd>CocList outline<cr>", "outline" },
+          ["O"] = { "<cmd>call CocAction('runCommand', 'editor.action.organizeImport')<cr>", "organise imports" },
+          ["r"] = { "<plug>(coc-rename)", "rename" },
+          ["R"] = { "<plug>(coc-refactor)", "refactor" },
+          ["s"] = { "<cmd>Telescope coc document_symbols<cr>", "document symbols" },
+          ["S"] = { "<cmd>Telescope coc workspace_symbols<cr>", "workspace symbols" },
+          l = {
+            name = "lsp options",
+
+            [":"] = { "<cmd>Telescope coc commands<cr>", "commands" },
+            ["/"] = { "<cmd>Telescope coc<cr>", "all coc" },
+
+            ["a"] = { "<cmd>Telescope coc line_code_actions<cr>", "line actions" },
+            ["A"] = { "<cmd>Telescope coc code_actions<cr>", "actions" },
+            ["f"] = { "<cmd>Telescope coc file_code_actions<cr>", "file actions" },
+            ["d"] = { "<cmd>Telescope coc definitions<cr>", "definitions" },
+            ["D"] = { "<cmd>Telescope coc declarations<cr>", "declarations" },
+            ["i"] = { "<cmd>Telescope coc diagnostics<cr>", "diagnostics" },
+            ["I"] = { "<cmd>Telescope coc workspace_diagnostics<cr>", "all diagnostics" },
+            ["l"] = { "<cmd>Telescope coc locations<cr>", "locations" },
+            ["L"] = { "<cmd>Telescope coc links<cr>", "links" },
+            ["s"] = { "<cmd>Telescope coc document_symbols<cr>", "document symbols" },
+            ["S"] = { "<cmd>Telescope coc workspace_symbols<cr>", "workspace symbols" },
+            ["r"] = { "<cmd>Telescope coc references<cr>", "references" },
+            ["Y"] = { "<cmd>Telescope coc implementations<cr>", "implementations" },
+            ["y"] = { "<cmd>Telescope coc type_definitions<cr>", "type" },
+
+            ["R"] = { "<cmd>CocRestart<cr>", "restart" },
+            ["u"] = { "<cmd>CocUpdate<cr>", "update" },
+            ["o"] = { "<cmd>CocEnable<cr>", "open" },
+            ["O"] = { "<cmd>CocDisable<cr>", "close" },
+            ["e"] = { "<C-u><cmd>CocList extensions<cr>", "extensions" },
+          },
+          L = { "<cmd><cr>", "lint" },
+        },
+        q = {
+          name = "quickfix",
+          i = { "<cmd>CocDiagnostics<cr>", "diagnostics to quickfix" },
+          D = { "<cmd>Todo<cr>", "todo to quickfix" },
+          q = { "<cmd>call ToggleQuickfixList()<cr>", "toggle quickfix" },
+          l = { "<cmd>call ToggleLocationList()<cr>", "toggle location list" },
+        },
+      },
+
 
       opts = {
         mode = "n", -- NORMAL mode
@@ -266,9 +399,9 @@ return {
       wk.setup(opts)
       wk.register(opts.defaults)
       wk.register(opts.y_mappings, opts.y_opts)
-      -- wk.register(opts.v_mappings, opts.v_opts)
-      wk.register(opts.v_mappings)
+      wk.register(opts.v_mappings, opts.v_opts)
       wk.register(opts.mappings, opts.opts)
+      wk.register(opts.n_mappings, opts.n_opts)
     end,
   },
 }

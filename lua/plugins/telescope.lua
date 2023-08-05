@@ -47,6 +47,7 @@ return {
 
       { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
       { "<leader>sdw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
+      { "<leader>sD", "<cmd>TodoTelescope<cr>", desc = "todos" },
 
       { "<leader>se", "<cmd>Telescope env<cr>", desc = "env" },
 

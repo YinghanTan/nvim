@@ -16,7 +16,7 @@ require("lazy").setup({
     -- import plugins
     { import = "plugins" },
     -- import any extras modules here
-    -- { "LazyVim/LazyVim" },
+    { "LazyVim/LazyVim" },
     { import = "plugins.extras.lang.json" },
     { import = "plugins.extras.lang.yaml" },
     { import = "plugins.extras.lang.python" },
