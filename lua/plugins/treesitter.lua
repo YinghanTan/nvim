@@ -165,6 +165,9 @@ return {
       autopairs = {
         enable = false,
       },
+      autotag = {
+        enable = true,
+      }
     },
 
     ---@param opts TSConfig
