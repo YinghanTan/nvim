@@ -2,6 +2,10 @@ return {
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
     opts = {
       plugins = {
         marks = true, -- shows a list of your marks on ' and ``'
@@ -23,13 +27,18 @@ return {
       },
       -- add operators that will trigger motion and text object completion
       -- to enable all native operators, set the preset / operators plugin above
-      -- operators = { gc = "Comments" }
+      operators = {
+        gc = "Comments",
+      },
       key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
         -- For example:
         -- ["<space>"] = "SPC"
         -- ["<cr>"] = "RET",
         -- ["<tab>"] = "TAB",
+      },
+      motions = {
+        count = true,
       },
       icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
@@ -53,13 +62,25 @@ return {
         spacing = 2, -- spacing between columns
         align = "left", --- align columns left, center or right
       },
-
-      ignore_missing = false, -- enable this to hide mpaaing for which you didn't specify a label
-
+      ignore_missing = false, -- enable this to hide mapping for which you didn't specify a label
       hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
       show_help = true, -- show help message on the command line when the popup is visible
+      show_key = true, -- show the currently pressed key and its label as a message in the command line
       trigger = "auto", --automatically setup triggers
       -- triggers = {"<leader>"} -- or specify a list manually
+      -- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
+      triggers_nowait = {
+        -- marks
+        "`",
+        "'",
+        "g`",
+        "g'",
+        -- registers
+        '"',
+        "<c-r>",
+        -- spelling
+        "z=",
+      },
       triggers_blacklist = {
         -- list of mode / prefixes that should never be hooked by WhichKey
         -- this is mostly relevant for key maps that start with a native binding
@@ -67,7 +88,12 @@ return {
         i = { "j", "k" },
         v = { "j", "k" },
       },
-
+      -- disable the WhichKey popup for certain buf types and file types.
+      -- Disabled by default for Telescope
+      disable = {
+        buftypes = {},
+        filetypes = {},
+      },
       y_opts = {
         mode = "n", -- NORMAL mode
         prefix = "y",
@@ -77,37 +103,43 @@ return {
         nowait = true, -- use `nowait` when creating keymaps
       },
       y_mappings = {
-        o = {
-          name = "toggle",
-          b = "background",
-          d = "diff",
-          e = "spell",
-          c = "cursorline",
-          C = { "<cmd>ColorizerToggle<cr>", "colorizer" },
-          g = { "<cmd>IndentGuidesToggle<cr>", "indent guide" },
-          h = "hlsearch",
-          i = "ignorecase",
-          l = "list char",
-          m = { "<plug>MarkdownPreviewToggle", "toggle markdown " },
-          n = "number",
-          p = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
-          r = "relative number",
-          u = "cursor column",
-          v = "virtualedit",
-          w = "line wrap",
-          x = "crosshairs",
+        ["o"] = {
+          name = "+toggle",
+          ["b"] = "background",
+          ["d"] = "diff",
+          ["e"] = "spell",
+          ["c"] = "cursorline",
+          ["C"] = { "<cmd>ColorizerToggle<cr>", "colorizer" },
+          ["g"] = { "<cmd>IndentGuidesToggle<cr>", "indent guide" },
+          ["h"] = "hlsearch",
+          ["i"] = "ignorecase",
+          ["l"] = "list char",
+          ["m"] = { "<plug>MarkdownPreviewToggle", "toggle markdown " },
+          ["n"] = "number",
+          ["p"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
+          ["r"] = "relative number",
+          ["u"] = "cursor column",
+          ["v"] = "virtualedit",
+          ["w"] = "line wrap",
+          ["x"] = "crosshairs",
         },
       },
 
-      vopts = {
+      -- vopts = {
+      --   mode = "v", -- VISUAL mode
+      --   prefix = "<leader>",
+      --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+      --   silent = false, -- use `silent` when creating keymaps
+      --   noremap = true, -- use `noremap` when creating keymaps
+      --   nowait = true, -- use `nowait` when creating keymaps
+      -- },
+      vmappings = {
         mode = "v", -- VISUAL mode
         prefix = "<leader>",
         buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
         silent = false, -- use `silent` when creating keymaps
         noremap = true, -- use `noremap` when creating keymaps
         nowait = true, -- use `nowait` when creating keymaps
-      },
-      vmappings = {
         p = { '"_dP', "paste keep buffer" },
       },
 
@@ -120,8 +152,8 @@ return {
         nowait = true, -- use `nowait` when creating keympas
       },
       mappings = {
-        d = {
-          name = "debug",
+        ["d"] = {
+          name = "+debug",
           ["b"] = { "<plug>VimspectorToggleBreakpoint", "breakpoint" },
           ["B"] = {
             name = "breakpoint",
@@ -155,7 +187,6 @@ return {
           ["P"] = { "<plug>VimspectorStop", "stop" },
           ["r"] = { "<plug>VimspectorRestart", "restart" },
           ["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
-          ["z"] = { "<Plug>(zoom-toggle)", "zoom window" },
         },
       },
 
@@ -169,7 +200,6 @@ return {
         ["<leader>b"] = { name = "+buffer" },
         ["<leader>c"] = { name = "+code" },
         ["<leader>f"] = { name = "+file/find" },
-
         ["<leader>g"] = {
           name = "+git",
           b = { "<cmd>Git blame<cr>", "blame" },
@@ -230,11 +260,14 @@ return {
       },
     },
     config = function(_, opts)
+
+
       local wk = require("which-key")
       wk.setup(opts)
       wk.register(opts.defaults)
       wk.register(opts.y_mappings, opts.y_opts)
-      wk.register(opts.v_mappings, opts.v_opts)
+      -- wk.register(opts.v_mappings, opts.v_opts)
+      wk.register(opts.v_mappings)
       wk.register(opts.mappings, opts.opts)
     end,
   },

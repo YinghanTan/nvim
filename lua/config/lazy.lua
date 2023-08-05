@@ -7,6 +7,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+print("Hello World")
+
 require("lazy").setup({
   spec = {
     -- import plugins

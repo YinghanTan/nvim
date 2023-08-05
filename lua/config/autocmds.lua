@@ -90,3 +90,11 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 		vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
 	end,
 })
+
+-- Disable autoformat for lua files
+vim.api.nvim_create_autocmd({ "FileType" }, {
+  pattern = { "python" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
