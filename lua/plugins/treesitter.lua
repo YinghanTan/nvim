@@ -70,18 +70,18 @@ return {
       },
       indent = { enable = true },
 
-      rainbow = {
-        enable = true,
-        colors = {
-          "Gold",
-          "Orchid",
-          "DodgerBlue"
-          -- "Cornsilk",
-          -- "Salmon",
-          -- "Lawngreen",
-        },
-        disable = { "html" },
-      },
+      -- rainbow = {
+      --   enable = true,
+      --   colors = {
+      --     "Gold",
+      --     "Orchid",
+      --     "DodgerBlue"
+      --     -- "Cornsilk",
+      --     -- "Salmon",
+      --     -- "Lawngreen",
+      --   },
+      --   disable = { "html" },
+      -- },
       playground = {
         enable = true,
         disable = {},
@@ -249,8 +249,8 @@ return {
     end,
   },
   {
-
-  }
+    'nvim-treesitter/playground'
+  },
 }
 
 
