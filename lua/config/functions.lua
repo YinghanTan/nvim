@@ -52,3 +52,5 @@ vim.api.nvim_create_autocmd(
   { "InsertEnter", "WinLeave" },
   { pattern = "*", command = "set nocursorline", group = cursorGrp }
 )
+
+

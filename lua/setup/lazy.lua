@@ -1,3 +1,4 @@
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
@@ -7,12 +8,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
-print("Hello World")
+
+require("config").setup(opts)
+require("setup.health")
 
 require("lazy").setup({
   spec = {
     -- import plugins
-    { import = "plugins" },
     -- import any extras modules here
     { import = "plugins.extras.lang.json" },
     { import = "plugins.extras.lang.yaml" },
@@ -60,3 +62,5 @@ require("lazy").setup({
     },
   },
 })
+
+
