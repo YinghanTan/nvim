@@ -1,4 +1,3 @@
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   -- bootstrap lazy.nvim
@@ -15,7 +14,9 @@ require("setup.health")
 require("lazy").setup({
   spec = {
     -- import plugins
+    { import = "plugins" },
     -- import any extras modules here
+    -- { "LazyVim/LazyVim" },
     { import = "plugins.extras.lang.json" },
     { import = "plugins.extras.lang.yaml" },
     { import = "plugins.extras.lang.python" },
@@ -32,8 +33,8 @@ require("lazy").setup({
     { import = "plugins.extras.linting.eslint" },
     { import = "plugins.extras.formatting.prettier" },
 
-    -- import/override with your plugins
-    { import = "plugins" },
+    -- -- import/override with your plugins
+    -- { import = "plugins" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -62,5 +63,3 @@ require("lazy").setup({
     },
   },
 })
-
-
