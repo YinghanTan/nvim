@@ -160,11 +160,11 @@ return {
           s = { "<cmd>source $MYVIMRC<cr>", "source" },
           -- w = { "<cmd>call TrimWhitespace()<cr>", "trim whitespace" },
         },
-        c = {
-          name = "context",
-          f = { "<cmd>lua ContextSetup(true)<CR>", "ContextSetup" },
-          p = { "<cmd>lua ContextSetup(false)<cr>", "ContextSetup" },
-        },
+        -- c = {
+        --   name = "context",
+        --   f = { "<cmd>lua ContextSetup(true)<CR>", "ContextSetup" },
+        --   p = { "<cmd>lua ContextSetup(false)<cr>", "ContextSetup" },
+        -- },
         -- d = {
         --   name = "debug",
         --   ["b"] = { "<plug>VimspectorToggleBreakpoint", "breakpoint" },
@@ -266,13 +266,13 @@ return {
         --   },
         --   L = { "<cmd><cr>", "lint" },
         -- },
-        q = {
-          name = "quickfix",
-          i = { "<cmd>CocDiagnostics<cr>", "diagnostics to quickfix" },
-          D = { "<cmd>Todo<cr>", "todo to quickfix" },
-          q = { "<cmd>call ToggleQuickfixList()<cr>", "toggle quickfix" },
-          l = { "<cmd>call ToggleLocationList()<cr>", "toggle location list" },
-        },
+        -- q = {
+        --   name = "quickfix",
+        --   i = { "<cmd>CocDiagnostics<cr>", "diagnostics to quickfix" },
+        --   D = { "<cmd>Todo<cr>", "todo to quickfix" },
+        --   q = { "<cmd>call ToggleQuickfixList()<cr>", "toggle quickfix" },
+        --   l = { "<cmd>call ToggleLocationList()<cr>", "toggle location list" },
+        -- },
       },
 
 
@@ -388,7 +388,6 @@ return {
 
         ["<leader>q"] = { name = "+quit/session" },
         ["<leader>s"] = { name = "+search" },
-        ["<leader>u"] = { name = "+ui" },
         ["<leader>w"] = { name = "+windows" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
       },

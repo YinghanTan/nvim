@@ -67,7 +67,6 @@ return {
         inverse = true, -- invert background for search, diffs, statuslines and errors
         contrast = "", -- can be "hard", "soft" or empty string
         palette_overrides = {},
-        overrides = {},
         dim_inactive = false,
         transparent_mode = false,
         overrides = {
