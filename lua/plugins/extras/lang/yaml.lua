@@ -44,8 +44,5 @@ return {
         },
       },
     },
-    config = function(_, opts)
-      vim.opt.foldenable = false -- disable initial folded files
-    end,
   },
 }

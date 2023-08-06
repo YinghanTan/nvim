@@ -64,10 +64,10 @@ return {
             local java_dbg_path = java_dbg_pkg:get_install_path()
             local jar_patterns = {
               java_dbg_path .. "/extension/server/com.microsoft.java.debug.plugin-*.jar",
-              java_test_path .. "/extension/server/*.jar",
+              java_test_path .. "/extension/server/*.jar"
             }
             for _, jar_pattern in ipairs(jar_patterns) do
-              for _, bundle in ipairs(vim.split(vim.fn.glob(jar_pattern), "\n")) do
+              for _, bundle in ipairs(vim.split(vim.fn.glob(jar_pattern), '\n')) do
                 table.insert(bundles, bundle)
               end
             end
@@ -95,15 +95,9 @@ return {
                 on_attach = require("util").on_attach(function(client, buffer)
                   if mason_registry.has_package("java-test") then
                     -- custom keymaps for Java test runner (not yet compatible with neotest)
-                    vim.keymap.set("n", "<leader>tT", function()
-                      require("jdtls").pick_test({ bufnr = buffer })
-                    end, { buffer = buffer, desc = "Run specific Test" })
-                    vim.keymap.set("n", "<leader>tt", function()
-                      require("jdtls").test_class({ bufnr = buffer })
-                    end, { buffer = buffer, desc = "Run File" })
-                    vim.keymap.set("n", "<leader>tr", function()
-                      require("jdtls").test_nearest_method({ bufnr = buffer })
-                    end, { buffer = buffer, desc = "Run nearest" })
+                    vim.keymap.set("n", "<leader>tT", function() require("jdtls").pick_test({ bufnr = buffer }) end, { buffer = buffer, desc = "Run specific Test" })
+                    vim.keymap.set("n", "<leader>tt", function() require("jdtls").test_class({ bufnr = buffer }) end, { buffer = buffer, desc = "Run File" })
+                    vim.keymap.set("n", "<leader>tr", function() require("jdtls").test_nearest_method({ bufnr = buffer }) end, { buffer = buffer, desc = "Run nearest" })
                   end
                   if mason_registry.has_package("java-debug-adapter") then
                     -- custom init for Java debugger
@@ -116,7 +110,7 @@ return {
                 root_dir = root_dir,
                 init_options = {
                   bundles = bundles,
-                },
+                }
               }
               local jdtls_opts = require("util").opts("nvim-jdtls")
               require("jdtls").start_or_attach(vim.tbl_deep_extend("force", jdtls_opts or {}, jdtls_base_config))

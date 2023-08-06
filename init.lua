@@ -16,7 +16,7 @@ require("lazy").setup({
     -- import plugins
     { import = "plugins" },
     -- import any extras modules here
-    { "LazyVim/LazyVim" },
+    -- { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     { import = "plugins.extras.lang.json" },
     { import = "plugins.extras.lang.yaml" },
     { import = "plugins.extras.lang.python" },
@@ -29,7 +29,7 @@ require("lazy").setup({
     { import = "plugins.extras.util.project" },
     -- { import = "plugins.extras.lang.tex" },
     -- { import = "plugins.extras.lang.go" },
-    { import = "plugins.extras.ui.mini-animate" },
+    -- { import = "plugins.extras.ui.mini-animate" },
     { import = "plugins.extras.linting.eslint" },
     { import = "plugins.extras.formatting.prettier" },
 
