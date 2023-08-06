@@ -6,65 +6,90 @@ return {
     dependencies = { "junegunn/fzf" },
     config = function()
 
-        -- [[B]Commits] Customize the options used by 'git log':
-        vim.g.fzf_commits_log_options = '--graph --color=always --pretty=oneline --format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"'
+      -- [[B]Commits] Customize the options used by 'git log':
+      vim.g.fzf_commits_log_options = '--graph --color=always --pretty=oneline --format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"'
 
-        -- [Tags] Command to generate tags file
-        vim.g.fzf_tags_command = 'ctags -R'
+      -- [Tags] Command to generate tags file
+      vim.g.fzf_tags_command = 'ctags -R'
 
-        -- [Commands] --expect expression for directly executing the command
-        vim.g.fzf_commands_expect = 'alt-enter,ctrl-x'
+      -- [Commands] --expect expression for directly executing the command
+      vim.g.fzf_commands_expect = 'alt-enter,ctrl-x'
+
+      -- Enable per-command history.
+      vim.g.fzf_history_dir = '~/.local/share/fzf-history'
+
+      -- Set FZF_DEFAULT_OPTS environment variable
+      vim.env.FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up"'
+
+      -- Set FZF_DEFAULT_COMMAND environment variable
+      vim.env.FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git"'
+
+      -- Border color
+      vim.g.fzf_layout = {
+        ['up'] = '~90%',
+        ['window'] = {
+          ['width'] = 0.8,
+          ['height'] = 0.8,
+          ['yoffset'] = 0.5,
+          ['xoffset'] = 0.5,
+          ['highlight'] = 'Todo',
+          ['border'] = 'rounded'
+        }
+      }
+
+      vim.g.fzf_preview_window = {'right,70%,nowrap,nocycle,nohidden', 'ctrl-/'}
 
 
-        -- Enable per-command history.
-        vim.g.fzf_history_dir = '~/.local/share/fzf-history'
+      -- Customize fzf colors to match your color scheme
+      vim.g.fzf_colors = {
+        ['fg'] =      {'fg', 'Normal'},
+        ['bg'] =      {'bg', 'Normal'},
+        ['hl'] =      {'fg', 'Comment'},
+        ['fg+'] =     {'fg', 'CursorLine', 'CursorColumn', 'Normal'},
+        ['bg+'] =     {'bg', 'CursorLine', 'CursorColumn'},
+        ['hl+'] =     {'fg', 'Statement'},
+        ['info'] =    {'fg', 'PreProc'},
+        ['border'] =  {'fg', 'Ignore'},
+        ['prompt'] =  {'fg', 'Conditional'},
+        ['pointer'] = {'fg', 'Exception'},
+        ['marker'] =  {'fg', 'Keyword'},
+        ['spinner'] = {'fg', 'Label'},
+        ['header'] =  {'fg', 'Comment'}
+      }
 
+      -- Function to set the '+' register with the lines joined by newlines
+      local function set_plus_register(lines)
+        vim.fn.setreg('+', table.concat(lines, '\n'))
+      end
+
+
+      local function build_quickfix_list(lines)
+        local quickfix_list = {}
+
+        -- Create the quickfix list entries
+        for _, line in ipairs(lines) do
+          table.insert(quickfix_list, { filename = line })
+        end
+
+        -- Set the quickfix list and open the quickfix window
+        vim.fn.setqflist(quickfix_list)
+        vim.cmd('copen')
+        vim.cmd('cc')
+      end
+
+
+      -- This is the default extra key bindings
+
+      vim.g.fzf_action = {
+        ['ctrl-q'] = build_quickfix_list,
+        ['ctrl-t'] = 'tab split', 
+        ['ctrl-x'] = 'vsplit',     
+        ['ctrl-s'] = 'split',     
+        ['ctrl-v'] = 'vsplit',
+        ['ctrl-y'] = set_plus_register
+      }
 
       vim.cmd([[
-        " Ctrl-A Ctrl-Q to select all and build quickfix list
-        function! s:build_quickfix_list(lines)
-          call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
-          copen
-          cc
-        endfunction
-
-
-        " Border color
-        let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'rounded' } }
-        let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up"'
-        let $FZF_DEFAULT_COMMAND='rg --files --hidden -g "!.git" '
-
-        let g:fzf_preview_window = ['right,70%,nowrap,nocycle,nohidden', 'ctrl-/']
-
-        " This is the default extra key bindings
-        let g:fzf_action = {
-          \ 'ctrl-q': function('s:build_quickfix_list'),
-          \ 'ctrl-t': 'tab split', 
-          \ 'ctrl-x': 'vsplit',     
-          \ 'ctrl-s': 'split',     
-          \ 'ctrl-v': 'vsplit',
-          \ 'ctrl-y': {lines -> setreg('+', join(lines, "\n"))}}
-        " add to quickfix_list after selecting file
-        " open in new tab after selecting file
-        " open in new split after selecting file
-        " Open in vertical split after selecting file
-
-
-        " Customize fzf colors to match your color scheme
-        let g:fzf_colors =
-        \ { 'fg':      ['fg', 'Normal'],
-        \ 'bg':      ['bg', 'Normal'],
-        \ 'hl':      ['fg', 'Comment'],
-        \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-        \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-        \ 'hl+':     ['fg', 'Statement'],
-        \ 'info':    ['fg', 'PreProc'],
-        \ 'border':  ['fg', 'Ignore'],
-        \ 'prompt':  ['fg', 'Conditional'],
-        \ 'pointer': ['fg', 'Exception'],
-        \ 'marker':  ['fg', 'Keyword'],
-        \ 'spinner': ['fg', 'Label'],
-        \ 'header':  ['fg', 'Comment'] }
 
         "Get Files
         command! -bang -nargs=? -complete=dir Files
