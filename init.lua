@@ -8,7 +8,7 @@ end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 
-require("config").setup(opts)
+require("config").setup()
 require("setup.health")
 
 require("lazy").setup({
