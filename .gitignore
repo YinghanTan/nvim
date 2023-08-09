@@ -1,3 +1,6 @@
+lazy-lock.json
+no
+lua/env.lua
 tt.*
 .tests
 doc/tags
