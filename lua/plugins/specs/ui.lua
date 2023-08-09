@@ -1,3 +1,5 @@
+local sources = dots.coding.cmp.sources
+
 return {
   {
     "ellisonleao/gruvbox.nvim",
@@ -101,6 +103,8 @@ return {
       end,
     },
   },
+
+  -- Better `vim.notify()`
   {
     "rcarriga/nvim-notify",
     opts = function()
@@ -169,40 +173,133 @@ return {
       end
     end,
   },
-  -- {
-  --   "folke/noice.nvim",
-  --   opts = {
-  --     lsp = {
-  --       override = {
-  --         ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-  --         ["vim.lsp.util.stylize_markdown"] = true,
-  --         ["cmp.entry.get_documentation"] = true,
-  --       },
-  --     },
-  --     presets = {
-  --       bottom_search = true, -- use a classic bottom cmdline for search
-  --       command_palette = true, -- position the cmdline and popupmenu together
-  --       long_message_to_split = true, -- long messages will be sent to a split
-  --       inc_rename = false, -- enables an input dialog for inc-rename.nvim
-  --       lsp_doc_border = false, -- add a border to hover docs and signature help
-  --     },
-  --     cmdline = {
-  --       view = "cmdline",
-  --     },
-  --   },
-  --   event = "VeryLazy",
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  -- },
-  -- {
-  --   "rebelot/heirline.nvim",
-  --   opts = function()
-  --     return require("plugins.configs.ui.heirline")
-  --   end,
-  --   event = "UIEnter",
-  --   dependencies = "nvim-tree/nvim-web-devicons",
-  -- },
+
+  -- better vim.ui
+  {
+    "stevearc/dressing.nvim",
+    opts = {
+      input = {
+        border = "solid",
+      },
+      nui = {
+        border = "solid",
+      },
+      builtin = {
+        border = "solid",
+      },
+    },
+    event = "VeryLazy",
+  },
+
+  -- statusline
+  {
+    "nvim-lualine/lualine.nvim",
+    event = "VeryLazy",
+    opts = function()
+      local icons = dots.UI.icons
+      local Util = require("core.utils.lazyvim").Util
+
+      return {
+        options = {
+          theme = "auto",
+          globalstatus = true,
+          disabled_filetypes = { statusline = { "dashboard", "alpha" } },
+        },
+        sections = {
+          lualine_a = { "mode" },
+          lualine_b = { "branch" },
+          lualine_c = {
+            {
+              "diagnostics",
+              symbols = {
+                error = icons.diagnostics.Error,
+                warn = icons.diagnostics.Warn,
+                info = icons.diagnostics.Info,
+                hint = icons.diagnostics.Hint,
+              },
+            },
+            { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
+            { "filename", path = 1, symbols = { modified = "  ", readonly = "", unnamed = "" } },
+            -- stylua: ignore
+            {
+              function() return require("nvim-navic").get_location() end,
+              cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
+            },
+          },
+          lualine_x = {
+            -- stylua: ignore
+            {
+              function() return require("noice").api.status.command.get() end,
+              cond = function() return package.loaded["noice"] and require("noice").api.status.command.has() end,
+              color = Util.fg("Statement"),
+            },
+            -- stylua: ignore
+            {
+              function() return require("noice").api.status.mode.get() end,
+              cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
+              color = Util.fg("Constant"),
+            },
+            -- stylua: ignore
+            {
+              function() return "  " .. require("dap").status() end,
+              cond = function () return package.loaded["dap"] and require("dap").status() ~= "" end,
+              color = Util.fg("Debug"),
+            },
+            { require("lazy.status").updates, cond = require("lazy.status").has_updates, color = Util.fg("Special") },
+            {
+              "diff",
+              symbols = {
+                added = icons.git.added,
+                modified = icons.git.modified,
+                removed = icons.git.removed,
+              },
+            },
+          },
+          lualine_y = {
+            { "progress", separator = " ", padding = { left = 1, right = 0 } },
+            { "location", padding = { left = 0, right = 1 } },
+          },
+          lualine_z = {
+            function()
+              return " " .. os.date("%R")
+            end,
+          },
+        },
+        extensions = { "neo-tree", "lazy" },
+      }
+    end,
+  },
+  -- lsp symbol navigation for lualine. This shows where
+  -- in the code structure you are - within functions, classes,
+  -- etc - in the statusline.
+  {
+    "SmiteshP/nvim-navic",
+    lazy = true,
+    init = function()
+      vim.g.navic_silence = true
+      require("core.utils.lazyvim").on_attach(function(client, buffer)
+        if client.server_capabilities.documentSymbolProvider then
+          require("nvim-navic").attach(client, buffer)
+        end
+      end)
+    end,
+    opts = function()
+      return {
+        separator = " ",
+        highlight = true,
+        depth_limit = 5,
+        icons = dots.UI.icons.kinds,
+      }
+    end,
+  },
+
+  -- icons
+  { "nvim-tree/nvim-web-devicons", lazy = true },
+
+  -- ui components
+  { "MunifTanjim/nui.nvim", lazy = true },
+
+  -- indent guides for Neovim
   {
     "lukas-reineke/indent-blankline.nvim",
     opts = {
@@ -223,6 +320,10 @@ return {
     },
     event = "VeryLazy",
   },
+
+  -- Active indent guide and indent text objects. When you're browsing
+  -- code, this highlights the current level of indentation, and animates
+  -- the highlighting.
   {
     "echasnovski/mini.indentscope",
     opts = {
@@ -253,82 +354,4 @@ return {
     end,
     event = "VeryLazy",
   },
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   opts = {
-  --     options = {
-  --       always_show_bufferline = false,
-  --       enforce_regular_tabs = true,
-  --     },
-  --   },
-  --   event = "VeryLazy",
-  -- },
-  {
-    "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {
-        names = false,
-        rgb_fn = true,
-        hsl_fn = true,
-        css = true,
-        css_fn = true,
-      },
-    },
-    config = function(_, opts)
-      require("colorizer").setup(opts)
-      require("colorizer").attach_to_buffer()
-    end,
-    event = "VeryLazy",
-  },
-  {
-    "stevearc/dressing.nvim",
-    opts = {
-      input = {
-        border = "solid",
-      },
-      nui = {
-        border = "solid",
-      },
-      builtin = {
-        border = "solid",
-      },
-    },
-    event = "VeryLazy",
-  },
-  -- {
-  --   "echasnovski/mini.animate",
-  --   opts = function()
-  --     -- don't use animate when scrolling with the mouse
-  --     local mouse_scrolled = false
-  --     for _, scroll in ipairs({ "Up", "Down" }) do
-  --       local key = "<ScrollWheel" .. scroll .. ">"
-  --       vim.keymap.set({ "", "i" }, key, function()
-  --         mouse_scrolled = true
-  --         return key
-  --       end, { expr = true })
-  --     end
-  --
-  --     local animate = require("mini.animate")
-  --     return {
-  --       scroll = {
-  --         timing = animate.gen_timing.exponential({ duration = 50, unit = "total" }),
-  --         subscroll = animate.gen_subscroll.equal({
-  --           predicate = function(total_scroll)
-  --             if mouse_scrolled then
-  --               mouse_scrolled = false
-  --               return false
-  --             end
-  --             return total_scroll > 1 and total_scroll < 50
-  --           end,
-  --         }),
-  --       },
-  --       cursor = {
-  --         timing = function(_, n)
-  --           return 150 / n
-  --         end,
-  --       },
-  --     }
-  --   end,
-  --   event = "VeryLazy",
-  -- },
 }

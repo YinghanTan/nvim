@@ -1,3 +1,4 @@
+local Util = require("core.utils.lazyvim")
 return not dots.tools.enabled and {}
   or {
     {
@@ -30,8 +31,8 @@ return not dots.tools.enabled and {}
 
         { "<leader>sB", "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", desc = "bookmarks" },
 
-        -- { "<leader>sf", Util.telescope("files"), desc = "Find Files (root dir)" },
-        -- { "<leader>sF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+        { "<leader>sf", Util.telescope("files"), desc = "Find Files (root dir)" },
+        { "<leader>sF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
         -- git
         { "<leader>sgc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
         { "<leader>sgs", "<cmd>Telescope git_status<CR>", desc = "status" },
@@ -43,7 +44,7 @@ return not dots.tools.enabled and {}
 
         -- find
         { "<leader>so", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
-        -- { "<leader>sO", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+        { "<leader>sO", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
         -- search
         { '<leader>sr"', "<cmd>Telescope registers<cr>", desc = "registers" },
         { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "resume" },
@@ -58,7 +59,7 @@ return not dots.tools.enabled and {}
 
         { "<leader>se", "<cmd>Telescope env<cr>", desc = "env" },
 
-        -- { "<leader>sh", Util.telescope("colorscheme", { enable_preview = true }), desc = "theme" },
+        { "<leader>sh", Util.telescope("colorscheme", { enable_preview = true }), desc = "theme" },
         { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
         { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
 
@@ -74,53 +75,53 @@ return not dots.tools.enabled and {}
         },
         { "<leader>sV", "<cmd>Telescope vim_options<cr>", desc = "vim options" },
 
-        -- { "<leader>sp", Util.telescope("grep_string", { word_match = "-w" }), desc = "phrase (root dir)" },
-        -- { "<leader>sP", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "phrase (cwd)" },
-        -- { "<leader>sp", Util.telescope("grep_string"), mode = "v", desc = "phrase (root dir)" },
-        -- { "<leader>sP", Util.telescope("grep_string", { cwd = false }), mode = "v", desc = "phrase (cwd)" },
+        { "<leader>sp", Util.telescope("grep_string", { word_match = "-w" }), desc = "phrase (root dir)" },
+        { "<leader>sP", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "phrase (cwd)" },
+        { "<leader>sp", Util.telescope("grep_string"), mode = "v", desc = "phrase (root dir)" },
+        { "<leader>sP", Util.telescope("grep_string", { cwd = false }), mode = "v", desc = "phrase (cwd)" },
 
-        -- { "<leader>st", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-        -- { "<leader>sT", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+        { "<leader>st", Util.telescope("live_grep"), desc = "Grep (root dir)" },
+        { "<leader>sT", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
 
         { "<leader>su", "<cmd>Telescope undo<cr>", desc = "undo" },
         { "<leader>sy", "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", desc = "yank" },
 
-        -- {
-        --   "<leader>sls",
-        --   Util.telescope("lsp_document_symbols", {
-        --     symbols = {
-        --       "Class",
-        --       "Function",
-        --       "Method",
-        --       "Constructor",
-        --       "Interface",
-        --       "Module",
-        --       "Struct",
-        --       "Trait",
-        --       "Field",
-        --       "Property",
-        --     },
-        --   }),
-        --   desc = "Goto Symbol",
-        -- },
-        -- {
-        --   "<leader>slS",
-        --   Util.telescope("lsp_dynamic_workspace_symbols", {
-        --     symbols = {
-        --       "Class",
-        --       "Function",
-        --       "Method",
-        --       "Constructor",
-        --       "Interface",
-        --       "Module",
-        --       "Struct",
-        --       "Trait",
-        --       "Field",
-        --       "Property",
-        --     },
-        --   }),
-        --   desc = "Goto Symbol (Workspace)",
-        -- },
+        {
+          "<leader>sls",
+          Util.telescope("lsp_document_symbols", {
+            symbols = {
+              "Class",
+              "Function",
+              "Method",
+              "Constructor",
+              "Interface",
+              "Module",
+              "Struct",
+              "Trait",
+              "Field",
+              "Property",
+            },
+          }),
+          desc = "Goto Symbol",
+        },
+        {
+          "<leader>slS",
+          Util.telescope("lsp_dynamic_workspace_symbols", {
+            symbols = {
+              "Class",
+              "Function",
+              "Method",
+              "Constructor",
+              "Interface",
+              "Module",
+              "Struct",
+              "Trait",
+              "Field",
+              "Property",
+            },
+          }),
+          desc = "Goto Symbol (Workspace)",
+        },
       },
       config = function(_, opts)
         local actions = require("telescope.actions")

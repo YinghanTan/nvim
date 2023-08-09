@@ -42,22 +42,6 @@ return not dots.editor.enabled and {}
       event = "VeryLazy",
     },
     {
-      "lewis6991/gitsigns.nvim",
-      event = "VeryLazy",
-      opts = {
-        signs = dots.UI.icons.Git.Signs,
-        on_attach = function()
-          local gs = require("gitsigns")
-
-          local map = vim.keymap.set
-
-          -- stylua: ignore start
-          map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
-          map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
-        end,
-      },
-    },
-    {
       "nvim-treesitter/nvim-treesitter",
       opts = {
         auto_install = true,
@@ -136,6 +120,7 @@ return not dots.editor.enabled and {}
     },
     {
       "RRethy/vim-illuminate",
+      event = { "BufReadPost", "BufNewFile" },
       opts = {
         delay = 200,
         large_file_cutoff = 2000,
@@ -164,7 +149,6 @@ return not dots.editor.enabled and {}
           end,
         })
       end,
-      event = "VeryLazy",
     },
     {
       "echasnovski/mini.files",
@@ -190,15 +174,15 @@ return not dots.editor.enabled and {}
       "nvim-pack/nvim-spectre",
       opts = true,
       keys = {
-        { "<leader>s", "<cmd>lua require('spectre').open()<CR>", desc = "Open Spectr" },
+        { "<leader>S", "<cmd>lua require('spectre').open()<CR>", desc = "Open Spectr" },
         {
-          "<leader>sw",
+          "<leader>Sw",
           "<cmd>lua require('spectre').open_visual({ select_word=true })<CR>",
           desc = "Search current word",
         },
-        { "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", mode = "x", desc = "Search current word" },
+        { "<leader>Sw", "<cmd>lua require('spectre').open_visual()<CR>", mode = "x", desc = "Search current word" },
         {
-          "<leader>sp",
+          "<leader>Sp",
           "<cmd>lua require('spectre').open_file_search({ select_word=true })CR>",
           mode = "n",
           desc = "Search on current word",
@@ -209,7 +193,8 @@ return not dots.editor.enabled and {}
       "andymass/vim-matchup",
       dependencies = "nvim-treesitter/nvim-treesitter",
       config = function()
-        vim.g.matchup_matchparen_offscreen = {} -- empty = disables
+        vim.g.matchup_matchparen_offscreen = { method = nil } -- empty = disables
+        vim.g.matchup_matchpref = { html = { nolists = 1 } }
         vim.cmd("silent! do FileType")
       end,
       event = "VeryLazy",
@@ -223,22 +208,30 @@ return not dots.editor.enabled and {}
       event = "VeryLazy",
     },
     {
-      "kevinhwang91/nvim-ufo",
-      opts = {
-        provider_selector = function()
-          return { "treesitter", "indent" }
-        end,
-      },
-      dependencies = "kevinhwang91/promise-async",
-      event = "VeryLazy",
-    },
-    {
       "mbbill/undotree",
+      lazy = false,
       keys = {
         { "<leader>u", "<cmd>UndotreeToggle<CR>", desc = "Toggle Undotree" },
       },
       init = function()
         table.insert(dots.editor.treesitter.parsers, "diff")
+        if vim.fn.has("persistent_undo") then
+          local target_path = vim.fn.expand("~/.undodir")
+
+          -- create the directory and any parent directories
+          -- if the location does not exist.
+          if not vim.fn.isdirectory(target_path) then
+            vim.fn.mkdir(target_path, "p", 0700)
+          end
+
+          vim.o.undodir = target_path
+          vim.o.undofile = true
+        end
+
+        vim.g.undotree_RelativeTimestamp = 1
+        vim.g.undotree_ShortIndicators = 1
+        vim.g.undotree_HelpLine = 0
+        vim.g.undotree_WindowLayout = 2
       end,
     },
     {

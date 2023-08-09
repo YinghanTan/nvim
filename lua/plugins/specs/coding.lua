@@ -31,8 +31,8 @@ return not dots.coding.enabled and {}
               ["<Tab>"] = cmp.mapping(function(fallback)
                 if cmp.visible() then
                   cmp.select_next_item()
-                -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-                -- they way you will only jump inside the snippet region
+                  -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+                  -- they way you will only jump inside the snippet region
                 elseif luasnip.expand_or_jumpable() then
                   luasnip.expand_or_jump()
                 else
@@ -94,12 +94,12 @@ return not dots.coding.enabled and {}
         })
       end,
       event = "CmdlineEnter",
-      enabld = dots.coding.cmp.cmd,
+      enabled = dots.coding.cmp.cmd,
     },
     {
       {
         "L3MON4D3/LuaSnip",
-        opts = function()
+        opts = function(_, opts)
           local types = require("luasnip.util.types")
           return {
             -- Display a cursor-like placeholder in unvisited nodes
