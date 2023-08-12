@@ -6,13 +6,59 @@ return not dots.editor.enabled and {}
       event = "VeryLazy",
     },
 
+    -- Treesitter is a new parser generator tool that we can
+    -- use in Neovim to power faster and more accurate
+    -- syntax highlighting.
     {
       "nvim-treesitter/nvim-treesitter",
+      version = false, -- last release is way too old and doesn't work on Windows
+      lazy = false,
+      build = ":TSUpdate",
+      event = {
+        "BufReadPost",
+        "BufWinEnter",
+        "BufNewFile",
+      },
+      cmd = { "TSUpdateSync" },
+      -- keys = {
+      --   { "as", desc = "Increment selection", mode = "x" },
+      --   { "<bs>", desc = "Decrement selection", mode = "x" },
+      -- },
+      dependencies = {
+        {
+          "nvim-treesitter/nvim-treesitter-textobjects",
+          init = function()
+            -- disable rtp plugin, as we only need its queries for mini.ai
+            -- In case other textobject modules are enabled, we will load them
+            -- once nvim-treesitter is loaded
+            require("lazy.core.loader").disable_rtp_plugin("nvim-treesitter-textobjects")
+            load_textobjects = true
+          end,
+        },
+        {
+          "nvim-treesitter/playground",
+        },
+        {
+          "nvim-treesitter/nvim-treesitter-context",
+        },
+      },
       opts = {
+        -- Install parsers synchronously (only applied to `ensure_installed`)
+        sync_install = false,
+        -- Automatically install missing parsers when entering buffer
+        -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
         auto_install = true,
+        -- List of parsers to ignore installing (for "all")
+        ignore_install = { "smali" },
         ensure_installed = dots.editor.treesitter.parsers,
         highlight = {
-          enable = true,
+          enable = true, -- false will disable the whole extension
+          disable = {}, -- list of language that will be disabled
+          additional_vim_regex_highlighting = true,
+          -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+          -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+          -- Using this option may slow down your editor, and you may see some duplicate highlights.
+          -- Instead of true it can also be a list of languages
         },
         matchup = {
           enable = true,
@@ -24,15 +70,77 @@ return not dots.editor.enabled and {}
           enable = true,
           enable_autocmd = false,
         },
+        incremental_selection = {
+          enable = true,
+          keymaps = {
+            init_selection = "gnn", -- set to `false` to disable one of the mappings
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+          },
+        },
+
+        -- treesitter playground
+        playground = {
+          enable = true,
+          disable = {},
+          updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
+          persist_queries = false, -- Whether the query persists across vim sessions
+          keybindings = {
+            toggle_query_editor = "o",
+            toggle_hl_groups = "i",
+            toggle_injected_languages = "t",
+            toggle_anonymous_nodes = "a",
+            toggle_language_display = "I",
+            focus_language = "f",
+            unfocus_language = "F",
+            update = "R",
+            goto_node = "<cr>",
+            show_help = "?",
+          },
+        },
+        query_linter = {
+          enable = true,
+          use_virtual_text = true,
+          lint_events = { "BufWrite", "CursorHold" },
+        },
+        autopairs = {
+          enable = false,
+        },
+        autotag = {
+          enable = true,
+        },
       },
+      ---@param opts TSConfig
       config = function(_, opts)
+        if type(opts.ensure_installed) == "table" then
+          ---@type table<string, boolean>
+          local added = {}
+          opts.ensure_installed = vim.tbl_filter(function(lang)
+            if added[lang] then
+              return false
+            end
+            added[lang] = true
+            return true
+          end, opts.ensure_installed)
+        end
         require("nvim-treesitter.configs").setup(opts)
+
+        if load_textobjects then
+          -- PERF: no need to load the plugin, if we only need its queries for mini.ai
+          if opts.textobjects then
+            for _, mod in ipairs({ "move", "select", "swap", "lsp_interop" }) do
+              if opts.textobjects[mod] and opts.textobjects[mod].enable then
+                local Loader = require("lazy.core.loader")
+                Loader.disabled_rtp_plugins["nvim-treesitter-textobjects"] = nil
+                local plugin = require("lazy.core.config").plugins["nvim-treesitter-textobjects"]
+                require("lazy.core.loader").source_runtime(plugin.dir, "plugin")
+                break
+              end
+            end
+          end
+        end
       end,
-      event = {
-        "BufReadPost",
-        "BufWinEnter",
-        "BufNewFile",
-      },
     },
     {
       "echasnovski/mini.ai",
@@ -107,17 +215,18 @@ return not dots.editor.enabled and {}
     },
     {
       "nvim-pack/nvim-spectre",
-      opts = true,
+      cmd = "Spectre",
+      opts = { open_cmd = "noswapfile vnew" },
       keys = {
-        { "<leader>s", "<cmd>lua require('spectre').open()<CR>", desc = "Open Spectr" },
+        { "<leader>Sr", "<cmd>lua require('spectre').open()<CR>", desc = "Open Spectr" },
         {
-          "<leader>sw",
+          "<leader>Sw",
           "<cmd>lua require('spectre').open_visual({ select_word=true })<CR>",
           desc = "Search current word",
         },
-        { "<leader>sw", "<cmd>lua require('spectre').open_visual()<CR>", mode = "x", desc = "Search current word" },
+        { "<leader>Sw", "<cmd>lua require('spectre').open_visual()<CR>", mode = "x", desc = "Search current word" },
         {
-          "<leader>sp",
+          "<leader>Sp",
           "<cmd>lua require('spectre').open_file_search({ select_word=true })CR>",
           mode = "n",
           desc = "Search on current word",
@@ -198,24 +307,13 @@ return not dots.editor.enabled and {}
         require("hop").setup({})
       end,
     },
-
-    -- git
+    -- buffer remove
     {
-      "lewis6991/gitsigns.nvim",
-      event = "VeryLazy",
-      opts = {
-        signs = dots.UI.icons.Git.Signs,
-        on_attach = function()
-          local gs = require("gitsigns")
-
-          local map = vim.keymap.set
-
-          -- stylua: ignore start
-          map("n", "]h", gs.next_hunk, { desc = "Next Hunk" })
-          map("n", "[h", gs.prev_hunk, { desc= "Prev Hunk" })
-        end,
+      "echasnovski/mini.bufremove",
+      -- stylua: ignore
+      keys = {
+        { "<leader>bd", function() require("mini.bufremove").delete(0, false) end, desc = "Delete Buffer" },
+        { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "Delete Buffer (Force)" },
       },
     },
-
-
   }

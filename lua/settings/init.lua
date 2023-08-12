@@ -326,7 +326,29 @@ M.coding = {
 M.editor = {
   enabled = true,
   treesitter = {
-    parsers = {},
+    parsers = {
+      "bash",
+      "c",
+      "html",
+      "javascript",
+      "json",
+      "lua",
+      "luadoc",
+      "luap",
+      "markdown",
+      "markdown_inline",
+      "python",
+      "query",
+      "regex",
+      "tsx",
+      "typescript",
+      "vim",
+      "vimdoc",
+      "yaml",
+      "go",
+      "rust",
+      "css",
+    },
   },
 }
 
