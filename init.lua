@@ -1,6 +1,6 @@
 vim.loader.enable()
 require("settings")
-require("settings.options"     )
+require("settings.options")
 require("plugins")
 vim.cmd("colorscheme " .. (dots.UI.colorscheme.enabled or "habamax"))
 require("settings.autocmds")
