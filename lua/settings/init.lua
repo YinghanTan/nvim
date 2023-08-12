@@ -207,7 +207,7 @@ M.languages = {
         enable = true,
         servers = {
           pyright = {},
-          ruff_lsp = {},
+          -- ruff_lsp = {},
         },
       },
       null = {
