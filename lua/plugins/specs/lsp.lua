@@ -59,6 +59,7 @@ return not dots.LSP.enabled and {}
       },
       config = function(_, opts)
         require("plugins.configs.lsp.config")(opts)
+        -- local Util = require("util")
       end,
     },
     {
