@@ -133,19 +133,19 @@ return not dots.coding.enabled and {}
       },
     },
 
-    {
-      "altermo/ultimate-autopair.nvim",
-      opts = {
-        space2 = {
-          enable = true,
-        },
-        bs = {
-          indent_ignore = true,
-        },
-      },
-      event = { "InsertEnter", "CmdlineEnter" },
-      enabled = dots.coding.ultimate_autopairs,
-    },
+    -- {
+    --   "altermo/ultimate-autopair.nvim",
+    --   opts = {
+    --     space2 = {
+    --       enable = true,
+    --     },
+    --     bs = {
+    --       indent_ignore = true,
+    --     },
+    --   },
+    --   event = { "InsertEnter", "CmdlineEnter" },
+    --   enabled = dots.coding.ultimate_autopairs,
+    -- },
     {
       "numToStr/Comment.nvim",
       opts = function()

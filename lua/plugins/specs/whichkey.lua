@@ -344,7 +344,7 @@ return {
             name = "diff",
             ["d"] = { "<cmd>Gdiff<cr>", "diff" },
             ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
-            ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
+            -- ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
             ["u"] = { "<cmd>diffupdate<cr>", "update" },
             ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
           },
@@ -357,7 +357,7 @@ return {
             t = { "<cmd>Gitsigns toggle_signs<cr>", "toggle gutter" },
             s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk" },
             b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "blame line" },
-            z = { "<cmd>CocCommand git.foldUnchanged<cr>", "fold unchanged" },
+            -- z = { "<cmd>CocCommand git.foldUnchanged<cr>", "fold unchanged" },
             f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
             j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
           },
