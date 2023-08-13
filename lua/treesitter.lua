@@ -6,8 +6,9 @@ end
 
 treesitterConfigs.setup({
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
-    ensure_installed = { 'c', 'lua', 'vim', 'help', 'query', 'go', 'python', 'rust', 'typescript', 'javascript', 'css',
+    ensure_installed = { 'c', 'lua', 'vim', 'query', 'go', 'python', 'typescript', 'javascript', 'css',
         'html' },
+    -- removed rust as it is taking too long to compile
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
     -- Automatically install missing parsers when entering buffer

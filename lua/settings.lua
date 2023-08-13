@@ -109,12 +109,12 @@ vim.cmd("au! BufWritePost $MYVIMRC source %")      -- auto source when writing t
 -- write or save file with sudo
 --- --- ---
 
--- --- Indentation ---
--- vim.opt.tabstop = 2
--- vim.opt.shiftwidth = 2
--- vim.opt.softtabstop = 2
--- vim.opt.expandtab = true
--- vim.opt.wrap = false
+--- Indentation ---
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.wrap = false
 
 -- return to last edit location when opening a buffer
 -- vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])
