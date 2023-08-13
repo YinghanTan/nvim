@@ -23,8 +23,12 @@ return {
 
       { "<leader>sB", "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", desc = "bookmarks" },
 
-      { "<leader>sf", Util.telescope("files"), desc = "Find Files (root dir)" },
-      { "<leader>sF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+      { "<leader>sf", "<cmd>lua require('telescope.builtin').find_files()<cr>", desc = "Find Files (root dir)" },
+      {
+        "<leader>sF",
+        "<cmd>lua require('telescope.builtin').find_files({ cwd = false })<cr>",
+        desc = "Find Files (cwd)",
+      },
       -- git
       { "<leader>sgc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
       { "<leader>sgs", "<cmd>Telescope git_status<CR>", desc = "status" },
@@ -62,14 +66,13 @@ return {
 
       { "<leader>sv", "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", desc = "vimspector" },
       { "<leader>sV", "<cmd>Telescope vim_options<cr>", desc = "vim options" },
-
       { "<leader>sp", Util.telescope("grep_string", { word_match = "-w" }), desc = "phrase (root dir)" },
       { "<leader>sP", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "phrase (cwd)" },
       { "<leader>sp", Util.telescope("grep_string"), mode = "v", desc = "phrase (root dir)" },
       { "<leader>sP", Util.telescope("grep_string", { cwd = false }), mode = "v", desc = "phrase (cwd)" },
 
-      { "<leader>st", Util.telescope("live_grep"), desc = "Grep (root dir)" },
-      { "<leader>sT", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+      { "<leader>st", "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = "Grep (root dir)" },
+      { "<leader>sT", "<cmd>lua require('telescope.builtin').live_grep({ cwd = false })<cr>", desc = "Grep (cwd)" },
 
       { "<leader>su", "<cmd>Telescope undo<cr>", desc = "undo" },
       { "<leader>sy", "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", desc = "yank" },
