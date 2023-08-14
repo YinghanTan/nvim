@@ -5,8 +5,8 @@ return {
     keys = {
       { "<M-i>", "<C-\\><C-n>:RnvimrResize 1,8,9,11,5<CR>", mode = { "t" }, desc = "resize default" },
       { "<M-l>", "<C-\\><C-n>:RnvimrResize<CR>", mode = { "t" }, desc = "resize special" },
-      { "<leader>tr", ":RnvimrToggle<CR>", mode = { "n" }, desc = "toggle" },
-      { "<leader>tr", "<C-\\><C-n>:RnvimrToggle<CR>", mode = { "t" }, desc = "toggle" },
+      { "<leader>tr", ":RnvimrToggle<CR>", mode = { "n" }, desc = "ranger" },
+      { "<leader>tr", "<C-\\><C-n>:RnvimrToggle<CR>", mode = { "t" }, desc = "ranger" },
     },
 
     init = function()

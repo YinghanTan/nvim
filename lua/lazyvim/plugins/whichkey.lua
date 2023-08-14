@@ -106,11 +106,9 @@ return {
         ["<leader>q"] = { name = "+quit/session" },
 
 
-        -- ["<leader>u"] = { name = "+ui" },
-        ["<leader>w"] = { name = "+windows" },
+        ["<leader>t"] = { name = "+term" },
+        ["<leader>w"] = { name = "+wiki/windows" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
-
-
         ["<leader>g"] = { name = "+git" },
         ["<leader>d"] = { name = "+debug" },
         ["g"] = { name = "+goto" },
