@@ -73,6 +73,7 @@
   "trouble.nvim": { "branch": "main", "commit": "40aad004f53ae1d1ba91bcc5c29d59f07c5f01d3" },
   "typescript.nvim": { "branch": "main", "commit": "4de85ef699d7e6010528dcfbddc2ed4c2c421467" },
   "undotree": { "branch": "master", "commit": "0e11ba7325efbbb3f3bebe06213afa3e7ec75131" },
+  "unimpaired-which-key.nvim": { "branch": "main", "commit": "321a247ecbbb31a59a8580350eec044b88d82e81" },
   "vim-abolish": { "branch": "master", "commit": "cb3dcb220262777082f63972298d57ef9e9455ec" },
   "vim-fetch": { "branch": "master", "commit": "bbb75c3172f766d1a62832df0ec7674c69a560ad" },
   "vim-fubitive": { "branch": "master", "commit": "8b7bffb4afdfad6e8582d3d63d6bb7c6add6e552" },

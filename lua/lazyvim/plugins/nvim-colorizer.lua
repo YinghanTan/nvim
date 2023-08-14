@@ -3,7 +3,7 @@ return {
     "NvChad/nvim-colorizer.lua",
     lazy = false,
     keys = {
-      { "yoC", "<cmd>:ColorizerToggle<cr>", {desc="colorizer", noremap=true, expr=true} },
+      { "yoC", "<cmd>ColorizerToggle<cr>", {desc="colorizer", noremap=true, expr=true} },
     },
     config = function()
       require("colorizer").setup({

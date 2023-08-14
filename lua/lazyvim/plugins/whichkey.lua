@@ -31,6 +31,7 @@ return {
       -- to enable all native operators, set the preset / operators plugin above
       operators = {
         gc = "Comments",
+        ys = "you surround"
       },
       key_labels = {
         -- override the label used to display some keys. It doesn't effect WK in any other way.
@@ -100,7 +101,6 @@ return {
         mode = { "n", "v" },
         ["<leader><tab>"] = { name = "+tabs" },
         ["<leader>b"] = { name = "+buffer" },
-        ["<leader>c"] = { name = "+code" },
 
 
         ["<leader>q"] = { name = "+quit/session" },
@@ -115,12 +115,13 @@ return {
 
         ["<leader>g"] = { name = "+git" },
 
+
+
+        ["<leader>d"] = { name = "+debug" },
         ["g"] = { name = "+goto" },
         ["]"] = { name = "+next" },
         ["["] = { name = "+prev" },
-
-
-        ["p"] = { '"_dP', "paste keep buffer" },
+        ["<leader>l"] = { name = "+lsp" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>gg"] = { name = "+hunks" },
         ["<leader>f"] = { name = "+file" },
@@ -169,6 +170,7 @@ return {
       wk.setup(opts)
       wk.register(opts.defaults)
       wk.register(opts.y_mappings, opts.y_opts)
+      -- wk.register(opts.v_mappings, opts.v_opts)
     end,
   },
 }

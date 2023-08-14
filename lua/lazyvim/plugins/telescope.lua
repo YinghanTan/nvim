@@ -51,7 +51,7 @@ return {
 
       { "<leader>se", "<cmd>Telescope env<cr>", desc = "env" },
 
-      { "<leader>sh", Util.telescope("colorscheme", { enable_preview = true }), desc = "theme" },
+      { "<leader>shh", Util.telescope("colorscheme", { enable_preview = true }), desc = "theme" },
       { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
       { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
 

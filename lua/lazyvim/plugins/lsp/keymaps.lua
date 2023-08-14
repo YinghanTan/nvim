@@ -12,8 +12,8 @@ function M.get()
   ---@class PluginLspKeys
     -- stylua: ignore
     M._keys =  {
-      { "<leader>cd", vim.diagnostic.open_float, desc = "Line Diagnostics" },
-      { "<leader>cl", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
+      { "<leader>lg", vim.diagnostic.open_float, desc = "Line Diagnostics" },
+      { "<leader>li", "<cmd>LspInfo<cr>", desc = "Lsp Info" },
       { "gd", function() require("telescope.builtin").lsp_definitions({ reuse_win = true }) end, desc = "Goto Definition", has = "definition" },
       { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
       { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
@@ -22,17 +22,17 @@ function M.get()
       { "K", vim.lsp.buf.hover, desc = "Hover" },
       { "gK", vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelp" },
       { "<c-k>", vim.lsp.buf.signature_help, mode = "i", desc = "Signature Help", has = "signatureHelp" },
-      { "]d", M.diagnostic_goto(true), desc = "Next Diagnostic" },
-      { "[d", M.diagnostic_goto(false), desc = "Prev Diagnostic" },
-      { "]e", M.diagnostic_goto(true, "ERROR"), desc = "Next Error" },
-      { "[e", M.diagnostic_goto(false, "ERROR"), desc = "Prev Error" },
+      { "]g", M.diagnostic_goto(true), desc = "Next Diagnostic" },
+      { "[g", M.diagnostic_goto(false), desc = "Prev Diagnostic" },
+      { "]d", M.diagnostic_goto(true, "ERROR"), desc = "Next diagnostic Error" },
+      { "[d", M.diagnostic_goto(false, "ERROR"), desc = "Prev diagnostic Error" },
       { "]w", M.diagnostic_goto(true, "WARN"), desc = "Next Warning" },
       { "[w", M.diagnostic_goto(false, "WARN"), desc = "Prev Warning" },
-      { "<leader>cf", format, desc = "Format Document", has = "formatting" },
-      { "<leader>cf", format, desc = "Format Range", mode = "v", has = "rangeFormatting" },
-      { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
+      { "<leader>lf", format, desc = "Format Document", has = "formatting" },
+      { "<leader>lf", format, desc = "Format Range", mode = "v", has = "rangeFormatting" },
+      { "<leader>la", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "v" }, has = "codeAction" },
       {
-        "<leader>cA",
+        "<leader>lA",
         function()
           vim.lsp.buf.code_action({
             context = {
@@ -49,7 +49,7 @@ function M.get()
     }
     if require("lazyvim.util").has("inc-rename.nvim") then
       M._keys[#M._keys + 1] = {
-        "<leader>cr",
+        "<leader>lr",
         function()
           local inc_rename = require("inc_rename")
           return ":" .. inc_rename.config.cmd_name .. " " .. vim.fn.expand("<cword>")
@@ -59,7 +59,7 @@ function M.get()
         has = "rename",
       }
     else
-      M._keys[#M._keys + 1] = { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" }
+      M._keys[#M._keys + 1] = { "<leader>lr", vim.lsp.buf.rename, desc = "Rename", has = "rename" }
     end
   end
   return M._keys

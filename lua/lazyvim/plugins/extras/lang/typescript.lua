@@ -20,8 +20,8 @@ return {
         ---@type lspconfig.options.tsserver
         tsserver = {
           keys = {
-            { "<leader>co", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
-            { "<leader>cR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
+            { "<leader>lo", "<cmd>TypescriptOrganizeImports<CR>", desc = "Organize Imports" },
+            { "<leader>lR", "<cmd>TypescriptRenameFile<CR>", desc = "Rename File" },
           },
           settings = {
             typescript = {

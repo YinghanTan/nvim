@@ -34,13 +34,13 @@ return {
         jdtls = {
           -- stylua: ignore
           keys = {
-            { "<leader>co", function() require("jdtls").organize_imports() end, desc = "Organize Imports", },
-            { "<leader>cR", function() require("jdtls").rename_file() end, desc = "Rename File", },
-            { "<leader>cxv", function() require("jdtls").extract_variable() end, desc = "Extract Variable", },
-            { "<leader>cxv", function() require("jdtls").extract_variable({ visual = true }) end, mode = "v", desc = "Extract Variable", },
-            { "<leader>cxc", function() require("jdtls").extract_constant() end, desc = "Extract Constant", },
-            { "<leader>cxc", function() require("jdtls").extract_constant({ visual = true }) end, mode = "v", desc = "Extract Constant", },
-            { "<leader>cxm", function() require("jdtls").extract_method({ visual = true }) end, mode = "v", desc = "Extract Method", },
+            { "<leader>lo", function() require("jdtls").organize_imports() end, desc = "Organize Imports", },
+            { "<leader>lR", function() require("jdtls").rename_file() end, desc = "Rename File", },
+            { "<leader>lxv", function() require("jdtls").extract_variable() end, desc = "Extract Variable", },
+            { "<leader>lxv", function() require("jdtls").extract_variable({ visual = true }) end, mode = "v", desc = "Extract Variable", },
+            { "<leader>lxc", function() require("jdtls").extract_constant() end, desc = "Extract Constant", },
+            { "<leader>lxc", function() require("jdtls").extract_constant({ visual = true }) end, mode = "v", desc = "Extract Constant", },
+            { "<leader>lxm", function() require("jdtls").extract_method({ visual = true }) end, mode = "v", desc = "Extract Method", },
           },
         },
       },
