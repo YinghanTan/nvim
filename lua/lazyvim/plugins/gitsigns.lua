@@ -64,9 +64,9 @@ return {
         end
 
         -- Navigation
-        map_opts("n", "]h", function()
+        map_opts("n", "]c", function()
           if vim.wo.diff then
-            return "]h"
+            return "]c"
           end
           vim.schedule(function()
             gs.next_hunk()
@@ -74,9 +74,9 @@ return {
           return "<Ignore>"
         end, { expr = true, desc = "next chunk" })
 
-        map_opts("n", "[h", function()
+        map_opts("n", "[c", function()
           if vim.wo.diff then
-            return "[h"
+            return "[c"
           end
           vim.schedule(function()
             gs.prev_hunk()
@@ -90,11 +90,11 @@ return {
 
         -- stylua: ignore start
         map({ "n", "v" }, "<leader>ggs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-        map({ "n", "v" }, "<leader>ggr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ggS", gs.stage_buffer, "Stage Buffer")
-        map("n", "<leader>ggu", gs.undo_stage_hunk, "Undo Stage Hunk")
+        map({ "n", "v" }, "<leader>ggr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ggR", gs.reset_buffer, "Reset Buffer")
-        map("n", "<leader>ggp", gs.preview_hunk, "Preview Hunk")
+        map("n", "<leader>ggu", gs.undo_stage_hunk, "Undo Stage Hunk")
+        map("n", "<leader>ggi", gs.preview_hunk, "hunk info")
         map("n", "<leader>ggb", function() gs.blame_line({ full = true }) end, "Blame Line")
         map("n", "<leader>ggd", gs.diffthis, "Diff This")
         map("n", "<leader>ggD", function() gs.diffthis("~") end, "Diff This ~")
