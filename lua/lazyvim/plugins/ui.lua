@@ -167,6 +167,10 @@ return {
   {
     "lukas-reineke/indent-blankline.nvim",
     event = { "BufReadPost", "BufNewFile" },
+
+    keys = {
+      { "yog", "<cmd>IndentBlanklineToggle<cr>", {desc="indent guide", noremap=true, expr=true} },
+    },
     opts = {
       -- char = "▏",
       char = "│",

@@ -120,9 +120,7 @@ return {
         ["["] = { name = "+prev" },
 
 
-        ["ys"] = { name = "+you surround" },
-        ["ds"] = { name = "+del surround" },
-        ["cs"] = { name = "+change surround" },
+        ["p"] = { '"_dP', "paste keep buffer" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>gg"] = { name = "+hunks" },
         ["<leader>f"] = { name = "+file" },
@@ -145,10 +143,8 @@ return {
           ["d"] = "diff",
           ["e"] = "spell",
           ["c"] = "cursorline",
-
           ["C"] = { "<cmd>ColorizerToggle<cr>", "colorizer" },
-          ["g"] = { "<cmd>IndentGuidesToggle<cr>", "indent guide" },
-
+          ["g"] = { "<cmd>IndentBlanklineToggle<cr>", "indent guide" },
           ["h"] = "hlsearch",
           ["i"] = "ignorecase",
           ["l"] = "list char",
