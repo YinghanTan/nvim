@@ -150,6 +150,7 @@ return {
           ["l"] = "list char",
           ["m"] = { "<plug>MarkdownPreviewToggle", "toggle markdown " },
           ["n"] = "number",
+          ["N"] = "notifications",
           ["p"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
           ["r"] = "relative number",
           ["u"] = "cursor column",
