@@ -4,7 +4,7 @@ return {
     optional = true,
     opts = {
       defaults = {
-        ["<localLeader>l"] = { name = "+vimtex" },
+        ["<localLeader>l"] = { name = "+lsp" },
       },
     },
   },
