@@ -33,8 +33,6 @@ return {
     },
     ---@type TSConfig
     opts = {
-      highlight = { enable = true },
-      indent = { enable = true },
       ensure_installed = {
         "bash",
         "c",
