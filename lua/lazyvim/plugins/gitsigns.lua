@@ -53,10 +53,8 @@ return {
       },
       on_attach = function(bufnr)
         local gs = package.loaded.gitsigns
-        local function map(mode, l, r, opts)
-          opts = opts or {}
-          opts.buffer = bufnr
-          vim.keymap.set(mode, l, r, opts)
+        local function map(mode, l, r, desc)
+          vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
         end
         -- Navigation
         map("n", "]c", function()
@@ -84,8 +82,8 @@ return {
         map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>")
 
         -- stylua: ignore start
-        map({ "n", "v" }, "<leader>ghs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
-        map({ "n", "v" }, "<leader>ghr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
+        map({ "n", "v" }, "<leader>ggs", ":Gitsigns stage_hunk<CR>", "Stage Hunk")
+        map({ "n", "v" }, "<leader>ggr", ":Gitsigns reset_hunk<CR>", "Reset Hunk")
         map("n", "<leader>ggS", gs.stage_buffer, "Stage Buffer")
         map("n", "<leader>ggu", gs.undo_stage_hunk, "Undo Stage Hunk")
         map("n", "<leader>ggR", gs.reset_buffer, "Reset Buffer")
