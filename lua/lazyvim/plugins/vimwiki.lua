@@ -3,7 +3,10 @@ return {
   {
     "vimwiki/vimwiki",
     event = "Bufenter *.md",
-    keys = { "<leader>ww", "<leader>wt" },
+    keys = {
+      "<leader>ww",
+      "<leader>wt"
+    },
     init = function()
       --- Vim Wiki & Instant Markdown Plugin ---
       vim.g.vimwiki_listsyms = " x"

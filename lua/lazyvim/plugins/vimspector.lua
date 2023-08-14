@@ -19,6 +19,7 @@ return {
       -- stylua: ignore start
       -- mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
       -- for normal mode - the word under the cursor
+
       vim.keymap.set({ "n", "x" }, "<leader>di", "<Plug>VimspectorBalloonEval")
       -- nmap <leader>dv :call vimspector#Launch()<CR>
       -- nnoremap <leader>dd :call vimspector#Launch()<CR>

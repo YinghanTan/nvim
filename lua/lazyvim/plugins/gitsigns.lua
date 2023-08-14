@@ -56,26 +56,33 @@ return {
         local function map(mode, l, r, desc)
           vim.keymap.set(mode, l, r, { buffer = buffer, desc = desc })
         end
+
+        local function map_opts(mode, l, r, opts)
+          opts = opts or {}
+          opts.buffer = bufnr
+          vim.keymap.set(mode, l, r, opts)
+        end
+
         -- Navigation
-        map("n", "]c", function()
+        map_opts("n", "]h", function()
           if vim.wo.diff then
-            return "]c"
+            return "]h"
           end
           vim.schedule(function()
             gs.next_hunk()
           end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "next chunk" })
 
-        map("n", "[c", function()
+        map_opts("n", "[h", function()
           if vim.wo.diff then
-            return "[c"
+            return "[h"
           end
           vim.schedule(function()
             gs.prev_hunk()
           end)
           return "<Ignore>"
-        end, { expr = true })
+        end, { expr = true, desc = "prev chunck" })
 
         -- Text object
         map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>")

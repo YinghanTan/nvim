@@ -100,9 +100,30 @@ return {
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb", "shumphrey/fugitive-gitlab.vim", "tommcdo/vim-fubitive" },
-    lazy = false,
+    lazy = true,
+    cmd = {
+      "G",
+      "Git",
+      "Gdiffsplit",
+      "Gread",
+      "Gwrite",
+      "Ggrep",
+      "GMove",
+      "GDelete",
+      "GBrowse",
+      "GRemove",
+      "GRename",
+      "Glgrep",
+      "Gedit"
+    },
+    ft = {"fugitive"},
     init = function()
       vim.g.fugitive_summary_format = "%<(12,trunc)%an | %<(14,trunc)%cr | %s"
     end,
+  },
+  {
+    "mattn/vim-gist",
+    event = "BufRead",
+    dependencies = "mattn/webapi-vim",
   },
 }
