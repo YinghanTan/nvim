@@ -129,11 +129,11 @@ vim.api.nvim_set_keymap("i", "?", "?<c-g>u", { noremap = true, silent = true })
 -- Visually select the text that was last selected
 vim.api.nvim_set_keymap("n", "gV", "`[v`]", { noremap = false, silent = true })
 
+-- TODO: fix these two shortcuts that are not working
 -- Selecting last pasted text 2 versions
 -- vim.api.nvim_set_keymap("n", "gp", "`[v`]", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "gp", "'`[' . strpart(getregtype(), 0, 1) . '`]'",
   { noremap = true, expr = true, silent = false })
-
 -- multiple paste
 -- xnoremap <leader>p pgvy
 vim.api.nvim_set_keymap("x", "<leader>p", '\"_dP', { noremap = true, silent = true })

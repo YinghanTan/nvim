@@ -82,9 +82,9 @@ return {
 
       vim.g.fzf_action = {
         ['ctrl-q'] = build_quickfix_list,
-        ['ctrl-t'] = 'tab split', 
-        ['ctrl-x'] = 'vsplit',     
-        ['ctrl-s'] = 'split',     
+        ['ctrl-t'] = 'tab split',
+        ['ctrl-x'] = 'vsplit',
+        ['ctrl-s'] = 'split',
         ['ctrl-v'] = 'vsplit',
         ['ctrl-y'] = set_plus_register
       }

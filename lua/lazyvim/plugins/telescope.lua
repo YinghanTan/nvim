@@ -26,7 +26,10 @@ return {
       { "<leader>sf", Util.telescope("files"), desc = "Find Files (root dir)" },
       { "<leader>sF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       -- git
-      { "<leader>sgc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
+      -- { "<leader>sgc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
+      { "<leader>sgc", "<cmd>BCommits<cr>", desc = "commits" },
+      { "<leader>sgC", "<cmd>Commits<cr>", desc = "all commits" },
+
       { "<leader>sgs", "<cmd>Telescope git_status<CR>", desc = "status" },
       { "<leader>sgS", "<cmd>Telescope git_stash<cr>", desc = "stash" },
       { "<leader>sgb", "<cmd>Telescope git_branches<cr>", desc = "branch" },

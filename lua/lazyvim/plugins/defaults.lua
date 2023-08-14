@@ -128,74 +128,71 @@ return {
     ft = {"fugitive"},
     init = function()
       vim.g.fugitive_summary_format = "%<(12,trunc)%an | %<(14,trunc)%cr | %s"
+      local g_opts = {
+        mode = "n", -- NORMAL mode
+        prefix = "<leader>",
+        buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+        silent = false, -- use `silent` when creating keymaps
+        noremap = true, -- use `noremap`
+        nowait = true, -- use `nowait` when creating keympas
+      }
+      local g_mappings = {
+        ["g"] = {
+          name = "+git",
+          b = { "<cmd>Git blame<cr>", "blame" },
+          B = { "<cmd>GBrowse<cr>", "browse" },
+          [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
+          c = { "<cmd>BCommits<cr>", "commits" },
+          C = { "<cmd>Commits<cr>", "all commits" },
+          d = {
+            name = "diff",
+            ["d"] = { "<cmd>Gdiff<cr>", "diff" },
+            ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
+            ["u"] = { "<cmd>diffupdate<cr>", "update" },
+            ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
+          },
+          e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
+          G = { "<cmd>FloatermNew lazygit<CR>", "gui" },
+          h = { "<cmd>0Gclog<cr>", "file history" },
+          ["lo"] = { "<cmd>Commits<cr>", "all commits" },
+          ["lO"] = { "<cmd>BCommits<cr>", "commits" },
+          L = { "<cmd>Git log<cr>", "Log long" },
+          p = { "<cmd>GGrep<cr>", "Grep" },
+          r = { "<cmd>GDelete<cr>", "remove" },
+          v = { "<cmd>GV!<cr>", "file commits" },
+          V = { "<cmd>GV<cr>", "all commits" },
+        }
+      }
+      local wk = require("which-key")
+      wk.register(g_mappings, g_opts)
     end,
-
-        -- ["<leader>g"] = {
-        --   name = "+git",
-        --   b = { "<cmd>Git blame<cr>", "blame" },
-        --   B = { "<cmd>GBrowse<cr>", "browse" },
-        --   [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
-        --   c = { "<cmd>BCommits<cr>", "commits" },
-        --   C = { "<cmd>Commits<cr>", "all commits" },
-        --   d = {
-        --     name = "diff",
-        --     ["d"] = { "<cmd>Gdiff<cr>", "diff" },
-        --     ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
-        --     ["i"] = { "<cmd>CocCommand git.diffCached<cr>", "info" }, -- todo: ???
-        --     ["u"] = { "<cmd>diffupdate<cr>", "update" },
-        --     ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
-        --   },
-        --   e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
-        --   g = {
-        --     name = "gutter",
-        --     u = { "<cmd>Gitsigns reset_hunk<cr>", "undo hunk" },
-        --     d = { "<cmd>Gitsigns diffthis<CR>", "diff" },
-        --     i = { "<cmd>Gitsigns preview_hunk<CR>", "hunk info" },
-        --     t = { "<cmd>Gitsigns toggle_signs<cr>", "toggle gutter" },
-        --     s = { "<cmd>Gitsigns stage_hunk<cr>", "stage hunk" },
-        --     b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "blame line" },
-        --     z = { "<cmd>CocCommand git.foldUnchanged<cr>", "fold unchanged" },
-        --     f = { "<cmd>diffget //2<cr>", "diffget left hunk" },
-        --     j = { "<cmd>diffget //3<cr>", "diffget right hunk" },
-        --   },
-        --   G = { "<cmd>FloatermNew lazygit<CR>", "gui" },
-        --   h = { "<cmd>0Gclog<cr>", "file history" },
-        --   ["lo"] = { "<cmd>Commits<cr>", "all commits" },
-        --   ["lO"] = { "<cmd>BCommits<cr>", "commits" },
-        --   L = { "<cmd>Git log<cr>", "Log long" },
-        --   p = { "<cmd>GGrep<cr>", "Grep" },
-        --   r = { "<cmd>GDelete<cr>", "remove" },
-        --   v = { "<cmd>GV!<cr>", "file commits" },
-        --   V = { "<cmd>GV<cr>", "all commits" },
-        --   s = {
-        --     name = "Search",
-        --     -- a = { "<cmd>FzfPreviewGitActions<cr>", "actions" },
-        --     ["b"] = { "<cmd>Telescope git_branches<cr>", "branch" },
-        --     ["c"] = { "<cmd>BCommits<cr>", "commits" },
-        --     ["C"] = { "<cmd>Commits<cr>", "all commits" },
-        --     ["f"] = { "<cmd>GFiles<cr>", "gfiles" },
-        --     -- ["s"] = { "<cmd>GFiles?<cr>", "gstatus" },
-        --     s = { "<cmd>Telescope git_status<cr>", "status" },
-        --     S = { "<cmd>Telescope git_stash<cr>", "stash" },
-        --   },
-        -- },
-
-
-
   },
   {
     "mattn/vim-gist",
     event = "BufRead",
     dependencies = "mattn/webapi-vim",
-
-        -- G = {
-        --   name = "gist",
-        --   a = { "<cmd>Gist -b -a<cr>", "create anon" },
-        --   d = { "<cmd>Gist -d<cr>", "delete" },
-        --   f = { "<cmd>Gist -f<cr>", "fork" },
-        --   g = { "<cmd>Gist -b<cr>", "create" },
-        --   l = { "<cmd>Gist -l<cr>", "list" },
-        --   p = { "<cmd>Gist -b -p<cr>", "create private" },
-        -- },
-  },
+    init = function()
+      local G_opts = {
+        mode = "n", -- NORMAL mode
+        prefix = "<leader>",
+        buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+        silent = false, -- use `silent` when creating keymaps
+        noremap = true, -- use `noremap`
+        nowait = true, -- use `nowait` when creating keympas
+      }
+      local G_mappings = {
+        ["G"] = {
+          name = "+gist",
+          a = { "<cmd>Gist -b -a<cr>", "create anon" },
+          d = { "<cmd>Gist -d<cr>", "delete" },
+          f = { "<cmd>Gist -f<cr>", "fork" },
+          g = { "<cmd>Gist -b<cr>", "create" },
+          l = { "<cmd>Gist -l<cr>", "list" },
+          p = { "<cmd>Gist -b -p<cr>", "create private" },
+        }
+      }
+      local wk = require("which-key")
+      wk.register(G_mappings, G_opts)
+    end,
+  }
 }
