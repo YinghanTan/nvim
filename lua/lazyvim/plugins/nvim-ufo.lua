@@ -22,6 +22,13 @@ return {
     -- },
     -- },
     config = function()
+
+      local ftMap = {
+        vim = 'indent',
+        python = {'indent'},
+        git = ''
+      }
+
       -- handler function to provide lines folded info
       local handler = function(virtText, lnum, endLnum, width, truncate)
         local newVirtText = {}
@@ -68,6 +75,14 @@ return {
           },
         },
         fold_virt_text_handler = handler,
+        provider_selector = function(bufnr, filetype, buftype)
+          -- if you prefer treesitter provider rather than lsp,
+          -- return ftMap[filetype] or {'treesitter', 'indent'}
+          return ftMap[filetype]
+
+          -- refer to ./doc/example.lua for detail
+        end
+
       })
 
       -- Folding

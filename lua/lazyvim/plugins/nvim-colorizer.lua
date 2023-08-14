@@ -1,6 +1,10 @@
 return {
   {
     "NvChad/nvim-colorizer.lua",
+    lazy = false,
+    keys = {
+      { "yoC", "<cmd>:ColorizerToggle<cr>", {desc="colorizer", noremap=true, expr=true} },
+    },
     config = function()
       require("colorizer").setup({
         filetypes = { "*" },
@@ -28,6 +32,7 @@ return {
         },
         -- all the sub-options of filetypes apply to buftypes
         buftypes = {},
+
       })
     end,
   },
