@@ -2,59 +2,31 @@
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
-local opt = vim.opt
-
-opt.autowrite = true -- Enable auto write
-opt.clipboard = "unnamedplus" -- Sync with system clipboard
-opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 3 -- Hide * markup for bold and italic
-opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.cursorline = true -- Enable highlighting of the current line
-opt.expandtab = true -- Use spaces instead of tabs
-opt.formatoptions = "jcroqlnt" -- tcqj
-opt.grepformat = "%f:%l:%c:%m"
-opt.grepprg = "rg --vimgrep"
-opt.ignorecase = true -- Ignore case
-opt.inccommand = "nosplit" -- preview incremental substitute
-opt.laststatus = 0
-opt.list = true -- Show some invisible characters (tabs...
-opt.mouse = "a" -- Enable mouse mode
-opt.number = true -- Print line number
-opt.pumblend = 10 -- Popup blend
-opt.pumheight = 10 -- Maximum number of entries in a popup
-opt.relativenumber = false -- Relative line numbers
-opt.scrolloff = 4 -- Lines of context
-opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
-opt.shiftround = true -- Round indent
-opt.shiftwidth = 2 -- Size of an indent
-opt.shortmess:append({ W = true, I = true, c = true })
-opt.showmode = false -- Dont show mode since we have a statusline
-opt.sidescrolloff = 8 -- Columns of context
-opt.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
-opt.smartcase = true -- Don't ignore case with capitals
-opt.smartindent = true -- Insert indents automatically
-opt.spelllang = { "en" }
-opt.splitbelow = true -- Put new windows below current
-opt.splitright = true -- Put new windows right of current
-opt.tabstop = 2 -- Number of spaces tabs count for
-opt.termguicolors = true -- True color support
-opt.timeoutlen = 300
-opt.undofile = true
-opt.undolevels = 10000
-opt.updatetime = 200 -- Save swap file and trigger CursorHold
-opt.wildmode = "longest:full,full" -- Command-line completion mode
-opt.winminwidth = 5 -- Minimum window width
-opt.wrap = false -- Disable line wrap
+vim.opt.autowrite = true -- Enable auto write
+vim.opt.confirm = true -- Confirm to save changes before exiting modified buffer
+vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.grepprg = "rg --vimgrep"
+vim.opt.inccommand = "nosplit" -- preview incremental substitute
+vim.opt.pumblend = 10 -- Popup blend
+vim.opt.pumheight = 10 -- Maximum number of entries in a popup
+vim.opt.relativenumber = false -- Relative line numbers
+vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
+vim.opt.shortmess:append({ W = true, I = true, c = true })
+vim.opt.smartindent = true -- Insert indents automatically
+vim.opt.spelllang = { "en" }
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
+vim.opt.winminwidth = 5 -- Minimum window width
 
 if vim.fn.has("nvim-0.9.0") == 1 then
-  opt.splitkeep = "screen"
-  opt.shortmess:append({ C = true })
+  vim.opt.splitkeep = "screen"
+  vim.opt.shortmess:append({ C = true })
 end
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
-vim.o.swapfile = false -- disable swapfiles because they are fucking garbage
+vim.opt.swapfile = false -- disable swapfiles because they are fucking garbage
 
 -- remove dots or spaces to indicate folded line
 vim.opt.fillchars = {
@@ -106,9 +78,8 @@ vim.opt.sidescrolloff = 5 -- min. nr. of columns to left and right of cursor
 vim.opt.list = false -- show <Tab> and <EOL>
 vim.opt.relativenumber = false -- set relative numbered lines
 vim.opt.numberwidth = 1 -- set number column width to 2 {default 4}
-vim.opt.shortmess:append("I") -- Don't have intro message when starting vim
 vim.opt.signcolumn = "yes:1" -- always show the sign column, otherwise it would shift the text each time
-vim.opt.completeopt = { "menu", "menuone" } -- options for Insert mode completion
+vim.opt.completeopt = "menu,menuone,noselect" -- options for Insert mode completion
 vim.opt.termguicolors = true
 vim.opt.errorformat:append("%f:%l:%c%p%m") -- description of the lines in the error file
 -- vertical splits when in diff, filler lines for left right symmetry between diffs, 3 context lines for each chunk, 1 column gutter for git diff
@@ -138,6 +109,7 @@ vim.opt.wrapmargin = 0 -- chars from the right where wrapping starts
 vim.opt.backspace = { "indent", "eol", "start" } -- how backspace works at start of line
 vim.cmd("set whichwrap+=<,>,[,],h,l") -- allow specified keys to cross line boundaries
 
+vim.opt.formatoptions = "jqn"
 vim.cmd("autocmd BufNewFile,BufRead,FileType,OptionSet * set formatoptions-=cro")
 vim.cmd("autocmd BufNewFile,BufRead,FileType,OptionSet * setlocal formatoptions-=cro")
 
@@ -153,12 +125,13 @@ vim.opt.laststatus = 2 -- tells when last window has status lines
 vim.cmd("highlight NonText guifg=#4a4a59") -- Invisible character colors
 vim.cmd("highlight SpecialKey guifg=#4a4a59") -- Invisible character colors
 
--- --- Indentation ---
--- vim.opt.tabstop = 2
--- vim.opt.shiftwidth = 2
--- vim.opt.softtabstop = 2
--- vim.opt.expandtab = true
--- vim.opt.wrap = false
+--- Indentation ---
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+vim.opt.wrap = false
+vim.opt.shiftround = true -- Round indent
 
 -- return to last edit location when opening a buffer
 -- vim.cmd([[ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif ]])

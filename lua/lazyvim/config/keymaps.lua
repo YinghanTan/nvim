@@ -179,9 +179,5 @@ vim.cmd("cnoreabbrev Te tabe.")
 -- add date
 vim.cmd("inoreabbrev <expr> cdate strftime('%Y-%m-%d')")
 
--- -- Toggle paste mode on and off
--- vim.api.nvim_set_keymap("n", "<leader><leader>p", ":setlocal paste!<cr>", { noremap = false, silent = true })
--- -- Change directory to directory of current file
--- nnoremap <leader>cd :cd %:h<CR>
--- -- Toggle paste mode on and off
--- map <leader><leader>p :setlocal paste!<cr>
+-- Change directory to directory of current file
+vim.cmd("nnoremap <leader>cd :cd %:h<CR>")
