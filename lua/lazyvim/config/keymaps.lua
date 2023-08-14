@@ -17,16 +17,6 @@ end
 
 -- buffers
 map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
-
--- Clear search, diff update and redraw
--- taken from runtime/lua/_editor.lua
-map(
-  "n",
-  "<leader>ur",
-  "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>",
-  { desc = "Redraw / clear hlsearch / diff update" }
-)
-
 map({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
@@ -61,20 +51,20 @@ end
 -- stylua: ignore start
 
 -- toggle options
-map("n", "<leader>yof", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
-map("n", "<leader>yos", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
-map("n", "<leader>yow", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
-map("n", "<leader>yon", function() Util.toggle_number() end, { desc = "Toggle Line Numbers" })
-map("n", "<leader>yog", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
+map("n", "yof", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
+map("n", "yoe", function() Util.toggle("spell") end, { desc = "Toggle Spelling" })
+map("n", "yow", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
+map("n", "yon", function() Util.toggle_number() end, { desc = "Toggle Line Numbers" })
+map("n", "yoG", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
 local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
-map("n", "<leader>yoc", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
+map("n", "yoL", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 if vim.lsp.inlay_hint then
-  map("n", "<leader>uh", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
+  map("n", "yoH", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
 end
 
 -- highlights under cursor
 if vim.fn.has("nvim-0.9.0") == 1 then
-  map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+  map("n", "yoI", vim.show_pos, { desc = "Inspect Pos" })
 end
 
 -- LazyVim Changelog

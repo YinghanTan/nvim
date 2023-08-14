@@ -106,17 +106,12 @@ return {
         ["<leader>q"] = { name = "+quit/session" },
 
 
-        ["<leader>u"] = { name = "+ui" },
+        -- ["<leader>u"] = { name = "+ui" },
         ["<leader>w"] = { name = "+windows" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
 
 
-
-
         ["<leader>g"] = { name = "+git" },
-
-
-
         ["<leader>d"] = { name = "+debug" },
         ["g"] = { name = "+goto" },
         ["]"] = { name = "+next" },
@@ -154,6 +149,7 @@ return {
           ["N"] = "notifications off",
           ["p"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
           ["r"] = "relative number",
+          ["R"] = { "<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>", "Redraw / clear hlsearch / diff update" },
           ["u"] = "cursor column",
           ["v"] = "virtualedit",
           ["w"] = "line wrap",

@@ -3,24 +3,6 @@ return {
     "kevinhwang91/nvim-ufo",
     dependencies = { "kevinhwang91/promise-async" },
     lazy = false,
-    -- keys = {
-    -- { "zR", require("ufo").openAllFolds(), desc = "remove all folds" },
-    -- { "zM", require("ufo").closeAllFolds(), desc = "close all folds" },
-    -- { "zr", require("ufo").openFoldsExceptKinds(), desc = "Remove all folds" },
-    -- { "zm", require("ufo").closeFoldsWith(), desc = "close folds with" },
-    -- {
-    --   "K",
-    --   function()
-    --     local winid = require("ufo").peekFoldedLinesUnderCursor()
-    --     if not winid then
-    --       -- choose one of coc.nvim and nvim lsp
-    --       vim.fn.CocActionAsync("definitionHover") -- coc.nvim
-    --       vim.lsp.buf.hover()
-    --     end
-    --   end,
-    --   desc = "Line",
-    -- },
-    -- },
     config = function()
 
       local ftMap = {

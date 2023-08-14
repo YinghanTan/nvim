@@ -5,14 +5,14 @@ return {
     event = "VeryLazy",
     keys = {
       {
-        "<leader>ue",
+        "yoE",
         function()
           require("edgy").toggle()
         end,
         desc = "Edgy Toggle",
       },
       -- stylua: ignore
-      { "<leader>uE", function() require("edgy").select() end, desc = "Edgy Select Window" },
+      { "<leader>SE", function() require("edgy").select() end, desc = "Edgy Select Window" },
     },
     opts = function()
       local opts = {
