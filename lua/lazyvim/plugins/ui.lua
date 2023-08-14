@@ -6,7 +6,7 @@ return {
       {
         "yoN",
         function()
-          require("notify").dismiss({ silent = true, pending = true })
+          require("notify").dismiss({ silent = false, pending = true })
         end,
         desc = "Dismiss all Notifications",
       },

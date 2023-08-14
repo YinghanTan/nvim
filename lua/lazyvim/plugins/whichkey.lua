@@ -104,7 +104,6 @@ return {
 
 
         ["<leader>q"] = { name = "+quit/session" },
-        ["<leader>s"] = { name = "+search" },
 
 
         ["<leader>u"] = { name = "+ui" },
@@ -114,12 +113,17 @@ return {
 
 
 
-        ["ys"] = { name = "+surround" },
         ["<leader>g"] = { name = "+git" },
 
         ["g"] = { name = "+goto" },
         ["]"] = { name = "+next" },
         ["["] = { name = "+prev" },
+
+
+        ["ys"] = { name = "+you surround" },
+        ["ds"] = { name = "+del surround" },
+        ["cs"] = { name = "+change surround" },
+        ["<leader>s"] = { name = "+search" },
         ["<leader>gg"] = { name = "+hunks" },
         ["<leader>f"] = { name = "+file" },
         ["<leader>S"] = { name = "+session/spectre" },
@@ -150,7 +154,7 @@ return {
           ["l"] = "list char",
           ["m"] = { "<plug>MarkdownPreviewToggle", "toggle markdown " },
           ["n"] = "number",
-          ["N"] = "notifications",
+          ["N"] = "notifications off",
           ["p"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
           ["r"] = "relative number",
           ["u"] = "cursor column",
