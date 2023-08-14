@@ -13,17 +13,12 @@ return {
         [".mdown"] = "markdown",
       }
       local wiki_1 = {
-        path = "~/vimwiki/notes/",
+        path = "~/vimwiki/",
         syntax = "markdown",
         ext = ".md",
       }
 
-      local wiki_2 = {
-        path = "~/vimwiki/reference/",
-        syntax = "markdown",
-        ext = ".md",
-      }
-      vim.g.vimwiki_list = { wiki_1, wiki_2 }
+      vim.g.vimwiki_list = { wiki_1 }
       vim.g.vimwiki_folding = "expr"
       vim.g.vimwiki_global_ext = 1 -- make sure vimwiki doesn't own all .md files
     end,

@@ -16,6 +16,7 @@ return {
 
       -- let g:vimspector_base_dir = expand('$HOME/.config/nvim/vimspector-config')
 
+      -- stylua: ignore start
       -- mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
       -- for normal mode - the word under the cursor
       vim.keymap.set({ "n", "x" }, "<leader>di", "<Plug>VimspectorBalloonEval")
