@@ -42,7 +42,11 @@ return {
 
   {
     "iamcco/markdown-preview.nvim",
-    lazy = false,
+    build = "cd app && npm install",
+    ft = "markdown",
+    config = function()
+      vim.g.mkdp_auto_start = 1
+    end,
   },
   {
     "Bryley/neoai.nvim",
@@ -109,22 +113,22 @@ return {
   {
     "tpope/vim-fugitive",
     dependencies = { "tpope/vim-rhubarb", "shumphrey/fugitive-gitlab.vim", "tommcdo/vim-fubitive" },
-    lazy = true,
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
-    },
+    lazy = false,
+    -- cmd = {
+    --   "G",
+    --   "Git",
+    --   "Gdiffsplit",
+    --   "Gread",
+    --   "Gwrite",
+    --   "Ggrep",
+    --   "GMove",
+    --   "GDelete",
+    --   "GBrowse",
+    --   "GRemove",
+    --   "GRename",
+    --   "Glgrep",
+    --   "Gedit"
+    -- },
     ft = {"fugitive"},
     init = function()
       vim.g.fugitive_summary_format = "%<(12,trunc)%an | %<(14,trunc)%cr | %s"

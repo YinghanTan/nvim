@@ -214,6 +214,7 @@ return {
               ["G"] = actions.move_to_bottom,
             },
           },
+          file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%env" },
         },
         pickers = {
           -- Default configuration for builtin pickers goes here:
@@ -418,6 +419,19 @@ return {
             git_diff_flags = {},
             -- Show builtin git pickers when executing "show_custom_functions" or :AdvancedGitSearch
             show_builtin_git_pickers = false,
+            entry_default_author_or_date = "author", -- one of "author" or "date"
+            -- Telescope layout setup
+            telescope_theme = {
+              function_name_1 = {
+                -- Theme options
+              },
+              function_name_2 = "dropdown",
+              -- e.g. realistic example
+              show_custom_functions = {
+                layout_config = { width = 0.4, height = 0.4 },
+              },
+
+            }
           },
           conventional_commits = {
             action = function(entry)
@@ -526,7 +540,11 @@ return {
   },
   {
     "aaronhallaert/advanced-git-search.nvim",
-    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim"
+    },
     config = function()
       require("telescope").load_extension("advanced_git_search")
     end,
@@ -545,6 +563,7 @@ return {
       require("telescope").load_extension("conventional_commits")
     end,
   },
+
 }
 
 -- -- 🔭 Extensions --
