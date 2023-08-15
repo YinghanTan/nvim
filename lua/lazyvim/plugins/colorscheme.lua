@@ -25,10 +25,11 @@ return {
         dim_inactive = false,
         transparent_mode = false,
         overrides = {
-          -- DiffChange = {bg="#rgbcolor", fg="#rgbcolor", ...},
-          -- DiffAdd = {bg="#rgbcolor", fg="#rgbcolor", ...},
-          DiffDelete = { bg = "none" },
-          -- DiffText = {bg="#rgbcolor", fg="#rgbcolor", ...},
+          DiffChange = {bg="#2D435D", fg="#FFFFFF",  reverse = false },
+          DiffText = {bg="#33699A", fg="#FFFFFF", bold=true, reverse = false },
+          DiffAdd = {bg="#2D4B4C", fg="#FFFFFF", reverse = false},
+          DiffRemoved = { fg = "#B44A34", bg = "None", reverse = false},
+          DiffDelete = { fg = "#B44A34", bg = "None", reverse = false}
         },
       })
       vim.cmd("colorscheme gruvbox")
