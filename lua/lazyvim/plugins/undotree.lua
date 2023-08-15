@@ -2,6 +2,9 @@ return {
   {
     "mbbill/undotree",
     lazy = false,
+    keys = {
+      { "<leader>ut", "<cmd>UndotreeToggle<cr>", {desc="undo tree", noremap=true } },
+    },
     init = function()
       if vim.fn.has("persistent_undo") then
         local target_path = vim.fn.expand("~/.undodir")
