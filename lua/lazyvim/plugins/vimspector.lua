@@ -7,6 +7,14 @@ return {
       vim.g.vimspector_base_dir = "/home/yinghan/.local/share/nvim/lazy/vimspector"
     end,
     config = function()
+
+      -- jump to window id
+      vim.cmd([[
+      fun! GoToWindow(id)
+          call win_gotoid(a:id)
+      endfun
+      ]])
+
       vim.cmd([[
       func! AddToWatch()
           let word = expand("<cexpr>")

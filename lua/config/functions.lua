@@ -27,13 +27,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = yankGrp,
 })
 
--- jump to window id
-vim.cmd([[
-fun! GoToWindow(id)
-    call win_gotoid(a:id)
-endfun
-]])
-
 -- Trim whitespace on line
 function TrimWhitespace()
   local l = vim.fn.line(".")
