@@ -34,8 +34,8 @@ return {
           DiffChange = {bg=palette.colors.neutral_blue, fg="#FFFFFF",  reverse = false },
           DiffText = {bg=palette.colors.faded_blue, fg="#FFFFFF", bold=true, reverse = false },
           DiffAdd = {bg=palette.colors.neutral_green, fg="#FFFFFF", reverse = false},
-          DiffRemoved = { fg = palette.colors.neutral_orange, bg = "None", reverse = false, bold=true, italic=true},
-          DiffDelete = { fg = palette.colors.neutral_orange, bg = "None", reverse = false, bold=true, italic=true}
+          DiffRemoved = { fg = palette.colors.bright_red, bg = "None", reverse = false, bold=true, italic=true},
+          DiffDelete = { fg = palette.colors.bright_red, bg = "None", reverse = false, bold=true, italic=true}
         },
       })
       vim.cmd("colorscheme gruvbox")
