@@ -4,6 +4,7 @@ return {
   {
     "ellisonleao/gruvbox.nvim",
     config = function()
+      local palette = require("gruvbox.palette")
       require("gruvbox").setup({
         undercurl = true,
         underline = true,
@@ -25,11 +26,16 @@ return {
         dim_inactive = false,
         transparent_mode = false,
         overrides = {
-          DiffChange = {bg="#2D435D", fg="#FFFFFF",  reverse = false },
-          DiffText = {bg="#33699A", fg="#FFFFFF", bold=true, reverse = false },
-          DiffAdd = {bg="#2D4B4C", fg="#FFFFFF", reverse = false},
-          DiffRemoved = { fg = "#B44A34", bg = "None", reverse = false},
-          DiffDelete = { fg = "#B44A34", bg = "None", reverse = false}
+          -- DiffChange = {bg="#2D435D", fg="#FFFFFF",  reverse = false },
+          -- DiffText = {bg="#33699A", fg="#FFFFFF", bold=true, reverse = false },
+          -- DiffAdd = {bg="#2D4B4C", fg="#FFFFFF", reverse = false},
+          -- DiffRemoved = { fg = "#B44A34", bg = "None", reverse = false},
+          -- DiffDelete = { fg = "#B44A34", bg = "None", reverse = false}
+          DiffChange = {bg=palette.colors.neutral_blue, fg="#FFFFFF",  reverse = false },
+          DiffText = {bg=palette.colors.faded_blue, fg="#FFFFFF", bold=true, reverse = false },
+          DiffAdd = {bg=palette.colors.neutral_green, fg="#FFFFFF", reverse = false},
+          DiffRemoved = { fg = palette.colors.neutral_orange, bg = "None", reverse = false, bold=true, italic=true},
+          DiffDelete = { fg = palette.colors.neutral_orange, bg = "None", reverse = false, bold=true, italic=true}
         },
       })
       vim.cmd("colorscheme gruvbox")
