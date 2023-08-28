@@ -72,7 +72,7 @@ return {
 
   -- stylua: ignore
   keys = {
-    { "<leader>da", function() require("dap").continue() end, desc = "Continue" },
+    { "<leader>dA", function() require("dap").continue() end, desc = "Continue" },
 
     { "<leader>dBc", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
     { "<leader>dBd", function() require"dap".clear_breakpoints() end, desc = "Breakpoint Condition" },
@@ -95,7 +95,7 @@ return {
     { "<leader>dk", function() require("dap").up() end, desc = "Up" },
     { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
     { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
-    { "<leader>ds", function() require("dap").session() end, desc = "Session" },
+    -- { "<leader>ds", function() require("dap").session() end, desc = "Session" },
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
     { "<leader>di", function() require("dap.ui.widgets").hover() end, desc = "inspect" },
   },
