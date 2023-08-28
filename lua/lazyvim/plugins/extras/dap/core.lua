@@ -49,7 +49,8 @@ return {
     -- mason.nvim integration
     {
       "jay-babu/mason-nvim-dap.nvim",
-      dependencies = "mason.nvim",
+      dependencies = { "mason.nvim", "nvim-telescope/telescope.nvim" },
+      -- telescope
       cmd = { "DapInstall", "DapUninstall" },
       opts = {
         -- Makes a best effort to setup the various debuggers with
@@ -71,16 +72,24 @@ return {
 
   -- stylua: ignore
   keys = {
+    { "<leader>da", function() require("dap").continue() end, desc = "Continue" },
 
-    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+    { "<leader>dBc", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+    { "<leader>dBd", function() require"dap".clear_breakpoints() end, desc = "Breakpoint Condition" },
+    { "<leader>dBB", '<cmd>Telescope dap list_breakpoints<CR>', desc = "breakpoints all" },
+
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
     { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
     { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>ds", function() require("dap").step_into() end, desc = "Step Into" },
+    { "<leader>dS", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>dn", function() require("dap").step_over() end, desc = "Step Over" },
     { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-
+    { "<leader>d?", function()
+      local widgets = require "dap.ui.widgets";
+      widgets.centered_float(widgets.scopes)
+    end, desc = "scopes" },
+    { "<leader>df", "<cmd>Telescope dap frames<CR>", desc = "frames" },
     { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
     { "<leader>dj", function() require("dap").down() end, desc = "Down" },
     { "<leader>dk", function() require("dap").up() end, desc = "Up" },
@@ -88,7 +97,7 @@ return {
     { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    { "<leader>di", function() require("dap.ui.widgets").hover() end, desc = "inspect" },
   },
 
   config = function()
@@ -102,8 +111,6 @@ return {
         { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
       )
     end
-
-
 
     -- local dap_opts = {
     --   mode = "n", -- NORMAL mode
