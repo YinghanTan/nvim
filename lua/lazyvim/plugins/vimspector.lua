@@ -1,7 +1,11 @@
 return {
   {
     "puremourning/vimspector",
-    lazy = false,
+    lazy = true,
+    cmd = { "VimspectorInstall", "VimspectorUpdate" },
+    keys = {
+      { "<leader>dV", "<cmd>call vimspector#Launch()<cr>", desc = "vimspector" },
+    },
     init = function()
       vim.g.vimspector_enable_mappings = "HUMAN"
       vim.g.vimspector_base_dir = "/home/yinghan/.local/share/nvim/lazy/vimspector"
@@ -58,7 +62,6 @@ return {
           },
           ["c"] = { "<plug>VimspectorContinue | zz", "continue" },
           ["C"] = { "<plug>VimspectorRunToCursor | zz", "cursor" },
-          ["d"] = { "<cmd>call vimspector#Launch()<cr>", "debug" },
           ["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
           ["e"] = { "<cmd>VimspectorEval<cr>", "Evaluate" },
           ["i"] = { "<plug>VimspectorBalloonEval", "inspect" },
