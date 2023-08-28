@@ -34,13 +34,6 @@ return {
       -- for normal mode - the word under the cursor
 
       vim.keymap.set({ "n", "x" }, "<leader>di", "<Plug>VimspectorBalloonEval", {desc="inspect"})
-      -- nmap <leader>dv :call vimspector#Launch()<CR>
-      -- nnoremap <leader>dd :call vimspector#Launch()<CR>
-      -- nmap <leader>dD :VimspectorReset<CR>
-      -- nmap <leader>de :VimspectorEval
-      -- nmap <leader>dw :VimspectorWatch
-      -- nmap <leader>do :VimspectorShowOutput
-
 
       local d_opts = {
         mode = "n", -- NORMAL mode
