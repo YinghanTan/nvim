@@ -73,31 +73,29 @@ return {
   -- stylua: ignore
   keys = {
     { "<leader>dA", function() require("dap").continue() end, desc = "Continue" },
-
-    { "<leader>dBc", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
-    { "<leader>dBd", function() require"dap".clear_breakpoints() end, desc = "Breakpoint Condition" },
-    { "<leader>dBB", '<cmd>Telescope dap list_breakpoints<CR>', desc = "breakpoints all" },
-
-    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
-    { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
-    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-    { "<leader>ds", function() require("dap").step_into() end, desc = "Step Into" },
-    { "<leader>dS", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dn", function() require("dap").step_over() end, desc = "Step Over" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-    { "<leader>d?", function()
-      local widgets = require "dap.ui.widgets";
-      widgets.centered_float(widgets.scopes)
-    end, desc = "scopes" },
-    { "<leader>df", "<cmd>Telescope dap frames<CR>", desc = "frames" },
-    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
-    { "<leader>dj", function() require("dap").down() end, desc = "Down" },
-    { "<leader>dk", function() require("dap").up() end, desc = "Up" },
-    { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
+    -- { "<leader>dBc", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+    -- { "<leader>dBd", function() require"dap".clear_breakpoints() end, desc = "Breakpoint Condition" },
+    -- { "<leader>dBB", '<cmd>Telescope dap list_breakpoints<CR>', desc = "breakpoints all" },
+    -- { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+    -- { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
+    -- { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    -- { "<leader>ds", function() require("dap").step_into() end, desc = "Step Into" },
+    -- { "<leader>dS", function() require("dap").step_out() end, desc = "Step Out" },
+    -- { "<leader>dn", function() require("dap").step_over() end, desc = "Step Over" },
+    -- { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+    -- { "<leader>d?", function()
+    --   local widgets = require "dap.ui.widgets";
+    --   widgets.centered_float(widgets.scopes)
+    -- end, desc = "scopes" },
+    -- { "<leader>df", "<cmd>Telescope dap frames<CR>", desc = "frames" },
+    -- { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
+    -- { "<leader>dj", function() require("dap").down() end, desc = "Down" },
+    -- { "<leader>dk", function() require("dap").up() end, desc = "Up" },
+    -- { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
+    -- { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
     -- { "<leader>ds", function() require("dap").session() end, desc = "Session" },
-    { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>di", function() require("dap.ui.widgets").hover() end, desc = "inspect" },
+    -- { "<leader>dD", function() require("dap").terminate() end, desc = "Terminate" },
+    -- { "<leader>di", function() require("dap.ui.widgets").hover() end, desc = "inspect" },
   },
 
   config = function()
@@ -112,53 +110,60 @@ return {
       )
     end
 
-    -- local dap_opts = {
-    --   mode = "n", -- NORMAL mode
-    --   prefix = "<leader>",
-    --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-    --   silent = false, -- use `silent` when creating keymaps
-    --   noremap = true, -- use `noremap`
-    --   nowait = true, -- use `nowait` when creating keympas
-    -- }
-    -- local dap_mappings = {
-    --   ["d"] = {
-    --     name = "+debug",
-    --     ["b"] = { function() require("dap").toggle_breakpoint() end, "breakpoint" },
-    --     ["B"] = {
-    --       name = "breakpoint",
-    --       ["c"] = { function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "conditional break" },
-    --       ["d"] = { "<cmd>call vimspector#ClearBreakpoints()", "remove all break" },
-    --       ["f"] = { "<plug>VimspectorAddFunctionBreakpoint", "func breakpoint" },
-    --     },
-    --     ["c"] = { function() require("dap").continue() end, "continue" },
-    --     ["C"] = { function() require("dap").run_to_cursor() end, "cursor" },
-    --     ["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
-    --     ["e"] = { "<cmd>VimspectorEval<cr>", "Evaluate" },
-    --     ["i"] = { "<plug>VimspectorBalloonEval", "inspect" },
-    --     ["n"] = { function() require("dap").step_over() end, "next" },
-    --     ["o"] = { "<cmd>VimspectorShowOutput<cr>", "output" },
-    --     ["s"] = { function() require("dap").step_into() end, "step into" },
-    --     ["S"] = { function() require("dap").step_out() end, "step out" },
-    --     ["v"] = {
-    --       name = "view",
-    --       ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
-    --       ["o"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.terminal)<cr>", "output" },
-    --       ["v"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", "variables" },
-    --       ["w"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", "watches" },
-    --       ["s"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", "stack" },
-    --       ["t"] = { function() require("dap").repl.toggle() end, "terminal" },
-    --       ["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "tag" },
-    --     },
-    --     ["j"] = { "<plug>VimspectorDownFrame", "down frame" },
-    --     ["k"] = { "<plug>VimspectorUpFrame", "up frame" },
-    --     ["p"] = { "<plug>VimspectorPause", "pause" },
-    --     ["P"] = { "<plug>VimspectorStop", "stop" },
-    --     ["r"] = { "<plug>VimspectorRestart", "restart" },
-    --     ["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
-    --   },
-    -- }
-    -- local wk = require("which-key")
-    -- wk.register(dap_mappings, dap_opts)
-    --
+    local dap_opts = {
+      mode = "n", -- NORMAL mode
+      prefix = "<leader>",
+      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+      silent = false, -- use `silent` when creating keymaps
+      noremap = true, -- use `noremap`
+      nowait = true, -- use `nowait` when creating keympas
+    }
+    local dap_mappings = {
+      ["d"] = {
+        name = "+debug",
+        ["b"] = { function() require("dap").toggle_breakpoint() end, "breakpoint" },
+        ["B"] = {
+          name = "breakpoint",
+          ["B"] = { "<cmd>Telescope dap list_breakpoints<CR>", "all breakpoints" },
+          ["c"] = { function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "conditional break" },
+          ["d"] = { function() require"dap".clear_breakpoints() end, "delete breakpoints" },
+        },
+        ["c"] = { function() require("dap").continue() end, "continue" },
+        ["C"] = { function() require("dap").run_to_cursor() end, "cursor" },
+        ["D"] = { function() require("dap").terminate() end, "disable" },
+        -- ["e"] = { "<cmd>VimspectorEval<cr>", "Evaluate" },
+        ["i"] = { function() require("dap.ui.widgets").hover() end, "inspect" },
+        ["n"] = { function() require("dap").step_over() end, "next" },
+        -- ["o"] = { "<cmd>VimspectorShowOutput<cr>", "output" },
+        ["s"] = { function() require("dap").step_into() end, "step into" },
+        ["S"] = { function() require("dap").step_out() end, "step out" },
+        ["l"] = { function() require("dap").run_last() end, "run last" },
+        ["f"] = { "<cmd>Telescope dap frames<CR>", "go to line (no execute)" },
+        ["g"] = { function() require("dap").goto_() end, "go to line (no execute)" },
+        ["?"] = { function()
+          local widgets = require "dap.ui.widgets";
+          widgets.centered_float(widgets.scopes)
+        end, "scopes" },
+        ["v"] = {
+          name = "view",
+          -- ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
+          -- ["o"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.terminal)<cr>", "output" },
+          -- ["v"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", "variables" },
+          -- ["w"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", "watches" },
+          -- ["s"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", "stack" },
+          ["t"] = { function() require("dap").repl.toggle() end, "terminal" },
+          -- ["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "tag" },
+        },
+        ["j"] = { function() require("dap").down() end, "down frame" },
+        ["k"] = { function() require("dap").up() end, "up frame" },
+        ["p"] = { function() require("dap").pause() end, "pause" },
+        -- ["P"] = { "<plug>VimspectorStop", "stop" },
+        -- ["r"] = { "<plug>VimspectorRestart", "restart" },
+        -- ["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
+      },
+    }
+    local wk = require("which-key")
+    wk.register(dap_mappings, dap_opts)
+
   end,
 }
