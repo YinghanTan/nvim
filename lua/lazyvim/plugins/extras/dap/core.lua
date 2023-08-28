@@ -56,7 +56,7 @@ return {
         -- reasonable debug configurations
         automatic_installation = true,
 
-        -- You can provide additional configuration to the handlers,
+        -- You can provide additional configuration to the handlers,kkkkkkkkkk
         -- see mason-nvim-dap README for more information
         handlers = {},
 
@@ -71,19 +71,21 @@ return {
 
   -- stylua: ignore
   keys = {
+
     { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
     { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
     { "<leader>dc", function() require("dap").continue() end, desc = "Continue" },
     { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
-    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
     { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
+    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+
+    { "<leader>dg", function() require("dap").goto_() end, desc = "Go to line (no execute)" },
     { "<leader>dj", function() require("dap").down() end, desc = "Down" },
     { "<leader>dk", function() require("dap").up() end, desc = "Up" },
     { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
     { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
     { "<leader>ds", function() require("dap").session() end, desc = "Session" },
     { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
     { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
@@ -100,5 +102,56 @@ return {
         { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
       )
     end
+
+
+
+    -- local dap_opts = {
+    --   mode = "n", -- NORMAL mode
+    --   prefix = "<leader>",
+    --   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    --   silent = false, -- use `silent` when creating keymaps
+    --   noremap = true, -- use `noremap`
+    --   nowait = true, -- use `nowait` when creating keympas
+    -- }
+    -- local dap_mappings = {
+    --   ["d"] = {
+    --     name = "+debug",
+    --     ["b"] = { function() require("dap").toggle_breakpoint() end, "breakpoint" },
+    --     ["B"] = {
+    --       name = "breakpoint",
+    --       ["c"] = { function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, "conditional break" },
+    --       ["d"] = { "<cmd>call vimspector#ClearBreakpoints()", "remove all break" },
+    --       ["f"] = { "<plug>VimspectorAddFunctionBreakpoint", "func breakpoint" },
+    --     },
+    --     ["c"] = { function() require("dap").continue() end, "continue" },
+    --     ["C"] = { function() require("dap").run_to_cursor() end, "cursor" },
+    --     ["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
+    --     ["e"] = { "<cmd>VimspectorEval<cr>", "Evaluate" },
+    --     ["i"] = { "<plug>VimspectorBalloonEval", "inspect" },
+    --     ["n"] = { function() require("dap").step_over() end, "next" },
+    --     ["o"] = { "<cmd>VimspectorShowOutput<cr>", "output" },
+    --     ["s"] = { function() require("dap").step_into() end, "step into" },
+    --     ["S"] = { function() require("dap").step_out() end, "step out" },
+    --     ["v"] = {
+    --       name = "view",
+    --       ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "code" },
+    --       ["o"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.terminal)<cr>", "output" },
+    --       ["v"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", "variables" },
+    --       ["w"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", "watches" },
+    --       ["s"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", "stack" },
+    --       ["t"] = { function() require("dap").repl.toggle() end, "terminal" },
+    --       ["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "tag" },
+    --     },
+    --     ["j"] = { "<plug>VimspectorDownFrame", "down frame" },
+    --     ["k"] = { "<plug>VimspectorUpFrame", "up frame" },
+    --     ["p"] = { "<plug>VimspectorPause", "pause" },
+    --     ["P"] = { "<plug>VimspectorStop", "stop" },
+    --     ["r"] = { "<plug>VimspectorRestart", "restart" },
+    --     ["w"] = { "<cmd>call AddToWatch()<cr>", "add to watch" },
+    --   },
+    -- }
+    -- local wk = require("which-key")
+    -- wk.register(dap_mappings, dap_opts)
+    --
   end,
 }

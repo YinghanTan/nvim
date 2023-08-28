@@ -105,8 +105,7 @@ return {
 
         ["<leader>q"] = { name = "+quit/session" },
 
-
-        ["<leader>t"] = { name = "+term" },
+        ["<leader>t"] = { name = "+test" },
         ["<leader>w"] = { name = "+wiki/windows" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },
         ["<leader>g"] = { name = "+git" },

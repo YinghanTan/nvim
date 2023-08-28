@@ -70,12 +70,12 @@ end
 -- LazyVim Changelog
 map("n", "<leader>Lg", Util.changelog, {desc = "LazyVim Changelog"})
 
--- floating terminal
-local lazyterm = function() Util.float_term(nil, { cwd = Util.get_root() }) end
-map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<leader>fT", function() Util.float_term() end, { desc = "Terminal (cwd)" })
-map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
-map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
+-- -- floating terminal
+-- local lazyterm = function() Util.float_term(nil, { cwd = Util.get_root() }) end
+-- map("n", "<leader>ft", lazyterm, { desc = "Terminal (root dir)" })
+-- map("n", "<leader>fT", function() Util.float_term() end, { desc = "Terminal (cwd)" })
+-- map("n", "<c-/>", lazyterm, { desc = "Terminal (root dir)" })
+-- map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
 
 -- -- Terminal Mappings
 -- map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })

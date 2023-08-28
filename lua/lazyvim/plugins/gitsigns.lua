@@ -95,6 +95,7 @@ return {
         map("n", "<leader>ggR", gs.reset_buffer, "Reset Buffer")
         map("n", "<leader>ggu", gs.undo_stage_hunk, "Undo Stage Hunk")
         map("n", "<leader>ggi", gs.preview_hunk, "hunk info")
+        map("n", "<leader>ggo", "<cmd>Gitsigns toggle_signs<cr>", "on/off")
         map("n", "<leader>ggb", function() gs.blame_line({ full = true }) end, "Blame Line")
         map("n", "<leader>ggd", gs.diffthis, "Diff This")
         map("n", "<leader>ggD", function() gs.diffthis("~") end, "Diff This ~")
