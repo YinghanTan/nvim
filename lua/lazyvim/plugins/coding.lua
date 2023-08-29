@@ -3,6 +3,8 @@ return {
   -- snippets
   {
     "L3MON4D3/LuaSnip",
+    -- follow latest release.
+    version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     build = (not jit.os:find("Windows"))
         and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
       or nil,
@@ -16,6 +18,13 @@ return {
       history = true,
       delete_check_events = "TextChanged",
     },
+    config = function ()
+      require("luasnip").config.set_config({
+        history = false,
+        updateevents = "TextChanged,TextChangedI"
+      })
+      require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./snippets"})
+    end,
     -- stylua: ignore
     keys = {
       { "\\<tab>",  function() require("luasnip").expand() end, mode = {"i", "s"} },
@@ -46,7 +55,7 @@ return {
       local defaults = require("cmp.config.default")()
       return {
         completion = {
-          completeopt = "menu,menuone,noinsert",
+          completeopt = "menu,menuone,noinsert,noselect",
         },
         snippet = {
           expand = function(args)
@@ -63,7 +72,7 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["\\<tab>"] = cmp.mapping.confirm({
-            select = true
+            select = false
           }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 
           -- ["<S-CR>"] = cmp.mapping.confirm({
@@ -72,8 +81,8 @@ return {
           -- }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
-          { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },
         }),
@@ -86,12 +95,13 @@ return {
             return item
           end,
         },
-        experimental = {
-          ghost_text = {
-            hl_group = "CmpGhostText",
-          },
-        },
+        -- experimental = {
+        --   ghost_text = {
+        --     hl_group = "CmpGhostText",
+        --   },
+        -- },
         sorting = defaults.sorting,
+        preselect = 'none',
       }
     end,
   },
