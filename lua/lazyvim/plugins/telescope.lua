@@ -446,6 +446,29 @@ return {
           },
         },
       })
+
+      local search_opts = {
+        mode = "n", -- NORMAL mode
+        prefix = "<leader>",
+        buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+        silent = false, -- use `silent` when creating keymaps
+        noremap = true, -- use `noremap`
+        nowait = true, -- use `nowait` when creating keympas
+      }
+      local search_mappings = {
+        ["s"] = {
+          name = "+search",
+          ["h"] = { name = "+history" },
+          ["b"] = { name = "+buffer" },
+          ["g"] = { name = "+git" },
+          ["l"] = { name = "+lsp" },
+        },
+      }
+      local wk = require("which-key")
+      wk.register(search_mappings, search_opts)
+
+
+
     end,
   },
 
