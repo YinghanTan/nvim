@@ -9,6 +9,7 @@ return {
     },
     init = function()
       --- Vim Wiki & Instant Markdown Plugin ---
+      vim.g.vimwiki_conceallevel = 0
       vim.g.vimwiki_listsyms = " x"
       vim.g.vimwiki_ext2syntax = {
         [".md"] = "markdown",

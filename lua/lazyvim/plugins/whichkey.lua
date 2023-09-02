@@ -118,7 +118,6 @@ return {
         ["<leader>gg"] = { name = "+hunks" },
         ["<leader>f"] = { name = "+file" },
         ["<leader>S"] = { name = "+session/spectre" },
-
       },
 
       y_opts = {
