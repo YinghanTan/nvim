@@ -18,9 +18,9 @@ return {
     opts = { options = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp" } },
     -- stylua: ignore
     keys = {
-      { "<leader>Sl", function() require("persistence").load() end, desc = "load Session" }, -- current project directory
-      { "<leader>SL", function() require("persistence").load({ last = true }) end, desc = "last running session" }, -- last running session
-      { "<leader>Sq", function() require("persistence").stop() end, desc = "quit session" }, -- quit session without saving
+      { "<leader>Spl", function() require("persistence").load() end, desc = "load Session" }, -- current project directory
+      { "<leader>SpL", function() require("persistence").load({ last = true }) end, desc = "last running session" }, -- last running session
+      { "<leader>Spq", function() require("persistence").stop() end, desc = "quit session" }, -- quit session without saving
     },
   },
 
