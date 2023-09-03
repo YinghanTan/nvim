@@ -117,7 +117,11 @@ return {
         ["<leader>s"] = { name = "+search" },
         ["<leader>gg"] = { name = "+hunks" },
         ["<leader>f"] = { name = "+file" },
-        ["<leader>S"] = { name = "+session/spectre" },
+        ["<leader>S"] = {
+          name = "+session/spectre",
+          ["s"] = { ":mksession! ~/.config/nvim/sessions/", "save" },
+          ["l"] = { ":source ~/.config/nvim/sessions/", "load" },
+        },
       },
 
       y_opts = {
