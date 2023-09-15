@@ -1,47 +1,72 @@
 return {
 
-  -- snippets
+
+  -- -- snippets
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   -- follow latest release.
+  --   version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+  --   build = (not jit.os:find("Windows"))
+  --       and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
+  --     or nil,
+  --   dependencies = {
+  --     {
+  --       "rafamadriz/friendly-snippets",
+  --       config = function()
+  --         require("luasnip.loaders.from_vscode").lazy_load()
+  --         require('luasnip').filetype_extend("ruby", {"rails"})
+  --       end,
+  --     },
+  --     "molleweide/LuaSnip-snippets.nvim",
+  --   },
+  --   opts = {
+  --     history = true,
+  --     delete_check_events = "TextChanged",
+  --   },
+  --   config = function()
+  --     require("luasnip").config.set_config({
+  --       history = false,
+  --       updateevents = "TextChanged,TextChangedI",
+  --     })
+  --     require("luasnip.loaders.from_snipmate").lazy_load()
+  --     require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./snippets" })
+  --   end,
+  --   -- stylua: ignore
+  --   keys = {
+  --     { "\\<tab>",  function() require("luasnip").expand() end, mode = {"i", "s"} },
+  --     { "<C-j>", function() require("luasnip").jump(1) end, mode = {"i", "s"} },
+  --     { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
+  --     { "<C-e>", function()
+  --       if require("luasnip").choice_active() then
+  --         require("luasnip").change_choice(1)
+  --       end
+  --     end, mode = { "i", "s" }, silent = true },
+  --   },
+  -- },
+
   {
-    "L3MON4D3/LuaSnip",
-    -- follow latest release.
-    version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    build = (not jit.os:find("Windows"))
-        and "echo 'NOTE: jsregexp is optional, so not a big deal if it fails to build'; make install_jsregexp"
-      or nil,
-    dependencies = {
-      {
-        "rafamadriz/friendly-snippets",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-          require('luasnip').filetype_extend("ruby", {"rails"})
-        end,
-      },
-      "molleweide/LuaSnip-snippets.nvim",
-    },
-    opts = {
-      history = true,
-      delete_check_events = "TextChanged",
-    },
-    config = function()
-      require("luasnip").config.set_config({
-        history = false,
-        updateevents = "TextChanged,TextChangedI",
-      })
-      require("luasnip.loaders.from_snipmate").lazy_load()
-      require("luasnip.loaders.from_snipmate").lazy_load({ paths = "./snippets" })
+    "SirVer/ultisnips",
+    lazy = false,
+    init = function()
+
+      vim.cmd("autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets() | :CmpUltisnipsReloadSnippets")
+      vim.cmd("autocmd FileType tex,latex UltiSnipsAddFiletypes tex.latex")
+
+      vim.g.UltiSnipsExpandTrigger = "<leader><tab>"
+      vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
+      vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
+      vim.g.UltiSnipsEditSplit = "vertical"
+
+      vim.g.snips_author = "Yinghan Tan"
+      vim.g.UltiSnipsSnippetDirectories = {"ultisnips"}
+      vim.g.UltiSnipsSnippetsDir = "~/.config/nvim/ultisnips"
+      vim.g.UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = "~/.config/nvim/ultisnips"
     end,
-    -- stylua: ignore
     keys = {
-      { "\\<tab>",  function() require("luasnip").expand() end, mode = {"i", "s"} },
-      { "<C-j>", function() require("luasnip").jump(1) end, mode = {"i", "s"} },
-      { "<C-k>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
-      { "<C-e>", function()
-        if require("luasnip").choice_active() then
-          require("luasnip").change_choice(1)
-        end
-      end, mode = { "i", "s" }, silent = true },
+      { "\\ue",  "<cmd>UltiSnipsEdit<cr>", desc = "ultisnips edit" },
     },
   },
+  { "honza/vim-snippets" },
 
   -- auto completion
   {
@@ -52,7 +77,13 @@ return {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
-      "saadparwaiz1/cmp_luasnip",
+      -- "saadparwaiz1/cmp_luasnip",
+      {
+        "quangnguyen30192/cmp-nvim-ultisnips",
+        config = function()
+          require("cmp_nvim_ultisnips").setup({})
+        end,
+      }
     },
     opts = function()
       vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -64,7 +95,8 @@ return {
         },
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
+            -- require("luasnip").lsp_expand(args.body)
+            vim.fn["UltiSnips#Anon"](args.body)
           end,
         },
         mapping = cmp.mapping.preset.insert({
@@ -86,7 +118,8 @@ return {
           -- }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
-          { name = "luasnip" },
+          -- { name = "luasnip" },
+          { name = "ultisnips" },
           { name = "nvim_lsp" },
           { name = "buffer" },
           { name = "path" },

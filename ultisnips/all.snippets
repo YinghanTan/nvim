@@ -1,0 +1,34 @@
+priority 1
+
+snippet dateday "yyyy-mm-dd" w
+`!v strftime("%Y-%m-%d %a")`
+endsnippet
+
+snippet time "hh:mm" w
+`!v strftime("%H:%M")`
+endsnippet
+
+snippet lorem "lorem text" w
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
+endsnippet
+
+snippet : "object key: value"
+${1:"${2:key}"}:  ${3:"${4:value}"}${5:,}$0
+endsnippet
+
+snippet t "tag default" b
+<${1:tag}>
+	${2:${VISUAL}}
+</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet ti "tag inline" i
+<${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
+endsnippet
+
+snippet test "test" i
+testing testing testing
+endsnippet
