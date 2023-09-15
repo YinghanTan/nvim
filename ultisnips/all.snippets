@@ -29,6 +29,63 @@ snippet ti "tag inline" i
 <${1:tag}>${2:${VISUAL}}</${1/([\w:._-]+).*/$1/}>
 endsnippet
 
+snippet tj "tag curly percent" i
+{% ${1:${VISUAL}} %}
+endsnippet
+
+
 snippet test "test" i
 testing testing testing
+endsnippet
+
+snippet uuid "UUID" !b
+`!p import uuid
+if not snip.c:
+	snip.rv = uuid.uuid4().hex`
+endsnippet
+
+snippet tc "tag closed" i
+<${1:${VISUAL}} />$0
+endsnippet
+
+snippet title "title" b
+---
+title: $1
+date: ${2:`date +%Y/*m/*d`}
+author: ${3:Tan Yinghan}
+tags: $4
+---
+
+# $1
+$0
+endsnippet
+
+
+snippet dateiso "ISO format datetime" w
+`!v strftime("%Y-%m-%d %H:%M:%S%z")`
+endsnippet
+
+
+snippet MIT "License MIT" b
+The MIT License (MIT)
+
+Copyright (c) `date +%Y` ${1:Tan Yinghan} ${2:yinghan@gmail.com}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE
 endsnippet

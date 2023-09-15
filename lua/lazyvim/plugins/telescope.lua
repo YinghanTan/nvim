@@ -78,6 +78,7 @@ return {
       { "<leader>sT", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
 
       { "<leader>su", "<cmd>Telescope undo<cr>", desc = "undo" },
+      { "<leader>ss", "<cmd>Telescope ultisnips<cr>", desc = "snippets" },
       { "<leader>sy", "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", desc = "yank" },
 
       {
@@ -586,7 +587,6 @@ return {
       require("telescope").load_extension("conventional_commits")
     end,
   },
-
   {
     "nvim-telescope/telescope-dap.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -594,9 +594,14 @@ return {
       require("telescope").load_extension("dap")
     end,
   },
-
+  {
+    "fhill2/telescope-ultisnips.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").load_extension("ultisnips")
+    end,
+  },
 }
 
 -- -- 🔭 Extensions --
--- require('telescope').load_extension('ultisnips')           -- https://github.com/fhill2/telescope-ultisnips.nvim
 -- require('telescope').load_extension('terraform_doc')       -- https://github.com/ANGkeith/telescope-terraform-doc.nvim
