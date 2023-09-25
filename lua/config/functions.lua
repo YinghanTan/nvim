@@ -47,3 +47,8 @@ vim.api.nvim_create_autocmd(
 )
 
 
+vim.cmd([[
+autocmd filetype markdown syn region match start=/\\$\\$/ end=/\\$\\$/
+autocmd filetype markdown syn match math '\\$[^$].\{-}\$'
+let markdown_fenced_languages = ['tex']
+]])
