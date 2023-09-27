@@ -15,6 +15,10 @@ return {
 -- nnoremap <Leader>t <Esc>:silent exec '!xelatex -interaction=nonstopmode master.tex > /dev/null 2>&2 &' <Esc>:redraw!<CR>
 -- autocmd FileType tex nmap <buffer> <C-T> :!xelatex %<CR>
 
+    -- Math Zone 
+    -- vim.cmd("autocmd BufNewFile,BufRead *.md call vimtex#init()")
+    vim.cmd("autocmd BufNewFile,BufRead *.md so $VIMRUNTIME/syntax/tex.vim")
+
     -- add which-key mapping descriptions for VimTex
     vim.api.nvim_create_autocmd("FileType", {
       desc = "Set up VimTex Which-Key descriptions",

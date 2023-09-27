@@ -49,6 +49,7 @@ vim.opt.listchars = {
   trail = ".",
 }
 vim.cmd("syntax on") -- Turn on syntax highlighting
+vim.cmd("syntax enable") -- Turn on syntax highlighting
 vim.cmd("filetype plugin indent on")
 vim.opt.compatible = false -- incompatible with vi
 vim.opt.swapfile = false -- do not create a swap file                                        "

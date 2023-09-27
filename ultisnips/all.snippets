@@ -18,13 +18,9 @@ no sea takimata sanctus est Lorem ipsum dolor sit amet.
 endglobal
 
 
-
-snippet lorem "lorem text" w
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.
-endsnippet
+##########
+#  tags  #
+##########
 
 snippet : "object key: value"
 ${1:"${2:key}"}: ${3:"${4:value}"}${5:,}$0
@@ -44,50 +40,13 @@ snippet tj "tag curly percent" i
 {% ${1:${VISUAL}} %}
 endsnippet
 
-
-
 snippet tc "tag closed" i
 <${1:${VISUAL}} />$0
 endsnippet
 
-snippet title "title" b
----
-title: $1
-date: ${2:`date +%Y/*m/*d`}
-author: ${3:Tan Yinghan}
-tags: $4
----
-
-# $1
-$0
-endsnippet
-
-
-
-
-snippet MIT "License MIT" b
-The MIT License (MIT)
-
-Copyright (c) `date +%Y` ${1:Tan Yinghan} ${2:yinghan@gmail.com}
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE
-endsnippet
+##################
+#  Text Objects  #
+##################
 
 snippet box "A nice box with the current comment symbol" b
 `!p
@@ -115,7 +74,10 @@ snip += box[3]`
 $0
 endsnippet
 
-## Vim fold ##
+##############
+#  Vim Fold  #
+##############
+
 
 snippet fold "Insert a vim fold marker" b
 `!p snip.rv = get_comment_format()[0]` ${1:Fold description} `!p snip.rv = foldmarker()[0]`${2:1} `!p snip.rv = get_comment_format()[2]`
@@ -137,6 +99,13 @@ endsnippet
 
 snippet "lorem(([1-4])?[0-9])?" "Lorem Ipsum" r
 `!p snip.rv = " ".join(LOREM.split()[:int(match.group(1))]) if match.group(1) else LOREM`
+endsnippet
+
+snippet lorem "lorem text" w
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+no sea takimata sanctus est Lorem ipsum dolor sit amet.
 endsnippet
 
 #########
@@ -167,9 +136,6 @@ snippet datetime "YYYY-MM-DD hh:mm" w
 `!v strftime("%Y-%m-%d %H:%M")`
 endsnippet
 
-snippet todo "TODO comment" bw
-`!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%d-%m-%y')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
-endsnippet
 
 
 ##########
@@ -183,3 +149,48 @@ endsnippet
 # if not snip.c:
 # 	snip.rv = uuid.uuid4().hex`
 # endsnippet
+
+
+###############
+#  Templates  #
+###############
+
+snippet todo "TODO comment" bw
+`!p snip.rv=get_comment_format()[0]` ${2:TODO}: $0${3: <${4:`!v strftime('%d-%m-%y')`}${5:, `!v g:snips_author`}>} `!p snip.rv=get_comment_format()[2]`
+endsnippet
+
+snippet MIT "License MIT" b
+The MIT License (MIT)
+
+Copyright (c) `date +%Y` ${1:Tan Yinghan} ${2:yinghan@gmail.com}
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE
+endsnippet
+
+snippet title "title" b
+---
+title: $1
+date: ${2:`date +%Y/*m/*d`}
+author: ${3:Tan Yinghan}
+tags: $4
+---
+
+# $1
+$0
+endsnippet
