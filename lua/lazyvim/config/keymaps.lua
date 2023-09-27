@@ -171,3 +171,17 @@ vim.cmd("inoreabbrev <expr> cdate strftime('%Y-%m-%d')")
 
 -- Change directory to directory of current file
 vim.cmd("nnoremap <leader>cd :cd %:h<CR>")
+
+
+
+
+
+-- " Inkscape Figures shortcuts (optimized for Markdown)
+-- nnoremap <C-f> :exec '.!~/scripts/vim/ink.py %:r "'.getline(".").'"' <Esc>
+
+-- "Optimized note-taking with LaTeX
+-- nnoremap <Leader>t <Esc>:silent exec '!xelatex -interaction=nonstopmode master.tex > /dev/null 2>&2 &' <Esc>:redraw!<CR>
+-- autocmd FileType tex nmap <buffer> <C-T> :!xelatex %<CR>
+
+-- Allow Ultisnips to work in Markdown Files (that Vimwiki controls)
+-- let g:vimwiki_table_mappings = 0
