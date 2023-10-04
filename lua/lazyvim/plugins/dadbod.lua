@@ -3,6 +3,7 @@ return {
     -- https://github.com/omerxx/dotfiles/blob/master/nvim/lua/config/dadbod.lua
     "tpope/vim-dadbod",
     opt = true,
+    lazy = true,
     requires = {
       "kristijanhusak/vim-dadbod-ui",
       "kristijanhusak/vim-dadbod-completion",
@@ -10,7 +11,7 @@ return {
     },
     config = function()
       local function db_completion()
-        require('cmp').setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
+        require("cmp").setup.buffer({ sources = { { name = "vim-dadbod-completion" } } })
       end
       vim.g.db_ui_save_location = vim.fn.stdpath("config") .. require("plenary.path").path.sep .. "db_ui"
 
@@ -34,9 +35,21 @@ return {
     end,
   },
   {
-    "kristijanhusak/vim-dadbod-ui"
+    "kristijanhusak/vim-dadbod-ui",
+    lazy = true,
+    dependencies = {
+      { "tpope/vim-dadbod", lazy = true },
+      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+    },
+    cmd = {
+      "DBUI",
+      "DBUIToggle",
+      "DBUIAddConnection",
+      "DBUIFindBuffer",
+    },
   },
   {
-    "kristijanhusak/vim-dadbod-completion"
-  }
+    "kristijanhusak/vim-dadbod-completion",
+    lazy = true,
+  },
 }
