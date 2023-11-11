@@ -31,6 +31,7 @@ return {
       { "af", desc = "Increment selection", mode = "x" },
       { "<bs>", desc = "Decrement selection", mode = "x" },
     },
+
     ---@type TSConfig
     opts = {
       ensure_installed = {
@@ -40,6 +41,7 @@ return {
         "javascript",
         "jsdoc",
         "json",
+        "jsonc",
         "lua",
         "luadoc",
         "luap",
@@ -64,7 +66,7 @@ return {
       -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
       auto_install = true,
       -- List of parsers to ignore installing (for "all")
-      ignore_install = { 'smali' },
+      ignore_install = { 'smali', 'help' },
       highlight = {
         enable = true, -- false will disable the whole extension
         disable = { },  -- list of language that will be disabled

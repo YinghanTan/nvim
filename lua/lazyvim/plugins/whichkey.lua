@@ -6,7 +6,7 @@ return {
     event = "VeryLazy",
     init = function()
       vim.opt.timeout = true
-      vim.opt.timeoutlen = 300
+      vim.opt.timeoutlen = 250
     end,
     opts = {
       plugins = {
@@ -156,11 +156,7 @@ return {
           ["x"] = "crosshairs",
         },
       },
-
     },
-
-
-
     config = function(_, opts)
       local wk = require("which-key")
       wk.setup(opts)

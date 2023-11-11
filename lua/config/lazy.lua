@@ -22,6 +22,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.terraform" },
     { import = "lazyvim.plugins.extras.lang.tex" },
     { import = "lazyvim.plugins.extras.lang.typescript" },
+    { import = "lazyvim.plugins.extras.lang.markdown" },
     -- { import = "lazyvim.plugins.extras.lang.go" },
     -- { import = "lazyvim.plugins.extras.lang.ruby" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },

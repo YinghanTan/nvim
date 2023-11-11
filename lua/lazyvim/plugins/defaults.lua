@@ -34,7 +34,7 @@ return {
         wk.register(uwk.normal_mode)
         wk.register(uwk.normal_and_visual_mode, { mode = { "n", "v" } })
     end
-    },
+  },
   {
     "milkypostman/vim-togglelist",
     lazy = false,
