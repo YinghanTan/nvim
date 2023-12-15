@@ -26,12 +26,12 @@ return {
       { "<leader>sf", Util.telescope("files"), desc = "Find Files (root dir)" },
       { "<leader>sF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
       -- git
-      { "<leader>sgc", "<cmd>AdvancedGitSearch search_log_content_file<CR>", desc = "commits" },
-      { "<leader>sgC", "<cmd>AdvancedGitSearch search_log_content<CR>", desc = "all commits" },
+      { "<leader>sgc", "<cmd>BCommits<cr>", desc = "commits" },
+      -- { "<leader>sgc", "<cmd>AdvancedGitSearch search_log_content_file<CR>", desc = "commits" },
       -- { "<leader>sgc", "<cmd>Telescope git_bcommits<CR>", desc = "commits" },
+      { "<leader>sgC", "<cmd>Commits<cr>", desc = "all commits" },
+      -- { "<leader>sgC", "<cmd>AdvancedGitSearch search_log_content<CR>", desc = "all commits" },
       -- { "<leader>sgC", "<cmd>Telescope git_commits<CR>", desc = "all commits" },
-      -- { "<leader>sgc", "<cmd>BCommits<cr>", desc = "commits" },
-      -- { "<leader>sgC", "<cmd>Commits<cr>", desc = "all commits" },
 
       { "<leader>sgs", "<cmd>Telescope git_status<CR>", desc = "status" },
       { "<leader>sgS", "<cmd>Telescope git_stash<cr>", desc = "stash" },

@@ -65,7 +65,7 @@ return {
         spacing = 2, -- spacing between columns
         align = "left", --- align columns left, center or right
       },
-      ignore_missing = true, -- enable this to hide mapping for which you didn't specify a label
+      ignore_missing = false, -- enable this to hide mapping for which you didn't specify a label
       hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
       show_help = true, -- show help message on the command line when the popup is visible
       show_key = true, -- show the currently pressed key and its label as a message in the command line
@@ -88,7 +88,7 @@ return {
         -- list of mode / prefixes that should never be hooked by WhichKey
         -- this is mostly relevant for key maps that start with a native binding
         -- most people should not need to change this
-        i = { "j", "k" },
+        i = { "j", "k", "<leader>" },
         v = { "j", "k" },
       },
       -- disable the WhichKey popup for certain buf types and file types.
