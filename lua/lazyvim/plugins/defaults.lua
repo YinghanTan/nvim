@@ -48,6 +48,14 @@ return {
     end,
   },
   {
+    "godlygeek/tabular",
+    lazy = false,
+  },
+  {
+    "preservim/vim-markdown",
+    lazy = false,
+  },
+  {
     "Bryley/neoai.nvim",
     lazy = false,
   },
