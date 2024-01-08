@@ -4,6 +4,8 @@ return {
     "vimwiki/vimwiki",
     event = "Bufenter *.md",
     keys = {
+      { "<leader>w-", "<Plug>VimwikiRemoveHeaderLevel", desc = "reduce header level"},
+      { "<leader>w=", "<Plug>VimwikiAddHeaderLevel", desc = "reduce header level"},
       "<leader>ww",
       "<leader>wt"
     },
@@ -11,7 +13,7 @@ return {
       --- Vim Wiki & Instant Markdown Plugin ---
       vim.g.vimwiki_conceallevel = 0
       vim.g.vimwiki_listsyms = " x"
-      vim.g.vimwiki_global_ext = 0 -- This option will treat all markdown files in your system as part of vimwiki
+      vim.g.vimwiki_global_ext = 1 -- This option will treat all markdown files in your system as part of vimwiki
       vim.g.vimwiki_ext2syntax = {
         [".md"] = "markdown",
         [".markdown"] = "markdown",

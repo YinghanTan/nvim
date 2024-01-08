@@ -101,10 +101,7 @@ return {
         mode = { "n", "v" },
         ["<leader><tab>"] = { name = "+tabs" },
         ["<leader>b"] = { name = "+buffer" },
-
-
         ["<leader>q"] = { name = "+quit/session" },
-
         ["<leader>t"] = { name = "+test" },
         ["<leader>w"] = { name = "+wiki/windows" },
         ["<leader>x"] = { name = "+diagnostics/quickfix" },

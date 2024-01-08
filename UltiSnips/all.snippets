@@ -23,7 +23,7 @@ endglobal
 ##########
 
 snippet : "object key: value"
-${1:"${2:key}"}: ${3:"${4:value}"}${5:, }$0
+${1:"${2:key}"}: ${3:"${4:value}"}${5:,}$0
 endsnippet
 
 snippet t "tag default" b
@@ -112,6 +112,10 @@ endsnippet
 # DATES #
 #########
 
+snippet dateI "date input"
+${1:`date +%d`}.${2:`date +%m`}.${3:`date +%Y`}$0
+endsnippet
+
 snippet dateday "yyyy-mm-dd" w
 `!v strftime("%Y-%m-%d %a")`
 endsnippet
@@ -183,14 +187,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE
 endsnippet
 
-snippet title "title" b
----
-title: $1
-date: ${2:`date +%Y/*m/*d`}
-author: ${3:Tan Yinghan}
-tags: $4
----
-
-# $1
-$0
-endsnippet

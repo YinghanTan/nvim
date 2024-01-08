@@ -58,9 +58,8 @@ return {
       vim.g.UltiSnipsEditSplit = "vertical"
 
       vim.g.snips_author = "Yinghan Tan"
-      vim.g.UltiSnipsSnippetDirectories = {"ultisnips"}
-      vim.g.UltiSnipsSnippetsDir = "~/.config/nvim/ultisnips"
-      vim.g.UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = "~/.config/nvim/ultisnips"
+      vim.g.UltiSnipsSnippetDirectories = {"UltiSnips"}
+      vim.g.UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = "~/.config/nvim/UltiSnips"
     end,
     keys = {
       { "\\ue",  "<cmd>UltiSnipsEdit<cr>", desc = "ultisnips edit" },

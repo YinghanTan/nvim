@@ -1327,15 +1327,37 @@ snippet fig "Figure" b
 
 endsnippet
 
-snippet daten "date note" b
-`!v strftime("%Y-%m-%d %a")`
-[read](read) 
-[learn](learn) 
-[practise](practise)
-exercise/fingers/wrist/shoulders 
-hydrate
-silence
+snippet daily "daily" b
+## intention
+
+1. [ ] ${1:What do i want to achieve today?}
+
+## tracking
+
+- [ ] [read](read) 
+- [ ] [learn](learn) 
+- [ ] [practise](practise)
+- [ ] exercise/fingers/wrist/shoulders 
+- [ ] hydrate
 
 - [routine](routine-2023)
 
+## log
+
+- ${2}
+
+endsnippet
+
+snippet --- "title" b
+---
+title: ${1:`!v expand('%:t:r')`}
+date: ${2:`date +%Y-%m-%d`}
+author: ${3:Tan Yinghan}
+tags:
+- ${4:tags}
+---
+
+# $1
+
+$0
 endsnippet
