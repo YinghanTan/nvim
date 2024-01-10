@@ -58,7 +58,8 @@ return {
         "go",
         "css",
         "sql",
-        "http"
+        "http",
+        "cpp"
       },
       -- Install parsers synchronously (only applied to `ensure_installed`)
       sync_install = false,

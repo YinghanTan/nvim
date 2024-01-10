@@ -112,17 +112,18 @@ endsnippet
 # DATES #
 #########
 
-snippet dateI "date input"
-${1:`date +%d`}.${2:`date +%m`}.${3:`date +%Y`}$0
+snippet datedmy "DD-MM-YYYY"
+${1:`date +%d`}-${2:`date +%m`}-${3:`date +%Y`}$0
+endsnippet
+
+snippet dateymd "YYYY-MM-DD" w
+${1:`date +%Y`}-${2:`date +%m`}-${3:`date +%d`}$0
 endsnippet
 
 snippet dateday "yyyy-mm-dd" w
 `!v strftime("%Y-%m-%d %a")`
 endsnippet
 
-snippet date "YYYY-MM-DD" w
-`!v strftime("%Y-%m-%d")`
-endsnippet
 
 snippet ddate "Month DD, YYYY" w
 `!v strftime("%b %d, %Y")`

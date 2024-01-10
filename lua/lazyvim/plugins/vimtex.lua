@@ -7,6 +7,8 @@ return {
     vim.g.livepreview_previewer = 'zathura'
     vim.g.vimtex_view_method = 'zathura'
     vim.g.auto_save_in_insert_move = 0
+    vim.g.vimtex_quickfix_mode = 0
+    vim.g.tex_conceal = 'abdmg'
 
 -- " Inkscape Figures shortcuts (optimized for Markdown)
 -- nnoremap <C-f> :exec '.!~/scripts/vim/ink.py %:r "'.getline(".").'"' <Esc>

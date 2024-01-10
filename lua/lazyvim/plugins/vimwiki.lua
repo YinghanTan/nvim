@@ -11,7 +11,7 @@ return {
     },
     init = function()
       --- Vim Wiki & Instant Markdown Plugin ---
-      vim.g.vimwiki_conceallevel = 0
+      vim.g.vimwiki_conceallevel = 1
       vim.g.vimwiki_listsyms = " x"
       vim.g.vimwiki_global_ext = 1 -- This option will treat all markdown files in your system as part of vimwiki
       vim.g.vimwiki_ext2syntax = {
@@ -24,12 +24,14 @@ return {
         syntax = "markdown",
         ext = ".md",
         nested_syntaxes = {
+          ["bash"] = "bash",
           ["python"] = "python",
           ["js"]= "js",
           ["html"]= "html",
           ["css"]= "css",
           ["json"]= "json",
-          ["c++"]= "cpp"
+          ["c++"]= "cpp",
+          ["latex"]= "tex"
         },
         diary_rel_path = "inbox/"
       }
@@ -38,12 +40,14 @@ return {
         syntax = "markdown",
         ext = ".md",
         nested_syntaxes = {
+          ["bash"] = "bash",
           ["python"] = "python",
           ["js"]= "js",
           ["html"]= "html",
           ["css"]= "css",
           ["json"]= "json",
-          ["c++"]= "cpp"
+          ["c++"]= "cpp",
+          ["latex"]= "tex"
         },
         diary_rel_path = "inbox/"
       }
