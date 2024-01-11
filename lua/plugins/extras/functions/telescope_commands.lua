@@ -2,7 +2,7 @@ local M = {}
 
 function M.grep_notes()
   local opts = {}
-  opts.search_dirs = { "~/vimwiki/" }
+  opts.search_dirs = { "~/notes/" }
   opts.prompt_title = " Grep Notes"
   opts.path_display = { "smart" }
   opts.debounce = 100
@@ -13,7 +13,7 @@ function M.find_notes()
   require("telescope.builtin").find_files({
     prompt_title = "",
     path_display = { "smart" },
-    cwd = "~/vimwiki/",
+    cwd = "~/notes/",
     layout_strategy = "horizontal",
     layout_config = { preview_width = 0.65, width = 0.75 },
   })
@@ -23,7 +23,7 @@ function M.browse_notes()
   require("telescope").extensions.file_browser.file_browser({
     promtp_title = " Browse Notes",
     prompt_prefix = " ﮷ ",
-    cwd = "~/vimwiki/",
+    cwd = "~/notes/",
     layout_strategy = "horizontal",
     layout_config = { preview_width = 0.65, width = 0.75 },
   })

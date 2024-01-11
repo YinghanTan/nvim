@@ -119,9 +119,44 @@ return {
       },
     },
     config = function(_, opts)
+      local action_state = require("telescope.actions.state")
       local actions = require("telescope.actions")
       local action_layout = require("telescope.actions.layout")
       local multiopen = require("plugins.extras.functions.telescope_multiopen")
+
+      --- Insert filename into the current buffer and keeping the insert mode.
+      actions.insert_name_i = function(prompt_bufnr)
+        local symbol = action_state.get_selected_entry().ordinal
+        actions.close(prompt_bufnr)
+        vim.schedule(function()
+          vim.cmd([[startinsert]])
+          vim.api.nvim_put({ symbol }, "", true, true)
+        end)
+      end
+
+      --- Insert filename into the current buffer and keeping the insert mode.
+      actions.insert_link_i = function(prompt_bufnr)
+        local symbol = action_state.get_selected_entry().ordinal
+        local filename = symbol:match("(.+)%..+")
+        local link = "[" .. filename .. "]" .. "(" .. filename .. ")"
+        actions.close(prompt_bufnr)
+        vim.schedule(function()
+          vim.cmd([[startinsert]])
+          vim.api.nvim_put({ link }, "", true, true)
+        end)
+      end
+
+
+      --- Insert file path and name into the current buffer and keeping the insert mode.
+      actions.insert_name_and_path_i = function(prompt_bufnr)
+        local symbol = action_state.get_selected_entry().value
+        actions.close(prompt_bufnr)
+        vim.schedule(function()
+          vim.cmd([[startinsert]])
+          vim.api.nvim_put({ symbol }, "", true, true)
+        end)
+      end
+
       require("telescope").setup({
         defaults = {
           -- prompt_prefix = " ",
@@ -154,7 +189,8 @@ return {
               ["<C-v>"] = multiopen.i["<C-v>"],
               ["<C-x>"] = multiopen.i["<C-s>"],
               ["<C-t>"] = multiopen.i["<C-t>"],
-              ["<C-l>"] = function(...)
+              ["<C-g>"] = function(...)
+                -- diagnostics
                 return require("trouble.providers.telescope").open_selected_with_trouble(...)
               end,
               ["<CR>"] = actions.select_default,
@@ -171,6 +207,10 @@ return {
               ["<C-d>"] = actions.preview_scrolling_down,
               ["<C-p>"] = actions.results_scrolling_up,
               ["<C-n>"] = actions.results_scrolling_down,
+
+              ["<A-l>"] = actions.insert_link_i,
+              -- ["<C-S-y>"] = actions.insert_name_and_path_i,
+
               ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
               ["<M-m>"] = actions.which_key,
               ["<C-right>"] = actions.cycle_previewers_next,
@@ -183,7 +223,8 @@ return {
               ["<C-v>"] = multiopen.n["<C-v>"],
               ["<C-x>"] = multiopen.n["<C-s>"],
               ["<C-t>"] = multiopen.n["<C-t>"],
-              ["<C-l>"] = function(...)
+              ["<C-g>"] = function(...)
+                -- diagnostics
                 return require("trouble.providers.telescope").open_selected_with_trouble(...)
               end,
               ["<CR>"] = actions.select_default,
