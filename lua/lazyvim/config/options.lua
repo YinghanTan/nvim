@@ -100,7 +100,7 @@ vim.opt.iskeyword:append("-") -- treat dash separated words as a word text objec
 vim.opt.mouse = "a" -- enable your mouse
 vim.opt.splitbelow = true -- Horizontal splits will automatically be below
 vim.opt.splitright = true -- Vertical splits will automatically be to the right
-vim.opt.conceallevel = 1 -- So that I can see `` in markdown files
+vim.opt.conceallevel = 0 -- So that I can see `` in markdown files
 vim.opt.background = "dark" -- choose between "dark" or "light"
 vim.opt.updatetime = 100 -- Faster completion
 vim.opt.timeoutlen = 300 -- By default timeoutlen is 1000 ms

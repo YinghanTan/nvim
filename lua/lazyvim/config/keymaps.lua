@@ -56,7 +56,7 @@ map("n", "yoe", function() Util.toggle("spell") end, { desc = "Toggle Spelling" 
 map("n", "yow", function() Util.toggle("wrap") end, { desc = "Toggle Word Wrap" })
 map("n", "yon", function() Util.toggle_number() end, { desc = "Toggle Line Numbers" })
 map("n", "yoG", Util.toggle_diagnostics, { desc = "Toggle Diagnostics" })
-local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 1
+local conceallevel = vim.o.conceallevel > 0 and vim.o.conceallevel or 3
 map("n", "yoL", function() Util.toggle("conceallevel", false, {0, conceallevel}) end, { desc = "Toggle Conceal" })
 if vim.lsp.inlay_hint then
   map("n", "yoH", function() vim.lsp.inlay_hint(0, nil) end, { desc = "Toggle Inlay Hints" })
