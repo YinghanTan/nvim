@@ -11,7 +11,7 @@ return {
     },
     init = function()
       --- Vim Wiki & Instant Markdown Plugin ---
-      vim.g.vimwiki_conceallevel = 1
+      vim.g.vimwiki_conceallevel = 2
       vim.g.vimwiki_listsyms = " x"
       vim.g.vimwiki_global_ext = 1 -- This option will treat all markdown files in your system as part of vimwiki
       vim.g.vimwiki_ext2syntax = {
