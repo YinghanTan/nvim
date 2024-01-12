@@ -47,22 +47,6 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
-  -- {
-  --   "godlygeek/tabular",
-  --   lazy = false,
-  -- },
-  -- {
-  --   "preservim/vim-markdown",
-  --   branch = "master",
-  --   require = {'godlygeek/tabular'},
-  --   config = function()
-  --     vim.g.vim_markdown_fenced_languages = {'python=py','javascript=js','html','css','tex','c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini'}
-  --     vim.g.tex_conceal = ""
-  --     vim.g.vim_markdown_math = 1
-  --     vim.g.vim_markdown_frontmatter = 1
-  --   end,
-  --   lazy = false,
-  -- },
   {
     "Bryley/neoai.nvim",
     lazy = false,
