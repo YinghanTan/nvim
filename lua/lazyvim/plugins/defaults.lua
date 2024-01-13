@@ -48,6 +48,10 @@ return {
     end,
   },
   {
+    "Bercio/vim-inkscape-insert",
+    lazy = false,
+  },
+  {
     "Bryley/neoai.nvim",
     lazy = false,
   },

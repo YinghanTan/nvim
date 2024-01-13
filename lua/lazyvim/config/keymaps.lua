@@ -174,6 +174,13 @@ vim.cmd("nnoremap <leader>cd :cd %:h<CR>")
 
 
 
+vim.cmd([[
+" Inkscape Figures shortcuts (optimized for Markdown)
+nnoremap <Leader>wg :exec '.!~/scripts/vim/ink.py %:r "'.getline(".").'"' <Esc>
+
+"Optimized note-taking with LaTeX
+nnoremap <Leader>wp <Esc>:silent exec '!xelatex -interaction=nonstopmode master.tex > /dev/null 2>&2 &' <Esc>:redraw!<CR>
+]])
 
 
 -- " Inkscape Figures shortcuts (optimized for Markdown)
