@@ -86,4 +86,11 @@ return {
       { "<leader>pi", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
     },
   },
+  {
+    "Bercio/vim-inkscape-insert",
+    lazy = false,
+    config = function()
+      vim.g.inkscape_graphs_dir = "./assets/"
+    end,
+  },
 }
