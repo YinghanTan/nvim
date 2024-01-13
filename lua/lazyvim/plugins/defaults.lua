@@ -39,17 +39,17 @@ return {
     "milkypostman/vim-togglelist",
     lazy = false,
   },
-
   {
     "iamcco/markdown-preview.nvim",
+    enabled = true,
     lazy = false,
-    config = function()
-      vim.fn["mkdp#util#install"]()
-    end,
-  },
-  {
-    "Bercio/vim-inkscape-insert",
-    lazy = false,
+    keys = {
+      {"yom", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Toggle Preview"},
+      {"<leader>mp", "<cmd>MarkdownPreview<cr>", desc = "Markdown Preview"},
+      {"<leader>ms", "<cmd>MarkdownPreviewStop<cr>", desc = "Markdown Stop Preview"},
+    },
+    ft = {"wiki", "markdown", "md", "pum1"},
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   {
     "Bryley/neoai.nvim",
