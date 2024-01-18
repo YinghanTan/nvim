@@ -20,6 +20,7 @@ return {
       }
       local wiki_1 = {
         path = "~/vimwiki/",
+        links_space_char = "-",
         syntax = "markdown",
         ext = ".md",
         nested_syntaxes = {
@@ -36,6 +37,7 @@ return {
       }
       local wiki_2 = {
         path = "~/notes/",
+        links_space_char = "-",
         syntax = "markdown",
         ext = ".md",
         nested_syntaxes = {
