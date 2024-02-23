@@ -1,25 +1,11 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- keymap("n", "<Space>", "", opts)
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
-keymap("n", "<C-i>", "<C-i>", opts)
+keymap("n", "<C-i>", "<C-i>", opts) -- for tagging on options for harpoon
 
--- Better window navigation
--- keymap("n", "<m-h>", "<C-w>h", opts)
--- keymap("n", "<m-j>", "<C-w>j", opts)
--- keymap("n", "<m-k>", "<C-w>k", opts)
--- keymap("n", "<m-l>", "<C-w>l", opts)
--- keymap("n", "<m-tab>", "<c-6>", opts)
-
-keymap("n", "n", "nzz", opts)
-keymap("n", "N", "Nzz", opts)
-keymap("n", "*", "*zz", opts)
-keymap("n", "#", "#zz", opts)
-keymap("n", "g*", "g*zz", opts)
-keymap("n", "g#", "g#zz", opts)
 
 
 -- Stay in indent mode
@@ -33,26 +19,23 @@ keymap("x", "p", [["_dP]])
 -- vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
 -- vim.cmd [[:amenu 10.120 mousemenu.-sep- *]]
 
--- vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
--- vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
+vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
+vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
--- -- more good
--- keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
--- keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
+-- more good
+keymap({ "n", "o", "x" }, "<s-h>", "^", opts)
+keymap({ "n", "o", "x" }, "<s-l>", "g_", opts)
 
 
--- -- tailwind bearable to work with
--- keymap({ "n", "x" }, "j", "gj", opts)
--- keymap({ "n", "x" }, "k", "gk", opts)
--- keymap("n", "<leader>w", ":lua vim.wo.wrap = not vim.wo.wrap<CR>", opts)
+-- tailwind bearable to work with
+keymap({ "n", "x" }, "j", "gj", opts)
+keymap({ "n", "x" }, "k", "gk", opts)
 
 
 -- -- switch modes in terminal
 -- vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
 
 
-
--- keys
 vim.cmd("nnoremap gV `[v`]") -- highlight last inserted text
 
 
@@ -75,7 +58,7 @@ function! TogglePaste()
         echo "Paste Mode Disabled"
     endif
 endfunction
-" nnoremap yop :call TogglePaste()<cr>
+nnoremap yop :call TogglePaste()<cr>
 
 " -- Folding --
 
@@ -109,6 +92,7 @@ nnoremap <silent> zk :<c-u>call RepeatCmd('call NextClosedFold("k")')<cr>
 
 ]])
 
+
 -- lazy
 vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
@@ -116,13 +100,19 @@ vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
 -- highlight without moving
 vim.api.nvim_set_keymap("n", "g*", ":let @/=expand('<cword>') <bar> set hls <cr>", { noremap = true, silent = true })
 
+
 -- make Y Behave nice
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
+
 
 -- Center search results
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "*", "*zzzv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "#", "#zzzv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g*", "g*zzzv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "g#", "g#zzzv", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 
@@ -167,6 +157,7 @@ vim.api.nvim_set_keymap("i", "<MiddleMouse>", "<Nop>", { noremap = true, silent 
 vim.api.nvim_set_keymap("i", "<2-MiddleMouse>", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<3-MiddleMouse>", "<Nop>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<4-MiddleMouse>", "<Nop>", { noremap = true, silent = true })
+
 
 vim.cmd([[
 " jump to previous tab
