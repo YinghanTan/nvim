@@ -5,29 +5,70 @@ local M = {
 }
 
 M.config = function()
+
+
   local icons = require("user.icons")
-
-  local wk = require("which-key")
-  wk.register({
-    ["<leader>gj"] = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>", "Next Hunk" },
-    ["<leader>gk"] = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
-    ["<leader>gp"] = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
-    ["<leader>gr"] = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
-    ["<leader>gl"] = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
-    ["<leader>gR"] = { "<cmd>lua require 'gitsigns'.reset_buffer()<cr>", "Reset Buffer" },
-    ["<leader>gs"] = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
-    ["<leader>gu"] = {
-      "<cmd>lua require 'gitsigns'.undo_stage_hunk()<cr>",
-      "Undo Stage Hunk",
-    },
-    ["<leader>gd"] = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
-      "Git Diff",
-    },
-  })
-
-
   require("gitsigns").setup({
+
+    on_attach = function(bufnr)
+      local gs = package.loaded.gitsigns
+      local function map(mode, l, r, desc)
+        vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
+      end
+
+      local function map_opts(mode, l, r, opts)
+        opts = opts or {}
+        opts.buffer = bufnr
+        vim.keymap.set(mode, l, r, opts)
+      end
+
+      -- Navigation
+      map_opts("n", "]c", function()
+        if vim.wo.diff then
+          return "]c"
+        end
+        vim.schedule(function()
+          gs.next_hunk()
+        end)
+        return "<Ignore>"
+      end, { expr = true, desc = "next chunk" })
+
+      map_opts("n", "[c", function()
+        if vim.wo.diff then
+          return "[c"
+        end
+        vim.schedule(function()
+          gs.prev_hunk()
+        end)
+        return "<Ignore>"
+      end, { expr = true, desc = "prev chunck" })
+
+      -- Text object
+      map("o", "ih", ":<C-U>Gitsigns select_hunk<CR>")
+      map("x", "ih", ":<C-U>Gitsigns select_hunk<CR>")
+
+      -- Keymaps
+
+
+      local wk = require("which-key")
+      wk.register({
+        ["<leader>ggj"] = { "<cmd>lua require('gitsigns').next_hunk({navigation_message = false})<cr>", "Next Hunk" },
+        ["<leader>ggk"] = { "<cmd>lua require('gitsigns').prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
+        ["<leader>ggi"] = { "<cmd>lua require('gitsigns').preview_hunk()<cr>", "Hunk info" },
+        ["<leader>ggr"] = { "<cmd>lua require('gitsigns').reset_hunk()<cr>", "Reset Hunk" },
+        ["<leader>ggb"] = { "<cmd>lua require('gitsigns').blame_line()<cr>", "Blame" },
+        ["<leader>ggR"] = { "<cmd>lua require('gitsigns').reset_buffer()<cr>", "Reset Buffer" },
+        ["<leader>ggs"] = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage Hunk" },
+        ["<leader>ggo"] = { "<cmd>lua require('gitsigns').toggle_signs()<cr>", "toggle signs" },
+        ["<leader>ggu"] = { "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>", "Undo Stage Hunk", },
+        ["<leader>ggd"] = {
+          "<cmd>Gitsigns diffthis HEAD<cr>",
+          "Git Diff",
+        },
+      })
+
+    end,
+
     signs = {
       add = {
         hl = "GitSignsAdd",
