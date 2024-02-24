@@ -16,7 +16,6 @@ function M.config()
     "black",
     "debugpy",
     "flake8",
-    "pylint",
     "ruff_lsp",
     "bashls",
     "jsonls",
@@ -34,8 +33,7 @@ function M.config()
     "dockerls",
     "docker_compose_language_service",
     "neocmake",
-    "eslint",
-    "nginx-language-server"
+    "eslint"
   }
 
   require("mason").setup {

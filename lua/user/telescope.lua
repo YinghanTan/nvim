@@ -4,6 +4,12 @@ local M = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
     {
+      "LinArcX/telescope-command-palette.nvim",
+      config = function()
+        require("telescope").load_extension("command_palette")
+      end,
+    },
+    {
       "nvim-telescope/telescope-ui-select.nvim",
       config = function()
         require("telescope").load_extension("ui-select")
@@ -48,6 +54,12 @@ local M = {
         require("telescope").load_extension("changes")
       end,
     },
+    -- {
+    --   "nvim-telescope/telescope-dap.nvim",
+    --   config = function()
+    --     require("telescope").load_extension("dap")
+    --   end,
+    -- },
     {
       "fhill2/telescope-ultisnips.nvim",
       config = function()
@@ -111,8 +123,8 @@ function M.config()
     ["<leader>sE"] = { "<cmd>Telescope env<cr>", "env" },
 
 
-    -- { "<leader>sC", "<cmd>Telescope command_palette<cr>", "command palette" },
-    -- { "<leader>sD", "<cmd>TodoTelescope<cr>", "todos" },
+    ["<leader>sP"] = { "<cmd>Telescope command_palette<cr>", "command palette" },
+    ["<leader>sD"] = { "<cmd>TodoTelescope<cr>", "todos" },
 
     -- { "<leader>shh", Util.telescope("colorscheme", { enable_preview = true }), "theme" },
     ["<leader>sH"] = { "<cmd>Telescope highlights<cr>", "Search Highlight Groups" },
@@ -141,6 +153,7 @@ function M.config()
   local icons = require("user.icons")
   local actions = require("telescope.actions")
   local action_layout = require("telescope.actions.layout")
+  local multiopen = require("functions.telescope_multiopen")
 
   require("telescope").setup({
     defaults = {
@@ -183,13 +196,13 @@ function M.config()
       mappings = {
         i = {
           ["<C-c>"] = actions.close,
-          -- ["<C-v>"] = multiopen.i["<C-v>"],
-          -- ["<C-x>"] = multiopen.i["<C-s>"],
-          -- ["<C-t>"] = multiopen.i["<C-t>"],
-          -- ["<C-g>"] = function(...)
-          --   -- diagnostics
-          --   return require("trouble.providers.telescope").open_selected_with_trouble(...)
-          -- end,
+          ["<C-v>"] = multiopen.i["<C-v>"],
+          ["<C-x>"] = multiopen.i["<C-s>"],
+          ["<C-t>"] = multiopen.i["<C-t>"],
+          ["<C-g>"] = function(...)
+            -- diagnostics
+            return require("trouble.providers.telescope").open_selected_with_trouble(...)
+          end,
           ["<CR>"] = actions.select_default,
           ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
           ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -213,13 +226,13 @@ function M.config()
         n = {
           ["<esc>"] = actions.close,
           ["<C-c>"] = actions.close,
-          -- ["<C-v>"] = multiopen.n["<C-v>"],
-          -- ["<C-x>"] = multiopen.n["<C-s>"],
-          -- ["<C-t>"] = multiopen.n["<C-t>"],
-          -- ["<C-g>"] = function(...)
-          --   -- diagnostics
-          --   return require("trouble.providers.telescope").open_selected_with_trouble(...)
-          -- end,
+          ["<C-v>"] = multiopen.n["<C-v>"],
+          ["<C-x>"] = multiopen.n["<C-s>"],
+          ["<C-t>"] = multiopen.n["<C-t>"],
+          ["<C-g>"] = function(...)
+            -- diagnostics
+            return require("trouble.providers.telescope").open_selected_with_trouble(...)
+          end,
           ["<CR>"] = actions.select_default,
           ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
           ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -255,29 +268,6 @@ function M.config()
       find_files = {
         hidden = true,
       },
-      -- live_grep = {
-      --   theme = "dropdown",
-      -- },
-      -- grep_string = {
-      --   theme = "dropdown",
-      -- },
-      -- find_files = {
-      --   theme = "dropdown",
-      --   previewer = false,
-      -- },
-      buffers = {
-        theme = "dropdown",
-        previewer = false,
-        initial_mode = "normal",
-        mappings = {
-          i = {
-            ["<C-d>"] = actions.delete_buffer,
-          },
-          n = {
-            ["dd"] = actions.delete_buffer,
-          },
-        },
-      },
       planets = {
         show_pluto = true,
         show_moon = true,
@@ -309,15 +299,12 @@ function M.config()
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
       },
-
-
       ["ui-select"] = {
         require("telescope.themes").get_dropdown({
           previewer = false,
           -- even more opts
         }),
       },
-
       tele_tabby = {
         use_highlighter = true,
       },
@@ -346,7 +333,6 @@ function M.config()
           },
         },
       },
-
       advanced_git_search = {
         -- fugitive or diffview
         diff_plugin = "fugitive",
@@ -371,6 +357,68 @@ function M.config()
           },
 
         }
+      },
+      command_palette = {
+        {
+          "File",
+          { "Yank Current File Name", ":lua require('joel.funcs').yank_current_file_name()" },
+          { "Write Current Buffer", ":w" },
+          { "Write All Buffers", ":wa" },
+          { "Quit", ":qa" },
+          { "File Browser", ":lua require'telescope'.extensions.file_browser.file_browser()", 1 },
+          { "Search for Word", ":lua require('telescope.builtin').live_grep()", 1 },
+          { "Project Files", ":lua require'joel.telescope'.project_files()", 1 },
+        },
+        {
+          "Notes",
+          { "Find Notes", ":lua require('plugins.extras.functions.telescope_commands').find_notes()", 1 },
+          { "Search/Grep Notes", ":lua require('plugins.extras.functions.telescope_commands').grep_notes()", 1 },
+          { "Browse Notes", ":lua require('plugins.extras.functions.telescope_commands').browse_notes()", 1 },
+        },
+        {
+          "Projects",
+          {
+            "Find Files Meshbio",
+            ":lua require('plugins.extras.functions.telescope_commands').find_files_meshbio()",
+            1,
+          },
+          {
+            "Search/Grep Meshbio",
+            ":lua require('plugins.extras.functions.telescope_commands').grep_meshbio()",
+            1,
+          },
+          { "Search Todos", ":lua require('plugins.extras.functions.telescope_commands').search_todos()", 1 },
+        },
+        {
+          "Toggle",
+          { "cursor line", ":set cursorline!" },
+          { "cursor column", ":set cursorcolumn!" },
+          { "spell checker", ":set spell!" },
+          { "relative number", ":set relativenumber!" },
+          { "search highlighting", ":set hlsearch!" },
+          { "Colorizer", ":set ColorToggle!" },
+          -- { "Fold Column", ":set ColorToggle!" },
+        },
+        {
+          "Neovim",
+          { "reload vimrc (\as)", ":source $MYVIMRC" },
+          { "check health", ":checkhealth" },
+          { "jumps (\\sj)", ":lua require('telescope.builtin').jumplist()" },
+          { "commands (\\s;)", ":lua require('telescope.builtin').commands()" },
+          { "command history (\\sH)", ":lua require('telescope.builtin').command_history()" },
+          { "registers (\\sr)", ":lua require('telescope.builtin').registers()" },
+          { "colorscheme", ":lua require('telescope.builtin').colorscheme()", 1 },
+          { "vim options", ":lua require('telescope.builtin').vim_options()" },
+          { "keymaps", ":lua require('telescope.builtin').keymaps()" },
+          { "buffers", ":Telescope buffers" },
+          { "search history (C-h)", ":lua require('telescope.builtin').search_history()" },
+          { "paste mode", ":set paste!" },
+          { "cursor line", ":set cursorline!" },
+          { "cursor column", ":set cursorcolumn!" },
+          { "spell checker", ":set spell!" },
+          { "relative number", ":set relativenumber!" },
+          { "search highlighting (F12)", ":set hlsearch!" },
+        },
       },
     },
   })
