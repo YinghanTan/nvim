@@ -2,7 +2,67 @@ local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true }
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+    {
+      "nvim-telescope/telescope-ui-select.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim" },
+      config = function()
+        require("telescope").load_extension("ui-select")
+      end,
+    },
+    {
+      "debugloop/telescope-undo.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim" },
+      config = function()
+        require("telescope").load_extension("undo")
+      end,
+    },
+    {
+      "nvim-telescope/telescope-vimspector.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim" },
+      config = function()
+        require("telescope").load_extension("vimspector")
+      end,
+    },
+    {
+      "AckslD/nvim-neoclip.lua",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("telescope").load_extension("neoclip")
+      end,
+    },
+    {
+      "aaronhallaert/advanced-git-search.nvim",
+      dependencies = {
+        "nvim-telescope/telescope.nvim",
+        "nvim-lua/plenary.nvim",
+        "sindrets/diffview.nvim"
+      },
+      config = function()
+        require("telescope").load_extension("advanced_git_search")
+      end,
+    },
+    {
+      "LinArcX/telescope-changes.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("telescope").load_extension("changes")
+      end,
+    },
+    {
+      "olacin/telescope-cc.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("telescope").load_extension("conventional_commits")
+      end,
+    },
+    {
+      "fhill2/telescope-ultisnips.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("telescope").load_extension("ultisnips")
+      end,
+    },
   }
 }
 
@@ -31,21 +91,18 @@ function M.config()
 
     ["<leader>sg"] = {name = "+git"},
     ["<leader>sgb"] = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-    -- ["<leader>sgc"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
-    ["<leader>sgc"] = { "<cmd>Telescope git_bcommits<CR>", "commits" },
-    -- ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content<CR>", "all commits" },
-    ["<leader>sgC"] = { "<cmd>Telescope git_commits<CR>", "all commits" },
+    ["<leader>sgc"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
+    -- ["<leader>sgc"] = { "<cmd>Telescope git_bcommits<CR>", "commits" },
+    ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content<CR>", "all commits" },
+    -- ["<leader>sgC"] = { "<cmd>Telescope git_commits<CR>", "all commits" },
     ["<leader>sgs"] = { "<cmd>Telescope git_status<CR>", "status" },
     ["<leader>sgS"] = { "<cmd>Telescope git_stash<cr>", "stash" },
-    -- ["<leader>sgr"] = { "<cmd>lua require('telescope').extensions.repo.list{}<cr>", "repo" },
-
 
     ["<leader>s?"] = {"<cmd>Telescope help_tags<cr>", "help tags"},
     ["<leader>sC"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     ["<leader>sp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["<leader>se"] = { "<cmd>Telescope spell_suggest<cr>", "spell" },
     ["<leader>sj"] = { "<cmd>Telescope jumplist<CR>", "jumplist" },
-    -- { "<leader>sB", "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", "bookmarks" },
 
     ["<leader>so"] = { "<cmd>Telescope oldfiles<cr>", "Recent" },
     -- ["<leader>sO"] = { Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), "Recent (cwd)" },
@@ -72,8 +129,7 @@ function M.config()
 
     ["<leader>sm"] = { "<cmd>Telescope marks<cr>", "Jump to Mark" },
     ["<leader>sM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    -- { "<leader>sw", "<cmd>Telescope tele_tabby list<cr>", "window" },
-    -- { "<leader>sv", "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "vimspector" },
+    { "<leader>sv", "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "vimspector" },
     ["<leader>sV"] = {"<cmd>Telescope vim_options<cr>", "vim options" },
 
     ["<leader>su"] = { "<cmd>Telescope undo<cr>", "undo" },
@@ -204,19 +260,19 @@ function M.config()
       file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%env" },
     },
     pickers = {
-      live_grep = {
-        theme = "dropdown",
-      },
-
-      grep_string = {
-        theme = "dropdown",
-      },
-
       find_files = {
-        theme = "dropdown",
-        previewer = false,
+        hidden = true,
       },
-
+      -- live_grep = {
+      --   theme = "dropdown",
+      -- },
+      -- grep_string = {
+      --   theme = "dropdown",
+      -- },
+      -- find_files = {
+      --   theme = "dropdown",
+      --   previewer = false,
+      -- },
       buffers = {
         theme = "dropdown",
         previewer = false,
@@ -230,31 +286,25 @@ function M.config()
           },
         },
       },
-
       planets = {
         show_pluto = true,
         show_moon = true,
       },
-
       colorscheme = {
         enable_preview = true,
       },
-
       lsp_references = {
         theme = "dropdown",
         initial_mode = "normal",
       },
-
       lsp_definitions = {
         theme = "dropdown",
         initial_mode = "normal",
       },
-
       lsp_declarations = {
         theme = "dropdown",
         initial_mode = "normal",
       },
-
       lsp_implementations = {
         theme = "dropdown",
         initial_mode = "normal",
@@ -266,6 +316,77 @@ function M.config()
         override_generic_sorter = true, -- override the generic sorter
         override_file_sorter = true, -- override the file sorter
         case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      },
+
+
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown({
+          previewer = false,
+          -- even more opts
+        }),
+      },
+
+      -- ultisnips = {},
+      undo = {
+        use_delta = true,
+        use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
+        side_by_side = false,
+        -- side_by_side = true,
+        -- layout_strategy = "vertical",
+        -- layout_config = {
+        --     preview_height = 0.8,
+        -- },
+        diff_context_lines = vim.o.scrolloff,
+        entry_format = "state #$ID, $STAT, $TIME",
+        mappings = {
+          i = {
+            -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
+            -- you want to replicate these defaults and use the following actions. This means
+            -- installing as a dependency of telescope in it's `requirements` and loading this
+            -- extension from there instead of having the separate plugin definition as outlined
+            -- above.
+            ["<cr>"] = require("telescope-undo.actions").yank_additions,
+            ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+            ["<C-cr>"] = require("telescope-undo.actions").restore,
+          },
+        },
+      },
+
+      advanced_git_search = {
+        -- fugitive or diffview
+        diff_plugin = "fugitive",
+        -- customize git in previewer
+        -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
+        git_flags = {},
+        -- customize git diff in previewer
+        -- e.g. flags such as { "--raw" }
+        git_diff_flags = {},
+        -- Show builtin git pickers when executing "show_custom_functions" or :AdvancedGitSearch
+        show_builtin_git_pickers = false,
+        entry_default_author_or_date = "author", -- one of "author" or "date"
+        -- Telescope layout setup
+        telescope_theme = {
+          function_name_1 = {
+            -- Theme options
+          },
+          function_name_2 = "dropdown",
+          -- e.g. realistic example
+          show_custom_functions = {
+            layout_config = { width = 0.4, height = 0.4 },
+          },
+
+        }
+      },
+      conventional_commits = {
+        action = function(entry)
+          -- entry = {
+          --     display = "feat       A new feature",
+          --     index = 7,
+          --     ordinal = "feat",
+          --     value = feat"
+          -- }
+          print(vim.inspect(entry))
+        end,
       },
     },
   })
