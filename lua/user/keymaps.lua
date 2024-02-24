@@ -93,8 +93,8 @@ nnoremap <silent> zk :<c-u>call RepeatCmd('call NextClosedFold("k")')<cr>
 ]])
 
 
--- lazy
-vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
+-- -- lazy
+-- vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 
 -- highlight without moving

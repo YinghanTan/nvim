@@ -61,10 +61,7 @@ M.config = function()
         ["<leader>ggs"] = { "<cmd>lua require('gitsigns').stage_hunk()<cr>", "Stage Hunk" },
         ["<leader>ggo"] = { "<cmd>lua require('gitsigns').toggle_signs()<cr>", "toggle signs" },
         ["<leader>ggu"] = { "<cmd>lua require('gitsigns').undo_stage_hunk()<cr>", "Undo Stage Hunk", },
-        ["<leader>ggd"] = {
-          "<cmd>Gitsigns diffthis HEAD<cr>",
-          "Git Diff",
-        },
+        ["<leader>ggd"] = { "<cmd>Gitsigns diffthis HEAD<cr>", "Git Diff", },
       })
 
     end,
