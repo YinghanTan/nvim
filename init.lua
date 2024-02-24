@@ -49,9 +49,9 @@ spec("user.breadcrumbs")
 spec("user.navic")
 spec("user.hop")
 spec("user.navbuddy")
--- spec("user.oil")
 spec("user.rnvimr")
 spec("user.vim-fetch")
+-- spec("user.oil")
 
 -- search
 spec("user.telescope")

@@ -5,35 +5,30 @@ local M = {
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
     {
       "nvim-telescope/telescope-ui-select.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim" },
       config = function()
         require("telescope").load_extension("ui-select")
       end,
     },
     {
       "debugloop/telescope-undo.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim" },
       config = function()
         require("telescope").load_extension("undo")
       end,
     },
     {
       "nvim-telescope/telescope-vimspector.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim" },
       config = function()
         require("telescope").load_extension("vimspector")
       end,
     },
     {
       "TC72/telescope-tele-tabby.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim" },
       config = function()
         require("telescope").load_extension("tele_tabby")
       end,
     },
     {
       "AckslD/nvim-neoclip.lua",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
       config = function()
         require("telescope").load_extension("neoclip")
       end,
@@ -41,8 +36,6 @@ local M = {
     {
       "aaronhallaert/advanced-git-search.nvim",
       dependencies = {
-        "nvim-telescope/telescope.nvim",
-        "nvim-lua/plenary.nvim",
         "sindrets/diffview.nvim"
       },
       config = function()
@@ -51,14 +44,12 @@ local M = {
     },
     {
       "LinArcX/telescope-changes.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
       config = function()
         require("telescope").load_extension("changes")
       end,
     },
     {
       "fhill2/telescope-ultisnips.nvim",
-      dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
       config = function()
         require("telescope").load_extension("ultisnips")
       end,
