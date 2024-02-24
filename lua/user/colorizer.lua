@@ -4,6 +4,12 @@ local M = {
 }
 
 function M.config()
+
+  local wk = require("which-key")
+  wk.register {
+    ["yoC"] = { "<cmd>ColorizerToggle<cr>", "colorizer" },
+  }
+
   require("colorizer").setup {
     filetypes = {
       "typescript",

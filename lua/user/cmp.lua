@@ -23,14 +23,14 @@ local M = {
       event = "InsertEnter",
     },
     {
-      "saadparwaiz1/cmp_luasnip",
+      "quangnguyen30192/cmp-nvim-ultisnips",
       event = "InsertEnter",
     },
     {
-      "L3MON4D3/LuaSnip",
+      "SirVer/ultisnips",
       event = "InsertEnter",
       dependencies = {
-        "rafamadriz/friendly-snippets",
+        "honza/vim-snippets"
       },
     },
     {
@@ -42,8 +42,6 @@ local M = {
 
 function M.config()
   local cmp = require("cmp")
-  local luasnip = require("luasnip")
-  require("luasnip/loaders/from_vscode").lazy_load()
 
   vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
   vim.api.nvim_set_hl(0, "CmpItemKindTabnine", { fg = "#CA42F0" })
@@ -58,18 +56,33 @@ function M.config()
 
 
   cmp.setup({
+
+    completion = {
+      completeopt = "menu,menuone,noinsert,noselect",
+    },
+
     snippet = {
+      -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        luasnip.lsp_expand(args.body) -- For `luasnip` users.
+        -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
     },
+
+    window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
+
     mapping = cmp.mapping.preset.insert({
-      ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-      ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
+      ["<C-n>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
+      ["<C-p>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
       ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item(), { "i", "c" }),
       ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "c" }),
-      ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-      ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+      ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+      ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
       ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
       ["<C-e>"] = cmp.mapping {
         i = cmp.mapping.abort(),
@@ -77,38 +90,13 @@ function M.config()
       },
       -- Accept currently selected item. If none selected, `select` first item.
       -- Set `select` to `false` to only confirm explicitly selected items.
-      ["<CR>"] = cmp.mapping.confirm { select = true },
-      ["<Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        elseif luasnip.expandable() then
-          luasnip.expand()
-        elseif luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        elseif check_backspace() then
-          fallback()
-          -- require("neotab").tabout()
-        else
-          fallback()
-          -- require("neotab").tabout()
-        end
-      end, {
-        "i",
-        "s",
-      }),
-      ["<S-Tab>"] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        elseif luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, {
-        "i",
-        "s",
+      ["<CR>"] = cmp.mapping.confirm { select = false },
+      ["\\<tab>"] = cmp.mapping.confirm({
+        select = false,
       }),
     }),
+
+
     formatting = {
       fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
@@ -136,9 +124,10 @@ function M.config()
       end,
     },
     sources = {
-      { name = "copilot" },
+      -- { name = "copilot" },
+      { name = "ultisnips" },
       { name = "nvim_lsp" },
-      { name = "luasnip" },
+      -- { name = "luasnip" },
       { name = "cmp_tabnine" },
       { name = "nvim_lua" },
       { name = "buffer" },
@@ -146,18 +135,10 @@ function M.config()
       { name = "calc" },
       { name = "emoji" },
     },
+    preselect = "None",
     confirm_opts = {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
-    },
-    window = {
-      completion = {
-        border = "rounded",
-        scrollbar = false,
-      },
-      documentation = {
-        border = "rounded",
-      },
     },
     experimental = {
       ghost_text = false,

@@ -32,7 +32,7 @@ spec("user.nvim-surround")
 spec("user.todo-comments")
 spec("user.dial")
 spec("user.ufo")
--- spec("user.ultisnips")
+spec("user.ultisnips")
 -- spec("user.copilot")
 -- spec("user.lab")
 
