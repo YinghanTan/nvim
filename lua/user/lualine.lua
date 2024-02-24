@@ -1,5 +1,6 @@
 local M = {
   "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
   -- dependencies = {
   --   "AndreM222/copilot-lualine",
   -- },
@@ -8,12 +9,14 @@ local M = {
 function M.config()
   require("lualine").setup({
     options = {
+      theme = "auto",
+      globalstatus = true,
       component_separators = { left = "", right = "" },
       section_separators = { left = "", right = "" },
       ignore_focus = { "NvimTree" },
     },
     sections = {
-      lualine_a = {},
+      lualine_a = { "mode" },
       lualine_b = { "branch" },
       lualine_c = { "diagnostics" },
       -- lualine_x = { "copilot", "filetype" },
