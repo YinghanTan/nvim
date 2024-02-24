@@ -25,6 +25,13 @@ local M = {
       end,
     },
     {
+      "TC72/telescope-tele-tabby.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim" },
+      config = function()
+        require("telescope").load_extension("tele_tabby")
+      end,
+    },
+    {
       "AckslD/nvim-neoclip.lua",
       dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
       config = function()
@@ -129,7 +136,8 @@ function M.config()
 
     ["<leader>sm"] = { "<cmd>Telescope marks<cr>", "Jump to Mark" },
     ["<leader>sM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    { "<leader>sv", "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "vimspector" },
+    ["<leader>sw"] = { "<cmd>Telescope tele_tabby list<cr>", "window" },
+    ["<leader>sv"] = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "vimspector" },
     ["<leader>sV"] = {"<cmd>Telescope vim_options<cr>", "vim options" },
 
     ["<leader>su"] = { "<cmd>Telescope undo<cr>", "undo" },
@@ -326,7 +334,10 @@ function M.config()
         }),
       },
 
-      -- ultisnips = {},
+      tele_tabby = {
+        use_highlighter = true,
+      },
+      ultisnips = {},
       undo = {
         use_delta = true,
         use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
