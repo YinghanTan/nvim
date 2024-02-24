@@ -5,8 +5,14 @@ local M = {
 }
 
 function M.config()
-  local icons = require("user.icons")
 
+  local wk = require "which-key"
+  wk.register {
+    ["yog"] = { "<cmd>IndentBlanklineToggle<cr>", "indent guide" },
+  }
+
+
+  local icons = require("user.icons")
   require("indent_blankline").setup {
     buftype_exclude = { "terminal", "nofile" },
     filetype_exclude = {

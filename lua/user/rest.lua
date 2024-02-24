@@ -7,7 +7,7 @@ function M.config()
 
   local wk = require("which-key")
   wk.register {
-    ["<leader>ac"] = { "<Plug>RestNvim<CR>", "api" },
+    ["<leader>\\a"] = { "<Plug>RestNvim<CR>", "api" },
   }
 
   require("rest-nvim").setup({

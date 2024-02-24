@@ -7,37 +7,6 @@ function M.config()
   vim.o.timeout = true
   vim.o.timeoutlen = 300
 
-  local mappings = {
-    q = { "<cmd>confirm q<CR>", "Quit" },
-    h = { "<cmd>nohlsearch<CR>", "NOHL" },
-    [";"] = { "<cmd>tabnew | terminal<CR>", "Term" },
-    v = { "<cmd>vsplit<CR>", "Split" },
-    b = { name = "+buffer" },
-    d = { name = "+debug" },
-    f = { name = "+find" },
-    g = { name = "+git",
-      ["g"] = { name = "+apps/hunks/link" },
-    },
-    l = { name = "+lsp" },
-    l = { name = "+lsp" },
-    p = { name = "+plugins",
-      p = { "<cmd>Lazy<cr>", "view" },
-      -- r = { "<cmd>Lazy reload<cr>", "reload" },
-      -- g = { "<cmd>lua require('lazyvim.util').changelog<cr>, "changelog" },
-    },
-    s = { name = "+search/" },
-    t = { name = "+test" },
-    ["\\"] = { name = "+hop/" },
-    a = {
-      name = "+Tab",
-      n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
-      N = { "<cmd>tabnew %<cr>", "New Tab" },
-      o = { "<cmd>tabonly<cr>", "Only" },
-      h = { "<cmd>-tabmove<cr>", "Move Left" },
-      l = { "<cmd>+tabmove<cr>", "Move Right" },
-    },
-    T = { name = "+;Treesitter" },
-  }
 
   local which_key = require("which-key")
   which_key.setup {
@@ -137,7 +106,35 @@ function M.config()
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
   }
-
+  local mappings = {
+    ["b"] = { name = "+buffer" },
+    ["d"] = { name = "+debug" },
+    ["f"] = { name = "+find" },
+    ["w"] = { name = "+wiki/win" },
+    ["]"] = { name = "+next" },
+    ["["] = { name = "+prev" },
+    ["g"] = { name = "+git/goto",
+      ["g"] = { name = "+apps/hunks/link" },
+    },
+    ["l"] = { name = "+lsp" },
+    ["p"] = { name = "+paste/plugins",
+      ["p"] = { "<cmd>Lazy<cr>", "view" },
+    },
+    ["s"] = { name = "+search/" },
+    ["t"] = { name = "+test" },
+    ["\\"] = { name = "+hop/commands" },
+    a = {
+      name = "+Tab",
+      n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
+      N = { "<cmd>tabnew %<cr>", "New Tab" },
+      o = { "<cmd>tabonly<cr>", "Only" },
+      h = { "<cmd>-tabmove<cr>", "Move Left" },
+      l = { "<cmd>+tabmove<cr>", "Move Right" },
+    },
+    ["T"] = { name = "+Treesitter" },
+    ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
+    ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
+  }
   which_key.register(mappings, opts)
 end
 
