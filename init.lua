@@ -49,7 +49,7 @@ spec("user.breadcrumbs")
 spec("user.navic")
 spec("user.hop")
 spec("user.navbuddy")
-spec("user.oil")
+-- spec("user.oil")
 spec("user.rnvimr")
 spec("user.vim-fetch")
 
@@ -62,7 +62,7 @@ spec("user.unimpaired-which-key")
 spec("user.whichkey")
 
 -- vimscript
--- spec("user.vinegar")
+spec("user.vinegar")
 -- spec("user.vim-abolish")
 spec("user.repeat")
 spec("user.bqf")

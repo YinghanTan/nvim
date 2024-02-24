@@ -35,7 +35,6 @@ function M.config()
     "docker_compose_language_service",
     "neocmake",
     "eslint",
-    "java_language_server",
     "nginx-language-server"
   }
 
