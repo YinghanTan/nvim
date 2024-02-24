@@ -5,7 +5,7 @@ local M = {
   ft = {"fugitive"},
 }
 
-function M.init()
+function M.config()
   vim.g.fugitive_summary_format = "%<(12,trunc)%an | %<(14,trunc)%cr | %s"
   local g_opts = {
     mode = "n", -- NORMAL mode
