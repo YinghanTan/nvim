@@ -7,17 +7,93 @@ local M = {
 }
 
 function M.config()
+
   local wk = require("which-key")
   wk.register({
+    -- buffer
     ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>fb"] = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
-    ["<leader>fc"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    ["<leader>ff"] = { "<cmd>Telescope find_files<cr>", "Find files" },
-    ["<leader>fp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-    ["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    ["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
-    ["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-    ["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+    ["<leader>bB"] = {"<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "buffers"},
+    ["<leader>bl"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer lines"},
+
+    ["<leader>sh"] = {name = "+history"} ,
+    ["<leader>sh:"] = {"<cmd>Telescope command_history<cr>", desc = "command history"},
+    ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", desc = "change history"},
+    ["<leader>shq"] = {"<cmd>lua require('telescope.builtin').quickfixhistory()<cr>", desc = "quickfix history"},
+
+
+    ["<leader>sb"] = {name = "+buffer"},
+    ["<leader>sbb"] = { "<cmd>Telescope buffers previewer=false<cr>", desc = "buffer" },
+    ["<leader>sbB"] = {"<cmd>Telescope buffers show_all_buffers=true<cr>", desc = "all buffers"},
+    ["<leader>sbl"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "buffer lines"},
+
+    ["<leader>sg"] = {name = "+git"},
+    ["<leader>sgb"] = {"<cmd>Telescope git_branches<cr>", desc = "Checkout branch"},
+      -- { "<leader>sgc", "<cmd>AdvancedGitSearch search_log_content_file<CR>", desc = "commits" },
+      -- { "<leader>sgc", "<cmd>Telescope git_bcommits<CR>", desc = "commits" },
+      -- { "<leader>sgC", "<cmd>AdvancedGitSearch search_log_content<CR>", desc = "all commits" },
+      -- { "<leader>sgC", "<cmd>Telescope git_commits<CR>", desc = "all commits" },
+      -- { "<leader>sgs", "<cmd>Telescope git_status<CR>", desc = "status" },
+      -- { "<leader>sgS", "<cmd>Telescope git_stash<cr>", desc = "stash" },
+      -- { "<leader>sgr", "<cmd>lua require('telescope').extensions.repo.list{}<cr>", desc = "repo" },
+
+
+    ["<leader>s?"] = {"<cmd>Telescope help_tags<cr>", desc = "help tags"},
+    ["<leader>sC"] = { "<cmd>Telescope colorscheme<cr>", desc = "Colorscheme"},
+
+    -- { "<leader>se", "<cmd>Telescope spell_suggest<cr>", desc = "spell" },
+    -- { "<leader>sB", "<cmd>lua require('telescope').extensions.bookmarks.bookmarks()<cr>", desc = "bookmarks" },
+    -- { "<leader>sj", "<cmd>Telescope jumplist<CR>", desc = "jumplist" },
+
+      -- { "<leader>so", "<cmd>Telescope oldfiles<cr>", desc = "Recent" },
+      -- { "<leader>sO", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+
+      -- { '<leader>sr"', "<cmd>Telescope registers<cr>", desc = "registers" },
+      -- { "<leader>sR", "<cmd>Telescope resume<cr>", desc = "resume" },
+      -- { "<leader>sa", "<cmd>Telescope autocommands<cr>", desc = "auto commands" },
+
+      -- { "<leader>sc", "<cmd>Telescope commands<cr>", desc = "commands" },
+      -- { "<leader>sC", "<cmd>Telescope command_palette<cr>", desc = "command palette" },
+
+      -- { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "Document diagnostics" },
+      -- { "<leader>sdw", "<cmd>Telescope diagnostics<cr>", desc = "Workspace diagnostics" },
+      -- { "<leader>sD", "<cmd>TodoTelescope<cr>", desc = "todos" },
+
+      -- { "<leader>se", "<cmd>Telescope env<cr>", desc = "env" },
+
+
+      -- { "<leader>shh", Util.telescope("colorscheme", { enable_preview = true }), desc = "theme" },
+      -- { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
+      -- { "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
+
+
+      -- { "<leader>sm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
+      -- { "<leader>sM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
+
+      -- { "<leader>sw", "<cmd>Telescope tele_tabby list<cr>", desc = "window" },
+
+      -- { "<leader>sv", "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", desc = "vimspector" },
+      -- { "<leader>sV", "<cmd>Telescope vim_options<cr>", desc = "vim options" },
+
+      -- { "<leader>sp", Util.telescope("grep_string", { word_match = "-w" }), desc = "phrase (root dir)" },
+      -- { "<leader>sP", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "phrase (cwd)" },
+      -- { "<leader>sp", Util.telescope("grep_string"), mode = "v", desc = "phrase (root dir)" },
+      -- { "<leader>sP", Util.telescope("grep_string", { cwd = false }), mode = "v", desc = "phrase (cwd)" },
+
+      -- { "<leader>st", Util.telescope("live_grep"), desc = "Grep (root dir)" },
+      -- { "<leader>sT", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+
+      -- { "<leader>su", "<cmd>Telescope undo<cr>", desc = "undo" },
+      -- { "<leader>ss", "<cmd>Telescope ultisnips<cr>", desc = "snippets" },
+      -- { "<leader>sy", "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", desc = "yank" },
+
+    ["<leader>sf"] = { "<cmd>Telescope find_files<cr>", desc = "Find files" },
+      -- { "<leader>sf", Util.telescope("files"), desc = "Find Files (root dir)" },
+      -- { "<leader>sF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+
+    ["<leader>sp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", desc = "projects" },
+    ["<leader>st"] = { "<cmd>Telescope live_grep<cr>", desc = "Find Text" },
+    ["<leader>sl"] = { "<cmd>Telescope resume<cr>", desc = "Last Search" },
+    ["<leader>sr"] = { "<cmd>Telescope oldfiles<cr>", desc = "Recent File" },
   })
 
   local icons = require("user.icons")

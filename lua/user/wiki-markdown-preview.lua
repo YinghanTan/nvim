@@ -13,6 +13,8 @@ function M.config()
   local wk = require "which-key"
   wk.register {
     ["yom"] = { "<cmd>MarkdownPreviewToggle<cr>", "markdown preview" },
+    ["<leader>mp"] = {"<cmd>MarkdownPreview<cr>", "Markdown Preview"},
+    ["<leader>ms"] = {"<cmd>MarkdownPreviewStop<cr>", "Markdown Stop Preview"},
   }
 end
 
