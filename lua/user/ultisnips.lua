@@ -4,7 +4,7 @@ local M = {
   dependencies = { "honza/vim-snippets" }
 }
 
-function M.config()
+function M.init()
 
   local wk = require("which-key")
   wk.register {
