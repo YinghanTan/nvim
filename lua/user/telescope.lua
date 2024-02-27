@@ -74,10 +74,6 @@ function M.config()
   local wk = require("which-key")
   wk.register({
 
-    -- buffers
-    ["<leader>bb"] = { "<cmd>Telescope buffers previewer=false<cr>", "Find" },
-    ["<leader>bB"] = { "<cmd>Telescope buffers show_all_buffers=true<cr>", "Find" },
-    ["<leader>bl"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer lines"},
 
     ["<leader>sh"] = {name = "+history"} ,
     ["<leader>sh:"] = {"<cmd>Telescope command_history<cr>", "command history"},
@@ -87,9 +83,10 @@ function M.config()
 
 
     ["<leader>sb"] = {name = "+buffer"},
-    ["<leader>sbb"] = { "<cmd>Telescope buffers previewer=false<cr>", "buffer" },
+    ["<leader>sbb"] = { "<cmd>Telescope buffers previewer=true<cr>", "buffer" },
     ["<leader>sbB"] = {"<cmd>Telescope buffers show_all_buffers=true<cr>", "all buffers"},
     ["<leader>sbl"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer lines"},
+    ["<leader>sw"] = { "<cmd>Telescope tele_tabby list<cr>", "window" },
 
 
     ["<leader>sg"] = {name = "+git"},
@@ -132,7 +129,6 @@ function M.config()
 
     ["<leader>sm"] = { "<cmd>Telescope marks<cr>", "Jump to Mark" },
     ["<leader>sM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
-    ["<leader>sw"] = { "<cmd>Telescope tele_tabby list<cr>", "window" },
     ["<leader>sv"] = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "vimspector" },
     ["<leader>sV"] = {"<cmd>Telescope vim_options<cr>", "vim options" },
 
