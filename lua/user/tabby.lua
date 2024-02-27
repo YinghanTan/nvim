@@ -51,7 +51,7 @@ return {
     require("tabby.tabline").set(function(line)
       return {
         {
-          { " 󰓩  ", hl = theme.head },
+          { "  ", hl = theme.head },
           -- { tab_count(), hl = theme.head },
           -- line.sep(" ", theme.head, theme.fill),
           -- line.sep(" ", theme.head, theme.fill),
