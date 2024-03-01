@@ -51,7 +51,10 @@ function M.config()
       "css",
       "sql",
       "http",
-      "cpp"
+      "cpp",
+      "tmux",
+      "dart",
+      "dockerfile"
     },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
