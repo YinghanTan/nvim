@@ -101,7 +101,6 @@ vim.opt.foldnestmax = 10 -- deepest fold is 10 levels
 vim.opt.foldenable = false -- don't fold by default
 vim.opt.foldlevel = 1
 
-
 -- manage invisible characters
 vim.opt.fillchars = {
   vert = "│",
