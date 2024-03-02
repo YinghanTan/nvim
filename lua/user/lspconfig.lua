@@ -83,7 +83,8 @@ function M.config()
     "tailwindcss",
     "terraformls",
     "vimls",
-    "texlab"
+    "texlab",
+    "awk_ls"
   }
 
   local default_diagnostic_config = {
