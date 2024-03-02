@@ -76,6 +76,14 @@ function M.config()
     "bashls",
     "jsonls",
     "yamlls",
+    "ansiblels",
+    "awk_ls",
+    "gopls",
+    "vuels",
+    "tailwindcss",
+    "terraformls",
+    "vimls",
+    "texlab"
   }
 
   local default_diagnostic_config = {
