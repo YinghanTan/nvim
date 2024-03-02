@@ -138,3 +138,9 @@ function M.config()
 end
 
 return M
+
+
+-- :TSUninstall all
+-- :TSInstall all -- outside of tmux
+-- :TSUpdate all
+-- :TSUpdateSync all
