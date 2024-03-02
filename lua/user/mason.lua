@@ -13,9 +13,6 @@ function M.config()
     "puppet",
     "tsserver",
     "pyright",
-    -- "black",
-    -- "debugpy",
-    -- "flake8",
     "ruff_lsp",
     "bashls",
     "jsonls",
@@ -28,12 +25,19 @@ function M.config()
     "texlab",
     "tailwindcss",
     "rust_analyzer",
-    "taplo",
-    "jdtls",
     "dockerls",
     "docker_compose_language_service",
     "neocmake",
-    "eslint"
+    "eslint",
+    "taplo",
+    "jdtls",
+    "awk_ls",
+    "gopls",
+    "vuels",
+
+    -- "black",
+    -- "debugpy",
+    -- "flake8",
   }
 
   require("mason").setup {
