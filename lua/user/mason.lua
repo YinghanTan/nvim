@@ -18,6 +18,7 @@ function M.config()
     "jdtls",
     "jsonls",
     "lua_ls",
+    "lua",
     "marksman",
     "neocmake",
     "puppet",
