@@ -138,7 +138,6 @@ function M.config()
 
     ["<leader>sf"] = { "<cmd>Telescope find_files<cr>", "Find files" },
     ["<leader>st"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    -- ["<leader>sf"] = { "<cmd>Telescope find_files<cr>", "Find files" },
     -- { "<leader>sf", Util.telescope("files"), "Find Files (root dir)" },
     -- { "<leader>sF", Util.telescope("files", { cwd = false }), "Find Files (cwd)" },
     -- { "<leader>st", Util.telescope("live_grep"), "Grep (root dir)" },
@@ -334,7 +333,7 @@ function M.config()
         diff_plugin = "fugitive",
         -- customize git in previewer
         -- e.g. flags such as { "--no-pager" }, or { "-c", "delta.side-by-side=false" }
-        git_flags = {},
+        git_flags = { '--graph', '--color=always', '--pretty=oneline', '--format="%C(auto)%h%d %C(auto)%s%Creset %C(white)%C(bold)%cr %C(auto)%C(blue)%an"' },
         -- customize git diff in previewer
         -- e.g. flags such as { "--raw" }
         git_diff_flags = {},

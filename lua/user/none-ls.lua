@@ -26,6 +26,9 @@ function M.config()
       diagnostics.flake8,
       null_ls.builtins.diagnostics.eslint,
       null_ls.builtins.completion.spell,
+      formatting.fish_indent,
+      diagnostics.fish,
+      formatting.shfmt,
     },
   }
 end

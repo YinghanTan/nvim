@@ -107,24 +107,21 @@ function M.config()
     prefix = "<leader>",
   }
   local mappings = {
+    ["\\"] = { name = "+hop/commands" },
     ["b"] = { name = "+buffer" },
     ["d"] = { name = "+debug" },
     ["f"] = { name = "+find" },
-    ["w"] = { name = "+wiki/win" },
     ["g"] = { name = "+git/goto",
       ["g"] = { name = "+apps/hunks/link" },
     },
     ["l"] = { name = "+lsp" },
+    ["m"] = { name = "+md" },
     ["p"] = { name = "+paste/plugins",
       ["p"] = { "<cmd>Lazy<cr>", "view" }
     },
-    ["m"] = { name = "+md" },
     ["s"] = { name = "+search/" },
-    ["t"] = { name = "+test" },
-    ["u"] = { name = "+undo/ultisnip" },
-    ["\\"] = { name = "+hop/commands" },
-    a = {
-      name = "+Tab",
+    ["t"] = {
+      name = "+test/tab",
       n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
       N = { "<cmd>tabnew %<cr>", "New Tab" },
       o = { "<cmd>tabonly<cr>", "Only" },
@@ -132,6 +129,8 @@ function M.config()
       l = { "<cmd>+tabmove<cr>", "Move Right" },
     },
     ["T"] = { name = "+Treesitter" },
+    ["u"] = { name = "+undo/ultisnip" },
+    ["w"] = { name = "+wiki/win" },
     ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
     ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
   }
