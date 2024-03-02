@@ -128,7 +128,9 @@ function M.config()
       h = { "<cmd>-tabmove<cr>", "Move Left" },
       l = { "<cmd>+tabmove<cr>", "Move Right" },
     },
-    ["T"] = { name = "+Treesitter" },
+    ["T"] = {
+      name = "+Treesitter",
+    },
     ["u"] = { name = "+undo/ultisnip" },
     ["w"] = { name = "+wiki/win" },
     ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
