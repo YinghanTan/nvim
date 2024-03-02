@@ -32,9 +32,9 @@ function M.config()
     "taplo",
     "jdtls",
     "awk_ls",
-    "gopls",
     "vuels",
 
+    -- "gopls",
     -- "black",
     -- "debugpy",
     -- "flake8",

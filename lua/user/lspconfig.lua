@@ -91,8 +91,8 @@ function M.config()
     "taplo",
     "jdtls",
     "awk_ls",
-    "gopls",
     "vuels",
+    -- "gopls",
   }
 
   local default_diagnostic_config = {
