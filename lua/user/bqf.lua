@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-  require("bqf").setup {
+  require("bqf").setup({
     auto_enable = true,
     magic_window = true,
     auto_resize_height = false,
@@ -15,24 +15,27 @@ function M.config()
       wrap = false,
     },
     func_map = {
-      tab = "t",
+      open = "<CR>",
       openc = "o",
-      drop = "O",
-      split = "s",
-      vsplit = "v",
-      stoggleup = "M",
-      stoggledown = "m",
-      stogglevm = "m",
-      filterr = "f",
-      filter = "F",
+      tab = "t",
+      split = "<C-s>",
+      vsplit = "<C-v>",
+      stoggleup = "<S-Tab>",
+      stoggledown = "<Tab>",
+      stogglevm = "<Tab>",
       prevhist = "<",
       nexthist = ">",
-      sclear = "c",
+      sclear = "z<Tab>",
+      ptogglemode = "zp",
       ptoggleitem = "p",
-      ptoggleauto = "a",
-      ptogglemode = "P",
+      ptoggleauto = "P",
+      pscrollup = "<C-b>",
+      pscrolldown = "<C-f>",
+      filter = "zn",
+      filterr = "zN",
+      fzffilter = "zf",
     },
-  }
+  })
 end
 
 return M
