@@ -107,7 +107,10 @@ function M.config()
     prefix = "<leader>",
   }
   local mappings = {
-    ["\\"] = { name = "+hop/commands" },
+    ["\\"] = {
+      name = "+hop/commands",
+      s = { "<cmd>luafile $MYVIMRC<cr>", "source vimrc" },
+    },
     ["b"] = { name = "+buffer" },
     ["d"] = { name = "+debug" },
     ["f"] = { name = "+find" },
@@ -130,6 +133,7 @@ function M.config()
     },
     ["T"] = {
       name = "+Treesitter",
+      i = { "<cmd>TSInstallInfo<cr>", "Info" },
     },
     ["u"] = { name = "+undo/ultisnip" },
     ["w"] = { name = "+wiki/win" },

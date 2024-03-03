@@ -91,10 +91,13 @@ function M.config()
 
     ["<leader>sg"] = {name = "+git"},
     ["<leader>sgb"] = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-    ["<leader>sgc"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
-    -- ["<leader>sgc"] = { "<cmd>Telescope git_bcommits<CR>", "commits" },
-    ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content<CR>", "all commits" },
-    -- ["<leader>sgC"] = { "<cmd>Telescope git_commits<CR>", "all commits" },
+    ["<leader>sgc"] = { "<cmd>AdvancedGitSearch search_log_content<CR>", "all commits" },
+    -- ["<leader>sgc"] = { "<cmd>Telescope git_commits<CR>", "all commits" },
+    ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
+    -- ["<leader>sgC"] = { "<cmd>Telescope git_bcommits<CR>", "commits" },
+
+
+
     ["<leader>sgs"] = { "<cmd>Telescope git_status<CR>", "status" },
     ["<leader>sgS"] = { "<cmd>Telescope git_stash<cr>", "stash" },
 
@@ -260,6 +263,26 @@ function M.config()
       file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%env" },
     },
     pickers = {
+      -- git_commits = {
+      --   git_command = {
+      --     "git",
+      --     "log",
+      --     "--graph",
+      --     "--color=always",
+      --     "--decorate",
+      --     "--pretty=format:%h%d %s %cr %an",
+      --   },
+      -- },
+      -- git_bcommits = {
+      --   git_command = {
+      --     "git",
+      --     "log",
+      --     "--graph",
+      --     "--color=always",
+      --     "--decorate",
+      --     "--pretty=format:%h%d %s %cr %an",
+      --   },
+      -- },
       find_files = {
         hidden = true,
       },
