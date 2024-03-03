@@ -43,4 +43,5 @@ return M
 
 -- zn
 -- zN
--- zf
+-- zf - fzf
+-- P - preview
