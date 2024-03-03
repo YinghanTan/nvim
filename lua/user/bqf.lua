@@ -36,3 +36,8 @@ function M.config()
 end
 
 return M
+
+
+-- zn
+-- zN
+-- zf

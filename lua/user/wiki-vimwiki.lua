@@ -1,7 +1,8 @@
 local M = {
   "vimwiki/vimwiki",
-  event = "Bufenter *.md",
-  priority = 1000, -- make sure to load this before all the other start plugins
+  lazy = false,
+  -- event = "Bufenter *.md",
+  -- priority = 1000, -- make sure to load this before all the other start plugins
   keys = {
     { "<leader>w-", "<Plug>VimwikiRemoveHeaderLevel", desc = "reduce header level"},
     { "<leader>w=", "<Plug>VimwikiAddHeaderLevel", desc = "reduce header level"},
