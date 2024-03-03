@@ -1,6 +1,7 @@
 local M = {
   "SirVer/ultisnips",
-  event = "InsertEnter",
+  -- event = "InsertEnter",
+  lazy = false,
   dependencies = { "honza/vim-snippets" }
 }
 

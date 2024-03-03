@@ -74,30 +74,26 @@ function M.config()
   local wk = require("which-key")
   wk.register({
 
-
     ["<leader>sh"] = {name = "+history"} ,
     ["<leader>sh:"] = {"<cmd>Telescope command_history<cr>", "command history"},
     ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", "change history"},
     ["<leader>shq"] = {"<cmd>lua require('telescope.builtin').quickfixhistory()<cr>", "quickfix history"},
 
-
-
     ["<leader>sb"] = {name = "+buffer"},
     ["<leader>sbb"] = { "<cmd>Telescope buffers previewer=true<cr>", "buffer" },
     ["<leader>sbB"] = {"<cmd>Telescope buffers show_all_buffers=true<cr>", "all buffers"},
     ["<leader>sbl"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer lines"},
-    ["<leader>sw"] = { "<cmd>Telescope tele_tabby list<cr>", "window" },
-
+    -- ["<leader>sw"] = { "<cmd>Telescope tele_tabby list<cr>", "window" },
+    ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
 
     ["<leader>sg"] = {name = "+git"},
     ["<leader>sgb"] = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-    ["<leader>sgc"] = { "<cmd>AdvancedGitSearch search_log_content<CR>", "all commits" },
+    -- ["<leader>sgc"] = { "<cmd>AdvancedGitSearch search_log_content<CR>", "all commits" },
     -- ["<leader>sgc"] = { "<cmd>Telescope git_commits<CR>", "all commits" },
-    ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
+    ["<leader>sgc"] = { "<cmd>Commits<CR>", "commits (all)" },
+    -- ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
     -- ["<leader>sgC"] = { "<cmd>Telescope git_bcommits<CR>", "commits" },
-
-
-
+    ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)" },
     ["<leader>sgs"] = { "<cmd>Telescope git_status<CR>", "status" },
     ["<leader>sgS"] = { "<cmd>Telescope git_stash<cr>", "stash" },
 
@@ -106,9 +102,7 @@ function M.config()
     ["<leader>sp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
     ["<leader>se"] = { "<cmd>Telescope spell_suggest<cr>", "spell" },
     ["<leader>sj"] = { "<cmd>Telescope jumplist<CR>", "jumplist" },
-
     ["<leader>so"] = { "<cmd>Telescope oldfiles<cr>", "Recent" },
-    -- ["<leader>sO"] = { Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), "Recent (cwd)" },
 
     ['<leader>sr"'] = { "<cmd>Telescope registers<cr>", "registers" },
     ["<leader>sl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
@@ -126,7 +120,6 @@ function M.config()
     ["<leader>sP"] = { "<cmd>Telescope command_palette<cr>", "command palette" },
     ["<leader>sD"] = { "<cmd>TodoTelescope<cr>", "todos" },
 
-    -- { "<leader>shh", Util.telescope("colorscheme", { enable_preview = true }), "theme" },
     ["<leader>sH"] = { "<cmd>Telescope highlights<cr>", "Search Highlight Groups" },
     ["<leader>sk"] = { "<cmd>Telescope keymaps<cr>", "Key Maps" },
 
@@ -136,16 +129,12 @@ function M.config()
     ["<leader>sV"] = {"<cmd>Telescope vim_options<cr>", "vim options" },
 
     ["<leader>su"] = { "<cmd>Telescope undo<cr>", "undo" },
-    ["<leader>ss"] = { "<cmd>Telescope ultisnips<cr>", "snippets" },
+    -- ["<leader>ss"] = { "<cmd>Telescope ultisnips<cr>", "snippets" },
+    ["<leader>ss"] = { "<cmd>Snippets<cr>", "snippets" },
     ["<leader>sy"] = { "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", "yank" },
 
     ["<leader>sf"] = { "<cmd>Telescope find_files<cr>", "Find files" },
     ["<leader>st"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-    -- { "<leader>sf", Util.telescope("files"), "Find Files (root dir)" },
-    -- { "<leader>sF", Util.telescope("files", { cwd = false }), "Find Files (cwd)" },
-    -- { "<leader>st", Util.telescope("live_grep"), "Grep (root dir)" },
-    -- { "<leader>sT", Util.telescope("live_grep", { cwd = false }), "Grep (cwd)" },
-
   })
 
   local icons = require("user.icons")
@@ -263,26 +252,6 @@ function M.config()
       file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%env" },
     },
     pickers = {
-      -- git_commits = {
-      --   git_command = {
-      --     "git",
-      --     "log",
-      --     "--graph",
-      --     "--color=always",
-      --     "--decorate",
-      --     "--pretty=format:%h%d %s %cr %an",
-      --   },
-      -- },
-      -- git_bcommits = {
-      --   git_command = {
-      --     "git",
-      --     "log",
-      --     "--graph",
-      --     "--color=always",
-      --     "--decorate",
-      --     "--pretty=format:%h%d %s %cr %an",
-      --   },
-      -- },
       find_files = {
         hidden = true,
       },

@@ -67,6 +67,7 @@ spec("user.whichkey")
 spec("user.vinegar")
 -- spec("user.vim-abolish")
 spec("user.repeat")
+spec("user.fzf")
 spec("user.bqf")
 spec("user.vim-togglelist")
 
