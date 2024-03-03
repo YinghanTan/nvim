@@ -38,9 +38,6 @@ function M.config()
       L = { "<cmd>Git log<cr>", "Log long" },
       p = { "<cmd>GGrep<cr>", "Grep" },
       r = { "<cmd>GDelete<cr>", "remove" },
-      -- v = { "<cmd>GV!<cr>", "file commits" },
-      -- V = { "<cmd>GV<cr>", "all commits" },
-
       v = {
         name = "view",
         F = { "<cmd>GV!<cr>", "current file commits" },
