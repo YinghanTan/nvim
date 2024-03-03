@@ -4,7 +4,7 @@ local M = {
   cmd = "Gitsigns",
 }
 
-M.config = function()
+function M.config()
 
 
   local icons = require("user.icons")

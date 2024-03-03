@@ -9,3 +9,18 @@ function M.config()
 end
 
 return M
+
+-- Usage examples
+-- ysw"
+-- ysa"(
+-- v<select>S{
+-- dst
+-- ds{
+-- ds(
+-- cs"'
+-- cst<p>
+-- dst
+-- yswfprint
+-- csfcall
+-- dsf
+
