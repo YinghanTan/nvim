@@ -93,7 +93,7 @@ function M.config()
     ["<leader>sgc"] = { "<cmd>Commits<CR>", "commits (all)" },
     -- ["<leader>sgC"] = { "<cmd>AdvancedGitSearch search_log_content_file<CR>", "commits" },
     -- ["<leader>sgC"] = { "<cmd>Telescope git_bcommits<CR>", "commits" },
-    ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)" },
+    ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)", mode = { "n", "v" } },
     ["<leader>sgs"] = { "<cmd>Telescope git_status<CR>", "status" },
     ["<leader>sgS"] = { "<cmd>Telescope git_stash<cr>", "stash" },
 
@@ -202,6 +202,8 @@ function M.config()
           ["<Up>"] = actions.move_selection_previous,
           ["<C-u>"] = actions.preview_scrolling_up,
           ["<C-d>"] = actions.preview_scrolling_down,
+          ["<C-b>"] = actions.preview_scrolling_up,
+          ["<C-f>"] = actions.preview_scrolling_down,
           ["<C-p>"] = actions.results_scrolling_up,
           ["<C-n>"] = actions.results_scrolling_down,
           ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
@@ -232,6 +234,8 @@ function M.config()
           ["<Up>"] = actions.move_selection_previous,
           ["<C-u>"] = actions.preview_scrolling_up,
           ["<C-d>"] = actions.preview_scrolling_down,
+          ["<C-b>"] = actions.preview_scrolling_up,
+          ["<C-f>"] = actions.preview_scrolling_down,
           ["<C-p>"] = actions.results_scrolling_up,
           ["<C-n>"] = actions.results_scrolling_down,
           ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger

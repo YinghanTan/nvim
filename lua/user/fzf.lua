@@ -23,7 +23,7 @@ function M.init()
   vim.g.fzf_history_dir = '~/.local/share/fzf-history'
 
   -- Set FZF_DEFAULT_OPTS environment variable
-  vim.env.FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up"'
+  vim.env.FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --border --bind="ctrl-a:toggle-all,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down,ctrl-/:toggle-preview,ctrl-w:toggle-preview-wrap,ctrl-n:half-page-down,ctrl-p:half-page-up,ctrl-b:preview-half-page-up,ctrl-f:preview-half-page-down"'
 
   -- Set FZF_DEFAULT_COMMAND environment variable
   vim.env.FZF_DEFAULT_COMMAND = 'rg --files --hidden -g "!.git"'
