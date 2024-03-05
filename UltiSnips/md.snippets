@@ -1327,7 +1327,7 @@ snippet fig "Figure" b
 
 endsnippet
 
-snippet daily "daily" b
+snippet dailyd "daily" b
 ## intention
 
 1. [ ] ${1:What do i want to achieve today?}
@@ -1384,4 +1384,28 @@ tags:
 # $1
 
 $0
+endsnippet
+
+
+
+snippet daily "daily" b
+${1:`date +%Y-%m-%d`}
+
+## intention
+
+1. [ ] ${2:What do i want to achieve today?}
+
+## tracking
+
+- [routine](../routine-2023)
+- [ ] hydrate
+- [ ] exercise/fingers/wrist/shoulders 
+- [ ] [practise](../practise)
+- [ ] [read](../read) 
+- [ ] [learn](../learn) 
+
+## log
+
+- ${3}
+
 endsnippet
