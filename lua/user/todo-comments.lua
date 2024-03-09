@@ -8,8 +8,8 @@ local M = {
     { "[t", function() require("todo-comments").jump_prev() end, desc = "Previous todo comment" },
     { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo (Trouble)" },
     { "<leader>xT", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme (Trouble)" },
-    { "<leader>sd", "<cmd>TodoTelescope<cr>", desc = "Todo" },
-    { "<leader>sD", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
+    { "<leader>sdt", "<cmd>TodoTelescope<cr>", desc = "Todo" },
+    { "<leader>sdT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "Todo/Fix/Fixme" },
   },
 }
 

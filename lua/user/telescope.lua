@@ -112,15 +112,16 @@ function M.config()
     ["<leader>sa"] = { "<cmd>Telescope autocommands<cr>", "auto commands" },
     ["<leader>sc"] = { "<cmd>Telescope commands<cr>", "commands" },
 
-    ["<leader>sd"] = {name = "+debug"},
+    ["<leader>sd"] = {name = "+debug/todo"},
     ["<leader>sdd"] = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document diagnostics" },
     ["<leader>sdw"] = { "<cmd>Telescope diagnostics<cr>", "Workspace diagnostics" },
+    ["<leader>sdt"] = { "<cmd>TodoTelescope<cr>", "todos" },
+    ["<leader>sdT"] = {"<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme"},
 
     ["<leader>sE"] = { "<cmd>Telescope env<cr>", "env" },
 
 
     ["<leader>sP"] = { "<cmd>Telescope command_palette<cr>", "command palette" },
-    ["<leader>sD"] = { "<cmd>TodoTelescope<cr>", "todos" },
 
     ["<leader>sH"] = { "<cmd>Telescope highlights<cr>", "Search Highlight Groups" },
     ["<leader>sk"] = { "<cmd>Telescope keymaps<cr>", "Key Maps" },
