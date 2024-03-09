@@ -48,6 +48,9 @@ function M.config()
   }
   local wk = require("which-key")
   wk.register(g_mappings, g_opts)
+  wk.register({
+    ["yoD"] = { "<cmd>diffoff!<cr>", "diffoff all" },
+  })
 end
 
 return M
