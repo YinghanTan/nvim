@@ -31,10 +31,7 @@ function M.config()
         ["o"] = { "<cmd>diffoff!<cr>", "diffoff all" },
       },
       e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
-      G = { "<cmd>FloatermNew lazygit<CR>", "gui" },
       h = { "<cmd>0Gclog<cr>", "file history" },
-      ["lo"] = { "<cmd>Commits<cr>", "all commits" },
-      ["lO"] = { "<cmd>BCommits<cr>", "commits" },
       L = { "<cmd>Git log<cr>", "Log long" },
       p = { "<cmd>GGrep<cr>", "Grep" },
       r = { "<cmd>GDelete<cr>", "remove" }
