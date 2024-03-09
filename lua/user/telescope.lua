@@ -224,7 +224,6 @@ function M.config()
           ["<C-r>"] = function(...)
             -- open in trouble
             return require("trouble.providers.telescope").open_selected_with_trouble(...)
-            return require("trouble.providers.telescope").open_selected_with_trouble(...)
           end,
           ["<CR>"] = actions.select_default,
           ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
