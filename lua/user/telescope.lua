@@ -2,6 +2,7 @@ local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
+    "folke/trouble.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
     {
       "LinArcX/telescope-command-palette.nvim",
@@ -68,6 +69,7 @@ local M = {
     },
   }
 }
+
 
 function M.config()
 
@@ -142,6 +144,9 @@ function M.config()
   local action_layout = require("telescope.actions.layout")
   local multiopen = require("functions.telescope_multiopen")
 
+  local trouble = require("trouble.providers.telescope")
+  local telescope = require("telescope")
+
   require("telescope").setup({
     defaults = {
       prompt_prefix = icons.ui.Telescope .. " ",
@@ -185,6 +190,7 @@ function M.config()
           ["<C-c>"] = actions.close,
           ["<C-v>"] = multiopen.i["<C-v>"],
           ["<C-x>"] = multiopen.i["<C-s>"],
+          ["<c-r>"] = trouble.open_with_trouble,
           ["<C-t>"] = multiopen.i["<C-t>"],
           ["<C-g>"] = function(...)
             -- diagnostics
@@ -217,6 +223,7 @@ function M.config()
           ["<C-c>"] = actions.close,
           ["<C-v>"] = multiopen.n["<C-v>"],
           ["<C-x>"] = multiopen.n["<C-s>"],
+          ["<c-r>"] = trouble.open_with_trouble,
           ["<C-t>"] = multiopen.n["<C-t>"],
           ["<C-g>"] = function(...)
             -- diagnostics

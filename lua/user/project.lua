@@ -24,3 +24,6 @@ function M.config()
 end
 
 return M
+
+-- <c-p>  recent projects
+-- \sp  recent projects
