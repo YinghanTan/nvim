@@ -7,21 +7,21 @@ spec("user.colorscheme")
 spec("user.devicons")
 spec("user.colorizer")
 spec("user.illuminate")
-spec("user.nvimtree")
 spec("user.lualine")
 spec("user.alpha")
 spec("user.tabby")
 spec("user.neoscroll")
 spec("user.dressing")
+spec("user.pretty-fold")
 
 -- coding
 spec("user.mason")
 spec("user.treesitter")
 spec("user.schemastore")
 spec("user.treesj")
-
 spec("user.lspconfig")
 spec("user.cmp")
+spec("user.ultisnips")
 spec("user.none-ls")
 spec("user.comment")
 spec("user.autopairs")
@@ -30,16 +30,14 @@ spec("user.project")
 spec("user.indentline")
 spec("user.indentscope")
 spec("user.nvim-surround")
+
 spec("user.todo-comments")
 spec("user.dial")
-spec("user.ultisnips")
-spec("user.pretty-fold")
 -- spec("user.copilot")
 -- spec("user.lab")
 
 -- testing
 spec("user.neotest")
-spec("user.trouble")
 spec("user.vimspector")
 spec("user.undotree")
 spec("user.spectre")
@@ -50,12 +48,20 @@ spec("user.breadcrumbs")
 spec("user.navic")
 spec("user.hop")
 spec("user.navbuddy")
-spec("user.rnvimr")
 spec("user.vim-fetch")
+
+-- file/dirs
+spec("user.rnvimr")
+spec("user.nvimtree")
+spec("user.vinegar")
 -- spec("user.oil")
 
 -- search
 spec("user.telescope")
+spec("user.fzf")
+spec("user.trouble")
+spec("user.bqf")
+spec("user.vim-togglelist")
 
 -- keys
 spec("user.unimpaired")
@@ -63,12 +69,9 @@ spec("user.unimpaired-which-key")
 spec("user.whichkey")
 
 -- vimscript
-spec("user.vinegar")
 -- spec("user.vim-abolish")
 spec("user.repeat")
-spec("user.fzf")
-spec("user.bqf")
-spec("user.vim-togglelist")
+
 
 -- window
 spec("user.win-zoomwintab")

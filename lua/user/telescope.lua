@@ -144,8 +144,6 @@ function M.config()
   local action_layout = require("telescope.actions.layout")
   local multiopen = require("functions.telescope_multiopen")
 
-  local trouble = require("trouble.providers.telescope")
-  local telescope = require("telescope")
 
   require("telescope").setup({
     defaults = {
@@ -190,10 +188,9 @@ function M.config()
           ["<C-c>"] = actions.close,
           ["<C-v>"] = multiopen.i["<C-v>"],
           ["<C-x>"] = multiopen.i["<C-s>"],
-          ["<c-r>"] = trouble.open_with_trouble,
           ["<C-t>"] = multiopen.i["<C-t>"],
           ["<C-g>"] = function(...)
-            -- diagnostics
+            -- open in trouble
             return require("trouble.providers.telescope").open_selected_with_trouble(...)
           end,
           ["<CR>"] = actions.select_default,
@@ -223,10 +220,10 @@ function M.config()
           ["<C-c>"] = actions.close,
           ["<C-v>"] = multiopen.n["<C-v>"],
           ["<C-x>"] = multiopen.n["<C-s>"],
-          ["<c-r>"] = trouble.open_with_trouble,
           ["<C-t>"] = multiopen.n["<C-t>"],
           ["<C-g>"] = function(...)
-            -- diagnostics
+            -- open in trouble
+            return require("trouble.providers.telescope").open_selected_with_trouble(...)
             return require("trouble.providers.telescope").open_selected_with_trouble(...)
           end,
           ["<CR>"] = actions.select_default,
