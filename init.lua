@@ -30,23 +30,24 @@ spec("user.project")
 spec("user.indentline")
 spec("user.indentscope")
 spec("user.nvim-surround")
-
 spec("user.todo-comments")
 spec("user.dial")
 -- spec("user.copilot")
 -- spec("user.lab")
 
 -- testing
-spec("user.neotest")
 spec("user.vimspector")
 spec("user.undotree")
+
 spec("user.spectre")
+spec("user.neotest")
 
 -- navigation
 spec("user.breadcrumbs")
 -- spec("user.harpoon")
 spec("user.navic")
 spec("user.hop")
+spec("user.eyeliner")
 spec("user.navbuddy")
 spec("user.vim-fetch")
 
@@ -96,7 +97,6 @@ spec("user.term-toggleterm")
 spec("user.vim-matchup")
 
 -- Extras
-spec("user.eyeliner")
 spec("user.fidget")
 spec("user.rest")
 

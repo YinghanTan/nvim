@@ -117,7 +117,8 @@ function M.config()
     ["g"] = { name = "+git/goto",
       ["g"] = { name = "+apps/hunks/link" },
     },
-    ["l"] = { name = "+lsp" },
+    ["l"] = { name = "+lsp/loc" },
+    ["q"] = { name = "+qfix" },
     ["m"] = { name = "+md" },
     ["p"] = { name = "+paste/plugins",
       ["p"] = { "<cmd>Lazy<cr>", "view" }
