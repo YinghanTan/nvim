@@ -94,8 +94,7 @@ spec("user.git-diffview")
 -- terminal
 spec("user.vim-matchup")
 spec("user.term-vim-slime")
-
-spec("user.term-toggleterm")
+-- spec("user.term-toggleterm")
 
 -- Extras
 spec("user.rest")
