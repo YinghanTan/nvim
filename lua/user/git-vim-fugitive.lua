@@ -1,6 +1,6 @@
 local M = {
   "tpope/vim-fugitive",
-  dependencies = { "tpope/vim-rhubarb", "shumphrey/fugitive-gitlab.vim", "tommcdo/vim-fubitive", "junegunn/gv.vim" },
+  dependencies = { "tpope/vim-rhubarb", "shumphrey/fugitive-gitlab.vim", "tommcdo/vim-fubitive" },
   lazy = false,
   ft = {"fugitive"},
 }
@@ -37,13 +37,7 @@ function M.config()
       ["lO"] = { "<cmd>BCommits<cr>", "commits" },
       L = { "<cmd>Git log<cr>", "Log long" },
       p = { "<cmd>GGrep<cr>", "Grep" },
-      r = { "<cmd>GDelete<cr>", "remove" },
-      v = {
-        name = "view",
-        F = { "<cmd>GV!<cr>", "current file commits" },
-        f = { "<cmd>GV<cr>", "all commits" },
-        h = { "<cmd>GV?<cr>", "current file history" },
-      },
+      r = { "<cmd>GDelete<cr>", "remove" }
     }
   }
   local wk = require("which-key")
