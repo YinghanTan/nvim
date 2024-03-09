@@ -28,7 +28,7 @@ function M.config()
         ["d"] = { "<cmd>Gdiff<cr>", "diff" },
         ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
         ["u"] = { "<cmd>diffupdate<cr>", "update" },
-        ["O"] = { "<cmd>diffoff!<cr>", "diffoff all" },
+        ["o"] = { "<cmd>diffoff!<cr>", "diffoff all" },
       },
       e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
       G = { "<cmd>FloatermNew lazygit<CR>", "gui" },

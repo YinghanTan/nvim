@@ -141,6 +141,7 @@ function M.config()
     ["w"] = { name = "+wiki/win" },
     ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
     ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
+    ["yoD"] = { "<cmd>diffoff!<cr>", "diffoff all" },
   }
   which_key.register(mappings, opts)
 end

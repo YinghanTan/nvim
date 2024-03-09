@@ -87,18 +87,21 @@ spec("user.wiki-vimtex")
 
 -- git
 spec("user.git-gitsigns")
+
 spec("user.git-vim-fugitive")
 spec("user.git-gitlinker")
 spec("user.git-diffview")
 
 -- terminal
-spec("user.term-vim-slime")
-spec("user.term-toggleterm")
 spec("user.vim-matchup")
 
+spec("user.term-vim-slime")
+spec("user.term-toggleterm")
+
 -- Extras
-spec("user.fidget")
 spec("user.rest")
+
+spec("user.fidget")
 
 
 -- bottom of file
