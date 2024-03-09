@@ -134,6 +134,7 @@ function M.config()
     ["T"] = {
       name = "+Treesitter",
       i = { "<cmd>TSInstallInfo<cr>", "Info" },
+      p = { "<cmd>TSPlaygroundToggle<cr>", "playground" },
     },
     ["u"] = { name = "+undo/ultisnip" },
     ["w"] = { name = "+wiki/win" },

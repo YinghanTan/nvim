@@ -17,8 +17,9 @@ spec("user.dressing")
 -- coding
 spec("user.mason")
 spec("user.treesitter")
-spec("user.splitjoin")
 spec("user.schemastore")
+spec("user.treesj")
+
 spec("user.lspconfig")
 spec("user.cmp")
 spec("user.none-ls")
