@@ -49,6 +49,7 @@ spec("user.navic")
 spec("user.hop")
 spec("user.navbuddy")
 spec("user.vim-fetch")
+spec("user.flash")
 
 -- file/dirs
 spec("user.rnvimr")
