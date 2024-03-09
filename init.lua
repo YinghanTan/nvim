@@ -47,9 +47,9 @@ spec("user.breadcrumbs")
 -- spec("user.harpoon")
 spec("user.navic")
 spec("user.hop")
+spec("user.eyeliner")
 spec("user.navbuddy")
 spec("user.vim-fetch")
-spec("user.flash")
 
 -- file/dirs
 spec("user.rnvimr")
