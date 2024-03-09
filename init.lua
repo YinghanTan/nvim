@@ -87,9 +87,9 @@ spec("user.wiki-vimtex")
 
 -- git
 spec("user.git-gitsigns")
-
 spec("user.git-vim-fugitive")
 spec("user.git-gitlinker")
+
 spec("user.git-diffview")
 
 -- terminal
