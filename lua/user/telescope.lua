@@ -187,9 +187,9 @@ function M.config()
         i = {
           ["<C-c>"] = actions.close,
           ["<C-v>"] = multiopen.i["<C-v>"],
-          ["<C-x>"] = multiopen.i["<C-s>"],
+          ["<C-s>"] = multiopen.i["<C-s>"],
           ["<C-t>"] = multiopen.i["<C-t>"],
-          ["<C-r>"] = function(...)
+          ["<C-x>"] = function(...)
             -- open in trouble
             return require("trouble.providers.telescope").open_selected_with_trouble(...)
           end,
@@ -219,9 +219,9 @@ function M.config()
           ["<esc>"] = actions.close,
           ["<C-c>"] = actions.close,
           ["<C-v>"] = multiopen.n["<C-v>"],
-          ["<C-x>"] = multiopen.n["<C-s>"],
+          ["<C-s>"] = multiopen.n["<C-s>"],
           ["<C-t>"] = multiopen.n["<C-t>"],
-          ["<C-r>"] = function(...)
+          ["<C-x>"] = function(...)
             -- open in trouble
             return require("trouble.providers.telescope").open_selected_with_trouble(...)
           end,
