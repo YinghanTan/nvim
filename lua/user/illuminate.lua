@@ -43,4 +43,5 @@ return M
 
 -- https://github.com/RRethy/vim-illuminate
 -- :IlluminateToggle
--- You'll also get <a-n> and <a-p> as keymaps to move between references and <a-i> as a textobject for the reference illuminated under the cursor.
+-- <a-n> and <a-p> as keymaps to move between references
+-- <a-i> as a textobject for reference illuminated under cursor
