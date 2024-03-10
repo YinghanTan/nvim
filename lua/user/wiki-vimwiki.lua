@@ -28,7 +28,6 @@ function M.init()
       ["c++"]= "cpp",
       ["latex"]= "tex"
     },
-    diary_rel_path = "inbox/"
   }
   local wiki_2 = {
     path = "~/vimwiki/",
@@ -45,7 +44,6 @@ function M.init()
       ["c++"]= "cpp",
       ["latex"]= "tex"
     },
-    diary_rel_path = "inbox/"
   }
 
   vim.g.vimwiki_list = { wiki_1, wiki_2 }
