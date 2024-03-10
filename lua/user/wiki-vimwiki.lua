@@ -22,7 +22,7 @@ function M.init()
     [".mdown"] = "markdown",
   }
   local wiki_1 = {
-    path = "~/vimwiki/",
+    path = "~/notes/",
     links_space_char = "-",
     syntax = "markdown",
     ext = ".md",
@@ -39,7 +39,7 @@ function M.init()
     diary_rel_path = "inbox/"
   }
   local wiki_2 = {
-    path = "~/notes/",
+    path = "~/vimwiki/",
     links_space_char = "-",
     syntax = "markdown",
     ext = ".md",
@@ -59,6 +59,8 @@ function M.init()
   vim.g.vimwiki_list = { wiki_1, wiki_2 }
   vim.g.vimwiki_folding = "expr"
   vim.g.vimwiki_global_ext = 1 -- make sure vimwiki doesn't own all .md files
+
+
 end
 
 return M
