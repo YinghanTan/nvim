@@ -14,6 +14,7 @@ function M.init()
     [".mdown"] = "markdown",
   }
   local wiki_1 = {
+    name = "wiki",
     path = "~/notes/",
     links_space_char = "-",
     syntax = "markdown",
@@ -30,6 +31,7 @@ function M.init()
     },
   }
   local wiki_2 = {
+    name = "old",
     path = "~/vimwiki/",
     links_space_char = "-",
     syntax = "markdown",
