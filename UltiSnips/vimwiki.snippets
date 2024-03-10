@@ -1389,16 +1389,9 @@ $0
 endsnippet
 
 
+snippet track "track" b
 
-snippet daily "daily" b
-${1:`date +%Y-%m-%d`}
-
-## intention
-
-1. [ ] ${2:What do i want to achieve today?}
-
-## tracking
-
+# tracking
 - [routine](../routine-2023)
 - [ ] hydrate
 - [ ] exercise/fingers/wrist/shoulders 
@@ -1406,8 +1399,14 @@ ${1:`date +%Y-%m-%d`}
 - [ ] [read](../read) 
 - [ ] [learn](../learn) 
 
-## log
+endsnippet
 
-- ${3}
+snippet daily "daily" b
+## ${1:`date +%Y-%m-%d`}
+1. [ ] ${2:What do i want to achieve today?}
+
+### log
+- `date +%H:%M`  ${4:Currently working on}
+
 
 endsnippet
