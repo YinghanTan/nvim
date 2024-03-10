@@ -110,6 +110,7 @@ function M.config()
     ["\\"] = {
       name = "+hop/commands",
       s = { "<cmd>luafile $MYVIMRC<cr>", "source vimrc" },
+      c = { "<cmd>e $MYVIMRC<cr>", "source vimrc" },
     },
     ["b"] = { name = "+buffer" },
     ["d"] = { name = "+debug" },
