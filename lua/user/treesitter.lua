@@ -74,6 +74,7 @@ function M.config()
       "regex",
       "requirements",
       "ruby",
+      "ron",
       "rust",
       "scss",
       "sql",
@@ -90,6 +91,8 @@ function M.config()
       "vue",
       "yaml",
       "zathurarc",
+      "latex",
+      "bibtex"
     },
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,

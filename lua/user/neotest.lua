@@ -12,6 +12,7 @@ local M = {
     "rouge8/neotest-rust",
     "lawrence-laz/neotest-zig",
     "rcasia/neotest-bash",
+    "olimorris/neotest-rspec",
   },
 }
 
@@ -36,6 +37,7 @@ function M.config()
       require("neotest-vim-test"){
         ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
       },
+      require("neotest-rspec"),
     },
   }
 end

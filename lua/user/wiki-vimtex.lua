@@ -1,6 +1,6 @@
 local M = {
   "lervag/vimtex",
-  event = "Bufenter *.md",
+  event = {"Bufenter *.md", "Bufenter *.tex"},
 }
 
 function M.config()
@@ -10,6 +10,9 @@ function M.config()
   vim.g.auto_save_in_insert_move = 0
   vim.g.vimtex_quickfix_mode = 0
   vim.g.tex_conceal = 'abdmg'
+
+  vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
+  vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
 
   -- " Inkscape Figures shortcuts (optimized for Markdown)
   -- nnoremap <C-f> :exec '.!~/scripts/vim/ink.py %:r "'.getline(".").'"' <Esc>
@@ -26,16 +29,16 @@ function M.config()
   vim.api.nvim_create_autocmd("FileType", {
     desc = "Set up VimTex Which-Key descriptions",
     group = vim.api.nvim_create_augroup("vimtex_mapping_descriptions", { clear = true }),
-    pattern = "tex",
+    pattern = {"tex", "bib"},
     callback = function(event)
-      local wk = require "which-key"
+      local wk = require("which-key")
       local opts = {
         mode = "n", -- NORMAL mode
         buffer = event.buf, -- Specify a buffer number for buffer local mappings to show only in tex buffers
       }
       local mappings = {
         ["<localleader>l"] = {
-          name = "+VimTeX",
+          name = "+vimtex",
           a = "Show Context Menu",
           C = "Full Clean",
           c = "Clean",
