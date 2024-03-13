@@ -8,6 +8,7 @@ local M = {
 function M.config()
   local servers = {
     "ansiblels",
+    "ansible-lint",
     "awk_ls",
     "bashls",
     "cssls",
@@ -15,9 +16,11 @@ function M.config()
     "dockerls",
     "eslint",
     "html",
+    "hadolint",
     "jdtls",
     "jsonls",
     "lua_ls",
+    "markdownlint",
     "marksman",
     "neocmake",
     "puppet",
@@ -28,6 +31,7 @@ function M.config()
     "tailwindcss",
     "taplo",
     "terraformls",
+    "tflint",
     "texlab",
     "tsserver",
     "vimls",

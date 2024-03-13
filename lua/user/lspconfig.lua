@@ -89,6 +89,7 @@ function M.config()
     "tailwindcss",
     "taplo",
     "terraformls",
+    "tflint",
     "texlab",
     "tsserver",
     "vimls",

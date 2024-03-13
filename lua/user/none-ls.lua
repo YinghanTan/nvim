@@ -12,16 +12,13 @@ function M.config()
   local formatting = null_ls.builtins.formatting
   local diagnostics =  null_ls.builtins.diagnostics
 
-  null_ls.setup {
+  null_ls.setup({
     debug = false,
     sources = {
       formatting.stylua,
       formatting.prettier,
       formatting.black,
-      -- formatting.prettier.with {
-      --   extra_filetypes = { "toml" },
-      --   -- extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
-      -- },
+
       require("none-ls.diagnostics.flake8"),
       require("none-ls.diagnostics.eslint"),
       require("none-ls.code_actions.eslint"),
@@ -33,8 +30,16 @@ function M.config()
       formatting.fish_indent,
       diagnostics.fish,
       formatting.shfmt,
+
+      null_ls.builtins.formatting.terraform_fmt,
+      null_ls.builtins.diagnostics.terraform_validate,
+
+      null_ls.builtins.diagnostics.hadolint,
+
+      null_ls.builtins.diagnostics.markdownlint,
+
     },
-  }
+  })
 end
 
 return M

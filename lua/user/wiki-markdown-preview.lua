@@ -1,5 +1,6 @@
 local M = {
   "iamcco/markdown-preview.nvim",
+  cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   -- keys = {
   --   {"yom", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Toggle Preview"},
   --   {"<leader>mp", "<cmd>MarkdownPreview<cr>", desc = "Markdown Preview"},
