@@ -9,6 +9,10 @@ local opts = {
         url = "https://www.schemastore.org/api/json/catalog.json",
       },
       schemas = require("schemastore").yaml.schemas(),
+      keyOrdering = false,
+      format = {
+        enable = true,
+      },
     },
   },
 }

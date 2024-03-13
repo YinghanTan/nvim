@@ -20,6 +20,7 @@ function M.config()
     "hadolint",
     "jdtls",
     "jsonls",
+    "js-debug-adapter",
     "lua_ls",
     "markdownlint",
     "marksman",
