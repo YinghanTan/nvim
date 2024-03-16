@@ -142,6 +142,10 @@ function M.config()
       lint_events = { "BufWrite", "CursorHold" },
     },
   })
+
+  vim.cmd([[set foldmethod=expr]]) -- use treesitter folding support
+  vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
+
 end
 
 return M

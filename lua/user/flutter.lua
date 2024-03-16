@@ -8,4 +8,8 @@ local M = {
     config = true,
 }
 
+function M.config()
+  require('flutter-tools').setup({})
+end
+
 return M
