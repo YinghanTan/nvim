@@ -35,10 +35,12 @@ spec("user.dial")
 -- spec("user.copilot")
 -- spec("user.lab")
 
+-- ai
+spec("user.gen")
+
 -- testing
 spec("user.vimspector")
 spec("user.undotree")
-
 spec("user.spectre")
 spec("user.neotest")
 
