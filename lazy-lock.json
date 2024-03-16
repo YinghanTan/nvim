@@ -33,6 +33,7 @@
   "neoscroll.nvim": { "branch": "master", "commit": "6e3546751076890304428150e53bd59198a4505d" },
   "neotest": { "branch": "master", "commit": "f6048f32be831907fb15018af2688ff6633704fc" },
   "neotest-bash": { "branch": "main", "commit": "2eaad2ae4577fadf4af1eec32ec169d0fb2698bb" },
+  "neotest-dart": { "branch": "main", "commit": "33b9335cd8c2be4dcf9dd8f196b24325e7c2e8e7" },
   "neotest-plenary": { "branch": "master", "commit": "dcaf5ed67a9e28a246e9783319e5aa6c9ea1c584" },
   "neotest-python": { "branch": "master", "commit": "2e83d2bc00acbcc1fd529dbf0a0e677cabfe6b50" },
   "neotest-rspec": { "branch": "main", "commit": "0d73fe6de6baf951f6b95f55a4770429b9d58953" },

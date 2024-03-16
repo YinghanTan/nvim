@@ -13,6 +13,7 @@ local M = {
     "lawrence-laz/neotest-zig",
     "rcasia/neotest-bash",
     "olimorris/neotest-rspec",
+    "sidlatau/neotest-dart" ,
   },
 }
 
@@ -38,6 +39,7 @@ function M.config()
         ignore_file_types = { "python", "vim", "lua", "javascript", "typescript" },
       },
       require("neotest-rspec"),
+      require("neotest-dart"){ command = "flutter" },
     },
   }
 end
