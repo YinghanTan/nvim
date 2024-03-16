@@ -3,11 +3,25 @@ local M = {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "folke/trouble.nvim",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+
+    -- add telescope-file-browser
     {
-      "LinArcX/telescope-command-palette.nvim",
+      "nvim-telescope/telescope-file-browser.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim" },
+      keys = {
+        { "<leader>sbf", ":Telescope file_browser path=%:p:h=%:p:h<cr>", desc = "Browse Files" },
+      },
       config = function()
-        require("telescope").load_extension("command_palette")
+        require("telescope").load_extension("file_browser")
+      end,
+    },
+
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      lazy = true,
+      config = function()
+        require("telescope").load_extension("fzf")
       end,
     },
     {
@@ -16,6 +30,7 @@ local M = {
         require("telescope").load_extension("ui-select")
       end,
     },
+
     {
       "debugloop/telescope-undo.nvim",
       config = function()
@@ -34,6 +49,15 @@ local M = {
         require("telescope").load_extension("tele_tabby")
       end,
     },
+
+    {
+      "LinArcX/telescope-command-palette.nvim",
+      dependencies = { "nvim-telescope/telescope.nvim" },
+      config = function()
+        require("telescope").load_extension("command_palette")
+      end,
+    },
+
     {
       "AckslD/nvim-neoclip.lua",
       config = function()
