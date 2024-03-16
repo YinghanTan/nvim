@@ -156,7 +156,7 @@ function M.config()
   local icons = require("user.icons")
   local actions = require("telescope.actions")
   local action_layout = require("telescope.actions.layout")
-  local multiopen = require("functions.telescope_multiopen")
+  local multiopen = require("user.telescope_multiopen")
 
 
   require("telescope").setup({
@@ -379,23 +379,23 @@ function M.config()
         },
         {
           "Notes",
-          { "Find Notes", ":lua require('plugins.extras.functions.telescope_commands').find_notes()", 1 },
-          { "Search/Grep Notes", ":lua require('plugins.extras.functions.telescope_commands').grep_notes()", 1 },
-          { "Browse Notes", ":lua require('plugins.extras.functions.telescope_commands').browse_notes()", 1 },
+          { "Find Notes", ":lua require('user.telescope_commands').find_notes()", 1 },
+          { "Search/Grep Notes", ":lua require('user.telescope_commands').grep_notes()", 1 },
+          { "Browse Notes", ":lua require('user.telescope_commands').browse_notes()", 1 },
         },
         {
           "Projects",
           {
             "Find Files Meshbio",
-            ":lua require('plugins.extras.functions.telescope_commands').find_files_meshbio()",
+            ":lua require('user.telescope_commands').find_files_meshbio()",
             1,
           },
           {
             "Search/Grep Meshbio",
-            ":lua require('plugins.extras.functions.telescope_commands').grep_meshbio()",
+            ":lua require('user.telescope_commands').grep_meshbio()",
             1,
           },
-          { "Search Todos", ":lua require('plugins.extras.functions.telescope_commands').search_todos()", 1 },
+          { "Search Todos", ":lua require('user.telescope_commands').search_todos()", 1 },
         },
         {
           "Toggle",

@@ -30,7 +30,6 @@ function M.config()
     "ruff_lsp",
     "rust_analyzer",
     "sqlls",
-    "solargraph",
     "tailwindcss",
     "taplo",
     "terraformls",

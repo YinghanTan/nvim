@@ -62,8 +62,8 @@ nnoremap yop :call TogglePaste()<cr>
 
 " -- Folding --
 
-nnoremap <silent> zj :call NextClosedFold('j')<cr>
-nnoremap <silent> zk :call NextClosedFold('k')<cr>
+nnoremap <silent> ]z :call NextClosedFold('j')<cr>
+nnoremap <silent> [z :call NextClosedFold('k')<cr>
 
 function! NextClosedFold(dir)
     let cmd = 'norm!z'..a:dir
