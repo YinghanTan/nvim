@@ -22,7 +22,6 @@ function M.config()
     "jsonls",
     "js-debug-adapter",
     "lua_ls",
-    "markdownlint",
     "marksman",
     "neocmake",
     "puppet",
