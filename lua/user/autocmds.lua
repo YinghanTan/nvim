@@ -34,11 +34,12 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 --   end,
 -- })
 
-vim.api.nvim_create_autocmd({ "VimResized" }, {
-  callback = function()
-    vim.cmd "tabdo wincmd ="
-  end,
-})
+-- BUG: moves active tab to the last tab on resize
+-- vim.api.nvim_create_autocmd({ "VimResized" }, {
+--   callback = function()
+--     vim.cmd "tabdo wincmd ="
+--   end,
+-- })
 
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
