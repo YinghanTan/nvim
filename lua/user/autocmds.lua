@@ -44,7 +44,9 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
-    vim.cmd "checktime"
+    if vim.fn.mode() ~= 'c' then
+      vim.api.nvim_command("checktime")
+    end
   end,
 })
 

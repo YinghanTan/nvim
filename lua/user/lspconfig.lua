@@ -50,6 +50,7 @@ function M.config()
       "Format",
     },
     ["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
+    ["<leader>gl"] = { "<cmd>lua vim.diagnostic.open_float()<CR>", "line Diagnostic" },
     ["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     ["]g"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
     ["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },

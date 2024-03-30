@@ -54,9 +54,10 @@ spec("user.navbuddy")
 spec("user.vim-fetch")
 
 -- file/dirs
+spec("user.vinegar")
+spec("user.vim-eunuch")
 spec("user.rnvimr")
 spec("user.nvimtree")
-spec("user.vinegar")
 -- spec("user.oil")
 
 -- search

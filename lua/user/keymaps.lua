@@ -159,8 +159,8 @@ vim.api.nvim_set_keymap("i", "<3-MiddleMouse>", "<Nop>", { noremap = true, silen
 vim.api.nvim_set_keymap("i", "<4-MiddleMouse>", "<Nop>", { noremap = true, silent = true })
 
 
+-- g^ jump to previous tab
 vim.cmd([[
-" jump to previous tab
 if !exists('g:lasttab')
   let g:lasttab = 1
 endif
@@ -174,3 +174,7 @@ vim.api.nvim_set_keymap("n", "<M-j>", ":resize -2<CR>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "<M-k>", ":resize +2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+
+
+-- netrw
+vim.g.netrw_keepdir = 0
