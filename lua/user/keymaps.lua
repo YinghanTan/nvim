@@ -178,3 +178,7 @@ vim.api.nvim_set_keymap("n", "<M-l>", ":vertical resize +2<CR>", { noremap = tru
 
 -- netrw
 vim.g.netrw_keepdir = 0
+vim.cmd([[hi! link netrwMarkFile Search]])
+vim.g.netrw_banner = 0
+vim.g.netrw_localcopydircmd = 'cp -r'
+vim.g.netrw_winsize = 30
