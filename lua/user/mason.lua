@@ -17,7 +17,6 @@ function M.config()
     "dockerls",
     "eslint",
     "html",
-    "hadolint",
     "jdtls",
     "jsonls",
     "lua_ls",
@@ -41,6 +40,7 @@ function M.config()
     -- "black",
     -- "debugpy",
     -- "flake8",
+    -- "hadolint",
   }
 
   require("mason").setup {
