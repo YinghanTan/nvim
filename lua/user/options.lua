@@ -137,7 +137,7 @@ vim.opt.textwidth = 0 -- maximum width of text that is being inserted
 vim.opt.wrapmargin = 0 -- chars from the right where wrapping starts
 vim.cmd("set omnifunc=syntaxcomplete#Complete") -- AutoCompletion Insert Mode - <C-X><C-O> Navigate - <C-N><C-P>
 -- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0
+-- vim.g.markdown_recommended_style = 0
 vim.opt.spelllang = { "en" }
 vim.opt.formatoptions = "jqn" -- formatting and text wrapping behaviour
 vim.cmd("autocmd BufNewFile,BufRead,FileType,OptionSet * set formatoptions-=cro")
