@@ -8,11 +8,9 @@ local M = {
 function M.config()
   local servers = {
     "ansiblels",
-    "ansible-lint",
     "awk_ls",
     "bashls",
     "cssls",
-    "codelldb",
     "docker_compose_language_service",
     "dockerls",
     "eslint",
@@ -36,6 +34,8 @@ function M.config()
     "vimls",
     "vuels",
     "yamlls",
+    -- "ansible-lint",
+    -- "codelldb",
     -- "gopls",
     -- "black",
     -- "debugpy",

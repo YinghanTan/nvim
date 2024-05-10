@@ -10,13 +10,10 @@ local M = {
 function M.setup()
   local wk = require("which-key")
   wk.register({
-    ["<leader>db"] = { ":DapToggleBreakpoint<CR>", "toggle breakpoint" },
-    ["<leader>dc"] = { ":DapContinue<CR>", "continue" },
-    ["<leader>do"] = { ':lua require("dapui").open()<CR>', "open ui" },
+    ["<leader>ddb"] = { ":DapToggleBreakpoint<CR>", "toggle breakpoint" },
+    ["<leader>ddc"] = { ":DapContinue<CR>", "continue" },
+    ["<leader>ddo"] = { ':lua require("dapui").open()<CR>', "open ui" },
   })
-vim.api.nvim_set_keymap("n", "<leader>db", ":DapToggleBreakpoint<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>dc", ":DapContinue<CR>", {noremap=true})
-vim.api.nvim_set_keymap('n', '<leader>do', ':lua require("dapui").open()<CR>', { noremap = true, silent = true })
 end
 
 return M
