@@ -113,7 +113,10 @@ function M.config()
       c = { "<cmd>e $MYVIMRC<cr>", "source vimrc" },
     },
     ["b"] = { name = "+buffer" },
-    ["d"] = { name = "+debug" },
+    ["d"] = {
+        name = "+debug",
+        ['d'] = "+dap"
+        },
     ["f"] = { name = "+find" },
     ["g"] = { name = "+git/goto",
       ["g"] = { name = "+apps/hunks/link" },

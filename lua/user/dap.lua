@@ -10,6 +10,9 @@ local M = {
 }
 
 function M.setup()
+
+  -- require("core.utils").load_mappings("dap")
+
   local wk = require("which-key")
   wk.register({
     ["<leader>ddb"] = { ":DapToggleBreakpoint<CR>", "toggle breakpoint" },
