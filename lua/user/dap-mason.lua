@@ -1,13 +1,15 @@
 local M = {
   "jay-babu/mason-nvim-dap.nvim",
+  cmd = { "DapInstall", "DapUninstall" },
   dependencies = {
-    "williamboman/mason.nvim",
-    "mfussenegger/nvim-dap",
+    "williamboman/mason.nvim"
   },
 }
 
 function M.config()
   require("mason-nvim-dap").setup({
+    automatic_installation = true,
+    handlers = {},
     ensure_installed = {
       "python",
       "stylua",
@@ -18,7 +20,6 @@ function M.config()
       "bash",
       "dart",
     },
-    automatic_installation = true,
   })
 end
 

@@ -4,9 +4,9 @@ local M = {
 }
 
 function M.config()
+
   local dap = require("dap")
   local dapui = require("dapui")
-  local wk = require("which-key")
   dapui.setup()
   dap.listeners.after.event_initialized["dapui_config"] = function()
     dapui.open()
@@ -17,9 +17,13 @@ function M.config()
   dap.listeners.before.event_exited["dapui_config"] = function()
     dapui.close()
   end
+
+  local wk = require("which-key")
   wk.register({
-    ["<leader>dD"] = { ":lua require('dapui').toggle()<cr>", "toggle dap" },
+    ["<leader>ddu"] = { function() require("dapui").toggle({ }) end, "toggle dap" },
+    ["<leader>dde"] = { function() require("dapui").eval() end, "eval", mode = {"n", "v"}  },
   })
+
 end
 
 return M
