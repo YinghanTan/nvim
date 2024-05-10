@@ -43,7 +43,13 @@ spec("user.vimspector")
 spec("user.undotree")
 spec("user.spectre")
 spec("user.neotest")
--- spec("user.dap")
+
+-- dap
+spec("user.dap")
+spec("user.dap-ui")
+spec("user.dap-virtual-text")
+spec("user.dap-mason")
+spec("user.dap-python")
 
 
 -- navigation

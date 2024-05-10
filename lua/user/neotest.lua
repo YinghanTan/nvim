@@ -1,6 +1,7 @@
 local M = {
   "nvim-neotest/neotest",
   dependencies = {
+    "nvim-neotest/nvim-nio",
     "nvim-treesitter/nvim-treesitter",
     -- general tests
     "vim-test/vim-test",
@@ -30,9 +31,14 @@ function M.config()
   ---@diagnostic disable: missing-fields
   require("neotest").setup {
     adapters = {
-      require("neotest-python"){
-        dap = { justMyCode = false },
-      },
+      require("neotest-python")({
+        dap = {
+          justMyCode = false,
+          console = "integratedTerminal",
+        },
+        args = { "--log-level", "DEBUG", "--quiet" },
+        runner = "pytest",
+      }),
       require("neotest-vitest"),
       require("neotest-zig"),
       require("neotest-vim-test"){
