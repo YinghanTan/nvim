@@ -149,4 +149,4 @@ vim.cmd("highlight ColorColumn ctermbg=0 guibg=lightgrey")
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.opt.iskeyword:append("-") -- treat dash separated words as a word text object
 
-
+vim.g.python3_host_prog = "~/.pyenv/versions/3.10.12/bin/python3"

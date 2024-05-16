@@ -1,6 +1,9 @@
 local M = {
   "rcarriga/nvim-dap-ui",
-  dependencies = { "nvim-neotest/nvim-nio" },
+  dependencies = {
+    "nvim-neotest/nvim-nio",
+    "mfussenegger/nvim-dap",
+  },
 }
 
 function M.config()
@@ -20,7 +23,9 @@ function M.config()
 
   local wk = require("which-key")
   wk.register({
-    ["<leader>ddu"] = { function() require("dapui").toggle({ }) end, "toggle dap" },
+    ["<leader>ddu"] = { function() require("dapui").toggle() end, "ui toggle" },
+    -- ["<leader>ddu"] = { function() require("dapui").open({ }) end, "ui on" },
+    -- ["<leader>ddU"] = { function() require("dapui").off({ }) end, "ui off" },
     ["<leader>dde"] = { function() require("dapui").eval() end, "eval", mode = {"n", "v"}  },
   })
 

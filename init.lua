@@ -46,7 +46,6 @@ spec("user.neotest")
 
 -- dap
 spec("user.dap")
-
 spec("user.dap-ui")
 spec("user.dap-virtual-text")
 spec("user.dap-mason")
