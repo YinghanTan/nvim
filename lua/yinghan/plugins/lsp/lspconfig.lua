@@ -36,19 +36,21 @@ return {
         opts.desc = "show lsp type definitions"
         vim.keymap.set("n", "gy", "<cmd>Telescope lsp_type_definitions<cr>", opts)  -- lsp type definitions
         opts.desc = "See available code actions"
-        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)  --see available code actions
+        vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)  --see available code actions
         opts.desc = "Smart rename"
-        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)  -- smart rename
+        vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)  -- smart rename
         opts.desc = "Show buffer diagnostics"
+
         vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<cr>", opts)  -- show diagnostics for file
         opts.desc = "Show line diagnostics"
         vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, otps)  -- show diagnostics for line
         opts.desc = "Go to previous diagnostic"
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)  -- jump to next diagnostic
         opts.desc = "Show documentation for what is under cursor"
+
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)  -- show documentation for what is under cursor
         opts.desc = "Restart LSP"
-        vim.keymap.set("n", "<leader>rs", ":LspRestart<cr>", opts)  -- mapping to restart lsp if necessary
+        vim.keymap.set("n", "<leader>lR", ":LspRestart<cr>", opts)  -- mapping to restart lsp if necessary
       end,
     })
 

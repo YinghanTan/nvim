@@ -6,4 +6,7 @@ return {
   init = function()
     vim.g.startuptime_tries = 10
   end,
+  keys = {
+    { "<leader><leader>S", "<cmd>StartupTime<cr>", mode = { "n" }, desc = "measure startup" },
+  },
 }

@@ -35,23 +35,12 @@ return {
         require("telescope").load_extension("undo")
       end,
     },
-    {
-      "TC72/telescope-tele-tabby.nvim",
-      config = function()
-        require("telescope").load_extension("tele_tabby")
-      end,
-    },
-    {
-      "fhill2/telescope-ultisnips.nvim",
-      config = function()
-        require("telescope").load_extension("ultisnips")
-      end,
-    },
   },
   config = function()  -- the config functions runs whenever the plugin loads
     local icons = require("yinghan.library.icons")
     local actions = require("telescope.actions")
     local action_layout = require("telescope.actions.layout")
+    local multiopen = require("yinghan.library.telescope_multiopen")
 
     require("telescope").setup({
       defaults = {
@@ -91,10 +80,105 @@ return {
         file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%env" },
         mappings = {
           i = {
-            ["<C-k>"] = actions.move_selection_previous,  -- move to prev result
-            ["<C-j>"] = actions.move_selection_next,  -- move to next result
+            ["<C-c>"] = actions.close,
+            ["<C-v>"] = multiopen.i["<C-v>"],
+            ["<C-s>"] = multiopen.i["<C-s>"],
+            ["<C-t>"] = multiopen.i["<C-t>"],
+            ["<C-x>"] = function(...)
+              -- open in trouble
+              return require("trouble.providers.telescope").open_selected_with_trouble(...)
+            end,
+            ["<CR>"] = actions.select_default,
+            ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+            ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-Down>"] = actions.cycle_history_next,
+            ["<C-Up>"] = actions.cycle_history_prev,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+            ["<Down>"] = actions.move_selection_next,
+            ["<Up>"] = actions.move_selection_previous,
+            ["<C-u>"] = actions.preview_scrolling_up,
+            ["<C-d>"] = actions.preview_scrolling_down,
+            ["<C-b>"] = actions.preview_scrolling_up,
+            ["<C-f>"] = actions.preview_scrolling_down,
+            ["<C-p>"] = actions.results_scrolling_up,
+            ["<C-n>"] = actions.results_scrolling_down,
+            ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
+            ["<M-m>"] = actions.which_key,
+            ["<C-right>"] = actions.cycle_previewers_next,
+            ["<C-left>"] = actions.cycle_previewers_prev,
+            ["<C-a>"] = actions.toggle_all,
           },
+          n = {
+            ["<esc>"] = actions.close,
+            ["<C-c>"] = actions.close,
+            ["<C-v>"] = multiopen.n["<C-v>"],
+            ["<C-s>"] = multiopen.n["<C-s>"],
+            ["<C-t>"] = multiopen.n["<C-t>"],
+            ["<C-x>"] = function(...)
+              -- open in trouble
+              return require("trouble.providers.telescope").open_selected_with_trouble(...)
+            end,
+            ["<CR>"] = actions.select_default,
+            ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+            ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+            ["<C-Down>"] = actions.cycle_history_next,
+            ["<C-Up>"] = actions.cycle_history_prev,
+            ["<C-j>"] = actions.move_selection_next,
+            ["<C-k>"] = actions.move_selection_previous,
+            ["<Down>"] = actions.move_selection_next,
+            ["<Up>"] = actions.move_selection_previous,
+            ["<C-u>"] = actions.preview_scrolling_up,
+            ["<C-d>"] = actions.preview_scrolling_down,
+            ["<C-b>"] = actions.preview_scrolling_up,
+            ["<C-f>"] = actions.preview_scrolling_down,
+            ["<C-p>"] = actions.results_scrolling_up,
+            ["<C-n>"] = actions.results_scrolling_down,
+            ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
+            ["<M-m>"] = actions.which_key,
+            ["<C-right>"] = actions.cycle_previewers_next,
+            ["<C-left>"] = actions.cycle_previewers_prev,
+            ["<C-a>"] = actions.toggle_all,
+            ["j"] = actions.move_selection_next,
+            ["k"] = actions.move_selection_previous,
+            ["H"] = actions.move_to_top,
+            ["M"] = actions.move_to_middle,
+            ["L"] = actions.move_to_bottom,
+            ["gg"] = actions.move_to_top,
+            ["zz"] = actions.center,
+            ["G"] = actions.move_to_bottom,
+          },
+        },
+      },
+
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+        planets = {
+          show_pluto = true,
+          show_moon = true,
+        },
+        colorscheme = {
+          enable_preview = true,
+        },
+        lsp_references = {
+          theme = "dropdown",
+          initial_mode = "normal",
+        },
+        lsp_definitions = {
+          theme = "dropdown",
+          initial_mode = "normal",
+        },
+        lsp_declarations = {
+          theme = "dropdown",
+          initial_mode = "normal",
+        },
+        lsp_implementations = {
+          theme = "dropdown",
+          initial_mode = "normal",
         },
       },
 
@@ -111,10 +195,6 @@ return {
             -- even more opts
           }),
         },
-        tele_tabby = {
-          use_highlighter = true,
-        },
-        ultisnips = {},
         undo = {
           use_delta = true,
           use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
@@ -143,10 +223,65 @@ return {
     })
 
     -- set keymaps
-    vim.keymap.set("n", "<leader>sf", "<cmd>Telescope find_files<cr>", { desc = "Fuzzy find files in cwd" })
-    vim.keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
-    vim.keymap.set("n", "<leader>st", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
-    vim.keymap.set("n", "<leader>sc", "<cmd>Telescope grep_string<cr>", { desc = "find string under cursor" })
-    vim.keymap.set("n", "<leader>sT", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>sh"] = {name = "+history"} ,
+      ["<leader>sh:"] = {"<cmd>Telescope command_history<cr>", "command history"},
+      ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", "change history"},
+      ["<leader>shq"] = {"<cmd>lua require('telescope.builtin').quickfixhistory()<cr>", "quickfix history"},
+
+      ["<leader>sb"] = {name = "+buffer"},
+      ["<leader>sbb"] = { "<cmd>Telescope buffers previewer=true<cr>", "buffer" },
+      ["<leader>sbB"] = {"<cmd>Telescope buffers show_all_buffers=true<cr>", "all buffers"},
+      ["<leader>sbl"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "buffer lines"},
+
+      ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
+
+      ["<leader>sg"] = {name = "+git"},
+      ["<leader>sgb"] = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
+      ["<leader>sgc"] = { "<cmd>Commits<CR>", "commits (all)" },
+      ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)", mode = { "n", "v" } },
+      ["<leader>sgs"] = { "<cmd>Telescope git_status<CR>", "status" },
+      ["<leader>sgS"] = { "<cmd>Telescope git_stash<cr>", "stash" },
+
+      ["<leader>s?"] = {"<cmd>Telescope help_tags<cr>", "help tags"},
+      ["<leader>sC"] = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+      ["<leader>sp"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+      ["<leader>se"] = { "<cmd>Telescope spell_suggest<cr>", "spell" },
+      ["<leader>sj"] = { "<cmd>Telescope jumplist<CR>", "jumplist" },
+      ["<leader>so"] = { "<cmd>Telescope oldfiles<cr>", "Recent" },
+
+      ['<leader>sr"'] = { "<cmd>Telescope registers<cr>", "registers" },
+      ["<leader>sl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
+      ["<leader>sR"] = { "<cmd>Telescope resume<cr>", "resume" },
+      ["<leader>sa"] = { "<cmd>Telescope autocommands<cr>", "auto commands" },
+      ["<leader>sc"] = { "<cmd>Telescope commands<cr>", "commands" },
+
+      ["<leader>sd"] = {name = "+debug/todo"},
+      ["<leader>sdd"] = { "<cmd>Telescope diagnostics bufnr=0<cr>", "Document diagnostics" },
+      ["<leader>sdw"] = { "<cmd>Telescope diagnostics<cr>", "Workspace diagnostics" },
+      ["<leader>sdt"] = { "<cmd>TodoTelescope<cr>", "todos" },
+      ["<leader>sdT"] = {"<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme"},
+
+      ["<leader>sE"] = { "<cmd>Telescope env<cr>", "env" },
+
+      ["<leader>sH"] = { "<cmd>Telescope highlights<cr>", "Search Highlight Groups" },
+      ["<leader>sk"] = { "<cmd>Telescope keymaps<cr>", "Key Maps" },
+
+      ["<leader>sm"] = { "<cmd>Telescope marks<cr>", "Jump to Mark" },
+      ["<leader>sM"] = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
+      ["<leader>sv"] = { "<cmd>lua require('telescope').extensions.vimspector.configurations()<cr>", "vimspector" },
+      ["<leader>sV"] = {"<cmd>Telescope vim_options<cr>", "vim options" },
+
+      ["<leader>su"] = { "<cmd>Telescope undo<cr>", "undo" },
+      ["<leader>ss"] = { "<cmd>Snippets<cr>", "snippets" },
+      ["<leader>sy"] = { "<cmd>lua require('telescope').extensions.neoclip.default()<cr>", "yank" },
+
+      ["<leader>sf"] = { "<cmd>Telescope find_files<cr>", "Find files" },
+      ["<leader>st"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+      ["<leader>sU"] = { "<cmd>Telescope grep_string<cr>", "find string under cursor" },
+
+    })
   end,
 }
