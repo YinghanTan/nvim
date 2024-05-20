@@ -6,7 +6,6 @@ return {
     -- set keymaps
     vim.keymap.set("n", "<leader>gdH",  "<cmd>DiffviewFileHistory<cr>", { desc = "branch diffview history"})
     vim.keymap.set("n", "<leader>gdh",  "<cmd>DiffviewFileHistory %<cr>", { desc = "file diffview history"})
-
   end
 }
 

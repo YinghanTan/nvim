@@ -128,28 +128,16 @@ return {
       ["l"] = { name = "+lsp/loclist" },
       ["q"] = { name = "+quickfix" },
       ["m"] = { name = "+md" },
-      ["p"] = { name = "+paste/plugins",
-        ["p"] = { "<cmd>Lazy<cr>", "view" }
-      },
       ["s"] = { name = "+search/sub" },
       ["t"] = {
         name = "+test/tab",
-        n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
-        N = { "<cmd>tabnew %<cr>", "New Tab" },
-        o = { "<cmd>tabonly<cr>", "Only" },
-        h = { "<cmd>-tabmove<cr>", "Move Left" },
-        l = { "<cmd>+tabmove<cr>", "Move Right" },
       },
       ["T"] = {
         name = "+Treesitter",
-        -- i = { "<cmd>TSInstallInfo<cr>", "Info" },
-        -- p = { "<cmd>TSPlaygroundToggle<cr>", "playground" },
       },
       ["u"] = { name = "+undo/ultisnip" },
       ["w"] = { name = "+wiki/win" },
       ["x"] = { name = "+trouble" },
-      -- ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
-      -- ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
     }
     which_key.register(mappings, opts)
   end
