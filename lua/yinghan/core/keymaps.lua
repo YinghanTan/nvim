@@ -1,19 +1,16 @@
-local keymap = vim.keymap.set
-local opts = { noremap = true, silent = true }
-
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+vim.keymap.set("v", "<", "<gv", { noremap = true, silent = true })
+vim.keymap.set("v", ">", ">gv", { noremap = true, silent = true })
 
 -- fix paste
-keymap("x", "p", [["_dP]])
+vim.keymap.set("x", "p", [["_dP]])
 
 -- move up and down wrapped lines (tailwind bearable to work with)
-keymap({ "n", "x" }, "j", "gj", opts)
-keymap({ "n", "x" }, "k", "gk", opts)
+vim.keymap.set({ "n", "x" }, "j", "gj", { noremap = true, silent = true })
+vim.keymap.set({ "n", "x" }, "k", "gk", { noremap = true, silent = true })
 
 vim.cmd("nnoremap gV `[v`]") -- highlight last inserted text
 
@@ -27,7 +24,7 @@ vim.api.nvim_create_autocmd(
 vim.api.nvim_set_keymap("n", "Y", "y$", { noremap = true, silent = true })
 
 -- highlight without moving
-vim.api.nvim_set_keymap("n", "g*", ":let @/=expand('<cword>') <bar> set hls <cr>", opts )
+vim.api.nvim_set_keymap("n", "g*", ":let @/=expand('<cword>') <bar> set hls <cr>", { noremap = true, silent = true } )
 
 -- Center search results
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true, silent = true })
@@ -133,11 +130,11 @@ nnoremap <silent> zk :<c-u>call RepeatCmd('call NextClosedFold("k")')<cr>
 
 
 -- tab management
-keymap("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Open new tab" })  -- open new tab
-keymap("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close current tab" })  -- close current tab
-keymap("n", "<leader>tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })  -- go to next tab
-keymap("n", "<leader>tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })  -- go to previous tab
-keymap("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })  -- open current buffer in new tab
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Open new tab" })  -- open new tab
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close current tab" })  -- close current tab
+vim.keymap.set("n", "<leader>tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })  -- go to next tab
+vim.keymap.set("n", "<leader>tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })  -- go to previous tab
+vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })  -- open current buffer in new tab
 -- g^ jump to previous tab
 vim.cmd([[
 if !exists('g:lasttab')
@@ -154,22 +151,22 @@ au TabLeave * let g:lasttab = tabpagenr()
 -- vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
 -- -- switch modes in terminal
--- vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', opts)
+-- vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
 
 -- -- mouse keys
 -- vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
 -- vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
 
 -- -- shortcuts
--- keymap("i", "jk", "<ESC>", { desc = "Exit insert mode with jk"})
--- keymap("n", "<leader>nh", ":noh<cr>", { desc = "Clear search highlights" })
+-- vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk"})
+-- vim.keymap.set("n", "<leader>nh", ":noh<cr>", { desc = "Clear search highlights" })
 
 -- -- increment/decrement numbers
--- keymap("n", "<leader>+", "<C-a>", { desc = "Increment number" })  -- increment
--- keymap("n", "<leader>-", "<C-x>", { desc = "Decrement number" })  -- decrement
+-- vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })  -- increment
+-- vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })  -- decrement
 
 -- -- window management
--- keymap("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })  -- split window vertically
--- keymap("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })  -- split window horizontally
--- keymap("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })  -- make split windows equal width
--- keymap("n", "<leader>sx", "<cmd>close<cr>", { desc = "Close current split" })  -- close current split window
+-- vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })  -- split window vertically
+-- vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })  -- split window horizontally
+-- vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })  -- make split windows equal width
+-- vim.keymap.set("n", "<leader>sx", "<cmd>close<cr>", { desc = "Close current split" })  -- close current split window
