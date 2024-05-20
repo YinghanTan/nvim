@@ -1,6 +1,6 @@
 return {
   "vimwiki/vimwiki",
-  -- lazy = "VeryLazy",
+  lazy = false,
   ft = { "markdown", "wiki", "vimwiki"},
   init = function()
     --- Vim Wiki & Instant Markdown Plugin ---
@@ -50,8 +50,7 @@ return {
     vim.g.vimwiki_list = { wiki_1, wiki_2 }
     vim.g.vimwiki_folding = "expr"
     vim.g.vimwiki_global_ext = 1 -- make sure vimwiki doesn't own all .md files
-  end,
-  config = function()
+
     local wk = require("which-key")
     wk.register({
       mode = { "n", "v" },

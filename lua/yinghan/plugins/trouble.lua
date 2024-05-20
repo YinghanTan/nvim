@@ -69,9 +69,4 @@ return {
       desc = "Next trouble/quickfix item",
     },
   },
-  config = function()
-
-    -- -- set keymaps
-    -- vim.keymap.set("n", "<leader><leader>L", "<cmd>Lazy<cr>", { desc = "lazy"})
-  end,
 }

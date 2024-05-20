@@ -1,5 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
+  event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     local lualine = require("lualine")
@@ -8,7 +9,20 @@ return {
     -- configure lualine with modified theme
     lualine.setup({
       options = {
+        icons_enabled = true,
         theme = "auto",
+        disabled_filetypes = {
+          statusline = {"dashboard", "alpha"},
+          winbar = {},
+        },
+        ignore_focus = { "NvimTree" },
+        always_divide_middle = true,
+        globalstatus = true,
+        refresh = {
+          statusline = 1000,
+          tabline = 1000,
+          winbar = 1000,
+        }
       },
       sections = {
         lualine_a = { "mode" },
@@ -27,6 +41,7 @@ return {
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
+      extensions = { "quickfix", "man", "fugitive" },
     })
   end,
 }

@@ -17,6 +17,7 @@ return {
     -- enable mason and configure icons
     mason.setup({
       ui = {
+        border = "rounded",
         icons = {
           package_installed = "✓",
           package_pending = "➜",
@@ -28,8 +29,15 @@ return {
     mason_lspconfig.setup({
       -- list of servers for mason to install
       ensure_installed = {
+        "ansiblels",
+        "awk_ls",
+        "bashls",
+        "cssls",
+        "docker_compose_language_service",
+        "dockerls",
         "tsserver",
         "html",
+        "jsonls",
         "cssls",
         "tailwindcss",
         "svelte",
@@ -38,6 +46,18 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
+        "yamlls",
+        "ruff_lsp",
+        "sqlls",
+        "terraformls",
+        "tflint",
+        "texlab",
+        "marksman",
+        "ruff_lsp",
+        "rust_analyzer",
+        "tsserver",
+        "vimls",
+        "yamlls",
       },
     })
 
@@ -49,7 +69,7 @@ return {
         "black",
         "pylint",
         "eslint_d",
-      }
+      },
     })
   end,
 }
