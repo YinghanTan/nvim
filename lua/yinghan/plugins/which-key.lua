@@ -112,8 +112,8 @@ return {
     local mappings = {
       ["\\"] = {
         name = "+hop/commands",
-        s = { "<cmd>luafile $MYVIMRC<cr>", "source vimrc" },
-        c = { "<cmd>e $MYVIMRC<cr>", "source vimrc" },
+        ["s"] = { "<cmd>luafile $MYVIMRC<cr>", "source vimrc" },
+        ["c"] = { "<cmd>e $MYVIMRC<cr>", "source vimrc" },
       },
       ["b"] = { name = "+buffer" },
       ["d"] = {

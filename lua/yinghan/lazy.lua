@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
     "clone",
     "--filter=blob:none",
     "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable",  -- latest stable release
+    "--branch=stable", -- latest stable release
     lazypath,
   })
 end
@@ -14,13 +14,16 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   { import = "yinghan.plugins" },
-  { import = "yinghan.plugins.lsp" } },
-  {
-    checker = {  -- check for plugin updates
-      enabled = true,
-      notify = false,
-    },
-    change_detection = {
-      notify = true,
-    },
-  })
+  { import = "yinghan.plugins.lsp" },
+}, {
+  checker = { -- check for plugin updates
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = true,
+  },
+})
+
+-- set keymaps
+vim.keymap.set("n", "<leader><leader>L", "<cmd>Lazy<cr>", { desc = "lazy"})
