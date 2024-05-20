@@ -8,6 +8,7 @@ return {
       bold = true,
       italic = {
         strings = true,
+        emphasis = true,
         comments = true,
         operators = false,
         folds = true,
@@ -23,11 +24,6 @@ return {
       dim_inactive = false,
       transparent_mode = false,
       overrides = {
-        -- DiffChange = {bg="#2D435D", fg="#FFFFFF",  reverse = false },
-        -- DiffText = {bg="#33699A", fg="#FFFFFF", bold=true, reverse = false },
-        -- DiffAdd = {bg="#2D4B4C", fg="#FFFFFF", reverse = false},
-        -- DiffRemoved = { fg = "#B44A34", bg = "None", reverse = false},
-        -- DiffDelete = { fg = "#B44A34", bg = "None", reverse = false}
         DiffChange = {bg="#458588", fg="#FFFFFF",  reverse = false },
         DiffText = {bg="#076678", fg="#FFFFFF", bold=true, reverse = false },
         DiffAdd = {bg="#98971a", fg="#FFFFFF", reverse = false},
