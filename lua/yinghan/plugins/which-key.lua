@@ -142,14 +142,14 @@ return {
       },
       ["T"] = {
         name = "+Treesitter",
-        i = { "<cmd>TSInstallInfo<cr>", "Info" },
-        p = { "<cmd>TSPlaygroundToggle<cr>", "playground" },
+        -- i = { "<cmd>TSInstallInfo<cr>", "Info" },
+        -- p = { "<cmd>TSPlaygroundToggle<cr>", "playground" },
       },
       ["u"] = { name = "+undo/ultisnip" },
       ["w"] = { name = "+wiki/win" },
       ["x"] = { name = "+trouble" },
-      ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
-      ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
+      -- ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
+      -- ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
     }
     which_key.register(mappings, opts)
   end

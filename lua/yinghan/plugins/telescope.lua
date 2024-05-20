@@ -70,6 +70,6 @@ return {
     vim.keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>", { desc = "Fuzzy find recent files" })
     vim.keymap.set("n", "<leader>st", "<cmd>Telescope live_grep<cr>", { desc = "Find string in cwd" })
     vim.keymap.set("n", "<leader>sc", "<cmd>Telescope grep_string<cr>", { desc = "find string under cursor" })
-    vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+    vim.keymap.set("n", "<leader>sT", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
   end,
 }

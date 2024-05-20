@@ -5,9 +5,6 @@ return {
   config = function()
     local todo_comments = require("todo-comments")
 
-    -- HACK: 
-    -- BUG: 
-    -- TODO: add better comments here
 
     -- set keymaps
     vim.keymap.set("n", "]t", function() todo_comments.jump_next() end, { desc = "Next todo comment"})
@@ -16,3 +13,8 @@ return {
     todo_comments.setup()
   end,
 }
+
+
+-- HACK: 
+-- BUG: 
+-- TODO: add better comments here
