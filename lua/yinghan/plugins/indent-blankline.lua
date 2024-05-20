@@ -1,11 +1,11 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
-  event = "VeryLazy",
+  event = { "BufReadPre", "BufNewFile" },
   commit = "9637670896b68805430e2f72cf5d16be5b97a22a",
   config = function()
     vim.keymap.set("n", "yog", "<cmd>IndentBlanklineToggle<cr>", { desc = "toggle indent guide" })
 
-    local icons = require("yinghan.icons")
+    local icons = require("yinghan.library.icons")
     require("indent_blankline").setup({
       buftype_exclude = { "terminal", "nofile" },
       filetype_exclude = {

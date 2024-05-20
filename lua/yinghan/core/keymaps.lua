@@ -155,9 +155,6 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 -- Archive
 
--- -- lazy
--- vim.api.nvim_set_keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
-
 -- -- switch modes in terminal
 -- vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
 

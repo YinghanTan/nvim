@@ -49,17 +49,94 @@ return {
     },
   },
   config = function()  -- the config functions runs whenever the plugin loads
-    local telescope = require("telescope")
+    local icons = require("yinghan.library.icons")
     local actions = require("telescope.actions")
+    local action_layout = require("telescope.actions.layout")
 
-    telescope.setup({
+    require("telescope").setup({
       defaults = {
         path_display = { "smart" },
+        initial_mode = "insert",
+        selection_strategy = "reset",
+        sorting_strategy = "ascending",
+        wrap_results = false,
+        scroll_strategy = "limit",
+        color_devicons = true,
+        vimgrep_arguments = {
+          "rg",
+          "--color=never",
+          "--no-heading",
+          "--with-filename",
+          "--line-number",
+          "--column",
+          "--smart-case",
+          "--hidden",
+          "--glob=!.git/",
+        },
+        layout_config = {
+          horizontal = {
+            prompt_position = "top",
+            preview_width = 0.70,
+          },
+          vertical = {
+            mirror = false,
+          },
+          width = 0.87,
+          height = 0.80,
+          preview_cutoff = 120,
+        },
+        preview = {
+          treesitter = true,
+        },
+        file_ignore_patterns = {".git/", ".cache", "%.o", "%.a", "%env" },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous,  -- move to prev result
             ["<C-j>"] = actions.move_selection_next,  -- move to next result
             ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+          },
+        },
+      },
+
+      extensions = {
+        fzf = {
+          fuzzy = true, -- false will only do exact matching
+          override_generic_sorter = true, -- override the generic sorter
+          override_file_sorter = true, -- override the file sorter
+          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+        },
+        ["ui-select"] = {
+          require("telescope.themes").get_dropdown({
+            previewer = false,
+            -- even more opts
+          }),
+        },
+        tele_tabby = {
+          use_highlighter = true,
+        },
+        ultisnips = {},
+        undo = {
+          use_delta = true,
+          use_custom_command = nil, -- setting this implies `use_delta = false`. Accepted format is: { "bash", "-c", "echo '$DIFF' | delta" }
+          side_by_side = false,
+          -- side_by_side = true,
+          -- layout_strategy = "vertical",
+          -- layout_config = {
+          --     preview_height = 0.8,
+          -- },
+          diff_context_lines = vim.o.scrolloff,
+          entry_format = "state #$ID, $STAT, $TIME",
+          mappings = {
+            i = {
+              -- IMPORTANT: Note that telescope-undo must be available when telescope is configured if
+              -- you want to replicate these defaults and use the following actions. This means
+              -- installing as a dependency of telescope in it's `requirements` and loading this
+              -- extension from there instead of having the separate plugin definition as outlined
+              -- above.
+              ["<cr>"] = require("telescope-undo.actions").yank_additions,
+              ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+              ["<C-cr>"] = require("telescope-undo.actions").restore,
+            },
           },
         },
       },
