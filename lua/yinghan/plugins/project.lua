@@ -16,7 +16,7 @@ return {
     })
 
     -- keymaps
-    vim.keymap.set( "n", "<c-p>", ":lua require('telescope').extensions.projects.projects()<CR>", { noremap = true, silent = true })
+    vim.keymap.set( "n", "<leader>sp", ":lua require('telescope').extensions.projects.projects()<CR>", { noremap = true, silent = true })
   end,
 }
 

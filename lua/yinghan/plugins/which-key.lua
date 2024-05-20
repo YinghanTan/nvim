@@ -120,9 +120,10 @@ return {
         name = "+debug",
         ['d'] = "+dap"
       },
-      ["f"] = { name = "+find" },
+      ["e"] = { name = "+explore" },
+      -- ["f"] = { name = "+find" },
       ["g"] = { name = "+git/goto",
-        ["g"] = { name = "+apps/hunks/link" },
+        ["g"] = { name = "+gapps/hunks/link" },
       },
       ["l"] = { name = "+lsp/loclist" },
       ["q"] = { name = "+quickfix" },
@@ -130,7 +131,7 @@ return {
       ["p"] = { name = "+paste/plugins",
         ["p"] = { "<cmd>Lazy<cr>", "view" }
       },
-      ["s"] = { name = "+search/" },
+      ["s"] = { name = "+search/sub" },
       ["t"] = {
         name = "+test/tab",
         n = { "<cmd>$tabnew<cr>", "New Empty Tab" },
@@ -146,6 +147,7 @@ return {
       },
       ["u"] = { name = "+undo/ultisnip" },
       ["w"] = { name = "+wiki/win" },
+      ["x"] = { name = "+trouble" },
       ["yop"] = { "<cmd>call TogglePaste()<cr>", "toggle paste" },
       ["yoR"] = { "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", "Redraw / clear hlsearch / diff update" },
     }
