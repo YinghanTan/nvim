@@ -19,12 +19,12 @@ return {
     dashboard.section.buttons.val = {
       dashboard.button("e", "  > New File", "<cmd>ene<CR>"),
       dashboard.button("\\ee", "  > Toggle file explorer", "<cmd>NvimTreeToggle<CR>"),
-      dashboard.button("\\ff", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
-      dashboard.button("\\fs", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
+      dashboard.button("\\sf", "󰱼  > Find File", "<cmd>Telescope find_files<CR>"),
+      dashboard.button("\\st", "  > Find Word", "<cmd>Telescope live_grep<CR>"),
       dashboard.button("\\wr", "󰁯  > Restore Session For Current Directory", "<cmd>SessionRestore<CR>"),
-      dashboard.button("r",  " " .. " Recent files", ":Telescope oldfiles <CR>"),
-      dashboard.button("c",  " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
-      dashboard.button("p",  " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
+      dashboard.button("\\sr",  " " .. " Recent files", ":Telescope oldfiles <CR>"),
+      dashboard.button("\\\\c",  " " .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
+      dashboard.button("\\sp",  " " .. " Find project", ":lua require('telescope').extensions.projects.projects()<CR>"),
       dashboard.button("q", "  > Quit NVIM", "<cmd>qa<CR>"),
     }
 
