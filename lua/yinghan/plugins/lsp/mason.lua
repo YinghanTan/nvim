@@ -30,14 +30,11 @@ return {
       -- list of servers for mason to install
       ensure_installed = {
         "ansiblels",
-        "awk_ls",
         "bashls",
         "cssls",
         "docker_compose_language_service",
-        "dockerls",
         "tsserver",
         "html",
-        "jsonls",
         "cssls",
         "tailwindcss",
         "svelte",
@@ -46,9 +43,7 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
-        "yamlls",
         "ruff_lsp",
-        "sqlls",
         "terraformls",
         "tflint",
         "texlab",
@@ -57,7 +52,6 @@ return {
         "rust_analyzer",
         "tsserver",
         "vimls",
-        "yamlls",
       },
     })
 
