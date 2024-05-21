@@ -33,7 +33,23 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "pyright",      },
+        "pyright",
+        "yamlls",
+        "jsonls",
+        "vimls",
+        "texlab",
+        "terraformls",
+        "sqlls",
+        "rust_analyzer",
+        "ruff_lsp",
+        "marksman",
+        "neocmake",
+        "dockerls",
+        "docker_compose_language_service",
+        "ansiblels",
+        "awk_ls",
+        "bashls",
+      },
     })
 
     require("mason-tool-installer").setup({
@@ -44,6 +60,7 @@ return {
         "black",
         "pylint",
         "eslint_d",
+        "tflint",
       },
     })
   end,
