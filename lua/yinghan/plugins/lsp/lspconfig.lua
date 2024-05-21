@@ -42,9 +42,9 @@ return {
         opts.desc = "Show buffer diagnostics"
         vim.keymap.set("n", "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", opts)  -- show diagnostics for file
         opts.desc = "Show line diagnostics"
-        vim.keymap.set("n", "<leader>sdw", vim.diagnostic.open_float, otps)  -- show diagnostics for line
+        vim.keymap.set("n", "<leader>sdw", vim.diagnostic.open_float, opts)  -- show diagnostics for line
         opts.desc = "Go to previous diagnostic"
-        keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
+        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
         opts.desc = "Go to previous diagnostic"
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)  -- jump to next diagnostic
         opts.desc = "Show documentation for what is under cursor"
