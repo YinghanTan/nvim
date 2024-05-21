@@ -10,12 +10,9 @@ return {
   },
   cmd = { "TSUpdateSync" },
   config = function()
-    -- import nvim-treesitter plugin
-    local treesitter = require("nvim-treesitter.configs")
-    -- local treesitter = require("nvim-ts-autotag")
 
     -- configure treesitter
-    treesitter.setup({
+    require("nvim-treesitter.configs").setup({
       sync_install = false, -- synchronous parser install
       auto_install = true, -- auto install missing parser for buffer
       ignore_install = { "smali", "help" },
@@ -26,10 +23,6 @@ return {
       },
       indent = { enable = true }, -- enable indentation
 
-      -- enable autotagging (w/ nvim-ts-autotag plugin)
-      autotag = {
-        enable = true,
-      },
       ensure_installed = {
         "json",
         "javascript",
@@ -140,6 +133,23 @@ return {
         use_virtual_text = true,
         lint_events = { "BufWrite", "CursorHold" },
       },
+    })
+
+    require('nvim-ts-autotag').setup({
+      opts = {
+        -- Defaults
+        enable_close = true, -- Auto close tags
+        enable_rename = true, -- Auto rename pairs of tags
+        enable_close_on_slash = false -- Auto close on trailing </
+      },
+      -- Also override individual filetype configs, these take priority.
+      -- Empty by default, useful if one of the "opts" global settings
+      -- doesn't work well in a specific filetype
+      per_filetype = {
+        ["html"] = {
+          enable_close = false
+        }
+      }
     })
 
     vim.cmd([[set foldmethod=expr]]) -- use treesitter folding support

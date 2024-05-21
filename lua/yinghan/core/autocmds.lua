@@ -44,13 +44,13 @@ vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "gitcommit", "markdown", "NeogitCommitMessage", "wiki" },
-  callback = function()
-    vim.opt_local.wrap = true
-    vim.opt_local.spell = true
-    vim.opt.tabstop = 4
-    vim.opt.shiftwidth = 4
-    vim.opt.softtabstop = 4
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "FileType" }, {
+--   pattern = { "gitcommit", "markdown", "NeogitCommitMessage", "wiki", "vimwiki" },
+--   callback = function()
+--     vim.opt_local.wrap = true
+--     vim.opt_local.spell = true
+--     vim.opt_local.tabstop = 4
+--     vim.opt_local.shiftwidth = 4
+--     vim.opt_local.softtabstop = 4
+--   end,
+-- })
