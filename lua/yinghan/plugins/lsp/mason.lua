@@ -48,7 +48,6 @@ return {
         "tflint",
         "texlab",
         "marksman",
-        "ruff_lsp",
         "rust_analyzer",
         "tsserver",
         "vimls",

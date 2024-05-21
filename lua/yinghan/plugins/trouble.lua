@@ -6,6 +6,7 @@ return {
   },
   keys = {
     { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Open/close trouble list"},
+    { "yoX", "<cmd>TroubleToggle<cr>", desc = "Open/close trouble list"},
     { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "trouble workspace diagnostics"},
     { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "trouble document diagnostics"},
     { "<leader>xD", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "trouble workspace diagnostics"},
