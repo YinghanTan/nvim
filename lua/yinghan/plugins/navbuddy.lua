@@ -1,29 +1,23 @@
 return {
   "SmiteshP/nvim-navbuddy",
   dependencies = {
-    "neovim/nvim-lspconfig",
     "SmiteshP/nvim-navic",
     "MunifTanjim/nui.nvim",
   },
-  -- keys = {
-  --   { "<leader><leader>n", "<cmd>Navbuddy<cr>", mode = { "n" }, desc = "nav buddy" },
-  -- },
   config = function()
+    local wk = require("which-key")
+    wk.register {
+      ["<leader><leader>n"] = { "<cmd>Navbuddy<cr>", "Nav" },
+    }
 
     local navbuddy = require "nvim-navbuddy"
     -- local actions = require("nvim-navbuddy.actions")
-    navbuddy.setup({
-      window = {
-        border = "rounded",
-      },
-      icons = require("yinghan.library.icons").kind,
-      lsp = { auto_attach = false },
-    })
-    vim.keymap.set("n", "<leader><leader>n", "<cmd>Navbuddy<cr>", { noremap = true, silent = true, desc = "Nav" })
+    navbuddy.setup({})
+
+    local opts = { noremap = true, silent = true }
+    local keymap = vim.api.nvim_set_keymap
+
+    keymap("n", "<m-s>", ":silent only | Navbuddy<cr>", opts)
+    keymap("n", "<m-o>", ":silent only | Navbuddy<cr>", opts)
   end,
 }
-
-
-
-
--- vim.keymap.set("n", "<leader><leader>n", "<cmd>Navbuddy<cr>", { noremap = true, silent = true, desc = "Nav" })
