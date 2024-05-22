@@ -129,6 +129,7 @@ return {
       ["q"] = { name = "+quickfix" },
       ["m"] = { name = "+md" },
       ["s"] = { name = "+search/sub" },
+      ["S"] = { name = "+spectre" },
       ["t"] = {
         name = "+test/tab",
       },
