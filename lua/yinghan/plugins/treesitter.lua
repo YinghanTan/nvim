@@ -27,7 +27,7 @@ return {
         "angular",
         "awk",
         "bash",
-        "bibtex"
+        "bibtex",
         "c",
         "cmake",
         "cpp",
@@ -56,7 +56,6 @@ return {
         "json",
         "json5",
         "jsonc",
-        "latex",
         "lua",
         "luadoc",
         "luap",
@@ -90,6 +89,7 @@ return {
         "vue",
         "yaml",
         "zathurarc",
+        -- "latex",
       },
       incremental_selection = {
         enable = true,
