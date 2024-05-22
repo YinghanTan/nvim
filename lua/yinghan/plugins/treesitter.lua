@@ -89,7 +89,6 @@ return {
         "vue",
         "yaml",
         "zathurarc",
-        -- "latex",
       },
       incremental_selection = {
         enable = true,
