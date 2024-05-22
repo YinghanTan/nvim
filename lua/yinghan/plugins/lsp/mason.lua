@@ -24,9 +24,9 @@ return {
     require("mason-lspconfig").setup({
       -- list of servers for mason to install
       ensure_installed = {
-        "tsserver",
-        "html",
-        "cssls",
+        "tsserver",  -- requires npm to be installed
+        "html",  -- requires npm to be installed
+        "cssls",  -- requires npm to be installed
         "tailwindcss",
         "svelte",
         "lua_ls",
@@ -34,8 +34,8 @@ return {
         "emmet_ls",
         "prismals",
         "pyright",
-        "yamlls",
-        "jsonls",
+        "yamlls",  -- requires npm to be installed
+        "jsonls",  -- requires npm to be installed
         "vimls",
         "texlab",
         "terraformls",
@@ -48,7 +48,7 @@ return {
         "docker_compose_language_service",
         "ansiblels",
         "awk_ls",
-        "bashls",
+        "bashls",  -- requires npm to be installed
       },
     })
 
