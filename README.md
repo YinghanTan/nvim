@@ -87,15 +87,21 @@ After installing all of the prerequisites, you can start Neovim by running `nvim
 │       ├── ftplugin                                
 │       │   ├── markdown.lua                    # Add files here in the form filetype.lua
 │       │   └── ...                             # to change options based on file type (not extension)
-│       ├── lua
+│       ├── lua/yinghan/
 │       │   ├── core
 │       │   │   ├── keymaps.lua                 # This configures all of your key bindings
-│       │   │   └── options.lua                 # This configures all of your global Neovim options
-│       │   └── plugins
-│       │       ├── autopairs.lua               # Plugins can be added / removed from Neovim by
-│       │       ├── ...                         # adding / removing plugin files to this directory
-│       │       └── vim-tmux-navigator.lua
+│       │   │   ├── options.lua                 # This configures all of your global Neovim options
+│       │   │   └── autocmds.lua                # This configures automatically triggered Neovim options/functions
+│       │   ├── plugins
+│       │   │   ├── lsp                         # Lsp setup and configuration files
+│       │   │   ├── autopairs.lua               # Plugins can be added / removed from Neovim by
+│       │   │   ├── ...                         # adding / removing plugin files to this directory
+│       │   │   └── vim-tmux-navigator.lua
+│       │   └── lazy.lua                        # lazy plugin manager engine
+│       ├── spell                               # Personal spellcheck word collection
+│       ├── UltiSnips                           # Personal snippet collection
 │       ├── init.lua                            # This is the main Neovim configuration file
+│       ├── commit-conventions.txt              # Git commit message template
 │       └── lazy-lock.json                      # This locks your plugins to specific versions/commits
 ├── .mime.types                                 # Fixes a Linux/Firefox issue to view local markdown (optional)
 └── .tmux.conf                                  # This is my tmux configuration (optional)

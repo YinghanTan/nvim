@@ -10,7 +10,7 @@ return {
   },
   cmd = { "TSUpdateSync" },
   config = function()
-
+    vim.treesitter.language.register('markdown', 'vimwiki')
     -- configure treesitter
     require("nvim-treesitter.configs").setup({
       sync_install = false, -- synchronous parser install

@@ -63,6 +63,10 @@ return {
         "pylint",
         "eslint_d",
         "tflint",
+        "luacheck",
+        "ansible-lint",
+        "gitlint",
+        "yamllint",
       },
     })
   end,
