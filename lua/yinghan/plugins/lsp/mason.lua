@@ -67,6 +67,8 @@ return {
         "ansible-lint",
         "gitlint",
         "yamllint",
+        "vale",
+        "hadolint",
       },
     })
   end,

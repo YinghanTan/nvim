@@ -109,7 +109,7 @@ return {
           settings = {
             Lua = {
               -- make the language server recognize "vim" global
-              diganostics = {
+              diagnostics = {
                 globals = { "vim" },
               },
               completion = {

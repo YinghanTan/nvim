@@ -13,6 +13,12 @@ return {
       python = { "pylint" },
       terraform = { "tflint" },
       lua = { "luacheck" },
+      text = {'vale',},
+      json = {'jsonlint',},
+      markdown = {'vale',},
+      rst = {'vale',},
+      ruby = {'ruby',},
+      dockerfile = {'hadolint',},
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
