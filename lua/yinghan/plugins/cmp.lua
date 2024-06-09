@@ -7,7 +7,10 @@ return {
     "hrsh7th/cmp-cmdline",
 
     -- Ultisnips
-    "quangnguyen30192/cmp-nvim-ultisnips",
+    {
+      "quangnguyen30192/cmp-nvim-ultisnips",
+      event = "InsertEnter",
+    },
     {
       "SirVer/ultisnips",
       event = "InsertEnter",
@@ -17,7 +20,10 @@ return {
     },
     "hrsh7th/cmp-nvim-lua",
     "onsails/lspkind.nvim",  -- vs-code like pictograms
-    "hrsh7th/cmp-nvim-lsp",
+    {
+      "hrsh7th/cmp-nvim-lsp",
+      event = "InsertEnter",
+    },
     "hrsh7th/cmp-emoji",
   },
   config = function()
@@ -58,8 +64,8 @@ return {
         { name = "nvim_lsp" },  -- lsp
         { name = "buffer" },  -- text within current buffer
         { name = "path" },  -- file system paths
-        { name = "emoji" },
         { name = "calc" },
+        { name = "emoji" },
       }),
       preselect = "None",
       confirm_opts = {

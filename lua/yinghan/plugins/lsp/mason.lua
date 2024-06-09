@@ -69,6 +69,7 @@ return {
         "yamllint",
         "vale",
         "hadolint",
+        "djlint",
       },
     })
   end,

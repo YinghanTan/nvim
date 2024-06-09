@@ -19,6 +19,7 @@ return {
       rst = {'vale',},
       ruby = {'ruby',},
       dockerfile = {'hadolint',},
+      htmldjango = {'djlint',},
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })

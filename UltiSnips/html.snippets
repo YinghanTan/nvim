@@ -19,3 +19,14 @@ endsnippet
 snippet "rep (\d+) (\w+)" "Repeat" r
 `!p snip.rv = int(match.group(1))*match.group(2)`
 endsnippet
+
+snippet % "" bi
+{% $1 %}$0
+endsnippet
+
+snippet %% "" bi
+{% ${1:tag_name} %}
+	$3
+{% end$2 %}
+$0
+endsnippet
