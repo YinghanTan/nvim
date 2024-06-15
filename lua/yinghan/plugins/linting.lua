@@ -14,7 +14,7 @@ return {
       terraform = { "tflint" },
       lua = { "luacheck" },
       text = {'vale',},
-      json = {'jsonlint',},
+      -- json = {'jsonlint',},
       markdown = {'vale',},
       rst = {'vale',},
       ruby = {'ruby',},
