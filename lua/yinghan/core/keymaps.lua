@@ -127,6 +127,20 @@ nnoremap <silent> zk :<c-u>call RepeatCmd('call NextClosedFold("k")')<cr>
 ]])
 
 
+-- Toggle Conceal
+vim.cmd([[
+function! ToggleConcealLevel()
+    if &conceallevel == 0
+        setlocal conceallevel=2
+    else
+        setlocal conceallevel=0
+    endif
+endfunction
+
+nnoremap <silent> yoH :call ToggleConcealLevel()<CR>
+]])
+
+
 
 
 -- tab management
