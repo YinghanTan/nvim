@@ -111,34 +111,31 @@ return {
     }
     local mappings = {
       ["\\"] = {
-        name = "+hop/commands",
-        ["s"] = { "<cmd>luafile $MYVIMRC<cr>", "source vimrc" },
-        ["c"] = { "<cmd>e $MYVIMRC<cr>", "source vimrc" },
+        name = "+[\\]commands/nav",
+        ["s"] = { "<cmd>source $MYVIMRC<cr>", "[s]ource vimrc" },
+        ["e"] = { "<cmd>e $MYVIMRC<cr>", "[e]dit vimrc" },
       },
-      ["b"] = { name = "+buffer" },
       ["d"] = {
-        name = "+debug",
+        name = "+[d]ebug",
         ['d'] = "+dap"
       },
-      ["e"] = { name = "+explore" },
-      -- ["f"] = { name = "+find" },
-      ["g"] = { name = "+git/goto",
-        ["g"] = { name = "+gapps/hunks/link" },
+      ["e"] = { name = "+[e]xplore" },
+      ["g"] = { name = "+[g]it/goto",
+        ["g"] = { name = "+[g]it apps" },
       },
-      ["l"] = { name = "+lsp/loclist" },
-      ["q"] = { name = "+quickfix" },
-      ["m"] = { name = "+md" },
-      ["s"] = { name = "+search/sub" },
-      ["S"] = { name = "+spectre" },
+      ["l"] = { name = "+[l]sp/loclist" },
+      ["q"] = { name = "+[q]uickfix" },
+      ["s"] = { name = "+[s]earch/sub" },
+      ["S"] = { name = "+[s]pectre" },
       ["t"] = {
-        name = "+test/tab",
+        name = "+[t]est/tab",
       },
       ["T"] = {
-        name = "+Treesitter",
+        name = "+[T]reesitter",
       },
-      ["u"] = { name = "+undo/ultisnip" },
-      ["w"] = { name = "+wiki/win" },
-      ["x"] = { name = "+trouble" },
+      ["u"] = { name = "+[u]ndo/ultisnip" },
+      ["w"] = { name = "+[w]iki/win" },
+      ["x"] = { name = "+[x]trouble" },
     }
     which_key.register(mappings, opts)
   end
