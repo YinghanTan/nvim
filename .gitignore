@@ -9,3 +9,4 @@ data
 sessions/*
 !sessions/.gitkeep
 db_ui/*
+.luarc.json
