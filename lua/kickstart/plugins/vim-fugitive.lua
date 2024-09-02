@@ -5,40 +5,28 @@ return {
   -- ft = {"fugitive"},
   config = function()
     vim.g.fugitive_summary_format = "%<(12,trunc)%an | %<(14,trunc)%cr | %s"
-    local g_opts = {
-      mode = "n", -- NORMAL mode
-      prefix = "<leader>",
-      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-      silent = false, -- use `silent` when creating keymaps
-      noremap = true, -- use `noremap`
-      nowait = true, -- use `nowait` when creating keympas
-    }
-    local g_mappings = {
-      ["g"] = {
-        name = "+git",
-        b = { "<cmd>Git blame<cr>", "blame" },
-        B = { "<cmd>GBrowse<cr>", "browse" },
-        [".B"] = { "<cmd>.GBrowse<cr>", "line browse" },
-        c = { "<cmd>BCommits<cr>", "commits" },
-        C = { "<cmd>Commits<cr>", "all commits" },
-        d = {
-          name = "diff",
-          ["d"] = { "<cmd>Gdiff<cr>", "diff" },
-          ["s"] = { "<cmd>Gdiffsplit<cr>", "split" },
-          ["u"] = { "<cmd>diffupdate<cr>", "update" },
-          ["o"] = { "<cmd>diffoff!<cr>", "diffoff all" },
-        },
-        e = { ":Gedit ", "gedit" }, -- todo: show in cmd input without running :
-        h = { "<cmd>0Gclog<cr>", "file history" },
-        L = { "<cmd>Git log<cr>", "Log long" },
-        p = { "<cmd>GGrep<cr>", "Grep" },
-        r = { "<cmd>GDelete<cr>", "remove" },
-      },
-    }
+
     local wk = require("which-key")
-    wk.register(g_mappings, g_opts)
-    wk.register({
-      ["yoD"] = { "<cmd>diffoff!<cr>", "diffoff all" },
+    wk.add({
+      { "yoD", "<cmd>diffoff!<cr>", desc = "diffoff all" },
+    })
+    wk.add({
+      { "<leader>g", group = "[g]it", mode = { "n", "v" } },
+      { "<leader>gb", "<cmd>Git blame<cr>", desc = "[b]lame" },
+      { "<leader>gB", "<cmd>GBrowse<cr>", desc = "[B]rowse" },
+      { "<leader>g.B", "<cmd>.GBrowse<cr>", desc = "[.]line [b]rowse" },
+      { "<leader>gc", "<cmd>BCommits<cr>", desc = "[c]ommits" },
+      { "<leader>gC", "<cmd>Commits<cr>", desc = "all [C]ommits" },
+      { "<leader>ge", ":Gedit ", desc = "g[e]dit" }, -- todo: show in cmd input without running :
+      { "<leader>gh", "<cmd>0Gclog<cr>", desc = "file [h]istory" },
+      { "<leader>gL", "<cmd>Git log<cr>", desc = "[L]og long" },
+      { "<leader>gp", "<cmd>GGrep<cr>", desc = "Gre[p]" },
+      { "<leader>gr", "<cmd>GDelete<cr>", desc = "[r]emove" },
+      { "<leader>gd", group = "[d]iff", mode = { "n", "v" } },
+      { "<leader>gdd", "<cmd>Gdiff<cr>", desc = "[d]iff" },
+      { "<leader>gds", "<cmd>Gdiffsplit<cr>", desc = "[s]plit" },
+      { "<leader>gdu", "<cmd>diffupdate<cr>", desc = "[u]pdate" },
+      { "<leader>gdo", "<cmd>diffoff!<cr>", desc = "diff[o]ff all" },
     })
   end,
 }

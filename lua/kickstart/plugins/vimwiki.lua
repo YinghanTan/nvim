@@ -53,15 +53,15 @@ return {
     vim.g.vimwiki_global_ext = 1 -- make sure vimwiki doesn't own all .md files
 
     local wk = require("which-key")
-    wk.register({
+    wk.add({
       mode = { "n", "v" },
-      ["<leader>w-"] = { "<Plug>VimwikiRemoveHeaderLevel", desc = "reduce header level" },
-      ["<leader>w="] = { "<Plug>VimwikiAddHeaderLevel", desc = "reduce header level" },
-      ["<leader>ww"] = { desc = "wiki" },
-      ["<leader>wt"] = { desc = "wiki new tab" },
-      ["<leader>ws"] = { desc = "wiki select" },
-      ["<leader>wr"] = { desc = "wiki rename" },
-      ["<leader>wd"] = { desc = "wiki delete" },
+      { "<leader>w-", "<Plug>VimwikiRemoveHeaderLevel", desc = "reduce header level" },
+      { "<leader>w=", "<Plug>VimwikiAddHeaderLevel", desc = "add header level" },
+      { "<leader>ww", desc = "wiki" },
+      { "<leader>wt", desc = "wiki new tab" },
+      { "<leader>ws", desc = "wiki select" },
+      { "<leader>wr", desc = "wiki rename" },
+      { "<leader>wd", desc = "wiki delete" },
     })
   end,
 }
