@@ -54,14 +54,14 @@ return {
 
     local wk = require("which-key")
     wk.add({
-      mode = { "n", "v" },
-      { "<leader>w-", "<Plug>VimwikiRemoveHeaderLevel", desc = "reduce header level" },
-      { "<leader>w=", "<Plug>VimwikiAddHeaderLevel", desc = "add header level" },
-      { "<leader>ww", desc = "wiki" },
-      { "<leader>wt", desc = "wiki new tab" },
-      { "<leader>ws", desc = "wiki select" },
-      { "<leader>wr", desc = "wiki rename" },
-      { "<leader>wd", desc = "wiki delete" },
+      { "<leader>w", group = "[w]orkspace/[w]iki", mode = { "n", "v" } },
+      { "<leader>w-", "<Plug>VimwikiRemoveHeaderLevel", desc = "[-] header lvl" },
+      { "<leader>w=", "<Plug>VimwikiAddHeaderLevel", desc = "[+] header lvl" },
+      { "<leader>ww", desc = "[w]iki" },
+      { "<leader>wt", desc = "[w]iki new [t]ab" },
+      { "<leader>ws", desc = "[w]iki [s]elect" },
+      { "<leader>wr", desc = "[w]iki [r]ename" },
+      { "<leader>wd", desc = "[w]iki [d]elete" },
     })
   end,
 }

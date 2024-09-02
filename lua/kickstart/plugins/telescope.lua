@@ -52,15 +52,116 @@ return {
 
       -- [[ Configure Telescope ]]
       -- See `:help telescope` and `:help telescope.setup()`
+      --
+      local actions = require("telescope.actions")
+      local action_layout = require("telescope.actions.layout")
       require("telescope").setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          path_display = { "smart" },
+          initial_mode = "insert",
+          selection_strategy = "reset",
+          sorting_strategy = "ascending",
+          wrap_results = false,
+          scroll_strategy = "limit",
+          color_devicons = true,
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "--glob=!.git/",
+          },
+          layout_config = {
+            horizontal = {
+              prompt_position = "top",
+              preview_width = 0.70,
+            },
+            vertical = {
+              mirror = false,
+            },
+            width = 0.87,
+            height = 0.80,
+            preview_cutoff = 120,
+          },
+          preview = {
+            treesitter = true,
+          },
+          file_ignore_patterns = { ".git/", ".cache", "%.o", "%.a", "%env" },
+          mappings = {
+            i = {
+              ["<C-c>"] = actions.close,
+              ["<C-x>"] = function(...)
+                -- open in trouble
+                return require("trouble.providers.telescope").open_selected_with_trouble(...)
+              end,
+              ["<CR>"] = actions.select_default,
+              ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+              ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+              ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+              ["<C-Down>"] = actions.cycle_history_next,
+              ["<C-Up>"] = actions.cycle_history_prev,
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
+              ["<Down>"] = actions.move_selection_next,
+              ["<Up>"] = actions.move_selection_previous,
+              ["<C-u>"] = actions.preview_scrolling_up,
+              ["<C-d>"] = actions.preview_scrolling_down,
+              ["<C-b>"] = actions.preview_scrolling_up,
+              ["<C-f>"] = actions.preview_scrolling_down,
+              ["<C-p>"] = actions.results_scrolling_up,
+              ["<C-n>"] = actions.results_scrolling_down,
+              ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
+              ["<M-m>"] = actions.which_key,
+              ["<C-right>"] = actions.cycle_previewers_next,
+              ["<C-left>"] = actions.cycle_previewers_prev,
+              ["<C-a>"] = actions.toggle_all,
+            },
+            n = {
+              ["<esc>"] = actions.close,
+              ["<C-c>"] = actions.close,
+              ["<C-x>"] = function(...)
+                -- open in trouble
+                return require("trouble.providers.telescope").open_selected_with_trouble(...)
+              end,
+              ["<CR>"] = actions.select_default,
+              ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
+              ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
+              ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+              ["<C-Down>"] = actions.cycle_history_next,
+              ["<C-Up>"] = actions.cycle_history_prev,
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-k>"] = actions.move_selection_previous,
+              ["<Down>"] = actions.move_selection_next,
+              ["<Up>"] = actions.move_selection_previous,
+              ["<C-u>"] = actions.preview_scrolling_up,
+              ["<C-d>"] = actions.preview_scrolling_down,
+              ["<C-b>"] = actions.preview_scrolling_up,
+              ["<C-f>"] = actions.preview_scrolling_down,
+              ["<C-p>"] = actions.results_scrolling_up,
+              ["<C-n>"] = actions.results_scrolling_down,
+              ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
+              ["<M-m>"] = actions.which_key,
+              ["<C-right>"] = actions.cycle_previewers_next,
+              ["<C-left>"] = actions.cycle_previewers_prev,
+              ["<C-a>"] = actions.toggle_all,
+              ["j"] = actions.move_selection_next,
+              ["k"] = actions.move_selection_previous,
+              ["H"] = actions.move_to_top,
+              ["M"] = actions.move_to_middle,
+              ["L"] = actions.move_to_bottom,
+              ["gg"] = actions.move_to_top,
+              ["zz"] = actions.center,
+              ["G"] = actions.move_to_bottom,
+            },
+          },
+        },
         -- pickers = {}
         extensions = {
           ["ui-select"] = {
@@ -75,39 +176,77 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[s]earch [h]elp" })
-      vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[s]earch [k]eymaps" })
-      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[s]earch [f]iles" })
-      vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[s]earch [s]elect Telescope" })
-      vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[s]earch current [w]ord" })
-      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[s]earch by [g]rep" })
-      vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[s]earch [d]iagnostics" })
-      vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[s]earch [r]esume" })
-      vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[s]earch Recent Files ("." for repeat)' })
-      vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "[s]earch buffers" })
 
-      -- Slightly advanced example of overriding default behavior and theme
-      vim.keymap.set("n", "<leader>sT", function()
-        -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-          winblend = 10,
-          previewer = false,
-        }))
-      end, { desc = "[s]earch [T]hemes" })
+      local wk = require("which-key")
+      wk.add({
+        { "<leader>s", group = "[s]earch", mode = "n" },
+        { "<leader>sw", builtin.grep_string, desc = "[w]ord under cursor" },
+        { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
+        { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
+        { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
+        { "<leader>sf", builtin.find_files, desc = "[f]iles" },
+        { "<leader>sh", builtin.help_tags, desc = "[h]elp" },
+        { "<leader>sC", builtin.colorscheme, desc = "[C]olorscheme" },
+        { "<leader>se", builtin.spell_suggest, desc = "sp[e]ll" },
+        { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
+        { "<leader>sr", builtin.registers, desc = "[r]egisters" },
+        { "<leader>sl", builtin.resume, desc = "[l]ast search" },
+        { "<leader>sm", builtin.marks, desc = "[m]arks" },
+        { "<leader>sM", builtin.man_pages, desc = "[M]an pages" },
+        { "<leader>so", builtin.oldfiles, desc = "[o]ld files" },
+        { "<leader>sb", builtin.buffers, desc = "[b]uffers" },
+        { "<leader>sd", group = "[d]iagnostics/to[d]o", mode = "n" },
+        { "<leader>sdw", builtin.diagnostics, desc = "[w]orkspace [d]iagnostics" },
+        { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "[d]ocument [d]iagnostics" },
+        { "<leader>sdt", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "[t]odo/Fix/Fixme" },
+        { "<leader>sdT", "<cmd>TodoTelescope<cr>", desc = "all [T]odo comments" },
+        { "<leader>sc", group = "[c]ommands", mode = "n" },
+        { "<leader>sch", "<cmd>Telescope command_history<cr>", desc = "[h]istory" },
+        { "<leader>scc", "<cmd>Telescope commands<cr>", desc = "[c]ommands" },
+        { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = "[a]utocommands" },
 
-      -- It's also possible to pass additional configuration options.
-      --  See `:help telescope.builtin.live_grep()` for information about particular keys
-      vim.keymap.set("n", "<leader>s/", function()
-        builtin.live_grep({
-          grep_open_files = true,
-          prompt_title = "Live Grep in Open Files",
-        })
-      end, { desc = "[s]earch [/] in Open Files" })
+        -- ["<leader>sgc"] = { "<cmd>Commits<CR>", "commits (all)" },
+        -- ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)", mode = { "n", "v" } },
+        -- ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
+        -- ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", "change history"},
+        -- ["<leader>ss"] = { "<cmd>Snippets<cr>", "snippets" },
+        --
 
-      -- Shortcut for searching your Neovim configuration files
-      vim.keymap.set("n", "<leader>sn", function()
-        builtin.find_files({ cwd = vim.fn.stdpath("config") })
-      end, { desc = "[s]earch [n]eovim files" })
+        -- -- Slightly advanced example of overriding default behavior and theme
+        -- {
+        --   "<leader>sT",
+        --   function()
+        --     -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+        --     builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+        --       winblend = 10,
+        --       previewer = false,
+        --     }))
+        --   end,
+        --   desc = "[T]hemes",
+        -- },
+
+        -- -- It's also possible to pass additional configuration options.
+        -- --  See `:help telescope.builtin.live_grep()` for information about particular keys
+        -- {
+        --   "<leader>s/",
+        --   function()
+        --     builtin.live_grep({
+        --       grep_open_files = true,
+        --       prompt_title = "Live Grep in Open Files",
+        --     })
+        --   end,
+        --   desc = "[/]search open files",
+        -- },
+
+        -- Shortcut for searching your Neovim configuration files
+        {
+          "<leader>sn",
+          function()
+            builtin.find_files({ cwd = vim.fn.stdpath("config") })
+          end,
+          desc = "[n]eovim",
+        },
+      })
     end,
   },
 }
