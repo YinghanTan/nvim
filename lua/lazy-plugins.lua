@@ -33,7 +33,8 @@ require("lazy").setup({
 
   require("kickstart/plugins/cmp"),
 
-  require("kickstart/plugins/tokyonight"),
+  -- require("kickstart/plugins/tokyonight"),
+  require("kickstart/plugins/gruvbox"),
 
   require("kickstart/plugins/todo-comments"),
 
@@ -42,8 +43,18 @@ require("lazy").setup({
   require("kickstart/plugins/treesitter"),
 
   require("kickstart/plugins/vim-fugitive"),
+
   require("kickstart/plugins/navbuddy"),
+
   require("kickstart/plugins/diffview"),
+
+  require("kickstart/plugins/neoscroll"),
+
+  require("kickstart/plugins/vimwiki"),
+
+  require("kickstart/plugins/hop"),
+
+  require("kickstart/plugins/rnvimr"),
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and

@@ -5,6 +5,13 @@ return {
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
+      ignore_install = { "smali", "help" },
+      highlight = {
+        enable = true, -- false will disable the whole extension
+        disable = {}, -- list of language that will be disabled
+        additional_vim_regex_highlighting = {},
+      },
+      indent = { enable = true }, -- enable indentation
       ensure_installed = {
         "bash",
         "c",
@@ -17,6 +24,12 @@ return {
         "query",
         "vim",
         "vimdoc",
+        "python",
+        "dockerfile",
+        "typescript",
+        "yaml",
+        "tmux",
+        "terraform",
       },
       -- Autoinstall languages that are not installed
       auto_install = true,

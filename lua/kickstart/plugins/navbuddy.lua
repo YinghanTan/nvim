@@ -11,10 +11,7 @@ return {
   -- },
 
   config = function()
-    local wk = require("which-key")
-    wk.register({
-      ["<leader><leader>n"] = { "<cmd>Navbuddy<cr>", "Nav" },
-    })
+    vim.keymap.set("n", "<leader><leader>n", "<cmd>Navbuddy<cr>", { desc = "[n]avbuddy" })
 
     require("nvim-navbuddy").setup({
       window = {
