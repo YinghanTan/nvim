@@ -22,39 +22,34 @@ require("lazy").setup({
   -- include a plugin definition from file lua/path/name.lua
 
   require("kickstart/plugins/gitsigns"),
-
   require("kickstart/plugins/which-key"),
-
   require("kickstart/plugins/telescope"),
-
   require("kickstart/plugins/lspconfig"),
-
   require("kickstart/plugins/conform"),
-
   require("kickstart/plugins/cmp"),
-
   -- require("kickstart/plugins/tokyonight"),
   require("kickstart/plugins/gruvbox"),
-
   require("kickstart/plugins/todo-comments"),
-
   require("kickstart/plugins/mini"),
-
   require("kickstart/plugins/treesitter"),
-
   require("kickstart/plugins/vim-fugitive"),
-
   require("kickstart/plugins/navbuddy"),
-
   require("kickstart/plugins/diffview"),
-
   require("kickstart/plugins/neoscroll"),
-
   require("kickstart/plugins/vimwiki"),
-
   require("kickstart/plugins/hop"),
-
   require("kickstart/plugins/rnvimr"),
+  require("kickstart/plugins/unimpared"),
+  require("kickstart/plugins/unimpared-which-key"),
+  require("kickstart/plugins/vinegar"),
+  require("kickstart/plugins/vim-togglelist"),
+  require("kickstart/plugins/zoomwintab"),
+  require("kickstart/plugins/undotree"),
+  require("kickstart/plugins/nvim-surround"),
+  require("kickstart/plugins/fzf"),
+  require("kickstart/plugins/vim-slime"),
+  require("kickstart/plugins/vim-eunuch"),
+  require("kickstart/plugins/ultisnips"),
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and

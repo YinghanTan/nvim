@@ -183,6 +183,7 @@ return {
         { "<leader>sw", builtin.grep_string, desc = "[w]ord under cursor" },
         { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
         { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
+        { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
         { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
         { "<leader>sf", builtin.find_files, desc = "[f]iles" },
         { "<leader>sh", builtin.help_tags, desc = "[h]elp" },
@@ -209,7 +210,6 @@ return {
         -- ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)", mode = { "n", "v" } },
         -- ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
         -- ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", "change history"},
-        -- ["<leader>ss"] = { "<cmd>Snippets<cr>", "snippets" },
         --
 
         -- -- Slightly advanced example of overriding default behavior and theme
