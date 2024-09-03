@@ -4,6 +4,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- touch q to close these filtypes
 vim.api.nvim_create_autocmd({ "FileType" }, {
   pattern = {
     "netrw",
@@ -28,7 +29,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
   end,
 })
 
-
+-- keep buffers up to date if changes are made
 vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   pattern = { "*" },
   callback = function()
@@ -38,6 +39,7 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
   end,
 })
 
+-- highlight text when yanked
 vim.api.nvim_create_autocmd({ "TextYankPost" }, {
   callback = function()
     vim.highlight.on_yank { higroup = "Visual", timeout = 40 }

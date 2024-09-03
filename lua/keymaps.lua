@@ -188,8 +188,6 @@ nnoremap <silent> yoH :call ToggleConcealLevel()<CR>
 ]])
 
 
-
-
 -- tab management
 vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Open new tab" })  -- open new tab
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close current tab" })  -- close current tab
