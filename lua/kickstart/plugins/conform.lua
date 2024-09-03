@@ -1,7 +1,7 @@
 return {
   { -- Autoformat
     "stevearc/conform.nvim",
-    event = { "BufWritePre" },
+    event = { "BufWritePre", "BufNewFile" },
     cmd = { "ConformInfo" },
     keys = {
       {
@@ -9,7 +9,7 @@ return {
         function()
           require("conform").format({ async = true, lsp_format = "fallback" })
         end,
-        mode = "",
+        mode = { "n", "v" },
         desc = "[f]ormat buffer",
       },
     },
@@ -38,6 +38,14 @@ return {
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { "prettierd", "prettier", stop_after_first = true },
+        typescript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescriptreact = { "prettier" },
+        css = { "prettier" },
+        html = { "prettier" },
+        json = { "prettier" },
+        yaml = { "prettier" },
+        markdown = { "prettier" },
       },
     },
   },

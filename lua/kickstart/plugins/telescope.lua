@@ -179,7 +179,7 @@ return {
 
       local wk = require("which-key")
       wk.add({
-        { "<leader>s", group = "[s]earch", mode = "n" },
+        -- { "<leader>s", group = "[s]earch", mode = "n" },
         { "<leader>sw", builtin.grep_string, desc = "[w]ord under cursor" },
         { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
         { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },

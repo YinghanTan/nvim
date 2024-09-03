@@ -8,10 +8,9 @@ return {
 
     local wk = require("which-key")
     wk.add({
-      { "yoD", "<cmd>diffoff!<cr>", desc = "diffoff all" },
+      { "yoD", "<cmd>diffoff!<cr>", desc = "[D]iffoff all" },
     })
     wk.add({
-      { "<leader>g", group = "[g]it", mode = { "n", "v" } },
       { "<leader>gb", "<cmd>Git blame<cr>", desc = "[b]lame" },
       { "<leader>gB", "<cmd>GBrowse<cr>", desc = "[B]rowse" },
       { "<leader>g.B", "<cmd>.GBrowse<cr>", desc = "[.]line [b]rowse" },

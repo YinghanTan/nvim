@@ -54,7 +54,7 @@ return {
 
     local wk = require("which-key")
     wk.add({
-      { "<leader>w", group = "[w]orkspace/[w]iki", mode = { "n", "v" } },
+      -- { "<leader>w", group = "[w]orkspace/[w]iki", mode = { "n", "v" } },
       { "<leader>w-", "<Plug>VimwikiRemoveHeaderLevel", desc = "[-] header lvl" },
       { "<leader>w=", "<Plug>VimwikiAddHeaderLevel", desc = "[+] header lvl" },
       { "<leader>ww", desc = "[w]iki" },
