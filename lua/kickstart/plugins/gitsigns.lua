@@ -64,11 +64,10 @@ return {
         -- Toggles
         -- map("n", "<leader>tD", gitsigns.toggle_deleted, { desc = "[t]oggle git show [D]eleted" })
 
-        map("n", "<leader>ggo", "<cmd>lua require('gitsigns').toggle_signs()<cr>", "toggle signs")
+        map("n", "<leader>ggo", "<cmd>lua require('gitsigns').toggle_signs()<cr>", { desc = "toggle signs" })
 
         -- Text object
-        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
-
+        map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", { desc = "Gitsigns select hunk" })
       end,
     },
   },
