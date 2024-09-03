@@ -74,8 +74,6 @@ vim.opt.backup = false -- don't use backup files
 vim.opt.writebackup = false -- don't backup the file while editing
 vim.opt.swapfile = false -- don't create swap files for new buffers
 vim.opt.updatecount = 0 -- don't write swap files after some number of updates
-vim.g.netrw_banner = 0 -- remove top banner in netrw, you can toggle banner with I
-vim.g.netrw_mouse = 2 -- enables mouse buttons while browsing
 -- vim.opt.autochdir = true -- Your working directory will always be the same as your file directory
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 
