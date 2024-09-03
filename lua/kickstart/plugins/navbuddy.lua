@@ -11,7 +11,7 @@ return {
   -- },
 
   config = function()
-    vim.keymap.set("n", "<leader><leader>n", "<cmd>Navbuddy<cr>", { desc = "[n]avbuddy" })
+    vim.keymap.set("n", "<leader><leader>n", "<cmd>Navbuddy<cr>", { desc = "󱣱 [n]avbuddy" })
 
     require("nvim-navbuddy").setup({
       window = {

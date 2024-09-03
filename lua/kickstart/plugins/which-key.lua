@@ -70,8 +70,9 @@ return {
 
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
-        group = " ", -- symbol prepended to a group
-
+        group = "+ ", -- symbol prepended to a group
+        ellipsis = "…",
+        colors = true,
         -- set icon mappings to true if you have a Nerd Font
         mappings = vim.g.have_nerd_font,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the

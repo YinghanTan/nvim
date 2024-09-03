@@ -4,8 +4,8 @@ return {
   keys = {
     { "<M-i>", "<C-\\><C-n>:RnvimrResize 1,8,9,11,5<CR>", mode = { "t" }, desc = "resize default" },
     { "<M-l>", "<C-\\><C-n>:RnvimrResize<CR>", mode = { "t" }, desc = "resize special" },
-    { "<leader>tr", ":RnvimrToggle<CR>", mode = { "n" }, desc = "[t]erminal [r]anger" },
-    { "<leader>tr", "<C-\\><C-n>:RnvimrToggle<CR>", mode = { "t" }, desc = "[t]erminal [r]anger" },
+    { "<leader>tr", ":RnvimrToggle<CR>", mode = { "n" }, desc = " [t]erm [r]anger" },
+    { "<leader>tr", "<C-\\><C-n>:RnvimrToggle<CR>", mode = { "t" }, desc = " [t]erm [r]anger" },
   },
   config = function()
     vim.g.NERDTreeHijackNetrw = 0 -- add this line if you use NERDTree
