@@ -1,4 +1,4 @@
--- files and file navigtation
+-- files and file navigation
 vim.opt.backup = false  -- don't use backup files
 vim.opt.writebackup = false  -- don't backup the file while editing
 vim.opt.swapfile = false  -- don't create swap files for new buffers
