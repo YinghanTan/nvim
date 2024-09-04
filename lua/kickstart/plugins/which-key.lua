@@ -39,12 +39,6 @@ return {
         },
       },
 
-      win = {
-        wo = {
-          winblend = 10, -- value between 0-100 0 for fully opaque and 100 for fully transparent
-        },
-      },
-
       -- add operators that will trigger motion and text object completion
       -- to enable all native operators, set the preset / operators plugin above
       operators = {

@@ -99,7 +99,6 @@ require("options")
 -- [[ Basic Keymaps ]]
 require("keymaps")
 
-
 -- [[ Autocmds ]]
 require("autocmd")
 
