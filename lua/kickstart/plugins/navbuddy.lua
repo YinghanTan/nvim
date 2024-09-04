@@ -6,13 +6,10 @@ return {
     "SmiteshP/nvim-navic",
     "MunifTanjim/nui.nvim",
   },
-  -- keys = {
-  --   { "<leader><leader>n", "<cmd>Navbuddy<cr>", desc = "navbuddy" },
-  -- },
-
+  keys = {
+    { "<leader><leader>n", "<cmd>Navbuddy<cr>", desc = "󱣱 [n]avbuddy" },
+  },
   config = function()
-    vim.keymap.set("n", "<leader><leader>n", "<cmd>Navbuddy<cr>", { desc = "󱣱 [n]avbuddy" })
-
     require("nvim-navbuddy").setup({
       window = {
         border = "rounded",
