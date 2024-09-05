@@ -58,6 +58,8 @@ require("lazy").setup({
   require("kickstart/plugins/colorizer"),
   require("kickstart/plugins/rest"),
   require("kickstart/plugins/fidget"),
+  require("kickstart/plugins/spectre"),
+  require("kickstart/plugins/startuptime"),
 
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
