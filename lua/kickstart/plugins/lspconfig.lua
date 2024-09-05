@@ -226,7 +226,22 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        -- formatters
+        "black",
+        "isort",
+        "prettier",
         "stylua", -- Used to format Lua code
+
+        -- linters
+        "ansible-lint",
+        "eslint_d",
+        "hadolint",
+        "luacheck",
+        "pylint",
+        "tflint",
+        "vale",
+        "yamllint",
+        "markdownlint",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

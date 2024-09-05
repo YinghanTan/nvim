@@ -19,7 +19,7 @@ return {
       { "<leader>ge", ":Gedit ", desc = "󰏫 g[e]dit" }, -- todo: show in cmd input without running :
       { "<leader>gh", "<cmd>0Gclog<cr>", desc = " file [h]istory" },
       { "<leader>gL", "<cmd>Git log<cr>", desc = "[L]og long" },
-      { "<leader>gp", "<cmd>GGrep<cr>", desc = " Gre[p]" },
+      { "<leader>gp", "<cmd>GGrep<cr>", desc = " gre[p]" },
       { "<leader>gr", "<cmd>GDelete<cr>", desc = "[r]emove" },
       { "<leader>gd", group = " [d]iff", mode = { "n", "v" } },
       { "<leader>gdd", "<cmd>Gdiff<cr>", desc = " [d]iff" },
