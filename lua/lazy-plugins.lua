@@ -51,10 +51,13 @@ require("lazy").setup({
   require("kickstart/plugins/vim-slime"),
   require("kickstart/plugins/vim-eunuch"),
   require("kickstart/plugins/ultisnips"),
+  require("kickstart/plugins/honza"),
   require("kickstart/plugins/dial"),
   require("kickstart/plugins/treesj"),
   require("kickstart/plugins/pretty-fold"),
   require("kickstart/plugins/colorizer"),
+  require("kickstart/plugins/rest"),
+  require("kickstart/plugins/fidget"),
 
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the

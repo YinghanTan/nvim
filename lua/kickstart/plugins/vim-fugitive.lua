@@ -16,16 +16,16 @@ return {
       { "<leader>g.B", "<cmd>.GBrowse<cr>", desc = "[.]line [b]rowse" },
       { "<leader>gc", "<cmd>BCommits<cr>", desc = "[c]ommits" },
       { "<leader>gC", "<cmd>Commits<cr>", desc = "all [C]ommits" },
-      { "<leader>ge", ":Gedit ", desc = "g[e]dit" }, -- todo: show in cmd input without running :
-      { "<leader>gh", "<cmd>0Gclog<cr>", desc = "file [h]istory" },
+      { "<leader>ge", ":Gedit ", desc = "󰏫 g[e]dit" }, -- todo: show in cmd input without running :
+      { "<leader>gh", "<cmd>0Gclog<cr>", desc = " file [h]istory" },
       { "<leader>gL", "<cmd>Git log<cr>", desc = "[L]og long" },
-      { "<leader>gp", "<cmd>GGrep<cr>", desc = "Gre[p]" },
+      { "<leader>gp", "<cmd>GGrep<cr>", desc = " Gre[p]" },
       { "<leader>gr", "<cmd>GDelete<cr>", desc = "[r]emove" },
-      { "<leader>gd", group = "[d]iff", mode = { "n", "v" } },
-      { "<leader>gdd", "<cmd>Gdiff<cr>", desc = "[d]iff" },
+      { "<leader>gd", group = " [d]iff", mode = { "n", "v" } },
+      { "<leader>gdd", "<cmd>Gdiff<cr>", desc = " [d]iff" },
       { "<leader>gds", "<cmd>Gdiffsplit<cr>", desc = "[s]plit" },
       { "<leader>gdu", "<cmd>diffupdate<cr>", desc = "[u]pdate" },
-      { "<leader>gdo", "<cmd>diffoff!<cr>", desc = "diff[o]ff all" },
+      { "<leader>gdo", "<cmd>diffoff!<cr>", desc = " diff[o]ff all" },
     })
   end,
 }

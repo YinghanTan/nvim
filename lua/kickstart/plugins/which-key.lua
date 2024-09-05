@@ -85,7 +85,7 @@ return {
       spec = {
         { "<leader>d", group = "󰃤 [d]ebug" },
         { "<leader>l", group = " [l]sp", mode = { "n", "x" } },
-        { "<leader>f", group = " [f]ile" },
+        { "<leader>f", group = "󰈔 [f]ile" },
         { "<leader>u", group = " [u]ndo/[u]ltisnips" },
         { "<leader>r", group = " [r]ename" },
         { "<leader>s", group = " [s]earch" },

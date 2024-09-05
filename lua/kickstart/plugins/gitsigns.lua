@@ -56,11 +56,11 @@ return {
         map("n", "<leader>ggR", gitsigns.reset_buffer, { desc = "[R]eset buffer" })
         map("n", "<leader>ggp", gitsigns.preview_hunk, { desc = "[p]review hunk" })
         map("n", "<leader>ggb", gitsigns.blame_line, { desc = "[b]lame line" })
-        map("n", "<leader>ggB", gitsigns.toggle_current_line_blame, { desc = "toggle [B]lame line" })
-        map("n", "<leader>ggd", gitsigns.diffthis, { desc = "[d]iff against index" })
+        map("n", "<leader>ggB", gitsigns.toggle_current_line_blame, { desc = " toggle [B]lame line" })
+        map("n", "<leader>ggd", gitsigns.diffthis, { desc = " [d]iff against index" })
         map("n", "<leader>ggD", function()
           gitsigns.diffthis("@")
-        end, { desc = "[D]iff against last commit" })
+        end, { desc = " [D]iff against last commit" })
         -- Toggles
         -- map("n", "<leader>tD", gitsigns.toggle_deleted, { desc = "[t]oggle git show [D]eleted" })
 
