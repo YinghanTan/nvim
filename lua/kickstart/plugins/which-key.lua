@@ -38,30 +38,8 @@ return {
           g = true, -- bindings for prefixed with g
         },
       },
-
-      -- add operators that will trigger motion and text object completion
-      -- to enable all native operators, set the preset / operators plugin above
-      operators = {
-        gc = "comments",
-        ys = "you surround",
-      },
-
       sort = { "alphanum", "local", "order", "group", "mod" },
-
-      key_labels = {
-        -- override the label used to display some keys. It doesn't effect WK in any other way.
-        -- For example:
-        -- ["<space>"] = "SPC",
-        -- ["<cr>"] = "RET",
-        -- ["<tab>"] = "TAB",
-      },
-
-      motions = {
-        count = true,
-      },
-
       icons = {
-
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
         group = "+ ", -- symbol prepended to a group

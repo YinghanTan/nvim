@@ -169,7 +169,14 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
+        -- texlab = {},
+        terraformls = {},
+        docker_compose_language_service = {},
+        dockerls = {},
+        yamlls = {},
+        ansiblels = {},
+        bashls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -177,7 +184,14 @@ return {
         --    https://github.com/pmizio/typescript-tools.nvim
         --
         -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
+        tsserver = {
+          single_file_support = true
+        },
+        jsonls = {},
+        html = {},
+        cssls = {},
+        marksman = {},
+        vimls = {},
         --
 
         lua_ls = {
@@ -186,6 +200,10 @@ return {
           -- capabilities = {},
           settings = {
             Lua = {
+              -- make the language server recognize "vim" global
+              diagnostics = {
+                globals = { "vim" },
+              },
               completion = {
                 callSnippet = "Replace",
               },

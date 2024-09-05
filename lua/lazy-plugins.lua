@@ -40,8 +40,8 @@ require("lazy").setup({
   require("kickstart/plugins/vimwiki"),
   require("kickstart/plugins/hop"),
   require("kickstart/plugins/rnvimr"),
-  require("kickstart/plugins/unimpared"),
-  require("kickstart/plugins/unimpared-which-key"),
+  require("kickstart/plugins/unimpaired"),
+  require("kickstart/plugins/unimpaired-which-key"),
   require("kickstart/plugins/vinegar"),
   require("kickstart/plugins/vim-togglelist"),
   require("kickstart/plugins/zoomwintab"),
@@ -54,6 +54,7 @@ require("lazy").setup({
   require("kickstart/plugins/dial"),
   require("kickstart/plugins/treesj"),
   require("kickstart/plugins/pretty-fold"),
+  require("kickstart/plugins/colorizer"),
 
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
