@@ -34,6 +34,7 @@ ignore = {
 -- Global objects defined by the C code
 read_globals = {
   "vim",
+  "vim.loop.fs_stat"
 }
 
 globals = {
