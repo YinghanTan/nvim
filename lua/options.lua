@@ -175,6 +175,7 @@ vim.opt.fillchars = {
   diff = "╱",
   foldclose = "",
   foldopen = "",
+  -- fold = "•",
   fold = " ",
   eob = " ",
   msgsep = "─",
