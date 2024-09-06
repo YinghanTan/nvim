@@ -183,9 +183,9 @@ return {
         { "<leader>sch", "<cmd>Telescope command_history<cr>", desc = "[h]istory" },
         { "<leader>scc", "<cmd>Telescope commands<cr>", desc = "[c]ommands" },
         { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = "[a]utocommands" },
-
-        -- ["<leader>sgc"] = { "<cmd>Commits<CR>", "commits (all)" },
-        -- ["<leader>sgC"] = { "<cmd>BCommits<CR>", "commits (buffer/select)", mode = { "n", "v" } },
+        { "<leader>sg", group = "[g]it", mode = "n" },
+        {"<leader>sgc", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
+        {"<leader>sgC", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
         -- ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
         -- ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", "change history"},
         --

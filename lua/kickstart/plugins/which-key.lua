@@ -38,7 +38,8 @@ return {
           g = true, -- bindings for prefixed with g
         },
       },
-      sort = { "alphanum", "local", "order", "group", "mod" },
+      -- sort = { "alphanum", "local", "order", "group", "mod" },
+      sort = { "alphanum" },
       icons = {
         breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
         separator = "➜", -- symbol used between a key and it's label
