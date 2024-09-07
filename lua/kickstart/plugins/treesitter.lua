@@ -10,8 +10,8 @@ return {
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     keys = {
-      { "<leader>Ti", "<cmd>TSInstallInfo<cr>", desc = "[T]S [i]nfo" },
-      { "<leader>Tp", "<cmd>TSPlaygroundToggle<cr>", desc = "[T]S [p]layground" },
+      { "<leader>Ti", "<cmd>TSInstallInfo<cr>", desc = " [T]S [i]nfo" },
+      { "<leader>Tp", "<cmd>TSPlaygroundToggle<cr>", desc = "󰙅 [T]S [p]layground" },
     },
     opts = {
       ignore_install = { "smali", "help" },
@@ -52,15 +52,15 @@ return {
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<C-M-space>",
-        node_incremental = "<C-M-space>",
-        scope_incremental = false,
-        node_decremental = "<bs>",
-      },
-    },
+    -- incremental_selection = {
+    --   enable = true,
+    --   keymaps = {
+    --     init_selection = "<C-M-space>",
+    --     node_incremental = "<C-M-space>",
+    --     scope_incremental = false,
+    --     node_decremental = "<bs>",
+    --   },
+    -- },
 
     -- treesitter playground
     playground = {

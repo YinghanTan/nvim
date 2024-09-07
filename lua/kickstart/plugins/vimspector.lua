@@ -3,7 +3,7 @@ return {
   lazy = true,
   cmd = { "VimspectorInstall", "VimspectorUpdate" },
   keys = {
-    { "<leader>dV", "<cmd>call vimspector#Launch()<cr>", desc = "[V]imspector" },
+    { "<leader>dV", "<cmd>call vimspector#Launch()<cr>", desc = "󰃤 [V]imspector" },
   },
   config = function()
     vim.g.vimspector_enable_mappings = "HUMAN"
@@ -35,54 +35,42 @@ return {
     -- mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
     -- for normal mode - the word under the cursor
 
-    vim.keymap.set({ "n", "x" }, "<leader>di", "<Plug>VimspectorBalloonEval", {desc="[i]nspect"})
+    vim.keymap.set({ "n", "x" }, "<leader>di", "<Plug>VimspectorBalloonEval", {desc="󱉶 [i]nspect"})
 
-    local d_opts = {
-      mode = "n", -- NORMAL mode
-      prefix = "<leader>",
-      buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-      silent = false, -- use `silent` when creating keymaps
-      noremap = true, -- use `noremap`
-      nowait = true, -- use `nowait` when creating keympas
-    }
-    local d_mappings = {
-      ["d"] = {
-        name = "+debug",
-        ["b"] = { "<plug>VimspectorToggleBreakpoint", "[b]reakpoint" },
-        ["B"] = {
-          name = "breakpoint",
-          ["c"] = { "<plug>VimspectorToggleConditionalBreakpoint", "[c]onditional break" },
-          ["d"] = { "<cmd>call vimspector#ClearBreakpoints()", "[d]elete all breakpoitn" },
-          ["f"] = { "<plug>VimspectorAddFunctionBreakpoint", "[f]unc breakpoint" },
-        },
-        ["c"] = { "<plug>VimspectorContinue | zz", "[c]ontinue" },
-        ["C"] = { "<plug>VimspectorRunToCursor | zz", "[C]ursor" },
-        ["D"] = { "<cmd>VimspectorReset<cr>", "reset" },
-        ["e"] = { "<cmd>VimspectorEval<cr>", "[e]valuate" },
-        ["i"] = { "<plug>VimspectorBalloonEval", "[i]nspect" },
-        ["n"] = { "<plug>VimspectorStepOver | zz", "[n]ext" },
-        ["o"] = { "<cmd>VimspectorShowOutput<cr>", "[o]utput" },
-        ["s"] = { "<plug>VimspectorStepInto | zz", "[s]tep into" },
-        ["S"] = { "<plug>VimspectorStepOut | zz", "[S]tep out" },
-        ["v"] = {
-          name = "view",
-          ["c"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", "[c]ode" },
-          ["o"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.terminal)<cr>", "[o]utput" },
-          ["v"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", "[v]ariables" },
-          ["w"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", "[w]atches" },
-          ["s"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", "[s]tack" },
-          ["t"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.output)<cr>", "[t]erminal" },
-          ["T"] = { "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", "[T]ag" },
-        },
-        ["j"] = { "<plug>VimspectorDownFrame", "[j]down frame" },
-        ["k"] = { "<plug>VimspectorUpFrame", "[k]up frame" },
-        ["p"] = { "<plug>VimspectorPause", "[p]ause" },
-        ["P"] = { "<plug>VimspectorStop", "[P]stop" },
-        ["r"] = { "<plug>VimspectorRestart", "[r]estart" },
-        ["w"] = { "<cmd>call AddToWatch()<cr>", "add to [w]atch" },
-      },
-    }
+
     local wk = require("which-key")
-    wk.register(d_mappings, d_opts)
+    wk.add({
+      { "<leader>db", "<plug>VimspectorToggleBreakpoint", desc = "[b]reakpoint" },
+      { "<leader>dB", group = "[B]reakpoint", mode = "n" },
+      { "<leader>dBc", "<plug>VimspectorToggleConditionalBreakpoint", desc = "[c]onditional" },
+      { "<leader>dBd", "<cmd>call vimspector#ClearBreakpoints()", desc = "[d]elete all" },
+      { "<leader>dBf", "<plug>VimspectorAddFunctionBreakpoint", desc = "[f]unction" },
+
+      { "<leader>dc", "<plug>VimspectorContinue | zz", desc = "[c]ontinue" },
+      { "<leader>dC", "<plug>VimspectorRunToCursor | zz", desc = "[C]ursor" },
+      { "<leader>dD", "<cmd>VimspectorReset<cr>", desc = "[D]elete" },
+      { "<leader>de", "<cmd>VimspectorEval<cr>", desc = "[e]val" },
+      { "<leader>di", "<plug>VimspectorBalloonEval", desc = "[i]nspect" },
+      { "<leader>dn", "<plug>VimspectorStepOver | zz", desc = "[n]ext" },
+      { "<leader>do", "<cmd>VimspectorShowOutput<cr>", desc = "[o]utput" },
+      { "<leader>ds", "<plug>VimspectorStepInto | zz", desc = "[s]tep into" },
+      { "<leader>dS", "<plug>VimspectorStepInto | zz", desc = "[s]tep out" },
+
+      { "<leader>dv", group = "[v]iew", mode = "n" },
+      { "<leader>dvc", "<cmd>call GoToWindow(g:vimspector_session_windows.code)<cr>", desc = "[c]ode" },
+      { "<leader>dvo", "<cmd>call GoToWindow(g:vimspector_session_windows.terminal)<cr>", desc = "[o]uput" },
+      { "<leader>dvv", "<cmd>call GoToWindow(g:vimspector_session_windows.variables)<cr>", desc = "[v]ariables" },
+      { "<leader>dvw", "<cmd>call GoToWindow(g:vimspector_session_windows.watches)<cr>", desc = "[w]atches" },
+      { "<leader>dvs", "<cmd>call GoToWindow(g:vimspector_session_windows.stack_trace)<cr>", desc = "[s]tack" },
+      { "<leader>dvt", "<cmd>call GoToWindow(g:vimspector_session_windows.output)<cr>", desc = "[t]erminal" },
+      { "<leader>dvT", "<cmd>call GoToWindow(g:vimspector_session_windows.tagpage)<cr>", desc = "[T]ag" },
+
+      { "<leader>dj", "<plug>VimspectorDownFrame", desc = "[j]down frame" },
+      { "<leader>dk", "<plug>VimspectorUpFrame", desc = "[k]up frame" },
+      { "<leader>dp", "<plug>VimspectorPause", desc = "[p]ause" },
+      { "<leader>dP", "<plug>VimspectorStop", desc = "sto[P]" },
+      { "<leader>dr", "<plug>VimspectorRestart", desc = "[r]estart" },
+      { "<leader>dw", "<cmd>call AddToWatch()<cr>", desc = "add to [w]atch" },
+    })
   end,
 }

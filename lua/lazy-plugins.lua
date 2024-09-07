@@ -81,6 +81,7 @@ require("lazy").setup({
   require("kickstart/plugins/vimwiki"),
   require("kickstart/plugins/vinegar"),
   require("kickstart/plugins/zoomwintab"),
+  -- require("kickstart/plugins/render-markdown"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
@@ -95,8 +96,8 @@ require("lazy").setup({
     icons = vim.g.have_nerd_font and {} or {
       cmd = "⌘",
       config = "🛠",
-      event = "📅",
-      ft = "📂",
+      event = " ",
+      ft = " ",
       init = "⚙",
       keys = "🗝",
       plugin = "🔌",

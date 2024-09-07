@@ -18,7 +18,7 @@ return {
 
     local wk = require("which-key")
     wk.add({
-      { "<leader>ue", "<cmd>UltiSnipsEdit<cr>", desc = "[u]ltisnips [e]dit" },
+      { "<leader>ue", "<cmd>UltiSnipsEdit<cr>", desc = "󰏫 [u]ltisnips [e]dit" },
     })
 
     vim.cmd("autocmd BufWritePost *.snippets :call UltiSnips#RefreshSnippets() | :CmpUltisnipsReloadSnippets")
