@@ -1,5 +1,5 @@
 return {
-  "bbjornstad/pretty-fold.nvim",
+  "bbjornstad/pretty-fold.nvim",  -- temporary fork
   -- "anuvyklack/pretty-fold.nvim",
   lazy = false,
   config = function()
