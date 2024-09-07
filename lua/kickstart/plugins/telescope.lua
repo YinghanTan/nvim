@@ -157,13 +157,13 @@ return {
 
       local wk = require("which-key")
       wk.add({
-        -- { "<leader>s", group = "[s]earch", mode = "n" },
+        { "<leader>s", group = " [s]earch", mode = "n" },
+
+        ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
         { "<leader>sb", builtin.buffers, desc = "[b]uffers" },
-
-
-        { "<leader>sC", builtin.colorscheme, desc = "[C]olorscheme" },
-        { "<leader>sM", builtin.man_pages, desc = "[M]an pages" },
-        { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
+        { "<leader>sf", builtin.find_files, desc = "[f]iles" },
+        { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
+        { "<leader>s*", builtin.grep_string, desc = "[*]word under cursor" },
 
         { "<leader>sc", group = "[c]ommands", mode = "n" },
         { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = "[a]utocommands" },
@@ -171,54 +171,28 @@ return {
         { "<leader>sch", "<cmd>Telescope command_history<cr>", desc = "[h]istory" },
 
         { "<leader>sd", group = "[d]iagnostics/to[d]o", mode = "n" },
-        { "<leader>sdT", "<cmd>TodoTelescope<cr>", desc = "all [T]odo comments" },
         { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = "[d]ocument [d]iagnostics" },
+        { "<leader>sdD", builtin.diagnostics, desc = "workspace [D]iagnostics" },
         { "<leader>sdt", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "[t]odo/Fix/Fixme" },
-        { "<leader>sdw", builtin.diagnostics, desc = "[w]orkspace [d]iagnostics" },
+        { "<leader>sdT", "<cmd>TodoTelescope<cr>", desc = "all [T]odo comments" },
+
+        { "<leader>sC", builtin.colorscheme, desc = "[C]olorscheme" },
+        { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
         { "<leader>se", builtin.spell_suggest, desc = "sp[e]ll" },
-        { "<leader>sf", builtin.find_files, desc = "[f]iles" },
-        { "<leader>sg", group = "[g]it", mode = "n" },
-        { "<leader>sh", builtin.help_tags, desc = "[h]elp" },
+        { "<leader>s?", builtin.help_tags, desc = "[?]help" },
+        { "<leader>s;", builtin.resume, desc = "[;]last search" },
         { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
-        { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
-        { "<leader>sl", builtin.resume, desc = "[l]ast search" },
+        {"<leader>sc", "<cmd>Telescope changes<cr>", desc = "[c]hange history"},
         { "<leader>sm", builtin.marks, desc = "[m]arks" },
+        { "<leader>sM", builtin.man_pages, desc = "[M]an pages" },
+        { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
         { "<leader>so", builtin.oldfiles, desc = "[o]ld files" },
-        { "<leader>sr", builtin.registers, desc = "[r]egisters" },
+        {"<leader>sr", builtin.registers, desc = "[r]egisters" },
         { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
-        { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
-        { "<leader>sw", builtin.grep_string, desc = "[w]ord under cursor" },
+
+        { "<leader>sg", group = "[g]it", mode = "n" },
         {"<leader>sgC", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
         {"<leader>sgc", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
-        -- ["<leader>sw"] = { "<cmd>Windows<cr>", "window" },
-        -- ["<leader>sh;"] = {"<cmd>Telescope changes<cr>", "change history"},
-        --
-
-        -- -- Slightly advanced example of overriding default behavior and theme
-        -- {
-        --   "<leader>sT",
-        --   function()
-        --     -- You can pass additional configuration to Telescope to change the theme, layout, etc.
-        --     builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        --       winblend = 10,
-        --       previewer = false,
-        --     }))
-        --   end,
-        --   desc = "[T]hemes",
-        -- },
-
-        -- -- It's also possible to pass additional configuration options.
-        -- --  See `:help telescope.builtin.live_grep()` for information about particular keys
-        -- {
-        --   "<leader>s/",
-        --   function()
-        --     builtin.live_grep({
-        --       grep_open_files = true,
-        --       prompt_title = "Live Grep in Open Files",
-        --     })
-        --   end,
-        --   desc = "[/]search open files",
-        -- },
 
         -- Shortcut for searching your Neovim configuration files
         {
