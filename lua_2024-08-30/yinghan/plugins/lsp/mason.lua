@@ -47,7 +47,8 @@ return {
         "tailwindcss",
         "terraformls",
         "texlab",
-        "tsserver",  -- requires npm to be installed
+        -- "tsserver",  -- requires npm to be installed
+        "vtsls",  -- requires npm to be installed
         "vimls",
         "vuels",
         "yamlls",  -- requires npm to be installed

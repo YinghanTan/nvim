@@ -2,14 +2,6 @@ return {
   "karb94/neoscroll.nvim",
   event = "VeryLazy",
   config = function()
-    vim.cmd([[
-  nnoremap <C-j> <C-D>
-  vnoremap <C-j> <C-D>
-
-  nnoremap <C-k> <C-U>
-  vnoremap <C-k> <C-U>
-  ]])
-
     require("neoscroll").setup({
       -- All these keys will be mapped to their corresponding default scrolling animation
       mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
@@ -22,17 +14,5 @@ return {
       post_hook = nil, -- Function to run after the scrolling animation ends
       performance_mode = false, -- Disable "Performance Mode" on all buffers.
     })
-
-    local t = {}
-    -- Syntax: t[keys] = {function, {function arguments}}
-    t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "250" } }
-    t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "250" } }
-    t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "450" } }
-    t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "450" } }
-    t["zt"] = { "zt", { "250" } }
-    t["zz"] = { "zz", { "250" } }
-    t["zb"] = { "zb", { "250" } }
-
-    require("neoscroll.config").set_mappings(t)
   end,
 }
