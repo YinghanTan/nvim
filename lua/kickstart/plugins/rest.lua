@@ -5,7 +5,7 @@ return {
   config = function()
     local wk = require("which-key")
     wk.add({
-      { "<leader>\\a", "<Plug>RestNvim<CR>", desc = "api" },
+      { "<leader>\\a", "<Plug>RestNvim<CR>", desc = "[a]pi" },
     })
 
     require("rest-nvim").setup()

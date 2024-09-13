@@ -8,18 +8,18 @@ return {
       lint.linters_by_ft = {
         markdown = { "markdownlint" },
 
-        -- javascript = { "eslint_d" },
-        -- typescript = { "eslint_d" },
-        -- javascriptreact = { "eslint_d" },
-        -- typescriptreact = { "eslint_d" },
+        javascript = { "eslint_d" },
+        typescript = { "eslint_d" },
+        javascriptreact = { "eslint_d" },
+        typescriptreact = { "eslint_d" },
 
-        -- python = { "pylint" },
-        -- terraform = { "tflint" },
-        -- lua = { "luacheck" },
-        -- text = { "vale" },
+        python = { "pylint" },
+        terraform = { "tflint" },
+        lua = { "luacheck" },
+        text = { "vale" },
 
-        -- dockerfile = { "hadolint" },
-        -- htmldjango = { "djlint" },
+        dockerfile = { "hadolint" },
+        htmldjango = { "djlint" },
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
