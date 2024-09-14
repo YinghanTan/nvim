@@ -75,10 +75,6 @@ return {
           mappings = {
             i = {
               ["<C-c>"] = actions.close,
-              ["<C-x>"] = function(...)
-                -- open in trouble
-                return require("trouble.providers.telescope").open_selected_with_trouble(...)
-              end,
               ["<CR>"] = actions.select_default,
               ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
               ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -96,7 +92,7 @@ return {
               ["<C-p>"] = actions.results_scrolling_up,
               ["<C-n>"] = actions.results_scrolling_down,
               ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
-              ["<M-m>"] = actions.which_key,
+              ["<C-m>"] = actions.which_key,  -- show mappings
               ["<C-right>"] = actions.cycle_previewers_next,
               ["<C-left>"] = actions.cycle_previewers_prev,
               ["<C-a>"] = actions.toggle_all,
@@ -104,10 +100,6 @@ return {
             n = {
               ["<esc>"] = actions.close,
               ["<C-c>"] = actions.close,
-              ["<C-x>"] = function(...)
-                -- open in trouble
-                return require("trouble.providers.telescope").open_selected_with_trouble(...)
-              end,
               ["<CR>"] = actions.select_default,
               ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
               ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -125,7 +117,7 @@ return {
               ["<C-p>"] = actions.results_scrolling_up,
               ["<C-n>"] = actions.results_scrolling_down,
               ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
-              ["<M-m>"] = actions.which_key,
+              ["<C-m>"] = actions.which_key,  -- show mappings
               ["<C-right>"] = actions.cycle_previewers_next,
               ["<C-left>"] = actions.cycle_previewers_prev,
               ["<C-a>"] = actions.toggle_all,

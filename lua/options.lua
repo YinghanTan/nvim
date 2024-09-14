@@ -113,7 +113,6 @@ vim.opt.termguicolors = true -- set term gui colors (most terminals support this
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = false -- set relative numbered lines
 vim.opt.numberwidth = 1 -- set number column width to 2 {default 4}
-vim.opt.wrap = false -- turn off line wrapping
 -- vim.opt.wrapmargin = 8 -- wrap lines when coming within n characters from side
 -- vim.opt.linebreak = true -- set soft wrapping
 vim.opt.showbreak = "↪"
@@ -159,7 +158,7 @@ vim.opt.expandtab = true -- expand tab to spaces
 vim.opt.shiftround = true -- Round indent
 vim.opt.smartindent = true -- make indenting smarter again
 vim.opt.autoindent = true -- copy indent from current line when starting new one
-vim.opt.wrap = false
+vim.opt.wrap = false -- turn off line wrapping
 
 -- code folding
 vim.cmd([[set foldmethod=expr]]) -- use treesitter folding support
