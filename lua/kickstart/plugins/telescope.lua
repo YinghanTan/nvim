@@ -151,28 +151,28 @@ return {
       wk.add({
         { "<leader>s", group = " [s]earch", mode = "n" },
 
-        ["<leader>sw"] = { "<cmd>Windows<cr>", desc = " window" },
-        { "<leader>sb", builtin.buffers, desc = " [b]uffers" },
-        { "<leader>sf", builtin.find_files, desc = " [f]iles" },
-        { "<leader>st", builtin.live_grep, desc = " [t]ext" }, -- todo: show in cmd input without running :
-        { "<leader>s*", builtin.grep_string, desc = "󰇀 [*]word under cursor" },
+        {"<leader>sw", "<cmd>Windows<cr>", desc = "[w]indows" },
+        { "<leader>sb", builtin.buffers, desc = "[b]uffers" },
+        { "<leader>sf", builtin.find_files, desc = "[f]iles" },
+        { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
+        { "<leader>s*", builtin.grep_string, desc = "[*]word under cursor" },
 
         { "<leader>sc", group = " [c]ommands", mode = "n" },
         { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = " [a]utocommands" },
         { "<leader>scc", "<cmd>Telescope commands<cr>", desc = " [c]ommands" },
         { "<leader>sch", "<cmd>Telescope command_history<cr>", desc = " [h]istory" },
 
-        { "<leader>sd", group = " [d]iagnostics/to[d]o", mode = "n" },
+        { "<leader>sd", group = "[d]iagnostics/to[d]o", mode = "n" },
         { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = " [d]ocument [d]iagnostics" },
         { "<leader>sdD", builtin.diagnostics, desc = " workspace [D]iagnostics" },
         { "<leader>sdt", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = " [t]odo/Fix/Fixme" },
         { "<leader>sdT", "<cmd>TodoTelescope<cr>", desc = " all [T]odo comments" },
 
-        { "<leader>sC", builtin.colorscheme, desc = " [C]olorscheme" },
+        { "<leader>sC", builtin.colorscheme, desc = "[C]olorscheme" },
         { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
-        { "<leader>se", builtin.spell_suggest, desc = " sp[e]ll" },
-        { "<leader>s?", builtin.help_tags, desc = "󰞋 [?]help" },
-        { "<leader>s;", builtin.resume, desc = "󱘢 [;]last search" },
+        { "<leader>se", builtin.spell_suggest, desc = "sp[e]ll" },
+        { "<leader>s?", builtin.help_tags, desc = "[?]help" },
+        { "<leader>s;", builtin.resume, desc = "[;]last search" },
         { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
         {"<leader>sc", "<cmd>Telescope changes<cr>", desc = "[c]hange history"},
         { "<leader>sm", builtin.marks, desc = "[m]arks" },
