@@ -81,6 +81,7 @@ require("lazy").setup({
   require("kickstart/plugins/zoomwintab"),
   -- require("kickstart/plugins/render-markdown"),
   require("kickstart/plugins/markdown-preview"),
+  require("kickstart/plugins/rainbow-csv"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
