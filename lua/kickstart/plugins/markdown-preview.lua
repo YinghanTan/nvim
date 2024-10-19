@@ -1,7 +1,7 @@
 -- install without yarn or npm
 return {
-  "Tweekism/markdown-preview.nvim",  -- temorary fork
-  -- "iamcco/markdown-preview.nvim",
+  -- "Tweekism/markdown-preview.nvim",  -- temorary fork
+  "iamcco/markdown-preview.nvim",
   cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
   ft = { "wiki", "markdown", "md", "pum1" },
   build = function()

@@ -10,7 +10,7 @@
 -- NOTE: Here is where you install your plugins
 require("lazy").setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+  -- "tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
   "tpope/vim-abolish", -- working with variants of a word
 
   -- NOTE: Plugins can also be added by using a table,
@@ -82,6 +82,7 @@ require("lazy").setup({
   -- require("kickstart/plugins/render-markdown"),
   require("kickstart/plugins/markdown-preview"),
   require("kickstart/plugins/rainbow-csv"),
+  -- require("kickstart/plugins/yazi"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
