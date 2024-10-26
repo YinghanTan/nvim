@@ -154,7 +154,8 @@ return {
         {"<leader>sw", "<cmd>Windows<cr>", desc = "[w]indows" },
         { "<leader>sb", builtin.buffers, desc = "[b]uffers" },
         { "<leader>sf", builtin.find_files, desc = "[f]iles" },
-        { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
+        -- { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
+        { "<leader>st", "<cmd>Telescope grep_string<cr>", desc = "[t]ext" }, -- todo: show in cmd input without running :
         { "<leader>s*", builtin.grep_string, desc = "[*]word under cursor" },
 
         { "<leader>sc", group = " [c]ommands", mode = "n" },
