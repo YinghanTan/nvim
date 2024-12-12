@@ -13,7 +13,20 @@ return {
       timeout = 3000,
     },
     quickfile = { enabled = true },
-    statuscolumn = { enabled = false },
+    statuscolumn = {
+      enabled = false,
+      left = { "mark", "sign" }, -- priority of signs on the left (high to low)
+      right = { "fold", "git" }, -- priority of signs on the right (high to low)
+      folds = {
+        open = false, -- show open fold icons
+        git_hl = false, -- use Git Signs hl for fold icons
+      },
+      git = {
+        -- patterns to match Git signs
+        patterns = { "GitSign", "MiniDiffSign" },
+      },
+      refresh = 50, -- refresh at most every 50ms
+    },
     words = {
       enabled = true,
     },
@@ -21,16 +34,6 @@ return {
       notification = {
         wo = { wrap = true } -- Wrap notifications
       }
-    },
-    scroll = {
-      animate = {
-        duration = { step = 15, total = 250 },
-        easing = "linear",
-      },
-      -- what buffers to animate
-      filter = function(buf)
-        return vim.g.snacks_scroll ~= false and vim.b[buf].snacks_scroll ~= false and vim.bo[buf].buftype ~= "terminal"
-      end,
     },
     toggle = {
       -- your toggle configuration comes here
