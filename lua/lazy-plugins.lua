@@ -65,7 +65,7 @@ require("lazy").setup({
   require("kickstart/plugins/rnvimr"),
   require("kickstart/plugins/spectre"),
   require("kickstart/plugins/startuptime"),
-  require("kickstart/plugins/toggle-lsp-diagnostic"),
+  -- require("kickstart/plugins/toggle-lsp-diagnostic"),
   require("kickstart/plugins/treesj"),
   require("kickstart/plugins/undotree"),
   require("kickstart/plugins/unimpaired"),
