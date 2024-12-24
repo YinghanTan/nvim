@@ -82,6 +82,7 @@ require("lazy").setup({
   require("kickstart/plugins/markdown-preview"),
   require("kickstart/plugins/rainbow-csv"),
   require("kickstart/plugins/yazi"),
+  require("kickstart/plugins/codi"),
   require("kickstart/plugins/nvim-ufo"),
   require("kickstart/plugins/pretty-fold"),
   require("kickstart/plugins/snacks"),
