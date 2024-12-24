@@ -33,5 +33,9 @@ return {
     -- the floating window scaling factor. 1 means 100%, 0.9 means 90%, etc.
     floating_window_scaling_factor = 0.7,
 
+    -- yazi.nvim should use for copying. Defaults to "*", the system clipboard
+    clipboard_register = "*",
+    enable_mouse_support = true
+
   },
 }
