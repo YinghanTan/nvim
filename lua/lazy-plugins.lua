@@ -81,11 +81,12 @@ require("lazy").setup({
   -- require("kickstart/plugins/render-markdown"),
   require("kickstart/plugins/markdown-preview"),
   require("kickstart/plugins/rainbow-csv"),
-  require("kickstart/plugins/yazi"),
+  -- require("kickstart/plugins/yazi"),
   require("kickstart/plugins/codi"),
   require("kickstart/plugins/nvim-ufo"),
   require("kickstart/plugins/pretty-fold"),
   require("kickstart/plugins/snacks"),
+  require("kickstart/plugins/venv-selector"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

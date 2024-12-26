@@ -55,24 +55,18 @@ return {
     }
   },
   keys = {
-    { "<leader>S.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
-    { "<leader>Sb", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
-    { "<leader>Snh", function() Snacks.notifier.show_history() end, desc = "Notification History" },
-    { "<leader>Snd", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },
-    -- { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
-    -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File" },
-    { "<leader>gB", function() Snacks.gitbrowse() end, desc = "Git Browse" },
-    -- { "<leader>gb", function() Snacks.git.blame_line() end, desc = "Git Blame Line" },
-    { "<leader>ggh", function() Snacks.lazygit.log_file() end, desc = "Lazygit Current File History" },
-    { "<leader>ggl", function() Snacks.lazygit() end, desc = "Lazygit" },
-    { "<leader>ggL", function() Snacks.lazygit.log() end, desc = "Lazygit Log (cwd)"},
-    -- { "<c-/>", function() Snacks.terminal() end, desc = "Toggle Terminal" },
-    -- { "<c-_>", function() Snacks.terminal() end, desc = "which_key_ignore"},
-    -- { "]]", function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference", mode = { "n", "t" } },
-    -- { "[[", function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference", mode = { "n", "t" } },
+    { "<leader>S.", function() Snacks.scratch() end, desc = "toggle [S]cratch buffer" },
+    { "<leader>Sb", function() Snacks.scratch.select() end, desc = "select [S]cratch [b]uffer" },
+    { "<leader>nh", function() Snacks.notifier.show_history() end, desc = "[n]otify [h]istory" },
+    { "<leader>nd", function() Snacks.notifier.hide() end, desc = "[n]otify [d]ismiss" },
+    { "<leader>bd", function() Snacks.bufdelete() end, desc = "[b]uffer delete" },
+    { "<leader>gB", function() Snacks.gitbrowse() end, desc = "[g]it [B]rowse" },
+    { "<leader>ggh", function() Snacks.lazygit.log_file() end, desc = "lazygit file [h]istory" },
+    { "<leader>ggl", function() Snacks.lazygit() end, desc = "[l]azygit" },
+    { "<leader>ggL", function() Snacks.lazygit.log() end, desc = "lazygit [L]og (cwd)"},
     {
-      "<leader>SN",
-      desc = "Neovim News",
+      "<leader>nN",
+      desc = "[n]otify nvim [N]ews",
       function()
         Snacks.win({
           file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
@@ -112,8 +106,6 @@ return {
         Snacks.toggle.treesitter():map("yoT")
         Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("yob")
         Snacks.toggle.inlay_hints():map("yoI")
-        -- Snacks.toggle.zoom():map("yoz")
-        -- Snacks.toggle.new():map("yoz")
       end,
     })
   end,
