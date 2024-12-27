@@ -62,6 +62,7 @@ return {
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "[b]uffer delete" },
     { "<leader>gB", function() Snacks.gitbrowse() end, desc = "[g]it [B]rowse" },
     { "<leader>ggh", function() Snacks.lazygit.log_file() end, desc = "lazygit file [h]istory" },
+    { "<leader>tg", function() Snacks.lazygit() end, desc = "[t]ui [g]it" },
     { "<leader>ggl", function() Snacks.lazygit() end, desc = "[l]azygit" },
     { "<leader>ggL", function() Snacks.lazygit.log() end, desc = "lazygit [L]og (cwd)"},
     {
