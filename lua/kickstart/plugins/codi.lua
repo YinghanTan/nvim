@@ -8,10 +8,12 @@ return {
     "Codi",
     "CodiExpand",
   },
+  config = function()
+  end,
   keys = {
-    { "<leader>co", "<cmd>Codi<cr>", desc = "Codi On" },
-    { "<leader>cO", "<cmd>Codi!<cr>", desc = "Codi On" },
-    { "<leader>cn", "<cmd>CodiSelect<cr>", desc = "Codi On" },
-    { "<leader>ce", "<cmd>CodiExpand<cr>", desc = "Codi On" },
+    { "<leader>co", "<cmd>Codi<cr>", desc = "[c]odi [o]n" },
+    { "<leader>cO", "<cmd>Codi!<cr>", desc = "[c]odi [O]ff" },
+    { "<leader>cs", "<cmd>CodiSelect<cr>", desc = "[c]odi [s]elect" },
+    { "<leader>ce", "<cmd>CodiExpand<cr>", desc = "[c]odi [e]xpand" },
   }
 }

@@ -244,6 +244,12 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 
 
+vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Open new tab" })  -- open new tab
+
+vim.keymap.set("n", "<leader><leader>X", "<cmd>source %<cr>", { desc = "[X]ecute file" })
+vim.keymap.set("n", "<leader><leader>x", ":.lua<CR>", { desc = "[x]ecute line" })
+vim.keymap.set("v", "<leader><leader>x", ":lua<cr>", { desc = "[x]ecute selected" })
+-- capital letter stands for a bigger version of the small letter action
 
 
 
