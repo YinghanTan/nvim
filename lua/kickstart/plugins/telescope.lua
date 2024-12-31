@@ -92,7 +92,7 @@ return {
               ["<C-p>"] = actions.results_scrolling_up,
               ["<C-n>"] = actions.results_scrolling_down,
               ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
-              ["<C-h>"] = actions.which_key,  -- keymapping
+              ["<C-h>"] = actions.which_key, -- keymapping
               ["<C-right>"] = actions.cycle_previewers_next,
               ["<C-left>"] = actions.cycle_previewers_prev,
               ["<C-a>"] = actions.toggle_all,
@@ -117,7 +117,7 @@ return {
               ["<C-p>"] = actions.results_scrolling_up,
               ["<C-n>"] = actions.results_scrolling_down,
               ["<C-_>"] = action_layout.toggle_preview, -- <C-/> to trigger
-              ["<C-h>"] = actions.which_key,  -- key mapping
+              ["<C-h>"] = actions.which_key, -- key mapping
               ["<C-right>"] = actions.cycle_previewers_next,
               ["<C-left>"] = actions.cycle_previewers_prev,
               ["<C-a>"] = actions.toggle_all,
@@ -151,7 +151,7 @@ return {
       wk.add({
         { "<leader>s", group = " [s]earch", mode = "n" },
 
-        {"<leader>sw", "<cmd>Windows<cr>", desc = "[w]indows" },
+        { "<leader>sw", "<cmd>Windows<cr>", desc = "[w]indows" },
         { "<leader>sb", builtin.buffers, desc = "[b]uffers" },
         { "<leader>sf", builtin.find_files, desc = "[f]iles" },
         { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
@@ -175,17 +175,17 @@ return {
         { "<leader>s?", builtin.help_tags, desc = "[?]help" },
         { "<leader>s;", builtin.resume, desc = "[;]last search" },
         { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
-        {"<leader>sc", "<cmd>Telescope changes<cr>", desc = "[c]hange history"},
+        { "<leader>sc", "<cmd>Telescope changes<cr>", desc = "[c]hange history" },
         { "<leader>sm", builtin.marks, desc = "[m]arks" },
         { "<leader>sM", builtin.man_pages, desc = "[M]an pages" },
         { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
         { "<leader>so", builtin.oldfiles, desc = "[o]ld files" },
-        {"<leader>sr", builtin.registers, desc = "[r]egisters" },
+        { "<leader>sr", builtin.registers, desc = "[r]egisters" },
         { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
 
         { "<leader>sg", group = "[g]it", mode = "n" },
-        {"<leader>sgc", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
-        {"<leader>sgC", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
+        { "<leader>sgc", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
+        { "<leader>sgC", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
 
         -- Shortcut for searching your Neovim configuration files
         {
