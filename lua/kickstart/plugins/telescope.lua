@@ -176,6 +176,8 @@ return {
         { "<leader>s;", builtin.resume, desc = "[;]last search" },
         { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
         { "<leader>sc", "<cmd>Telescope changes<cr>", desc = "[c]hange history" },
+
+
         { "<leader>sm", builtin.marks, desc = "[m]arks" },
         { "<leader>sM", builtin.man_pages, desc = "[M]an pages" },
         { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
@@ -203,20 +205,17 @@ return {
         { "<leader>eT", function() builtin.find_files({ cwd = "$HOME/.config/tmuxinator", follow = true }) end, desc = "[T]muxinator", },
         { "<leader>eV", "<cmd>e $HOME/.vimrc<cr>", desc = "[V]im", },
         { "<leader>ev", function() builtin.find_files({ cwd = vim.fn.stdpath("config"), hidden = true, follow = true }) end, desc = "neo[v]im", },
-        { "<leader>en", function() builtin.find_files({ cwd = "$HOME/notes" }) end, desc = "[n]otes", },
-        { "<leader>ew", function() builtin.find_files({ cwd = "$HOME/vimwiki" }) end, desc = "[w]iki", },
-        { "<leader>em", function() builtin.find_files({ cwd = "$HOME/projects/meshbio/wiki" }) end, desc = "[m]eshbio wiki", },
         { "<leader>ez", function() builtin.find_files({ cwd = "$HOME/.dotfiles/zsh-ubuntu", hidden = true }) end, desc = "[z]sh files", },
+
+        { "<leader>en", function() builtin.find_files({ cwd = "$HOME/notes" }) end, desc = "[n]otes file", },
+        { "<leader>eN", function() builtin.live_grep({ cwd = "$HOME/notes" }) end, desc = "[N]otes text", },
+        -- { "<leader>ew", function() builtin.find_files({ cwd = "$HOME/vimwiki" }) end, desc = "[w]iki file", },
+        -- { "<leader>eW", function() builtin.live_grep({ cwd = "$HOME/vimwiki" }) end, desc = "[W]iki text", },
+        { "<leader>ew", function() builtin.find_files({ cwd = "$HOME/projects/meshbio/wiki" }) end, desc = "meshbio[w]iki file", },
+        { "<leader>eW", function() builtin.live_grep({ cwd = "$HOME/projects/meshbio/wiki" }) end, desc = "meshbio[W]iki text", },
+        { "<leader>em", function() builtin.find_files({ cwd = "$HOME/projects/meshbio" }) end, desc = "[m]eshbio file", },
+        { "<leader>eM", function() builtin.live_grep({ cwd = "$HOME/projects/meshbio" }) end, desc = "[M]eshbio text", },
       })
-
-
-
-        -- require('telescope.builtin').find_files({
-        --   cwd = vim.fn.stdpath("config")
-        --   -- e for edit
-        --   -- TODO: search meshbio projects
-        --   -- TODO: search zsh config
-        -- })
 
     end,
   },
