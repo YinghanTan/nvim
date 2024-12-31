@@ -166,8 +166,8 @@ return {
         { "<leader>sd", group = "[d]iagnostics/to[d]o", mode = "n" },
         { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = " [d]ocument [d]iagnostics" },
         { "<leader>sdD", builtin.diagnostics, desc = " workspace [D]iagnostics" },
-        { "<leader>sdt", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = " [t]odo/Fix/Fixme" },
-        { "<leader>sdT", "<cmd>TodoTelescope<cr>", desc = " all [T]odo comments" },
+        { "<leader>sdt", "<cmd>TodoTelescope<cr>", desc = " all [T]odo comments" },
+        { "<leader>sdT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = " [t]odo/Fix/Fixme" },
 
         { "<leader>sC", builtin.colorscheme, desc = "[C]olorscheme" },
         { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
@@ -184,8 +184,8 @@ return {
         { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
 
         { "<leader>sg", group = "[g]it", mode = "n" },
-        {"<leader>sgC", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
-        {"<leader>sgc", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
+        {"<leader>sgc", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
+        {"<leader>sgC", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
 
         -- Shortcut for searching your Neovim configuration files
         {
