@@ -198,6 +198,7 @@ return {
         { "<leader>ei", function() builtin.find_files({ cwd = "$HOME/.config/i3", follow = true }) end, desc = "[i]3", },
         { "<leader>er", function() builtin.find_files({ cwd = "$HOME/.config/ranger", hidden = true, follow = true, file_ignore_patterns = { "plugins/", "__pycache__/"} }) end, desc = "[r]anger", },
         { "<leader>es", function() builtin.find_files({ cwd = "$HOME/.ssh", hidden = true, follow = true }) end, desc = "[s]sh", },
+        { "<leader>eS", function() builtin.find_files({ cwd = "$HOME/.dotfiles/setup/ansible-ubuntu-setup", hidden = true }) end, desc = "[S]etup", },
         { "<leader>et", "<cmd>e $HOME/.tmux.conf<cr>", desc = "[t]mux", },
         { "<leader>eT", function() builtin.find_files({ cwd = "$HOME/.config/tmuxinator", follow = true }) end, desc = "[T]muxinator", },
         { "<leader>eV", "<cmd>e $HOME/.vimrc<cr>", desc = "[V]im", },
@@ -205,6 +206,7 @@ return {
         { "<leader>en", function() builtin.find_files({ cwd = "$HOME/notes" }) end, desc = "[n]otes", },
         { "<leader>ew", function() builtin.find_files({ cwd = "$HOME/vimwiki" }) end, desc = "[w]iki", },
         { "<leader>em", function() builtin.find_files({ cwd = "$HOME/projects/meshbio/wiki" }) end, desc = "[m]eshbio wiki", },
+        { "<leader>ez", function() builtin.find_files({ cwd = "$HOME/.dotfiles/zsh-ubuntu", hidden = true }) end, desc = "[z]sh files", },
       })
 
 
@@ -212,8 +214,6 @@ return {
         -- require('telescope.builtin').find_files({
         --   cwd = vim.fn.stdpath("config")
         --   -- e for edit
-        --   -- TODO: setup ansible scripts config
-        --   -- TODO: setup meshbio ansible scripts config
         --   -- TODO: search meshbio projects
         --   -- TODO: search zsh config
         -- })
