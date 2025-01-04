@@ -7,7 +7,8 @@ return {
     lazy = false,
   },
   init = function()
-    vim.g.UltiSnipsExpandTrigger = "<leader><tab>"
+    -- vim.g.UltiSnipsExpandTrigger = "<leader><tab>"
+    vim.g.UltiSnipsExpandTrigger = "<C-y>"
     vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
     vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
     vim.g.UltiSnipsEditSplit = "vertical"
