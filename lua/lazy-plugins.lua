@@ -86,6 +86,7 @@ require("lazy").setup({
   require("kickstart/plugins/pretty-fold"),
   require("kickstart/plugins/snacks"),
   require("kickstart/plugins/venv-selector"),
+  require("kickstart/plugins/floaterm"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
