@@ -76,7 +76,6 @@ require("lazy").setup({
   require("config/plugins/vim-togglelist"),
   require("config/plugins/vimspector"),
   require("config/plugins/vimwiki"),
-  require("config/plugins/vinegar"),
   require("config/plugins/zoomwintab"),
   -- require("config/plugins/render-markdown"),
   require("config/plugins/markdown-preview"),
@@ -87,6 +86,8 @@ require("lazy").setup({
   require("config/plugins/snacks"),
   require("config/plugins/venv-selector"),
   require("config/plugins/floaterm"),
+  require("config/plugins/oil"),
+  -- require("config/plugins/vinegar"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

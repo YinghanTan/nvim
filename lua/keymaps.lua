@@ -253,9 +253,9 @@ vim.keymap.set("n", "<leader><leader>x", ":.lua<CR>", { desc = "[x]ecute line" }
 vim.keymap.set("v", "<leader><leader>x", ":lua<cr>", { desc = "[x]ecute selected" })
 -- capital letter stands for a bigger version of the small letter action
 
--- in terminal get to normal mode
-vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
-vim.keymap.set("t", "<c-n><c-n>", "<c-\\><c-n>")
+-- -- in terminal get to normal mode
+-- vim.keymap.set("t", "<esc><esc>", "<c-\\><c-n>")
+-- vim.keymap.set("t", "<c-n><c-n>", "<c-\\><c-n>")
 
 
 -- vim: ts=2 sts=2 sw=2 et
