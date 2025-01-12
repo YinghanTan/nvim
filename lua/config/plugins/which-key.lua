@@ -96,7 +96,7 @@ return {
         -- { "<leader>r", group = " [r]ename" },
         { "<leader>s", group = " [s]earch" },
         { "<leader>S", group = "󰛔 [S]ub/[S]cratchpad" },
-        { "<leader>t", group = " [t]erm" },
+        { "<leader>t", group = " [t]ui" },
         { "<leader>T", group = " [T]reesitter" },
         { "<leader>u", group = " [u]ndo/[u]ltisnips" },
         { "<leader>v", group = " [v]env" },
