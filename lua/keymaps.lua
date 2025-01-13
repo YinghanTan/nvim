@@ -188,14 +188,14 @@ nnoremap <silent> yoH :call ToggleConcealLevel()<CR>
 ]])
 
 
--- tab management
-vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Open new tab" })  -- open new tab
-vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close current tab" })  -- close current tab
-vim.keymap.set("n", "<leader>tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })  -- go to next tab
-vim.keymap.set("n", "<leader>tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })  -- go to previous tab
-vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })  -- open current buffer in new tab
-vim.keymap.set("n", "<leader>th", "<cmd>-tabmove<cr>", { desc = "move left" })  -- move tab left
-vim.keymap.set("n", "<leader>tl", "<cmd>+tabmove<cr>", { desc = "move right" })  -- move tab right
+-- -- tab management
+-- vim.keymap.set("n", "<leader>to", "<cmd>tabnew<cr>", { desc = "Open new tab" })  -- open new tab
+-- vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<cr>", { desc = "Close current tab" })  -- close current tab
+-- vim.keymap.set("n", "<leader>tn", "<cmd>tabn<cr>", { desc = "Go to next tab" })  -- go to next tab
+-- vim.keymap.set("n", "<leader>tp", "<cmd>tabp<cr>", { desc = "Go to previous tab" })  -- go to previous tab
+-- vim.keymap.set("n", "<leader>tf", "<cmd>tabnew %<cr>", { desc = "Open current buffer in new tab" })  -- open current buffer in new tab
+-- vim.keymap.set("n", "<leader>th", "<cmd>-tabmove<cr>", { desc = "move left" })  -- move tab left
+-- vim.keymap.set("n", "<leader>tl", "<cmd>+tabmove<cr>", { desc = "move right" })  -- move tab right
 
 
 vim.keymap.set("n", "yoR", "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", { desc = "Redraw / clear hlsearch / diff update"})

@@ -25,6 +25,7 @@ require("lazy").setup({
   require("config/plugins/gitsigns"),
   require("config/plugins/which-key"),
   require("config/plugins/telescope"),
+  -- require("config/plugins/telescope-tabs"),
   require("config/plugins/lspconfig"),
   require("config/plugins/conform"),
   require("config/plugins/cmp"),
