@@ -32,7 +32,6 @@ require("lazy").setup({
   -- require("config/plugins/tokyonight"),
   require("config/plugins/gruvbox"),
   require("config/plugins/todo-comments"),
-  require("config/plugins/mini"),
   require("config/plugins/treesitter"),
   require("config/plugins/treesitter-context"),
   require("config/plugins/ultisnips"),
@@ -47,7 +46,6 @@ require("lazy").setup({
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
 
-  require("config.plugins.autopairs"),
   require("config.plugins.debug"),
   require("config.plugins.indent_line"),
   require("config.plugins.lint"),
@@ -60,7 +58,6 @@ require("lazy").setup({
   require("config/plugins/hop"),
   require("config/plugins/navbuddy"),
   require("config/plugins/neoscroll"),
-  require("config/plugins/nvim-surround"),
   require("config/plugins/project"),
   require("config/plugins/rest"),
   require("config/plugins/rnvimr"),
@@ -69,8 +66,6 @@ require("lazy").setup({
   -- require("config/plugins/toggle-lsp-diagnostic"),
   require("config/plugins/treesj"),
   require("config/plugins/undotree"),
-  require("config/plugins/unimpaired"),
-  require("config/plugins/unimpaired-which-key"),
   require("config/plugins/vim-eunuch"),
   require("config/plugins/vim-fugitive"),
   require("config/plugins/vim-slime"),
@@ -90,6 +85,12 @@ require("lazy").setup({
   require("config/plugins/oil"),
   -- require("config/plugins/vinegar"),
   require("config/plugins/vindent"),
+
+  require("config/plugins/mini"),
+  -- require("config/plugins/nvim-surround"),
+  -- require("config.plugins.autopairs"),
+  require("config/plugins/unimpaired"),
+  require("config/plugins/unimpaired-which-key"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
