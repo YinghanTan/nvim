@@ -87,8 +87,8 @@ require("lazy").setup({
   require("config/plugins/vindent"),
 
   require("config/plugins/mini"),
-  -- require("config/plugins/nvim-surround"),
-  -- require("config.plugins.autopairs"),
+  require("config/plugins/nvim-surround"),
+  require("config.plugins.autopairs"),
   require("config/plugins/unimpaired"),
   require("config/plugins/unimpaired-which-key"),
 

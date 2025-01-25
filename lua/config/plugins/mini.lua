@@ -52,12 +52,11 @@ return {
       -- comments
       require("mini.comment").setup()
 
-      -- Operators
-      require('mini.operators').setup()
+      -- -- Operators
+      -- require('mini.operators').setup()
 
-      -- Minimal and fast autopairs 
-      require('mini.pairs').setup()
-
+      -- -- Minimal and fast autopairs
+      -- require('mini.pairs').setup()
 
     end,
   },
