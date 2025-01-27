@@ -156,7 +156,7 @@ vim.opt.shiftwidth = 2 -- 2 spaces for indent width
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true -- expand tab to spaces
 vim.opt.shiftround = true -- Round indent
-vim.opt.smartindent = true -- make indenting smarter again
+vim.opt.smartindent = true -- make indenting smarter again, disabled as it interferes with treesitter indent
 vim.opt.autoindent = true -- copy indent from current line when starting new one
 vim.opt.wrap = false -- turn off line wrapping
 

@@ -43,7 +43,7 @@ return {
         disable = { "help" },
         additional_vim_regex_highlighting = { "ruby" },
       },
-      indent = { enable = true, disable = { "ruby" } },
+      indent = { enable = false, disable = { "ruby", "yaml" } },
 
 
       incremental_selection = {
