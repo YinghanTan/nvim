@@ -218,4 +218,12 @@ vim.opt.iskeyword:append("-") -- treat dash separated words as a word text objec
 
 -- vim: ts=2 sts=2 sw=2 et
 
-vim.g.python3_host_prog = '/home/yinghan/.pyenv/versions/3.10.12/bin/python3'
+-- vim.g.python3_host_prog = '/home/yinghan/.pyenv/versions/3.10.12/bin/python3'
+local python_path = '/home/yinghan/.pyenv/versions/3.10.12/bin/python3'
+
+-- Check if the file exists
+if vim.loop.fs_stat(python_path) then
+  vim.g.python3_host_prog = python_path
+else
+  print("Python3 executable not found at " .. python_path)
+end

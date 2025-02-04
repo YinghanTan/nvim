@@ -60,6 +60,7 @@ require("lazy").setup({
   require("config/plugins/neoscroll"),
   require("config/plugins/project"),
   require("config/plugins/rest"),
+  require("config/plugins/kulala"),
   require("config/plugins/rnvimr"),
   require("config/plugins/spectre"),
   require("config/plugins/startuptime"),
