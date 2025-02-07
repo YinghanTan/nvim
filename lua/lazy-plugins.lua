@@ -93,6 +93,9 @@ require("lazy").setup({
   require("config/plugins/unimpaired"),
   require("config/plugins/unimpaired-which-key"),
 
+  require("config/plugins/avante"),
+  require("config/plugins/vim-test"),
+
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
   --
