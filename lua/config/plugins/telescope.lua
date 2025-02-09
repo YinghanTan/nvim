@@ -161,7 +161,12 @@ return {
         { "<leader>sc", group = " [c]ommands", mode = "n" },
         { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = " [a]utocommands" },
         { "<leader>scc", "<cmd>Telescope commands<cr>", desc = " [c]ommands" },
-        { "<leader>sch", "<cmd>Telescope command_history<cr>", desc = " [h]istory" },
+
+        { "<leader>sl", group = " [l]ast", mode = "n" },
+        { "<leader>slc", "<cmd>Telescope command_history<cr>", desc = "[l]ast [c]ommand" },
+        { "<leader>sl/", builtin.search_history, desc = "[l]ast [/]txt search" },
+        { "<leader>slq", builtin.quickfixhistory, desc = "[l]ast [q]uickfix" },
+        { "<leader>slf", builtin.oldfiles, desc = "[l]ast [f]iles" },
 
         { "<leader>sd", group = "[d]iagnostics/to[d]o", mode = "n" },
         { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = " [d]ocument [d]iagnostics" },
@@ -173,9 +178,7 @@ return {
         { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
         { "<leader>se", builtin.spell_suggest, desc = "sp[e]ll" },
         { "<leader>s?", builtin.help_tags, desc = "[?]help" },
-        { "<leader>s;", builtin.resume, desc = "[;]last search" },
         { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
-        { "<leader>sc", "<cmd>Telescope changes<cr>", desc = "[c]hange history" },
 
 
         { "<leader>sm", builtin.marks, desc = "[m]arks" },
@@ -183,6 +186,7 @@ return {
         { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
         { "<leader>so", builtin.oldfiles, desc = "[o]ld files" },
         { "<leader>sr", builtin.registers, desc = "[r]egisters" },
+        { "<leader>sR", builtin.resume, desc = "[R]esume" },
         { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
 
         { "<leader>sg", group = "[g]it", mode = "n" },
