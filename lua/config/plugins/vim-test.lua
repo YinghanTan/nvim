@@ -13,3 +13,6 @@ return {
     vim.cmd("let test#strategy = 'vimux'")
   end,
 }
+
+-- let test#python#runner="pytest"
+-- let test#python#pytest#executable="docker-compose exec web py.test"
