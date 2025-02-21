@@ -95,6 +95,8 @@ require("lazy").setup({
 
   require("config/plugins/avante"),
   require("config/plugins/vim-test"),
+  require("config/plugins/jinja"),
+  require("config/plugins/vimux"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
