@@ -1,4 +1,3 @@
-
 return {
   {
     "yetone/avante.nvim",
@@ -31,6 +30,7 @@ return {
       "MunifTanjim/nui.nvim",
       --- The below dependencies are optional,
       "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+      -- "zbirenbaum/copilot.lua", -- for providers='copilot'
       {
         -- support for image pasting
         "HakonHarnes/img-clip.nvim",
@@ -59,3 +59,4 @@ return {
     },
   },
 }
+
