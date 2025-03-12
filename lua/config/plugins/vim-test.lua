@@ -11,8 +11,7 @@ return {
     vim.keymap.set("n", "<leader>tl", ":TestLast<CR>", {desc = "[t]est [l]ast"})
     vim.keymap.set("n", "<leader>tv", ":TestVisit<CR>", {desc = "[t]est [v]isit"})
     vim.cmd("let test#strategy = 'vimux'")
+    -- vim.cmd("let test#strategy = 'neovim'")
+    vim.cmd("let test#python#runner='pyunit'")
   end,
 }
-
--- let test#python#runner="pytest"
--- let test#python#pytest#executable="docker-compose exec web py.test"
