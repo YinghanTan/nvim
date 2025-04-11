@@ -194,7 +194,7 @@ return {
         { "<leader>sgC", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
 
         -- Edit Configs
-        { "<leader>e", group = "[e]dit", mode = "n" },
+        { "<leader>e", group = "󰏫 [e]dit", mode = "n" },
         { "<leader>eA", function() builtin.find_files({ cwd = "$HOME/.aws", hidden = true, follow = true }) end, desc = "[A]WS", },
         { "<leader>ea", function() builtin.find_files({ cwd = "$HOME/.config/alacritty", hidden = true, follow = true }) end, desc = "[a]lacritty", },
         { "<leader>ed", function() builtin.find_files({ cwd = "$HOME/.dotfiles", hidden = true, file_ignore_patterns = { ".png$", ".svg$" } }) end, desc = "[d]dotfiles", },

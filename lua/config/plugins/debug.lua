@@ -38,7 +38,7 @@ return {
 
       -- nvim-dap-ui keys
       { "<leader>du", function() require("dapui").toggle({ }) end, desc = "󰹙 dap [u]i" },
-      { "<leader>de", function() require("dapui").eval() end, desc = " [e]val", mode = {"n", "v"} },
+      { "<leader>de", function() require("dapui").eval() end, desc = "󰪚 [e]val", mode = {"n", "v"} },
 
       unpack(keys),
     }
@@ -66,7 +66,7 @@ return {
     vim.fn.sign_define("DapBreakpoint", {text=" ", texthl="", linehl="", numhl=""})
     vim.fn.sign_define("DapBreakpointCondition", {text="󰀘 ", texthl="", linehl="", numhl=""})
     vim.fn.sign_define("DapLogPoint", {text=" ", texthl="", linehl="", numhl=""})
-    vim.fn.sign_define("DapStopped", {text=" ", texthl="", linehl="", numhl=""})
+    vim.fn.sign_define("DapStopped", {text=" ", texthl="", linehl="", numhl=""})
     vim.fn.sign_define("DapBreakpointRejected", {text=" ", texthl="", linehl="", numhl=""})
 
     dap.listeners.after.event_initialized["dapui_config"] = dapui.open

@@ -47,6 +47,7 @@ return {
         ellipsis = "…",
         colors = true,
         -- set icon mappings to true if you have a Nerd Font
+        rules = false,
         mappings = vim.g.have_nerd_font,
         -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
         -- default whick-key.nvim defined Nerd Font icons, otherwise define a string table
@@ -84,7 +85,8 @@ return {
 
       -- Document existing key chains
       spec = {
-        { "<leader>b", group = " [b]uffer" },
+        { "<leader>a", group = "󱙺 [a]i" },
+        { "<leader>b", group = " [b]uffer" },
         { "<leader>c", group = " [c]odi" },
         { "<leader>d", group = "󰃤 [d]ebug" },
         { "<leader>f", group = " [f]ile" },
@@ -92,15 +94,15 @@ return {
         { "<leader>gg", group = " [g]it apps", mode = { "n", "v" } },
         { "<leader><leader>", group = " [\\]cmd/nav", mode = { "n", "v" } },
         { "<leader>l", group = " [l]sp", mode = { "n", "x" } },
-        { "<leader>n", group = " [n]otify", mode = { "n" } },
+        { "<leader>n", group = " [n]otify", mode = { "n" } },
         -- { "<leader>r", group = " [r]ename" },
         { "<leader>s", group = " [s]earch" },
-        { "<leader>S", group = "󰛔 [S]ub/[S]cratchpad" },
+        { "<leader>S", group = " [S]ub/[S]cratchpad" },
         { "<leader>t", group = " [t]ui" },
         { "<leader>T", group = " [T]reesitter" },
-        { "<leader>u", group = " [u]ndo/[u]ltisnips" },
-        { "<leader>v", group = " [v]env" },
-        { "<leader>w", group = " [w]orkspace/[w]iki" },
+        { "<leader>u", group = " [u]ndo/[u]ltisnips" },
+        { "<leader>v", group = " [v]env" },
+        { "<leader>w", group = " [w]orkspace/[w]iki" },
       },
     },
   },
