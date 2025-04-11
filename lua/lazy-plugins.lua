@@ -47,6 +47,7 @@ require("lazy").setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
 
   require("config.plugins.debug"),
+  -- require("config/plugins/vimspector"),
   require("config.plugins.indent_line"),
   require("config.plugins.lint"),
   require("config.plugins.neo-tree"),
@@ -59,7 +60,7 @@ require("lazy").setup({
   require("config/plugins/navbuddy"),
   require("config/plugins/neoscroll"),
   require("config/plugins/project"),
-  require("config/plugins/rest"),
+  -- require("config/plugins/rest"),
   require("config/plugins/kulala"),
   require("config/plugins/rnvimr"),
   require("config/plugins/spectre"),
@@ -71,7 +72,6 @@ require("lazy").setup({
   require("config/plugins/vim-fugitive"),
   require("config/plugins/vim-slime"),
   require("config/plugins/vim-togglelist"),
-  require("config/plugins/vimspector"),
   require("config/plugins/vimwiki"),
   require("config/plugins/zoomwintab"),
   -- require("config/plugins/render-markdown"),

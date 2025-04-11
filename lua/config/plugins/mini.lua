@@ -36,8 +36,8 @@ return {
           add = "ys", -- Add surrounding in Normal and Visual modes
           delete = "ds", -- Delete surrounding
           replace = "cs", -- Replace surrounding
-          find = "fs", -- Find surrounding (to the right)
-          find_left = "Fs", -- Find surrounding (to the left)
+          find = "sf", -- Find surrounding (to the right)
+          find_left = "Sf", -- Find surrounding (to the left)
           highlight = "hs", -- Highlight surrounding
           suffix_last = "l", -- Suffix to search with "prev" method
           suffix_next = "n", -- Suffix to search with "next" method
