@@ -52,9 +52,16 @@ return {
         enabled = "green",
         disabled = "yellow",
       },
+      picker = {},
+      explorer = {},
     }
   },
   keys = {
+    -- Top Pickers & Explorer
+    -- git
+    -- { "<leader>sgC", function() Snacks.picker.git_log() end, desc = "Git Log" },
+    -- { "<leader>sgc", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
+
     { "<leader>S.", function() Snacks.scratch() end, desc = "toggle [S]cratch buffer" },
     { "<leader>Sb", function() Snacks.scratch.select() end, desc = "select [S]cratch [b]uffer" },
     { "<leader>nh", function() Snacks.notifier.show_history() end, desc = "[n]otify [h]istory" },
