@@ -21,7 +21,7 @@ return {
       { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = " run with [a]rgs" },
       { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('󰀘 [B]reakpoint conditional')) end, desc = "󰀘 Breakpoint Condition" },
       { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = " [b]reakpoint" },
-      { "<leader>dc", function() require("dap").continue() end, desc = " run/[c]ontinue" },
+      { "<leader>dc", function() require("dap").continue() end, desc = " run/[c]ontinue" },
       { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "󰇀 run to [C]ursor" },
       { "<leader>dg", function() require("dap").goto_() end, desc = " [g]o to line (No Execute)" },
       { "<leader>dj", function() require("dap").down() end, desc = " [j]Down" },
