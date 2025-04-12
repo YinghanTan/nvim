@@ -106,6 +106,8 @@ return {
         { "<leader>w", group = " [w]orkspace/[w]iki" },
         -- label shortcuts
         { "<C-w>p", desc = "previous window"},
+        { "<C-w>d", desc = "show [d]iagnostics (repeat)"},
+        { "K", desc = "hints (repeat)"},
       },
     },
   },

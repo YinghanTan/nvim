@@ -231,6 +231,9 @@ end
 -- diagnostics
 vim.diagnostic.config({
   signs = {
+    severity = {
+      min = vim.diagnostic.severity.WARN,
+    },
     text = {
       [vim.diagnostic.severity.ERROR] = " ",
       [vim.diagnostic.severity.WARN] = " ",
@@ -244,4 +247,31 @@ vim.diagnostic.config({
       [vim.diagnostic.severity.INFO] = "",
     },
   },
+  virtual_text = {
+    prefix = "",
+    severity = {
+      min = vim.diagnostic.severity.WARN, -- Only show WARN and ERROR
+    },
+  },
+  float = {
+    severity = {
+      min = vim.diagnostic.severity.WARN,
+    },
+  },
 })
+
+-- vim.diagnostic.config {
+--   virtual_text = {
+--     prefix = function(diagnostic)
+--       if diagnostic.severity == vim.diagnostic.severity.ERROR then
+--         return signs['Error']
+--       elseif diagnostic.severity == vim.diagnostic.severity.WARN then
+--         return signs['Warning']
+--       elseif diagnostic.severity == vim.diagnostic.severity.INFO then
+--         return signs['Hint']
+--       else
+--         return signs['Info']
+--       end
+--     end,
+--   },
+-- }
