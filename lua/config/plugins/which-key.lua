@@ -85,6 +85,7 @@ return {
 
       -- Document existing key chains
       spec = {
+        -- groups
         { "<leader>a", group = "󱙺 [a]i" },
         { "<leader>b", group = " [b]uffer" },
         { "<leader>c", group = " [c]odi" },
@@ -103,6 +104,8 @@ return {
         { "<leader>u", group = " [u]ndo/[u]ltisnips" },
         { "<leader>v", group = " [v]env" },
         { "<leader>w", group = " [w]orkspace/[w]iki" },
+        -- label shortcuts
+        { "<C-w>p", desc = "previous window"},
       },
     },
   },

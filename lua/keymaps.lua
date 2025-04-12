@@ -129,6 +129,7 @@ vim.g.netrw_localcopydircmd = 'cp -r'
 vim.g.netrw_winsize = 30
 vim.g.netrw_mouse = 2 -- enables mouse buttons while browsing
 
+
 -- Fold and Paste
 vim.cmd([[
 " -- Toggle paste mode on and off --
@@ -209,6 +210,14 @@ if !exists('g:lasttab')
 endif
 nmap g^ :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+]])
+
+
+-- jump to window id
+vim.cmd([[
+fun! GoToWindow(id)
+call win_gotoid(a:id)
+endfun
 ]])
 
 

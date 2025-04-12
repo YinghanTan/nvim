@@ -40,6 +40,8 @@ return {
       { "<leader>du", function() require("dapui").toggle({ }) end, desc = "󰹙 dap [u]i" },
       { "<leader>de", function() require("dapui").eval() end, desc = "󰪚 [e]val", mode = {"n", "v"} },
 
+      { "<leader>dvf", function() require("dapui").float_element() end, desc = "[f]loat" },
+
       unpack(keys),
     }
   end,
@@ -61,12 +63,27 @@ return {
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     -- dapui.setup()
-    dapui.setup({})
+    dapui.setup()
 
+    vim.fn.sign_define("DapBreakpoint", {text=" ", texthl="", linehl="", numhl=""})
+    vim.fn.sign_define("DapBreakpointCondition", {text="󰀘 ", texthl="", linehl="", numhl=""})
+    vim.fn.sign_define("DapLogPoint", {text=" ", texthl="", linehl="", numhl=""})
+    vim.fn.sign_define("DapStopped", {text="󰜴 ", texthl="", linehl="", numhl=""})
+    vim.fn.sign_define("DapBreakpointRejected", {text=" ", texthl="", linehl="", numhl=""})
 
-    dap.listeners.after.event_initialized["dapui_config"] = dapui.open
-    dap.listeners.before.event_terminated["dapui_config"] = dapui.close
-    dap.listeners.before.event_exited["dapui_config"] = dapui.close
+    dap.listeners.before.attach.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.launch.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited.dapui_config = function()
+      dapui.close()
+    end
+
 
     -- Install golang specific config
     require("dap-go").setup({
