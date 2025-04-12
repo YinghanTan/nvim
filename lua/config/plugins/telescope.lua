@@ -151,45 +151,45 @@ return {
       wk.add({
         { "<leader>s", group = " [s]earch", mode = "n" },
 
-        { "<leader>sw", "<cmd>Windows<cr>", desc = "[w]indows" },
-        { "<leader>sb", builtin.buffers, desc = "[b]uffers" },
-        { "<leader>sf", builtin.find_files, desc = "[f]iles" },
-        { "<leader>st", builtin.live_grep, desc = "[t]ext" }, -- todo: show in cmd input without running :
+        { "<leader>sw", "<cmd>Windows<cr>", desc = "󰖳 [w]indows" },
+        { "<leader>sb", builtin.buffers, desc = " [b]uffers" },
+        { "<leader>sf", builtin.find_files, desc = " [f]iles" },
+        { "<leader>st", builtin.live_grep, desc = "󱎸 [t]ext" }, -- todo: show in cmd input without running :
         -- { "<leader>st", "<cmd>Telescope grep_string<cr>", desc = "[t]ext" }, -- todo: show in cmd input without running :
-        { "<leader>s*", builtin.grep_string, desc = "[*]word under cursor" },
+        { "<leader>s*", builtin.grep_string, desc = "󱎸 [*]word under cursor" },
 
         { "<leader>sc", group = " [c]ommands", mode = "n" },
         { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = " [a]utocommands" },
         { "<leader>scc", "<cmd>Telescope commands<cr>", desc = " [c]ommands" },
 
         { "<leader>sl", group = " [l]ast", mode = "n" },
-        { "<leader>slc", "<cmd>Telescope command_history<cr>", desc = "[l]ast [c]ommand" },
-        { "<leader>sl/", builtin.search_history, desc = "[l]ast [/]txt search" },
-        { "<leader>slq", builtin.quickfixhistory, desc = "[l]ast [q]uickfix" },
-        { "<leader>slf", builtin.oldfiles, desc = "[l]ast [f]iles" },
+        { "<leader>slc", "<cmd>Telescope command_history<cr>", desc = " [l]ast [c]ommand" },
+        { "<leader>sl/", builtin.search_history, desc = "󱎸 [l]ast [/]txt search" },
+        { "<leader>slq", builtin.quickfixhistory, desc = "󰖷 [l]ast [q]uickfix" },
+        { "<leader>slf", builtin.oldfiles, desc = " [l]ast [f]iles" },
 
-        { "<leader>sd", group = "[d]iagnostics/to[d]o", mode = "n" },
+        { "<leader>sd", group = "󰖷 [d]iagnostics/to[d]o", mode = "n" },
         { "<leader>sdd", "<cmd>Telescope diagnostics bufnr=0<cr>", desc = " [d]ocument [d]iagnostics" },
         { "<leader>sdD", builtin.diagnostics, desc = " workspace [D]iagnostics" },
         { "<leader>sdt", "<cmd>TodoTelescope<cr>", desc = " all [T]odo comments" },
         { "<leader>sdT", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = " [t]odo/Fix/Fixme" },
 
-        { "<leader>sC", builtin.colorscheme, desc = "[C]olorscheme" },
-        { "<leader>sS", builtin.builtin, desc = "[S]elect telescope" },
-        { "<leader>se", builtin.spell_suggest, desc = "sp[e]ll" },
-        { "<leader>s?", builtin.help_tags, desc = "[?]help" },
-        { "<leader>sj", builtin.jumplist, desc = "[j]umplist" },
+        { "<leader>sC", builtin.colorscheme, desc = " [C]olorscheme" },
+        { "<leader>sS", builtin.builtin, desc = " [S]elect telescope" },
+        { "<leader>se", builtin.spell_suggest, desc = " sp[e]ll" },
+        { "<leader>s?", builtin.help_tags, desc = "󰋗 [?]help" },
+        { "<leader>sj", builtin.jumplist, desc = "󰆋 [j]umplist" },
 
 
-        { "<leader>sm", builtin.marks, desc = "[m]arks" },
-        { "<leader>sM", builtin.man_pages, desc = "[M]an pages" },
+        { "<leader>sm", builtin.marks, desc = "󰂺 [m]arks" },
+        { "<leader>sM", builtin.man_pages, desc = " [M]an pages" },
         { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
         { "<leader>so", builtin.oldfiles, desc = "[o]ld files" },
-        { "<leader>sr", builtin.registers, desc = "[r]egisters" },
+        { "<leader>sr", builtin.registers, desc = " [r]egisters" },
         { "<leader>sR", builtin.resume, desc = "[R]esume" },
         { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
 
-        { "<leader>sg", group = "[g]it", mode = "n" },
+        { "<leader>sg", group = " [g]it", mode = "n" },
         { "<leader>sgc", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
         { "<leader>sgC", "<cmd>Commits<CR>", desc = "[c]ommits (all)" },
 
