@@ -183,11 +183,11 @@ return {
 
         { "<leader>sm", builtin.marks, desc = "󰂺 [m]arks" },
         { "<leader>sM", builtin.man_pages, desc = " [M]an pages" },
-        { "<leader>sk", builtin.keymaps, desc = "[k]eymaps" },
-        { "<leader>so", builtin.oldfiles, desc = "[o]ld files" },
+        { "<leader>sk", builtin.keymaps, desc = " [k]eymaps" },
+        { "<leader>so", builtin.oldfiles, desc = "󱋡 [o]ld files" },
         { "<leader>sr", builtin.registers, desc = " [r]egisters" },
-        { "<leader>sR", builtin.resume, desc = "[R]esume" },
-        { "<leader>ss", "<cmd>Snippets<cr>", desc = "[s]nippets" },
+        { "<leader>sR", builtin.resume, desc = " [R]esume" },
+        { "<leader>ss", "<cmd>Snippets<cr>", desc = "󱃖 [s]nippets" },
 
         { "<leader>sg", group = " [g]it", mode = "n" },
         { "<leader>sgc", "<cmd>BCommits<CR>", desc = "[C]ommits (buffer/select)", mode = { "n", "v" } },
