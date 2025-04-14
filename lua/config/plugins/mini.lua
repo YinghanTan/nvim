@@ -71,14 +71,13 @@ return {
             })
           end,
           inactive = function()
-            local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 120 })
+            local filename = MiniStatusline.section_filename({ trunc_width = 140 })
             local function section_window_id()
               return tostring(vim.api.nvim_win_get_number(0))
             end
-            local filename = MiniStatusline.section_filename({ trunc_width = 140 })
 
             return MiniStatusline.combine_groups({
-              { hl = mode_hl, strings = { section_window_id() } },
+              { hl = "MiniStatuslineModeVisual", strings = { section_window_id() } },
               "%<", -- Mark general truncate point
               { hl = "MiniStatuslineFilename", strings = { filename } },
               "%=", -- End left alignment

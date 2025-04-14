@@ -193,15 +193,15 @@ endfun
 
 
 -- jump to window id
-vim.keymap.set("n", "<c-w>1", "1<c-w>w", { desc = "win 1" })
-vim.keymap.set("n", "<c-w>2", "2<c-w>w", { desc = "win 2" })
-vim.keymap.set("n", "<c-w>3", "3<c-w>w", { desc = "win 3" })
-vim.keymap.set("n", "<c-w>4", "4<c-w>w", { desc = "win 4" })
-vim.keymap.set("n", "<c-w>5", "5<c-w>w", { desc = "win 5" })
-vim.keymap.set("n", "<c-w>6", "6<c-w>w", { desc = "win 6" })
-vim.keymap.set("n", "<c-w>7", "7<c-w>w", { desc = "win 7" })
-vim.keymap.set("n", "<c-w>8", "8<c-w>w", { desc = "win 8" })
-vim.keymap.set("n", "<c-w>9", "9<c-w>w", { desc = "win 9" })
+vim.keymap.set("n", "1<c-w>", "1<c-w>w", { desc = "win 1" })
+vim.keymap.set("n", "2<c-w>", "2<c-w>w", { desc = "win 2" })
+vim.keymap.set("n", "3<c-w>", "3<c-w>w", { desc = "win 3" })
+vim.keymap.set("n", "4<c-w>", "4<c-w>w", { desc = "win 4" })
+vim.keymap.set("n", "5<c-w>", "5<c-w>w", { desc = "win 5" })
+vim.keymap.set("n", "6<c-w>", "6<c-w>w", { desc = "win 6" })
+vim.keymap.set("n", "7<c-w>", "7<c-w>w", { desc = "win 7" })
+vim.keymap.set("n", "8<c-w>", "8<c-w>w", { desc = "win 8" })
+vim.keymap.set("n", "9<c-w>", "9<c-w>w", { desc = "win 9" })
 
 
 
