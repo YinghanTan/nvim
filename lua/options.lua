@@ -132,7 +132,7 @@ vim.opt.pumblend = 10 -- popup transparency
 -- bottom/side/top bars
 vim.opt.showtabline = 1 -- always show tabs
 vim.opt.ruler = true -- show current row and column
-vim.opt.laststatus = 3 -- show the status line all the time
+-- vim.opt.laststatus = 3 -- global status line all the time
 vim.opt.wildmenu = true -- autocomplete for command line
 vim.opt.showcmd = true -- show incomplete commands
 vim.opt.showmode = true -- don't show vim mode

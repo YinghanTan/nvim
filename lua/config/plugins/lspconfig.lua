@@ -173,9 +173,44 @@ return {
         pyright = {},
         -- texlab = {},
         terraformls = {},
-        docker_compose_language_service = {},
         dockerls = {},
-        yamlls = {},
+        docker_compose_language_service = {},
+        yamlls = {
+          -- Have to add this for yamlls to understand that we support line folding
+          capabilities = {
+            textDocument = {
+              foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true,
+              },
+            },
+          },
+          -- lazy-load schemastore when needed
+          on_new_config = function(new_config)
+            new_config.settings.yaml.schemas = vim.tbl_deep_extend(
+              "force",
+              new_config.settings.yaml.schemas or {},
+              require("schemastore").yaml.schemas()
+            )
+          end,
+          settings = {
+            redhat = { telemetry = { enabled = false } },
+            yaml = {
+              keyOrdering = false,
+              format = {
+                enable = true,
+              },
+              validate = true,
+              schemaStore = {
+                -- Must disable built-in schemaStore support to use
+                -- schemas from SchemaStore.nvim plugin
+                enable = false,
+                -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                url = "",
+              },
+            },
+          },
+        },
         ansiblels = {},
         bashls = {},
         -- rust_analyzer = {},
@@ -188,7 +223,21 @@ return {
         ts_ls = {
           single_file_support = true
         },
-        jsonls = {},
+        jsonls = {
+          -- lazy-load schemastore when needed
+          on_new_config = function(new_config)
+            new_config.settings.json.schemas = new_config.settings.json.schemas or {}
+            vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
+          end,
+          settings = {
+            json = {
+              format = {
+                enable = true,
+              },
+              validate = { enable = true },
+            },
+          },
+        },
         html = {},
         cssls = {},
         marksman = {},
@@ -259,6 +308,11 @@ return {
         },
       })
     end,
+  },
+  {
+    "b0o/SchemaStore.nvim",
+    lazy = true,
+    version = false, -- last release is way too old
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
