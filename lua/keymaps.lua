@@ -221,34 +221,20 @@ endfun
 ]])
 
 
--- Archive
-
--- -- switch modes in terminal
--- vim.api.nvim_set_keymap('t', '<C-;>', '<C-\\><C-n>', { noremap = true, silent = true })
-
--- -- mouse keys
--- vim.keymap.set("n", "<RightMouse>", "<cmd>:popup mousemenu<CR>")
--- vim.keymap.set("n", "<Tab>", "<cmd>:popup mousemenu<CR>")
-
 -- -- shortcuts
--- vim.keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk"})
 -- vim.keymap.set("n", "<leader>nh", ":noh<cr>", { desc = "Clear search highlights" })
 
--- -- increment/decrement numbers
--- vim.keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" })  -- increment
--- vim.keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" })  -- decrement
 
--- -- window management
--- vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" })  -- split window vertically
--- vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" })  -- split window horizontally
--- vim.keymap.set("n", "<leader>se", "<C-w>=", { desc = "Make splits equal size" })  -- make split windows equal width
--- vim.keymap.set("n", "<leader>sx", "<cmd>close<cr>", { desc = "Close current split" })  -- close current split window
-
-
-
-
-
-
+-- jump to window id
+vim.keymap.set("n", "<c-w>1", "1<c-w>w", { desc = "win 1" })
+vim.keymap.set("n", "<c-w>2", "2<c-w>w", { desc = "win 2" })
+vim.keymap.set("n", "<c-w>3", "3<c-w>w", { desc = "win 3" })
+vim.keymap.set("n", "<c-w>4", "4<c-w>w", { desc = "win 4" })
+vim.keymap.set("n", "<c-w>5", "5<c-w>w", { desc = "win 5" })
+vim.keymap.set("n", "<c-w>6", "6<c-w>w", { desc = "win 6" })
+vim.keymap.set("n", "<c-w>7", "7<c-w>w", { desc = "win 7" })
+vim.keymap.set("n", "<c-w>8", "8<c-w>w", { desc = "win 8" })
+vim.keymap.set("n", "<c-w>9", "9<c-w>w", { desc = "win 9" })
 
 
 
