@@ -50,9 +50,12 @@ return {
       highlight = {
         enable = true,
         disable = { "help" },
-        additional_vim_regex_highlighting = { "ruby" },
+        additional_vim_regex_highlighting = { "ruby", "python" },
       },
-      indent = { enable = false, disable = { "ruby", "yaml" } },
+      indent = {
+        enable = false,
+        disable = { "ruby", "yaml", "python" },
+      },
 
 
       incremental_selection = {
