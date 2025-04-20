@@ -10,21 +10,16 @@ return {
   config = function()
     vim.g.NERDTreeHijackNetrw = 0 -- add this line if you use NERDTree
     vim.g.ranger_map_keys = 0 -- let g:NERDTreeHijackNetrw = 0
-    -- Make Ranger replace Netrw and be the file explorer
-    vim.g.rnvimr_enable_ex = 0
-    -- Make Ranger to be hidden after picking a file
-    vim.g.rnvimr_enable_picker = 1
+    vim.g.rnvimr_enable_ex = 0 -- Make Ranger replace Netrw and be the file explorer
+    vim.g.rnvimr_enable_picker = 1 -- Make Ranger to be hidden after picking a file
     vim.g.rnvimr_draw_border = 1
     vim.g.rnvimr_pick_enable = 1
     vim.g.rnvimr_bw_enable = 1
-    -- Make Neovim wipe the buffers corresponding to the files deleted by Ranger
-    vim.g.rnvimr_enable_bw = 1
-    -- Add a shadow window, value is equal to 100 will disable shadow
-    vim.g.rnvimr_shadow_winblend = 70
-    -- Change the border's color
-    vim.g.rnvimr_border_attr = { fg = 14, bg = -1 }
-    -- Map Rnvimr action
-    vim.g.rnvimr_action = {
+    vim.g.rnvimr_enable_bw = 1 -- Make Neovim wipe the buffers corresponding to the files deleted by Ranger
+    vim.g.rnvimr_shadow_winblend = 70 -- Add a shadow window, value is equal to 100 will disable shadow
+    vim.g.rnvimr_border_attr = { fg = 14, bg = -1 } -- Change the border's color
+    vim.g.rnvimr_edit_cmd = 'edit' -- Replace `$EDITOR` candidate with this command to open the selected file
+    vim.g.rnvimr_action = { -- Map Rnvimr action
       ["<C-t>"] = "NvimEdit tabedit",
       ["<C-x>"] = "NvimEdit split",
       ["<C-v>"] = "NvimEdit vsplit",
