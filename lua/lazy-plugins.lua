@@ -27,6 +27,7 @@ require("lazy").setup({
   require("config/plugins/telescope"),
   -- require("config/plugins/telescope-tabs"),
   require("config/plugins/lspconfig"),
+  require("config/plugins/django-plus"),
   require("config/plugins/conform"),
   require("config/plugins/cmp"),
   -- require("config/plugins/tokyonight"),
