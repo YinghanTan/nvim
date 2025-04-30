@@ -28,6 +28,8 @@ return {
         },
       })
 
+      require("mini.align").setup()
+
       -- Surround shortcuts
       require("mini.surround").setup({
         -- Module mappings. Use `''` (empty string) to disable one.

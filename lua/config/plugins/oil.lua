@@ -4,7 +4,6 @@ return {
   dependencies = { { "echasnovski/mini.icons", opts = {} } },
   keys = {
     { "-", "<cmd>Oil<cr>", mode = { "n" }, desc = "Oil" },
-    { "<leader>to", "<cmd>lua require('oil').open_float('.')<cr>", mode = { "n" }, desc = "[t]ui [o]il" },
   },
   cmd = {
     "Oil",
@@ -43,11 +42,6 @@ return {
       },
       view_options = {
         show_hidden = true
-      },
-      float = {
-        padding = 2,
-        max_width = 90,
-        max_height = 0,
       },
     })
   end,
