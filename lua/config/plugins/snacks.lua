@@ -13,6 +13,7 @@ return {
       timeout = 3000,
     },
     quickfile = { enabled = true },
+    scroll = { enabled = true },
     statuscolumn = {
       enabled = false,
       left = { "mark", "sign" }, -- priority of signs on the left (high to low)

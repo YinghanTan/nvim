@@ -58,7 +58,7 @@ require("lazy").setup({
   require("config/plugins/fzf"),
   require("config/plugins/hop"),
   require("config/plugins/navbuddy"),
-  require("config/plugins/neoscroll"),
+  -- require("config/plugins/neoscroll"),
   require("config/plugins/project"),
   -- require("config/plugins/rest"),
   require("config/plugins/kulala"),
