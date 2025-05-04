@@ -66,7 +66,7 @@ require("lazy").setup({
   require("config/plugins/rnvimr"),
   require("config/plugins/spectre"),
   require("config/plugins/startuptime"),
-  require("config/plugins/treesj"),
+  -- require("config/plugins/treesj"),
   require("config/plugins/undotree"),
   require("config/plugins/vim-eunuch"),
   require("config/plugins/vim-fugitive"),

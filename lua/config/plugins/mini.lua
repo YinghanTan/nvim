@@ -27,23 +27,52 @@ return {
           }),
         },
       })
+      -- -- Main textobject prefixes
+      -- around = 'a',
+      -- inside = 'i',
+      -- -- Next/last variants
+      -- around_next = 'an',
+      -- inside_next = 'in',
+      -- around_last = 'al',
+      -- inside_last = 'il',
+      -- -- Move cursor to corresponding edge of `a` textobject
+      -- goto_left = 'g[',
+      -- goto_right = 'g]',
 
       require("mini.align").setup()
+      -- comments
+      require("mini.comment").setup()
 
-      -- Surround shortcuts
-      require("mini.surround").setup({
-        -- Module mappings. Use `''` (empty string) to disable one.
-        mappings = {
-          add = "ys", -- Add surrounding in Normal and Visual modes
-          delete = "ds", -- Delete surrounding
-          replace = "cs", -- Replace surrounding
-          find = "sf", -- Find surrounding (to the right)
-          find_left = "Sf", -- Find surrounding (to the left)
-          highlight = "hs", -- Highlight surrounding
-          suffix_last = "l", -- Suffix to search with "prev" method
-          suffix_next = "n", -- Suffix to search with "next" method
-        },
-      })
+      -- Operators
+      require('mini.operators').setup()
+      -- evaluate = 'g='
+      -- exchange 'gx'
+      -- multiply = 'gm'
+      -- replace = 'gr'
+      -- sort = 'gs'
+
+      -- -- Minimal and fast autopairs
+      -- nvim-autopairs is still slightly better and more reliable
+      -- require('mini.pairs').setup()
+
+      require('mini.splitjoin').setup()
+      -- gS
+
+      -- -- Surround shortcuts
+      -- -- replaced with nvim-surround due to similar keymaps as tpope's surround
+      -- require("mini.surround").setup({
+      --   -- Module mappings. Use `''` (empty string) to disable one.
+      --   mappings = {
+      --     add = "ys", -- Add surrounding in Normal and Visual modes
+      --     delete = "ds", -- Delete surrounding
+      --     replace = "cs", -- Replace surrounding
+      --     find = "sf", -- Find surrounding (to the right)
+      --     find_left = "Sf", -- Find surrounding (to the left)
+      --     highlight = "hs", -- Highlight surrounding
+      --     suffix_last = "l", -- Suffix to search with "prev" method
+      --     suffix_next = "n", -- Suffix to search with "next" method
+      --   },
+      -- })
 
       -- StatusLine
       local MiniStatusline = require("mini.statusline")
@@ -88,14 +117,7 @@ return {
         },
       })
 
-      -- comments
-      require("mini.comment").setup()
 
-      -- -- Operators
-      -- require('mini.operators').setup()
-
-      -- -- Minimal and fast autopairs
-      -- require('mini.pairs').setup()
     end,
   },
 }

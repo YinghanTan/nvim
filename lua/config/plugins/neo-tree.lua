@@ -11,13 +11,13 @@ return {
   },
   cmd = "Neotree",
   keys = {
-    { "<leader>ft", ":Neotree reveal<CR>", desc = " [f]ile [t]ree", silent = true },
+    { "yof", ":Neotree reveal<CR>", desc = "  toggle [f]iletree", silent = true },
   },
   opts = {
     filesystem = {
       window = {
         mappings = {
-          ["<leader>ft"] = "close_window",
+          ["yof"] = "close_window",
         },
       },
     },
