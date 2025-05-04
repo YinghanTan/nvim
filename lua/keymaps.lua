@@ -166,8 +166,8 @@ nnoremap <silent> yoH :call ToggleConcealLevel()<CR>
 -- vim.keymap.set("n", "<leader>tl", "<cmd>+tabmove<cr>", { desc = "move right" })  -- move tab right
 
 
-vim.keymap.set("n", "yoR", "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", { desc = "Redraw / clear hlsearch / diff update"})
-vim.keymap.set("n", "yop", "<cmd>call TogglePaste()<cr>", { desc = "toggle paste"})
+vim.keymap.set("n", "yoR", "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><cr>", { desc = " Redraw / clear hlsearch / diff update"})
+vim.keymap.set("n", "yop", "<cmd>call TogglePaste()<cr>", { desc = " toggle paste"})
 
 
 -- g^ jump to previous tab

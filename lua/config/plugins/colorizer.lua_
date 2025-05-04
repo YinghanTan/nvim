@@ -2,7 +2,7 @@ return {
   "NvChad/nvim-colorizer.lua",
   event = { "BufReadPost", "BufNewFile" },
   config = function()
-    vim.keymap.set("n", "yoC", "<cmd>ColorizerToggle<cr>", { desc = "colorizer" })
+    vim.keymap.set("n", "yoC", "<cmd>ColorizerToggle<cr>", { desc = " colorizer" })
 
     require("colorizer").setup({
       filetypes = {

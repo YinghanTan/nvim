@@ -52,7 +52,6 @@ require("lazy").setup({
   require("config.plugins.indent_line"),
   require("config.plugins.lint"),
   require("config.plugins.neo-tree"),
-  require("config/plugins/colorizer"),
   require("config/plugins/dial"),
   require("config/plugins/diffview"),
   require("config/plugins/fidget"),
@@ -97,6 +96,9 @@ require("lazy").setup({
   require("config/plugins/vim-test"),
   require("config/plugins/jinja"),
   require("config/plugins/vimux"),
+
+  require("config/plugins/colorizer"),
+  require("config/plugins/nvim-highlight-colors"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
