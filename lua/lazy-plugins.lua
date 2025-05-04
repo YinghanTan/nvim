@@ -97,7 +97,7 @@ require("lazy").setup({
   require("config/plugins/jinja"),
   require("config/plugins/vimux"),
 
-  require("config/plugins/colorizer"),
+  -- require("config/plugins/colorizer"),
   require("config/plugins/nvim-highlight-colors"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
