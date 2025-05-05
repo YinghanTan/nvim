@@ -55,9 +55,6 @@ return {
       -- nvim-autopairs is still slightly better and more reliable
       -- require('mini.pairs').setup()
 
-      require('mini.splitjoin').setup()
-      -- gS
-
       -- -- Surround shortcuts
       -- -- replaced with nvim-surround due to similar keymaps as tpope's surround
       -- require("mini.surround").setup({
@@ -117,11 +114,34 @@ return {
         },
       })
 
-      -- require('mini.trailspace').setup()
+      -- -- replaced with lsp linter
+      -- require('mini.trailspace').setup({
+      --   only_in_normal_buffers = true,
+      -- })
 
-
+      -- -- replaced with nvim-web-devicons
+      -- require('mini.icons').setup()
 
     end,
   },
+  -- Split and join arguments
+	{
+		'echasnovski/mini.splitjoin',
+		keys = {
+			{ 'gS', mode = { 'n', 'x' }, desc = 'toggle arguments'
+			},
+		},
+    opts = {}
+	},
+  -- Trailing whitespace highlight and remove
+	{
+		'echasnovski/mini.trailspace',
+		event = { 'BufReadPost', 'BufNewFile' },
+		-- stylua: ignore
+		keys = {
+			{ '<leader>lw', '<cmd>lua MiniTrailspace.trim()<CR>', desc = '[l]sp [w]hitespace' },
+		},
+		opts = {},
+	},
 }
 -- vim: ts=2 sts=2 sw=2 et
