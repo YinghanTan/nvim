@@ -71,7 +71,7 @@ require("lazy").setup({
   require("config/plugins/vim-slime"),
   require("config/plugins/vim-togglelist"),
   require("config/plugins/vimwiki"),
-  require("config/plugins/zoomwintab"),
+  -- require("config/plugins/zoomwintab"),
   require("config/plugins/markdown-preview"),
   -- require("config/plugins/live-preview"),
   require("config/plugins/rainbow-csv"),

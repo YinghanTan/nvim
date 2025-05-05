@@ -82,9 +82,6 @@ return {
       -- -- replaced with nvim-web-devicons
       -- require('mini.icons').setup()
 
-      -- lukas-reineke/indent-blankline.nvim
-      -- snacks.nvim
-      -- require('mini.indentscope').setup()
     end,
   },
   -- StatusLine

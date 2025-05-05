@@ -65,6 +65,18 @@ return {
       },
       picker = {},
       explorer = {},
+    },
+    zen = {
+      enabled = true,
+      zoom = {
+        toggles = {},
+        show = { statusline = true, tabline = true },
+        win = {
+          backdrop = { transparent = true, blend = 40 },
+          width = 0.96,
+          height = 0, -- full height
+        },
+      },
     }
   },
   keys = {
@@ -101,6 +113,8 @@ return {
         })
       end,
     },
+
+    { "<C-w>z", function() Snacks.zen.zoom() end, desc = "[w]in [z]oom" },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {
