@@ -47,8 +47,6 @@ vim.keymap.set("n", "*", "*zzzv", { noremap = true, silent = true })
 vim.keymap.set("n", "#", "#zzzv", { noremap = true, silent = true })
 vim.keymap.set("n", "g*", "g*zzzv", { noremap = true, silent = true })
 vim.keymap.set("n", "g#", "g#zzzv", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 
 -- jumping more than 5 lines get added to jumplist
 vim.keymap.set("n", "k", '(v:count > 5 ? ("m\'" .. v:count) : "") .. "k"',

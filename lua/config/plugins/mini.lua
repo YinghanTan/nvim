@@ -55,6 +55,9 @@ return {
       -- nvim-autopairs is still slightly better and more reliable
       -- require('mini.pairs').setup()
 
+      -- require('mini.splitjoin').setup()
+      -- gS
+
       -- -- Surround shortcuts
       -- -- replaced with nvim-surround due to similar keymaps as tpope's surround
       -- require("mini.surround").setup({
@@ -122,14 +125,16 @@ return {
       -- -- replaced with nvim-web-devicons
       -- require('mini.icons').setup()
 
+      -- lukas-reineke/indent-blankline.nvim
+      -- require('mini.indentscope').setup()
+
     end,
   },
   -- Split and join arguments
 	{
 		'echasnovski/mini.splitjoin',
 		keys = {
-			{ 'gS', mode = { 'n', 'x' }, desc = 'toggle arguments'
-			},
+			{ 'gS', mode = { 'n', 'x' }, desc = 'toggle arguments' },
 		},
     opts = {}
 	},
@@ -140,8 +145,25 @@ return {
 		-- stylua: ignore
 		keys = {
 			{ '<leader>lw', '<cmd>lua MiniTrailspace.trim()<CR>', desc = '[l]sp [w]hitespace' },
+			{ '<leader>lW', '<cmd>lua MiniTrailspace.trim_last_lines()<CR>', desc = '[l]sp [W]hitelines' },
 		},
 		opts = {},
 	},
+  -- Mini Map
+	{
+		'echasnovski/mini.map',
+		keys = {
+			{ 'yoM', '<cmd>lua MiniMap.toggle()<cr>', mode = { 'n', 'x' }, desc = '[yo]toggle [M]inimap' },
+		},
+    opts = {}
+	},
+  -- replaced with zoomwintab
+	-- {
+	-- 	'echasnovski/mini.misc',
+	-- 	keys = {
+	-- 		{ '<C-w>z', '<cmd>lua MiniMisc.zoom()<cr>', mode = { 'n', 'x' }, desc = '[w]indows [z]oom' },
+	-- 	},
+	--    opts = {}
+	-- },
 }
 -- vim: ts=2 sts=2 sw=2 et
