@@ -8,6 +8,16 @@ return {
     -- refer to the configuration section below
     bigfile = { enabled = true },
     dashboard = { enabled = true },
+    indent = {
+      enabled = true,
+      animate = {
+        enabled = false
+      },
+      scope = {
+        enabled = false
+      }
+
+    },
     notifier = {
       enabled = true,
       timeout = 3000,

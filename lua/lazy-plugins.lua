@@ -49,7 +49,6 @@ require("lazy").setup({
 
   require("config.plugins.debug"),
   -- require("config/plugins/vimspector"),
-  require("config.plugins.indent_line"),
   require("config.plugins.lint"),
   require("config.plugins.neo-tree"),
   require("config/plugins/dial"),
@@ -85,6 +84,7 @@ require("lazy").setup({
   require("config/plugins/oil"),
   -- require("config/plugins/vinegar"),
   require("config/plugins/vindent"),
+  -- require("config.plugins.indent_line"),
 
   require("config/plugins/mini"),
   require("config/plugins/nvim-surround"),

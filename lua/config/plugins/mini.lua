@@ -44,7 +44,7 @@ return {
       require("mini.comment").setup()
 
       -- Operators
-      require('mini.operators').setup()
+      require("mini.operators").setup()
       -- evaluate = 'g='
       -- exchange 'gx'
       -- multiply = 'gm'
@@ -74,6 +74,24 @@ return {
       --   },
       -- })
 
+      -- -- replaced with lsp linter
+      -- require('mini.trailspace').setup({
+      --   only_in_normal_buffers = true,
+      -- })
+
+      -- -- replaced with nvim-web-devicons
+      -- require('mini.icons').setup()
+
+      -- lukas-reineke/indent-blankline.nvim
+      -- snacks.nvim
+      -- require('mini.indentscope').setup()
+    end,
+  },
+  -- StatusLine
+  {
+    "echasnovski/mini.statusline",
+    lazy = false,
+    config = function()
       -- StatusLine
       local MiniStatusline = require("mini.statusline")
       require("mini.statusline").setup({
@@ -116,54 +134,54 @@ return {
           end,
         },
       })
-
-      -- -- replaced with lsp linter
-      -- require('mini.trailspace').setup({
-      --   only_in_normal_buffers = true,
-      -- })
-
-      -- -- replaced with nvim-web-devicons
-      -- require('mini.icons').setup()
-
-      -- lukas-reineke/indent-blankline.nvim
-      -- require('mini.indentscope').setup()
-
     end,
   },
   -- Split and join arguments
-	{
-		'echasnovski/mini.splitjoin',
-		keys = {
-			{ 'gS', mode = { 'n', 'x' }, desc = 'toggle arguments' },
-		},
-    opts = {}
-	},
+  {
+    "echasnovski/mini.splitjoin",
+    keys = {
+      { "gS", mode = { "n", "x" }, desc = "toggle arguments" },
+    },
+    opts = {},
+  },
   -- Trailing whitespace highlight and remove
-	{
-		'echasnovski/mini.trailspace',
-		event = { 'BufReadPost', 'BufNewFile' },
+  {
+    "echasnovski/mini.trailspace",
+    event = { "BufReadPost", "BufNewFile" },
 		-- stylua: ignore
 		keys = {
 			{ '<leader>lw', '<cmd>lua MiniTrailspace.trim()<CR>', desc = '[l]sp [w]hitespace' },
 			{ '<leader>lW', '<cmd>lua MiniTrailspace.trim_last_lines()<CR>', desc = '[l]sp [W]hitelines' },
 		},
-		opts = {},
-	},
+    opts = {},
+  },
   -- Mini Map
-	{
-		'echasnovski/mini.map',
-		keys = {
-			{ 'yoM', '<cmd>lua MiniMap.toggle()<cr>', mode = { 'n', 'x' }, desc = '[yo]toggle [M]inimap' },
-		},
-    opts = {}
-	},
+  {
+    "echasnovski/mini.map",
+    keys = {
+      { "yoM", "<cmd>lua MiniMap.toggle()<cr>", mode = { "n", "x" }, desc = "[yo]toggle [M]inimap" },
+    },
+    opts = {},
+  },
+  -- indentscope
+  -- replace lukas-reineke/indent-blankline.nvim
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      options = {
+        border = "both",
+        indent_at_cursor = false,
+      },
+      symbol = "▎",
+    },
+  },
   -- replaced with zoomwintab
-	-- {
-	-- 	'echasnovski/mini.misc',
-	-- 	keys = {
-	-- 		{ '<C-w>z', '<cmd>lua MiniMisc.zoom()<cr>', mode = { 'n', 'x' }, desc = '[w]indows [z]oom' },
-	-- 	},
-	--    opts = {}
-	-- },
+  -- {
+  -- 	'echasnovski/mini.misc',
+  -- 	keys = {
+  -- 		{ '<C-w>z', '<cmd>lua MiniMisc.zoom()<cr>', mode = { 'n', 'x' }, desc = '[w]indows [z]oom' },
+  -- 	},
+  --    opts = {}
+  -- },
 }
 -- vim: ts=2 sts=2 sw=2 et
