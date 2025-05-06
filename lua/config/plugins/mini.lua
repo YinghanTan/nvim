@@ -82,6 +82,9 @@ return {
       -- -- replaced with nvim-web-devicons
       -- require('mini.icons').setup()
 
+      -- replaced with snacks.zen.zoom
+      -- require('mini.misc').setup()
+
     end,
   },
   -- StatusLine
@@ -139,18 +142,17 @@ return {
     keys = {
       { "gS", mode = { "n", "x" }, desc = "toggle arguments" },
     },
-    opts = {},
+    opts = {}, -- force load
   },
   -- Trailing whitespace highlight and remove
   {
     "echasnovski/mini.trailspace",
     event = { "BufReadPost", "BufNewFile" },
-		-- stylua: ignore
 		keys = {
 			{ '<leader>lw', '<cmd>lua MiniTrailspace.trim()<CR>', desc = '[l]sp [w]hitespace' },
 			{ '<leader>lW', '<cmd>lua MiniTrailspace.trim_last_lines()<CR>', desc = '[l]sp [W]hitelines' },
 		},
-    opts = {},
+    opts = {}, -- force load
   },
   -- Mini Map
   {
@@ -158,7 +160,7 @@ return {
     keys = {
       { "yoM", "<cmd>lua MiniMap.toggle()<cr>", mode = { "n", "x" }, desc = "[yo]toggle [M]inimap" },
     },
-    opts = {},
+    opts = {}, -- force load
   },
   -- indentscope
   -- replace lukas-reineke/indent-blankline.nvim
@@ -172,13 +174,5 @@ return {
       symbol = "▎",
     },
   },
-  -- replaced with zoomwintab
-  -- {
-  -- 	'echasnovski/mini.misc',
-  -- 	keys = {
-  -- 		{ '<C-w>z', '<cmd>lua MiniMisc.zoom()<cr>', mode = { 'n', 'x' }, desc = '[w]indows [z]oom' },
-  -- 	},
-  --    opts = {}
-  -- },
 }
 -- vim: ts=2 sts=2 sw=2 et
