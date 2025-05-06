@@ -77,7 +77,6 @@ require("lazy").setup({
   require("config/plugins/venv-selector"),
   require("config/plugins/floaterm"),
   require("config/plugins/oil"),
-  -- require("config/plugins/vinegar"),
   require("config/plugins/vindent"),
 
   require("config/plugins/mini"),

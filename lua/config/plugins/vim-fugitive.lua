@@ -12,7 +12,7 @@ return {
     })
     wk.add({
       { "<leader>gb", "<cmd>Git blame<cr>", desc = "[b]lame" },
-      { "<leader>gB", "<cmd>GBrowse<cr>", desc = "[B]rowse" },
+      -- { "<leader>gB", "<cmd>GBrowse<cr>", desc = "[B]rowse" },
       { "<leader>g.B", "<cmd>.GBrowse<cr>", desc = "[.]line [b]rowse" },
       { "<leader>gc", "<cmd>BCommits<cr>", desc = "[c]ommits" },
       { "<leader>gC", "<cmd>Commits<cr>", desc = "all [C]ommits" },

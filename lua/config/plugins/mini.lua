@@ -85,6 +85,9 @@ return {
       -- replaced with snacks.zen.zoom
       -- require('mini.misc').setup()
 
+      -- -- replaced with snacks.
+      -- require('mini.tabline').setup()
+
     end,
   },
   -- StatusLine

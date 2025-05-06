@@ -16,14 +16,15 @@ return {
       scope = {
         enabled = false
       }
-
     },
     notifier = {
       enabled = true,
       timeout = 3000,
     },
     quickfile = { enabled = true },
+    scratch = { enabled = true },
     scroll = { enabled = true },
+    gitbrowse = { enabled = true },
     statuscolumn = {
       enabled = false,
       left = { "mark", "sign" }, -- priority of signs on the left (high to low)
@@ -38,34 +39,13 @@ return {
       },
       refresh = 50, -- refresh at most every 50ms
     },
-    words = {
-      enabled = true,
-    },
+    words = { enabled = true },
     styles = {
       notification = {
-        wo = { wrap = true } -- Wrap notifications
-      }
-    },
-    toggle = {
-      -- your toggle configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-      map = vim.keymap.set, -- keymap.set function to use
-      which_key = true, -- integrate with which-key to show enabled/disabled icons and colors
-      notify = true, -- show a notification when toggling
-      -- icons for enabled/disabled states
-      icon = {
-        enabled = " ",
-        disabled = " ",
+        wo = { wrap = true }, -- Wrap notifications
       },
-      -- colors for enabled/disabled states
-      color = {
-        enabled = "green",
-        disabled = "yellow",
-      },
-      picker = {},
-      explorer = {},
     },
+    toggle = { enabled = true },
     zen = {
       enabled = true,
       zoom = {
@@ -78,7 +58,7 @@ return {
           border = "rounded",
         },
       },
-    }
+    },
   },
   keys = {
     -- Top Pickers & Explorer
@@ -87,15 +67,16 @@ return {
     -- { "<leader>sgc", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
 
     { "<leader>S.", function() Snacks.scratch() end, desc = "toggle [S]cratch buffer" },
-    { "<leader>Sb", function() Snacks.scratch.select() end, desc = "select [S]cratch [b]uffer" },
-    { "<leader>nh", function() Snacks.notifier.show_history() end, desc = "[n]otify [h]istory" },
-    { "<leader>nd", function() Snacks.notifier.hide() end, desc = "[n]otify [d]ismiss" },
-    { "<leader>bd", function() Snacks.bufdelete() end, desc = "[b]uffer delete" },
-    { "<leader>gB", function() Snacks.gitbrowse() end, desc = "[g]it [B]rowse" },
-    { "<leader>ggh", function() Snacks.lazygit.log_file() end, desc = "lazygit file [h]istory" },
-    { "<leader>tg", function() Snacks.lazygit() end, desc = "[t]ui [g]it" },
-    { "<leader>ggl", function() Snacks.lazygit() end, desc = "[l]azygit" },
-    { "<leader>ggL", function() Snacks.lazygit.log() end, desc = "lazygit [L]og (cwd)"},
+    {"<leader>Sb", function() Snacks.scratch.select() end, desc = "select [S]cratch [b]uffer" },
+    {"<leader>nh", function() Snacks.notifier.show_history() end, desc = "[n]otify [h]istory" },
+    {"<leader>nd", function() Snacks.notifier.hide() end, desc = "[n]otify [d]ismiss" },
+    {"<leader>bd", function() Snacks.bufdelete() end, desc = "[b]uffer delete" },
+    {"<leader>gB", function() Snacks.gitbrowse() end, desc = "[g]it [B]rowse" },
+    {"<leader>ggh", function() Snacks.lazygit.log_file() end, desc = "lazygit file [h]istory" },
+    {"<leader>tg", function() Snacks.lazygit() end, desc = "[t]ui [g]it" },
+    {"<leader>ggl", function() Snacks.lazygit() end, desc = "[l]azygit" },
+    {"<leader>ggL", function() Snacks.lazygit.log() end, desc = "lazygit [L]og (cwd)" },
+    { "<C-w>z", function() Snacks.zen.zoom() end, desc = "[w]in [z]oom" },
     {
       "<leader>nN",
       desc = "[n]otify nvim [N]ews",
@@ -114,8 +95,6 @@ return {
         })
       end,
     },
-
-    { "<C-w>z", function() Snacks.zen.zoom() end, desc = "[w]in [z]oom" },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {
