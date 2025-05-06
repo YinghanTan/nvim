@@ -65,6 +65,7 @@ require("lazy").setup({
   require("config/plugins/undotree"),
   require("config/plugins/vim-eunuch"),
   require("config/plugins/vim-fugitive"),
+  require("config/plugins/tabline"),
   require("config/plugins/vim-slime"),
   require("config/plugins/vim-togglelist"),
   require("config/plugins/vimwiki"),

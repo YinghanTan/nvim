@@ -38,59 +38,8 @@ return {
       -- -- Move cursor to corresponding edge of `a` textobject
       -- goto_left = 'g[',
       -- goto_right = 'g]',
-
-      require("mini.align").setup()
-      -- comments
-      require("mini.comment").setup()
-
-      -- Operators
-      require("mini.operators").setup()
-      -- evaluate = 'g='
-      -- exchange 'gx'
-      -- multiply = 'gm'
-      -- replace = 'gr'
-      -- sort = 'gs'
-
-      -- -- Minimal and fast autopairs
-      -- nvim-autopairs is still slightly better and more reliable
-      -- require('mini.pairs').setup()
-
-      -- require('mini.splitjoin').setup()
-      -- gS
-
-      -- -- Surround shortcuts
-      -- -- replaced with nvim-surround due to similar keymaps as tpope's surround
-      -- require("mini.surround").setup({
-      --   -- Module mappings. Use `''` (empty string) to disable one.
-      --   mappings = {
-      --     add = "ys", -- Add surrounding in Normal and Visual modes
-      --     delete = "ds", -- Delete surrounding
-      --     replace = "cs", -- Replace surrounding
-      --     find = "sf", -- Find surrounding (to the right)
-      --     find_left = "Sf", -- Find surrounding (to the left)
-      --     highlight = "hs", -- Highlight surrounding
-      --     suffix_last = "l", -- Suffix to search with "prev" method
-      --     suffix_next = "n", -- Suffix to search with "next" method
-      --   },
-      -- })
-
-      -- -- replaced with lsp linter
-      -- require('mini.trailspace').setup({
-      --   only_in_normal_buffers = true,
-      -- })
-
-      -- -- replaced with nvim-web-devicons
-      -- require('mini.icons').setup()
-
-      -- replaced with snacks.zen.zoom
-      -- require('mini.misc').setup()
-
-      -- -- replaced with snacks.
-      -- require('mini.tabline').setup()
-
     end,
   },
-  -- StatusLine
   {
     "echasnovski/mini.statusline",
     lazy = false,
@@ -139,7 +88,6 @@ return {
       })
     end,
   },
-  -- Split and join arguments
   {
     "echasnovski/mini.splitjoin",
     keys = {
@@ -147,7 +95,6 @@ return {
     },
     opts = {}, -- force load
   },
-  -- Trailing whitespace highlight and remove
   {
     "echasnovski/mini.trailspace",
     event = { "BufReadPost", "BufNewFile" },
@@ -157,7 +104,6 @@ return {
 		},
     opts = {}, -- force load
   },
-  -- Mini Map
   {
     "echasnovski/mini.map",
     keys = {
@@ -165,8 +111,6 @@ return {
     },
     opts = {}, -- force load
   },
-  -- indentscope
-  -- replace lukas-reineke/indent-blankline.nvim
   {
     "echasnovski/mini.indentscope",
     opts = {
@@ -176,6 +120,28 @@ return {
       },
       symbol = "▎",
     },
+  },
+  {
+    "echasnovski/mini.align",
+    opts = {},
+    -- ga or gA
+    -- split character or <s> split character
+    -- <j> l c r n
+    -- <m> char
+  },
+  {
+    "echasnovski/mini.comment",
+    opts = {},
+    -- gc
+  },
+  {
+    "echasnovski/mini.operators",
+    opts = {},
+    -- evaluate = 'g='
+    -- exchange = 'gx'
+    -- multiply = 'gm'
+    -- replace = 'gr'
+    -- sort = 'gs'
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
