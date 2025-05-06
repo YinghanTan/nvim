@@ -73,8 +73,9 @@ return {
         show = { statusline = true, tabline = true },
         win = {
           backdrop = { transparent = true, blend = 40 },
-          width = 0.96,
-          height = 0, -- full height
+          width = 0.97,
+          height = 0.98, -- full height
+          border = "rounded",
         },
       },
     }
