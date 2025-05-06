@@ -63,25 +63,25 @@ return {
   keys = {
     -- Top Pickers & Explorer
     -- git
-    -- { "<leader>sgC", function() Snacks.picker.git_log() end, desc = "Git Log" },
-    -- { "<leader>sgc", function() Snacks.picker.git_log_file() end, desc = "Git Log File" },
+    -- { "<leader>sgC", function() require('snacks').picker.git_log() end, desc = "Git Log" },
+    -- { "<leader>sgc", function() require('snacks').picker.git_log_file() end, desc = "Git Log File" },
 
-    { "<leader>S.", function() Snacks.scratch() end, desc = "toggle [S]cratch buffer" },
-    {"<leader>Sb", function() Snacks.scratch.select() end, desc = "select [S]cratch [b]uffer" },
-    {"<leader>nh", function() Snacks.notifier.show_history() end, desc = "[n]otify [h]istory" },
-    {"<leader>nd", function() Snacks.notifier.hide() end, desc = "[n]otify [d]ismiss" },
-    {"<leader>bd", function() Snacks.bufdelete() end, desc = "[b]uffer delete" },
-    {"<leader>gB", function() Snacks.gitbrowse() end, desc = "[g]it [B]rowse" },
-    {"<leader>ggh", function() Snacks.lazygit.log_file() end, desc = "lazygit file [h]istory" },
-    {"<leader>tg", function() Snacks.lazygit() end, desc = "[t]ui [g]it" },
-    {"<leader>ggl", function() Snacks.lazygit() end, desc = "[l]azygit" },
-    {"<leader>ggL", function() Snacks.lazygit.log() end, desc = "lazygit [L]og (cwd)" },
-    { "<C-w>z", function() Snacks.zen.zoom() end, desc = "[w]in [z]oom" },
+    { "<leader>S.", function() require('snacks').scratch() end, desc = "toggle [S]cratch buffer" },
+    {"<leader>Sb", function() require('snacks').scratch.select() end, desc = "select [S]cratch [b]uffer" },
+    {"<leader>nh", function() require('snacks').notifier.show_history() end, desc = "[n]otify [h]istory" },
+    {"<leader>nd", function() require('snacks').notifier.hide() end, desc = "[n]otify [d]ismiss" },
+    {"<leader>bd", function() require('snacks').bufdelete() end, desc = "[b]uffer delete" },
+    {"<leader>gB", function() require('snacks').gitbrowse() end, desc = "[g]it [B]rowse" },
+    {"<leader>ggh", function() require('snacks').lazygit.log_file() end, desc = "lazygit file [h]istory" },
+    {"<leader>tg", function() require('snacks').lazygit() end, desc = "[t]ui [g]it" },
+    {"<leader>ggl", function() require('snacks').lazygit() end, desc = "[l]azygit" },
+    {"<leader>ggL", function() require('snacks').lazygit.log() end, desc = "lazygit [L]og (cwd)" },
+    { "<C-w>z", function() require('snacks').zen.zoom() end, desc = "[w]in [z]oom" },
     {
       "<leader>nN",
       desc = "[n]otify nvim [N]ews",
       function()
-        Snacks.win({
+        require('snacks').win({
           file = vim.api.nvim_get_runtime_file("doc/news.txt", false)[1],
           width = 0.6,
           height = 0.6,
@@ -102,23 +102,23 @@ return {
       callback = function()
         -- Setup some globals for debugging (lazy-loaded)
         _G.dd = function(...)
-          Snacks.debug.inspect(...)
+          require('snacks').debug.inspect(...)
         end
         _G.bt = function()
-          Snacks.debug.backtrace()
+          require('snacks').debug.backtrace()
         end
         vim.print = _G.dd -- Override print to use snacks for `:=` command
 
         -- Create some toggle mappings
-        Snacks.toggle.option("spell", { name = "toggle spell" }):map("yos")
-        Snacks.toggle.option("wrap", { name = "toggle wrap" }):map("yow")
-        Snacks.toggle.option("relativenumber", { name = "toggle relative number" }):map("yor")
-        Snacks.toggle.line_number():map("yon")
-        Snacks.toggle.diagnostics():map("yoe")
-        Snacks.toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map("yoH")
-        Snacks.toggle.treesitter():map("yoT")
-        Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("yob")
-        Snacks.toggle.inlay_hints():map("yoI")
+        require('snacks').toggle.option("spell", { name = "toggle spell" }):map("yos")
+        require('snacks').toggle.option("wrap", { name = "toggle wrap" }):map("yow")
+        require('snacks').toggle.option("relativenumber", { name = "toggle relative number" }):map("yor")
+        require('snacks').toggle.line_number():map("yon")
+        require('snacks').toggle.diagnostics():map("yoe")
+        require('snacks').toggle.option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map("yoH")
+        require('snacks').toggle.treesitter():map("yoT")
+        require('snacks').toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("yob")
+        require('snacks').toggle.inlay_hints():map("yoI")
       end,
     })
   end,
