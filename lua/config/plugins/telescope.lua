@@ -163,7 +163,8 @@ return {
         { "<leader>sca", "<cmd>Telescope autocommands<cr>", desc = " [a]utocommands" },
         { "<leader>scc", "<cmd>Telescope commands<cr>", desc = " [c]ommands" },
 
-        { "<leader>sl", group = " [l]ast", mode = "n" },
+        { "<leader>sl", group = " [l]ast/lsp", mode = "n" },
+        { "<leader>sls", "<cmd>Telescope lsp_document_symbols<cr>", desc = " [l]sp [s]ymbols" },
         { "<leader>slc", "<cmd>Telescope command_history<cr>", desc = " [l]ast [c]ommand" },
         { "<leader>sl/", builtin.search_history, desc = "󱎸 [l]ast [/]txt search" },
         { "<leader>slq", builtin.quickfixhistory, desc = "󰖷 [l]ast [q]uickfix" },
@@ -180,7 +181,6 @@ return {
         { "<leader>sE", builtin.spell_suggest, desc = " sp[E]ll" },
         { "<leader>s?", builtin.help_tags, desc = "󰋗 [?]help" },
         { "<leader>sj", builtin.jumplist, desc = "󰆋 [j]umplist" },
-
 
         { "<leader>sm", builtin.marks, desc = "󰂺 [m]arks" },
         { "<leader>sM", builtin.man_pages, desc = " [M]an pages" },
