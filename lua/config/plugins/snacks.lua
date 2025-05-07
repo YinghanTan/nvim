@@ -76,7 +76,7 @@ return {
     {"<leader>tg", function() require('snacks').lazygit() end, desc = "[t]ui [g]it" },
     {"<leader>ggl", function() require('snacks').lazygit() end, desc = "[l]azygit" },
     {"<leader>ggL", function() require('snacks').lazygit.log() end, desc = "lazygit [L]og (cwd)" },
-    { "<C-w>z", function() require('snacks').zen.zoom() end, desc = "[w]in [z]oom" },
+    { "yoz", function() require('snacks').zen.zoom() end, desc = "[w]in [z]oom" },
     {
       "<leader>nN",
       desc = "[n]otify nvim [N]ews",
