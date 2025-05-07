@@ -74,6 +74,7 @@ return {
           file_ignore_patterns = { ".git/", ".cache", "%.o", "%.a", "%env" },
           mappings = {
             i = {
+              ["<C-Space>"] = actions.to_fuzzy_refine,
               ["<C-c>"] = actions.close,
               ["<CR>"] = actions.select_default,
               ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
@@ -176,7 +177,7 @@ return {
 
         { "<leader>sC", builtin.colorscheme, desc = " [C]olorscheme" },
         { "<leader>sS", builtin.builtin, desc = " [S]elect telescope" },
-        { "<leader>se", builtin.spell_suggest, desc = " sp[e]ll" },
+        { "<leader>sE", builtin.spell_suggest, desc = " sp[E]ll" },
         { "<leader>s?", builtin.help_tags, desc = "󰋗 [?]help" },
         { "<leader>sj", builtin.jumplist, desc = "󰆋 [j]umplist" },
 
