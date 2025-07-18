@@ -170,7 +170,16 @@ return {
       local servers = {
         -- clangd = {},
         -- gopls = {},
-        pyright = {},
+        pyright = {
+          filetypes = { "python", "pyx" },
+          settings = {
+            python = {
+              analysis = {
+                stubPath = vim.fn.expand("~/.cython-stubs"),  -- Optional stubs
+              }
+            }
+          }
+        },
         -- texlab = {},
         terraformls = {},
         dockerls = {},

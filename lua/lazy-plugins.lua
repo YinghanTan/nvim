@@ -93,6 +93,7 @@ require("lazy").setup({
   require("config/plugins/vimux"),
 
   require("config/plugins/nvim-highlight-colors"),
+  require("config/plugins/vim-python-pep8-indent"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

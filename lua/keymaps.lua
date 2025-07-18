@@ -81,10 +81,10 @@ vim.keymap.set("i", "<3-MiddleMouse>", "<Nop>", { noremap = true, silent = true 
 vim.keymap.set("i", "<4-MiddleMouse>", "<Nop>", { noremap = true, silent = true })
 
 -- Use alt + hjkl to resize windows
-vim.keymap.set("n", "<M-j>", ":resize -2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-k>", ":resize +2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<M-j>", ":resize -2<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<M-k>", ":resize +2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-h>", ":vertical resize -2<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-l>", ":vertical resize +2<CR>", { noremap = true, silent = true })
 
 -- netrw
 vim.g.netrw_keepdir = 0
