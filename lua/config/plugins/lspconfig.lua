@@ -249,7 +249,9 @@ return {
         },
         html = {},
         cssls = {},
-        marksman = {},
+        marksman = {
+          filetypes = { "markdown" },
+        },
         vimls = {},
         --
 
