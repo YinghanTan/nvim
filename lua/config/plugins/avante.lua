@@ -6,13 +6,37 @@ return {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       provider = "deepseek",
-      vendors = {
+      providers = {
         deepseek = {
           __inherited_from = "openai",
           api_key_name = "DEEPSEEK_API_KEY",
           endpoint = "https://api.deepseek.com",
           model = "deepseek-coder",
         },
+        -- qianwen = {
+        --   __inherited_from = "openai",
+        --   api_key_name = "DASHSCOPE_API_KEY",
+        --   endpoint = "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        --   model = "qwen-coder-plus-latest",
+        -- },
+        -- perplexity = {
+        --   __inherited_from = "openai",
+        --   api_key_name = "cmd:bw get notes perplexity-api-key",
+        --   endpoint = "https://api.perplexity.ai",
+        --   model = "llama-3.1-sonar-large-128k-online",
+        -- },
+        -- ollama = {
+        --   endpoint = "http://127.0.0.1:11434", -- Note that there is no /v1 at the end.
+        --   model = "qwq:32b",
+        -- },
+        -- openai = {
+        --   endpoint = "https://api.openai.com/v1",
+        --   model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+        --   timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+        --   temperature = 0,
+        --   max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
+        --   reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+        -- },
       },
       windows = {
         ask = {

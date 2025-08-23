@@ -7,5 +7,9 @@ return {
     { "<leader>Rb", function() require("kulala").scratchpad() end, desc = "Open scratchpad" },
   },
   ft = { "http", "rest" },
-  opts = {},
+  opts = {
+    global_keymaps = false,
+    global_keymaps_prefix = "<leader>R",
+    kulala_keymaps_prefix = "",
+  },
 }

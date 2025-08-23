@@ -1,7 +1,7 @@
 return {
   "SmiteshP/nvim-navbuddy",
   branch = "master",
-  commit = "f137a3466a6cd1965cdcc5398daff54e66eebbe5",
+  -- commit = "f137a3466a6cd1965cdcc5398daff54e66eebbe5",
   dependencies = {
     "neovim/nvim-lspconfig",
     "SmiteshP/nvim-navic",
