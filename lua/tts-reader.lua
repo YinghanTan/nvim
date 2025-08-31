@@ -7,6 +7,8 @@ M.current_win = nil
 M.timer = nil
 M.paragraphs = {}
 M.current_paragraph_index = 0
+M.piper_bin = '/home/yinghan/.local/bin/piper'
+M.piper_voice = '/usr/share/piper/voices/en_US/en_US-libritts-high.onnx'
 
 -- Function to get paragraph starting from cursor position
 function M.get_current_paragraph()
@@ -105,11 +107,10 @@ end
 function M.speak_text(text)
   if text and text ~= '' then
     -- Use vim-piper to speak the text
-    vim.cmd('PiperSay "' .. vim.fn.escape(text, '"') .. '"')
-    -- vim.cmd('SpeakWord "' .. vim.fn.escape(text, '"') .. '"')
-	-- let escaped_paragraph = shellescape(paragraph_text)
-	-- let command = 'echo ' . escaped_paragraph . ' | ' . g:piper_bin . ' --model ' . g:piper_voice . ' --output-raw | aplay -r 22050 -f S16_LE -t raw -'
-	-- call system(command)
+    -- vim.cmd('PiperSay "' .. vim.fn.escape(text, '"') .. '"')
+    print(text)
+    local command = 'echo "' .. vim.fn.shellescape(text) .. '" | ' .. M.piper_bin .. ' --model "' .. M.piper_voice .. '" --output-raw | aplay -r 22050 -f S16_LE -t raw -'
+    vim.fn.system(command)
   end
 end
 
@@ -135,7 +136,7 @@ end
 -- Function to clear highlights
 function M.clear_highlights()
   if M.highlight_ns and M.current_buf then
-    vim.api.nvim_buf_clear_namesPace(M.current_buf, M.highlight_ns, 0, -1)
+    vim.api.nvim_buf_clear_namespace(M.current_buf, M.highlight_ns, 0, -1)
   end
 end
 
