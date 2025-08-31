@@ -107,6 +107,9 @@ function M.speak_text(text)
     -- Use vim-piper to speak the text
     vim.cmd('PiperSay "' .. vim.fn.escape(text, '"') .. '"')
     -- vim.cmd('SpeakWord "' .. vim.fn.escape(text, '"') .. '"')
+	-- let escaped_paragraph = shellescape(paragraph_text)
+	-- let command = 'echo ' . escaped_paragraph . ' | ' . g:piper_bin . ' --model ' . g:piper_voice . ' --output-raw | aplay -r 22050 -f S16_LE -t raw -'
+	-- call system(command)
   end
 end
 
