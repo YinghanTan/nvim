@@ -70,6 +70,9 @@ return {
             -- required for Windows users
             use_absolute_path = true,
           },
+          hints = {
+            enabled = false
+          }
         },
       },
       {

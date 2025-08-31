@@ -1,26 +1,23 @@
 return {
   "jessekelighine/vindent.nvim",
   config = function()
-    local map = {
-      motion = function(lhs, rhs)
-        vim.keymap.set("", lhs, rhs)
-      end,
-      object = function(lhs, rhs)
-        vim.keymap.set({ "x", "o" }, lhs, rhs)
-      end,
+    local vindent = require("vindent")
+    local block_opts = {
+      strict = { skip_empty_lines = false, skip_more_indented_lines = false },
+      contiguous = { skip_empty_lines = false, skip_more_indented_lines = true },
+      loose = { skip_empty_lines = true, skip_more_indented_lines = true },
     }
-    map.motion("[=", "<Plug>(VindentBlockMotion_OO_prev)")
-    map.motion("]=", "<Plug>(VindentBlockMotion_OO_next)")
-    map.motion("[+", "<Plug>(VindentMotion_more_prev)")
-    map.motion("]+", "<Plug>(VindentMotion_more_next)")
-    map.motion("[-", "<Plug>(VindentMotion_less_prev)")
-    map.motion("]-", "<Plug>(VindentMotion_less_next)")
-    map.motion("[;", "<Plug>(VindentMotion_diff_prev)")
-    map.motion("];", "<Plug>(VindentMotion_diff_next)")
-    map.motion("[p", "<Plug>(VindentBlockEdgeMotion_XX_prev)")
-    map.motion("]p", "<Plug>(VindentBlockEdgeMotion_XX_next)")
-    map.object("ii", "<Plug>(VindentObject_XX_ii)")
-    map.object("ai", "<Plug>(VindentObject_XX_ai)")
-    map.object("aI", "<Plug>(VindentObject_XX_aI)")
+    vindent.map.BlockMotion({ prev = "[=", next = "]=" }, block_opts.strict)
+    vindent.map.Motion({ prev = "[-", next = "]-" }, "less")
+    vindent.map.Motion({ prev = "[+", next = "]+" }, "more")
+    vindent.map.Motion({ prev = "[;", next = "];" }, "diff")
+    vindent.map.BlockEdgeMotion({ prev = "[p", next = "]p" }, block_opts.loose)
+    vindent.map.BlockEdgeMotion({ prev = "[P", next = "]P" }, block_opts.contiguous)
+    vindent.map.Object("iI", "ii", block_opts.strict)
+    vindent.map.Object("ii", "ii", block_opts.loose)
+    vindent.map.Object("ai", "ai", block_opts.loose)
+    vindent.map.Object("aI", "aI", block_opts.loose)
+    vim.g.vindent_begin = false
+
   end,
 }
