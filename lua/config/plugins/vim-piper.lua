@@ -6,6 +6,10 @@ return {
     { "<leader>tp", SpeakCurrentParagraph, mode = { "n" }, desc = " [t]ts [p]aragraph" },
     { "<leader>tf", SpeakCurrentFile, mode = { "n" }, desc = " [t]ts [f]ile" },
     { "<leader>tv", SpeakVisualSelection, mode = { "n" }, desc = " [t]ts [v]isual" },
+    -- Add continuous reading keybinds
+    -- { "<leader>ts", function() require("tts-reader").start_continuous_reading() end, mode = { "n" }, desc = " [t]ts [s]peech" },
+    -- { "<leader>ts", function() require("tts-reader").stop_reading() end, mode = { "n" }, desc = " [t]ts [s]peech" },
+    { "<leader>ts", function() require("tts-reader").toggle_reading() end, mode = { "n" }, desc = " [t]ts [s]peech" },
   },
   config = function()
     vim.g.piper_bin = '/home/yinghan/.local/bin/piper'
