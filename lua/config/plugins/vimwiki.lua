@@ -47,7 +47,25 @@ return {
       },
     }
 
-    vim.g.vimwiki_list = { wiki_1, wiki_2 }
+    local wiki_3 = {
+      name = "meshbio",
+      path = "~/projects/meshbio/wiki/",
+      links_space_char = "-",
+      syntax = "markdown",
+      ext = ".md",
+      nested_syntaxes = {
+        ["bash"] = "bash",
+        ["python"] = "python",
+        ["js"] = "js",
+        ["html"] = "html",
+        ["css"] = "css",
+        ["json"] = "json",
+        ["c++"] = "cpp",
+        ["latex"] = "tex",
+      },
+    }
+
+    vim.g.vimwiki_list = { wiki_1, wiki_2, wiki_3 }
     vim.g.vimwiki_folding = "expr"
     vim.g.vimwiki_global_ext = 0 -- make sure vimwiki doesn't own all .md files
 
