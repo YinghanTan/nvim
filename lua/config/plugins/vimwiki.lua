@@ -67,7 +67,7 @@ return {
 
     vim.g.vimwiki_list = { wiki_1, wiki_2, wiki_3 }
     vim.g.vimwiki_folding = "expr"
-    vim.g.vimwiki_global_ext = 0 -- make sure vimwiki doesn't own all .md files
+    vim.g.vimwiki_global_ext = 1 -- make sure vimwiki doesn't own all .md files
 
     local wk = require("which-key")
     wk.add({

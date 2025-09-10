@@ -139,11 +139,12 @@ require("lazy").setup({
 
   -- Markdown
   require("config/plugins/vimwiki"),
-  require("config/plugins/bullets"),
-  -- require("config/plugins/wiki"),
   require("config/plugins/markdown-preview"),
-  require("config/plugins/bullets"),
   require("config/plugins/img-clip"),
+
+  -- require("config/plugins/wiki"),
+  -- require("config/plugins/autolist"),
+  -- require("config/plugins/bullets"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

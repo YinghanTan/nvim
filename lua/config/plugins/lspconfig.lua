@@ -302,7 +302,11 @@ return {
         "tflint",
         "vale",
         "yamllint",
-        "markdownlint",
+        -- "markdownlint",
+
+        -- debuggers
+        "debugpy",
+        "chrome-debug-adapter",
       })
       require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
