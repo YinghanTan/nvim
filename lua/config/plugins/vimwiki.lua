@@ -81,6 +81,16 @@ return {
       { "<leader>wd", desc = "[w]iki [d]elete" },
     })
     vim.treesitter.language.register("markdown", "vimwiki")
-    vim.lsp.config("marksman", { filetypes = { "markdown", "vimwiki" }, })
+    vim.lsp.config("marksman", { filetypes = { "markdown", "vimwiki" } })
+
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "vimwiki",
+      callback = function()
+        vim.keymap.set("n", "]e", "<cmd>m +1<cr>", { buffer = true, desc = "move line down", silent = true })
+        -- vim.keymap.set("v", "]e", ":m '>+1<CR>gv=gv", { buffer = true, desc = "move lines down", silent = true })
+        vim.keymap.set("n", "[e", "<cmd>m -2<cr>", { buffer = true, desc = "move line up", silent = true })
+        -- vim.keymap.set("v", "[e", ":m '<-2<CR>gv=gv", { buffer = true, desc = "move line up", silent = true })
+      end,
+    })
   end,
 }
