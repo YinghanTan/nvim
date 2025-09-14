@@ -1,0 +1,41 @@
+{
+  "mcpServers": {
+    "codegen_openai": {
+      "command": "uvx",
+      "args": ["mcp-server-codegen"],
+      "env": {
+        "OPENAI_API_KEY": "${ENV_OPENAI_API_KEY}"
+      },
+      "autostart": true,
+      "disabled": false
+    },
+    "brave_search": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "env": {
+        "BRAVE_API_KEY": "${ENV_BRAVE_SEARCH_API_KEY}"
+      },
+      "autostart": false,
+      "disabled": false
+    },
+    "todoist_tasks": {
+      "command": "npx",
+      "args": ["-y", "@abhiz123/todoist-mcp-server"],
+      "env": {
+        "TODOIST_API_TOKEN": "${ENV_TODOIST_API_TOKEN}"
+      },
+      "autostart": false,
+      "disabled": true
+    },
+    "mcp_test": {
+      "command": "python",
+      "args": ["/home/yinghan/projects/tutorial/youtube/mcp/main.py"],
+      "env": {},
+      "autostart": true,
+      "disabled": false
+    }
+  }
+}

@@ -108,7 +108,7 @@ require("lazy").setup({
   require("config/plugins/mini"),
   require("config/plugins/startuptime"),
   -- require("config/plugins/tts"),
-  -- require("config/plugins/vim-piper"),
+  require("config/plugins/vim-piper"),
   require("config/plugins/vimux"),
 
 
@@ -130,6 +130,7 @@ require("lazy").setup({
 
   -- AI
   require("config/plugins/avante"),
+  require("config/plugins/mcphub"),
 
 
   -- scratchpad
