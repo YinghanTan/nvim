@@ -82,6 +82,8 @@
   "telescope-ui-select.nvim": { "branch": "master", "commit": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "a0bbec21143c7bc5f8bb02e0005fa0b982edc026" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
+  "typeit.nvim": { "branch": "main", "commit": "245a78ac925682ad66a40e3242b0845463e2f550" },
+  "typr": { "branch": "main", "commit": "bdd9ef7143702851edd1dac85101e0a537056d2f" },
   "ultisnips": { "branch": "master", "commit": "b22a86f9dcc5257624bff3c72d8b902eac468aad" },
   "undotree": { "branch": "master", "commit": "28f2f54a34baff90ea6f4a735ef1813ad875c743" },
   "unimpaired-which-key.nvim": { "branch": "main", "commit": "c35f413a631e2d2a29778cc390e4d2da28fc2727" },
@@ -103,6 +105,7 @@
   "vimux": { "branch": "master", "commit": "04f299e53eb81883da0edea6a57018067f3b4938" },
   "vimwiki": { "branch": "dev", "commit": "72792615e739d0eb54a9c8f7e0a46a6e2407c9e8" },
   "vindent.nvim": { "branch": "main", "commit": "85c62ec84d62fa51265d064318475106eef4d783" },
+  "volt": { "branch": "main", "commit": "620de1321f275ec9d80028c68d1b88b409c0c8b1" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
   "zoomwintab.vim": { "branch": "master", "commit": "3b76f740534ecc4114bc8a207ecb0db77b2fb002" }
 }
