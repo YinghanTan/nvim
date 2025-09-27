@@ -94,10 +94,6 @@ function M.get_paragraph(start_line)
   -- Restore original cursor position
   vim.api.nvim_win_set_cursor(win, original_pos)
 
-  if paragraph_text == '' then
-    return nil
-  end
-
   return {
     text = paragraph_text,
     start_line = paragraph_start_line,
@@ -226,7 +222,7 @@ function M.read_paragraph(paragraph)
     local next_paragraph = M.get_next_paragraph(paragraph.end_line)
 
     -- Check if we got a valid next paragraph that's different from the current one
-    if next_paragraph and next_paragraph.text ~= '' and next_paragraph.start_line >= paragraph.end_line then
+    if next_paragraph and next_paragraph.start_line >= paragraph.end_line then
       M.read_paragraph(next_paragraph)
     else
       M.stop_reading()
