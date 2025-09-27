@@ -244,15 +244,6 @@ function M.stop_reading()
   vim.notify("Reading stopped.", vim.log.levels.INFO)
 end
 
--- Function to toggle reading
-function M.toggle_reading()
-  if M.is_reading then
-    M.stop_reading()
-  else
-    M.start_continuous_reading()
-  end
-end
-
 -- Function to handle Ctrl-C interruption
 function M.handle_ctrl_c()
   if M.is_reading then
@@ -292,9 +283,8 @@ return {
   name = "tts-reader",
   config = function()
     -- Set up keymaps or any configuration here
-    vim.keymap.set('n', '<leader>rr', M.toggle_reading, { desc = "Toggle TTS reading" })
-    vim.keymap.set('n', '<leader>rs', M.stop_reading, { desc = "Stop TTS reading" })
-    -- Note: Ctrl-C keymap is now set up dynamically when reading starts
+    vim.keymap.set('n', '<leader>rr', M.start_continuous_reading, { desc = "Toggle TTS reading" })
+    -- Note: Ctrl-C keymap is now set up dynamically when reading starts to stop TTS
   end,
 }
 
