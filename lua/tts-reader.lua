@@ -35,95 +35,83 @@ function M.filter_symbols(text)
   return text:gsub(pattern, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
 end
 
--- Function to get paragraph starting from cursor position
-function M.get_current_paragraph()
-  local buf = vim.api.nvim_get_current_buf()
-  local win = vim.api.nvim_get_current_win()
+-- Unified function to get paragraph starting from cursor position or specified line
+function M.get_paragraph(start_line)
+  local buf, win
+
+  if start_line then
+    -- Use the provided buffer and window from state
+    buf = M.current_buf
+    win = M.current_win
+    if not buf or not win then
+      return nil
+    end
+  else
+    -- Use current buffer and window
+    buf = vim.api.nvim_get_current_buf()
+    win = vim.api.nvim_get_current_win()
+  end
+
+  local line_count = vim.api.nvim_buf_line_count(buf)
 
   -- Save original cursor position
   local original_pos = vim.api.nvim_win_get_cursor(win)
 
+  -- If start_line is provided, move to that line first
+  if start_line then
+    -- If we're at the end of the file, return nil
+    if start_line >= line_count then
+      vim.api.nvim_win_set_cursor(win, original_pos)
+      return nil
+    end
+    vim.api.nvim_win_set_cursor(win, {start_line, 0})
+  end
+
   -- Move to beginning of paragraph
   vim.cmd('normal! {')
-  local start_line = vim.api.nvim_win_get_cursor(win)[1]
+  local paragraph_start_line = vim.api.nvim_win_get_cursor(win)[1]
 
   -- Move to end of paragraph
   vim.cmd('normal! }')
-  local end_line = vim.api.nvim_win_get_cursor(win)[1]
+  local paragraph_end_line = vim.api.nvim_win_get_cursor(win)[1]
 
-  -- Restore original cursor position
-  vim.api.nvim_win_set_cursor(win, original_pos)
+  -- Check if we're at the end of the buffer
+  if paragraph_end_line >= line_count then
+    vim.api.nvim_win_set_cursor(win, original_pos)
+    return nil
+  end
 
   -- Get lines of the paragraph
-  local lines = vim.api.nvim_buf_get_lines(buf, start_line - 1, end_line, false)
-  local paragraph_text = table.concat(lines, ' ')
+  local lines = vim.api.nvim_buf_get_lines(buf, paragraph_start_line - 1, paragraph_end_line, false)
+  local paragraph_text = table.concat(lines, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
 
   -- Filter out symbols
   paragraph_text = M.filter_symbols(paragraph_text)
 
+  -- Restore original cursor position
+  vim.api.nvim_win_set_cursor(win, original_pos)
+
+  if paragraph_text == '' then
+    return nil
+  end
+
   return {
     text = paragraph_text,
-    start_line = start_line,
-    end_line = end_line,
+    start_line = paragraph_start_line,
+    end_line = paragraph_end_line,
     buf = buf,
     win = win
   }
 end
 
+-- Function to get paragraph starting from cursor position
+function M.get_current_paragraph()
+  return M.get_paragraph()
+end
+
 -- Function to get the next paragraph from the end of the current paragraph
 function M.get_next_paragraph(current_end_line)
-  local buf = M.current_buf
-  local win = M.current_win
-  local line_count = vim.api.nvim_buf_line_count(buf)
-
-  -- If we're at the end of the file, return nil
-  if current_end_line >= line_count then
-    return nil
-  end
-
-  -- Save current cursor position
-  local original_pos = vim.api.nvim_win_get_cursor(win)
-
-  -- Move to the line after the current paragraph
-  vim.api.nvim_win_set_cursor(win, {current_end_line + 1, 0})
-
-  -- Move to the next paragraph
-  vim.cmd('normal! }')
-  local next_line = vim.api.nvim_win_get_cursor(win)[1]
-
-  -- Check if we're at the end of the buffer
-  if next_line >= line_count then
-    vim.api.nvim_win_set_cursor(win, original_pos)
-    return nil
-  end
-
-  -- Get the paragraph
-  vim.cmd('normal! {')
-  local start_line = vim.api.nvim_win_get_cursor(win)[1]
-  vim.cmd('normal! }')
-  local end_line = vim.api.nvim_win_get_cursor(win)[1]
-
-  -- Get the paragraph text
-  local lines = vim.api.nvim_buf_get_lines(buf, start_line - 1, end_line, false)
-  local para_text = table.concat(lines, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
-
-  -- Filter out symbols
-  para_text = M.filter_symbols(para_text)
-
-  -- Restore original position
-  vim.api.nvim_win_set_cursor(win, original_pos)
-
-  if para_text == '' then
-    return nil
-  end
-
-  return {
-    text = para_text,
-    start_line = start_line,
-    end_line = end_line,
-    buf = buf,
-    win = win
-  }
+  return M.get_paragraph(current_end_line + 1)
 end
 
 
@@ -149,8 +137,8 @@ function M.highlight_paragraph(start_line, end_line)
   vim.api.nvim_buf_set_extmark(
     M.current_buf,
     ns,
-    start_line - 1,  -- line (0-based)
-    0,               -- column (0-based)
+    start_line - 1
+    0,
     {
       hl_group = 'Visual',
       end_line = end_line,  -- end line (exclusive)
