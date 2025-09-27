@@ -10,6 +10,33 @@ M.current_paragraph_index = 0
 M.piper_bin = '/home/yinghan/.local/bin/piper'
 M.piper_voice = '/usr/share/piper/voices/en_US/en_US-libritts-high.onnx'
 
+-- -- Configurable symbols to ignore during TTS
+-- M.ignored_symbols = {
+--   '*', '+', '-', '=', '/', '\\', '|', '<', '>', '[', ']', '{', '}', '(', ')',
+--   '@', '#', '$', '%', '^', '&', '_', '~', '`', '"', "'", ';', ':', ',', '.', '!', '?'
+-- }
+
+-- -- Function to filter symbols from text
+-- function M.filter_symbols(text)
+--   if not text or text == '' then
+--     return text
+--   end
+--
+--   -- Escape special regex characters in symbols
+--   local escaped_symbols = {}
+--   for _, symbol in ipairs(M.ignored_symbols) do
+--     -- Escape special regex characters
+--     local escaped = symbol:gsub('([%^%$%(%)%%%.%[%]%*%+%-%?])', '%%%1')
+--     table.insert(escaped_symbols, escaped)
+--   end
+--
+--   -- Create pattern to match any of the symbols
+--   local pattern = '[' .. table.concat(escaped_symbols) .. ']'
+--
+--   -- Remove symbols from text
+--   return text:gsub(pattern, '')
+-- end
+
 -- Function to get paragraph starting from cursor position
 function M.get_current_paragraph()
   local buf = vim.api.nvim_get_current_buf()
@@ -38,6 +65,8 @@ function M.get_current_paragraph()
   -- Clean up text
   paragraph_text = paragraph_text:gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
 
+  -- -- Filter out symbols
+  -- paragraph_text = M.filter_symbols(paragraph_text)
 
   return {
     text = paragraph_text,
@@ -103,6 +132,21 @@ function M.get_all_paragraphs_from_cursor()
   return paragraphs
 end
 
+-- -- Function to speak text using vim-piper (asynchronous)
+-- function M.speak_text(text)
+--   if text and text ~= '' then
+--     print(text)
+--     local command = 'echo "' .. vim.fn.shellescape(text) .. '" | ' .. M.piper_bin .. ' --model "' .. M.piper_voice .. '" --output-raw | aplay -r 22050 -f S16_LE -t raw -'
+--     -- Use jobstart to run the command asynchronously
+--     vim.fn.jobstart(command, {
+--       detach = true,
+--       on_exit = function()
+--         -- Optional: callback when speech finishes
+--       end
+--     })
+--   end
+-- end
+
 -- Function to speak text using vim-piper
 function M.speak_text(text)
   if text and text ~= '' then
@@ -123,13 +167,15 @@ function M.highlight_paragraph(start_line, end_line)
   local ns = vim.api.nvim_create_namespace('tts_reader')
   M.highlight_ns = ns
 
-  vim.api.nvim_buf_add_highlight(
+  vim.api.nvim_buf_set_extmark(
     M.current_buf,
     ns,
-    'Visual',
-    start_line - 1,
-    0,
-    -1
+    start_line - 1,  -- line (0-based)
+    0,               -- column (0-based)
+    {
+      hl_group = 'Visual',
+      end_line = end_line,  -- end line (exclusive)
+    }
   )
 end
 
@@ -183,11 +229,13 @@ function M.read_next_paragraph()
   -- Move cursor to the paragraph
   vim.api.nvim_win_set_cursor(M.current_win, {paragraph.start_line, 0})
 
-  -- Speak the paragraph
+  -- Force screen redraw to ensure highlighting is visible
+  vim.cmd('redraw')
+
   M.speak_text(paragraph.text)
 
   -- Set up timer for next paragraph (adjust delay based on text length)
-  local delay = math.max(5000, #paragraph.text * 50) -- Minimum 5 seconds
+  local delay = math.max(2000, #paragraph.text * 50) -- Minimum 5 seconds
   M.timer = vim.defer_fn(function()
     M.current_paragraph_index = M.current_paragraph_index + 1
     M.read_next_paragraph()

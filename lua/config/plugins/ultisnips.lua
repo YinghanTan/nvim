@@ -1,7 +1,6 @@
 return {
   "SirVer/ultisnips",
-  -- event = "InsertEnter",
-  lazy = false,
+  event = "InsertEnter",
   dependencies = {
     "honza/vim-snippets",
     lazy = false,
@@ -12,6 +11,7 @@ return {
     vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
     vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
     vim.g.UltiSnipsEditSplit = "vertical"
+    vim.g.UltiSnipsAutoTrigger = false
 
     vim.g.snips_author = "Yinghan Tan"
     vim.g.UltiSnipsSnippetDirectories = { "UltiSnips" }

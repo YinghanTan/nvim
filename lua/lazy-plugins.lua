@@ -136,8 +136,8 @@ require("lazy").setup({
 
 
   -- scratchpad
-  require("config/plugins/codi"),
-  require("config/plugins/iron"),
+  -- require("config/plugins/codi"),
+  -- require("config/plugins/iron"),
 
 
   -- Markdown
@@ -145,9 +145,7 @@ require("lazy").setup({
   require("config/plugins/markdown-preview"),
   require("config/plugins/img-clip"),
 
-  -- require("config/plugins/wiki"),
-  -- require("config/plugins/autolist"),
-  -- require("config/plugins/bullets"),
+  require("config/plugins/w3m"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
