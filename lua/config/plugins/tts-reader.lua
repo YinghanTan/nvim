@@ -68,12 +68,13 @@ function M.get_paragraph(start_line)
 
   -- If start_line is provided, move to that line first
   if start_line then
-    -- If we're at the end of the file, return nil
+    -- If we're at the end of the file, try to get the last paragraph
     if start_line >= line_count then
-      vim.api.nvim_win_set_cursor(win, original_pos)
-      return nil
+      -- Move to the last line and try to get the paragraph from there
+      vim.api.nvim_win_set_cursor(win, {line_count, 0})
+    else
+      vim.api.nvim_win_set_cursor(win, {start_line, 0})
     end
-    vim.api.nvim_win_set_cursor(win, {start_line, 0})
   end
 
   -- Move to beginning of paragraph
@@ -86,8 +87,8 @@ function M.get_paragraph(start_line)
 
   -- Check if we're at the end of the buffer
   if paragraph_end_line >= line_count then
-    vim.api.nvim_win_set_cursor(win, original_pos)
-    return nil
+    -- If we're at the end, use the last available line as the paragraph end
+    paragraph_end_line = line_count
   end
 
   -- Get lines of the paragraph
@@ -231,7 +232,8 @@ function M.read_paragraph(paragraph)
     -- Get next paragraph dynamically from the end of current paragraph
     local next_paragraph = M.get_next_paragraph(paragraph.end_line)
 
-    if next_paragraph and next_paragraph.text ~= '' then
+    -- Check if we got a valid next paragraph that's different from the current one
+    if next_paragraph and next_paragraph.text ~= '' and next_paragraph.start_line >= paragraph.end_line then
       M.read_paragraph(next_paragraph)
     else
       M.stop_reading()
@@ -243,8 +245,15 @@ end
 -- Function to stop reading
 function M.stop_reading()
   if M.timer then
-    M.timer:close()
-    M.timer = nil
+    -- Check if timer is still valid before closing
+    local timer = M.timer
+    M.timer = nil  -- Clear the reference first to prevent double-closing
+
+    -- Use pcall to safely close the timer and handle any errors
+    pcall(function()
+      timer:close()
+    end)
+
   end
   M.is_reading = false
   M.clear_highlights()
