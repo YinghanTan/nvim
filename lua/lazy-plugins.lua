@@ -107,7 +107,6 @@ require("lazy").setup({
   require("config/plugins/snacks"),
   require("config/plugins/mini"),
   require("config/plugins/startuptime"),
-  require("config/plugins/vim-piper"),
   require("config/plugins/vimux"),
   require("config/plugins/typer"),
   require("config/plugins/typeit"),
