@@ -107,7 +107,6 @@ require("lazy").setup({
   require("config/plugins/snacks"),
   require("config/plugins/mini"),
   require("config/plugins/startuptime"),
-  -- require("config/plugins/tts"),
   require("config/plugins/vim-piper"),
   require("config/plugins/vimux"),
   require("config/plugins/typer"),
@@ -146,6 +145,9 @@ require("lazy").setup({
   require("config/plugins/img-clip"),
 
   require("config/plugins/w3m"),
+
+  -- TTS
+  require("config/plugins/tts-reader"),
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.
