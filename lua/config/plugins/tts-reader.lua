@@ -7,15 +7,8 @@ M.current_win = nil
 M.timer = nil
 M.piper_bin = '/home/yinghan/.local/bin/piper'
 M.piper_voice = '/usr/share/piper/voices/en_US/en_US-libritts-high.onnx'
-M.gtts_cli_bin = 'gtts-cli'
 M.language = 'en'
 M.speed = '2.0'
-
--- TTS method configuration
--- M.tts_method = 'piper' -- 'piper' or 'gtts'
-
--- To use Google TTS instead of Piper, set:
-M.tts_method = 'gtts'
 
 -- Configurable symbols to ignore during TTS
 M.ignored_symbols = {
@@ -128,17 +121,7 @@ end
 function M.speak_text_gtts(text)
   if text and text ~= '' then
     -- Use gtts-cli to speak the text
-    local command = M.gtts_cli_bin .. ' "' .. vim.fn.shellescape(text) .. '" --lang ' .. M.language .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. M.speed .. '" -f mp3 - | mpg321 -'
-    vim.fn.system(command)
-  end
-end
-
--- Function to speak text using vim-piper
-function M.speak_text_piper(text)
-  if text and text ~= '' then
-    -- Use vim-piper to speak the text
-    -- vim.cmd('PiperSay "' .. vim.fn.escape(text, '"') .. '"')
-    local command = 'echo "' .. vim.fn.shellescape(text) .. '" | ' .. M.piper_bin .. ' --model "' .. M.piper_voice .. '" --output-raw | aplay -r 22050 -f S16_LE -t raw -'
+    local command = 'gtts-cli' .. ' "' .. vim.fn.shellescape(text) .. '" --lang ' .. M.language .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. M.speed .. '" -f mp3 - | mpg321 -'
     vim.fn.system(command)
   end
 end
@@ -146,11 +129,7 @@ end
 -- Unified function to speak text using configured method
 function M.speak_text(text)
   if text and text ~= '' then
-    if M.tts_method == 'gtts' then
-      M.speak_text_gtts(text)
-    else
-      M.speak_text_piper(text)
-    end
+    M.speak_text_gtts(text)
   end
 end
 
