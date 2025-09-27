@@ -121,7 +121,7 @@ function M.speak_text(text, language, speed)
     local spd = speed or M.speed
 
     -- Use gtts-cli to speak the text
-    local command = 'gtts-cli' .. ' "' .. vim.fn.shellescape(text) .. '" --lang ' .. lang .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. spd .. '" -f mp3 - | mpg321 -'
+    local command = 'gtts-cli ' .. vim.fn.shellescape(text) .. ' --lang ' .. lang .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. spd .. '" -f mp3 - | mpg321 -'
     vim.fn.system(command)
   end
 end
@@ -210,6 +210,7 @@ function M.read_paragraph(paragraph)
   vim.api.nvim_win_set_cursor(M.current_win, {paragraph.start_line, 0})
 
   -- Force screen redraw to ensure highlighting is visible
+  vim.cmd('normal! zz')
   vim.cmd('redraw')
 
   M.speak_text(paragraph.text)
