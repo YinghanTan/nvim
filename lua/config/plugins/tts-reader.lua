@@ -13,7 +13,7 @@ M.speed = '2.0'
 -- Configurable symbols to ignore during TTS
 M.ignored_symbols = {
   '*', '+', '-', '=', '/', '\\', '|', '<', '>', '[', ']', '{', '}', '(', ')',
-  '@', '#', '$', '%', '^', '&', '_', '~', '`', ';', ':'
+  '@', '#', '$', '%', '^', '&', '_', '~', '`',
 }
 
 -- Function to filter symbols from text
