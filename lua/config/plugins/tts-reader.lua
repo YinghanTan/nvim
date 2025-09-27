@@ -117,6 +117,15 @@ function M.get_next_paragraph(current_end_line)
   return M.get_paragraph(current_end_line + 1)
 end
 
+-- Function to start continuous reading in Chinese
+function M.start_continuous_reading_chinese()
+  -- Set language to Chinese
+  M.language = 'zh'
+
+  -- Call the regular start function
+  M.start_continuous_reading()
+end
+
 -- Function to speak text using gtts-cli
 function M.speak_text_gtts(text)
   if text and text ~= '' then
@@ -210,7 +219,7 @@ function M.read_paragraph(paragraph)
 
   -- Set up timer for next paragraph (adjust delay based on text length)
   -- local delay = math.max(100, #paragraph.text * 5) -- Minimum 2 seconds
-  local delay = math.max(20) -- Minimum 2 seconds
+  local delay = 10
   M.timer = vim.defer_fn(function()
     -- Get next paragraph dynamically from the end of current paragraph
     local next_paragraph = M.get_next_paragraph(paragraph.end_line)
@@ -284,6 +293,7 @@ return {
   config = function()
     -- Set up keymaps or any configuration here
     vim.keymap.set('n', '<leader>rr', M.start_continuous_reading, { desc = "Toggle TTS reading" })
+    vim.keymap.set('n', '<leader>rc', M.start_continuous_reading_chinese, { desc = "Toggle TTS reading in Chinese" })
     -- Note: Ctrl-C keymap is now set up dynamically when reading starts to stop TTS
   end,
 }
@@ -291,5 +301,3 @@ return {
 -- dependencies
 -- sudo apt-get install ffmpeg mpg321
 -- uv tools install gtts-cli
-
-
