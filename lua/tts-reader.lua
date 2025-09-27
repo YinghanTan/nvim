@@ -5,8 +5,6 @@ M.is_reading = false
 M.current_buf = nil
 M.current_win = nil
 M.timer = nil
-M.paragraphs = {}
-M.current_paragraph_index = 0
 M.piper_bin = '/home/yinghan/.local/bin/piper'
 M.piper_voice = '/usr/share/piper/voices/en_US/en_US-libritts-high.onnx'
 
@@ -33,18 +31,14 @@ function M.filter_symbols(text)
   -- Create pattern to match any of the symbols
   local pattern = '[' .. table.concat(escaped_symbols) .. ']'
 
-  vim.notify(pattern)
-
   -- Remove symbols from text
-  return text:gsub(pattern, ' ')
+  return text:gsub(pattern, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
 end
 
 -- Function to get paragraph starting from cursor position
 function M.get_current_paragraph()
   local buf = vim.api.nvim_get_current_buf()
   local win = vim.api.nvim_get_current_win()
-  local cursor_pos = vim.api.nvim_win_get_cursor(win)
-  local line = cursor_pos[1]
 
   -- Save original cursor position
   local original_pos = vim.api.nvim_win_get_cursor(win)
@@ -64,10 +58,6 @@ function M.get_current_paragraph()
   local lines = vim.api.nvim_buf_get_lines(buf, start_line - 1, end_line, false)
   local paragraph_text = table.concat(lines, ' ')
 
-  -- Clean up text
-  paragraph_text = paragraph_text:gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
-  vim.notify(paragraph_text)
-
   -- Filter out symbols
   paragraph_text = M.filter_symbols(paragraph_text)
 
@@ -80,62 +70,60 @@ function M.get_current_paragraph()
   }
 end
 
--- Function to get all paragraphs from current position
-function M.get_all_paragraphs_from_cursor()
+-- Function to get the next paragraph from the end of the current paragraph
+function M.get_next_paragraph(current_end_line)
+  local buf = M.current_buf
+  local win = M.current_win
+  local line_count = vim.api.nvim_buf_line_count(buf)
 
-  local paragraphs = {}
-  local buf = vim.api.nvim_get_current_buf()
-  local win = vim.api.nvim_get_current_win()
+  -- If we're at the end of the file, return nil
+  if current_end_line >= line_count then
+    return nil
+  end
+
+  -- Save current cursor position
   local original_pos = vim.api.nvim_win_get_cursor(win)
 
-  -- Get current paragraph
-  local current_para = M.get_current_paragraph()
-  table.insert(paragraphs, current_para)
-  print(paragraphs)
+  -- Move to the line after the current paragraph
+  vim.api.nvim_win_set_cursor(win, {current_end_line + 1, 0})
 
-  -- Move to next paragraph and collect all subsequent paragraphs
-  vim.api.nvim_win_set_cursor(win, {current_para.end_line + 1, 0})
+  -- Move to the next paragraph
+  vim.cmd('normal! }')
+  local next_line = vim.api.nvim_win_get_cursor(win)[1]
 
-  while true do
-    -- Try to get next paragraph
-    vim.cmd('normal! }')
-    local next_line = vim.api.nvim_win_get_cursor(win)[1]
-
-    -- Check if we're at the end of the buffer
-    local line_count = vim.api.nvim_buf_line_count(buf)
-    if next_line >= line_count then
-      break
-    end
-
-    -- Get the paragraph
-    vim.cmd('normal! {')
-    local start_line = vim.api.nvim_win_get_cursor(win)[1]
-    vim.cmd('normal! }')
-    local end_line = vim.api.nvim_win_get_cursor(win)[1]
-
-    local lines = vim.api.nvim_buf_get_lines(buf, start_line - 1, end_line, false)
-    local para_text = table.concat(lines, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
-
-    -- Filter out symbols
-    para_text = M.filter_symbols(para_text)
-
-    if para_text ~= '' then
-      table.insert(paragraphs, {
-        text = para_text,
-        start_line = start_line,
-        end_line = end_line,
-        buf = buf,
-        win = win
-      })
-    end
-
-    -- Move to next line after this paragraph
-    vim.api.nvim_win_set_cursor(win, {end_line + 1, 0})
+  -- Check if we're at the end of the buffer
+  if next_line >= line_count then
+    vim.api.nvim_win_set_cursor(win, original_pos)
+    return nil
   end
+
+  -- Get the paragraph
+  vim.cmd('normal! {')
+  local start_line = vim.api.nvim_win_get_cursor(win)[1]
+  vim.cmd('normal! }')
+  local end_line = vim.api.nvim_win_get_cursor(win)[1]
+
+  -- Get the paragraph text
+  local lines = vim.api.nvim_buf_get_lines(buf, start_line - 1, end_line, false)
+  local para_text = table.concat(lines, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
+
+  -- Filter out symbols
+  para_text = M.filter_symbols(para_text)
 
   -- Restore original position
   vim.api.nvim_win_set_cursor(win, original_pos)
-  return paragraphs
+
+  if para_text == '' then
+    return nil
+  end
+
+  return {
+    text = para_text,
+    start_line = start_line,
+    end_line = end_line,
+    buf = buf,
+    win = win
+  }
 end
 
 
@@ -144,7 +132,6 @@ function M.speak_text(text)
   if text and text ~= '' then
     -- Use vim-piper to speak the text
     -- vim.cmd('PiperSay "' .. vim.fn.escape(text, '"') .. '"')
-    print(text)
     local command = 'echo "' .. vim.fn.shellescape(text) .. '" | ' .. M.piper_bin .. ' --model "' .. M.piper_voice .. '" --output-raw | aplay -r 22050 -f S16_LE -t raw -'
     vim.fn.system(command)
   end
@@ -185,35 +172,30 @@ function M.start_continuous_reading()
     return
   end
 
-
   M.is_reading = true
   M.current_buf = vim.api.nvim_get_current_buf()
   M.current_win = vim.api.nvim_get_current_win()
 
-  -- GTet all paragraphs from current position
-  M.paragraphs = M.get_all_paragraphs_from_cursor()
-  M.current_paragraph_index = 1
+  -- Get current paragraph to start with
+  local current_paragraph = M.get_current_paragraph()
 
-  if #M.paragraphs == 0 then
-    vim.notify("No paragraphs found!", vim.log.levels.WARN)
+  if not current_paragraph or current_paragraph.text == '' then
+    vim.notify("No paragraph found at current position!", vim.log.levels.WARN)
     M.is_reading = false
     return
   end
 
   vim.notify("Starting continuous reading...", vim.log.levels.INFO)
 
-  -- Start reading
-  M.read_next_paragraph()
+  -- Start reading with current paragraph
+  M.read_paragraph(current_paragraph)
 end
 
--- Function to read next paragraph
-function M.read_next_paragraph()
-  if not M.is_reading or M.current_paragraph_index > #M.paragraphs then
-    M.stop_reading()
+-- Function to read a specific paragraph
+function M.read_paragraph(paragraph)
+  if not M.is_reading then
     return
   end
-
-  local paragraph = M.paragraphs[M.current_paragraph_index]
 
   -- Highlight current paragraph
   M.highlight_paragraph(paragraph.start_line, paragraph.end_line)
@@ -227,10 +209,18 @@ function M.read_next_paragraph()
   M.speak_text(paragraph.text)
 
   -- Set up timer for next paragraph (adjust delay based on text length)
-  local delay = math.max(2000, #paragraph.text * 50) -- Minimum 5 seconds
+  -- local delay = math.max(100, #paragraph.text * 5) -- Minimum 2 seconds
+  local delay = math.max(20) -- Minimum 2 seconds
   M.timer = vim.defer_fn(function()
-    M.current_paragraph_index = M.current_paragraph_index + 1
-    M.read_next_paragraph()
+    -- Get next paragraph dynamically from the end of current paragraph
+    local next_paragraph = M.get_next_paragraph(paragraph.end_line)
+
+    if next_paragraph and next_paragraph.text ~= '' then
+      M.read_paragraph(next_paragraph)
+    else
+      M.stop_reading()
+      vim.notify("End of document reached.", vim.log.levels.INFO)
+    end
   end, delay)
 end
 
