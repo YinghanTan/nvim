@@ -7,6 +7,15 @@ M.current_win = nil
 M.timer = nil
 M.piper_bin = '/home/yinghan/.local/bin/piper'
 M.piper_voice = '/usr/share/piper/voices/en_US/en_US-libritts-high.onnx'
+M.gtts_cli_bin = 'gtts-cli'
+M.language = 'en'
+M.speed = '2.0'
+
+-- TTS method configuration
+-- M.tts_method = 'piper' -- 'piper' or 'gtts'
+
+-- To use Google TTS instead of Piper, set:
+M.tts_method = 'gtts'
 
 -- Configurable symbols to ignore during TTS
 M.ignored_symbols = {
@@ -114,14 +123,33 @@ function M.get_next_paragraph(current_end_line)
   return M.get_paragraph(current_end_line + 1)
 end
 
+-- Function to speak text using gtts-cli
+function M.speak_text_gtts(text)
+  if text and text ~= '' then
+    -- Use gtts-cli to speak the text
+    local command = M.gtts_cli_bin .. ' "' .. vim.fn.shellescape(text) .. '" --lang ' .. M.language .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. M.speed .. '" -f mp3 - | mpg321 -'
+    vim.fn.system(command)
+  end
+end
 
 -- Function to speak text using vim-piper
-function M.speak_text(text)
+function M.speak_text_piper(text)
   if text and text ~= '' then
     -- Use vim-piper to speak the text
     -- vim.cmd('PiperSay "' .. vim.fn.escape(text, '"') .. '"')
     local command = 'echo "' .. vim.fn.shellescape(text) .. '" | ' .. M.piper_bin .. ' --model "' .. M.piper_voice .. '" --output-raw | aplay -r 22050 -f S16_LE -t raw -'
     vim.fn.system(command)
+  end
+end
+
+-- Unified function to speak text using configured method
+function M.speak_text(text)
+  if text and text ~= '' then
+    if M.tts_method == 'gtts' then
+      M.speak_text_gtts(text)
+    else
+      M.speak_text_piper(text)
+    end
   end
 end
 
@@ -137,7 +165,7 @@ function M.highlight_paragraph(start_line, end_line)
   vim.api.nvim_buf_set_extmark(
     M.current_buf,
     ns,
-    start_line - 1
+    start_line - 1,
     0,
     {
       hl_group = 'Visual',
@@ -232,4 +260,20 @@ function M.toggle_reading()
   end
 end
 
-return M
+-- Plugin configuration
+return {
+  -- This is a local plugin, not from a repository
+  dir = "~/.config/nvim/lua",
+  name = "tts-reader",
+  config = function()
+    -- Set up keymaps or any configuration here
+    vim.keymap.set('n', '<leader>rr', M.toggle_reading, { desc = "Toggle TTS reading" })
+    vim.keymap.set('n', '<leader>rs', M.stop_reading, { desc = "Stop TTS reading" })
+  end,
+}
+
+-- dependencies
+-- sudo apt-get install ffmpeg mpg321
+-- uv tools install gtts-cli
+
+
