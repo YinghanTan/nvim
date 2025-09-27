@@ -294,7 +294,7 @@ return {
   config = function()
     -- Set up keymaps or any configuration here
     vim.keymap.set('n', '<leader>rr', M.start_continuous_reading, { desc = "tts read" })
-    vim.keymap.set('n', '<leader>rc', M.start_continuous_reading_chinese, { desc = "tts read zh" })
+    vim.keymap.set('n', '<leader>rc', M.start_continuous_reading_chinese, { desc = "tts read chinese" })
     -- Note: Ctrl-C keymap is now set up dynamically when reading starts to stop TTS
   end,
 }
