@@ -117,29 +117,22 @@ function M.get_next_paragraph(current_end_line)
   return M.get_paragraph(current_end_line + 1)
 end
 
--- Function to start continuous reading in Chinese
-function M.start_continuous_reading_chinese()
-  -- Set language to Chinese
-  M.language = 'zh'
-
-  -- Call the regular start function
-  M.start_continuous_reading()
-end
-
--- Function to speak text using gtts-cli
-function M.speak_text_gtts(text)
+-- Unified function to speak text using configured method
+function M.speak_text(text, language, speed)
   if text and text ~= '' then
+    -- Use the provided language and speed, or fall back to defaults
+    local lang = language or M.language
+    local spd = speed or M.speed
+
     -- Use gtts-cli to speak the text
-    local command = 'gtts-cli' .. ' "' .. vim.fn.shellescape(text) .. '" --lang ' .. M.language .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. M.speed .. '" -f mp3 - | mpg321 -'
+    local command = 'gtts-cli' .. ' "' .. vim.fn.shellescape(text) .. '" --lang ' .. lang .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. spd .. '" -f mp3 - | mpg321 -'
     vim.fn.system(command)
   end
 end
 
--- Unified function to speak text using configured method
-function M.speak_text(text)
-  if text and text ~= '' then
-    M.speak_text_gtts(text)
-  end
+-- Function to start continuous reading in Chinese (backward compatibility)
+function M.start_continuous_reading_chinese()
+  M.start_continuous_reading('zh', M.speed)
 end
 
 -- Function to highlight current paragraph
@@ -170,11 +163,19 @@ function M.clear_highlights()
   end
 end
 
--- Main function to start continuous reading
-function M.start_continuous_reading()
+-- Main function to start continuous reading with configurable language and speed
+function M.start_continuous_reading(language, speed)
   if M.is_reading then
     vim.notify("Already reading!", vim.log.levels.WARN)
     return
+  end
+
+  -- Set language and speed if provided
+  if language then
+    M.language = language
+  end
+  if speed then
+    M.speed = speed
   end
 
   M.is_reading = true
@@ -292,8 +293,8 @@ return {
   name = "tts-reader",
   config = function()
     -- Set up keymaps or any configuration here
-    vim.keymap.set('n', '<leader>rr', M.start_continuous_reading, { desc = "Toggle TTS reading" })
-    vim.keymap.set('n', '<leader>rc', M.start_continuous_reading_chinese, { desc = "Toggle TTS reading in Chinese" })
+    vim.keymap.set('n', '<leader>rr', M.start_continuous_reading, { desc = "tts read" })
+    vim.keymap.set('n', '<leader>rc', M.start_continuous_reading_chinese, { desc = "tts read zh" })
     -- Note: Ctrl-C keymap is now set up dynamically when reading starts to stop TTS
   end,
 }
