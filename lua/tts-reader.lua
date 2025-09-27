@@ -10,32 +10,34 @@ M.current_paragraph_index = 0
 M.piper_bin = '/home/yinghan/.local/bin/piper'
 M.piper_voice = '/usr/share/piper/voices/en_US/en_US-libritts-high.onnx'
 
--- -- Configurable symbols to ignore during TTS
--- M.ignored_symbols = {
---   '*', '+', '-', '=', '/', '\\', '|', '<', '>', '[', ']', '{', '}', '(', ')',
---   '@', '#', '$', '%', '^', '&', '_', '~', '`', '"', "'", ';', ':', ',', '.', '!', '?'
--- }
+-- Configurable symbols to ignore during TTS
+M.ignored_symbols = {
+  '*', '+', '-', '=', '/', '\\', '|', '<', '>', '[', ']', '{', '}', '(', ')',
+  '@', '#', '$', '%', '^', '&', '_', '~', '`', ';', ':'
+}
 
--- -- Function to filter symbols from text
--- function M.filter_symbols(text)
---   if not text or text == '' then
---     return text
---   end
---
---   -- Escape special regex characters in symbols
---   local escaped_symbols = {}
---   for _, symbol in ipairs(M.ignored_symbols) do
---     -- Escape special regex characters
---     local escaped = symbol:gsub('([%^%$%(%)%%%.%[%]%*%+%-%?])', '%%%1')
---     table.insert(escaped_symbols, escaped)
---   end
---
---   -- Create pattern to match any of the symbols
---   local pattern = '[' .. table.concat(escaped_symbols) .. ']'
---
---   -- Remove symbols from text
---   return text:gsub(pattern, '')
--- end
+-- Function to filter symbols from text
+function M.filter_symbols(text)
+  if not text or text == '' then
+    return text
+  end
+
+  -- Escape special regex characters in symbols
+  local escaped_symbols = {}
+  for _, symbol in ipairs(M.ignored_symbols) do
+    -- Escape special regex characters
+    local escaped = symbol:gsub('([%^%$%(%)%%%.%[%]%*%+%-%?])', '%%%1')
+    table.insert(escaped_symbols, escaped)
+  end
+
+  -- Create pattern to match any of the symbols
+  local pattern = '[' .. table.concat(escaped_symbols) .. ']'
+
+  vim.notify(pattern)
+
+  -- Remove symbols from text
+  return text:gsub(pattern, ' ')
+end
 
 -- Function to get paragraph starting from cursor position
 function M.get_current_paragraph()
@@ -64,9 +66,10 @@ function M.get_current_paragraph()
 
   -- Clean up text
   paragraph_text = paragraph_text:gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
+  vim.notify(paragraph_text)
 
-  -- -- Filter out symbols
-  -- paragraph_text = M.filter_symbols(paragraph_text)
+  -- Filter out symbols
+  paragraph_text = M.filter_symbols(paragraph_text)
 
   return {
     text = paragraph_text,
@@ -113,6 +116,9 @@ function M.get_all_paragraphs_from_cursor()
     local lines = vim.api.nvim_buf_get_lines(buf, start_line - 1, end_line, false)
     local para_text = table.concat(lines, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
 
+    -- Filter out symbols
+    para_text = M.filter_symbols(para_text)
+
     if para_text ~= '' then
       table.insert(paragraphs, {
         text = para_text,
@@ -132,20 +138,6 @@ function M.get_all_paragraphs_from_cursor()
   return paragraphs
 end
 
--- -- Function to speak text using vim-piper (asynchronous)
--- function M.speak_text(text)
---   if text and text ~= '' then
---     print(text)
---     local command = 'echo "' .. vim.fn.shellescape(text) .. '" | ' .. M.piper_bin .. ' --model "' .. M.piper_voice .. '" --output-raw | aplay -r 22050 -f S16_LE -t raw -'
---     -- Use jobstart to run the command asynchronously
---     vim.fn.jobstart(command, {
---       detach = true,
---       on_exit = function()
---         -- Optional: callback when speech finishes
---       end
---     })
---   end
--- end
 
 -- Function to speak text using vim-piper
 function M.speak_text(text)
