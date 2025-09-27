@@ -71,7 +71,7 @@ function M.get_paragraph(start_line)
   end
 
   -- Move to beginning of paragraph
-  vim.cmd('normal! {')
+  vim.cmd('normal! }{')
   local paragraph_start_line = vim.api.nvim_win_get_cursor(win)[1]
 
   -- Move to end of paragraph
