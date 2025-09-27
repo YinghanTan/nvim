@@ -172,12 +172,16 @@ function M.start_continuous_reading()
   M.current_buf = vim.api.nvim_get_current_buf()
   M.current_win = vim.api.nvim_get_current_win()
 
+  -- Set up Ctrl-C keymap for stopping reading
+  M.setup_ctrl_c_keymap()
+
   -- Get current paragraph to start with
   local current_paragraph = M.get_current_paragraph()
 
   if not current_paragraph or current_paragraph.text == '' then
     vim.notify("No paragraph found at current position!", vim.log.levels.WARN)
     M.is_reading = false
+    M.remove_ctrl_c_keymap()
     return
   end
 
@@ -236,6 +240,7 @@ function M.stop_reading()
   end
   M.is_reading = false
   M.clear_highlights()
+  M.remove_ctrl_c_keymap()
   vim.notify("Reading stopped.", vim.log.levels.INFO)
 end
 
@@ -248,6 +253,38 @@ function M.toggle_reading()
   end
 end
 
+-- Function to handle Ctrl-C interruption
+function M.handle_ctrl_c()
+  if M.is_reading then
+    -- Stop the reading process
+    M.stop_reading()
+
+    -- Clear any pending input to prevent the next paragraph from starting
+    vim.cmd('mode')
+  end
+end
+
+-- Function to set up Ctrl-C keymap for current buffer
+function M.setup_ctrl_c_keymap()
+  if M.current_buf then
+    -- Set buffer-local keymap for Ctrl-C
+    vim.keymap.set('n', '<C-c>', M.handle_ctrl_c, {
+      desc = "Stop TTS reading immediately",
+      buffer = M.current_buf
+    })
+  end
+end
+
+-- Function to remove Ctrl-C keymap
+function M.remove_ctrl_c_keymap()
+  if M.current_buf then
+    -- Remove buffer-local keymap for Ctrl-C
+    pcall(function()
+      vim.keymap.del('n', '<C-c>', { buffer = M.current_buf })
+    end)
+  end
+end
+
 -- Plugin configuration
 return {
   -- This is a local plugin, not from a repository
@@ -257,6 +294,7 @@ return {
     -- Set up keymaps or any configuration here
     vim.keymap.set('n', '<leader>rr', M.toggle_reading, { desc = "Toggle TTS reading" })
     vim.keymap.set('n', '<leader>rs', M.stop_reading, { desc = "Stop TTS reading" })
+    -- Note: Ctrl-C keymap is now set up dynamically when reading starts
   end,
 }
 
