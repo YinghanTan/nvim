@@ -16,7 +16,7 @@ M.ignored_symbols = {
   '@', '#', '$', '%', '^', '&', '_', '~', '`',
 }
 
--- Function to filter symbols from text
+-- Function to filter symbols and long digit sequences from text
 function M.filter_symbols(text)
   if not text or text == '' then
     return text
@@ -33,8 +33,14 @@ function M.filter_symbols(text)
   -- Create pattern to match any of the symbols
   local pattern = '[' .. table.concat(escaped_symbols) .. ']'
 
-  -- Remove symbols from text
-  return text:gsub(pattern, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
+  -- First remove symbols from text
+  text = text:gsub(pattern, ' '):gsub('%s+', ' '):gsub('^%s+', ''):gsub('%s+$', '')
+
+  -- Then filter consecutive digits longer than 6 numbers
+  -- Pattern to match 7 or more consecutive digits and replace with first 6 digits
+  text = text:gsub('(%d%d%d%d%d%d)%d+', '%1')
+
+  return text
 end
 
 -- Unified function to get paragraph starting from cursor position or specified line
