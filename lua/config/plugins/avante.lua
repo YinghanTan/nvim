@@ -37,12 +37,28 @@ return {
         --   max_completion_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
         --   reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
         -- },
+
       },
+
       windows = {
         ask = {
           start_insert = false, -- Start insert mode when opening the ask window
         },
       },
+
+      mappings = {
+        --- @class AvanteConflictMappings
+        diff = {
+          ours = "<leader>co",
+          theirs = "<leader>ct",
+          all_theirs = "<leader>ca",
+          both = "<leader>cb",
+          cursor = "<leader>cc",
+          next = "]c",
+          prev = "[c",
+        },
+      },
+
 
       -- mcphub.nvim
       system_prompt = function()

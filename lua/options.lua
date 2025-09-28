@@ -66,8 +66,6 @@ vim.opt.inccommand = "split"
 -- Show which line your cursor is on
 vim.opt.cursorline = true
 
--- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
 
 -- files and file navigation
 vim.opt.backup = false -- don't use backup files
@@ -121,7 +119,7 @@ vim.opt.ttyfast = true -- faster redrawing
 vim.opt.mat = 2 -- how many tenths of a second to blink
 vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.hidden = true -- Hide files in the background instead of closing them "
-vim.opt.scrolloff = 3 -- line buffer of 3 lines when scrolling
+vim.opt.scrolloff = 5 -- line buffer of 3 lines when scrolling, Minimal number of screen lines to keep above and below the cursor.
 vim.opt.sidescrolloff = 5 -- min. nr. of columns to left and right of cursor
 vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
 
