@@ -70,13 +70,21 @@ function M.get_paragraph(start_line)
     end
   end
 
-  -- Move to beginning of paragraph
-  vim.cmd('normal! }{')
-  local paragraph_start_line = vim.api.nvim_win_get_cursor(win)[1]
+  -- Determine paragraph boundaries
+  local paragraph_start_line, paragraph_end_line
 
-  -- Move to end of paragraph
-  vim.cmd('normal! }')
-  local paragraph_end_line = vim.api.nvim_win_get_cursor(win)[1]
+  if start_line then
+    -- For paragraphs starting from a specific line, get the full paragraph
+    vim.cmd('normal! }{')
+    paragraph_start_line = vim.api.nvim_win_get_cursor(win)[1]
+    vim.cmd('normal! }')
+    paragraph_end_line = vim.api.nvim_win_get_cursor(win)[1]
+  else
+    -- For current paragraph without start_line, start from cursor position
+    paragraph_start_line = vim.api.nvim_win_get_cursor(win)[1]
+    vim.cmd('normal! }')
+    paragraph_end_line = vim.api.nvim_win_get_cursor(win)[1]
+  end
 
   -- Check if we're at the end of the buffer
   if paragraph_end_line >= line_count then
