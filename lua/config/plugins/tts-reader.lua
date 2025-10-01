@@ -134,8 +134,8 @@ function M.speak_text(text, language, speed)
     local lang = language or M.language
     local spd = speed or M.speed
 
-    -- Use gtts-cli to speak the text
-    local command = 'gtts-cli ' .. vim.fn.shellescape(text) .. ' --lang ' .. lang .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. spd .. '" -f mp3 - | mpg321 -'
+    -- Use gtts-cli to speak the text with proper stereo output
+    local command = 'gtts-cli ' .. vim.fn.shellescape(text) .. ' --lang ' .. lang .. ' | ffmpeg -i pipe:0 -filter:a "atempo='.. spd .. ',pan=stereo|c0=c0|c1=c0" -f mp3 - | mpg321 -'
     vim.fn.system(command)
   end
 end
