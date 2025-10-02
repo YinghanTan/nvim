@@ -6,7 +6,6 @@ return {
     { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
   },
   event = 'VeryLazy', -- Optional: needed only if you want to type `:VenvSelect` without a keymapping
-  branch = "regexp",
   opts = {
     -- Your options go here
     -- name = "venv",
